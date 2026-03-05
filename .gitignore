@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.next.bak-*/
+.bun-cache/
+.lighthouseci/
+test-results/
+logs/
+.eslintcache
+*.tsbuildinfo
+
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env*.local
+!.env.example

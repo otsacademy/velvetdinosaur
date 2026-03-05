@@ -1,0 +1,32 @@
+{
+  "LegalDocument": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "contentEditable": true
+      },
+      "lastUpdated": {
+        "type": "text",
+        "contentEditable": true
+      },
+      "sections": {
+        "type": "array",
+        "arrayFields": {
+          "heading": {
+            "type": "text",
+            "contentEditable": true
+          },
+          "body": {
+            "type": "textarea",
+            "contentEditable": true
+          }
+        }
+      }
+    },
+    "defaultProps": {
+      "title": "",
+      "lastUpdated": "",
+      "sections": []
+    }
+  }
+}

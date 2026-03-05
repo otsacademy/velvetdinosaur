@@ -1,0 +1,16 @@
+@import "tailwindcss" source(none);
+@source "../admin/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../edit/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../preview/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../../components/admin/**/*.{js,ts,jsx,tsx}";
+@source "../../components/edit/**/*.{js,ts,jsx,tsx}";
+@source "../../components/puck/**/*.{js,ts,jsx,tsx}";
+@source "../../components/theme/**/*.{js,ts,jsx,tsx}";
+@source "../../components/ui/**/*.{js,ts,jsx,tsx}";
+@source "../../components/blocks/**/*.{js,ts,jsx,tsx}";
+@source "../../components/auth/**/*.{js,ts,jsx,tsx}";
+@source "../../components/contact/**/*.{js,ts,jsx,tsx}";
+@source "../../components/legal/**/*.{js,ts,jsx,tsx}";
+@source not "../../components/admin/store/previews/**/*.{js,ts,jsx,tsx}";
+@source not "../../components/puck/previews/**/*.{js,ts,jsx,tsx}";
+@source "../../node_modules/tweakcn-ui/dist/**/*.{js,ts,jsx,tsx}";

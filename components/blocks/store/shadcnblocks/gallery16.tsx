@@ -1,0 +1,242 @@
+"use client"
+
+import { useEffect, useMemo, useRef, useState } from "react"
+import type { ComponentConfig } from "@measured/puck"
+
+import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+type Gallery16Item = {
+  category: string
+  eyebrow: string
+  title: string
+  description: string
+  descriptionSecondary?: string
+  bullets: Array<string | { value?: string }>
+  note: string
+  image: string
+  imageAlt: string
+}
+
+export type ShadcnblocksGallery16Props = {
+  items: Gallery16Item[]
+}
+
+export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
+  const items = useMemo(() => props.items || [], [props.items])
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(items[0]?.category || "")
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
+  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 })
+
+  useEffect(() => {
+    if (items.length && !current) {
+      setCurrent(items[0].category)
+    }
+  }, [items, current])
+
+  useEffect(() => {
+    const currentIndex = items.findIndex((item) => item.category === current)
+    const activeTab = tabRefs.current[currentIndex]
+
+    if (activeTab) {
+      const { offsetWidth, offsetLeft } = activeTab
+      setIndicatorStyle({ width: offsetWidth, left: offsetLeft })
+    }
+  }, [current, items])
+
+  useEffect(() => {
+    if (!api) return
+
+    const currentIndex = items.findIndex((item) => item.category === current)
+    if (currentIndex >= 0) {
+      api.scrollTo(currentIndex)
+    }
+
+    const onSelect = () => {
+      const idx = api.selectedScrollSnap()
+      setCurrent(items[idx]?.category || "")
+    }
+    api.on("select", onSelect)
+
+    return () => {
+      api.off("select", onSelect)
+    }
+  }, [api, current, items])
+
+  if (!items.length) return null
+
+  return (
+    <ShadcnblocksContainer>
+      <section className="overflow-hidden py-8">
+        <div className="container">
+          <Carousel
+            setApi={setApi}
+            className="[&>div[data-slot=carousel-content]]:overflow-visible"
+          >
+            <div className="flex items-center justify-between">
+              <Tabs
+                value={current}
+                onValueChange={setCurrent}
+                className="mb-8 flex justify-center"
+              >
+                <TabsList className="relative h-auto gap-6 bg-background">
+                  {items.map((item, idx) => (
+                    <TabsTrigger
+                      key={idx}
+                      ref={(el) => {
+                        tabRefs.current[idx] = el
+                      }}
+                      value={item.category}
+                      className="text-base transition-all duration-700 ease-out [&[data-state=active]]:shadow-none"
+                    >
+                      {item.category}
+                    </TabsTrigger>
+                  ))}
+                  <div
+                    className="absolute bottom-0 h-0.5 bg-primary transition-all duration-700 ease-out"
+                    style={{
+                      width: `${indicatorStyle.width}px`,
+                      left: `${indicatorStyle.left}px`,
+                    }}
+                  />
+                </TabsList>
+              </Tabs>
+              <div className="hidden items-center gap-4 sm:flex">
+                <CarouselPrevious className="static size-10 translate-0" />
+                <CarouselNext className="static size-10 translate-0" />
+              </div>
+            </div>
+            <CarouselContent className="max-w-4xl">
+              {items.map((item, idx) => {
+                const bullets = (item.bullets || [])
+                  .map((bullet) => (typeof bullet === "string" ? bullet : bullet?.value))
+                  .filter((bullet): bullet is string => Boolean(bullet))
+                return (
+                <CarouselItem key={idx} className="w-fit max-w-4xl">
+                  <div className="grid h-full max-w-4xl gap-10 rounded-xl border border-border p-6 shadow-sm select-none sm:p-10 md:max-h-[450px] md:grid-cols-2 lg:gap-20">
+                    <div className="flex flex-col justify-between gap-4">
+                      <div>
+                        <h2 className="text-2xl font-medium sm:text-4xl">
+                          <span className="bg-gradient-to-b from-foreground/20 to-muted-foreground bg-clip-text text-transparent">
+                            {item.eyebrow}
+                          </span>
+                          <br />
+                          {item.title}
+                        </h2>
+                        <div className="mt-4 text-sm text-muted-foreground sm:mt-6 space-y-4">
+                          {item.description ? <p>{item.description}</p> : null}
+                          {bullets.length ? (
+                            <ul className="ml-6 list-disc">
+                              {bullets.map((bullet, bulletIdx) => (
+                                <li key={`${bullet}-${bulletIdx}`}>{bullet}</li>
+                              ))}
+                            </ul>
+                          ) : null}
+                          {item.descriptionSecondary ? (
+                            <p>{item.descriptionSecondary}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <p className="mt-4 text-xs text-muted-foreground sm:mt-6">
+                        {item.note}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-border p-2">
+                      <img
+                        src={item.image}
+                        alt={item.imageAlt}
+                        className="h-full w-full rounded-xl object-cover"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              )})}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </section>
+    </ShadcnblocksContainer>
+  )
+}
+
+export const shadcnblocksGallery16Config: ComponentConfig<ShadcnblocksGallery16Props> = {
+  fields: {
+    items: {
+      type: "array",
+      arrayFields: {
+        category: { type: "text" },
+        eyebrow: { type: "text" },
+        title: { type: "text" },
+        description: { type: "textarea" },
+        descriptionSecondary: { type: "textarea" },
+        bullets: {
+          type: "array",
+          arrayFields: { value: { type: "text" } },
+        },
+        note: { type: "textarea" },
+        image: { type: "text" },
+        imageAlt: { type: "text" },
+      },
+    },
+  },
+  defaultProps: {
+    items: [
+      {
+        category: "Features",
+        eyebrow: "Explore Our",
+        title: "Core Features",
+        description:
+          "Dive deep into the robust functionalities designed to streamline your workflow. Benefit from intuitive design, seamless integration, and powerful customization options.",
+        descriptionSecondary:
+          "Explore how our platform adapts to your evolving needs, ensuring long-term value and efficiency.",
+        bullets: [],
+        note: "Comprehensive documentation and dedicated support channels are available to assist you.",
+        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+        imageAlt: "Core features preview",
+      },
+      {
+        category: "Solutions",
+        eyebrow: "Solutions for",
+        title: "Every Scenario",
+        description:
+          "Discover how our platform addresses diverse challenges across various domains:",
+        descriptionSecondary: "We provide adaptable tools for your unique context.",
+        bullets: [
+          "Enhancing team collaboration efficiency.",
+          "Optimizing critical resource allocation.",
+          "Streamlining complex data analysis.",
+        ],
+        note: "Leverage our expertise in integration and custom development for specific needs.",
+        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+        imageAlt: "Solutions preview",
+      },
+      {
+        category: "Roadmap",
+        eyebrow: "Building the",
+        title: "Future Together",
+        description:
+          "Get a glimpse into our ongoing commitment to innovation and improvement:",
+        descriptionSecondary:
+          "We're constantly evolving based on user feedback and industry trends.",
+        bullets: [
+          "Next-generation user interface design.",
+          "Advanced analytics capabilities rollout.",
+          "Expanded third-party integration ecosystem.",
+        ],
+        note: "Our dedicated R&D team is focused on delivering cutting-edge solutions.",
+        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
+        imageAlt: "Roadmap preview",
+      },
+    ],
+  },
+  render: (props) => <ShadcnblocksGallery16 {...props} />,
+}

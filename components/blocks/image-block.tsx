@@ -1,0 +1,38 @@
+/* eslint-disable @next/next/no-img-element */
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { resolveAssetImageUrl } from '@/lib/uploads';
+
+export type ImageBlockProps = {
+  src?: string;
+  alt?: string;
+  caption?: string;
+};
+
+export function ImageBlock({
+  src = '/images/placeholder.svg',
+  alt = 'Placeholder image',
+  caption = 'Drop in R2-hosted assets or external images.'
+}: ImageBlockProps) {
+  const resolvedSrc = resolveAssetImageUrl(src, { width: 1200, height: 800, fit: 'cover' });
+
+  return (
+    <Card className="overflow-hidden">
+      <CardContent className="p-0">
+        <div className="aspect-[3/2] w-full overflow-hidden bg-[var(--vd-muted)]">
+          <img
+            src={resolvedSrc}
+            alt={alt}
+            className="h-full w-full object-cover"
+            width={1200}
+            height={800}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </CardContent>
+      {caption ? (
+        <CardFooter className="text-sm text-[var(--vd-muted-fg)]">{caption}</CardFooter>
+      ) : null}
+    </Card>
+  );
+}

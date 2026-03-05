@@ -1,0 +1,1314 @@
+[dotenv@17.2.3] injecting env (40) from .env.production -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+{
+  "slug": "home",
+  "updatedAt": "2026-01-27T18:30:03.490Z",
+  "publishedAt": "2026-01-27T18:30:03.488Z",
+  "draftUpdatedAt": "2026-01-27T18:30:03.488Z",
+  "draftData": {
+    "root": {
+      "props": {
+        "title": "Home"
+      }
+    },
+    "content": [
+      {
+        "type": "Banner2",
+        "props": {
+          "id": "vd_home_banner",
+          "title": "Reply within 1 business day",
+          "description": "Typical start in 2-3 weeks",
+          "linkText": "Book a call",
+          "linkUrl": "#booking",
+          "defaultVisible": "true"
+        }
+      },
+      {
+        "type": "Navbar1",
+        "props": {
+          "id": "vd_home_navbar",
+          "sticky": "true",
+          "logo": {
+            "url": "/",
+            "src": "/logo.webp",
+            "alt": "Velvet Dinosaur logo",
+            "title": "Velvet Dinosaur"
+          },
+          "menu": [
+            {
+              "title": "Services",
+              "url": "#services"
+            },
+            {
+              "title": "Editing",
+              "url": "#editing"
+            },
+            {
+              "title": "Pricing",
+              "url": "#pricing"
+            },
+            {
+              "title": "Process",
+              "url": "#process"
+            },
+            {
+              "title": "FAQ",
+              "url": "#faq"
+            }
+          ],
+          "primaryButton": {
+            "title": "Book a call",
+            "url": "#booking"
+          }
+        }
+      },
+      {
+        "type": "MakeHero",
+        "props": {
+          "id": "vd_home_make-hero",
+          "eyebrow": "From £2,500 · Oxfordshire · You own the site (code + content)",
+          "headline": "Bespoke websites crafted in Oxford. Fast, secure, and easy to edit.",
+          "subheadline": "No templates. No Lock In. Fixed scope and clean build quality — so you can launch confidently and update content yourself.",
+          "primaryCtaLabel": "Book a discovery call",
+          "primaryCtaHref": "#contact",
+          "secondaryCtaLabel": "View our work",
+          "secondaryCtaHref": "#work",
+          "imageSrc": "/logo.webp",
+          "imageAlt": "Blue Brachiosaurus mascot",
+          "layout": {
+            "background": "none"
+          }
+        }
+      },
+      {
+        "type": "MakeHowWeWork",
+        "props": {
+          "id": "vd_home_make-how-we-work",
+          "eyebrow": "How we work",
+          "headline": "How we work",
+          "body": "Simple, transparent, and focused on getting you a return on investment.",
+          "steps": [
+            {
+              "title": "1. Discovery & Fixed Price",
+              "description": "We’ll do a short call to understand your goals and constraints. You’ll receive a fixed scope, timeline, and a simple agreement to sign. Once signed, we book the slot and invoice the first 20%.",
+              "icon": "Search"
+            },
+            {
+              "title": "2. Design & Prototype",
+              "description": "I design the key pages and share a clickable prototype. You review structure, messaging, and layout before build starts. When the prototype is approved, we invoice the next 40%.",
+              "icon": "PenTool"
+            },
+            {
+              "title": "3. The Build",
+              "description": "I build the site in Next.js and wire up the editing experience so you can update content without touching code. You’ll get a weekly progress update, and you can start adding real content while I finish development.",
+              "icon": "Code2"
+            },
+            {
+              "title": "4. Launch & Training",
+              "description": "We go live when you’ are happy. You will get a personalised walkthrough video showing exactly how to edit everything. The final 40% is invoiced before launch/handover.",
+              "icon": "Rocket"
+            }
+          ]
+        }
+      },
+      {
+        "type": "Services21",
+        "props": {
+          "id": "services",
+          "heading": "What we build",
+          "intro": "Bespoke websites you can actually edit.",
+          "services": [
+            {
+              "id": "{01}",
+              "title": "Fast, focused websites",
+              "image": "/modern-dashboard-analytics.jpg",
+              "description": "Pages load quickly on mobile and desktop, guiding visitors to enquire.",
+              "meta": "Built with: Next.js, edge caching, image optimisation"
+            },
+            {
+              "id": "{02}",
+              "title": "Editing you can trust",
+              "image": "/modern-ecommerce-website.png",
+              "description": "Update text, images, and offers without breaking layouts.",
+              "meta": "Built with: structured CMS, revision history"
+            },
+            {
+              "id": "{03}",
+              "title": "Search-ready foundations",
+              "image": "/mobile-banking-app.png",
+              "description": "Clean structure, metadata, and tracking to measure what works.",
+              "meta": "Built with: technical SEO, analytics setup"
+            },
+            {
+              "id": "{04}",
+              "title": "Quietly reliable hosting",
+              "image": "/brand-identity-design-mockup.jpg",
+              "description": "Secure hosting, monitoring, and daily backups that just work.",
+              "meta": "Built with: Hetzner, automated backups"
+            },
+            {
+              "id": "{05}",
+              "title": "Product-style experiences",
+              "image": "/modern-dashboard-analytics.jpg",
+              "description": "Mobile-first interfaces for bookings, portals, or member areas.",
+              "meta": "Built with: PWA, responsive UI"
+            },
+            {
+              "id": "{06}",
+              "title": "Built for longevity",
+              "image": "/modern-ecommerce-website.png",
+              "description": "A clean stack that stays fast as you grow.",
+              "meta": "Built with: modern React stack"
+            }
+          ],
+          "ctaLabel": "Book a call",
+          "ctaHref": "#booking"
+        }
+      },
+      {
+        "type": "CaseStudies3",
+        "props": {
+          "id": "vd_home_case-studies",
+          "heading": "Selected works",
+          "description": "Short case studies showing the problem, the build, and the result. More detail on request.",
+          "featured": {
+            "title": "Scholardemia",
+            "client": "Education platform",
+            "summary": "Research collaboration platform with complex workflows and many contributors.",
+            "outcome": "Teams publish faster with clearer steps and shared ownership.",
+            "image": "/portfolio/scholardemia-01.webp",
+            "link": "https://scholardemia.com/",
+            "tags": [
+              "Focus: Workflow clarity",
+              "Outcome: Edits done in minutes"
+            ]
+          },
+          "items": [
+            {
+              "title": "Rising Dust Adventures",
+              "client": "Tours & experiences",
+              "summary": "Mobile-first adventure travel site focused on enquiries.",
+              "outcome": "Enquiries became clearer and updates stopped stalling.",
+              "image": "/portfolio/rda-01.webp",
+              "link": "https://risingdustadventures.com",
+              "tags": [
+                "Focus: Mobile enquiries",
+                "Outcome: Fewer back-and-forths"
+              ]
+            },
+            {
+              "title": "The Brave",
+              "client": "Personal brand",
+              "summary": "Story-led personal brand site with media and reviews.",
+              "outcome": "New offers launch without redesigns or developer waits.",
+              "image": "/portfolio/thebrave-01.webp",
+              "link": "https://thebrave.online",
+              "tags": [
+                "Focus: Story clarity",
+                "Outcome: Updates handled in-house"
+              ]
+            },
+            {
+              "title": "Journal of Academics Stand Against Poverty",
+              "client": "Academic journal",
+              "summary": "Open-access journal front-end for an OJS platform.",
+              "outcome": "Research is easier to locate and share.",
+              "image": "/portfolio/journalasap-01.webp",
+              "link": "https://journalasap.org/index.php/asap/index",
+              "tags": [
+                "Focus: Issue discovery",
+                "Outcome: Cleaner navigation"
+              ]
+            }
+          ],
+          "linkLabel": "View build"
+        }
+      },
+      {
+        "type": "Feature14",
+        "props": {
+          "id": "editing",
+          "heading": "Fully editable content, safely.",
+          "description": "You own the site. Edit it yourself without breaking layouts.",
+          "items": [
+            {
+              "title": "What you can edit",
+              "description": "Text, pages, and key sections",
+              "bullets": [
+                "Images and media",
+                "Pricing and offers",
+                "Repeatable items (team, FAQs, testimonials)"
+              ],
+              "image": "/modern-dashboard-analytics.jpg",
+              "imageAlt": "Editable content overview",
+              "badge": "01"
+            },
+            {
+              "title": "Daily automated backups",
+              "description": "Daily backups are included. If something goes wrong, we can restore a recent version quickly.",
+              "bullets": [],
+              "image": "",
+              "imageAlt": "Backup overview",
+              "badge": "02"
+            },
+            {
+              "title": "Log in to the demo",
+              "description": "Step into a sandboxed version of the site and try editing for yourself. Use any demo credentials to sign in; refresh to reset everything.",
+              "bullets": [
+                "Open the demo environment",
+                "Sign in with any demo credentials",
+                "Changes reset on refresh"
+              ],
+              "image": "/placeholder.jpg",
+              "imageAlt": "Demo login preview",
+              "badge": "03",
+              "ctaLabel": "Open demo & sign in",
+              "ctaHref": "/demo?admin=1"
+            }
+          ]
+        }
+      },
+      {
+        "type": "Pricing2",
+        "props": {
+          "id": "pricing",
+          "heading": "Pricing",
+          "description": "Clear guidance, fixed scope, and no surprise fees.",
+          "baselineLabel": "Baseline",
+          "baselinePrice": "Websites from £2,500",
+          "baselineItems": [
+            "Up to 10 pages or sections",
+            "Single-page or multi-page layouts",
+            "Custom design and build",
+            "CMS for easy edits",
+            "SEO foundations + analytics",
+            "Performance optimisation",
+            "Two structured revision rounds",
+            "Hosting & support"
+          ],
+          "includesTitle": "What's included",
+          "includes": [
+            "Discovery + fixed scope",
+            "Custom design + build",
+            "CMS setup + editing walkthrough",
+            "Prices exclude VAT, if applicable."
+          ],
+          "hostingTitle": "Hosting & support",
+          "hostingDetails": [
+            "Hosting included for the first 12 months",
+            "£120/year after (optional)",
+            "No lock-in. You own the site, code, and content."
+          ],
+          "factorsTitle": "What affects price",
+          "factors": [
+            "Number of pages or sections",
+            "Integrations or custom features",
+            "Content migration or copy support"
+          ],
+          "note": "More complex features like ecommerce, bookings, memberships, or heavy integrations are scoped separately and quoted before we start.",
+          "primaryCtaLabel": "Book a call",
+          "primaryCtaHref": "#booking",
+          "secondaryCtaLabel": "Email",
+          "secondaryCtaHref": "mailto:hello@velvetdinosaur.com"
+        }
+      },
+      {
+        "type": "Cta10",
+        "props": {
+          "id": "vd_home_cta-mid",
+          "heading": "Ready for an editable site? Book a call.",
+          "description": "If we're not the right fit, I'll say so.",
+          "buttons": {
+            "primary": {
+              "text": "Book a call",
+              "url": "#booking"
+            },
+            "secondary": {
+              "text": "See pricing",
+              "url": "#pricing"
+            }
+          }
+        }
+      },
+      {
+        "type": "Contact2",
+        "props": {
+          "id": "booking",
+          "title": "Book a call",
+          "description": "Free 20-minute consultation - video, phone, or in person in Oxford.",
+          "details": [
+            {
+              "label": "Email",
+              "value": "hello@velvetdinosaur.com",
+              "href": "mailto:hello@velvetdinosaur.com"
+            },
+            {
+              "label": "Phone",
+              "value": "+44 7438 460437",
+              "href": "tel:+447438460437"
+            },
+            {
+              "label": "WhatsApp",
+              "value": "Message on WhatsApp",
+              "href": "https://wa.me/447438460437"
+            }
+          ],
+          "formTitle": "A calm, fast website you can run yourself.",
+          "formDescription": "I am Ian Wickens, founder of Velvet Dinosaur. I build reliable websites with technical precision and clear scope. You get a fast, secure site you can edit without chasing a developer.",
+          "submitLabel": "Send enquiry",
+          "privacyLabel": "By submitting this form you agree to our",
+          "privacyLinkLabel": "Privacy Notice",
+          "privacyHref": "/privacy",
+          "optionalLabel": "Optional details"
+        }
+      },
+      {
+        "type": "Process3",
+        "props": {
+          "id": "process",
+          "heading": "How we work",
+          "description": "Fixed-scope, straightforward, and focused on getting you live quickly — with a site you can actually edit.",
+          "steps": [
+            {
+              "title": "Discovery, fixed scope & agreement (20%)",
+              "description": "We’ll do a short call to understand your goals and constraints. You’ll receive a fixed scope, timeline, and a simple agreement to sign. Once signed, we book the slot and invoice the first 20%."
+            },
+            {
+              "title": "Design & prototype (40%)",
+              "description": "I design the key pages and share a clickable prototype. You review structure, messaging, and layout before build starts. When the prototype is approved, we invoice the next 40%."
+            },
+            {
+              "title": "The build",
+              "description": "I build the site in Next.js and wire up the editing experience so you can update content without touching code. You’ll get a weekly progress update, and you can start adding real content while I finish development."
+            },
+            {
+              "title": "Launch & training (final 40%)",
+              "description": "We go live when you’re happy. You’ll get a personalised walkthrough video showing exactly how to edit everything, plus a tidy handover checklist (SEO basics, analytics, redirects if needed). The final 40% is invoiced before launch/handover."
+            }
+          ],
+          "eyebrow": "HOW WE WORK",
+          "note": ""
+        }
+      },
+      {
+        "type": "Help2",
+        "props": {
+          "id": "faq",
+          "title": "Frequently Asked Questions",
+          "description": "Browse by category or search by keyword. Pick a question to see a full response.",
+          "searchPlaceholder": "Search questions…",
+          "emptyMessage": "No questions match your filters.",
+          "contactHeading": "Still unsure?",
+          "contactDescription": "If we're not the right fit, I'll say so.",
+          "contactButtons": [
+            {
+              "label": "Book a call",
+              "href": "#booking",
+              "icon": "Phone"
+            },
+            {
+              "label": "Email us",
+              "href": "mailto:hello@velvetdinosaur.com",
+              "icon": "Mail"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "How much does a website cost?",
+              "answer": "Starter sites begin at £2,500 (4–6 pages), growing business sites at £5,000 (8–12 pages with more features), and complex builds or integrations at £8,500+. You'll get a fixed-price quote tailored to your exact needs after a quick call — no hidden extras or surprises. Full details are in the Pricing section above.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What platform or CMS do you use?",
+              "answer": "I build with a modern, bespoke stack (Next.js/React with a structured content system) — no off-the-shelf templates or heavy platforms like WordPress. This keeps things fast and secure while giving you a simple, safe interface to edit text, images, pricing, and repeatable sections yourself.",
+              "category": "Tech"
+            },
+            {
+              "question": "How long does a typical project take?",
+              "answer": "Most websites are ready to launch in 4–8 weeks from kickoff. More complex apps can take longer, but you'll get an exact timeline upfront before anything starts.",
+              "category": "Process"
+            },
+            {
+              "question": "What are the payment terms?",
+              "answer": "Projects are fixed-price with a clear schedule agreed in your proposal. By default this is a 50% deposit to secure your start date, with the remaining 50% due when the site's ready for launch. Invoices are payable within 7 days. Full details are in the Terms of Service.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What is your refund/cancellation policy?",
+              "answer": "The deposit secures your slot and is non-refundable once work starts. If you cancel early, you'll only pay for work completed. Full details are in the proposal and Terms.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What are the ongoing costs after launch?",
+              "answer": "Nothing mandatory. Your first 12 months of hosting are included in the build price. After that, hosting is optional at £120/year if you want me to keep managing it (fast, secure servers with daily backups and monitoring). Support, updates, or new features are quoted separately as you need them — no hidden retainers or subscriptions.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What's included in support — and what isn't?",
+              "answer": "Support covers help with any issues from the original build (e.g., bugs or technical glitches) and general questions about using your site. It doesn't include new features, content updates, or major redesigns — those are quoted separately. Most clients handle day-to-day edits themselves, and only reach out occasionally for bigger changes.",
+              "category": "Support"
+            },
+            {
+              "question": "How many revisions are included?",
+              "answer": "Enough to get it right. Typically one full review round on key pages plus reasonable tweaks during the build (layout, copy adjustments, etc.). The goal is a site you're happy with — we'll keep refining until it feels spot-on within the agreed scope.",
+              "category": "Process"
+            },
+            {
+              "question": "What if I need changes after launch?",
+              "answer": "You can update text, images, and pricing yourself anytime using the straightforward admin area. For bigger structural changes, I'm happy to help with either ongoing support or one-off fixes.",
+              "category": "Support"
+            },
+            {
+              "question": "Will my site be accessible and mobile-friendly?",
+              "answer": "Yes to both. Every site is built mobile-first (fully responsive across phones, tablets, and desktops) and meets WCAG 2.1 AA standards where practical. It's part of the \"NHS-grade rigour\" approach — things work properly for all visitors.",
+              "category": "Tech"
+            },
+            {
+              "question": "Can you migrate my existing site/content?",
+              "answer": "Yes, happy to. For most projects I can bring over existing pages, images, blog posts, or products. We'll discuss what's needed during the discovery call and include it in the quote if required.",
+              "category": "Logistics"
+            },
+            {
+              "question": "Do you do ecommerce, bookings, or other integrations?",
+              "answer": "Yes — depending on the complexity. I've built booking systems, member areas, payment integrations, and simple shops. If it fits your needs and budget, we can include it in the scope. More advanced ecommerce platforms (like full Shopify stores) I'd usually recommend a specialist, but straightforward solutions are no problem.",
+              "category": "Tech"
+            },
+            {
+              "question": "What do you need from me, and when?",
+              "answer": "Mainly content (text, images, branding) and access (domain login if needed). I'll give you a clear checklist early on with suggested deadlines. The sooner you can supply things, the smoother and faster the project goes — but we can work around your schedule.",
+              "category": "Process"
+            },
+            {
+              "question": "Do you provide training or handover for editing the site?",
+              "answer": "Yes — on completion you'll get admin access, a quick walkthrough (video call or written guide), and clear instructions tailored to your site. Most clients feel confident updating things themselves straight away.",
+              "category": "Support"
+            },
+            {
+              "question": "Can I see how editing works?",
+              "answer": "Yes — here's a quick demo video showing how easy it is to update text, images, and sections yourself.",
+              "category": "Support"
+            },
+            {
+              "question": "Do you work with clients outside Oxford?",
+              "answer": "Absolutely. Most clients are across the UK or international — everything works smoothly via video calls.",
+              "category": "Logistics"
+            },
+            {
+              "question": "Can you work with my existing hosting?",
+              "answer": "Yes, no problem. Most prefer my managed setup, but I can deploy to yours.",
+              "category": "Logistics"
+            },
+            {
+              "question": "What makes you different from agencies?",
+              "answer": "You deal directly with me (Ian) — no account managers or juniors. Fixed pricing, full ownership, no lock-in.",
+              "category": "Process"
+            }
+          ]
+        }
+      },
+      {
+        "type": "BlogListCompact01",
+        "props": {
+          "id": "vd_home_blog",
+          "heading": "",
+          "description": "",
+          "posts": [],
+          "show": "false",
+          "emptyMessage": ""
+        }
+      },
+      {
+        "type": "Footer2",
+        "props": {
+          "id": "vd_home_footer",
+          "logo": {
+            "url": "/",
+            "src": "/logo.webp",
+            "alt": "Velvet Dinosaur logo",
+            "title": "Velvet Dinosaur"
+          },
+          "tagline": "Bespoke websites you can actually edit.",
+          "menuItems": [
+            {
+              "title": "Velvet Dinosaur",
+              "links": [
+                {
+                  "text": "Services",
+                  "url": "#services"
+                },
+                {
+                  "text": "Editing",
+                  "url": "#editing"
+                },
+                {
+                  "text": "Pricing",
+                  "url": "#pricing"
+                },
+                {
+                  "text": "Process",
+                  "url": "#process"
+                },
+                {
+                  "text": "FAQ",
+                  "url": "#faq"
+                },
+                {
+                  "text": "Privacy",
+                  "url": "/privacy"
+                },
+                {
+                  "text": "Terms",
+                  "url": "/terms"
+                }
+              ]
+            }
+          ],
+          "copyright": "© 2026 Velvet Dinosaur",
+          "bottomLinks": [
+            {
+              "text": "Privacy",
+              "url": "/privacy"
+            },
+            {
+              "text": "Terms",
+              "url": "/terms"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "publishedData": {
+    "root": {
+      "props": {
+        "title": "Home"
+      }
+    },
+    "content": [
+      {
+        "type": "Banner2",
+        "props": {
+          "id": "vd_home_banner",
+          "title": "Reply within 1 business day",
+          "description": "Typical start in 2-3 weeks",
+          "linkText": "Book a call",
+          "linkUrl": "#booking",
+          "defaultVisible": "true"
+        }
+      },
+      {
+        "type": "Navbar1",
+        "props": {
+          "id": "vd_home_navbar",
+          "sticky": "true",
+          "logo": {
+            "url": "/",
+            "src": "/logo.webp",
+            "alt": "Velvet Dinosaur logo",
+            "title": "Velvet Dinosaur"
+          },
+          "menu": [
+            {
+              "title": "Services",
+              "url": "#services"
+            },
+            {
+              "title": "Editing",
+              "url": "#editing"
+            },
+            {
+              "title": "Pricing",
+              "url": "#pricing"
+            },
+            {
+              "title": "Process",
+              "url": "#process"
+            },
+            {
+              "title": "FAQ",
+              "url": "#faq"
+            }
+          ],
+          "primaryButton": {
+            "title": "Book a call",
+            "url": "#booking"
+          }
+        }
+      },
+      {
+        "type": "MakeHero",
+        "props": {
+          "id": "vd_home_make-hero",
+          "eyebrow": "From £2,500 · Oxfordshire · You own the site (code + content)",
+          "headline": "Bespoke websites crafted in Oxford. Fast, secure, and easy to edit.",
+          "subheadline": "No templates. No Lock In. Fixed scope and clean build quality — so you can launch confidently and update content yourself.",
+          "primaryCtaLabel": "Book a discovery call",
+          "primaryCtaHref": "#contact",
+          "secondaryCtaLabel": "View our work",
+          "secondaryCtaHref": "#work",
+          "imageSrc": "/logo.webp",
+          "imageAlt": "Blue Brachiosaurus mascot",
+          "layout": {
+            "background": "none"
+          }
+        }
+      },
+      {
+        "type": "MakeHowWeWork",
+        "props": {
+          "id": "vd_home_make-how-we-work",
+          "eyebrow": "How we work",
+          "headline": "How we work",
+          "body": "Simple, transparent, and focused on getting you a return on investment.",
+          "steps": [
+            {
+              "title": "1. Discovery & Fixed Price",
+              "description": "We’ll do a short call to understand your goals and constraints. You’ll receive a fixed scope, timeline, and a simple agreement to sign. Once signed, we book the slot and invoice the first 20%.",
+              "icon": "Search"
+            },
+            {
+              "title": "2. Design & Prototype",
+              "description": "I design the key pages and share a clickable prototype. You review structure, messaging, and layout before build starts. When the prototype is approved, we invoice the next 40%.",
+              "icon": "PenTool"
+            },
+            {
+              "title": "3. The Build",
+              "description": "I build the site in Next.js and wire up the editing experience so you can update content without touching code. You’ll get a weekly progress update, and you can start adding real content while I finish development.",
+              "icon": "Code2"
+            },
+            {
+              "title": "4. Launch & Training",
+              "description": "We go live when you’ are happy. You will get a personalised walkthrough video showing exactly how to edit everything. The final 40% is invoiced before launch/handover.",
+              "icon": "Rocket"
+            }
+          ]
+        }
+      },
+      {
+        "type": "Services21",
+        "props": {
+          "id": "services",
+          "heading": "What we build",
+          "intro": "Bespoke websites you can actually edit.",
+          "services": [
+            {
+              "id": "{01}",
+              "title": "Fast, focused websites",
+              "image": "/modern-dashboard-analytics.jpg",
+              "description": "Pages load quickly on mobile and desktop, guiding visitors to enquire.",
+              "meta": "Built with: Next.js, edge caching, image optimisation"
+            },
+            {
+              "id": "{02}",
+              "title": "Editing you can trust",
+              "image": "/modern-ecommerce-website.png",
+              "description": "Update text, images, and offers without breaking layouts.",
+              "meta": "Built with: structured CMS, revision history"
+            },
+            {
+              "id": "{03}",
+              "title": "Search-ready foundations",
+              "image": "/mobile-banking-app.png",
+              "description": "Clean structure, metadata, and tracking to measure what works.",
+              "meta": "Built with: technical SEO, analytics setup"
+            },
+            {
+              "id": "{04}",
+              "title": "Quietly reliable hosting",
+              "image": "/brand-identity-design-mockup.jpg",
+              "description": "Secure hosting, monitoring, and daily backups that just work.",
+              "meta": "Built with: Hetzner, automated backups"
+            },
+            {
+              "id": "{05}",
+              "title": "Product-style experiences",
+              "image": "/modern-dashboard-analytics.jpg",
+              "description": "Mobile-first interfaces for bookings, portals, or member areas.",
+              "meta": "Built with: PWA, responsive UI"
+            },
+            {
+              "id": "{06}",
+              "title": "Built for longevity",
+              "image": "/modern-ecommerce-website.png",
+              "description": "A clean stack that stays fast as you grow.",
+              "meta": "Built with: modern React stack"
+            }
+          ],
+          "ctaLabel": "Book a call",
+          "ctaHref": "#booking"
+        }
+      },
+      {
+        "type": "CaseStudies3",
+        "props": {
+          "id": "vd_home_case-studies",
+          "heading": "Selected works",
+          "description": "Short case studies showing the problem, the build, and the result. More detail on request.",
+          "featured": {
+            "title": "Scholardemia",
+            "client": "Education platform",
+            "summary": "Research collaboration platform with complex workflows and many contributors.",
+            "outcome": "Teams publish faster with clearer steps and shared ownership.",
+            "image": "/portfolio/scholardemia-01.webp",
+            "link": "https://scholardemia.com/",
+            "tags": [
+              "Focus: Workflow clarity",
+              "Outcome: Edits done in minutes"
+            ]
+          },
+          "items": [
+            {
+              "title": "Rising Dust Adventures",
+              "client": "Tours & experiences",
+              "summary": "Mobile-first adventure travel site focused on enquiries.",
+              "outcome": "Enquiries became clearer and updates stopped stalling.",
+              "image": "/portfolio/rda-01.webp",
+              "link": "https://risingdustadventures.com",
+              "tags": [
+                "Focus: Mobile enquiries",
+                "Outcome: Fewer back-and-forths"
+              ]
+            },
+            {
+              "title": "The Brave",
+              "client": "Personal brand",
+              "summary": "Story-led personal brand site with media and reviews.",
+              "outcome": "New offers launch without redesigns or developer waits.",
+              "image": "/portfolio/thebrave-01.webp",
+              "link": "https://thebrave.online",
+              "tags": [
+                "Focus: Story clarity",
+                "Outcome: Updates handled in-house"
+              ]
+            },
+            {
+              "title": "Journal of Academics Stand Against Poverty",
+              "client": "Academic journal",
+              "summary": "Open-access journal front-end for an OJS platform.",
+              "outcome": "Research is easier to locate and share.",
+              "image": "/portfolio/journalasap-01.webp",
+              "link": "https://journalasap.org/index.php/asap/index",
+              "tags": [
+                "Focus: Issue discovery",
+                "Outcome: Cleaner navigation"
+              ]
+            }
+          ],
+          "linkLabel": "View build"
+        }
+      },
+      {
+        "type": "Feature14",
+        "props": {
+          "id": "editing",
+          "heading": "Fully editable content, safely.",
+          "description": "You own the site. Edit it yourself without breaking layouts.",
+          "items": [
+            {
+              "title": "What you can edit",
+              "description": "Text, pages, and key sections",
+              "bullets": [
+                "Images and media",
+                "Pricing and offers",
+                "Repeatable items (team, FAQs, testimonials)"
+              ],
+              "image": "/modern-dashboard-analytics.jpg",
+              "imageAlt": "Editable content overview",
+              "badge": "01"
+            },
+            {
+              "title": "Daily automated backups",
+              "description": "Daily backups are included. If something goes wrong, we can restore a recent version quickly.",
+              "bullets": [],
+              "image": "",
+              "imageAlt": "Backup overview",
+              "badge": "02"
+            },
+            {
+              "title": "Log in to the demo",
+              "description": "Step into a sandboxed version of the site and try editing for yourself. Use any demo credentials to sign in; refresh to reset everything.",
+              "bullets": [
+                "Open the demo environment",
+                "Sign in with any demo credentials",
+                "Changes reset on refresh"
+              ],
+              "image": "/placeholder.jpg",
+              "imageAlt": "Demo login preview",
+              "badge": "03",
+              "ctaLabel": "Open demo & sign in",
+              "ctaHref": "/demo?admin=1"
+            }
+          ]
+        }
+      },
+      {
+        "type": "Pricing2",
+        "props": {
+          "id": "pricing",
+          "heading": "Pricing",
+          "description": "Clear guidance, fixed scope, and no surprise fees.",
+          "baselineLabel": "Baseline",
+          "baselinePrice": "Websites from £2,500",
+          "baselineItems": [
+            "Up to 10 pages or sections",
+            "Single-page or multi-page layouts",
+            "Custom design and build",
+            "CMS for easy edits",
+            "SEO foundations + analytics",
+            "Performance optimisation",
+            "Two structured revision rounds",
+            "Hosting & support"
+          ],
+          "includesTitle": "What's included",
+          "includes": [
+            "Discovery + fixed scope",
+            "Custom design + build",
+            "CMS setup + editing walkthrough",
+            "Prices exclude VAT, if applicable."
+          ],
+          "hostingTitle": "Hosting & support",
+          "hostingDetails": [
+            "Hosting included for the first 12 months",
+            "£120/year after (optional)",
+            "No lock-in. You own the site, code, and content."
+          ],
+          "factorsTitle": "What affects price",
+          "factors": [
+            "Number of pages or sections",
+            "Integrations or custom features",
+            "Content migration or copy support"
+          ],
+          "note": "More complex features like ecommerce, bookings, memberships, or heavy integrations are scoped separately and quoted before we start.",
+          "primaryCtaLabel": "Book a call",
+          "primaryCtaHref": "#booking",
+          "secondaryCtaLabel": "Email",
+          "secondaryCtaHref": "mailto:hello@velvetdinosaur.com"
+        }
+      },
+      {
+        "type": "Cta10",
+        "props": {
+          "id": "vd_home_cta-mid",
+          "heading": "Ready for an editable site? Book a call.",
+          "description": "If we're not the right fit, I'll say so.",
+          "buttons": {
+            "primary": {
+              "text": "Book a call",
+              "url": "#booking"
+            },
+            "secondary": {
+              "text": "See pricing",
+              "url": "#pricing"
+            }
+          }
+        }
+      },
+      {
+        "type": "Contact2",
+        "props": {
+          "id": "booking",
+          "title": "Book a call",
+          "description": "Free 20-minute consultation - video, phone, or in person in Oxford.",
+          "details": [
+            {
+              "label": "Email",
+              "value": "hello@velvetdinosaur.com",
+              "href": "mailto:hello@velvetdinosaur.com"
+            },
+            {
+              "label": "Phone",
+              "value": "+44 7438 460437",
+              "href": "tel:+447438460437"
+            },
+            {
+              "label": "WhatsApp",
+              "value": "Message on WhatsApp",
+              "href": "https://wa.me/447438460437"
+            }
+          ],
+          "formTitle": "A calm, fast website you can run yourself.",
+          "formDescription": "I am Ian Wickens, founder of Velvet Dinosaur. I build reliable websites with technical precision and clear scope. You get a fast, secure site you can edit without chasing a developer.",
+          "submitLabel": "Send enquiry",
+          "privacyLabel": "By submitting this form you agree to our",
+          "privacyLinkLabel": "Privacy Notice",
+          "privacyHref": "/privacy",
+          "optionalLabel": "Optional details"
+        }
+      },
+      {
+        "type": "Process3",
+        "props": {
+          "id": "process",
+          "heading": "How we work",
+          "description": "Fixed-scope, straightforward, and focused on getting you live quickly — with a site you can actually edit.",
+          "steps": [
+            {
+              "title": "Discovery, fixed scope & agreement (20%)",
+              "description": "We’ll do a short call to understand your goals and constraints. You’ll receive a fixed scope, timeline, and a simple agreement to sign. Once signed, we book the slot and invoice the first 20%."
+            },
+            {
+              "title": "Design & prototype (40%)",
+              "description": "I design the key pages and share a clickable prototype. You review structure, messaging, and layout before build starts. When the prototype is approved, we invoice the next 40%."
+            },
+            {
+              "title": "The build",
+              "description": "I build the site in Next.js and wire up the editing experience so you can update content without touching code. You’ll get a weekly progress update, and you can start adding real content while I finish development."
+            },
+            {
+              "title": "Launch & training (final 40%)",
+              "description": "We go live when you’re happy. You’ll get a personalised walkthrough video showing exactly how to edit everything, plus a tidy handover checklist (SEO basics, analytics, redirects if needed). The final 40% is invoiced before launch/handover."
+            }
+          ],
+          "eyebrow": "HOW WE WORK",
+          "note": ""
+        }
+      },
+      {
+        "type": "Help2",
+        "props": {
+          "id": "faq",
+          "title": "Frequently Asked Questions",
+          "description": "Browse by category or search by keyword. Pick a question to see a full response.",
+          "searchPlaceholder": "Search questions…",
+          "emptyMessage": "No questions match your filters.",
+          "contactHeading": "Still unsure?",
+          "contactDescription": "If we're not the right fit, I'll say so.",
+          "contactButtons": [
+            {
+              "label": "Book a call",
+              "href": "#booking",
+              "icon": "Phone"
+            },
+            {
+              "label": "Email us",
+              "href": "mailto:hello@velvetdinosaur.com",
+              "icon": "Mail"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "How much does a website cost?",
+              "answer": "Starter sites begin at £2,500 (4–6 pages), growing business sites at £5,000 (8–12 pages with more features), and complex builds or integrations at £8,500+. You'll get a fixed-price quote tailored to your exact needs after a quick call — no hidden extras or surprises. Full details are in the Pricing section above.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What platform or CMS do you use?",
+              "answer": "I build with a modern, bespoke stack (Next.js/React with a structured content system) — no off-the-shelf templates or heavy platforms like WordPress. This keeps things fast and secure while giving you a simple, safe interface to edit text, images, pricing, and repeatable sections yourself.",
+              "category": "Tech"
+            },
+            {
+              "question": "How long does a typical project take?",
+              "answer": "Most websites are ready to launch in 4–8 weeks from kickoff. More complex apps can take longer, but you'll get an exact timeline upfront before anything starts.",
+              "category": "Process"
+            },
+            {
+              "question": "What are the payment terms?",
+              "answer": "Projects are fixed-price with a clear schedule agreed in your proposal. By default this is a 50% deposit to secure your start date, with the remaining 50% due when the site's ready for launch. Invoices are payable within 7 days. Full details are in the Terms of Service.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What is your refund/cancellation policy?",
+              "answer": "The deposit secures your slot and is non-refundable once work starts. If you cancel early, you'll only pay for work completed. Full details are in the proposal and Terms.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What are the ongoing costs after launch?",
+              "answer": "Nothing mandatory. Your first 12 months of hosting are included in the build price. After that, hosting is optional at £120/year if you want me to keep managing it (fast, secure servers with daily backups and monitoring). Support, updates, or new features are quoted separately as you need them — no hidden retainers or subscriptions.",
+              "category": "Pricing"
+            },
+            {
+              "question": "What's included in support — and what isn't?",
+              "answer": "Support covers help with any issues from the original build (e.g., bugs or technical glitches) and general questions about using your site. It doesn't include new features, content updates, or major redesigns — those are quoted separately. Most clients handle day-to-day edits themselves, and only reach out occasionally for bigger changes.",
+              "category": "Support"
+            },
+            {
+              "question": "How many revisions are included?",
+              "answer": "Enough to get it right. Typically one full review round on key pages plus reasonable tweaks during the build (layout, copy adjustments, etc.). The goal is a site you're happy with — we'll keep refining until it feels spot-on within the agreed scope.",
+              "category": "Process"
+            },
+            {
+              "question": "What if I need changes after launch?",
+              "answer": "You can update text, images, and pricing yourself anytime using the straightforward admin area. For bigger structural changes, I'm happy to help with either ongoing support or one-off fixes.",
+              "category": "Support"
+            },
+            {
+              "question": "Will my site be accessible and mobile-friendly?",
+              "answer": "Yes to both. Every site is built mobile-first (fully responsive across phones, tablets, and desktops) and meets WCAG 2.1 AA standards where practical. It's part of the \"NHS-grade rigour\" approach — things work properly for all visitors.",
+              "category": "Tech"
+            },
+            {
+              "question": "Can you migrate my existing site/content?",
+              "answer": "Yes, happy to. For most projects I can bring over existing pages, images, blog posts, or products. We'll discuss what's needed during the discovery call and include it in the quote if required.",
+              "category": "Logistics"
+            },
+            {
+              "question": "Do you do ecommerce, bookings, or other integrations?",
+              "answer": "Yes — depending on the complexity. I've built booking systems, member areas, payment integrations, and simple shops. If it fits your needs and budget, we can include it in the scope. More advanced ecommerce platforms (like full Shopify stores) I'd usually recommend a specialist, but straightforward solutions are no problem.",
+              "category": "Tech"
+            },
+            {
+              "question": "What do you need from me, and when?",
+              "answer": "Mainly content (text, images, branding) and access (domain login if needed). I'll give you a clear checklist early on with suggested deadlines. The sooner you can supply things, the smoother and faster the project goes — but we can work around your schedule.",
+              "category": "Process"
+            },
+            {
+              "question": "Do you provide training or handover for editing the site?",
+              "answer": "Yes — on completion you'll get admin access, a quick walkthrough (video call or written guide), and clear instructions tailored to your site. Most clients feel confident updating things themselves straight away.",
+              "category": "Support"
+            },
+            {
+              "question": "Can I see how editing works?",
+              "answer": "Yes — here's a quick demo video showing how easy it is to update text, images, and sections yourself.",
+              "category": "Support"
+            },
+            {
+              "question": "Do you work with clients outside Oxford?",
+              "answer": "Absolutely. Most clients are across the UK or international — everything works smoothly via video calls.",
+              "category": "Logistics"
+            },
+            {
+              "question": "Can you work with my existing hosting?",
+              "answer": "Yes, no problem. Most prefer my managed setup, but I can deploy to yours.",
+              "category": "Logistics"
+            },
+            {
+              "question": "What makes you different from agencies?",
+              "answer": "You deal directly with me (Ian) — no account managers or juniors. Fixed pricing, full ownership, no lock-in.",
+              "category": "Process"
+            }
+          ]
+        }
+      },
+      {
+        "type": "BlogListCompact01",
+        "props": {
+          "id": "vd_home_blog",
+          "heading": "",
+          "description": "",
+          "posts": [],
+          "show": "false",
+          "emptyMessage": ""
+        }
+      },
+      {
+        "type": "Footer2",
+        "props": {
+          "id": "vd_home_footer",
+          "logo": {
+            "url": "/",
+            "src": "/logo.webp",
+            "alt": "Velvet Dinosaur logo",
+            "title": "Velvet Dinosaur"
+          },
+          "tagline": "Bespoke websites you can actually edit.",
+          "menuItems": [
+            {
+              "title": "Velvet Dinosaur",
+              "links": [
+                {
+                  "text": "Services",
+                  "url": "#services"
+                },
+                {
+                  "text": "Editing",
+                  "url": "#editing"
+                },
+                {
+                  "text": "Pricing",
+                  "url": "#pricing"
+                },
+                {
+                  "text": "Process",
+                  "url": "#process"
+                },
+                {
+                  "text": "FAQ",
+                  "url": "#faq"
+                },
+                {
+                  "text": "Privacy",
+                  "url": "/privacy"
+                },
+                {
+                  "text": "Terms",
+                  "url": "/terms"
+                }
+              ]
+            }
+          ],
+          "copyright": "© 2026 Velvet Dinosaur",
+          "bottomLinks": [
+            {
+              "text": "Privacy",
+              "url": "/privacy"
+            },
+            {
+              "text": "Terms",
+              "url": "/terms"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "legacyData": {
+    "root": {
+      "props": {
+        "title": "Home"
+      }
+    },
+    "content": [
+      {
+        "type": "ShadcnblocksHero103",
+        "props": {
+          "headline": "",
+          "description": "",
+          "primaryCtaLabel": "",
+          "primaryCtaHref": "",
+          "secondaryCtaLabel": "",
+          "secondaryCtaHref": "",
+          "backgroundImageUrl": "",
+          "heroImage": {
+            "src": "",
+            "alt": ""
+          },
+          "floatingImages": [],
+          "logoLabel": "",
+          "logos": []
+        }
+      },
+      {
+        "type": "ShadcnblocksFeature202",
+        "props": {
+          "eyebrow": "",
+          "heading": "",
+          "description": "",
+          "cards": []
+        }
+      },
+      {
+        "type": "ShadcnblocksFeature166",
+        "props": {
+          "title": "",
+          "description": "",
+          "feature1": {
+            "title": "",
+            "description": "",
+            "image": ""
+          },
+          "feature2": {
+            "title": "",
+            "description": "",
+            "image": ""
+          },
+          "feature3": {
+            "title": "",
+            "description": "",
+            "image": ""
+          },
+          "feature4": {
+            "title": "",
+            "description": "",
+            "image": ""
+          }
+        }
+      },
+      {
+        "type": "ShadcnblocksFeature42",
+        "props": {
+          "heading": "",
+          "items": []
+        }
+      },
+      {
+        "type": "ShadcnblocksLogos8",
+        "props": {
+          "title": "",
+          "subtitle": "",
+          "logos": []
+        }
+      },
+      {
+        "type": "ShadcnblocksPricing10",
+        "props": {
+          "heading": "",
+          "description": "",
+          "billingToggleLabel": "",
+          "billingSuffix": "",
+          "recommendedLabel": "",
+          "plans": [
+            {
+              "name": "Baseline",
+              "description": "",
+              "priceMonthly": "",
+              "priceYearly": "",
+              "ctaLabel": "",
+              "ctaHref": "",
+              "recommended": "true",
+              "imageSrc": "",
+              "imageAlt": "Plan",
+              "features": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "ShadcnblocksContact18",
+        "props": {
+          "heading": "",
+          "emailLabel": "",
+          "emailHref": "",
+          "supportFeatures": [],
+          "form": {
+            "namePlaceholder": "",
+            "phonePlaceholder": "",
+            "emailPlaceholder": "",
+            "messagePlaceholder": "",
+            "submitLabel": ""
+          }
+        }
+      },
+      {
+        "type": "ShadcnblocksFaq03",
+        "props": {
+          "heading": "",
+          "description": "",
+          "items": [],
+          "cta": {
+            "heading": "",
+            "description": "",
+            "label": "",
+            "href": ""
+          }
+        }
+      },
+      {
+        "type": "ShadcnblocksFooter04",
+        "props": {
+          "logo": {
+            "url": "/",
+            "src": "",
+            "srcMobile": "",
+            "alt": "",
+            "title": ""
+          },
+          "socials": [],
+          "columns": [
+            {
+              "title": "",
+              "links": []
+            }
+          ],
+          "newsletter": {
+            "title": "",
+            "description": "",
+            "inputPlaceholder": "",
+            "buttonLabel": "",
+            "buttonHref": "/admin"
+          },
+          "legalLinks": [],
+          "copyright": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@source "../edit/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../../components/edit/**/*.{js,ts,jsx,tsx}";
+@source "../../components/ui/**/*.{js,ts,jsx,tsx}";
+@source "../../components/puck/**/*.{js,ts,jsx,tsx}";
+@source "../../components/theme/**/*.{js,ts,jsx,tsx}";
+@source "../../components/auth/**/*.{js,ts,jsx,tsx}";
+@source "../../components/contact/**/*.{js,ts,jsx,tsx}";
+@source "../../components/legal/**/*.{js,ts,jsx,tsx}";
+@source "../../components/blocks/**/*.{js,ts,jsx,tsx}";
+@source not "../../components/puck/previews/**/*.{js,ts,jsx,tsx}";
+@source "../../node_modules/tweakcn-ui/dist/**/*.{js,ts,jsx,tsx}";
+
+.vd-editor {
+  --background: oklch(100% 0 0);
+  --foreground: oklch(20% 0.02 270);
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(62% 0.18 145);
+  --primary-foreground: oklch(98% 0.01 145);
+  --secondary: oklch(96% 0.01 140);
+  --secondary-foreground: oklch(28% 0.02 260);
+  --muted: oklch(95% 0.01 140);
+  --muted-foreground: oklch(45% 0.02 260);
+  --accent: oklch(78% 0.14 145);
+  --accent-foreground: oklch(20% 0.02 260);
+  --destructive: oklch(60% 0.2 25);
+  --destructive-foreground: oklch(98% 0.01 145);
+  --border: oklch(90% 0.01 140);
+  --input: var(--border);
+  --ring: oklch(62% 0.16 145);
+  --radius: 14px;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bebas Neue", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --vd-bg: var(--background);
+  --vd-fg: var(--foreground);
+  --vd-card: var(--card, var(--background));
+  --vd-card-fg: var(--card-foreground, var(--foreground));
+  --vd-popover: var(--popover, var(--background));
+  --vd-popover-fg: var(--popover-foreground, var(--foreground));
+  --vd-primary: var(--primary);
+  --vd-primary-fg: var(--primary-foreground);
+  --vd-secondary: var(--secondary);
+  --vd-secondary-fg: var(--secondary-foreground);
+  --vd-muted: var(--muted);
+  --vd-muted-fg: var(--muted-foreground);
+  --vd-accent: var(--accent);
+  --vd-accent-fg: var(--accent-foreground);
+  --vd-border: var(--border);
+  --vd-input: var(--input, var(--border));
+  --vd-ring: var(--ring);
+  --vd-radius: var(--radius);
+  --vd-sidebar: var(--sidebar, var(--background));
+  --vd-sidebar-fg: var(--sidebar-foreground, var(--foreground));
+  --vd-sidebar-primary: var(--sidebar-primary, var(--primary));
+  --vd-sidebar-primary-fg: var(--sidebar-primary-foreground, var(--primary-foreground));
+  --vd-sidebar-accent: var(--sidebar-accent, var(--accent));
+  --vd-sidebar-accent-fg: var(--sidebar-accent-foreground, var(--accent-foreground));
+  --vd-sidebar-border: var(--sidebar-border, var(--border));
+  --vd-sidebar-ring: var(--sidebar-ring, var(--ring));
+  --vd-inverse-bg: var(--vd-fg);
+  --vd-inverse-fg: var(--vd-bg);
+  --vd-font-sans: var(--font-sans);
+  --vd-font-display: var(--font-serif);
+  --vd-font-mono: var(--font-mono);
+  --vd-fab-edge: max(0.5rem, calc((100vw - 80rem) / 2 - 2.5rem));
+  --vd-fab-whatsapp-offset: calc(var(--vd-fab-edge) + 4.75rem);
+  --vd-social-linkedin: oklch(from #0a66c2 l c h);
+  --vd-social-pinterest: oklch(from #e60023 l c h);
+  --vd-social-facebook: oklch(from #1877f2 l c h);
+  --vd-social-instagram: oklch(from #e1306c l c h);
+  --vd-social-x: oklch(from #0f1419 l c h);
+}
+
+.vd-editor * {
+  border-color: var(--vd-border);
+}
+
+.vd-editor {
+  background: var(--vd-bg);
+  color: var(--vd-fg);
+  font-family: var(--vd-font-sans, ui-sans-serif, system-ui, sans-serif);
+}
+
+.vd-editor h1,
+.vd-editor h2,
+.vd-editor .font-display {
+  font-family: var(--vd-font-display, serif);
+}
+
+.vd-editor .container {
+  width: min(1280px, 92vw);
+  margin-inline: auto;
+}
+
+@layer utilities {
+  .vd-editor .font-display {
+    font-family: var(--vd-font-display);
+  }
+  .vd-editor .font-body {
+    font-family: var(--vd-font-sans);
+  }
+  .vd-editor .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .vd-editor .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .vd-editor .snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .vd-editor .snap-y-mandatory {
+    scroll-snap-type: y mandatory;
+  }
+  .vd-editor .glass-panel {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--vd-border);
+  }
+}

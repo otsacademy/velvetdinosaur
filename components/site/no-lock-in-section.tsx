@@ -1,0 +1,80 @@
+import { PoundSterling, ShieldCheck, Waypoints } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+
+type TrustStat = {
+  label: string
+  value: string
+  icon: React.ComponentType<{ className?: string }>
+}
+
+const trustStats: TrustStat[] = [
+  {
+    label: "After Year 1",
+    value: "£120/year hosting",
+    icon: PoundSterling,
+  },
+  {
+    label: "Ownership",
+    value: "100% yours",
+    icon: ShieldCheck,
+  },
+  {
+    label: "Migration path",
+    value: "Supported and smooth",
+    icon: Waypoints,
+  },
+]
+
+export function NoLockInSection() {
+  return (
+    <section id="ownership" className="py-8 md:py-10">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-6 rounded-2xl border border-border bg-card p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
+          <div className="space-y-4">
+            <h2 className="vd-section-heading text-2xl font-semibold">Your website. Your way.</h2>
+            <p className="max-w-2xl text-muted-foreground">
+              No lock-in contracts and no platform traps. You own your domain,
+              content, and website code from day one, with access set up in your
+              name so you stay in control.
+            </p>
+            <p className="max-w-2xl text-muted-foreground">
+              If you ever decide to move providers, we support the migration with
+              handover notes and practical help so your website and email continue
+              running smoothly.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild>
+                <a href="#contact">Talk through your project</a>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="#pricing">See pricing</a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {trustStats.map((stat) => {
+              const Icon = stat.icon
+
+              return (
+                <article
+                  key={stat.label}
+                  className="rounded-xl border border-border bg-background p-4"
+                >
+                  <div className="mb-2 flex items-center justify-between gap-3">
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                      {stat.label}
+                    </p>
+                    <Icon className="h-4 w-4 text-foreground" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">{stat.value}</p>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
