@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 
 export function SiteFooter() {
@@ -48,14 +49,21 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-5 flex flex-col items-center gap-2 border-t border-border pt-5 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="mt-5 flex flex-col gap-3 border-t border-border pt-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p className="text-xs text-muted-foreground">© 2026 Velvet Dinosaur. All rights reserved.</p>
-          <nav className="flex gap-4 text-xs text-muted-foreground">
-            <a href="#home" className="vd-footer-link transition-colors hover:text-foreground">Home</a>
-            <a href="#services" className="vd-footer-link transition-colors hover:text-foreground">Services</a>
-            <a href="#about" className="vd-footer-link transition-colors hover:text-foreground">About</a>
-            <a href="#portfolio" className="vd-footer-link transition-colors hover:text-foreground">Portfolio</a>
-          </nav>
+          <div className="flex flex-col items-center gap-2 sm:items-end">
+            <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground sm:justify-end">
+              <a href="#home" className="vd-footer-link transition-colors hover:text-foreground">Home</a>
+              <a href="#services" className="vd-footer-link transition-colors hover:text-foreground">Services</a>
+              <a href="#about" className="vd-footer-link transition-colors hover:text-foreground">About</a>
+              <a href="#portfolio" className="vd-footer-link transition-colors hover:text-foreground">Portfolio</a>
+              <a href="#contact" className="vd-footer-link transition-colors hover:text-foreground">Contact</a>
+            </nav>
+            <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground sm:justify-end">
+              <Link href="/privacy" className="vd-footer-link transition-colors hover:text-foreground">Privacy Policy</Link>
+              <Link href="/terms" className="vd-footer-link transition-colors hover:text-foreground">Terms of Service</Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

@@ -16,11 +16,17 @@ import { ClientReviewSection } from "./client-review-section"
 import { ContactSection } from "./contact-section"
 import { SiteFooter } from "./site-footer"
 import { ScrollReveal } from "./scroll-reveal"
+import { FloatingWhatsApp } from "./floating-whatsapp"
 
 export function FullSite() {
+  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
+  const whatsappDigits = phoneNumber.replace(/\D/g, "")
+  const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
+
   return (
     <div className="relative min-h-dvh overflow-hidden">
       <EchoNavbar />
+      <FloatingWhatsApp href={whatsappHref} />
 
       <main className="pt-24 md:pt-28">
         <section id="home" className="relative px-6">
@@ -44,8 +50,8 @@ export function FullSite() {
                   buttonClassName: "vd-email-cta h-12 px-6 text-base font-semibold",
                 },
                 secondary: {
-                  text: "View selected work",
-                  url: "#selected-work",
+                  text: "Chat on WhatsApp",
+                  url: whatsappHref,
                   buttonClassName: "h-12 px-6 text-base",
                 },
               }}

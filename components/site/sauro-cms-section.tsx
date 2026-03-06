@@ -1,4 +1,13 @@
-import { LayoutPanelLeft, PenLine, Palette, Upload, Lock, Zap } from "lucide-react"
+import {
+  CalendarDays,
+  Inbox,
+  LayoutPanelLeft,
+  Lock,
+  Palette,
+  PenLine,
+  Upload,
+  Zap,
+} from "lucide-react"
 
 interface Feature {
   icon: React.ElementType
@@ -26,6 +35,16 @@ const features: Feature[] = [
     icon: Upload,
     title: "Cloud media",
     description: "Organise media in cloud-based folders",
+  },
+  {
+    icon: Inbox,
+    title: "Inbox included",
+    description: "Manage enquiries and messages in one place",
+  },
+  {
+    icon: CalendarDays,
+    title: "Calendar included",
+    description: "Built-in scheduling so clients can book directly",
   },
   {
     icon: Lock,
@@ -57,12 +76,11 @@ export function SauroCmsSection() {
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-4 text-2xl font-semibold">Sauro CMS</h2>
         <p className="mb-10 max-w-3xl text-muted-foreground">
-          To give clients flexibility after launch, I&apos;ve developed my own content management
-          system: Sauro CMS. It is designed to make content editing simple while staying
-          tailored to each project. Unlike off-the-shelf CMS platforms, it is customised to
-          your needs, so no two versions are exactly the same.
+          To give clients flexibility after launch, I&apos;ve developed my own content management system: Sauro CMS. It
+          is designed to make content editing simple while staying tailored to each project. Unlike off-the-shelf CMS
+          platforms, it is customised to your needs, so no two versions are exactly the same.
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />
           ))}
