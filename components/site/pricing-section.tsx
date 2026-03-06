@@ -62,43 +62,41 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-          <div className="vd-pricing-card vd-hover-lift-sm rounded-2xl border border-border bg-card p-6 md:p-8">
-            <p className="mb-3 text-sm text-muted-foreground">Complete website package</p>
-            <p className="mb-4 text-5xl font-bold leading-none text-foreground">£2,500</p>
-            <p className="mb-6 text-muted-foreground">
-              A fixed launch package for most small business websites. If your scope
-              includes advanced functionality (for example bookings, portals, or
-              custom integrations), it is scoped and quoted separately before build
-              starts.
-            </p>
-            <p className="mb-6 text-sm text-muted-foreground">
-              Hosting is £120/year after Year 1. Domain registration is not included
-              and can be procured at cost price.
-            </p>
+        <div className="vd-pricing-card vd-hover-lift-sm rounded-2xl border border-border bg-card p-6 md:p-8">
+          <p className="mb-3 text-sm text-muted-foreground">Complete website package</p>
+          <p className="mb-4 text-5xl font-bold leading-none text-foreground">£2,500</p>
+          <p className="mb-6 text-muted-foreground">
+            A fixed launch package for most small business websites. If your scope
+            includes advanced functionality (for example bookings, portals, or
+            custom integrations), it is scoped and quoted separately before build
+            starts.
+          </p>
+          <p className="mb-6 text-sm text-muted-foreground">
+            Hosting is £120/year after Year 1. Domain registration is not included
+            and can be procured at cost price.
+          </p>
 
-            <ul className="mb-8 space-y-3">
-              {packageFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border bg-background">
-                    <Check className="h-3.5 w-3.5 text-foreground" />
-                  </span>
-                  <span className="text-sm text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
+          <ul className="mb-8 space-y-3">
+            {packageFeatures.map((feature) => (
+              <li key={feature} className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border bg-background">
+                  <Check className="h-3.5 w-3.5 text-foreground" />
+                </span>
+                <span className="text-sm text-muted-foreground">{feature}</span>
+              </li>
+            ))}
+          </ul>
 
-            <Button asChild>
-              <a href="#contact" className="inline-flex items-center gap-2">
-                Get a fixed quote for your scope
-                <ChevronRight className="h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+          <Button asChild>
+            <a href="#contact" className="inline-flex items-center gap-2">
+              Get a fixed quote for your scope
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </Button>
 
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+          <div className="mt-8 rounded-xl border border-border bg-background/60 p-5">
             <h3 className="mb-3 text-lg font-semibold">How payments work</h3>
-            <p className="mb-4 text-muted-foreground">
+            <p className="mb-3 text-muted-foreground">
               Projects usually start with a 20% deposit, then milestone payments
               tied to agreed deliverables.
             </p>

@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoaderIcon, MailIcon, MessageCircle, Quote } from 'lucide-react';
+import { LoaderIcon, MailIcon, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -40,13 +40,6 @@ interface FAQ {
   answer: string;
 }
 
-interface ContactTestimonial {
-  quote: string;
-  author: string;
-  role?: string;
-  sourceUrl?: string;
-}
-
 interface WhatsAppContact {
   href: string;
   label?: string;
@@ -58,7 +51,6 @@ interface Contact25Props {
   description?: string;
   faqTitle?: string;
   faqs?: FAQ[];
-  testimonial?: ContactTestimonial;
   whatsapp?: WhatsAppContact;
   className?: string;
   onSubmit?: (data: ContactFormData) => Promise<void>;
@@ -95,7 +87,6 @@ const Contact25 = ({
         'Please include your account email (if applicable), a detailed description of your question or issue, and any relevant screenshots or error messages.',
     },
   ],
-  testimonial,
   whatsapp,
   className,
   onSubmit,
@@ -145,7 +136,7 @@ const Contact25 = ({
             <p className="text-muted-foreground">{description}</p>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-12">
             <div>
               <div className="mb-6 flex items-center gap-2">
                 <MessageCircle className="size-5 text-muted-foreground" />
@@ -168,55 +159,23 @@ const Contact25 = ({
             <div>
               <div className="mb-6 flex items-center gap-2">
                 <MailIcon className="size-5 text-muted-foreground" />
-                <h2 className="vd-section-heading text-lg font-medium">Still have questions?</h2>
+                <h2 className="vd-section-heading text-lg font-medium">Contact form</h2>
               </div>
-              {testimonial || whatsapp ? (
-                <div className="mb-6 space-y-3">
-                  {testimonial ? (
-                    <div className="rounded-xl border border-border bg-card p-4">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Quote className="size-4 text-muted-foreground" />
-                        <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                          Client review
-                        </p>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        &ldquo;{testimonial.quote}&rdquo;
-                      </p>
-                      <p className="mt-2 text-xs text-muted-foreground">
-                        — {testimonial.author}
-                        {testimonial.role ? `, ${testimonial.role}` : ''}
-                      </p>
-                      {testimonial.sourceUrl ? (
-                        <a
-                          href={testimonial.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-2 inline-flex text-xs font-medium text-foreground underline-offset-4 hover:underline"
-                        >
-                          View original review
-                        </a>
-                      ) : null}
-                    </div>
-                  ) : null}
-
-                  {whatsapp?.href ? (
-                    <div className="rounded-xl border border-border bg-card p-4">
-                      <a
-                        href={whatsapp.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
-                      >
-                        <MessageCircle className="size-4" />
-                        {whatsapp.label || 'Message on WhatsApp'}
-                      </a>
-                      {whatsapp.helperText ? (
-                        <p className="mt-1 text-xs text-muted-foreground">
-                          {whatsapp.helperText}
-                        </p>
-                      ) : null}
-                    </div>
+              {whatsapp?.href ? (
+                <div className="mb-6 rounded-xl border border-border bg-card p-4">
+                  <a
+                    href={whatsapp.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+                  >
+                    <MessageCircle className="size-4" />
+                    {whatsapp.label || 'Message on WhatsApp'}
+                  </a>
+                  {whatsapp.helperText ? (
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {whatsapp.helperText}
+                    </p>
                   ) : null}
                 </div>
               ) : null}

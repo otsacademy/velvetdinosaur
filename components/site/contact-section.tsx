@@ -31,15 +31,8 @@ export function ContactSection() {
       <Contact25
         className="py-8 md:py-10"
         title="Contact Velvet Dinosaur"
-        description="Check the FAQ below or send a message and we will reply within one business day."
+        description="Check the FAQ first, then send a message and we will reply within one business day."
         faqTitle="Questions people usually ask"
-        testimonial={{
-          quote:
-            "Phenomenal service and end result from a phenomenal chap. Ian went far beyond expectations and built a site that is user-friendly, strategic, and genuinely tailored to our audience.",
-          author: "Faye Taylor",
-          role: "Founder, The Brave",
-          sourceUrl: "https://maps.app.goo.gl/vxcNWmsFxNUV9zvMA",
-        }}
         whatsapp={{
           href: whatsappHref,
           label: "Message us on WhatsApp",

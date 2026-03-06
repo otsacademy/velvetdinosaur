@@ -12,6 +12,7 @@ import { PricingSection } from "./pricing-section"
 import { WhatsIncludedSection } from "./whats-included-section"
 import { NoLockInSection } from "./no-lock-in-section"
 import { PortfolioSection } from "./portfolio-section"
+import { ClientReviewSection } from "./client-review-section"
 import { ContactSection } from "./contact-section"
 import { SiteFooter } from "./site-footer"
 import { ScrollReveal } from "./scroll-reveal"
@@ -102,6 +103,10 @@ export function FullSite() {
 
         <ScrollReveal delay={100}>
           <PortfolioSection />
+        </ScrollReveal>
+
+        <ScrollReveal delay={100}>
+          <ClientReviewSection />
         </ScrollReveal>
 
         <ScrollReveal delay={100}>

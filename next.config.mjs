@@ -7,6 +7,7 @@ const enableStorePreview =
 const enablePuckContentPreviews =
   process.env.NODE_ENV !== 'production' ||
   process.env.VD_ENABLE_PUCK_CONTENT_PREVIEWS === 'true';
+const distDir = process.env.NEXT_DIST_DIR?.trim();
 const previewAliasesTurbopack = {
   ...(enableStorePreview
     ? {}
@@ -41,6 +42,7 @@ const previewAliasesWebpack = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ...(distDir ? { distDir } : {}),
   cacheComponents: true,
   reactStrictMode: true,
   async redirects() {
