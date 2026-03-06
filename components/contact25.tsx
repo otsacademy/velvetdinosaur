@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoaderIcon, MailIcon, MessageCircle } from 'lucide-react';
+import { Clock3, LoaderIcon, MailIcon, MessageCircle, Star } from 'lucide-react';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -110,7 +110,6 @@ const Contact25 = ({
       if (onSubmit) {
         await onSubmit(data);
       } else {
-        console.log('Form submitted:', data);
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
       setIsSubmitted(true);
@@ -126,43 +125,60 @@ const Contact25 = ({
   };
 
   return (
-    <section className={cn('py-32', className)}>
+    <section className={cn('py-20', className)}>
       <div className="container">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-14 text-center">
-            <h1 className="vd-section-heading mb-4 text-4xl font-medium tracking-tight md:text-5xl">
-              {title}
-            </h1>
-            <p className="text-muted-foreground">{description}</p>
+        <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-gradient-to-br from-background via-background to-muted/30 p-6 md:p-10">
+          <div className="mb-10 max-w-3xl space-y-3">
+            <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+              Let&apos;s build something valuable
+            </p>
+            <h2 className="vd-section-heading text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+            <p className="text-foreground/80">{description}</p>
           </div>
 
-          <div className="space-y-12">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="rounded-2xl border border-border bg-background/70 p-5 md:p-6">
               <div className="mb-6 flex items-center gap-2">
                 <MessageCircle className="size-5 text-muted-foreground" />
-                <h2 className="vd-section-heading text-lg font-medium">{faqTitle}</h2>
+                <h3 className="vd-section-heading text-lg font-medium">{faqTitle}</h3>
               </div>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="vd-faq-item">
-                    <AccordionTrigger className="text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
+                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
 
-            <div>
-              <div className="mb-6 flex items-center gap-2">
+            <div className="rounded-2xl border border-border bg-background/75 p-5 md:p-6">
+              <div className="mb-4 flex items-center gap-2">
                 <MailIcon className="size-5 text-muted-foreground" />
-                <h2 className="vd-section-heading text-lg font-medium">Contact form</h2>
+                <h3 className="vd-section-heading text-lg font-medium">Project enquiry</h3>
               </div>
+
+              <p className="mb-4 text-sm text-foreground/80">You&apos;ll hear directly from Ian with clear next steps.</p>
+
+              <div className="mb-5 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl border border-border bg-muted/45 p-3">
+                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <Star className="h-3.5 w-3.5 text-primary" />
+                    Google rating
+                  </p>
+                  <p className="text-sm font-semibold text-foreground">5.0 average from clients</p>
+                </div>
+                <div className="rounded-xl border border-border bg-muted/45 p-3">
+                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <Clock3 className="h-3.5 w-3.5 text-primary" />
+                    Typical response
+                  </p>
+                  <p className="text-sm font-semibold text-foreground">Within 1 business day</p>
+                </div>
+              </div>
+
               {whatsapp?.href ? (
-                <div className="mb-6 rounded-xl border border-border bg-card p-4">
+                <div className="mb-5 rounded-xl border border-border bg-card p-4">
                   <a
                     href={whatsapp.href}
                     target="_blank"
@@ -173,15 +189,14 @@ const Contact25 = ({
                     {whatsapp.label || 'Message on WhatsApp'}
                   </a>
                   {whatsapp.helperText ? (
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      {whatsapp.helperText}
-                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">{whatsapp.helperText}</p>
                   ) : null}
                 </div>
               ) : null}
+
               <form
                 onSubmit={form.handleSubmit(handleFormSubmit)}
-                className="vd-contact-form flex flex-col gap-6 rounded-xl bg-muted/50 p-8"
+                className="vd-contact-form flex flex-col gap-5 rounded-xl bg-muted/40 p-5"
               >
                 {isSubmitted && (
                   <div
@@ -212,9 +227,7 @@ const Contact25 = ({
                           placeholder="Your name"
                           className="bg-background"
                         />
-                        {fieldState.invalid && (
-                          <FieldError errors={[fieldState.error]} />
-                        )}
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>
                     )}
                   />
@@ -235,9 +248,7 @@ const Contact25 = ({
                           placeholder="you@example.com"
                           className="bg-background"
                         />
-                        {fieldState.invalid && (
-                          <FieldError errors={[fieldState.error]} />
-                        )}
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>
                     )}
                   />
@@ -254,35 +265,27 @@ const Contact25 = ({
                           {...field}
                           id={field.name}
                           aria-invalid={fieldState.invalid}
-                          placeholder="How can we help?"
+                          placeholder="Tell me what you need and where your current site is falling short."
                           rows={4}
                           className="bg-background"
                         />
-                        {fieldState.invalid && (
-                          <FieldError errors={[fieldState.error]} />
-                        )}
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>
                     )}
                   />
 
                   {form.formState.errors.root && (
-                    <p className="text-sm text-destructive">
-                      {form.formState.errors.root.message}
-                    </p>
+                    <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
                   )}
 
-                  <Button
-                    size="lg"
-                    className="w-full"
-                    disabled={form.formState.isSubmitting}
-                  >
+                  <Button size="lg" className="w-full" disabled={form.formState.isSubmitting}>
                     {form.formState.isSubmitting ? (
                       <>
                         <LoaderIcon className="mr-2 size-4 animate-spin" />
                         Sending...
                       </>
                     ) : (
-                      'Send Message'
+                      'Start your project'
                     )}
                   </Button>
                 </FieldGroup>

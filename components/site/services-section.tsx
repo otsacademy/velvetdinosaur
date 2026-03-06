@@ -20,7 +20,7 @@ function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-8 md:py-10">
+    <section id="services" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Services</h2>
 

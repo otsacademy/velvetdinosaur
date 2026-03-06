@@ -73,7 +73,7 @@ function ReviewCard({ name, company, quote, date, sourceUrl, className }: Review
 
 export function GoogleReviewsSection() {
   return (
-    <section id="reviews" className="py-8 md:py-10">
+    <section id="reviews" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-6 space-y-2">
           <h2 className="vd-section-heading text-2xl font-semibold">Google reviews</h2>

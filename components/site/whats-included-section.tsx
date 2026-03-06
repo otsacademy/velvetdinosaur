@@ -18,38 +18,32 @@ type IncludedItem = {
 const includedItems: IncludedItem[] = [
   {
     title: "Managed hosting",
-    description:
-      "Your site stays fast, monitored, and maintained without you managing servers.",
+    description: "Your site stays fast, monitored, and maintained without you managing servers.",
     icon: Cloud,
   },
   {
     title: "SSL security",
-    description:
-      "Your website runs on secure HTTPS so visitors see a trusted connection.",
+    description: "Your website runs on secure HTTPS so visitors see a trusted connection.",
     icon: Lock,
   },
   {
     title: "Backups",
-    description:
-      "Daily backups are stored off-site, with fast restore support if needed.",
+    description: "Daily backups are stored off-site, with fast restore support if needed.",
     icon: ShieldCheck,
   },
   {
     title: "Email setup",
-    description:
-      "A working address like you@yourdomain.com with DNS and deliverability configured correctly.",
+    description: "A working address like you@yourdomain.com with DNS and deliverability configured correctly.",
     icon: Mail,
   },
   {
     title: "Support portal",
-    description:
-      "One organised place to request changes, check status, and track decisions.",
+    description: "One organised place to request changes, check status, and track decisions.",
     icon: LifeBuoy,
   },
   {
     title: "Domain migration",
-    description:
-      "We manage the technical switch so your website and email stay online.",
+    description: "We manage the technical switch so your website and email stay online.",
     icon: ArrowLeftRight,
   },
   {
@@ -66,13 +60,12 @@ const includedItems: IncludedItem[] = [
 
 export function WhatsIncludedSection() {
   return (
-    <section id="included" className="py-8 md:py-10">
+    <section id="included" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-6 space-y-2">
           <h2 className="vd-section-heading text-2xl font-semibold">What&apos;s included</h2>
-          <p className="max-w-3xl text-muted-foreground">
-            The £2,500 package is designed to cover launch essentials without
-            hidden extras.
+          <p className="max-w-3xl text-foreground/80">
+            The £2,500 package is designed to cover launch essentials without hidden extras.
           </p>
         </div>
 
@@ -83,13 +76,13 @@ export function WhatsIncludedSection() {
             return (
               <article
                 key={item.title}
-                className="vd-hover-lift-sm vd-icon-card rounded-2xl border border-border bg-card p-5"
+                className="vd-hover-lift-sm rounded-2xl border border-border bg-gradient-to-br from-background to-muted/45 p-5"
               >
-                <div className="vd-icon-badge mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background">
-                  <Icon className="vd-icon-accent h-4 w-4 text-foreground" />
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
+                  <Icon className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="mb-1 font-medium text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="mb-1 font-semibold text-foreground">{item.title}</h3>
+                <p className="text-sm text-foreground/75">{item.description}</p>
               </article>
             )
           })}

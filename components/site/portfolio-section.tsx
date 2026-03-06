@@ -57,7 +57,7 @@ function CaseStudyCard({ title, subtitle, description }: CaseStudy) {
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-8 md:py-10">
+    <section id="portfolio" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Portfolio</h2>
         <div className="grid gap-6 sm:grid-cols-2">

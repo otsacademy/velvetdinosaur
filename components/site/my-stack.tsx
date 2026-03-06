@@ -76,7 +76,7 @@ function StackItem({ name, icon }: StackItem) {
 
 export function MyStack() {
   return (
-    <section className="py-8 md:py-10">
+    <section className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">My stack</h2>
         <ul className="flex flex-wrap justify-center gap-6 sm:gap-8 md:justify-between">

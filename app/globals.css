@@ -189,7 +189,6 @@ body {
 }
 
 h1,
-h2,
 .font-display {
   font-family: var(--vd-font-display, serif);
 }
@@ -280,6 +279,9 @@ h2,
   .vd-section-heading {
     position: relative;
     display: inline-block;
+    font-family: var(--vd-font-sans, ui-sans-serif, system-ui, sans-serif);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
   }
 
   .vd-section-heading::after {
@@ -287,11 +289,11 @@ h2,
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -0.45rem;
-    height: 0.18rem;
+    bottom: -0.38rem;
+    height: 0.14rem;
     border-radius: 999px;
-    opacity: 0.65;
-    transform: scaleX(0.18);
+    opacity: 0.55;
+    transform: scaleX(0.3);
     transform-origin: left center;
     transition: transform 320ms var(--vd-hover-ease), opacity 320ms var(--vd-hover-ease);
     background: linear-gradient(
@@ -305,6 +307,14 @@ h2,
   .vd-section-heading:hover::after {
     opacity: 1;
     transform: scaleX(1);
+  }
+
+  .vd-nav-icon-label {
+    white-space: nowrap;
+  }
+
+  .vd-hero-origin {
+    text-wrap: pretty;
   }
 
   .vd-hover-lift,

@@ -1,12 +1,13 @@
 "use client"
 
-import { House, Briefcase, User, Sparkles, Mail, Sun, Moon } from "lucide-react"
+import type { ElementType, MouseEvent } from "react"
 import { useEffect, useState } from "react"
+import { Briefcase, House, Images, Mail, Moon, Sun, UserRound } from "lucide-react"
+
 import { cn } from "@/lib/utils"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 interface NavItem {
-  icon: React.ElementType
+  icon: ElementType
   label: string
   href: string
 }
@@ -14,8 +15,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { icon: House, label: "Home", href: "#home" },
   { icon: Briefcase, label: "Services", href: "#services" },
-  { icon: User, label: "About", href: "#about" },
-  { icon: Sparkles, label: "Portfolio", href: "#portfolio" },
+  { icon: UserRound, label: "About", href: "#about" },
+  { icon: Images, label: "Work", href: "#portfolio" },
 ]
 
 function NavButton({
@@ -23,11 +24,16 @@ function NavButton({
   label,
   href,
   isActive,
+  highlight,
   onClick,
-}: NavItem & { isActive?: boolean; onClick?: () => void }) {
+}: NavItem & {
+  isActive?: boolean
+  highlight?: boolean
+  onClick?: () => void
+}) {
   const isExternal = href.startsWith("mailto:") || href.startsWith("http")
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (!isExternal && href.startsWith("#")) {
       e.preventDefault()
       const target = document.querySelector(href)
@@ -39,26 +45,23 @@ function NavButton({
   }
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <a
-          href={href}
-          onClick={handleClick}
-          className={cn(
-            "vd-nav-icon flex h-10 w-10 items-center justify-center rounded-full transition-colors",
-            isActive
-              ? "bg-foreground/15 text-foreground"
-              : "bg-muted text-muted-foreground hover:text-primary"
-          )}
-          aria-label={label}
-        >
-          <Icon className="vd-nav-icon-svg h-5 w-5" />
-        </a>
-      </TooltipTrigger>
-      <TooltipContent side="bottom" sideOffset={8}>
-        <p>{label}</p>
-      </TooltipContent>
-    </Tooltip>
+    <a
+      href={href}
+      onClick={handleClick}
+      className={cn(
+        "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3 text-sm font-medium transition-colors",
+        highlight
+          ? "border-primary/35 bg-primary text-primary-foreground hover:bg-primary/90"
+          : isActive
+            ? "border-primary/30 bg-primary/10 text-foreground"
+            : "border-border bg-background/80 text-muted-foreground hover:text-foreground"
+      )}
+      aria-label={label}
+      aria-current={isActive ? "page" : undefined}
+    >
+      <Icon className="h-4 w-4" />
+      <span className="vd-nav-icon-label leading-none">{label}</span>
+    </a>
   )
 }
 
@@ -82,32 +85,15 @@ function ThemeToggle() {
     localStorage.setItem("theme", newIsDark ? "dark" : "light")
   }
 
-  if (!mounted) {
-    return (
-      <button
-        className="vd-theme-toggle flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground"
-        aria-label="Toggle theme"
-      >
-        <Sun className="h-5 w-5" />
-      </button>
-    )
-  }
-
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <button
-          onClick={toggleTheme}
-          className="vd-theme-toggle flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-foreground/10 hover:text-foreground"
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-        </button>
-      </TooltipTrigger>
-      <TooltipContent side="bottom" sideOffset={8}>
-        <p>{isDark ? "Light mode" : "Dark mode"}</p>
-      </TooltipContent>
-    </Tooltip>
+    <button
+      onClick={toggleTheme}
+      className="vd-theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground transition-colors hover:text-foreground"
+      aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
+      type="button"
+    >
+      {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    </button>
   )
 }
 
@@ -117,12 +103,12 @@ export function EchoNavbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.replace("#", ""))
-      const scrollPosition = window.scrollY + 200
+      const scrollPosition = window.scrollY + 180
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i])
+      for (let index = sections.length - 1; index >= 0; index -= 1) {
+        const section = document.getElementById(sections[index])
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i])
+          setActiveSection(sections[index])
           break
         }
       }
@@ -134,10 +120,10 @@ export function EchoNavbar() {
   }, [])
 
   return (
-    <TooltipProvider delayDuration={100}>
-      <header className="supports-backdrop-filter:bg-background/60 fixed left-0 right-0 top-0 z-50 w-full backdrop-blur">
-        <nav className="mx-auto mt-5 flex max-w-6xl items-center justify-between gap-4 px-6 md:mt-8">
-          <div className="flex items-center gap-3">
+    <header className="supports-backdrop-filter:bg-background/60 fixed left-0 right-0 top-0 z-50 w-full backdrop-blur">
+      <div className="mx-auto mt-4 max-w-6xl px-4 md:mt-6 md:px-6">
+        <div className="flex items-center gap-2 rounded-full border border-border/70 bg-background/70 p-2 shadow-[0_18px_36px_-30px_color-mix(in_oklch,oklch(var(--vd-foreground))_30%,transparent)]">
+          <nav className="flex min-w-0 grow items-center gap-2 overflow-x-auto pb-0.5 no-scrollbar">
             {navItems.map((item) => (
               <NavButton
                 key={item.href}
@@ -145,17 +131,11 @@ export function EchoNavbar() {
                 isActive={activeSection === item.href.replace("#", "")}
               />
             ))}
-          </div>
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <NavButton
-              icon={Mail}
-              label="Contact"
-              href="#contact"
-            />
-          </div>
-        </nav>
-      </header>
-    </TooltipProvider>
+          </nav>
+          <ThemeToggle />
+          <NavButton icon={Mail} label="Contact" href="#contact" highlight />
+        </div>
+      </div>
+    </header>
   )
 }

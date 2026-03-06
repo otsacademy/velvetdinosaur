@@ -29,14 +29,14 @@ export function ContactSection() {
   return (
     <div id="contact">
       <Contact25
-        className="py-8 md:py-10"
-        title="Contact Velvet Dinosaur"
-        description="Check the FAQ first, then send a message and we will reply within one business day."
+        className="py-6 md:py-8"
+        title="Let's talk about your project"
+        description="Share your goals, current pain points, and timeline. You will get a clear response within one business day."
         faqTitle="Questions people usually ask"
         whatsapp={{
           href: whatsappHref,
-          label: "Message us on WhatsApp",
-          helperText: "Prefer chat? WhatsApp is usually the fastest way to reach us.",
+          label: "Quick chat on WhatsApp",
+          helperText: "Prefer chat first? WhatsApp is often the fastest route.",
         }}
         faqs={[
           {

@@ -1,15 +1,22 @@
-import { Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border py-8 md:py-10">
+    <footer className="border-t border-border py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-          <div className="flex flex-col items-center gap-2 sm:items-start">
-            <p className="text-sm font-medium text-foreground">Velvet Dinosaur</p>
-            <p className="text-sm text-muted-foreground">
-              Bespoke websites and apps built to last.
+        <div className="flex flex-col gap-6 rounded-2xl border border-border bg-gradient-to-br from-background to-muted/35 p-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-foreground">Velvet Dinosaur</p>
+            <p className="max-w-md text-sm text-foreground/80">
+              Bespoke websites and apps that are fast, elegant, and built for long-term ownership.
             </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
+            >
+              Ready to launch something better?
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
 
           <div className="flex items-center gap-4">
@@ -41,10 +48,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col items-center gap-2 border-t border-border pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <p className="text-xs text-muted-foreground">
-            © 2026 Velvet Dinosaur. All rights reserved.
-          </p>
+        <div className="mt-5 flex flex-col items-center gap-2 border-t border-border pt-5 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p className="text-xs text-muted-foreground">© 2026 Velvet Dinosaur. All rights reserved.</p>
           <nav className="flex gap-4 text-xs text-muted-foreground">
             <a href="#home" className="vd-footer-link transition-colors hover:text-foreground">Home</a>
             <a href="#services" className="vd-footer-link transition-colors hover:text-foreground">Services</a>

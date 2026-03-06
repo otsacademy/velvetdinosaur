@@ -53,7 +53,7 @@ function FeatureCard({ icon: Icon, title, description }: Feature) {
 
 export function SauroCmsSection() {
   return (
-    <section className="py-8 md:py-10">
+    <section className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-4 text-2xl font-semibold">Sauro CMS</h2>
         <p className="mb-10 max-w-3xl text-muted-foreground">

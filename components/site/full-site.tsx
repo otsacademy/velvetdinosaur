@@ -24,10 +24,7 @@ export function FullSite() {
 
       <main className="pt-24 md:pt-28">
         <section id="home" className="relative px-6">
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 holding-bg"
-            aria-hidden="true"
-          />
+          <div className="pointer-events-none absolute inset-0 -z-10 holding-bg" aria-hidden="true" />
           <div
             className="pointer-events-none absolute inset-0 -z-10 opacity-[0.22] [background-image:radial-gradient(circle_at_1px_1px,color-mix(in_oklch,oklch(var(--vd-foreground))_18%,transparent)_1px,transparent_0)] [background-size:22px_22px]"
             aria-hidden="true"
@@ -35,12 +32,22 @@ export function FullSite() {
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="animate-vd-fade-up py-12 md:py-16 lg:py-20"
-              badge="17 Years of Experience"
-              heading="Named by a 3-year-old who loves dinosaurs. Backed by 17 years of experience."
-              description="We build websites that look exceptional, load instantly, and stay secure, so your business can grow without wrestling with tech."
+              className="animate-vd-fade-up py-10 md:py-14 lg:py-16"
+              badge="17 years of product and platform experience"
+              heading="Fast, beautiful, secure websites that turn visitors into clients."
+              description="Work directly with an experienced developer to launch a custom site built for conversion, search visibility, and long-term maintainability."
+              supportingLine="Named by a 3-year-old who loved blue dinosaurs. Built with senior-level engineering discipline."
               buttons={{
-                primary: { text: "Email us", url: "#contact", className: "vd-email-cta" },
+                primary: {
+                  text: "Start your project",
+                  url: "#contact",
+                  buttonClassName: "vd-email-cta h-12 px-6 text-base font-semibold",
+                },
+                secondary: {
+                  text: "View selected work",
+                  url: "#selected-work",
+                  buttonClassName: "h-12 px-6 text-base",
+                },
               }}
               imageSlot={
                 <div className="animate-vd-float [animation-delay:220ms]">
@@ -52,7 +59,7 @@ export function FullSite() {
                       grayscaleAnimation
                       colorRevealDelay={1500}
                       className="rounded-xl"
-                      sizeClassName="h-[min(26rem,84vw)] w-[min(26rem,84vw)] sm:h-[min(30rem,70vw)] sm:w-[min(30rem,70vw)] lg:h-[min(34rem,42vw)] lg:w-[min(34rem,42vw)]"
+                      sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
                     />
                   </div>
                 </div>
@@ -65,53 +72,67 @@ export function FullSite() {
           <SelectedWork />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <GoogleReviewsSection />
-        </ScrollReveal>
+        <div className="bg-muted/35">
+          <ScrollReveal delay={100}>
+            <GoogleReviewsSection />
+          </ScrollReveal>
+        </div>
 
         <ScrollReveal delay={100}>
           <MyStack />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <AboutSection />
-        </ScrollReveal>
+        <div className="bg-accent/30">
+          <ScrollReveal delay={100}>
+            <AboutSection />
+          </ScrollReveal>
+        </div>
 
         <ScrollReveal delay={100}>
           <ServicesSection />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <SauroCmsSection />
-        </ScrollReveal>
+        <div className="bg-muted/30">
+          <ScrollReveal delay={100}>
+            <SauroCmsSection />
+          </ScrollReveal>
+        </div>
 
-        <ScrollReveal delay={100}>
-          <PageSpeedGuaranteeSection />
-        </ScrollReveal>
+        <div className="bg-accent/35">
+          <ScrollReveal delay={100}>
+            <PageSpeedGuaranteeSection />
+          </ScrollReveal>
+        </div>
 
         <ScrollReveal delay={100}>
           <PricingSection />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <WhatsIncludedSection />
-        </ScrollReveal>
+        <div className="bg-muted/30">
+          <ScrollReveal delay={100}>
+            <WhatsIncludedSection />
+          </ScrollReveal>
+        </div>
 
         <ScrollReveal delay={100}>
           <NoLockInSection />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <PortfolioSection />
-        </ScrollReveal>
+        <div className="bg-accent/25">
+          <ScrollReveal delay={100}>
+            <PortfolioSection />
+          </ScrollReveal>
+        </div>
 
         <ScrollReveal delay={100}>
           <ClientReviewSection />
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <ContactSection />
-        </ScrollReveal>
+        <div className="bg-muted/35">
+          <ScrollReveal delay={100}>
+            <ContactSection />
+          </ScrollReveal>
+        </div>
 
         <SiteFooter />
       </main>

@@ -22,7 +22,7 @@ function Highlight({ icon: Icon, label, value }: HighlightProps) {
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-8 md:py-10">
+    <section id="about" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">About me</h2>
 
