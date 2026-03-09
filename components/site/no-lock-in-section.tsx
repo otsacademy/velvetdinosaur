@@ -32,7 +32,8 @@ export function NoLockInSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-6 rounded-2xl border border-border bg-card p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-4">
-            <h2 className="vd-section-heading text-2xl font-semibold">Your website. Your way.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">Ownership model</p>
+            <h2 className="text-3xl font-semibold tracking-tight">Your website. Your way.</h2>
             <p className="max-w-2xl text-muted-foreground">
               No lock-in contracts and no platform traps. You own your domain,
               content, and website code from day one, with access set up in your

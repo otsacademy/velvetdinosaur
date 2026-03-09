@@ -9,9 +9,7 @@ import { ServicesSection } from "./services-section"
 import { SauroCmsSection } from "./sauro-cms-section"
 import { PageSpeedGuaranteeSection } from "./pagespeed-guarantee-section"
 import { PricingSection } from "./pricing-section"
-import { WhatsIncludedSection } from "./whats-included-section"
 import { NoLockInSection } from "./no-lock-in-section"
-import { PortfolioSection } from "./portfolio-section"
 import { ClientReviewSection } from "./client-review-section"
 import { ContactSection } from "./contact-section"
 import { SiteFooter } from "./site-footer"
@@ -57,7 +55,7 @@ export function FullSite() {
               }}
               imageSlot={
                 <div className="animate-vd-float [animation-delay:220ms]">
-                  <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-border/60 bg-background/45 p-3 shadow-[0_35px_90px_-45px_color-mix(in_oklch,oklch(var(--vd-foreground))_35%,transparent)] backdrop-blur">
+                  <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-transparent p-3 shadow-none backdrop-blur-none hover:border-border/60 hover:bg-background/45 hover:backdrop-blur">
                     <PixelImage
                       src="/dinosaur.webp"
                       alt="Velvet Dinosaur mascot assembling from grayscale to full color"
@@ -78,7 +76,7 @@ export function FullSite() {
           <SelectedWork />
         </ScrollReveal>
 
-        <div className="bg-muted/35">
+        <div className="bg-[color-mix(in_srgb,var(--vd-muted)_82%,var(--vd-bg))]">
           <ScrollReveal delay={100}>
             <GoogleReviewsSection />
           </ScrollReveal>
@@ -88,7 +86,7 @@ export function FullSite() {
           <MyStack />
         </ScrollReveal>
 
-        <div className="bg-accent/30">
+        <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
           <ScrollReveal delay={100}>
             <AboutSection />
           </ScrollReveal>
@@ -98,13 +96,13 @@ export function FullSite() {
           <ServicesSection />
         </ScrollReveal>
 
-        <div className="bg-muted/30">
+        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_12%,var(--vd-muted))]">
           <ScrollReveal delay={100}>
             <SauroCmsSection />
           </ScrollReveal>
         </div>
 
-        <div className="bg-accent/35">
+        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_8%,var(--vd-accent))]">
           <ScrollReveal delay={100}>
             <PageSpeedGuaranteeSection />
           </ScrollReveal>
@@ -114,19 +112,9 @@ export function FullSite() {
           <PricingSection />
         </ScrollReveal>
 
-        <div className="bg-muted/30">
+        <div className="bg-[color-mix(in_srgb,var(--vd-accent)_65%,var(--vd-bg))]">
           <ScrollReveal delay={100}>
-            <WhatsIncludedSection />
-          </ScrollReveal>
-        </div>
-
-        <ScrollReveal delay={100}>
-          <NoLockInSection />
-        </ScrollReveal>
-
-        <div className="bg-accent/25">
-          <ScrollReveal delay={100}>
-            <PortfolioSection />
+            <NoLockInSection />
           </ScrollReveal>
         </div>
 
@@ -134,7 +122,7 @@ export function FullSite() {
           <ClientReviewSection />
         </ScrollReveal>
 
-        <div className="bg-muted/35">
+        <div className="bg-[color-mix(in_srgb,var(--vd-muted)_84%,var(--vd-bg))]">
           <ScrollReveal delay={100}>
             <ContactSection />
           </ScrollReveal>

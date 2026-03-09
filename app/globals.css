@@ -421,15 +421,18 @@ h1,
 
     .vd-tech-stack-item:hover .vd-tech-stack-shell {
       transform: translateY(-4px) scale(1.04);
-      box-shadow: 0 14px 28px -20px color-mix(in oklch, var(--vd-interaction-blue) 56%, transparent);
+      background: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 12%, var(--vd-muted));
+      border-color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 26%, var(--vd-border));
+      box-shadow: 0 14px 28px -20px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 55%, transparent);
     }
 
     .vd-tech-stack-item:hover .vd-tech-stack-icon {
-      color: var(--vd-interaction-blue);
+      color: var(--vd-tech-brand, var(--vd-interaction-blue));
+      filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 40%, transparent));
     }
 
     .vd-tech-stack-item:hover .vd-tech-stack-label {
-      color: var(--vd-interaction-blue);
+      color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 78%, var(--vd-fg));
     }
 
     .vd-icon-card:hover .vd-icon-badge {

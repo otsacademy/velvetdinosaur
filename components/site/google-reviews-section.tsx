@@ -76,7 +76,7 @@ export function GoogleReviewsSection() {
     <section id="reviews" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-6 space-y-2">
-          <h2 className="vd-section-heading text-2xl font-semibold">Google reviews</h2>
+          <h2 className="text-2xl font-semibold">Google reviews</h2>
           <p className="max-w-3xl text-muted-foreground">
             Independent feedback from clients who trusted Velvet Dinosaur with
             redesigns, migrations, and full builds.

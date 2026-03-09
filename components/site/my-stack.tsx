@@ -2,6 +2,7 @@
 interface StackItem {
   name: string
   icon: React.ReactNode
+  brandColor: string
 }
 
 const NextjsIcon = () => (
@@ -53,20 +54,24 @@ const BetterAuthIcon = () => (
 )
 
 const stackItems: StackItem[] = [
-  { name: "Next.js", icon: <NextjsIcon /> },
-  { name: "React", icon: <ReactIcon /> },
-  { name: "Tailwind CSS", icon: <TailwindIcon /> },
-  { name: "MongoDB", icon: <MongoDBIcon /> },
-  { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
-  { name: "React Native", icon: <ReactNativeIcon /> },
-  { name: "shadcn/ui", icon: <ShadcnIcon /> },
-  { name: "Better Auth", icon: <BetterAuthIcon /> },
+  { name: "Next.js", icon: <NextjsIcon />, brandColor: "#111111" },
+  { name: "React", icon: <ReactIcon />, brandColor: "#61DAFB" },
+  { name: "Tailwind CSS", icon: <TailwindIcon />, brandColor: "#06B6D4" },
+  { name: "MongoDB", icon: <MongoDBIcon />, brandColor: "#47A248" },
+  { name: "PostgreSQL", icon: <PostgreSQLIcon />, brandColor: "#336791" },
+  { name: "React Native", icon: <ReactNativeIcon />, brandColor: "#61DAFB" },
+  { name: "shadcn/ui", icon: <ShadcnIcon />, brandColor: "#111111" },
+  // Better Auth does not currently expose a stable public brand token, so we use the site accent blue.
+  { name: "Better Auth", icon: <BetterAuthIcon />, brandColor: "#3AAFED" },
 ]
 
-function StackItem({ name, icon }: StackItem) {
+function StackItem({ name, icon, brandColor }: StackItem) {
   return (
-    <li className="vd-tech-stack-item flex flex-col items-center gap-2">
-      <div className="vd-tech-stack-shell flex h-[80px] w-[80px] items-center justify-center rounded-2xl bg-muted text-muted-foreground transition-colors hover:bg-muted/80">
+    <li
+      className="vd-tech-stack-item flex flex-col items-center gap-2"
+      style={{ "--vd-tech-brand": brandColor } as React.CSSProperties}
+    >
+      <div className="vd-tech-stack-shell flex h-[80px] w-[80px] items-center justify-center rounded-2xl border border-border/70 bg-muted text-muted-foreground">
         {icon}
       </div>
       <span className="vd-tech-stack-label text-xs font-medium text-muted-foreground">{name}</span>
@@ -78,7 +83,7 @@ export function MyStack() {
   return (
     <section className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="vd-section-heading mb-6 text-2xl font-semibold">My stack</h2>
+        <h2 className="mb-6 text-2xl font-semibold">My stack</h2>
         <ul className="flex flex-wrap justify-center gap-6 sm:gap-8 md:justify-between">
           {stackItems.map((item) => (
             <StackItem key={item.name} {...item} />

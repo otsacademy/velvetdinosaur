@@ -4,6 +4,7 @@ import { ArrowUpRight, ExternalLink } from "lucide-react"
 interface WorkItem {
   id: string
   title: string
+  subtitle: string
   website: string
   image: string
   imageAlt: string
@@ -15,6 +16,7 @@ const workItems: WorkItem[] = [
   {
     id: "asap",
     title: "Academics Stand Against Poverty",
+    subtitle: "International academic network fighting poverty",
     website: "https://academicsstand.org",
     image: "/portfolio/asap.png",
     imageAlt: "Screenshot of the Academics Stand Against Poverty website",
@@ -24,6 +26,7 @@ const workItems: WorkItem[] = [
   {
     id: "the-brave",
     title: "The Brave",
+    subtitle: "Values-led ethical tourism platform",
     website: "https://thebrave.online",
     image: "/portfolio/the-brave.png",
     imageAlt: "Screenshot of The Brave website homepage",
@@ -33,6 +36,7 @@ const workItems: WorkItem[] = [
   {
     id: "rising-dust",
     title: "Rising Dust Adventures",
+    subtitle: "Premium motorcycle expedition company",
     website: "https://risingdustadventures.com",
     image: "/portfolio/rising-dust.png",
     imageAlt: "Screenshot of Rising Dust Adventures expedition website",
@@ -42,6 +46,7 @@ const workItems: WorkItem[] = [
   {
     id: "scholardemia",
     title: "Scholardemia",
+    subtitle: "Academic social networking and research management platform",
     website: "https://scholardemia.com",
     image: "/portfolio/scholardemia.png",
     imageAlt: "Screenshot of Scholardemia sign-in experience",
@@ -50,7 +55,7 @@ const workItems: WorkItem[] = [
   },
 ]
 
-function WorkCard({ title, website, image, imageAlt, description, outcome }: WorkItem) {
+function WorkCard({ title, subtitle, website, image, imageAlt, description, outcome }: WorkItem) {
   return (
     <a
       href={website}
@@ -75,11 +80,16 @@ function WorkCard({ title, website, image, imageAlt, description, outcome }: Wor
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-foreground transition-colors group-hover:text-primary">{title}</h3>
+          <div>
+            <h3 className="font-semibold text-foreground transition-colors group-hover:text-primary">{title}</h3>
+            <p className="text-xs text-muted-foreground">{subtitle}</p>
+          </div>
           <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
         </div>
         <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-        <p className="mt-2 text-sm text-foreground/80">{outcome}</p>
+        <p className="mt-2 text-sm text-foreground/80">
+          <span className="font-semibold text-foreground">Outcome:</span> {outcome}
+        </p>
       </div>
     </a>
   )
@@ -87,7 +97,7 @@ function WorkCard({ title, website, image, imageAlt, description, outcome }: Wor
 
 export function SelectedWork() {
   return (
-    <section id="selected-work" className="py-6 md:py-8">
+    <section id="portfolio" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-6 space-y-2">
           <h2 className="vd-section-heading text-2xl font-semibold">Selected work</h2>

@@ -1,56 +1,72 @@
 import { Check, ChevronRight } from "lucide-react"
 
+import { Timeline12, type Timeline12Item } from "@/components/timeline12"
 import { Button } from "@/components/ui/button"
 
-type ProcessStep = {
-  number: number
-  title: string
-  description: string
-}
-
 const packageFeatures: string[] = [
-  "Custom design and build tailored to your goals, audience, and offer",
-  "Up to 8 sections (single-page) or 8 standard pages mapped to your customer journey",
-  "SEO-ready structure with metadata, sitemap, indexing controls, and crawlable links",
-  "Performance optimisation for fast loading on both mobile and desktop",
-  "Contact forms and core integrations (email, maps, and scheduling) configured and tested",
-  "Launch support, handover guidance, and clear next steps after go-live",
+  "Custom design and build tailored to your goals, audience, and offer.",
+  "Up to 8 sections (single-page) or 8 standard pages mapped to your customer journey.",
+  "SEO-ready structure with metadata, sitemap, indexing controls, and crawlable links.",
+  "Performance optimisation for fast loading on mobile and desktop.",
+  "Contact forms and core integrations (email, maps, and scheduling) configured and tested.",
+  "Launch support, handover guidance, and clear next steps after go-live.",
 ]
 
-const processSteps: ProcessStep[] = [
+const launchEssentials: string[] = [
+  "Managed hosting and monitoring",
+  "SSL security and daily off-site backups",
+  "Email setup and DNS configuration",
+  "Support portal access",
+  "Domain migration support",
+  "Full ownership of your domain, content, and website files",
+]
+
+const processSteps: Timeline12Item[] = [
   {
-    number: 1,
+    id: "discovery",
+    phase: "01",
     title: "Discovery",
-    description: "We align on goals, users, and scope before build starts.",
+    date: "Week 1",
+    heading: "Discovery and scope alignment",
+    description:
+      "We align on goals, users, and scope before build starts so priorities are clear and delivery stays focused.",
+    imageSrc: "/portfolio/asap.png",
+    imageAlt: "Discovery phase example from a live client website",
   },
   {
-    number: 2,
+    id: "design-build",
+    phase: "02",
     title: "Design & build",
-    description: "You get iterative progress, clear checkpoints, and practical feedback loops.",
+    date: "Weeks 2-3",
+    heading: "Design and build in active sprints",
+    description:
+      "You get iterative progress updates, practical feedback loops, and visible momentum as core pages and flows come together.",
+    imageSrc: "/portfolio/the-brave.png",
+    imageAlt: "Design and build phase example from a live client website",
   },
   {
-    number: 3,
+    id: "refinement",
+    phase: "03",
     title: "Refinement",
-    description: "We polish copy, UX details, and technical quality before launch.",
+    date: "Week 4",
+    heading: "Refinement and quality pass",
+    description:
+      "We polish UX details, tighten copy, and complete technical quality checks to ensure the site is fast, stable, and conversion-ready.",
+    imageSrc: "/portfolio/rising-dust.png",
+    imageAlt: "Refinement phase example from a completed website",
   },
   {
-    number: 4,
+    id: "launch-support",
+    phase: "04",
     title: "Launch & support",
-    description: "Project goes live with handover guidance and post-launch support.",
+    date: "Weeks 5-6",
+    heading: "Launch with guided handover",
+    description:
+      "The project goes live with post-launch support and clear handover guidance so you can manage content confidently after release.",
+    imageSrc: "/portfolio/scholardemia.png",
+    imageAlt: "Launch and support phase example from a production platform",
   },
 ]
-
-function DeliveryStep({ number, title, description }: ProcessStep) {
-  return (
-    <li className="relative rounded-xl border border-border bg-card/95 p-4">
-      <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
-        {number}
-      </div>
-      <h3 className="mb-1 text-sm font-semibold text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
-    </li>
-  )
-}
 
 export function PricingSection() {
   return (
@@ -58,7 +74,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
-        <div className="vd-pricing-card vd-hover-lift-sm rounded-2xl border border-border bg-gradient-to-br from-primary/8 via-card to-card p-6 md:p-8">
+        <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/8 via-card to-card p-6 md:p-8">
           <p className="mb-3 text-sm font-medium text-foreground/80">Complete website package</p>
           <p className="mb-4 text-5xl font-bold leading-none text-foreground">£2,500</p>
           <p className="mb-6 max-w-3xl text-foreground/80">
@@ -66,20 +82,46 @@ export function PricingSection() {
             (for example bookings, portals, or custom integrations), it is scoped and quoted separately before build
             starts.
           </p>
+
+          <div className="mb-6 border-l-2 border-primary/30 pl-4">
+            <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-foreground">How payments work</h3>
+            <p className="text-sm text-muted-foreground">
+              Projects usually start with a 20% deposit, then milestone payments tied to agreed deliverables. Before
+              development starts, scope, timeline, and deliverables are documented clearly so there are no surprises.
+            </p>
+          </div>
+
+          <div className="mb-8 space-y-3">
+            <h3 className="text-lg font-semibold">Core package scope</h3>
+            <ul className="space-y-3">
+              {packageFeatures.map((feature) => (
+                <li key={feature} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
+                    <Check className="h-3.5 w-3.5 text-primary" />
+                  </span>
+                  <span className="text-sm text-foreground/85">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mb-8 space-y-3">
+            <h3 className="text-lg font-semibold">Launch essentials included</h3>
+            <ul className="grid gap-3 md:grid-cols-2">
+              {launchEssentials.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
+                    <Check className="h-3.5 w-3.5 text-primary" />
+                  </span>
+                  <span className="text-sm text-foreground/85">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <p className="mb-6 text-sm text-muted-foreground">
             Hosting is £120/year after Year 1. Domain registration is not included and can be procured at cost price.
           </p>
-
-          <ul className="mb-8 space-y-3">
-            {packageFeatures.map((feature) => (
-              <li key={feature} className="flex items-start gap-3">
-                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
-                  <Check className="h-3.5 w-3.5 text-primary" />
-                </span>
-                <span className="text-sm text-foreground/80">{feature}</span>
-              </li>
-            ))}
-          </ul>
 
           <Button asChild className="h-11 px-5">
             <a href="#contact" className="inline-flex items-center gap-2">
@@ -87,29 +129,11 @@ export function PricingSection() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </Button>
-
-          <div className="mt-8 rounded-xl border border-border bg-background/75 p-5">
-            <h3 className="mb-3 text-lg font-semibold">How payments work</h3>
-            <p className="mb-3 text-foreground/80">
-              Projects usually start with a 20% deposit, then milestone payments tied to agreed deliverables.
-            </p>
-            <p className="text-muted-foreground">
-              Before development starts, scope, timeline, and deliverables are documented clearly so there are no
-              surprises.
-            </p>
-          </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-9">
           <h3 className="mb-4 text-lg font-semibold text-foreground">Delivery process</h3>
-          <div className="relative">
-            <div className="absolute left-0 right-0 top-[1.05rem] hidden h-px bg-border md:block" aria-hidden="true" />
-            <ol className="grid gap-4 md:grid-cols-4">
-              {processSteps.map((step) => (
-                <DeliveryStep key={step.number} {...step} />
-              ))}
-            </ol>
-          </div>
+          <Timeline12 items={processSteps} />
         </div>
       </div>
     </section>

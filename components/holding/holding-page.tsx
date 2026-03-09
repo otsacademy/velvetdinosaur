@@ -21,7 +21,7 @@ export function HoldingPage() {
           }}
           imageSlot={
             <div className="animate-vd-float [animation-delay:220ms]">
-              <div className="mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-border/60 bg-background/45 p-3 shadow-[0_35px_90px_-45px_color-mix(in_oklch,oklch(var(--vd-foreground))_35%,transparent)] backdrop-blur">
+              <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-transparent p-3 shadow-none backdrop-blur-none hover:border-border/60 hover:bg-background/45 hover:backdrop-blur">
                 <PixelImage
                   src="/dinosaur.webp"
                   alt="Velvet Dinosaur mascot assembling from grayscale to full color"
