@@ -15,6 +15,7 @@ import { ContactSection } from "./contact-section"
 import { SiteFooter } from "./site-footer"
 import { ScrollReveal } from "./scroll-reveal"
 import { FloatingWhatsApp } from "./floating-whatsapp"
+import { mainHeroCopy } from "@/lib/site-copy"
 
 export function FullSite() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
@@ -37,10 +38,10 @@ export function FullSite() {
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
               className="py-10 md:py-14 lg:py-16"
-              badge="17 years of product and platform experience"
-              heading="Fast, beautiful, secure websites that turn visitors into clients."
-              description="Work directly with an experienced developer to launch a custom site built for conversion, search visibility, and long-term maintainability."
-              supportingLine="Named by a 3-year-old who loved blue dinosaurs. Built with senior-level engineering discipline."
+              badge={mainHeroCopy.badge}
+              heading={mainHeroCopy.heading}
+              description={mainHeroCopy.description}
+              supportingLine={mainHeroCopy.supportingLine}
               buttons={{
                 primary: {
                   text: "Start your project",
@@ -97,17 +98,15 @@ export function FullSite() {
           <ServicesSection />
         </ScrollReveal>
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_12%,var(--vd-muted))]">
+        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
           <ScrollReveal delay={100}>
             <SauroCmsSection />
           </ScrollReveal>
         </div>
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_8%,var(--vd-accent))]">
-          <ScrollReveal delay={100}>
-            <PageSpeedGuaranteeSection />
-          </ScrollReveal>
-        </div>
+        <ScrollReveal delay={100}>
+          <PageSpeedGuaranteeSection />
+        </ScrollReveal>
 
         <ScrollReveal delay={100}>
           <PricingSection />

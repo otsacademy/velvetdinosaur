@@ -2,10 +2,11 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Clock3, LoaderIcon, MailIcon, MessageCircle, Star } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { trackAnalyticsEvent } from '@/lib/analytics/client';
 import { cn } from '@/lib/utils';
 
 import {
@@ -54,6 +55,8 @@ interface Contact25Props {
   whatsapp?: WhatsAppContact;
   className?: string;
   onSubmit?: (data: ContactFormData) => Promise<void>;
+  analyticsFormId?: string;
+  analyticsSectionId?: string;
 }
 
 const Contact25 = ({
@@ -90,9 +93,12 @@ const Contact25 = ({
   whatsapp,
   className,
   onSubmit,
+  analyticsFormId = 'contact25',
+  analyticsSectionId = 'contact',
 }: Contact25Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const hasTrackedStartRef = useRef(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -105,8 +111,28 @@ const Contact25 = ({
     },
   });
 
+  const trackFormStart = () => {
+    if (hasTrackedStartRef.current) return;
+    hasTrackedStartRef.current = true;
+    void trackAnalyticsEvent({
+      eventType: 'engagement',
+      eventName: 'form_start',
+      eventCategory: 'form',
+      formId: analyticsFormId,
+      sectionId: analyticsSectionId,
+    });
+  };
+
   const handleFormSubmit = async (data: ContactFormData) => {
     try {
+      trackFormStart();
+      void trackAnalyticsEvent({
+        eventType: 'engagement',
+        eventName: 'form_submit',
+        eventCategory: 'form',
+        formId: analyticsFormId,
+        sectionId: analyticsSectionId,
+      });
       if (onSubmit) {
         await onSubmit(data);
       } else {
@@ -115,6 +141,15 @@ const Contact25 = ({
       setIsSubmitted(true);
       setShowSuccess(true);
       form.reset();
+      hasTrackedStartRef.current = false;
+      void trackAnalyticsEvent({
+        eventType: 'conversion',
+        eventName: 'form_submit_success',
+        eventCategory: 'form',
+        formId: analyticsFormId,
+        sectionId: analyticsSectionId,
+        conversionName: 'contact_submit_success',
+      });
       setTimeout(() => setShowSuccess(false), 4500);
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch {
@@ -127,17 +162,17 @@ const Contact25 = ({
   return (
     <section className={cn('py-20', className)}>
       <div className="container">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-gradient-to-br from-background via-background to-muted/30 p-6 md:p-10">
+        <div className="vd-surface-panel mx-auto max-w-6xl border border-border bg-gradient-to-br from-background via-background to-muted/30 p-6 md:p-10">
           <div className="mb-10 max-w-3xl space-y-3">
             <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
               Let&apos;s build something valuable
             </p>
-            <h2 className="vd-section-heading text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
             <p className="text-foreground/80">{description}</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-2xl border border-border bg-background/70 p-5 md:p-6">
+            <div className="vd-surface-card border border-border bg-background/70 p-5 md:p-6">
               <div className="mb-6 flex items-center gap-2">
                 <MessageCircle className="size-5 text-muted-foreground" />
                 <h3 className="vd-section-heading text-lg font-medium">{faqTitle}</h3>
@@ -152,7 +187,7 @@ const Contact25 = ({
               </Accordion>
             </div>
 
-            <div className="rounded-2xl border border-border bg-background/75 p-5 md:p-6">
+            <div className="vd-surface-card border border-border bg-background/75 p-5 md:p-6">
               <div className="mb-4 flex items-center gap-2">
                 <MailIcon className="size-5 text-muted-foreground" />
                 <h3 className="vd-section-heading text-lg font-medium">Project enquiry</h3>
@@ -183,6 +218,10 @@ const Contact25 = ({
                     href={whatsapp.href}
                     target="_blank"
                     rel="noreferrer"
+                    data-analytics-event="whatsapp_click"
+                    data-analytics-category="contact"
+                    data-analytics-label={whatsapp.label || 'Message on WhatsApp'}
+                    data-analytics-section={analyticsSectionId}
                     className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
                   >
                     <MessageCircle className="size-4" />
@@ -197,6 +236,7 @@ const Contact25 = ({
               <form
                 onSubmit={form.handleSubmit(handleFormSubmit)}
                 className="vd-contact-form flex flex-col gap-5 rounded-xl bg-muted/40 p-5"
+                data-analytics-form={analyticsFormId}
               >
                 {isSubmitted && (
                   <div
@@ -226,6 +266,11 @@ const Contact25 = ({
                           aria-invalid={fieldState.invalid}
                           placeholder="Your name"
                           className="bg-background"
+                          onFocus={trackFormStart}
+                          onChange={(event) => {
+                            trackFormStart();
+                            field.onChange(event);
+                          }}
                         />
                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>
@@ -247,6 +292,11 @@ const Contact25 = ({
                           aria-invalid={fieldState.invalid}
                           placeholder="you@example.com"
                           className="bg-background"
+                          onFocus={trackFormStart}
+                          onChange={(event) => {
+                            trackFormStart();
+                            field.onChange(event);
+                          }}
                         />
                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>
@@ -268,6 +318,11 @@ const Contact25 = ({
                           placeholder="Tell me what you need and where your current site is falling short."
                           rows={4}
                           className="bg-background"
+                          onFocus={trackFormStart}
+                          onChange={(event) => {
+                            trackFormStart();
+                            field.onChange(event);
+                          }}
                         />
                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                       </Field>

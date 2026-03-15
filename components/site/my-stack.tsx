@@ -1,82 +1,114 @@
+'use client';
 
-interface StackItem {
-  name: string
-  icon: React.ReactNode
-  brandColor: string
+import {
+  forwardRef,
+  useEffect,
+  useState,
+  type ButtonHTMLAttributes,
+  type CSSProperties
+} from 'react';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import { stackItems, type StackItem } from './my-stack-data';
+
+const canHoverQuery = '(hover: hover) and (pointer: fine)';
+
+function StackDetails({ item }: { item: StackItem }) {
+  return (
+    <div className="space-y-1.5">
+      <p className="text-xs font-medium italic tracking-[0.01em] text-muted-foreground">
+        {item.label}
+      </p>
+      <p className="max-w-[30rem] text-sm leading-snug text-foreground/80">{item.description}</p>
+    </div>
+  );
 }
 
-const NextjsIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3073-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.669-.1323 1.0302-.1323 1.7416 0 .7117.0361 1.0726.1323 1.7422.5765 4.0162 3.3084 7.3951 7.0181 8.6798.5255.1822 1.0716.3129 1.6356.3905.3456.0476.3912.0536.4378.0536.0467 0 .0923-.006.4379-.0536.5642-.0774 1.1104-.2083 1.636-.3905 3.7095-1.2847 6.4413-4.6636 7.0178-8.6798.0961-.6696.1323-1.0305.1323-1.7422 0-.7114-.0362-1.072-.1323-1.7416-.2722-1.8883-.9924-3.671-2.0927-5.2531-2.0222-2.8265-5.2151-4.6655-8.624-4.9728-.1477-.0118-.3122-.0275-.3636-.0328-.0485-.0054-.182-.0067-.3584-.0067zm-.0058 2.0844c2.7172.021 5.288 1.1896 7.0416 3.1907 1.4768 1.6851 2.2849 3.8392 2.3004 6.1325.0151 2.2932-.7653 4.4584-2.2198 6.1614-1.7536 2.0528-4.3248 3.232-7.0418 3.2529-2.717.021-5.3022-1.1201-7.0733-3.1525-1.4768-1.6952-2.2944-3.8591-2.319-6.1517-.0248-2.2925.7558-4.4678 2.2005-6.1805 1.7536-2.0528 4.339-3.2312 7.0562-3.2528h.0552zm5.3158 4.1088c-.1017-.0026-.2034.0293-.2868.0934L8.8417 12.498l-2.4268-1.8287c-.1644-.1242-.3892-.1374-.5662-.0337-.177.1036-.2773.3027-.2523.5002l.6062 4.7843c.0306.2416.2313.4313.4747.4493l4.9127.3623c.2433.018.4617-.1434.5171-.3812l1.0632-4.5595c.0421-.1809-.0268-.3715-.1753-.4832-.1484-.1118-.3481-.1244-.5101-.0322l-1.9707 1.1217 6.1467-4.7377c.2054-.1582.2476-.4562.0938-.664-.089-.1202-.2194-.1871-.3565-.1912z"/>
-  </svg>
-)
+interface StackTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  item: StackItem;
+}
 
-const ReactIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
-  </svg>
-)
-
-const TailwindIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
-  </svg>
-)
-
-const MongoDBIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/>
-  </svg>
-)
-
-const PostgreSQLIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M12 2C7.03 2 3 3.79 3 6v12c0 2.21 4.03 4 9 4s9-1.79 9-4V6c0-2.21-4.03-4-9-4zm0 2c4.42 0 7 1.35 7 2s-2.58 2-7 2-7-1.35-7-2 2.58-2 7-2zm0 11c-4.42 0-7-1.35-7-2v-2.18C6.48 11.56 9.1 12 12 12s5.52-.44 7-1.18V13c0 .65-2.58 2-7 2zm0 5c-4.42 0-7-1.35-7-2v-2.18C6.48 16.56 9.1 17 12 17s5.52-.44 7-1.18V18c0 .65-2.58 2-7 2z" />
-  </svg>
-)
-
-const ReactNativeIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
-  </svg>
-)
-
-const ShadcnIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M22.219 11.784 11.784 22.219c-.407.407-.407 1.068 0 1.476.407.407 1.068.407 1.476 0L23.695 13.26c.407-.407.407-1.068 0-1.476-.407-.407-1.068-.407-1.476 0zM20.132.305.305 20.132c-.407.407-.407 1.068 0 1.476.407.407 1.068.407 1.476 0L21.608 1.781c.407-.407.407-1.068 0-1.476-.407-.407-1.068-.407-1.476 0z"/>
-  </svg>
-)
-
-const BetterAuthIcon = () => (
-  <svg viewBox="0 0 24 24" className="vd-tech-stack-icon h-9 w-9 fill-current">
-    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v5.7c0 4.83-3.4 9.36-7 10.42-3.6-1.06-7-5.59-7-10.42V6.3l7-3.12zM12 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4 8c0 2.21 1.79 4 4 4s4-1.79 4-4H8z"/>
-  </svg>
-)
-
-const stackItems: StackItem[] = [
-  { name: "Next.js", icon: <NextjsIcon />, brandColor: "#111111" },
-  { name: "React", icon: <ReactIcon />, brandColor: "#61DAFB" },
-  { name: "Tailwind CSS", icon: <TailwindIcon />, brandColor: "#06B6D4" },
-  { name: "MongoDB", icon: <MongoDBIcon />, brandColor: "#47A248" },
-  { name: "PostgreSQL", icon: <PostgreSQLIcon />, brandColor: "#336791" },
-  { name: "React Native", icon: <ReactNativeIcon />, brandColor: "#61DAFB" },
-  { name: "shadcn/ui", icon: <ShadcnIcon />, brandColor: "#111111" },
-  // Better Auth does not currently expose a stable public brand token, so we use the site accent blue.
-  { name: "Better Auth", icon: <BetterAuthIcon />, brandColor: "#3AAFED" },
-]
-
-function StackItem({ name, icon, brandColor }: StackItem) {
-  return (
-    <li
-      className="vd-tech-stack-item flex flex-col items-center gap-2"
-      style={{ "--vd-tech-brand": brandColor } as React.CSSProperties}
+const StackTrigger = forwardRef<HTMLButtonElement, StackTriggerProps>(
+  ({ item, className, style, ...props }, ref) => (
+    <button
+      ref={ref}
+      type="button"
+      className={cn(
+        'vd-tech-stack-item vd-surface-card flex flex-col items-center gap-2 bg-transparent p-0 text-left outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vd-interaction-blue)] focus-visible:ring-offset-4 focus-visible:ring-offset-background',
+        className
+      )}
+      style={{ '--vd-tech-brand': item.brandColor, ...style } as CSSProperties}
+      aria-label={`${item.name}. ${item.label}. ${item.description}`}
+      {...props}
     >
-      <div className="vd-tech-stack-shell flex h-[80px] w-[80px] items-center justify-center rounded-2xl border border-border/70 bg-muted text-muted-foreground">
-        {icon}
+      <div className="vd-tech-stack-shell vd-surface-card flex h-[80px] w-[80px] items-center justify-center border border-border/70 bg-muted text-muted-foreground">
+        {item.icon}
       </div>
-      <span className="vd-tech-stack-label text-xs font-medium text-muted-foreground">{name}</span>
-    </li>
+      <span className="vd-tech-stack-label text-xs font-medium text-muted-foreground">
+        {item.name}
+      </span>
+    </button>
   )
+);
+
+StackTrigger.displayName = 'StackTrigger';
+
+function StackItemCard({ item }: { item: StackItem }) {
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(canHoverQuery);
+    const updateCanHover = () => setCanHover(mediaQuery.matches);
+
+    updateCanHover();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateCanHover);
+      return () => mediaQuery.removeEventListener('change', updateCanHover);
+    }
+
+    mediaQuery.addListener(updateCanHover);
+    return () => mediaQuery.removeListener(updateCanHover);
+  }, []);
+
+  if (canHover) {
+    return (
+      <li>
+        <HoverCard openDelay={180} closeDelay={110}>
+          <HoverCardTrigger asChild>
+            <StackTrigger item={item} />
+          </HoverCardTrigger>
+          <HoverCardContent
+            align="center"
+            side="top"
+            sideOffset={14}
+            className="vd-surface-card w-[min(30rem,calc(100vw-2rem))] border-border/70 bg-background/98 p-4 shadow-xl"
+          >
+            <StackDetails item={item} />
+          </HoverCardContent>
+        </HoverCard>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <Popover>
+        <PopoverTrigger asChild>
+          <StackTrigger item={item} />
+        </PopoverTrigger>
+        <PopoverContent
+          align="center"
+          side="top"
+          sideOffset={12}
+          className="vd-surface-card w-[min(30rem,calc(100vw-2rem))] border-border/70 bg-background/98 p-4 shadow-xl"
+        >
+          <StackDetails item={item} />
+        </PopoverContent>
+      </Popover>
+    </li>
+  );
 }
 
 export function MyStack() {
@@ -84,12 +116,15 @@ export function MyStack() {
     <section className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="mb-6 text-2xl font-semibold">My stack</h2>
+        <p className="mb-6 max-w-2xl text-sm text-foreground/70">
+          Hover or tap each tool to see what it helps with.
+        </p>
         <ul className="flex flex-wrap justify-center gap-6 sm:gap-8 md:justify-between">
           {stackItems.map((item) => (
-            <StackItem key={item.name} {...item} />
+            <StackItemCard key={item.name} item={item} />
           ))}
         </ul>
       </div>
     </section>
-  )
+  );
 }

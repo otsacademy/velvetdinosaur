@@ -8,6 +8,8 @@ type ContactPayload = {
   message: string
 }
 
+const CONTACT_FORM_ID = "velvet_contact_section"
+
 export function ContactSection() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
@@ -17,7 +19,10 @@ export function ContactSection() {
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        formId: CONTACT_FORM_ID,
+      }),
     })
 
     if (!res.ok) {
@@ -30,8 +35,10 @@ export function ContactSection() {
     <div id="contact">
       <Contact25
         className="py-6 md:py-8"
-        title="Let's talk about your project"
-        description="Share your goals, current pain points, and timeline. You will get a clear response within one business day."
+        analyticsFormId={CONTACT_FORM_ID}
+        analyticsSectionId="contact"
+        title="Tell me about your project"
+        description="Share your goals, current pain points, and timeline. You will hear back directly from Ian within one business day."
         faqTitle="Questions people usually ask"
         whatsapp={{
           href: whatsappHref,
@@ -42,7 +49,7 @@ export function ContactSection() {
           {
             question: "What's included in the £2,500 package?",
             answer:
-              "The £2,500 package includes custom design and build, SEO-ready page structure, performance optimisation, contact forms, launch support, SSL, daily backups, support portal access, and handover guidance. We agree scope before development starts so deliverables are clear, and advanced features are quoted separately before build begins.",
+              "The £2,500 package includes custom design and build, SEO-ready page structure, performance optimisation, contact forms, launch support, SSL, daily backups, support portal access, and handover guidance. I agree the scope with you before development starts so the deliverables are clear. Advanced features are quoted separately before build begins.",
           },
           {
             question: "Do I own my website and domain?",
@@ -57,7 +64,7 @@ export function ContactSection() {
           {
             question: "Can I move my site elsewhere later?",
             answer:
-              "Yes. There is no lock-in. If you decide to migrate, we provide practical support, technical handover details, and a clear transition plan to keep downtime and risk low.",
+              "Yes. There is no lock-in. If you decide to migrate, I provide practical support, technical handover details, and a clear transition plan to keep downtime and risk low.",
           },
           {
             question: "How quickly can we start?",
@@ -67,7 +74,7 @@ export function ContactSection() {
           {
             question: "Can you improve an existing site?",
             answer:
-              "Yes. We regularly improve existing websites, including redesigns, speed fixes, technical SEO improvements, and migrations away from older platforms. We can also phase improvements so you do not need a full rebuild on day one.",
+              "Yes. I regularly improve existing websites, including redesigns, speed fixes, technical SEO improvements, and migrations away from older platforms. Work can also be phased so you do not need a full rebuild on day one.",
           },
         ]}
         onSubmit={handleSubmit}

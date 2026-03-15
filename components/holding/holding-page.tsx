@@ -1,4 +1,5 @@
 import { Hero1 } from "@/components/hero1"
+import { holdingHeroCopy } from "@/lib/site-copy"
 
 import { PixelImage } from "./pixel-image.client"
 
@@ -13,9 +14,9 @@ export function HoldingPage() {
       <main className="relative mx-auto w-full max-w-6xl">
         <Hero1
           className="animate-vd-fade-up py-12 md:py-16 lg:py-20"
-          badge="17 Years of Experience"
-          heading="Named by a 3-year-old who loves dinosaurs. Backed by 17 years of experience."
-          description="We build websites that look exceptional, load instantly, and stay secure, so your business can grow without wrestling with tech."
+          badge={holdingHeroCopy.badge}
+          heading={holdingHeroCopy.heading}
+          description={holdingHeroCopy.description}
           buttons={{
             primary: { text: "Email us", url: "mailto:hello@velvetdinosaur.com" },
           }}

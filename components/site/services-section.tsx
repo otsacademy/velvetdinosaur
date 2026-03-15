@@ -29,14 +29,14 @@ export function ServicesSection() {
 
             <div className="max-w-xl space-y-4 leading-relaxed text-muted-foreground">
               <p>
-                I build bespoke websites and apps from the ground up. Some clients come to me with a clear vision;
-                others come with the start of an idea that needs shaping. I enjoy both, and I focus on turning rough
-                concepts into digital products that are useful, beautiful, and built to last.
+                I build bespoke websites and apps from the ground up. Some clients come with a clear brief. Others
+                come with a knotty problem, an ageing site, or the start of an idea that needs shaping. I enjoy both,
+                and I focus on turning that early uncertainty into something clear, useful, and well built.
               </p>
               <p>
-                I do not use generic templates or off-the-shelf page builders. Every project is designed around your
-                goals, your users, and how your business actually works, with direct communication and trust from
-                kickoff to launch.
+                Each project is shaped around your goals, your users, and how your organisation actually works.
+                Everything is built from scratch, so nothing is borrowed from a previous client or squeezed into
+                someone else&apos;s framework.
               </p>
             </div>
 

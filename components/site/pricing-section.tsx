@@ -74,7 +74,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
-        <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/8 via-card to-card p-6 md:p-8">
+        <div className="vd-surface-panel border border-border bg-gradient-to-br from-primary/8 via-card to-card p-6 md:p-8">
           <p className="mb-3 text-sm font-medium text-foreground/80">Complete website package</p>
           <p className="mb-4 text-5xl font-bold leading-none text-foreground">£2,500</p>
           <p className="mb-6 max-w-3xl text-foreground/80">
@@ -84,7 +84,7 @@ export function PricingSection() {
           </p>
 
           <div className="mb-6 border-l-2 border-primary/30 pl-4">
-            <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-foreground">How payments work</h3>
+            <h3 className="mb-2 text-lg font-semibold text-foreground">How payments work</h3>
             <p className="text-sm text-muted-foreground">
               Projects usually start with a 20% deposit, then milestone payments tied to agreed deliverables. Before
               development starts, scope, timeline, and deliverables are documented clearly so there are no surprises.

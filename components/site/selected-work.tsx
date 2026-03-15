@@ -61,7 +61,7 @@ function WorkCard({ title, subtitle, website, image, imageAlt, description, outc
       href={website}
       target="_blank"
       rel="noreferrer"
-      className="vd-hover-lift vd-work-card group block overflow-hidden rounded-2xl border border-border bg-card/90"
+      className="vd-hover-lift vd-work-card vd-surface-card group block overflow-hidden border border-border bg-card/90"
     >
       <div className="vd-work-media relative aspect-[16/10] w-full overflow-hidden bg-muted">
         <Image
@@ -102,7 +102,7 @@ export function SelectedWork() {
         <div className="mb-6 space-y-2">
           <h2 className="vd-section-heading text-2xl font-semibold">Selected work</h2>
           <p className="max-w-3xl text-foreground/80">
-            Real projects across service businesses, non-profits, and product platforms.
+            Real projects across charities, service businesses, and product platforms.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">

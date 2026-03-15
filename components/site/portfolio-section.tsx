@@ -40,7 +40,7 @@ const caseStudies: CaseStudy[] = [
 
 function CaseStudyCard({ title, subtitle, description }: CaseStudy) {
   return (
-    <div className="group rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
+    <div className="vd-surface-card group border border-border bg-card p-6 transition-shadow hover:shadow-lg">
       <div className="mb-3 flex items-start justify-between gap-3">
         <div>
           <h3 className="font-semibold text-foreground transition-colors group-hover:text-primary">

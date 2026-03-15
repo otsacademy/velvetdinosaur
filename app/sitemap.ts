@@ -1,8 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-function resolveSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL || process.env.VD_SITE_URL || 'http://localhost:3000';
-}
+import { resolveSiteUrl } from '@/lib/site-metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = resolveSiteUrl().replace(/\/$/, '');

@@ -12,7 +12,7 @@ export function ClientReviewSection() {
   return (
     <section aria-labelledby="client-review-title" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <article className="relative overflow-hidden rounded-3xl border border-border bg-accent/35 px-6 py-12 text-center shadow-sm md:px-14 md:py-16">
+        <article className="vd-surface-panel relative overflow-hidden border border-border bg-accent/35 px-6 py-12 text-center shadow-sm md:px-14 md:py-16">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute left-4 top-2 text-6xl leading-none text-foreground/10 md:left-8 md:top-4 md:text-8xl"

@@ -67,10 +67,14 @@ export function Hero1({
             <h1 className="font-body text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               {heading}
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-foreground/80 lg:text-lg">{description}</p>
-            {supportingLine ? (
-              <p className="vd-hero-origin max-w-xl text-sm leading-relaxed text-muted-foreground">{supportingLine}</p>
-            ) : null}
+            <div className="max-w-xl space-y-3">
+              <p className="text-base leading-relaxed text-foreground/80 lg:text-lg">{description}</p>
+              {supportingLine ? (
+                <p className="vd-hero-origin text-base leading-relaxed text-foreground/65 lg:text-lg">
+                  {supportingLine}
+                </p>
+              ) : null}
+            </div>
             <div className="mt-2 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               {buttons?.primary ? (
                 <Button

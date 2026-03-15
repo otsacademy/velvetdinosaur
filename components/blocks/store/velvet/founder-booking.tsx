@@ -74,6 +74,7 @@ function normalizeItems(items: StringItem[] | undefined) {
 
 export function FounderBooking(props: FounderBookingProps) {
   const key = (path: string) => demoKey(props.id, path)
+  const analyticsFormId = "founder_booking"
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/your-handle"
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const phoneDigits = phoneNumber.replace(/\D/g, "")
@@ -92,9 +93,10 @@ export function FounderBooking(props: FounderBookingProps) {
     resolvedContactOptions[0] ?? "Video call",
   )
 
-  const { formState, formMessage, handleSubmit } = useContactForm({
+  const { formState, formMessage, handleSubmit, trackFormStart } = useContactForm({
     successMessage: props.formSuccessMessage || undefined,
     errorMessage: props.formErrorMessage || undefined,
+    analyticsFormId,
   })
 
   const timelineItems = normalizeItems(props.timelineItems)
@@ -125,7 +127,15 @@ export function FounderBooking(props: FounderBookingProps) {
 
               <div className="flex flex-col gap-2">
                 <Button asChild size="lg" className="justify-start rounded-full px-6">
-                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-analytics-event="booking_start"
+                    data-analytics-category="contact"
+                    data-analytics-label={props.primaryCtaLabel}
+                    data-analytics-section="booking"
+                  >
                     <Video className="mr-2 h-4 w-4" />
                     <EditableText
                       demoKey={key("booking.primaryCta")}
@@ -136,7 +146,15 @@ export function FounderBooking(props: FounderBookingProps) {
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="justify-start rounded-full px-4">
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-analytics-event="whatsapp_click"
+                    data-analytics-category="contact"
+                    data-analytics-label={props.whatsappLabel}
+                    data-analytics-section="booking"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     <EditableText
                       demoKey={key("booking.whatsappLabel")}
@@ -147,7 +165,13 @@ export function FounderBooking(props: FounderBookingProps) {
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="justify-start rounded-full px-4">
-                  <a href={phoneLink}>
+                  <a
+                    href={phoneLink}
+                    data-analytics-event="phone_click"
+                    data-analytics-category="contact"
+                    data-analytics-label={props.phoneLabel}
+                    data-analytics-section="booking"
+                  >
                     <Phone className="mr-2 h-4 w-4" />
                     <EditableText
                       demoKey={key("booking.phoneLabel")}
@@ -276,7 +300,15 @@ export function FounderBooking(props: FounderBookingProps) {
                       </p>
                     </div>
                     <Button asChild size="lg" className="rounded-full px-6">
-                      <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-analytics-event="booking_start"
+                        data-analytics-category="contact"
+                        data-analytics-label={props.primaryCtaLabel}
+                        data-analytics-section="booking"
+                      >
                         <Phone className="mr-2 h-4 w-4" />
                         <EditableText
                           demoKey={key("booking.primaryCta")}
@@ -288,7 +320,13 @@ export function FounderBooking(props: FounderBookingProps) {
                     </Button>
                   </div>
 
-                  <form className="grid gap-4" onSubmit={handleSubmit}>
+                  <form
+                    className="grid gap-4"
+                    onSubmit={handleSubmit}
+                    data-analytics-form={analyticsFormId}
+                    onFocusCapture={trackFormStart}
+                    onChangeCapture={trackFormStart}
+                  >
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="space-y-2">
                         <Label htmlFor="contact-name">
@@ -387,6 +425,7 @@ export function FounderBooking(props: FounderBookingProps) {
                         </Accordion>
                       </div>
                     </div>
+                    <input type="hidden" name="formId" value={analyticsFormId} />
 
                     <div className="sr-only" aria-hidden="true">
                       <Label htmlFor="contact-company">Company</Label>

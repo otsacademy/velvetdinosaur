@@ -69,20 +69,21 @@ export function WhatsIncludedSection() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
           {includedItems.map((item) => {
             const Icon = item.icon
 
             return (
-              <article
-                key={item.title}
-                className="vd-hover-lift-sm rounded-2xl border border-border bg-gradient-to-br from-background to-muted/45 p-5"
-              >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
-                  <Icon className="h-4 w-4 text-primary" />
+              <article key={item.title} className="border-t border-border/70 pt-4">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10">
+                    <Icon className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-foreground">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-foreground/75">{item.description}</p>
+                  </div>
                 </div>
-                <h3 className="mb-1 font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-foreground/75">{item.description}</p>
               </article>
             )
           })}

@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "bun run start -- -p 3100",
+      "startServerCommand": "VD_LHCI=true NEXT_PUBLIC_LHCI=true bun run start -- -p 3100",
       "startServerReadyPattern": "Ready in",
       "url": [
         "http://localhost:3100/",

@@ -48,8 +48,8 @@ export const PixelImage = ({
   sizeClassName,
   className,
 }: PixelImageProps) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [showColor, setShowColor] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [showColor, setShowColor] = useState(true)
   const [key, setKey] = useState(0)
 
   const MIN_GRID = 1
@@ -79,13 +79,22 @@ export const PixelImage = ({
   }
 
   useEffect(() => {
-    const startTimeout = setTimeout(() => setIsVisible(true), 50)
-    const colorTimeout = setTimeout(() => setShowColor(true), colorRevealDelay + 50)
-    return () => {
-      clearTimeout(startTimeout)
-      clearTimeout(colorTimeout)
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const isAutomatedBrowser = navigator.webdriver
+
+    if (prefersReducedMotion || isAutomatedBrowser) {
+      setIsVisible(true)
+      setShowColor(true)
+      return
     }
-  }, [colorRevealDelay, key])
+
+    const startTimeout = isVisible ? null : setTimeout(() => setIsVisible(true), 50)
+    const colorTimeout = showColor ? null : setTimeout(() => setShowColor(true), colorRevealDelay + 50)
+    return () => {
+      if (startTimeout) clearTimeout(startTimeout)
+      if (colorTimeout) clearTimeout(colorTimeout)
+    }
+  }, [colorRevealDelay, isVisible, key, showColor])
 
   const pieces = useMemo(() => {
     const total = rows * cols

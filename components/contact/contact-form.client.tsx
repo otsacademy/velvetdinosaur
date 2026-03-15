@@ -1,11 +1,12 @@
 'use client';
 
 import type { FormEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { trackAnalyticsEvent } from '@/lib/analytics/client';
 import { cn } from '@/lib/utils';
 
 type ContactFormVariant = 'card' | 'inline';
@@ -25,6 +26,7 @@ type ContactFormProps = {
   submitLabel?: string;
   successRedirect?: string;
   successDelayMs?: number;
+  analyticsFormId?: string;
 };
 
 type StatusState = { type: 'idle' | 'loading' | 'success' | 'error'; message?: string };
@@ -64,15 +66,28 @@ export function ContactForm({
   messagePlaceholder = 'How can we help you today?',
   submitLabel = 'Send message',
   successRedirect,
-  successDelayMs = 1800
+  successDelayMs = 1800,
+  analyticsFormId = 'contact_form'
 }: ContactFormProps) {
   const router = useRouter();
   const styles = useStyles(variant);
   const [status, setStatus] = useState<StatusState>({ type: 'idle' });
+  const hasTrackedStartRef = useRef(false);
   const [name, setName] = useState('');
   const [topic, setTopic] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const trackFormStart = () => {
+    if (hasTrackedStartRef.current) return;
+    hasTrackedStartRef.current = true;
+    void trackAnalyticsEvent({
+      eventType: 'engagement',
+      eventName: 'form_start',
+      eventCategory: 'form',
+      formId: analyticsFormId
+    });
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -80,7 +95,14 @@ export function ContactForm({
       setStatus({ type: 'error', message: 'Please add your email and message.' });
       return;
     }
+    trackFormStart();
     setStatus({ type: 'loading' });
+    void trackAnalyticsEvent({
+      eventType: 'engagement',
+      eventName: 'form_submit',
+      eventCategory: 'form',
+      formId: analyticsFormId
+    });
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -89,6 +111,7 @@ export function ContactForm({
           name: name.trim() || undefined,
           topic: topic.trim() || undefined,
           email: email.trim(),
+          formId: analyticsFormId,
           message: message.trim()
         })
       });
@@ -101,6 +124,14 @@ export function ContactForm({
       setTopic('');
       setEmail('');
       setMessage('');
+      hasTrackedStartRef.current = false;
+      void trackAnalyticsEvent({
+        eventType: 'conversion',
+        eventName: 'form_submit_success',
+        eventCategory: 'form',
+        formId: analyticsFormId,
+        conversionName: 'contact_submit_success'
+      });
       if (successRedirect) {
         const resolved =
           successRedirect.startsWith('#') && typeof window !== 'undefined'
@@ -119,7 +150,7 @@ export function ContactForm({
   };
 
   return (
-    <form className="space-y-5" onSubmit={handleSubmit}>
+    <form className="space-y-5" onSubmit={handleSubmit} data-analytics-form={analyticsFormId}>
       {showName || showTopic ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {showName ? (
@@ -128,7 +159,11 @@ export function ContactForm({
               <Input
                 className={styles.input}
                 value={name}
-                onChange={(event) => setName(event.target.value)}
+                onFocus={trackFormStart}
+                onChange={(event) => {
+                  trackFormStart();
+                  setName(event.target.value);
+                }}
                 placeholder={namePlaceholder}
                 disabled={status.type === 'loading'}
               />
@@ -140,7 +175,11 @@ export function ContactForm({
               <Input
                 className={styles.input}
                 value={topic}
-                onChange={(event) => setTopic(event.target.value)}
+                onFocus={trackFormStart}
+                onChange={(event) => {
+                  trackFormStart();
+                  setTopic(event.target.value);
+                }}
                 placeholder={topicPlaceholder}
                 disabled={status.type === 'loading'}
               />
@@ -153,7 +192,11 @@ export function ContactForm({
         <Input
           className={styles.input}
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onFocus={trackFormStart}
+          onChange={(event) => {
+            trackFormStart();
+            setEmail(event.target.value);
+          }}
           placeholder={emailPlaceholder}
           type="email"
           required
@@ -165,7 +208,11 @@ export function ContactForm({
         <Textarea
           className={styles.textarea}
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
+          onFocus={trackFormStart}
+          onChange={(event) => {
+            trackFormStart();
+            setMessage(event.target.value);
+          }}
           placeholder={messagePlaceholder}
           required
           disabled={status.type === 'loading'}

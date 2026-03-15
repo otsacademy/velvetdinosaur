@@ -45,7 +45,7 @@ const reviews: Review[] = [
 
 function ReviewCard({ name, company, quote, date, sourceUrl, className }: Review) {
   return (
-    <article className={`vd-review-card vd-hover-lift-sm rounded-2xl border border-border bg-card p-6 ${className}`}>
+    <article className={`vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card p-6 ${className}`}>
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="font-medium text-foreground">{name}</p>
@@ -84,7 +84,7 @@ export function GoogleReviewsSection() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
-          <article className="vd-review-card vd-hover-lift-sm rounded-2xl border border-border bg-card p-6 sm:col-span-2 lg:col-span-4">
+          <article className="vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card p-6 sm:col-span-2 lg:col-span-4">
             <div className="mb-5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-sm font-semibold">

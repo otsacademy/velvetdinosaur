@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { trackServerConversion } from '@/lib/analytics';
 
 const PayloadSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
@@ -31,6 +32,13 @@ export async function POST(req: Request) {
       source,
       userAgent,
       createdAtIso: new Date().toISOString()
+    });
+    await trackServerConversion(req, {
+      conversionName: 'waitlist_signup',
+      metadata: {
+        source,
+        delivery: 'database-create'
+      }
     });
     return NextResponse.json({ ok: true });
   } catch (error: any) {

@@ -17,30 +17,40 @@ export function PageSpeedGuaranteeSection() {
   return (
     <section id="pagespeed" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-5 space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">Verification layer</p>
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Built for a perfect score</h2>
-          <p className="max-w-3xl text-foreground/80">
-            Every build targets 100/100 across all Google PageSpeed Insights categories on desktop and mobile.
-          </p>
-        </div>
+        <div className="vd-surface-panel relative overflow-hidden border border-white/8 bg-[radial-gradient(circle_at_top_left,color-mix(in_oklch,var(--vd-primary)_24%,transparent),transparent_38%),linear-gradient(155deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-surface-strong)_84%,black))] px-6 py-8 text-[var(--vd-surface-strong-fg)] md:px-8 md:py-10">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-35 [background-image:radial-gradient(circle_at_1px_1px,color-mix(in_oklch,white_16%,transparent)_1px,transparent_0)] [background-size:20px_20px]"
+            aria-hidden="true"
+          />
+          <div className="relative mx-auto mb-10 max-w-3xl space-y-4 text-center">
+            <p className="inline-flex w-fit items-center rounded-full border border-white/12 bg-white/6 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-white/78">
+              Verification layer
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Built for a perfect score</h2>
+            <p className="text-white/72">
+              Every build targets 100/100 across all Google PageSpeed Insights categories on desktop and mobile.
+            </p>
+          </div>
 
-        <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-[linear-gradient(120deg,color-mix(in_srgb,var(--vd-primary)_18%,transparent),color-mix(in_srgb,var(--vd-accent)_72%,var(--vd-bg)),color-mix(in_srgb,var(--vd-primary)_10%,transparent))] p-5 md:p-7">
-          <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_1px_1px,color-mix(in_srgb,var(--vd-primary)_38%,transparent)_1px,transparent_0)] [background-size:20px_20px]" aria-hidden="true" />
-          <div className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          <div className="relative grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {metrics.map((metric) => {
               const Icon = metric.icon
 
               return (
                 <article
                   key={metric.title}
-                  className="rounded-xl bg-background/72 px-4 py-4 backdrop-blur-sm lg:rounded-none lg:bg-transparent lg:px-5 lg:py-3 lg:border-l lg:border-primary/20 first:lg:border-l-0"
+                  className="vd-surface-card border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
                 >
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <p className="text-sm font-medium text-foreground/90">{metric.title}</p>
-                    <Icon className="h-4 w-4 text-primary" />
+                  <div className="mb-5 flex items-center justify-between gap-3">
+                    <p className="text-sm font-medium text-white/82">{metric.title}</p>
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color-mix(in_oklch,var(--vd-score-perfect)_18%,transparent)] text-[color:var(--vd-score-perfect)]">
+                      <Icon className="h-5 w-5" />
+                    </div>
                   </div>
-                  <p className="text-5xl font-bold leading-none text-foreground">{metric.score}</p>
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full border-[6px] border-[color:var(--vd-score-perfect)] bg-[color-mix(in_oklch,var(--vd-score-perfect)_10%,transparent)]">
+                    <span className="text-2xl font-bold leading-none text-[color:var(--vd-score-perfect)]">{metric.score}</span>
+                  </div>
+                  <p className="text-sm text-white/62">Google Lighthouse benchmark</p>
                 </article>
               )
             })}

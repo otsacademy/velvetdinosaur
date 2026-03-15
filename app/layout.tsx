@@ -1,9 +1,12 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import type { CSSProperties } from 'react';
+import './velvet-site.css';
+import { Suspense, type CSSProperties } from 'react';
 import { Space_Grotesk, Bebas_Neue, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
+import { siteMetadata } from '@/lib/site-metadata';
+import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytics.client';
+import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -24,10 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
-export const metadata: Metadata = {
-  title: 'Velvet Dinosaur',
-  description: 'Velvet Dinosaur boilerplate'
-};
+export const metadata = siteMetadata;
 
 export default async function RootLayout({
   children
@@ -68,10 +68,19 @@ export default async function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
-      style={{ ...(themeVars as CSSProperties), ...(lhciOverrides as CSSProperties) }}
+      style={{
+        ...(themeVars as CSSProperties),
+        ...(lhciOverrides as CSSProperties)
+      }}
     >
       <body className="min-h-screen bg-[var(--vd-bg)] text-[var(--vd-fg)] antialiased">
         {children}
+        <Suspense fallback={null}>
+          <VisitorTracker />
+        </Suspense>
+        <Suspense fallback={null}>
+          <ThirdPartyAnalytics />
+        </Suspense>
       </body>
     </html>
   );

@@ -10,13 +10,13 @@ interface HighlightProps {
 
 function Highlight({ icon: Icon, label, value }: HighlightProps) {
   return (
-    <div className="vd-hover-lift-sm vd-icon-card rounded-xl border border-border bg-card p-4">
-      <div className="vd-icon-badge mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-        <Icon className="vd-icon-accent h-5 w-5 text-primary" />
+    <article className="border-t border-border/70 pt-4">
+      <div className="mb-3 flex items-center gap-3">
+        <Icon className="h-4 w-4 text-primary" />
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
       </div>
-      <p className="text-sm text-muted-foreground">{label}</p>
-      <p className="font-semibold text-foreground">{value}</p>
-    </div>
+      <p className="max-w-xs text-sm font-medium leading-relaxed text-foreground/85">{value}</p>
+    </article>
   )
 }
 
@@ -41,31 +41,35 @@ export function AboutSection() {
             </div>
           </div>
 
-          <p className="text-lg text-foreground">
-            I&apos;m Ian Wickens, founder of Velvet Dinosaur. I design and build bespoke websites, apps, and digital
-            platforms for organizations that want something more thoughtful than an off-the-shelf solution.
+          <p className="text-foreground">
+            I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building bespoke
+            websites and apps for businesses, charities, and organisations that want something carefully made and
+            properly theirs.
           </p>
           <p>
-            Before starting Velvet Dinosaur, I spent much of my career in the NHS across medical equipment, clinical
-            research, and governance. That background taught me how to solve complex problems, communicate clearly, and
-            adapt quickly, skills I now bring into every digital project.
+            Most of my professional career has been in the NHS, across medical equipment, clinical research, and
+            governance. That background taught me how to work through complex problems, communicate clearly, and treat
+            important work with care.
           </p>
           <p>
-            I&apos;ve also travelled extensively and founded a charity that has helped fund education for more than 50
-            children. Becoming a parent sharpened my focus even further. I wanted to build something meaningful,
-            creative, and lasting.
+            Alongside that, I spent years designing and building websites in an independent, hands-on way. That
+            included rebuilding my own charity website several times, creating conference websites, helping friends
+            with their sites, and following other self-directed projects wherever they led.
           </p>
           <p>
-            That decision led to Velvet Dinosaur, a founder-led studio where every project is built with care,
-            collaboration, and attention to detail. The name comes from my daughter&apos;s love of dinosaurs, a reminder
-            to build with imagination as well as purpose.
+            Velvet Dinosaur grew out of that path as I started leaving the NHS. It is built on real project work,
+            practical problem solving, and a preference for making things properly rather than dressing them up.
+          </p>
+          <p>
+            You work directly with me from first conversation to launch. No templates. No page builders. No platform
+            lock-in. Just well-built websites and apps, with full ownership when the work is done.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Highlight icon={Briefcase} label="Experience" value="17+ years solving complex problems" />
-          <Highlight icon={Code2} label="Builds" value="Bespoke websites, apps, and CMS platforms" />
-          <Highlight icon={Handshake} label="Approach" value="Founder-led, direct collaboration" />
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Highlight icon={Briefcase} label="Background" value="NHS work and years of independent web building" />
+          <Highlight icon={Code2} label="Builds" value="Bespoke websites, apps, and tailored CMS tools" />
+          <Highlight icon={Handshake} label="Approach" value="Founder-led, direct, and technically rigorous" />
         </div>
       </div>
     </section>
