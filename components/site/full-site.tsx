@@ -60,8 +60,9 @@ export function FullSite() {
                       src="/dinosaur.webp"
                       alt="Velvet Dinosaur mascot assembling from grayscale to full color"
                       grid="8x8"
-                      grayscaleAnimation
-                      colorRevealDelay={1500}
+                      grayscaleAnimation={false}
+                      maxAnimationDelay={0}
+                      pixelFadeInDuration={350}
                       className="rounded-xl"
                       sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
                     />

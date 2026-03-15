@@ -51,7 +51,7 @@ function NavButton({
       className={cn(
         "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3 text-sm font-medium transition-colors",
         highlight
-          ? "border-primary/35 bg-primary text-primary-foreground hover:bg-primary/90"
+          ? "border-[hsl(204,88%,36%)] bg-[hsl(204,88%,40%)] text-white hover:bg-[hsl(204,88%,36%)]"
           : isActive
             ? "border-primary/30 bg-primary/10 text-foreground"
             : "border-border bg-background/80 text-muted-foreground hover:text-foreground"

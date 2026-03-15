@@ -70,7 +70,6 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
-    unoptimized: true,
     localPatterns: [{ pathname: '/**' }],
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
