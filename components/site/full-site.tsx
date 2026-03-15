@@ -36,7 +36,7 @@ export function FullSite() {
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="animate-vd-fade-up py-10 md:py-14 lg:py-16"
+              className="py-10 md:py-14 lg:py-16"
               badge="17 years of product and platform experience"
               heading="Fast, beautiful, secure websites that turn visitors into clients."
               description="Work directly with an experienced developer to launch a custom site built for conversion, search visibility, and long-term maintainability."
@@ -54,7 +54,7 @@ export function FullSite() {
                 },
               }}
               imageSlot={
-                <div className="animate-vd-float [animation-delay:220ms]">
+                <div>
                   <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-transparent p-3 shadow-none backdrop-blur-none hover:border-border/60 hover:bg-background/45 hover:backdrop-blur">
                     <PixelImage
                       src="/dinosaur.webp"
@@ -62,7 +62,7 @@ export function FullSite() {
                       grid="8x8"
                       grayscaleAnimation={false}
                       maxAnimationDelay={0}
-                      pixelFadeInDuration={350}
+                      pixelFadeInDuration={0}
                       className="rounded-xl"
                       sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
                     />

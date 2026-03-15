@@ -7,6 +7,15 @@ const enableStorePreview =
 const enablePuckContentPreviews =
   process.env.NODE_ENV !== 'production' ||
   process.env.VD_ENABLE_PUCK_CONTENT_PREVIEWS === 'true';
+const r2PublicBase = process.env.NEXT_PUBLIC_R2_PUBLIC_BASE || process.env.R2_PUBLIC_BASE || '';
+const r2PublicHost = (() => {
+  if (!r2PublicBase) return null;
+  try {
+    return new URL(r2PublicBase).hostname;
+  } catch {
+    return null;
+  }
+})();
 const distDir = process.env.NEXT_DIST_DIR?.trim();
 const previewAliasesTurbopack = {
   ...(enableStorePreview
@@ -72,6 +81,7 @@ const nextConfig = {
     minimumCacheTTL: 31536000,
     localPatterns: [{ pathname: '/**' }],
     remotePatterns: [
+      ...(r2PublicHost ? [{ protocol: 'https', hostname: r2PublicHost }] : []),
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
       { protocol: 'https', hostname: 'yt3.ggpht.com' },
