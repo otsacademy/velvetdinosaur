@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "targets": [
+    {
+      "name": "velvetdinosaur",
+      "kind": "site",
+      "gates": [
+        {
+          "name": "lint",
+          "command": "bun run lint"
+        },
+        {
+          "name": "typecheck",
+          "command": "bun run typecheck"
+        },
+        {
+          "name": "build",
+          "command": "bun run build"
+        },
+        {
+          "name": "visual",
+          "command": "bun run visual:test"
+        },
+        {
+          "name": "lighthouse",
+          "command": "bun run lighthouse"
+        },
+        {
+          "name": "theme-smoke",
+          "command": "bun run theme:smoke"
+        }
+      ]
+    }
+  ]
+}

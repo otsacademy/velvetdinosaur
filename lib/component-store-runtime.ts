@@ -70,6 +70,19 @@ async function resolveBinary(name: string, candidates: string[]) {
   return '';
 }
 
+async function restartSystemdService(systemctlBin: string, serviceName: string, siteRoot: string, env: NodeJS.ProcessEnv) {
+  try {
+    await execFileAsync(systemctlBin, ['restart', serviceName], { cwd: siteRoot, env });
+    return;
+  } catch {
+    if (typeof process.getuid === 'function' && process.getuid() !== 0) {
+      await execFileAsync('sudo', [systemctlBin, 'restart', serviceName], { cwd: siteRoot, env });
+      return;
+    }
+    throw new Error('systemd restart failed');
+  }
+}
+
 export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOptions) {
   const fileEnv = await loadEnvFile(envFile);
   const env = {
@@ -92,9 +105,42 @@ export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOption
     `vd-${slug}`;
 
   const pm2Bin = await resolveBinary('pm2', ['/usr/local/bin/pm2', '/usr/bin/pm2', '/bin/pm2']);
+  const systemctlBin = await resolveBinary('systemctl', ['/usr/bin/systemctl', '/bin/systemctl']);
   const bunBin = await resolveBinary('bun', ['/usr/local/bin/bun', '/usr/bin/bun', '/bin/bun']);
   if (!bunBin) {
     throw new Error('bun not found in PATH');
+  }
+
+  if ((fileEnv.VD_PROCESS_MANAGER || '').trim() === 'systemd') {
+    const serviceName = fileEnv.VD_SLOT_SERVICE || fileEnv.SYSTEMD_SERVICE_NAME || process.env.VD_SLOT_SERVICE;
+    if (!serviceName) {
+      return { restarted: false, message: 'VD_SLOT_SERVICE not set; rebuild skipped.' };
+    }
+
+    try {
+      await execFileAsync(bunBin, ['run', 'build'], { cwd: siteRoot, env });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'build failed';
+      return { restarted: false, message };
+    }
+
+    try {
+      await fs.access(path.join(siteRoot, '.next', 'BUILD_ID'));
+    } catch {
+      return { restarted: false, message: 'Build did not produce .next/BUILD_ID; restart skipped.' };
+    }
+
+    if (!systemctlBin) {
+      return { restarted: false, message: 'systemctl not found in PATH; rebuild completed but restart skipped.' };
+    }
+
+    try {
+      await restartSystemdService(systemctlBin, serviceName, siteRoot, env);
+      return { restarted: true, name: serviceName };
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'systemd restart failed';
+      return { restarted: false, message };
+    }
   }
 
   let stoppedForBuild = false;

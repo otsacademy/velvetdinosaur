@@ -8,7 +8,6 @@ const execFileAsync = promisify(execFile);
 type EnvMap = Record<string, string>;
 
 const DEFAULT_ENV_FILE = '.env.production';
-const LIVE_DIST_DIR = '.next';
 
 function parseEnv(content: string): EnvMap {
   const map: EnvMap = {};
@@ -48,97 +47,38 @@ async function resolveBinary(name: string, candidates: string[]) {
   return name;
 }
 
-async function exists(filePath: string) {
-  try {
-    await fs.access(filePath);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function tsTag() {
-  return new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
-}
-
-async function runBun(bunBin: string, args: string[], env: NodeJS.ProcessEnv) {
-  await execFileAsync(bunBin, args, { env, cwd: process.cwd() });
-}
-
-async function restartPm2App(bunBin: string, env: NodeJS.ProcessEnv) {
-  const restartEnv = { ...env };
-  delete restartEnv.NEXT_DIST_DIR;
-  await runBun(bunBin, ['run', 'pm2:sync-env', '--', '--restart'], restartEnv);
-}
-
 async function main() {
-  const envFilePath = path.resolve(process.cwd(), DEFAULT_ENV_FILE);
+  const passthroughArgs = process.argv.slice(2);
+  const envFileArg = passthroughArgs.find((arg) => arg.startsWith('--env-file=')) || '';
+  const envFile = envFileArg ? envFileArg.slice('--env-file='.length).trim() || DEFAULT_ENV_FILE : DEFAULT_ENV_FILE;
+  const envFilePath = path.resolve(process.cwd(), envFile);
   const fileEnv = await loadEnvFile(envFilePath);
-  const env: NodeJS.ProcessEnv = {
+  const configPath = path.resolve(process.cwd(), 'deploy', 'local-first.json');
+  const hasConfig = await fs
+    .access(configPath)
+    .then(() => true)
+    .catch(() => false);
+
+  if ((fileEnv.VD_DEPLOY_MODE || '').trim() === 'blue-green' || hasConfig) {
+    const bunBin = await resolveBinary('bun', ['/usr/local/bin/bun', '/usr/bin/bun', '/bin/bun']);
+    const args = ['run', 'deploy:blue-green', '--'];
+    if (hasConfig && !passthroughArgs.some((arg) => arg.startsWith('--config='))) {
+      args.push(`--config=${path.relative(process.cwd(), configPath)}`);
+    }
+    args.push(...passthroughArgs);
+    await execFileAsync(bunBin, args, { cwd: process.cwd(), env: process.env });
+    return;
+  }
+
+  const env = {
     ...process.env,
     ...fileEnv,
     PATH: `/usr/local/bin:/usr/bin:/bin:${process.env.PATH || ''}`
   };
 
   const bunBin = await resolveBinary('bun', ['/usr/local/bin/bun', '/usr/bin/bun', '/bin/bun']);
-  const cwd = process.cwd();
-  const stamp = tsTag();
-  const releaseDistDir = `${LIVE_DIST_DIR}.release-${stamp}`;
-  const backupDistDir = `${LIVE_DIST_DIR}.backup-${stamp}`;
-  const failedDistDir = `${LIVE_DIST_DIR}.failed-${stamp}`;
-  const liveDistPath = path.join(cwd, LIVE_DIST_DIR);
-  const releaseDistPath = path.join(cwd, releaseDistDir);
-  const backupDistPath = path.join(cwd, backupDistDir);
-  const failedDistPath = path.join(cwd, failedDistDir);
-
-  await fs.rm(releaseDistPath, { recursive: true, force: true });
-  await fs.rm(backupDistPath, { recursive: true, force: true });
-  await fs.rm(failedDistPath, { recursive: true, force: true });
-
-  const buildEnv = { ...env, NEXT_DIST_DIR: releaseDistDir };
-  console.log(`[deploy-safe] building release dist at ${releaseDistDir}`);
-  await runBun(bunBin, ['run', 'build'], buildEnv);
-
-  const buildIdPath = path.join(releaseDistPath, 'BUILD_ID');
-  if (!(await exists(buildIdPath))) {
-    throw new Error(`release build missing BUILD_ID: ${buildIdPath}`);
-  }
-
-  const hadLiveDist = await exists(liveDistPath);
-  if (hadLiveDist) {
-    await fs.rename(liveDistPath, backupDistPath);
-  }
-
-  try {
-    await fs.rename(releaseDistPath, liveDistPath);
-  } catch (error) {
-    if (hadLiveDist && (await exists(backupDistPath))) {
-      await fs.rename(backupDistPath, liveDistPath);
-    }
-    throw error;
-  }
-
-  try {
-    console.log('[deploy-safe] restarting pm2 process with synced env');
-    await restartPm2App(bunBin, env);
-    await fs.rm(backupDistPath, { recursive: true, force: true });
-    console.log('[deploy-safe] deploy completed');
-  } catch (error) {
-    console.error('[deploy-safe] restart failed, attempting rollback');
-    if (await exists(liveDistPath)) {
-      await fs.rename(liveDistPath, failedDistPath);
-    }
-    if (hadLiveDist && (await exists(backupDistPath))) {
-      await fs.rename(backupDistPath, liveDistPath);
-      try {
-        await restartPm2App(bunBin, env);
-      } catch (rollbackError) {
-        console.error('[deploy-safe] rollback restart failed');
-        throw rollbackError;
-      }
-    }
-    throw error;
-  }
+  await execFileAsync(bunBin, ['run', 'build'], { env, cwd: process.cwd() });
+  await execFileAsync(bunBin, ['run', 'pm2:sync-env'], { env, cwd: process.cwd() });
 }
 
 main().catch((err) => {
