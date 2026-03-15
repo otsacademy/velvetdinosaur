@@ -6,7 +6,6 @@ const routes = [
 ];
 
 async function stabilize(page: Page) {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.addStyleTag({
     content: `
       *, *::before, *::after {
@@ -17,12 +16,14 @@ async function stabilize(page: Page) {
     `
   });
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(100);
+  // Let timer-driven hero and CTA reveals settle before the snapshot.
+  await page.waitForTimeout(1800);
 }
 
 test.describe('visual baselines', () => {
   for (const route of routes) {
     test(`${route.name} page`, async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(route.path, { waitUntil: 'networkidle' });
       await stabilize(page);
       await expect(page).toHaveScreenshot(`${route.name}.png`, { fullPage: true });
