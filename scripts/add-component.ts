@@ -40,7 +40,7 @@ async function main() {
   console.log(`Installed ${installed.name} (${installed.id}) v${installed.version}`);
 
   if (rebuild) {
-    console.log('Rebuilding site and restarting PM2...');
+    console.log('Rebuilding site and activating the runtime...');
     const result = await rebuildAndRestart();
     if (result.restarted) {
       console.log(`Restarted ${result.name}`);
@@ -48,7 +48,7 @@ async function main() {
       console.log(result.message || 'Restart skipped.');
     }
   } else {
-    console.log('Run `bun run build` and restart PM2 to activate the new block.');
+    console.log('Run `bun run build` for a local check, then use `bun run release:local` to activate on blue/green production.');
   }
 }
 

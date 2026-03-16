@@ -26,8 +26,13 @@ type InstalledBlock = {
 };
 
 type StorePayload = {
+  activationCommand: string;
+  activationMode: 'release' | 'restart';
+  installBlockedReason: string | null;
   store: StoreIndex;
   installed: InstalledBlock[];
+  rebuildAllowed: boolean;
+  runtimeInstallAllowed: boolean;
   storePath: string;
   writeEnabled: boolean;
   adminAllowed: boolean;
@@ -58,9 +63,14 @@ export function ComponentStoreClient() {
     return map;
   }, [payload]);
 
-  const canInstall = Boolean(payload?.writeEnabled && payload?.adminAllowed);
+  const canInstall = Boolean(payload?.writeEnabled && payload?.adminAllowed && payload?.runtimeInstallAllowed);
 
   const handleInstall = async (id: string) => {
+    if (!canInstall) {
+      setMessage(payload?.installBlockedReason || 'Installs are disabled for your account.');
+      return;
+    }
+
     setLoadingId(id);
     setMessage('');
     const res = await fetch('/api/components/install', {
@@ -78,7 +88,7 @@ export function ComponentStoreClient() {
     setMessage(
       data?.buildResult?.restarted
         ? `Installed and restarted ${data.buildResult.name}.`
-        : 'Installed. Run `bun run build` and restart PM2 to activate.'
+        : data?.buildResult?.message || `Installed. Run \`${payload?.activationCommand || 'bun run build'}\` to activate.`
     );
 
     const refreshed = await fetch('/api/components/list').then((r) => (r.ok ? r.json() : null));
@@ -113,10 +123,12 @@ export function ComponentStoreClient() {
             <input
               type="checkbox"
               checked={rebuild}
+              disabled={!payload.rebuildAllowed}
               onChange={(event) => setRebuild(event.target.checked)}
             />
-            <span>Rebuild + restart after install</span>
+            <span>{payload.rebuildAllowed ? 'Rebuild + restart after install' : 'Runtime rebuilds disabled here'}</span>
           </label>
+          {payload.installBlockedReason ? <p>{payload.installBlockedReason}</p> : null}
           {message ? <p className="text-sm text-[var(--vd-fg)]">{message}</p> : null}
         </CardContent>
       </Card>

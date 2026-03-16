@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import {
+  getComponentStoreInstallPolicy,
   installStoreBlock,
   isAdminEmailAllowed,
   isComponentStoreWriteEnabled,
@@ -21,6 +22,14 @@ export async function POST(request: Request) {
   const email = (session as { user?: { email?: string } })?.user?.email;
   if (!isAdminEmailAllowed(email)) {
     return NextResponse.json({ error: 'Not allowed to install components.' }, { status: 403 });
+  }
+
+  const policy = getComponentStoreInstallPolicy();
+  if (!policy.runtimeInstallAllowed) {
+    return NextResponse.json(
+      { error: policy.installBlockedReason || 'Runtime component installs are disabled for this environment.' },
+      { status: 409 }
+    );
   }
 
   const body = await request.json();

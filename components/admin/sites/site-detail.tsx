@@ -37,7 +37,7 @@ export function SiteDetail({ slug, site, jobs }: Props) {
   const deleteSite = async () => {
     if (!site) return;
     const confirmed = window.confirm(
-      `Delete "${site.slug}"? This removes nginx + pm2 config and deletes the site files.`
+      `Delete "${site.slug}"? This removes nginx and runtime config and deletes the site files.`
     );
     if (!confirmed) return;
     setDeleting(true);

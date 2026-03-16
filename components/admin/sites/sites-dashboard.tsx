@@ -29,7 +29,7 @@ export function SitesDashboard({ sites, jobs }: { sites: SiteRow[]; jobs: JobRow
 
   const deleteSite = async (site: SiteRow) => {
     const confirmed = window.confirm(
-      `Delete "${site.slug}"? This removes nginx + pm2 config and deletes the site files.`
+      `Delete "${site.slug}"? This removes nginx and runtime config and deletes the site files.`
     );
     if (!confirmed) return;
     setDeletingSlug(site.slug);

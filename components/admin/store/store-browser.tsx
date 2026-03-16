@@ -29,7 +29,12 @@ type InstalledBlock = {
 };
 
 type InstallPayload = {
+  activationCommand: string;
+  activationMode: 'release' | 'restart';
+  installBlockedReason: string | null;
   installed: InstalledBlock[];
+  rebuildAllowed: boolean;
+  runtimeInstallAllowed: boolean;
   writeEnabled: boolean;
   adminAllowed: boolean;
 };
@@ -74,7 +79,7 @@ export function StoreBrowser() {
     return map;
   }, [installPayload]);
 
-  const canInstall = Boolean(installPayload?.writeEnabled && installPayload?.adminAllowed);
+  const canInstall = Boolean(installPayload?.writeEnabled && installPayload?.adminAllowed && installPayload?.runtimeInstallAllowed);
 
   useEffect(() => {
     let active = true;
@@ -94,7 +99,12 @@ export function StoreBrowser() {
           const data = await installRes.json();
           if (active) {
             setInstallPayload({
+              activationCommand: data?.activationCommand || 'bun run build',
+              activationMode: data?.activationMode === 'release' ? 'release' : 'restart',
+              installBlockedReason: data?.installBlockedReason || null,
               installed: data?.installed || [],
+              rebuildAllowed: Boolean(data?.rebuildAllowed),
+              runtimeInstallAllowed: Boolean(data?.runtimeInstallAllowed),
               writeEnabled: Boolean(data?.writeEnabled),
               adminAllowed: Boolean(data?.adminAllowed)
             });
@@ -116,7 +126,7 @@ export function StoreBrowser() {
 
   const handleInstall = async (item: StoreItem, options?: { openPuck?: boolean }) => {
     if (!canInstall) {
-      setInstallMessage('Installs are disabled for your account.');
+      setInstallMessage(installPayload?.installBlockedReason || 'Installs are disabled for your account.');
       return;
     }
     setInstallingId(item.id);
@@ -135,20 +145,26 @@ export function StoreBrowser() {
     setInstallMessage(
       data?.buildResult?.restarted
         ? `Installed and restarted ${data.buildResult.name}.`
-        : 'Installed. Run `bun run build` and restart PM2 to activate.'
+        : data?.buildResult?.message ||
+            `Installed. Run \`${installPayload?.activationCommand || 'bun run build'}\` to activate.`
     );
     const refreshed = await fetch('/api/components/list').then((response) =>
       response.ok ? response.json() : null
     );
     if (refreshed) {
       setInstallPayload({
+        activationCommand: refreshed?.activationCommand || 'bun run build',
+        activationMode: refreshed?.activationMode === 'release' ? 'release' : 'restart',
+        installBlockedReason: refreshed?.installBlockedReason || null,
         installed: refreshed?.installed || [],
+        rebuildAllowed: Boolean(refreshed?.rebuildAllowed),
+        runtimeInstallAllowed: Boolean(refreshed?.runtimeInstallAllowed),
         writeEnabled: Boolean(refreshed?.writeEnabled),
         adminAllowed: Boolean(refreshed?.adminAllowed)
       });
     }
     setInstallingId(null);
-    if (options?.openPuck) {
+    if (options?.openPuck && data?.buildResult?.restarted) {
       router.push('/edit');
     }
   };
@@ -205,10 +221,12 @@ export function StoreBrowser() {
                     <input
                       type="checkbox"
                       checked={rebuild}
+                      disabled={!installPayload.rebuildAllowed}
                       onChange={(event) => setRebuild(event.target.checked)}
                     />
-                    <span>Rebuild after install</span>
+                    <span>{installPayload.rebuildAllowed ? 'Rebuild after install' : 'Runtime rebuilds disabled here'}</span>
                   </label>
+                  {installPayload.installBlockedReason ? <span>{installPayload.installBlockedReason}</span> : null}
                   {installMessage ? <span className="text-[var(--vd-fg)]">{installMessage}</span> : null}
                 </>
               ) : (

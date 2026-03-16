@@ -70,6 +70,24 @@ async function resolveBinary(name: string, candidates: string[]) {
   return '';
 }
 
+async function hasBlueGreenDeployConfig(siteRoot: string) {
+  try {
+    await fs.access(path.join(siteRoot, 'deploy', 'local-first.json'));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function isBlueGreenProductionRuntime(siteRoot: string, fileEnv: EnvMap) {
+  const deployMode = String(fileEnv.VD_DEPLOY_MODE || process.env.VD_DEPLOY_MODE || '').trim();
+  const slotName = String(fileEnv.VD_SLOT_NAME || process.env.VD_SLOT_NAME || '').trim();
+  const slotService = String(fileEnv.VD_SLOT_SERVICE || process.env.VD_SLOT_SERVICE || '').trim();
+  const slotDir = /-(blue|green)$/.test(path.basename(siteRoot));
+  const hasConfig = await hasBlueGreenDeployConfig(siteRoot);
+  return slotDir || slotName !== '' || slotService !== '' || (process.env.NODE_ENV === 'production' && (deployMode === 'blue-green' || hasConfig));
+}
+
 async function restartSystemdService(systemctlBin: string, serviceName: string, siteRoot: string, env: NodeJS.ProcessEnv) {
   try {
     await execFileAsync(systemctlBin, ['restart', serviceName], { cwd: siteRoot, env });
@@ -85,6 +103,14 @@ async function restartSystemdService(systemctlBin: string, serviceName: string, 
 
 export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOptions) {
   const fileEnv = await loadEnvFile(envFile);
+  if (await isBlueGreenProductionRuntime(siteRoot, fileEnv)) {
+    return {
+      restarted: false,
+      message:
+        'Blue/green production disables in-place rebuild/restart. Activate component changes from the controller checkout with `bun run release:local`.'
+    };
+  }
+
   const env = {
     ...process.env,
     ...fileEnv,
