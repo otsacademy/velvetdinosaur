@@ -36,6 +36,9 @@ export default async function RootLayout({
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
+  const fontClasses = isLhci
+    ? ''
+    : `${spaceGrotesk.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci
@@ -48,9 +51,10 @@ export default async function RootLayout({
         '--muted-foreground': '#334155',
         '--primary': '#1e3a8a',
         '--primary-foreground': '#ffffff',
-        '--accent': '#e2e8f0',
-        '--accent-foreground': '#0f172a',
+        '--accent': '#1e3a8a',
+        '--accent-foreground': '#ffffff',
         '--ring': '#1e3a8a',
+        '--vd-interaction-blue': '#1e40af',
 
         '--vd-bg': '#ffffff',
         '--vd-fg': '#0f172a',
@@ -58,17 +62,17 @@ export default async function RootLayout({
         '--vd-muted-fg': '#334155',
         '--vd-primary': '#1e3a8a',
         '--vd-primary-fg': '#ffffff',
-        '--vd-accent': '#e2e8f0',
-        '--vd-accent-fg': '#0f172a',
+        '--vd-accent': '#1e3a8a',
+        '--vd-accent-fg': '#ffffff',
         '--vd-ring': '#1e3a8a'
       }
     : {};
 
   return (
-    <html
+      <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
+      className={fontClasses}
       style={{
         ...(themeVars as CSSProperties),
         ...(lhciOverrides as CSSProperties)

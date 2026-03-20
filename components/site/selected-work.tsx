@@ -47,7 +47,7 @@ function WorkCard({ article }: { article: Article }) {
           <Link
             href={`/work/${article.slug}`}
             aria-label={`Read more about ${article.title}`}
-            className="inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform duration-200 group-hover:translate-x-0.5"
+            className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-transform duration-200 group-hover:translate-x-0.5"
           >
             Read More
             <span className="sr-only"> about {article.title}</span>

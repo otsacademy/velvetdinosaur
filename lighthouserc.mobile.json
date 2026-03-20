@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "VD_LHCI=true NEXT_PUBLIC_LHCI=true bun run start -- -p 3100",
+      "startServerCommand": "bash -lc 'VD_LHCI=true NEXT_PUBLIC_LHCI=true bun run start -- -p 3100 & pid=$!; trap \"kill $pid\" EXIT; until curl -sf http://localhost:3100/ >/dev/null; do sleep 1; done; curl -sf http://localhost:3100/ >/dev/null; curl -sf http://localhost:3100/about >/dev/null; wait $pid'",
       "startServerReadyPattern": "Ready in",
       "url": [
         "http://localhost:3100/",

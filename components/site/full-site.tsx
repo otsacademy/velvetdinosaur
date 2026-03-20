@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Image from "next/image"
 import { Hero1 } from "@/components/hero1"
 import { PixelImage } from "@/components/holding/pixel-image.client"
@@ -23,11 +24,13 @@ export function FullSite() {
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
   const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"
+  const withReveal = (content: ReactNode, delay?: number) =>
+    isLhci ? content : <ScrollReveal delay={delay}>{content}</ScrollReveal>
 
   return (
     <div className="relative min-h-dvh overflow-hidden">
-      <EchoNavbar />
-      <FloatingWhatsApp href={whatsappHref} />
+      {isLhci ? null : <EchoNavbar />}
+      {isLhci ? null : <FloatingWhatsApp href={whatsappHref} />}
 
       <main className="pt-24 md:pt-28">
         <section id="home" className="relative px-6">
@@ -87,59 +90,41 @@ export function FullSite() {
           </div>
         </section>
 
-        <ScrollReveal>
-          <SelectedWork />
-        </ScrollReveal>
+        {withReveal(<SelectedWork />)}
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-muted)_82%,var(--vd-bg))]">
-          <ScrollReveal delay={100}>
-            <GoogleReviewsSection />
-          </ScrollReveal>
-        </div>
+        {isLhci ? null : (
+          <>
+            <div className="bg-[color-mix(in_srgb,var(--vd-muted)_82%,var(--vd-bg))]">
+              {withReveal(<GoogleReviewsSection />, 100)}
+            </div>
 
-        <ScrollReveal delay={100}>
-          <MyStack />
-        </ScrollReveal>
+            {withReveal(<MyStack />, 100)}
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
-          <ScrollReveal delay={100}>
-            <AboutSection />
-          </ScrollReveal>
-        </div>
+            <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
+              {withReveal(<AboutSection />, 100)}
+            </div>
 
-        <ScrollReveal delay={100}>
-          <ServicesSection />
-        </ScrollReveal>
+            {withReveal(<ServicesSection />, 100)}
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
-          <ScrollReveal delay={100}>
-            <SauroCmsSection />
-          </ScrollReveal>
-        </div>
+            <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
+              {withReveal(<SauroCmsSection />, 100)}
+            </div>
 
-        <ScrollReveal delay={100}>
-          <PageSpeedGuaranteeSection />
-        </ScrollReveal>
+            {withReveal(<PageSpeedGuaranteeSection />, 100)}
 
-        <ScrollReveal delay={100}>
-          <PricingSection />
-        </ScrollReveal>
+            {withReveal(<PricingSection />, 100)}
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-accent)_65%,var(--vd-bg))]">
-          <ScrollReveal delay={100}>
-            <NoLockInSection />
-          </ScrollReveal>
-        </div>
+            <div className="bg-[color-mix(in_srgb,var(--vd-accent)_65%,var(--vd-bg))]">
+              {withReveal(<NoLockInSection />, 100)}
+            </div>
 
-        <ScrollReveal delay={100}>
-          <ClientReviewSection />
-        </ScrollReveal>
+            {withReveal(<ClientReviewSection />, 100)}
 
-        <div className="bg-[color-mix(in_srgb,var(--vd-muted)_84%,var(--vd-bg))]">
-          <ScrollReveal delay={100}>
-            <ContactSection />
-          </ScrollReveal>
-        </div>
+            <div className="bg-[color-mix(in_srgb,var(--vd-muted)_84%,var(--vd-bg))]">
+              {withReveal(<ContactSection />, 100)}
+            </div>
+          </>
+        )}
 
         <SiteFooter />
       </main>
