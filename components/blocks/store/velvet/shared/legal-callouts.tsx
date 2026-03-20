@@ -1,6 +1,6 @@
 "use client"
 
-import { EditableText } from "@/components/demo/editable"
+import { EditableText } from "@/components/content/editable"
 import { normalizeStringItems, type StringItem } from "@/components/blocks/store/velvet/shared/legal-helpers"
 
 type LegalCalloutLink = {
@@ -34,7 +34,7 @@ export function LegalCallouts({ callouts, sectionId, keyPrefix }: LegalCalloutsP
             {callout.title ? (
               <p className="font-medium text-foreground">
                 <EditableText
-                  demoKey={key(`callouts.${calloutIndex}.title`)}
+                  contentKey={key(`callouts.${calloutIndex}.title`)}
                   value={callout.title}
                   as="span"
                   showIcon={false}
@@ -44,7 +44,7 @@ export function LegalCallouts({ callouts, sectionId, keyPrefix }: LegalCalloutsP
             {lines.map((line, lineIndex) => (
               <p key={lineIndex}>
                 <EditableText
-                  demoKey={key(`callouts.${calloutIndex}.lines.${lineIndex}`)}
+                  contentKey={key(`callouts.${calloutIndex}.lines.${lineIndex}`)}
                   value={line}
                   as="span"
                   showIcon={false}
@@ -55,7 +55,7 @@ export function LegalCallouts({ callouts, sectionId, keyPrefix }: LegalCalloutsP
               <p>
                 {callout.link.prefix ? (
                   <EditableText
-                    demoKey={key(`callouts.${calloutIndex}.link.prefix`)}
+                    contentKey={key(`callouts.${calloutIndex}.link.prefix`)}
                     value={callout.link.prefix}
                     as="span"
                     showIcon={false}
@@ -63,7 +63,7 @@ export function LegalCallouts({ callouts, sectionId, keyPrefix }: LegalCalloutsP
                 ) : null}
                 <a href={callout.link.href} className="underline underline-offset-4">
                   <EditableText
-                    demoKey={key(`callouts.${calloutIndex}.link.label`)}
+                    contentKey={key(`callouts.${calloutIndex}.link.label`)}
                     value={callout.link.label}
                     as="span"
                     showIcon={false}

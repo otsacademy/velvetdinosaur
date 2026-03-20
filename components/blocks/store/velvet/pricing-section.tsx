@@ -3,8 +3,8 @@
 import type { ComponentConfig } from "@measured/puck"
 import { Check, Lock, Server, Shield, Sparkles } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -58,7 +58,7 @@ function normalizeItem(item: StringItem | undefined) {
 }
 
 export function PricingSection(props: PricingSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const clarifiers = props.clarifiers || []
 
   return (
@@ -68,12 +68,12 @@ export function PricingSection(props: PricingSectionProps) {
           <div className="flex items-center justify-center gap-3">
             <Sparkles className="h-7 w-7 text-muted-foreground md:h-8 md:w-8" aria-hidden="true" />
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl font-display font-normal">
-              <EditableText demoKey={key("pricing.heading")} value={props.heading} as="span" showIcon={false} />
+              <EditableText contentKey={key("pricing.heading")} value={props.heading} as="span" showIcon={false} />
             </h2>
           </div>
           <p className="text-sm text-muted-foreground md:text-base">
             <EditableText
-              demoKey={key("pricing.subheading")}
+              contentKey={key("pricing.subheading")}
               value={props.subheading}
               as="span"
               showIcon={false}
@@ -85,7 +85,7 @@ export function PricingSection(props: PricingSectionProps) {
           <CardHeader className="space-y-3">
             <Badge variant="secondary" className="w-fit">
               <EditableText
-                demoKey={key("pricing.baseline.label")}
+                contentKey={key("pricing.baseline.label")}
                 value={props.baseline?.label || ""}
                 as="span"
                 showIcon={false}
@@ -93,7 +93,7 @@ export function PricingSection(props: PricingSectionProps) {
             </Badge>
             <CardTitle className="text-3xl font-semibold md:text-4xl">
               <EditableText
-                demoKey={key("pricing.baseline.price")}
+                contentKey={key("pricing.baseline.price")}
                 value={props.baseline?.price || ""}
                 as="span"
                 showIcon={false}
@@ -102,7 +102,7 @@ export function PricingSection(props: PricingSectionProps) {
             <div className="space-y-1">
               <p className="text-sm font-medium text-foreground">
                 <EditableText
-                  demoKey={key("pricing.baseline.includesSummary")}
+                  contentKey={key("pricing.baseline.includesSummary")}
                   value={props.baseline?.includesSummary || ""}
                   as="span"
                   showIcon={false}
@@ -110,7 +110,7 @@ export function PricingSection(props: PricingSectionProps) {
               </p>
               <p className="text-xs text-muted-foreground">
                 <EditableText
-                  demoKey={key("pricing.baseline.includesNote")}
+                  contentKey={key("pricing.baseline.includesNote")}
                   value={props.baseline?.includesNote || ""}
                   as="span"
                   showIcon={false}
@@ -122,7 +122,7 @@ export function PricingSection(props: PricingSectionProps) {
             <div>
               <p className="text-sm font-semibold text-foreground">
                 <EditableText
-                  demoKey={key("pricing.includesHeading")}
+                  contentKey={key("pricing.includesHeading")}
                   value={props.includesHeading}
                   as="span"
                   showIcon={false}
@@ -134,7 +134,7 @@ export function PricingSection(props: PricingSectionProps) {
                     <Check className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
                     <span>
                       <EditableText
-                        demoKey={key(`pricing.inclusions.${index}`)}
+                        contentKey={key(`pricing.inclusions.${index}`)}
                         value={normalizeItem(item)}
                         as="span"
                         showIcon={false}
@@ -150,7 +150,7 @@ export function PricingSection(props: PricingSectionProps) {
             <div className="rounded-xl border border-border/70 bg-muted/30 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 <EditableText
-                  demoKey={key("pricing.hostingHeading")}
+                  contentKey={key("pricing.hostingHeading")}
                   value={props.hostingHeading}
                   as="span"
                   showIcon={false}
@@ -164,7 +164,7 @@ export function PricingSection(props: PricingSectionProps) {
                       <Icon className="mt-0.5 h-4 w-4 text-foreground/70" aria-hidden="true" />
                       <span>
                         <EditableText
-                          demoKey={key(`pricing.hostingItems.${index}`)}
+                          contentKey={key(`pricing.hostingItems.${index}`)}
                           value={normalizeItem(item)}
                           as="span"
                           showIcon={false}
@@ -178,7 +178,7 @@ export function PricingSection(props: PricingSectionProps) {
 
             <p className="text-xs text-muted-foreground">
               <EditableText
-                demoKey={key("pricing.complexityNote")}
+                contentKey={key("pricing.complexityNote")}
                 value={props.complexityNote}
                 as="span"
                 multiline
@@ -190,7 +190,7 @@ export function PricingSection(props: PricingSectionProps) {
               <Button asChild variant="secondary" size="sm" className="rounded-full">
                 <a href={props.ctas?.primary?.href || "#booking"}>
                   <EditableText
-                    demoKey={key("pricing.ctas.primary.label")}
+                    contentKey={key("pricing.ctas.primary.label")}
                     value={props.ctas?.primary?.label || ""}
                     as="span"
                     showIcon={false}
@@ -200,7 +200,7 @@ export function PricingSection(props: PricingSectionProps) {
               <Button asChild variant="outline" size="sm" className="rounded-full">
                 <a href={props.ctas?.secondary?.href || "mailto:hello@velvetdinosaur.com"}>
                   <EditableText
-                    demoKey={key("pricing.ctas.secondary.label")}
+                    contentKey={key("pricing.ctas.secondary.label")}
                     value={props.ctas?.secondary?.label || ""}
                     as="span"
                     showIcon={false}
@@ -217,7 +217,7 @@ export function PricingSection(props: PricingSectionProps) {
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">
                   <EditableText
-                    demoKey={key(`pricing.clarifiers.${index}.heading`)}
+                    contentKey={key(`pricing.clarifiers.${index}.heading`)}
                     value={clarifier.heading}
                     as="span"
                     showIcon={false}
@@ -230,7 +230,7 @@ export function PricingSection(props: PricingSectionProps) {
                     <li key={`${bulletIndex}`} className="flex items-start gap-2">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                       <EditableText
-                        demoKey={key(`pricing.clarifiers.${index}.bullets.${bulletIndex}`)}
+                        contentKey={key(`pricing.clarifiers.${index}.bullets.${bulletIndex}`)}
                         value={normalizeItem(item)}
                         as="span"
                         showIcon={false}
@@ -244,7 +244,7 @@ export function PricingSection(props: PricingSectionProps) {
         </div>
 
         <div className="text-center text-xs text-muted-foreground">
-          <EditableText demoKey={key("pricing.vatNote")} value={props.vatNote} as="span" showIcon={false} />
+          <EditableText contentKey={key("pricing.vatNote")} value={props.vatNote} as="span" showIcon={false} />
         </div>
       </div>
     </Section>

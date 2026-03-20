@@ -16,8 +16,8 @@ import {
   Zap,
 } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Badge } from "@/components/ui/badge"
 import { Section, SectionHeading } from "@/components/ui/section"
 import { AnimatedSection } from "@/components/ui/animated-section"
@@ -61,7 +61,7 @@ export type FeatureBadgeGridProps = {
 }
 
 export function FeatureBadgeGrid(props: FeatureBadgeGridProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const badges = props.badges || []
 
   return (
@@ -84,7 +84,7 @@ export function FeatureBadgeGrid(props: FeatureBadgeGridProps) {
             <path d="m2 12 10 5 10-5" />
           </svg>
           <EditableText
-            demoKey={key("featureBadges.heading")}
+            contentKey={key("featureBadges.heading")}
             value={props.heading}
             as="span"
             showIcon={false}
@@ -94,7 +94,7 @@ export function FeatureBadgeGrid(props: FeatureBadgeGridProps) {
       {props.subheading ? (
         <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
           <EditableText
-            demoKey={key("featureBadges.subheading")}
+            contentKey={key("featureBadges.subheading")}
             value={props.subheading}
             as="span"
             multiline
@@ -118,7 +118,7 @@ export function FeatureBadgeGrid(props: FeatureBadgeGridProps) {
               <div className="min-w-0 space-y-1">
                 <p className="font-medium text-foreground">
                   <EditableText
-                    demoKey={key(`featureBadges.badges.${index}.label`)}
+                    contentKey={key(`featureBadges.badges.${index}.label`)}
                     value={badge.label}
                     as="span"
                     showIcon={false}
@@ -127,7 +127,7 @@ export function FeatureBadgeGrid(props: FeatureBadgeGridProps) {
                 {badge.description ? (
                   <p className="text-sm text-muted-foreground">
                     <EditableText
-                      demoKey={key(`featureBadges.badges.${index}.description`)}
+                      contentKey={key(`featureBadges.badges.${index}.description`)}
                       value={badge.description}
                       as="span"
                       multiline

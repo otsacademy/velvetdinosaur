@@ -251,18 +251,18 @@
               "badge": "02"
             },
             {
-              "title": "Log in to the demo",
-              "description": "Step into a sandboxed version of the site and try editing for yourself. Use any demo credentials to sign in; refresh to reset everything.",
+              "title": "Tailored handover",
+              "description": "Every project includes a practical handover so you know what you can update yourself and when it makes sense to send changes back to me.",
               "bullets": [
-                "Open the demo environment",
-                "Sign in with any demo credentials",
-                "Changes reset on refresh"
+                "Short walkthrough once the site is live",
+                "Clear guidance on copy, images, and sections",
+                "Backups in place before major edits"
               ],
               "image": "/placeholder.jpg",
-              "imageAlt": "Demo login preview",
+              "imageAlt": "Site handover overview",
               "badge": "03",
-              "ctaLabel": "Open demo & sign in",
-              "ctaHref": "/demo?admin=1"
+              "ctaLabel": "",
+              "ctaHref": ""
             }
           ]
         }
@@ -484,7 +484,7 @@
             },
             {
               "question": "Can I see how editing works?",
-              "answer": "Yes — here's a quick demo video showing how easy it is to update text, images, and sections yourself.",
+              "answer": "Yes — I can share a short walkthrough showing how text, images, and sections are updated.",
               "category": "Support"
             },
             {
@@ -824,18 +824,18 @@
               "badge": "02"
             },
             {
-              "title": "Log in to the demo",
-              "description": "Step into a sandboxed version of the site and try editing for yourself. Use any demo credentials to sign in; refresh to reset everything.",
+              "title": "Tailored handover",
+              "description": "Every project includes a practical handover so you know what you can update yourself and when it makes sense to send changes back to me.",
               "bullets": [
-                "Open the demo environment",
-                "Sign in with any demo credentials",
-                "Changes reset on refresh"
+                "Short walkthrough once the site is live",
+                "Clear guidance on copy, images, and sections",
+                "Backups in place before major edits"
               ],
               "image": "/placeholder.jpg",
-              "imageAlt": "Demo login preview",
+              "imageAlt": "Site handover overview",
               "badge": "03",
-              "ctaLabel": "Open demo & sign in",
-              "ctaHref": "/demo?admin=1"
+              "ctaLabel": "",
+              "ctaHref": ""
             }
           ]
         }
@@ -1057,7 +1057,7 @@
             },
             {
               "question": "Can I see how editing works?",
-              "answer": "Yes — here's a quick demo video showing how easy it is to update text, images, and sections yourself.",
+              "answer": "Yes — I can share a short walkthrough showing how text, images, and sections are updated.",
               "category": "Support"
             },
             {

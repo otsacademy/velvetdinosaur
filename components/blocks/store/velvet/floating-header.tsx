@@ -4,8 +4,8 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableImage, EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableImage, EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { MobileNavSheet } from "@/components/blocks/store/velvet/shared/mobile-nav-sheet"
@@ -28,7 +28,7 @@ export type FloatingHeaderProps = {
 export function FloatingHeader(props: FloatingHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8)
@@ -59,7 +59,7 @@ export function FloatingHeader(props: FloatingHeaderProps) {
             <Link href="/" className="flex items-center gap-2 font-semibold text-base">
               <span className="relative h-9 w-9">
                 <EditableImage
-                  demoKey={key("brand.logo")}
+                  contentKey={key("brand.logo")}
                   src={props.logoUrl}
                   alt={props.logoAlt}
                   width={40}
@@ -67,7 +67,7 @@ export function FloatingHeader(props: FloatingHeaderProps) {
                   className="h-9 w-9 object-contain"
                 />
               </span>
-              <EditableText demoKey={key("brand.name")} value={props.brandName} as="span" showIcon={false} />
+              <EditableText contentKey={key("brand.name")} value={props.brandName} as="span" showIcon={false} />
             </Link>
 
             <div className="hidden md:flex items-center justify-center gap-8">
@@ -78,7 +78,7 @@ export function FloatingHeader(props: FloatingHeaderProps) {
                   className="relative text-sm font-medium text-background/70 transition-colors hover:text-background focus-visible:outline-none group dark:text-card-foreground/70 dark:hover:text-card-foreground"
                 >
                   <EditableText
-                    demoKey={key(`nav.links.${index}.label`)}
+                    contentKey={key(`nav.links.${index}.label`)}
                     value={link.label}
                     as="span"
                     showIcon={false}
@@ -92,7 +92,7 @@ export function FloatingHeader(props: FloatingHeaderProps) {
               <div className="hidden md:flex">
                 <Button asChild className="shadow-sm hover:shadow-md">
                   <Link href={props.ctaHref}>
-                    <EditableText demoKey={key("nav.cta")} value={props.ctaLabel} as="span" showIcon={false} />
+                    <EditableText contentKey={key("nav.cta")} value={props.ctaLabel} as="span" showIcon={false} />
                   </Link>
                 </Button>
               </div>

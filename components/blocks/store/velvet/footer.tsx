@@ -3,9 +3,8 @@
 import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableImage, EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
-import { useDemoContent } from "@/components/demo/demo-context"
+import { EditableImage, EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 
 type FooterLink = {
   label: string
@@ -19,13 +18,11 @@ export type FooterProps = {
   copyright: string
   location: string
   links: FooterLink[]
-  adminLabel: string
 }
 
 export function Footer(props: FooterProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const currentYear = new Date().getFullYear()
-  const { mode, openLogin } = useDemoContent()
 
   return (
     <footer className="py-16 md:py-20 bg-gradient-to-b from-background to-card border-t border-border/40">
@@ -36,7 +33,7 @@ export function Footer(props: FooterProps) {
             <div className="flex items-center gap-3">
               <span className="relative h-10 w-10">
                 <EditableImage
-                  demoKey={key("brand.logo")}
+                  contentKey={key("brand.logo")}
                   src={props.logoUrl}
                   alt={props.logoAlt}
                   width={40}
@@ -46,7 +43,7 @@ export function Footer(props: FooterProps) {
               </span>
               <span className="font-semibold text-lg text-foreground">
                 <EditableText
-                  demoKey={key("footer.copyright")}
+                  contentKey={key("footer.copyright")}
                   value={props.copyright}
                   as="span"
                   showIcon={false}
@@ -55,7 +52,7 @@ export function Footer(props: FooterProps) {
             </div>
             <p className="text-muted-foreground text-sm">
               <EditableText
-                demoKey={key("footer.location")}
+                contentKey={key("footer.location")}
                 value={props.location}
                 as="span"
                 showIcon={false}
@@ -72,23 +69,13 @@ export function Footer(props: FooterProps) {
                 className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-200"
               >
                 <EditableText
-                  demoKey={key(`footer.links.${index}.label`)}
+                  contentKey={key(`footer.links.${index}.label`)}
                   value={link.label}
                   as="span"
                   showIcon={false}
                 />
               </Link>
             ))}
-            {mode === "demo" ? (
-              <button
-                type="button"
-                onClick={openLogin}
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-200"
-                aria-label={props.adminLabel}
-              >
-                <EditableText demoKey={key("footer.adminLabel")} value={props.adminLabel} as="span" showIcon={false} />
-              </button>
-            ) : null}
           </nav>
         </div>
 
@@ -116,7 +103,6 @@ export const footerConfig: ComponentConfig<FooterProps> = {
         href: { type: "text" },
       },
     },
-    adminLabel: { type: "text" },
   },
   defaultProps: {
     logoUrl: "",
@@ -124,7 +110,6 @@ export const footerConfig: ComponentConfig<FooterProps> = {
     copyright: "",
     location: "",
     links: [],
-    adminLabel: "",
   },
   render: (props) => <Footer {...props} />,
 }

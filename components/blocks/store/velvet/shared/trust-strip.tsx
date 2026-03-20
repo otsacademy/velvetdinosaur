@@ -2,8 +2,8 @@
 
 import { BadgeCheck, DatabaseBackup, MapPin, Target, Unlock } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 
@@ -35,13 +35,13 @@ const iconMap: Record<string, React.ElementType> = {
 type StringItem = string | { value?: string }
 
 type TrustStripProps = {
-  demoId?: string
+  contentId?: string
   items: StringItem[]
   showVerifiedBadge?: boolean | "true" | "false"
   verifiedLabel?: string
 }
 
-export function TrustStrip({ demoId, items, showVerifiedBadge = true, verifiedLabel = "" }: TrustStripProps) {
+export function TrustStrip({ contentId, items, showVerifiedBadge = true, verifiedLabel = "" }: TrustStripProps) {
   const normalizedItems = (items || [])
     .map((item) => (typeof item === "string" ? item : item?.value))
     .filter((item): item is string => Boolean(item))
@@ -58,7 +58,7 @@ export function TrustStrip({ demoId, items, showVerifiedBadge = true, verifiedLa
               <span className="flex items-center gap-2">
                 <Icon className="h-4 w-4 text-primary" />
                 <EditableText
-                  demoKey={demoKey(demoId, `trustStrip.items.${index}`)}
+                  contentKey={contentKey(contentId, `trustStrip.items.${index}`)}
                   value={item}
                   as="span"
                   className="font-medium text-foreground/80"
@@ -76,7 +76,7 @@ export function TrustStrip({ demoId, items, showVerifiedBadge = true, verifiedLa
             <Separator orientation="vertical" className="mx-3 h-4" />
             <Badge variant="secondary" className="text-xs font-semibold">
               <EditableText
-                demoKey={demoKey(demoId, "trustStrip.verifiedLabel")}
+                contentKey={contentKey(contentId, "trustStrip.verifiedLabel")}
                 value={verifiedLabel}
                 as="span"
                 showIcon={false}

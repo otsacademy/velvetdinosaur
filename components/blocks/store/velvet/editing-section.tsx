@@ -4,14 +4,14 @@ import { useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
 import { Check, Shield } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Section, SectionHeading } from "@/components/ui/section"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 type StringItem = string | { value?: string }
 
-type EditingDemo = {
+type EditingPreview = {
   videoSrc?: string
   posterSrc?: string
   fallbackHeading?: string
@@ -31,7 +31,7 @@ export type EditingSectionProps = {
   subheading: string
   editableHeading: string
   editableItems: StringItem[]
-  demo: EditingDemo
+  preview: EditingPreview
   safetyNet: EditingSafetyNet
 }
 
@@ -42,12 +42,12 @@ function normalizeItems(items: StringItem[] | undefined) {
 }
 
 export function EditingSection(props: EditingSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const [mediaError, setMediaError] = useState(false)
-  const demo = props.demo || {}
-  const canShowVideo = Boolean(demo.videoSrc) && !mediaError
+  const preview = props.preview || {}
+  const canShowVideo = Boolean(preview.videoSrc) && !mediaError
   const editableItems = normalizeItems(props.editableItems)
-  const fallbackBullets = normalizeItems(demo.fallbackBullets)
+  const fallbackBullets = normalizeItems(preview.fallbackBullets)
 
   return (
     <Section id="editing" className="bg-background">
@@ -68,12 +68,12 @@ export function EditingSection(props: EditingSectionProps) {
               <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
               <path d="m15 5 4 4" />
             </svg>
-            <EditableText demoKey={key("editing.heading")} value={props.heading} as="span" showIcon={false} />
+            <EditableText contentKey={key("editing.heading")} value={props.heading} as="span" showIcon={false} />
           </span>
         </SectionHeading>
         <p className="text-lg text-muted-foreground mb-6 md:mb-8">
           <EditableText
-            demoKey={key("editing.subheading")}
+            contentKey={key("editing.subheading")}
             value={props.subheading}
             as="span"
             multiline
@@ -87,7 +87,7 @@ export function EditingSection(props: EditingSectionProps) {
             <CardHeader>
               <CardTitle className="text-lg">
                 <EditableText
-                  demoKey={key("editing.editableHeading")}
+                  contentKey={key("editing.editableHeading")}
                   value={props.editableHeading}
                   as="span"
                   showIcon={false}
@@ -101,7 +101,7 @@ export function EditingSection(props: EditingSectionProps) {
                     <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
                       <EditableText
-                        demoKey={key(`editing.editableItems.${index}`)}
+                        contentKey={key(`editing.editableItems.${index}`)}
                         value={item}
                         as="span"
                         showIcon={false}
@@ -120,7 +120,7 @@ export function EditingSection(props: EditingSectionProps) {
                 <div>
                   <CardTitle className="text-lg mb-2">
                     <EditableText
-                      demoKey={key("editing.safetyNet.title")}
+                      contentKey={key("editing.safetyNet.title")}
                       value={props.safetyNet?.title || ""}
                       as="span"
                       showIcon={false}
@@ -128,7 +128,7 @@ export function EditingSection(props: EditingSectionProps) {
                   </CardTitle>
                   <p className="text-muted-foreground">
                     <EditableText
-                      demoKey={key("editing.safetyNet.description")}
+                      contentKey={key("editing.safetyNet.description")}
                       value={props.safetyNet?.description || ""}
                       as="span"
                       multiline
@@ -145,8 +145,8 @@ export function EditingSection(props: EditingSectionProps) {
           {canShowVideo ? (
             <div className="relative aspect-video overflow-hidden rounded-xl bg-background">
               <video
-                src={demo.videoSrc}
-                poster={demo.posterSrc}
+                src={preview.videoSrc}
+                poster={preview.posterSrc}
                 autoPlay
                 loop
                 muted
@@ -154,7 +154,7 @@ export function EditingSection(props: EditingSectionProps) {
                 preload="metadata"
                 onError={() => setMediaError(true)}
                 className="h-full w-full object-cover"
-                aria-label={demo.ariaLabel || "Editing demo"}
+                aria-label={preview.ariaLabel || "Editing preview"}
               />
             </div>
           ) : (
@@ -162,8 +162,8 @@ export function EditingSection(props: EditingSectionProps) {
               <div className="space-y-3">
                 <p className="text-sm font-semibold text-foreground">
                   <EditableText
-                    demoKey={key("editing.demo.fallbackHeading")}
-                    value={demo.fallbackHeading || ""}
+                    contentKey={key("editing.preview.fallbackHeading")}
+                    value={preview.fallbackHeading || ""}
                     as="span"
                     showIcon={false}
                   />
@@ -173,7 +173,7 @@ export function EditingSection(props: EditingSectionProps) {
                     <li key={index} className="flex items-start gap-2">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                       <EditableText
-                        demoKey={key(`editing.demo.fallbackBullets.${index}`)}
+                        contentKey={key(`editing.preview.fallbackBullets.${index}`)}
                         value={item}
                         as="span"
                         showIcon={false}
@@ -182,11 +182,11 @@ export function EditingSection(props: EditingSectionProps) {
                   ))}
                 </ul>
               </div>
-              {demo.fallbackNote ? (
+              {preview.fallbackNote ? (
                 <p className="text-xs text-muted-foreground">
                   <EditableText
-                    demoKey={key("editing.demo.fallbackNote")}
-                    value={demo.fallbackNote}
+                    contentKey={key("editing.preview.fallbackNote")}
+                    value={preview.fallbackNote}
                     as="span"
                     showIcon={false}
                   />
@@ -206,7 +206,7 @@ export const editingSectionConfig: ComponentConfig<EditingSectionProps> = {
     subheading: { type: "textarea" },
     editableHeading: { type: "text" },
     editableItems: { type: "array", arrayFields: { value: { type: "text" } } },
-    demo: {
+    preview: {
       type: "object",
       objectFields: {
         videoSrc: { type: "text" },
@@ -230,7 +230,7 @@ export const editingSectionConfig: ComponentConfig<EditingSectionProps> = {
     subheading: "",
     editableHeading: "",
     editableItems: [],
-    demo: {
+    preview: {
       videoSrc: "",
       posterSrc: "",
       fallbackHeading: "",

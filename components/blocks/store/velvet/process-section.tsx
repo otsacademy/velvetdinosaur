@@ -2,8 +2,8 @@
 
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Section, SectionHeading } from "@/components/ui/section"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
@@ -22,7 +22,7 @@ export type ProcessSectionProps = {
 }
 
 export function ProcessSection(props: ProcessSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const steps = props.steps || []
 
   return (
@@ -44,12 +44,12 @@ export function ProcessSection(props: ProcessSectionProps) {
             <path d="M9 12h6" />
             <path d="M12 9v6" />
           </svg>
-          <EditableText demoKey={key("process.heading")} value={props.heading} as="span" showIcon={false} />
+          <EditableText contentKey={key("process.heading")} value={props.heading} as="span" showIcon={false} />
         </span>
       </SectionHeading>
       <p className="text-center text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
         <EditableText
-          demoKey={key("process.subheading")}
+          contentKey={key("process.subheading")}
           value={props.subheading}
           as="span"
           multiline
@@ -66,7 +66,7 @@ export function ProcessSection(props: ProcessSectionProps) {
                 <div className="flex items-start gap-4 text-left">
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground transition-colors group-hover:text-primary group-hover:border-primary group-data-[state=open]:text-primary group-data-[state=open]:border-primary">
                     <EditableText
-                      demoKey={key(`process.steps.${index}.step`)}
+                      contentKey={key(`process.steps.${index}.step`)}
                       value={String(item.step)}
                       as="span"
                       showIcon={false}
@@ -75,7 +75,7 @@ export function ProcessSection(props: ProcessSectionProps) {
                   <div className="space-y-1">
                     <p className="text-base md:text-lg font-medium text-foreground transition-colors group-hover:text-primary group-data-[state=open]:text-primary">
                       <EditableText
-                        demoKey={key(`process.steps.${index}.title`)}
+                        contentKey={key(`process.steps.${index}.title`)}
                         value={item.title}
                         as="span"
                         showIcon={false}
@@ -83,7 +83,7 @@ export function ProcessSection(props: ProcessSectionProps) {
                     </p>
                     <p className="text-sm text-muted-foreground transition-colors group-hover:text-primary/80 group-data-[state=open]:text-primary/80">
                       <EditableText
-                        demoKey={key(`process.steps.${index}.summary`)}
+                        contentKey={key(`process.steps.${index}.summary`)}
                         value={item.summary}
                         as="span"
                         showIcon={false}
@@ -95,7 +95,7 @@ export function ProcessSection(props: ProcessSectionProps) {
               <AccordionContent className="pl-12 md:pl-14">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <EditableText
-                    demoKey={key(`process.steps.${index}.description`)}
+                    contentKey={key(`process.steps.${index}.description`)}
                     value={item.description}
                     as="span"
                     multiline

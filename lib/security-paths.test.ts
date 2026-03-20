@@ -15,7 +15,7 @@ describe('isBlockedPath', () => {
   });
 
   it('allows normal content paths', () => {
-    expect(isBlockedPath('/admin/sites')).toBe(false);
+    expect(isBlockedPath('/admin')).toBe(false);
     expect(isBlockedPath('/assets/logo.png')).toBe(false);
   });
 });

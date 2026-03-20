@@ -29,7 +29,15 @@ const config = [
       '**/out/**',
       '**/coverage/**',
       '**/.turbo/**',
-      '**/.eslintcache'
+      '**/.eslintcache',
+      'registry/examples/**',
+      'registry/ui/block-discussion.tsx',
+      'registry/ui/block-draggable.tsx',
+      'registry/ui/block-list-static.tsx',
+      'registry/ui/block-list.tsx',
+      'registry/ui/block-suggestion.tsx',
+      'registry/ui/emoji-toolbar-button.tsx',
+      'registry/ui/floating-discussion.tsx'
     ]
   },
   ...next.map((c) => {

@@ -5,8 +5,8 @@ import { useMemo, useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
 import { Check, MessageCircle, Phone, Shield, Timer, Video, Zap } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -73,7 +73,7 @@ function normalizeItems(items: StringItem[] | undefined) {
 }
 
 export function FounderBooking(props: FounderBookingProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const analyticsFormId = "founder_booking"
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/your-handle"
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
@@ -138,7 +138,7 @@ export function FounderBooking(props: FounderBookingProps) {
                   >
                     <Video className="mr-2 h-4 w-4" />
                     <EditableText
-                      demoKey={key("booking.primaryCta")}
+                      contentKey={key("booking.primaryCta")}
                       value={props.primaryCtaLabel}
                       as="span"
                       showIcon={false}
@@ -157,7 +157,7 @@ export function FounderBooking(props: FounderBookingProps) {
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     <EditableText
-                      demoKey={key("booking.whatsappLabel")}
+                      contentKey={key("booking.whatsappLabel")}
                       value={props.whatsappLabel}
                       as="span"
                       showIcon={false}
@@ -174,7 +174,7 @@ export function FounderBooking(props: FounderBookingProps) {
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     <EditableText
-                      demoKey={key("booking.phoneLabel")}
+                      contentKey={key("booking.phoneLabel")}
                       value={props.phoneLabel}
                       as="span"
                       showIcon={false}
@@ -186,11 +186,11 @@ export function FounderBooking(props: FounderBookingProps) {
 
             <div className="min-w-0">
               <p className="text-sm text-muted-foreground">
-                <EditableText demoKey={key("booking.tagline")} value={props.tagline} as="span" showIcon={false} />
+                <EditableText contentKey={key("booking.tagline")} value={props.tagline} as="span" showIcon={false} />
               </p>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
                 <EditableText
-                  demoKey={key("booking.headline")}
+                  contentKey={key("booking.headline")}
                   value={props.headline}
                   as="span"
                   multiline
@@ -199,7 +199,7 @@ export function FounderBooking(props: FounderBookingProps) {
               </h2>
               <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
                 <EditableText
-                  demoKey={key("booking.intro")}
+                  contentKey={key("booking.intro")}
                   value={props.intro}
                   as="span"
                   multiline
@@ -219,7 +219,7 @@ export function FounderBooking(props: FounderBookingProps) {
                       <span>
                         <span className="font-medium text-foreground">
                           <EditableText
-                            demoKey={key(`booking.benefits.${index}.lead`)}
+                            contentKey={key(`booking.benefits.${index}.lead`)}
                             value={item.lead}
                             as="span"
                             showIcon={false}
@@ -229,7 +229,7 @@ export function FounderBooking(props: FounderBookingProps) {
                           <span className="text-muted-foreground">
                             {" "}
                             <EditableText
-                              demoKey={key(`booking.benefits.${index}.detail`)}
+                              contentKey={key(`booking.benefits.${index}.detail`)}
                               value={item.detail}
                               as="span"
                               showIcon={false}
@@ -246,7 +246,7 @@ export function FounderBooking(props: FounderBookingProps) {
 
               <p className="text-sm font-medium text-foreground">
                 <EditableText
-                  demoKey={key("booking.timelineHeading")}
+                  contentKey={key("booking.timelineHeading")}
                   value={props.timelineHeading}
                   as="span"
                   showIcon={false}
@@ -258,7 +258,7 @@ export function FounderBooking(props: FounderBookingProps) {
                   <div key={index} className="rounded-xl border bg-muted/30 p-4">
                     <p className="text-sm font-semibold text-foreground">
                       <EditableText
-                        demoKey={key(`booking.timelineItems.${index}`)}
+                        contentKey={key(`booking.timelineItems.${index}`)}
                         value={item}
                         as="span"
                         showIcon={false}
@@ -272,7 +272,7 @@ export function FounderBooking(props: FounderBookingProps) {
                 {notes.map((item, index) => (
                   <p key={index}>
                     <EditableText
-                      demoKey={key(`booking.notes.${index}`)}
+                      contentKey={key(`booking.notes.${index}`)}
                       value={item}
                       as="span"
                       multiline
@@ -287,11 +287,11 @@ export function FounderBooking(props: FounderBookingProps) {
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold">
-                        <EditableText demoKey={key("booking.heading")} value={props.heading} as="span" showIcon={false} />
+                        <EditableText contentKey={key("booking.heading")} value={props.heading} as="span" showIcon={false} />
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground">
                         <EditableText
-                          demoKey={key("booking.subheading")}
+                          contentKey={key("booking.subheading")}
                           value={props.subheading}
                           as="span"
                           multiline
@@ -311,7 +311,7 @@ export function FounderBooking(props: FounderBookingProps) {
                       >
                         <Phone className="mr-2 h-4 w-4" />
                         <EditableText
-                          demoKey={key("booking.primaryCta")}
+                          contentKey={key("booking.primaryCta")}
                           value={props.primaryCtaLabel}
                           as="span"
                           showIcon={false}
@@ -331,7 +331,7 @@ export function FounderBooking(props: FounderBookingProps) {
                       <div className="space-y-2">
                         <Label htmlFor="contact-name">
                           <EditableText
-                            demoKey={key("booking.formLabels.nameLabel")}
+                            contentKey={key("booking.formLabels.nameLabel")}
                             value={props.formLabels?.nameLabel || ""}
                             as="span"
                             showIcon={false}
@@ -342,7 +342,7 @@ export function FounderBooking(props: FounderBookingProps) {
                       <div className="space-y-2">
                         <Label htmlFor="contact-email">
                           <EditableText
-                            demoKey={key("booking.formLabels.emailLabel")}
+                            contentKey={key("booking.formLabels.emailLabel")}
                             value={props.formLabels?.emailLabel || ""}
                             as="span"
                             showIcon={false}
@@ -353,7 +353,7 @@ export function FounderBooking(props: FounderBookingProps) {
                       <div className="space-y-2 sm:col-span-2">
                         <Label htmlFor="contact-message">
                           <EditableText
-                            demoKey={key("booking.formLabels.messageLabel")}
+                            contentKey={key("booking.formLabels.messageLabel")}
                             value={props.formLabels?.messageLabel || ""}
                             as="span"
                             showIcon={false}
@@ -373,7 +373,7 @@ export function FounderBooking(props: FounderBookingProps) {
                           <AccordionItem value="optional" className="border-none">
                             <AccordionTrigger className="py-3 text-sm font-semibold text-foreground hover:no-underline">
                               <EditableText
-                                demoKey={key("booking.formLabels.optionalDetailsLabel")}
+                                contentKey={key("booking.formLabels.optionalDetailsLabel")}
                                 value={props.formLabels?.optionalDetailsLabel || ""}
                                 as="span"
                                 showIcon={false}
@@ -384,7 +384,7 @@ export function FounderBooking(props: FounderBookingProps) {
                                 <div className="space-y-2">
                                   <Label htmlFor="contact-telephone">
                                     <EditableText
-                                      demoKey={key("booking.formLabels.telephoneLabel")}
+                                      contentKey={key("booking.formLabels.telephoneLabel")}
                                       value={props.formLabels?.telephoneLabel || ""}
                                       as="span"
                                       showIcon={false}
@@ -395,7 +395,7 @@ export function FounderBooking(props: FounderBookingProps) {
                                 <div className="space-y-2">
                                   <Label id="preferred-contact-label">
                                     <EditableText
-                                      demoKey={key("booking.formLabels.preferredContactLabel")}
+                                      contentKey={key("booking.formLabels.preferredContactLabel")}
                                       value={props.formLabels?.preferredContactLabel || ""}
                                       as="span"
                                       showIcon={false}
@@ -436,14 +436,14 @@ export function FounderBooking(props: FounderBookingProps) {
                       <Button type="submit" className="rounded-full px-6" disabled={formState === "submitting"}>
                         {formState === "submitting" ? (
                           <EditableText
-                            demoKey={key("booking.formLabels.submittingLabel")}
+                            contentKey={key("booking.formLabels.submittingLabel")}
                             value={props.formLabels?.submittingLabel || ""}
                             as="span"
                             showIcon={false}
                           />
                         ) : (
                           <EditableText
-                            demoKey={key("booking.formLabels.submitLabel")}
+                            contentKey={key("booking.formLabels.submitLabel")}
                             value={props.formLabels?.submitLabel || ""}
                             as="span"
                             showIcon={false}
@@ -452,21 +452,21 @@ export function FounderBooking(props: FounderBookingProps) {
                       </Button>
                       <p className="text-xs text-muted-foreground">
                         <EditableText
-                          demoKey={key("booking.formLabels.privacyNotePrefix")}
+                          contentKey={key("booking.formLabels.privacyNotePrefix")}
                           value={props.formLabels?.privacyNotePrefix || ""}
                           as="span"
                           showIcon={false}
                         />{" "}
                         <Link href={props.privacyHref || "/privacy"} className="underline underline-offset-4">
                           <EditableText
-                            demoKey={key("booking.formLabels.privacyNoteLinkLabel")}
+                            contentKey={key("booking.formLabels.privacyNoteLinkLabel")}
                             value={props.formLabels?.privacyNoteLinkLabel || ""}
                             as="span"
                             showIcon={false}
                           />
                         </Link>
                         <EditableText
-                          demoKey={key("booking.formLabels.privacyNoteSuffix")}
+                          contentKey={key("booking.formLabels.privacyNoteSuffix")}
                           value={props.formLabels?.privacyNoteSuffix || ""}
                           as="span"
                           showIcon={false}

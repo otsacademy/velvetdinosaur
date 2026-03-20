@@ -18,7 +18,7 @@ export function AuthForm({ mode, inviteToken, inviteEmail }: AuthFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const adminOnly = process.env.NEXT_PUBLIC_ADMIN_ONLY === 'true';
-  const next = searchParams.get('next') || (adminOnly ? '/admin/sites' : '/edit');
+  const next = searchParams.get('next') || (adminOnly ? '/admin' : '/edit');
 
   const [email, setEmail] = useState(inviteEmail || '');
   const [password, setPassword] = useState('');

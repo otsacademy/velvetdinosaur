@@ -5,8 +5,8 @@ import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 import { Star } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Section, SectionHeading } from "@/components/ui/section"
 import { AnimatedSection } from "@/components/ui/animated-section"
@@ -89,7 +89,7 @@ function RatingStars({ rating }: { rating: number }) {
 }
 
 export function TestimonialsSection(props: TestimonialsSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const testimonials = props.items || []
   const filteredTestimonials = useMemo(
     () =>
@@ -181,7 +181,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
             <path d="m14 15 3-3-3-3" />
             <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
           </svg>
-          <EditableText demoKey={key("testimonials.heading")} value={props.heading} as="span" showIcon={false} />
+          <EditableText contentKey={key("testimonials.heading")} value={props.heading} as="span" showIcon={false} />
         </span>
       </SectionHeading>
       <AnimatedSection animation="fade-up" staggerChildren staggerDelay={100} className="grid gap-6 md:grid-cols-2">
@@ -189,7 +189,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
           const editable = item.editable && typeof item.index === "number"
           const quote = editable ? (
             <EditableText
-              demoKey={key(`testimonials.items.${item.index}.quote`)}
+              contentKey={key(`testimonials.items.${item.index}.quote`)}
               value={item.quote}
               as="span"
               multiline
@@ -200,7 +200,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
           )
           const name = editable ? (
             <EditableText
-              demoKey={key(`testimonials.items.${item.index}.name`)}
+              contentKey={key(`testimonials.items.${item.index}.name`)}
               value={item.name}
               as="span"
               showIcon={false}
@@ -210,7 +210,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
           )
           const roleOrContext = editable ? (
             <EditableText
-              demoKey={key(`testimonials.items.${item.index}.roleOrContext`)}
+              contentKey={key(`testimonials.items.${item.index}.roleOrContext`)}
               value={item.roleOrContext}
               as="span"
               multiline
@@ -256,7 +256,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
                     <p className="text-sm text-muted-foreground">
                       {editable ? (
                         <EditableText
-                          demoKey={key(`testimonials.items.${item.index}.org`)}
+                          contentKey={key(`testimonials.items.${item.index}.org`)}
                           value={item.org}
                           as="span"
                           showIcon={false}
@@ -270,7 +270,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
                     <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
                       {editable ? (
                         <EditableText
-                          demoKey={key("testimonials.outcomeLabel")}
+                          contentKey={key("testimonials.outcomeLabel")}
                           value={props.outcomeLabel}
                           as="span"
                           showIcon={false}
@@ -281,7 +281,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
                       <span className="normal-case tracking-normal">
                         {editable ? (
                           <EditableText
-                            demoKey={key(`testimonials.items.${item.index}.outcome`)}
+                            contentKey={key(`testimonials.items.${item.index}.outcome`)}
                             value={item.outcome}
                             as="span"
                             showIcon={false}
@@ -299,7 +299,7 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
                     >
                       {editable ? (
                         <EditableText
-                          demoKey={key(`testimonials.items.${item.index}.websiteUrl`)}
+                          contentKey={key(`testimonials.items.${item.index}.websiteUrl`)}
                           value={item.websiteUrl}
                           as="span"
                           showIcon={false}

@@ -4,8 +4,8 @@ import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 import { Check, Server, Unlock } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Section, SectionHeading } from "@/components/ui/section"
@@ -50,7 +50,7 @@ function normalizeItem(item: StringItem | undefined) {
 }
 
 export function PricingHosting(props: PricingHostingProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const tiers = props.tiers || []
   const hostingCards = props.hostingCards || []
 
@@ -75,13 +75,13 @@ export function PricingHosting(props: PricingHostingProps) {
             <line x1="3" x2="6" y1="21" y2="18" />
             <line x1="21" x2="18" y1="21" y2="18" />
           </svg>
-          <EditableText demoKey={key("pricing.heading")} value={props.heading} as="span" showIcon={false} />
+          <EditableText contentKey={key("pricing.heading")} value={props.heading} as="span" showIcon={false} />
         </span>
       </SectionHeading>
 
       <p className="mt-3 text-center text-muted-foreground">
         <EditableText
-          demoKey={key("pricing.subheading")}
+          contentKey={key("pricing.subheading")}
           value={props.subheading}
           as="span"
           multiline
@@ -95,7 +95,7 @@ export function PricingHosting(props: PricingHostingProps) {
             <CardHeader className="gap-2">
               <Badge variant="outline" className="w-fit text-muted-foreground">
                 <EditableText
-                  demoKey={key(`pricing.tiers.${index}.name`)}
+                  contentKey={key(`pricing.tiers.${index}.name`)}
                   value={tier.name}
                   as="span"
                   showIcon={false}
@@ -103,7 +103,7 @@ export function PricingHosting(props: PricingHostingProps) {
               </Badge>
               <CardTitle className="text-xl text-foreground">
                 <EditableText
-                  demoKey={key(`pricing.tiers.${index}.name`)}
+                  contentKey={key(`pricing.tiers.${index}.name`)}
                   value={tier.name}
                   as="span"
                   showIcon={false}
@@ -111,7 +111,7 @@ export function PricingHosting(props: PricingHostingProps) {
               </CardTitle>
               <p className="text-2xl font-semibold text-foreground">
                 <EditableText
-                  demoKey={key(`pricing.tiers.${index}.price`)}
+                  contentKey={key(`pricing.tiers.${index}.price`)}
                   value={tier.price}
                   as="span"
                   showIcon={false}
@@ -119,7 +119,7 @@ export function PricingHosting(props: PricingHostingProps) {
               </p>
               <CardDescription className="text-sm text-muted-foreground">
                 <EditableText
-                  demoKey={key(`pricing.tiers.${index}.summary`)}
+                  contentKey={key(`pricing.tiers.${index}.summary`)}
                   value={tier.summary}
                   as="span"
                   multiline
@@ -131,7 +131,7 @@ export function PricingHosting(props: PricingHostingProps) {
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-foreground">
                   <EditableText
-                    demoKey={key("pricing.includesHeading")}
+                    contentKey={key("pricing.includesHeading")}
                     value={props.includesHeading}
                     as="span"
                     showIcon={false}
@@ -143,7 +143,7 @@ export function PricingHosting(props: PricingHostingProps) {
                       <Check className="h-4 w-4 flex-shrink-0 text-primary" />
                       <span>
                         <EditableText
-                          demoKey={key(`pricing.tiers.${index}.includes.${itemIndex}`)}
+                          contentKey={key(`pricing.tiers.${index}.includes.${itemIndex}`)}
                           value={normalizeItem(item)}
                           as="span"
                           showIcon={false}
@@ -159,7 +159,7 @@ export function PricingHosting(props: PricingHostingProps) {
               <div className="flex items-center justify-between text-sm">
                 <span className="font-semibold text-foreground">
                   <EditableText
-                    demoKey={key("pricing.timelineHeading")}
+                    contentKey={key("pricing.timelineHeading")}
                     value={props.timelineHeading}
                     as="span"
                     showIcon={false}
@@ -167,7 +167,7 @@ export function PricingHosting(props: PricingHostingProps) {
                 </span>
                 <span className="text-muted-foreground">
                   <EditableText
-                    demoKey={key(`pricing.tiers.${index}.timeline`)}
+                    contentKey={key(`pricing.tiers.${index}.timeline`)}
                     value={tier.timeline}
                     as="span"
                     showIcon={false}
@@ -177,14 +177,14 @@ export function PricingHosting(props: PricingHostingProps) {
               <p className="text-xs text-muted-foreground">
                 <span className="font-medium text-foreground">
                   <EditableText
-                    demoKey={key("pricing.ongoingLabel")}
+                    contentKey={key("pricing.ongoingLabel")}
                     value={props.ongoingLabel}
                     as="span"
                     showIcon={false}
                   />
                 </span>{" "}
                 <EditableText
-                  demoKey={key(`pricing.tiers.${index}.ongoing`)}
+                  contentKey={key(`pricing.tiers.${index}.ongoing`)}
                   value={tier.ongoing}
                   as="span"
                   multiline
@@ -199,7 +199,7 @@ export function PricingHosting(props: PricingHostingProps) {
       <div className="mt-6 rounded-2xl border border-border bg-muted/30 p-5">
         <p className="text-sm font-semibold text-foreground">
           <EditableText
-            demoKey={key("pricing.hostingHeading")}
+            contentKey={key("pricing.hostingHeading")}
             value={props.hostingHeading}
             as="span"
             showIcon={false}
@@ -209,7 +209,7 @@ export function PricingHosting(props: PricingHostingProps) {
           {(props.hostingNotes || []).map((item, itemIndex) => (
             <li key={itemIndex}>
               <EditableText
-                demoKey={key(`pricing.hostingNotes.${itemIndex}`)}
+                contentKey={key(`pricing.hostingNotes.${itemIndex}`)}
                 value={normalizeItem(item)}
                 as="span"
                 showIcon={false}
@@ -231,7 +231,7 @@ export function PricingHosting(props: PricingHostingProps) {
                 )}
                 <CardTitle className="text-lg text-foreground">
                   <EditableText
-                    demoKey={key(`hosting.cards.${index}.title`)}
+                    contentKey={key(`hosting.cards.${index}.title`)}
                     value={card.title}
                     as="span"
                     showIcon={false}
@@ -240,7 +240,7 @@ export function PricingHosting(props: PricingHostingProps) {
               </div>
               <CardDescription className="text-sm text-muted-foreground">
                 <EditableText
-                  demoKey={key(`hosting.cards.${index}.description`)}
+                  contentKey={key(`hosting.cards.${index}.description`)}
                   value={card.description}
                   as="span"
                   multiline
@@ -251,7 +251,7 @@ export function PricingHosting(props: PricingHostingProps) {
             <CardContent className="pt-0">
               <p className="text-xs font-medium text-foreground">
                 <EditableText
-                  demoKey={key(`hosting.cards.${index}.highlight`)}
+                  contentKey={key(`hosting.cards.${index}.highlight`)}
                   value={card.highlight}
                   as="span"
                   showIcon={false}
@@ -263,13 +263,13 @@ export function PricingHosting(props: PricingHostingProps) {
       </div>
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        <EditableText demoKey={key("pricing.note")} value={props.note} as="span" multiline showIcon={false} />
+        <EditableText contentKey={key("pricing.note")} value={props.note} as="span" multiline showIcon={false} />
       </p>
 
       <div className="mt-6 flex justify-center">
         <Button asChild size="lg" className="rounded-full px-6">
           <Link href={props.ctaHref || "#booking"}>
-            <EditableText demoKey={key("pricing.ctaLabel")} value={props.ctaLabel} as="span" showIcon={false} />
+            <EditableText contentKey={key("pricing.ctaLabel")} value={props.ctaLabel} as="span" showIcon={false} />
           </Link>
         </Button>
       </div>

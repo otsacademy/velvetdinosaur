@@ -1,4 +1,4 @@
-// Reference content for the Velvet Dinosaur demo blocks.
+// Reference content for the Velvet Dinosaur editable blocks.
 // These values are intentionally generic placeholders so installs/builds don't fail when
 // store blocks reference `siteContent` at module scope.
 
@@ -137,4 +137,3 @@ export const siteContent: any = {
     copyright: 'Velvet Dinosaur'
   }
 };
-

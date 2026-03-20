@@ -3,8 +3,8 @@
 import type { ComponentConfig } from "@measured/puck"
 import { Layers, Pencil, Search, Server, Smartphone, Zap } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Section, SectionHeading } from "@/components/ui/section"
 import { AnimatedSection } from "@/components/ui/animated-section"
@@ -32,7 +32,7 @@ export type ServicesGridProps = {
 }
 
 export function ServicesGrid(props: ServicesGridProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
 
   return (
     <Section id="services" className="bg-muted/30" animate divider>
@@ -53,7 +53,7 @@ export function ServicesGrid(props: ServicesGridProps) {
             <path d="m18 15 4-4" />
             <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
           </svg>
-          <EditableText demoKey={key("services.heading")} value={props.heading} as="span" showIcon={false} />
+          <EditableText contentKey={key("services.heading")} value={props.heading} as="span" showIcon={false} />
         </span>
       </SectionHeading>
       <AnimatedSection animation="fade-up" staggerChildren staggerDelay={80} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -70,7 +70,7 @@ export function ServicesGrid(props: ServicesGridProps) {
                   <div className="space-y-2">
                     <CardTitle className="text-foreground text-lg leading-snug">
                       <EditableText
-                        demoKey={key(`services.items.${index}.title`)}
+                        contentKey={key(`services.items.${index}.title`)}
                         value={service.title}
                         as="span"
                         showIcon={false}
@@ -78,7 +78,7 @@ export function ServicesGrid(props: ServicesGridProps) {
                     </CardTitle>
                     <CardDescription className="text-muted-foreground leading-relaxed">
                       <EditableText
-                        demoKey={key(`services.items.${index}.body`)}
+                        contentKey={key(`services.items.${index}.body`)}
                         value={service.body}
                         as="span"
                         multiline
@@ -88,7 +88,7 @@ export function ServicesGrid(props: ServicesGridProps) {
                     {service.builtWith ? (
                       <p className="text-xs text-muted-foreground/80">
                         <EditableText
-                          demoKey={key(`services.items.${index}.builtWith`)}
+                          contentKey={key(`services.items.${index}.builtWith`)}
                           value={service.builtWith}
                           as="span"
                           showIcon={false}

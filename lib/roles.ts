@@ -9,7 +9,7 @@ export function roleIsAdmin(role: RoleResult) {
   return role === 'admin';
 }
 
-export async function getUserRole(userId?: string | null): Promise<RoleResult> {
+export async function getUserRole(userId?: string | null, _email?: string | null): Promise<RoleResult> {
   if (!userId) return 'none';
   await connectDB();
   const record = await UserRole.findOne({ userId }).lean();
@@ -33,7 +33,7 @@ export async function setUserRole(userId: string, role: Role, actorUserId?: stri
   return updated;
 }
 
-export async function requireAdmin(userId?: string | null) {
-  const role = await getUserRole(userId);
+export async function requireAdmin(userId?: string | null, email?: string | null) {
+  const role = await getUserRole(userId, email);
   return roleIsAdmin(role);
 }

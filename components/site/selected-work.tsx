@@ -1,101 +1,75 @@
-import Image from "next/image"
-import { ArrowUpRight, ExternalLink } from "lucide-react"
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 
-interface WorkItem {
-  id: string
-  title: string
-  subtitle: string
-  website: string
-  image: string
-  imageAlt: string
-  description: string
-  outcome: string
-}
+import type { Article } from '@/lib/articles'
+import { listLatestPublishedWorkArticles } from '@/lib/work-articles.server'
 
-const workItems: WorkItem[] = [
-  {
-    id: "asap",
-    title: "Academics Stand Against Poverty",
-    subtitle: "International academic network fighting poverty",
-    website: "https://academicsstand.org",
-    image: "/portfolio/asap.png",
-    imageAlt: "Screenshot of the Academics Stand Against Poverty website",
-    description: "International network and journal platform redesign with bespoke CMS tooling.",
-    outcome: "Improved publishing workflow and cleaner information architecture.",
-  },
-  {
-    id: "the-brave",
-    title: "The Brave",
-    subtitle: "Values-led ethical tourism platform",
-    website: "https://thebrave.online",
-    image: "/portfolio/the-brave.png",
-    imageAlt: "Screenshot of The Brave website homepage",
-    description: "Values-led ethical travel platform with integrated advocacy and media storytelling.",
-    outcome: "Stronger brand differentiation and clearer user pathways.",
-  },
-  {
-    id: "rising-dust",
-    title: "Rising Dust Adventures",
-    subtitle: "Premium motorcycle expedition company",
-    website: "https://risingdustadventures.com",
-    image: "/portfolio/rising-dust.png",
-    imageAlt: "Screenshot of Rising Dust Adventures expedition website",
-    description: "Premium motorcycle expedition experience focused on route clarity and trust-building.",
-    outcome: "Higher-quality visual storytelling and better route conversion flow.",
-  },
-  {
-    id: "scholardemia",
-    title: "Scholardemia",
-    subtitle: "Academic social networking and research management platform",
-    website: "https://scholardemia.com",
-    image: "/portfolio/scholardemia.png",
-    imageAlt: "Screenshot of Scholardemia sign-in experience",
-    description: "Academic networking and publishing product with secure auth and scalable architecture.",
-    outcome: "Unified product direction across community, collaboration, and publishing tools.",
-  },
-]
-
-function WorkCard({ title, subtitle, website, image, imageAlt, description, outcome }: WorkItem) {
+function WorkCard({ article }: { article: Article }) {
   return (
-    <a
-      href={website}
-      target="_blank"
-      rel="noreferrer"
-      className="vd-hover-lift vd-work-card vd-surface-card group block overflow-hidden border border-border bg-card/90"
-    >
+    <article className="vd-hover-lift vd-work-card vd-surface-card group overflow-hidden border border-border bg-card/90">
       <div className="vd-work-media relative aspect-[16/10] w-full overflow-hidden bg-muted">
         <Image
-          src={image}
-          alt={imageAlt}
+          src={article.img || '/placeholder.svg'}
+          alt={article.imageCaption || article.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
           className="object-cover object-top"
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/95 to-transparent" />
-        <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-primary/25 bg-background/85 px-2.5 py-1 text-[11px] font-medium text-foreground">
-          Live project
-          <ExternalLink className="h-3 w-3" />
-        </span>
+        {article.website ? (
+          <a
+            href={article.website}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-primary/25 bg-background/85 px-2.5 py-1 text-[11px] font-medium text-foreground"
+          >
+            Live project
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        ) : null}
       </div>
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3 className="font-semibold text-foreground transition-colors group-hover:text-primary">{title}</h3>
-            <p className="text-xs text-muted-foreground">{subtitle}</p>
+            <h3 className="font-semibold text-foreground transition-colors group-hover:text-primary">{article.title}</h3>
+            {article.subtitle ? <p className="text-xs text-muted-foreground">{article.subtitle}</p> : null}
           </div>
-          <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
         </div>
-        <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-        <p className="mt-2 text-sm text-foreground/80">
-          <span className="font-semibold text-foreground">Outcome:</span> {outcome}
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">{article.desc}</p>
+        {article.outcome ? (
+          <p className="mt-2 text-sm text-foreground/80">
+            <span className="font-semibold text-foreground">Outcome:</span> {article.outcome}
+          </p>
+        ) : null}
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <Link
+            href={`/work/${article.slug}`}
+            className="inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform duration-200 group-hover:translate-x-0.5"
+          >
+            Read More
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          {article.website ? (
+            <a
+              href={article.website}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Visit site
+            </a>
+          ) : null}
+        </div>
       </div>
-    </a>
+    </article>
   )
 }
 
-export function SelectedWork() {
+export async function SelectedWork() {
+  const workItems = await listLatestPublishedWorkArticles(4)
+
   return (
     <section id="portfolio" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
@@ -106,8 +80,8 @@ export function SelectedWork() {
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
-          {workItems.map((item) => (
-            <WorkCard key={item.id} {...item} />
+          {workItems.map((article) => (
+            <WorkCard key={article.slug} article={article} />
           ))}
         </div>
       </div>

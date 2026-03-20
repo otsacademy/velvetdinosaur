@@ -2,8 +2,8 @@
 
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { getLegalIcon } from "@/components/blocks/store/velvet/shared/legal-helpers"
@@ -21,7 +21,7 @@ export type LegalQuickLinksProps = {
 }
 
 export function LegalQuickLinks(props: LegalQuickLinksProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const Icon = getLegalIcon(props.icon)
 
   return (
@@ -30,7 +30,7 @@ export function LegalQuickLinks(props: LegalQuickLinksProps) {
         <div className="flex items-center gap-2">
           {Icon ? <Icon className="h-4 w-4 text-primary" /> : null}
           <h2 className="text-lg font-semibold text-foreground">
-            <EditableText demoKey={key("legal.quickLinks.heading")} value={props.heading} as="span" showIcon={false} />
+            <EditableText contentKey={key("legal.quickLinks.heading")} value={props.heading} as="span" showIcon={false} />
           </h2>
         </div>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -38,7 +38,7 @@ export function LegalQuickLinks(props: LegalQuickLinksProps) {
             <Button key={link.href} variant="outline" size="sm" className="justify-start" asChild>
               <a href={link.href}>
                 <EditableText
-                  demoKey={key(`legal.quickLinks.links.${index}.label`)}
+                  contentKey={key(`legal.quickLinks.links.${index}.label`)}
                   value={link.label}
                   as="span"
                   showIcon={false}

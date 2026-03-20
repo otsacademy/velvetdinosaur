@@ -6,6 +6,7 @@ import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { listPages } from '@/lib/pages';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { PagesIndex } from '@/components/edit/pages-index.client';
+import { getWorkArticlesForEdit } from '@/lib/work-articles.server';
 
 type EditIndexProps = {
   searchParams?: { slug?: string };
@@ -30,6 +31,7 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
   }
 
   const pages = (await listPages()).filter((page) => !isSiteChromeSlug(page.slug));
+  const workArticles = await getWorkArticlesForEdit();
   const serialPages = pages.map((page) => ({
     ...page,
     draftUpdatedAt: page.draftUpdatedAt ? page.draftUpdatedAt.toISOString() : null,
@@ -37,7 +39,7 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
     updatedAt: page.updatedAt ? page.updatedAt.toISOString() : null
   }));
 
-  return <PagesIndex pages={serialPages} />;
+  return <PagesIndex pages={serialPages} workArticles={workArticles} />;
 }
 
 export default function EditIndexPage(props: EditIndexProps) {

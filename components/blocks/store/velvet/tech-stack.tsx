@@ -2,8 +2,8 @@
 
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Badge } from "@/components/ui/badge"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { Section, SectionHeading } from "@/components/ui/section"
@@ -173,7 +173,7 @@ const techDefaults = [
 ]
 
 export function TechStack(props: TechStackProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const techItems = props.items?.length
     ? props.items
     : techDefaults.map(({ name, description }) => ({ name, description }))
@@ -197,12 +197,12 @@ export function TechStack(props: TechStackProps) {
             <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
             <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
           </svg>
-          <EditableText demoKey={key("techStack.heading")} value={props.heading} as="span" showIcon={false} />
+          <EditableText contentKey={key("techStack.heading")} value={props.heading} as="span" showIcon={false} />
         </span>
       </SectionHeading>
       <p className="text-center text-muted-foreground mb-6 md:mb-8">
         <EditableText
-          demoKey={key("techStack.subheading")}
+          contentKey={key("techStack.subheading")}
           value={props.subheading}
           as="span"
           multiline
@@ -222,7 +222,7 @@ export function TechStack(props: TechStackProps) {
                 >
                   <span className="text-primary">{icon}</span>
                   <EditableText
-                    demoKey={key(`techStack.items.${index}.name`)}
+                    contentKey={key(`techStack.items.${index}.name`)}
                     value={tech.name}
                     as="span"
                     showIcon={false}
@@ -235,7 +235,7 @@ export function TechStack(props: TechStackProps) {
                   <div>
                     <h4 className="text-sm font-semibold text-foreground mb-1">
                       <EditableText
-                        demoKey={key(`techStack.items.${index}.name`)}
+                        contentKey={key(`techStack.items.${index}.name`)}
                         value={tech.name}
                         as="span"
                         showIcon={false}
@@ -243,7 +243,7 @@ export function TechStack(props: TechStackProps) {
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key(`techStack.items.${index}.description`)}
+                        contentKey={key(`techStack.items.${index}.description`)}
                         value={tech.description}
                         as="span"
                         multiline

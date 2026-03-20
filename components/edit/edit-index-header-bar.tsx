@@ -47,6 +47,7 @@ type EditIndexHeaderBarProps = {
   totalCount: number;
   hasContractsPage?: boolean;
   onNewPage: () => void;
+  onNewWorkArticle: () => void;
 };
 
 export function EditIndexHeaderBar({
@@ -59,15 +60,16 @@ export function EditIndexHeaderBar({
   filteredCount,
   totalCount,
   hasContractsPage = false,
-  onNewPage
+  onNewPage,
+  onNewWorkArticle
 }: EditIndexHeaderBarProps) {
   return (
     <div data-testid="edit-index-header" className="flex flex-col gap-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-3xl font-black tracking-tight text-[var(--vd-fg)]">Pages</h1>
+          <h1 className="text-3xl font-black tracking-tight text-[var(--vd-fg)]">Content</h1>
           <Badge className="text-[11px]">
-            Showing {filteredCount} of {totalCount} pages
+            Showing {filteredCount} of {totalCount} items
           </Badge>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -80,6 +82,10 @@ export function EditIndexHeaderBar({
           <Button size="sm" onClick={onNewPage} data-testid="edit-index-new-page">
             <Plus className="h-4 w-4" />
             New page
+          </Button>
+          <Button variant="outline" size="sm" onClick={onNewWorkArticle} data-testid="edit-index-new-work">
+            <Plus className="h-4 w-4" />
+            New work
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -146,7 +152,7 @@ export function EditIndexHeaderBar({
             <Input
               value={query}
               onChange={(event) => onQueryChange(event.target.value)}
-              placeholder="Search pages"
+              placeholder="Search pages or work"
               className="pl-9"
             />
           </div>

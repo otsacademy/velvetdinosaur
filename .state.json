@@ -1,0 +1,24 @@
+{
+  "deploy": {
+    "mode": "blue-green",
+    "activeSlot": "green",
+    "lastCommit": "93341a903ddee2207d7868c65b9badc1764682e4",
+    "updatedAt": "2026-03-20T09:44:48.499Z",
+    "upstreamConf": "/etc/nginx/snippets/velvetdinosaur-active-upstream.conf",
+    "activeLink": "/srv/apps/velvetdinosaur-current",
+    "slots": {
+      "blue": {
+        "path": "/srv/apps/velvetdinosaur-blue",
+        "port": 3018,
+        "service": "vd-velvetdinosaur-blue",
+        "envFile": "/srv/apps/velvetdinosaur-blue/.env.production"
+      },
+      "green": {
+        "path": "/srv/apps/velvetdinosaur-green",
+        "port": 3019,
+        "service": "vd-velvetdinosaur-green",
+        "envFile": "/srv/apps/velvetdinosaur-green/.env.production"
+      }
+    }
+  }
+}

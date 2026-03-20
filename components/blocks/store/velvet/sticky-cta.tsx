@@ -5,8 +5,8 @@ import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 
 import { Button } from "@/components/ui/button"
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 
 const STORAGE_KEY = "vd-sticky-cta-dismissed"
 
@@ -30,7 +30,7 @@ export type StickyCtaProps = {
 }
 
 export function StickyCta(props: StickyCtaProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const triggerId = props.triggerId || "portfolio-cta-trigger"
   const [isVisible, setIsVisible] = useState(false)
   const [isDismissed, setIsDismissed] = useState(() => {
@@ -99,13 +99,13 @@ export function StickyCta(props: StickyCtaProps) {
     <div className="fixed inset-x-0 bottom-3 z-40 px-4">
       <div className="mx-auto flex max-w-3xl flex-col gap-2 rounded-2xl border border-border/60 bg-background/95 px-4 py-2 shadow-md backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm font-medium text-foreground">
-          <EditableText demoKey={key("stickyCta.message")} value={props.message} as="span" showIcon={false} />
+          <EditableText contentKey={key("stickyCta.message")} value={props.message} as="span" showIcon={false} />
         </p>
         <div className="flex flex-wrap items-center gap-2">
           <Button asChild size="sm" className="rounded-full">
             <Link href={props.primaryCta?.href || "#booking"}>
               <EditableText
-                demoKey={key("stickyCta.primaryCta.label")}
+                contentKey={key("stickyCta.primaryCta.label")}
                 value={props.primaryCta?.label || ""}
                 as="span"
                 showIcon={false}
@@ -115,7 +115,7 @@ export function StickyCta(props: StickyCtaProps) {
           <Button asChild variant="outline" size="sm" className="rounded-full">
             <Link href={props.secondaryCta?.href || "#pricing"}>
               <EditableText
-                demoKey={key("stickyCta.secondaryCta.label")}
+                contentKey={key("stickyCta.secondaryCta.label")}
                 value={props.secondaryCta?.label || ""}
                 as="span"
                 showIcon={false}
@@ -128,7 +128,7 @@ export function StickyCta(props: StickyCtaProps) {
             className="rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label={props.dismissLabel}
           >
-            <EditableText demoKey={key("stickyCta.dismissLabel")} value={props.dismissLabel} as="span" showIcon={false} />
+            <EditableText contentKey={key("stickyCta.dismissLabel")} value={props.dismissLabel} as="span" showIcon={false} />
           </button>
         </div>
       </div>

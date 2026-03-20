@@ -3,8 +3,8 @@
 import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableImage, EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableImage, EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Button } from "@/components/ui/button"
 import { Section } from "@/components/ui/section"
 import { TrustStrip } from "@/components/blocks/store/velvet/shared/trust-strip"
@@ -55,7 +55,7 @@ export type HeroProps = {
 }
 
 export function Hero(props: HeroProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const reassuranceItems = (props.reassurance || [])
     .map((item) => (typeof item === "string" ? item : item?.value))
     .filter((item): item is string => Boolean(item))
@@ -72,14 +72,14 @@ export function Hero(props: HeroProps) {
           <div className="grid lg:grid-cols-2 gap-6 md:gap-10 items-start w-full">
             <div className="flex flex-col gap-6 pb-12 md:pb-14 lg:pb-16">
               <EditableText
-                demoKey={key("hero.headline")}
+                contentKey={key("hero.headline")}
                 value={props.headline}
                 as="h1"
                 className="font-display text-5xl md:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1] tracking-tight text-balance min-h-[1.2em] animate-fade-in"
               />
               <p className="text-lg md:text-xl text-muted-foreground max-w-lg text-pretty leading-relaxed animate-fade-in-delay-1">
                 <EditableText
-                  demoKey={key("hero.subheadline")}
+                  contentKey={key("hero.subheadline")}
                   value={props.subheadline}
                   as="span"
                   multiline
@@ -91,7 +91,7 @@ export function Hero(props: HeroProps) {
                   <Button asChild size="lg" className="rounded-full px-8 shadow-md hover:shadow-lg">
                     <Link href={props.primaryCtaHref}>
                       <EditableText
-                        demoKey={key("hero.primaryCta")}
+                        contentKey={key("hero.primaryCta")}
                         value={props.primaryCtaLabel}
                         as="span"
                         showIcon={false}
@@ -101,7 +101,7 @@ export function Hero(props: HeroProps) {
                   <Button asChild variant="outline" size="lg" className="rounded-full px-8">
                     <Link href={props.secondaryCtaHref}>
                       <EditableText
-                        demoKey={key("hero.secondaryCta")}
+                        contentKey={key("hero.secondaryCta")}
                         value={props.secondaryCtaLabel}
                         as="span"
                         showIcon={false}
@@ -111,7 +111,7 @@ export function Hero(props: HeroProps) {
                 </div>
                 <p className="text-xs font-medium text-muted-foreground">
                   <EditableText
-                    demoKey={key("hero.qualifier")}
+                    contentKey={key("hero.qualifier")}
                     value={props.qualifier}
                     as="span"
                     showIcon={false}
@@ -123,7 +123,7 @@ export function Hero(props: HeroProps) {
                       <span key={`${item}-${index}`} className="flex items-center gap-2">
                         <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
                         <EditableText
-                          demoKey={key(`hero.reassurance.${index}`)}
+                          contentKey={key(`hero.reassurance.${index}`)}
                           value={item}
                           as="span"
                           showIcon={false}
@@ -136,7 +136,7 @@ export function Hero(props: HeroProps) {
               <div className="space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   <EditableText
-                    demoKey={key("hero.trustedByLabel")}
+                    contentKey={key("hero.trustedByLabel")}
                     value={props.trustedByLabel}
                     as="span"
                     showIcon={false}
@@ -168,7 +168,7 @@ export function Hero(props: HeroProps) {
                       >
                         {item.logoUrl ? (
                           <EditableImage
-                            demoKey={key(`trustedBy.items.${index}.logo`)}
+                            contentKey={key(`trustedBy.items.${index}.logo`)}
                             src={item.logoUrl}
                             alt={`${item.name} logo`}
                             width={160}
@@ -185,7 +185,7 @@ export function Hero(props: HeroProps) {
                   <div className="pt-2 space-y-2">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                       <EditableText
-                        demoKey={key("hero.proof.heading")}
+                        contentKey={key("hero.proof.heading")}
                         value={props.proof.heading}
                         as="span"
                         showIcon={false}
@@ -200,7 +200,7 @@ export function Hero(props: HeroProps) {
                           <p className="text-sm text-foreground">
                             &ldquo;
                             <EditableText
-                              demoKey={key(`hero.proof.items.${index}.quote`)}
+                              contentKey={key(`hero.proof.items.${index}.quote`)}
                               value={item.quote}
                               as="span"
                               multiline
@@ -211,7 +211,7 @@ export function Hero(props: HeroProps) {
                           <div className="mt-2 flex flex-wrap items-center gap-2">
                             <span className="font-medium text-foreground">
                               <EditableText
-                                demoKey={key(`hero.proof.items.${index}.name`)}
+                                contentKey={key(`hero.proof.items.${index}.name`)}
                                 value={item.name}
                                 as="span"
                                 showIcon={false}
@@ -220,7 +220,7 @@ export function Hero(props: HeroProps) {
                             <span aria-hidden>&middot;</span>
                             <span>
                               <EditableText
-                                demoKey={key(`hero.proof.items.${index}.role`)}
+                                contentKey={key(`hero.proof.items.${index}.role`)}
                                 value={item.role}
                                 as="span"
                                 showIcon={false}
@@ -229,7 +229,7 @@ export function Hero(props: HeroProps) {
                                 <>
                                   {", "}
                                   <EditableText
-                                    demoKey={key(`hero.proof.items.${index}.org`)}
+                                    contentKey={key(`hero.proof.items.${index}.org`)}
                                     value={item.org}
                                     as="span"
                                     showIcon={false}
@@ -241,14 +241,14 @@ export function Hero(props: HeroProps) {
                           {item.outcome ? (
                             <p className="mt-2 text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
                               <EditableText
-                                demoKey={key("hero.proof.outcomeLabel")}
+                                contentKey={key("hero.proof.outcomeLabel")}
                                 value={props.proof.outcomeLabel}
                                 as="span"
                                 showIcon={false}
                               />{" "}
                               <span className="normal-case tracking-normal">
                                 <EditableText
-                                  demoKey={key(`hero.proof.items.${index}.outcome`)}
+                                  contentKey={key(`hero.proof.items.${index}.outcome`)}
                                   value={item.outcome}
                                   as="span"
                                   showIcon={false}
@@ -280,7 +280,7 @@ export function Hero(props: HeroProps) {
         {shouldShowTrustStrip ? (
           <div className="-mx-6 mt-auto pt-4">
             <TrustStrip
-              demoId={props.id}
+              contentId={props.id}
               items={trustStripItems}
               showVerifiedBadge={props.showVerifiedBadge}
               verifiedLabel={props.trustStripVerifiedLabel}

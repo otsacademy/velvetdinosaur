@@ -80,9 +80,9 @@ const Contact25 = ({
         'Yes, phone support is available for our Pro and Enterprise customers. You can find your dedicated support number in your account dashboard.',
     },
     {
-      question: 'Can I schedule a demo?',
+      question: 'Can I book a call?',
       answer:
-        'Absolutely! You can schedule a personalized demo through our website or by contacting our sales team directly. Demos typically last 30-45 minutes.',
+        'Yes. Use the form or WhatsApp and we can arrange a short call to discuss scope, timings, and whether the project is a good fit.',
     },
     {
       question: 'What information should I include in my message?',

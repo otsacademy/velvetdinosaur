@@ -10,8 +10,8 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 
 type FaqItem = {
   question: string
@@ -47,7 +47,7 @@ export type FaqSectionProps = {
 }
 
 export function FaqSection(props: FaqSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const items = props.items || []
   const normalizedCategories = (props.categories || [])
     .map((item) => (typeof item === "string" ? item : item?.value))
@@ -123,12 +123,12 @@ export function FaqSection(props: FaqSectionProps) {
           <div className="flex items-center justify-center gap-3">
             <HelpCircle className="h-8 w-8 text-muted-foreground md:h-9 md:w-9" aria-hidden="true" />
             <h2 className="text-3xl font-semibold tracking-tight">
-              <EditableText demoKey={key("faq.heading")} value={props.heading} as="span" showIcon={false} />
+              <EditableText contentKey={key("faq.heading")} value={props.heading} as="span" showIcon={false} />
             </h2>
           </div>
           <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
             <EditableText
-              demoKey={key("faq.subheading")}
+              contentKey={key("faq.subheading")}
               value={props.subheading}
               as="span"
               multiline
@@ -172,7 +172,7 @@ export function FaqSection(props: FaqSectionProps) {
               <CardHeader className="pb-4">
                 <CardTitle className="text-lg">
                   <EditableText
-                    demoKey={key("faq.questionsLabel")}
+                    contentKey={key("faq.questionsLabel")}
                     value={props.questionsLabel}
                     as="span"
                     showIcon={false}
@@ -213,7 +213,7 @@ export function FaqSection(props: FaqSectionProps) {
                             <div className="flex items-center justify-between gap-3">
                               <span className="text-sm font-medium text-foreground">
                                 <EditableText
-                                  demoKey={key(`faq.items.${item.index}.question`)}
+                                  contentKey={key(`faq.items.${item.index}.question`)}
                                   value={item.question}
                                   as="span"
                                   showIcon={false}
@@ -236,7 +236,7 @@ export function FaqSection(props: FaqSectionProps) {
                   <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-border/70 p-6 text-center">
                     <p className="text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key("faq.emptyMessage")}
+                        contentKey={key("faq.emptyMessage")}
                         value={props.emptyMessage}
                         as="span"
                         showIcon={false}
@@ -244,7 +244,7 @@ export function FaqSection(props: FaqSectionProps) {
                     </p>
                     <Button variant="outline" onClick={clearFilters}>
                       <EditableText
-                        demoKey={key("faq.clearFiltersLabel")}
+                        contentKey={key("faq.clearFiltersLabel")}
                         value={props.clearFiltersLabel}
                         as="span"
                         showIcon={false}
@@ -264,14 +264,14 @@ export function FaqSection(props: FaqSectionProps) {
                   <CardTitle className="text-xl">
                     {activeFaq ? (
                       <EditableText
-                        demoKey={key(`faq.items.${activeFaq.index}.question`)}
+                        contentKey={key(`faq.items.${activeFaq.index}.question`)}
                         value={activeFaq.question}
                         as="span"
                         showIcon={false}
                       />
                     ) : (
                       <EditableText
-                        demoKey={key("faq.selectPromptTitle")}
+                        contentKey={key("faq.selectPromptTitle")}
                         value={selectPromptTitle}
                         as="span"
                         showIcon={false}
@@ -283,7 +283,7 @@ export function FaqSection(props: FaqSectionProps) {
                   <div className="space-y-3">
                     {activeFaq ? (
                       <EditableText
-                        demoKey={key(`faq.items.${activeFaq.index}.answer`)}
+                        contentKey={key(`faq.items.${activeFaq.index}.answer`)}
                         value={activeFaq.answer}
                         as="p"
                         multiline
@@ -291,7 +291,7 @@ export function FaqSection(props: FaqSectionProps) {
                       />
                     ) : (
                       <EditableText
-                        demoKey={key("faq.selectPromptBody")}
+                        contentKey={key("faq.selectPromptBody")}
                         value={selectPromptBody}
                         as="p"
                         showIcon={false}
@@ -302,7 +302,7 @@ export function FaqSection(props: FaqSectionProps) {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm font-medium">
                       <EditableText
-                        demoKey={key("faq.stillUnsureLabel")}
+                        contentKey={key("faq.stillUnsureLabel")}
                         value={props.stillUnsureLabel}
                         as="span"
                         showIcon={false}
@@ -312,7 +312,7 @@ export function FaqSection(props: FaqSectionProps) {
                       <Button asChild variant="secondary" size="sm" className="rounded-full">
                         <a href={props.primaryCta?.href || "#booking"}>
                           <EditableText
-                            demoKey={key("faq.primaryCta.label")}
+                            contentKey={key("faq.primaryCta.label")}
                             value={props.primaryCta?.label || ""}
                             as="span"
                             showIcon={false}
@@ -322,7 +322,7 @@ export function FaqSection(props: FaqSectionProps) {
                       <Button asChild variant="outline" size="sm" className="rounded-full">
                         <a href={props.secondaryCta?.href || "mailto:hello@example.com"}>
                           <EditableText
-                            demoKey={key("faq.secondaryCta.label")}
+                            contentKey={key("faq.secondaryCta.label")}
                             value={props.secondaryCta?.label || ""}
                             as="span"
                             showIcon={false}

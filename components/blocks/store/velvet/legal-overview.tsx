@@ -4,8 +4,8 @@ import Link from "next/link"
 import type { ComponentConfig } from "@measured/puck"
 import { ArrowLeft } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -35,7 +35,7 @@ export type LegalOverviewProps = {
 }
 
 export function LegalOverview(props: LegalOverviewProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const EyebrowIcon = getLegalIcon(props.eyebrow?.icon)
   const introParagraphs = normalizeStringItems(props.introParagraphs)
   const summaryItems = normalizeListItems(props.summaryItems)
@@ -56,7 +56,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   {EyebrowIcon ? <EyebrowIcon className="h-4 w-4 text-primary" /> : null}
                   <EditableText
-                    demoKey={key("legal.overview.eyebrowLabel")}
+                    contentKey={key("legal.overview.eyebrowLabel")}
                     value={props.eyebrow.label}
                     as="span"
                     showIcon={false}
@@ -64,7 +64,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                 </div>
               ) : null}
               <h1 className="text-3xl font-semibold text-foreground md:text-4xl">
-                <EditableText demoKey={key("legal.overview.title")} value={props.title} as="span" showIcon={false} />
+                <EditableText contentKey={key("legal.overview.title")} value={props.title} as="span" showIcon={false} />
               </h1>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -72,7 +72,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                 <Link href={props.backHref} className="inline-flex items-center gap-2">
                   <ArrowLeft className="h-4 w-4" />
                   <EditableText
-                    demoKey={key("legal.overview.backLabel")}
+                    contentKey={key("legal.overview.backLabel")}
                     value={props.backLabel}
                     as="span"
                     showIcon={false}
@@ -82,7 +82,7 @@ export function LegalOverview(props: LegalOverviewProps) {
               {props.lastUpdated ? (
                 <Badge variant="secondary" className="w-fit">
                   <EditableText
-                    demoKey={key("legal.overview.lastUpdated")}
+                    contentKey={key("legal.overview.lastUpdated")}
                     value={props.lastUpdated}
                     as="span"
                     showIcon={false}
@@ -95,7 +95,7 @@ export function LegalOverview(props: LegalOverviewProps) {
           {introParagraphs.map((paragraph, index) => (
             <p key={index} className="text-base text-muted-foreground">
               <EditableText
-                demoKey={key(`legal.overview.introParagraphs.${index}`)}
+                contentKey={key(`legal.overview.introParagraphs.${index}`)}
                 value={paragraph}
                 as="span"
                 multiline
@@ -110,7 +110,7 @@ export function LegalOverview(props: LegalOverviewProps) {
             <div className="space-y-3">
               <h2 className="text-lg font-semibold text-foreground">
                 <EditableText
-                  demoKey={key("legal.overview.summaryHeading")}
+                  contentKey={key("legal.overview.summaryHeading")}
                   value={props.summaryHeading}
                   as="span"
                   showIcon={false}
@@ -124,7 +124,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                     {item.label ? (
                       <strong>
                         <EditableText
-                          demoKey={key(`legal.overview.summaryItems.${index}.label`)}
+                          contentKey={key(`legal.overview.summaryItems.${index}.label`)}
                           value={item.label}
                           as="span"
                           showIcon={false}
@@ -133,7 +133,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                     ) : null}
                     {item.label ? " " : null}
                     <EditableText
-                      demoKey={key(`legal.overview.summaryItems.${index}.text`)}
+                      contentKey={key(`legal.overview.summaryItems.${index}.text`)}
                       value={item.text}
                       as="span"
                       showIcon={false}
@@ -151,7 +151,7 @@ export function LegalOverview(props: LegalOverviewProps) {
               {props.extraHeading ? (
                 <h2 className="text-lg font-semibold text-foreground">
                   <EditableText
-                    demoKey={key("legal.overview.extraHeading")}
+                    contentKey={key("legal.overview.extraHeading")}
                     value={props.extraHeading}
                     as="span"
                     showIcon={false}
@@ -161,7 +161,7 @@ export function LegalOverview(props: LegalOverviewProps) {
               {extraParagraphs.map((paragraph, index) => (
                 <p key={index} className="text-sm text-muted-foreground">
                   <EditableText
-                    demoKey={key(`legal.overview.extraParagraphs.${index}`)}
+                    contentKey={key(`legal.overview.extraParagraphs.${index}`)}
                     value={paragraph}
                     as="span"
                     multiline
@@ -176,7 +176,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                       {item.label ? (
                         <strong>
                           <EditableText
-                            demoKey={key(`legal.overview.extraListItems.${index}.label`)}
+                            contentKey={key(`legal.overview.extraListItems.${index}.label`)}
                             value={item.label}
                             as="span"
                             showIcon={false}
@@ -185,7 +185,7 @@ export function LegalOverview(props: LegalOverviewProps) {
                       ) : null}
                       {item.label ? " " : null}
                       <EditableText
-                        demoKey={key(`legal.overview.extraListItems.${index}.text`)}
+                        contentKey={key(`legal.overview.extraListItems.${index}.text`)}
                         value={item.text}
                         as="span"
                         showIcon={false}

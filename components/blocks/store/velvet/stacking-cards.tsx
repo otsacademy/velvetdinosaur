@@ -6,8 +6,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { PortfolioDeck } from "@/components/blocks/store/velvet/shared/portfolio-deck"
 import { cn } from "@/lib/utils"
 
@@ -152,7 +152,7 @@ function getNavOffset() {
 }
 
 export function StackingCardsSection(props: StackingCardsProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const containerRef = useRef<HTMLDivElement | null>(null)
   const cardRefs = useRef<Array<HTMLDivElement | null>>([])
   const wrapperRefs = useRef<Array<HTMLDivElement | null>>([])
@@ -330,12 +330,12 @@ export function StackingCardsSection(props: StackingCardsProps) {
               <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
             </svg>
             <h2 className="text-3xl font-semibold tracking-tight">
-              <EditableText demoKey={key("caseStudies.heading")} value={props.heading} as="span" showIcon={false} />
+              <EditableText contentKey={key("caseStudies.heading")} value={props.heading} as="span" showIcon={false} />
             </h2>
           </div>
           <p className="mt-3 text-muted-foreground text-left">
             <EditableText
-              demoKey={key("caseStudies.subheading")}
+              contentKey={key("caseStudies.subheading")}
               value={props.subheading}
               as="span"
               multiline
@@ -387,7 +387,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                         </span>
                       ) : null}
                       <EditableText
-                        demoKey={key(`caseStudies.cards.${index}.eyebrow`)}
+                        contentKey={key(`caseStudies.cards.${index}.eyebrow`)}
                         value={card.eyebrow}
                         as="span"
                         showIcon={false}
@@ -434,7 +434,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                     )}
                   >
                     <EditableText
-                      demoKey={key(`caseStudies.cards.${index}.title`)}
+                      contentKey={key(`caseStudies.cards.${index}.title`)}
                       value={card.title}
                       as="span"
                       showIcon={false}
@@ -444,7 +444,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                   {card.description ? (
                     <p className="mt-3 text-sm text-muted-foreground md:text-base">
                       <EditableText
-                        demoKey={key(`caseStudies.cards.${index}.description`)}
+                        contentKey={key(`caseStudies.cards.${index}.description`)}
                         value={card.description}
                         as="span"
                         multiline
@@ -464,7 +464,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                         </span>
                         <span className="text-foreground/85" style={clampStyle}>
                           <EditableText
-                            demoKey={key(`caseStudies.cards.${index}.${item.path}`)}
+                            contentKey={key(`caseStudies.cards.${index}.${item.path}`)}
                             value={(card as any)[item.path]}
                             as="span"
                             multiline
@@ -480,7 +480,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                         <Badge key={`${metric.label}-${metricIndex}`} variant="secondary" className="gap-2 text-xs">
                           <span className="uppercase tracking-[0.18em] text-muted-foreground">
                             <EditableText
-                              demoKey={key(`caseStudies.cards.${index}.metrics.${metricIndex}.label`)}
+                              contentKey={key(`caseStudies.cards.${index}.metrics.${metricIndex}.label`)}
                               value={metric.label}
                               as="span"
                               showIcon={false}
@@ -488,7 +488,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                           </span>
                           <span className="text-foreground">
                             <EditableText
-                              demoKey={key(`caseStudies.cards.${index}.metrics.${metricIndex}.value`)}
+                              contentKey={key(`caseStudies.cards.${index}.metrics.${metricIndex}.value`)}
                               value={metric.value}
                               as="span"
                               showIcon={false}
@@ -518,7 +518,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                       <Button variant="outline" size="sm" asChild>
                         <Link href={card.cta.href}>
                           <EditableText
-                            demoKey={key(`caseStudies.cards.${index}.cta.label`)}
+                            contentKey={key(`caseStudies.cards.${index}.cta.label`)}
                             value={card.cta.label}
                             as="span"
                             showIcon={false}

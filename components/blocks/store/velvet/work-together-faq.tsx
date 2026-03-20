@@ -4,8 +4,8 @@ import { useMemo, useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
 import { ChevronRight, Sparkles } from "lucide-react"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -38,7 +38,7 @@ export type WorkTogetherFaqProps = {
 }
 
 export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const steps = useMemo(() => {
     return (props.steps || []).map((step) => ({
       ...step,
@@ -77,12 +77,12 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
           <div className="flex items-center justify-center gap-3">
             <Sparkles className="h-7 w-7 text-muted-foreground md:h-8 md:w-8" aria-hidden="true" />
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              <EditableText demoKey={key("workTogether.heading")} value={props.heading} as="span" showIcon={false} />
+              <EditableText contentKey={key("workTogether.heading")} value={props.heading} as="span" showIcon={false} />
             </h2>
           </div>
           <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
             <EditableText
-              demoKey={key("workTogether.subheading")}
+              contentKey={key("workTogether.subheading")}
               value={props.subheading}
               as="span"
               multiline
@@ -109,7 +109,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                   <div className="flex items-start gap-3">
                     <span className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold">
                       <EditableText
-                        demoKey={key(`workTogether.steps.${stepIndex}.number`)}
+                        contentKey={key(`workTogether.steps.${stepIndex}.number`)}
                         value={String(step.number)}
                         as="span"
                         showIcon={false}
@@ -118,7 +118,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                     <div className="space-y-1">
                       <p className="text-sm font-semibold text-foreground">
                         <EditableText
-                          demoKey={key(`workTogether.steps.${stepIndex}.title`)}
+                          contentKey={key(`workTogether.steps.${stepIndex}.title`)}
                           value={step.title}
                           as="span"
                           showIcon={false}
@@ -126,7 +126,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                       </p>
                       <p className="text-xs text-muted-foreground">
                         <EditableText
-                          demoKey={key(`workTogether.steps.${stepIndex}.summary`)}
+                          contentKey={key(`workTogether.steps.${stepIndex}.summary`)}
                           value={step.summary}
                           as="span"
                           showIcon={false}
@@ -140,7 +140,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                     step={step}
                     stepIndex={stepIndex}
                     faqsLabel={props.faqsLabel}
-                    demoKey={key}
+                    contentKey={key}
                   />
                 </AccordionContent>
               </AccordionItem>
@@ -177,7 +177,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                     <div className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold">
                         <EditableText
-                          demoKey={key(`workTogether.steps.${stepIndex}.number`)}
+                          contentKey={key(`workTogether.steps.${stepIndex}.number`)}
                           value={String(step.number)}
                           as="span"
                           showIcon={false}
@@ -186,7 +186,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                       <div className="space-y-1">
                         <p className="text-sm font-semibold text-foreground">
                           <EditableText
-                            demoKey={key(`workTogether.steps.${stepIndex}.title`)}
+                            contentKey={key(`workTogether.steps.${stepIndex}.title`)}
                             value={step.title}
                             as="span"
                             showIcon={false}
@@ -194,7 +194,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                         </p>
                         <p className="text-xs text-muted-foreground">
                           <EditableText
-                            demoKey={key(`workTogether.steps.${stepIndex}.summary`)}
+                            contentKey={key(`workTogether.steps.${stepIndex}.summary`)}
                             value={step.summary}
                             as="span"
                             showIcon={false}
@@ -220,12 +220,12 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
               <CardHeader className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="secondary">
-                    <EditableText demoKey={key("workTogether.stepLabel")} value={props.stepLabel} as="span" showIcon={false} />{" "}
+                    <EditableText contentKey={key("workTogether.stepLabel")} value={props.stepLabel} as="span" showIcon={false} />{" "}
                     {activeStep?.number}
                   </Badge>
                   <CardTitle className="text-xl">
                     <EditableText
-                      demoKey={key(`workTogether.steps.${activeStepIndex}.title`)}
+                      contentKey={key(`workTogether.steps.${activeStepIndex}.title`)}
                       value={activeStep?.title || ""}
                       as="span"
                       showIcon={false}
@@ -234,7 +234,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                 </div>
                 <p className="text-sm text-muted-foreground">
                   <EditableText
-                    demoKey={key(`workTogether.steps.${activeStepIndex}.summary`)}
+                    contentKey={key(`workTogether.steps.${activeStepIndex}.summary`)}
                     value={activeStep?.summary || ""}
                     as="span"
                     showIcon={false}
@@ -244,7 +244,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
               <CardContent className="space-y-6">
                 <p className="text-sm text-muted-foreground">
                   <EditableText
-                    demoKey={key(`workTogether.steps.${activeStepIndex}.details`)}
+                    contentKey={key(`workTogether.steps.${activeStepIndex}.details`)}
                     value={activeStep?.details || ""}
                     as="span"
                     multiline
@@ -257,7 +257,7 @@ export function WorkTogetherFaq(props: WorkTogetherFaqProps) {
                     step={activeStep}
                     stepIndex={activeStepIndex}
                     faqsLabel={props.faqsLabel}
-                    demoKey={key}
+                    contentKey={key}
                   />
                 ) : null}
               </CardContent>
@@ -273,22 +273,22 @@ type StepContentProps = {
   step: WorkTogetherStep
   stepIndex: number
   faqsLabel: string
-  demoKey: (path: string) => string
+  contentKey: (path: string) => string
 }
 
-function StepContent({ step, stepIndex, faqsLabel, demoKey: key }: StepContentProps) {
+function StepContent({ step, stepIndex, faqsLabel, contentKey: key }: StepContentProps) {
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
         <EditableText
-          demoKey={key(`workTogether.steps.${stepIndex}.details`)}
+          contentKey={key(`workTogether.steps.${stepIndex}.details`)}
           value={step.details}
           as="span"
           multiline
           showIcon={false}
         />
       </p>
-      <StepFaqs step={step} stepIndex={stepIndex} faqsLabel={faqsLabel} demoKey={key} />
+      <StepFaqs step={step} stepIndex={stepIndex} faqsLabel={faqsLabel} contentKey={key} />
     </div>
   )
 }
@@ -297,21 +297,21 @@ type StepFaqsProps = {
   step: WorkTogetherStep
   stepIndex: number
   faqsLabel: string
-  demoKey: (path: string) => string
+  contentKey: (path: string) => string
 }
 
-function StepFaqs({ step, stepIndex, faqsLabel, demoKey: key }: StepFaqsProps) {
+function StepFaqs({ step, stepIndex, faqsLabel, contentKey: key }: StepFaqsProps) {
   return (
     <div className="space-y-2">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        <EditableText demoKey={key("workTogether.faqsLabel")} value={faqsLabel} as="span" showIcon={false} />
+        <EditableText contentKey={key("workTogether.faqsLabel")} value={faqsLabel} as="span" showIcon={false} />
       </p>
       <Accordion type="single" collapsible className="space-y-2">
         {(step.faqs || []).map((faq, faqIndex) => (
           <AccordionItem key={faq.id || faqIndex} value={faq.id || String(faqIndex)} className="rounded-lg border border-border/70 px-4">
             <AccordionTrigger className="hover:no-underline">
               <EditableText
-                demoKey={key(`workTogether.steps.${stepIndex}.faqs.${faqIndex}.question`)}
+                contentKey={key(`workTogether.steps.${stepIndex}.faqs.${faqIndex}.question`)}
                 value={faq.question}
                 as="span"
                 showIcon={false}
@@ -319,7 +319,7 @@ function StepFaqs({ step, stepIndex, faqsLabel, demoKey: key }: StepFaqsProps) {
             </AccordionTrigger>
             <AccordionContent className="text-sm text-muted-foreground">
               <EditableText
-                demoKey={key(`workTogether.steps.${stepIndex}.faqs.${faqIndex}.answer`)}
+                contentKey={key(`workTogether.steps.${stepIndex}.faqs.${faqIndex}.answer`)}
                 value={faq.answer}
                 as="span"
                 multiline

@@ -17,7 +17,7 @@ export function TrustStripSection(props: TrustStripSectionProps) {
   return (
     <section className="py-8">
       <TrustStrip
-        demoId={props.id}
+        contentId={props.id}
         items={props.items || []}
         verifiedLabel={props.verifiedLabel}
         showVerifiedBadge={props.showVerifiedBadge}

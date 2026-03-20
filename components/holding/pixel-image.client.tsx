@@ -112,7 +112,7 @@ export const PixelImage = ({
 
   return (
     <div className={cn("relative", className)} role={alt ? "img" : undefined} aria-label={alt}>
-      {/* 2x the original demo sizing: 288px -> 576px, 384px -> 768px */}
+      {/* 2x the original reference sizing: 288px -> 576px, 384px -> 768px */}
       <div
         className={cn(
           "relative h-[min(36rem,92vw)] w-[min(36rem,92vw)] select-none md:h-[min(48rem,70vw)] md:w-[min(48rem,70vw)]",

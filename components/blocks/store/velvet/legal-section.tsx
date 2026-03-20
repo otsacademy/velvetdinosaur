@@ -2,8 +2,8 @@
 
 import type { ComponentConfig } from "@measured/puck"
 
-import { EditableText } from "@/components/demo/editable"
-import { demoKey } from "@/components/demo/demo-helpers"
+import { EditableText } from "@/components/content/editable"
+import { contentKey } from "@/components/content/content-keys"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import {
@@ -81,7 +81,7 @@ export type LegalSectionProps = {
 }
 
 export function LegalSection(props: LegalSectionProps) {
-  const key = (path: string) => demoKey(props.id, path)
+  const key = (path: string) => contentKey(props.id, path)
   const Icon = getLegalIcon(props.icon)
   const introParagraphs = normalizeStringItems(props.introParagraphs)
   const tableHeaders = normalizeStringItems(props.table?.headers)
@@ -104,14 +104,14 @@ export function LegalSection(props: LegalSectionProps) {
           <div className="flex items-center gap-2">
             {Icon ? <Icon className="h-4 w-4 text-primary" /> : null}
             <h2 className="text-xl font-semibold text-foreground">
-              <EditableText demoKey={key(`legal.sections.${props.sectionId}.title`)} value={props.title} as="span" showIcon={false} />
+              <EditableText contentKey={key(`legal.sections.${props.sectionId}.title`)} value={props.title} as="span" showIcon={false} />
             </h2>
           </div>
 
           {introParagraphs.map((paragraph, index) => (
             <p key={index} className="text-sm text-muted-foreground">
               <EditableText
-                demoKey={key(`legal.sections.${props.sectionId}.introParagraphs.${index}`)}
+                contentKey={key(`legal.sections.${props.sectionId}.introParagraphs.${index}`)}
                 value={paragraph}
                 as="span"
                 multiline
@@ -128,7 +128,7 @@ export function LegalSection(props: LegalSectionProps) {
                     {tableHeaders.map((header, index) => (
                       <th key={index} className="px-4 py-3 text-left font-medium">
                         <EditableText
-                          demoKey={key(`legal.sections.${props.sectionId}.table.headers.${index}`)}
+                          contentKey={key(`legal.sections.${props.sectionId}.table.headers.${index}`)}
                           value={header}
                           as="span"
                           showIcon={false}
@@ -143,7 +143,7 @@ export function LegalSection(props: LegalSectionProps) {
                       {row.map((cell, cellIndex) => (
                         <td key={cellIndex} className="px-4 py-3 text-muted-foreground">
                           <EditableText
-                            demoKey={key(`legal.sections.${props.sectionId}.table.rows.${rowIndex}.cells.${cellIndex}`)}
+                            contentKey={key(`legal.sections.${props.sectionId}.table.rows.${rowIndex}.cells.${cellIndex}`)}
                             value={cell}
                             as="span"
                             showIcon={false}
@@ -167,7 +167,7 @@ export function LegalSection(props: LegalSectionProps) {
                       {CardIcon ? <CardIcon className="h-4 w-4 text-primary" /> : null}
                       <h3 className="text-sm font-semibold text-foreground">
                         <EditableText
-                          demoKey={key(`legal.sections.${props.sectionId}.cards.${index}.title`)}
+                          contentKey={key(`legal.sections.${props.sectionId}.cards.${index}.title`)}
                           value={card.title}
                           as="span"
                           showIcon={false}
@@ -176,7 +176,7 @@ export function LegalSection(props: LegalSectionProps) {
                     </div>
                     <p className="mt-2 text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key(`legal.sections.${props.sectionId}.cards.${index}.body`)}
+                        contentKey={key(`legal.sections.${props.sectionId}.cards.${index}.body`)}
                         value={card.body}
                         as="span"
                         multiline
@@ -194,7 +194,7 @@ export function LegalSection(props: LegalSectionProps) {
               {props.address?.orgName ? (
                 <p className="font-medium text-foreground">
                   <EditableText
-                    demoKey={key(`legal.sections.${props.sectionId}.address.orgName`)}
+                    contentKey={key(`legal.sections.${props.sectionId}.address.orgName`)}
                     value={props.address.orgName}
                     as="span"
                     showIcon={false}
@@ -204,7 +204,7 @@ export function LegalSection(props: LegalSectionProps) {
               {props.address?.label ? (
                 <p className={cn("text-muted-foreground", props.address.orgName ? "mt-2" : "")}> 
                   <EditableText
-                    demoKey={key(`legal.sections.${props.sectionId}.address.label`)}
+                    contentKey={key(`legal.sections.${props.sectionId}.address.label`)}
                     value={props.address.label}
                     as="span"
                     showIcon={false}
@@ -215,7 +215,7 @@ export function LegalSection(props: LegalSectionProps) {
                 {addressLines.map((line, index) => (
                   <span key={index}>
                     <EditableText
-                      demoKey={key(`legal.sections.${props.sectionId}.address.lines.${index}`)}
+                      contentKey={key(`legal.sections.${props.sectionId}.address.lines.${index}`)}
                       value={line}
                       as="span"
                       showIcon={false}
@@ -236,7 +236,7 @@ export function LegalSection(props: LegalSectionProps) {
                     {ItemIcon ? <ItemIcon className="h-4 w-4 text-primary" /> : null}
                     <a href={item.href} className="underline underline-offset-4">
                       <EditableText
-                        demoKey={key(`legal.sections.${props.sectionId}.contactItems.${index}.text`)}
+                        contentKey={key(`legal.sections.${props.sectionId}.contactItems.${index}.text`)}
                         value={item.text}
                         as="span"
                         showIcon={false}
@@ -254,7 +254,7 @@ export function LegalSection(props: LegalSectionProps) {
                 <div key={columnIndex} className="space-y-2">
                   <p className="text-sm font-medium text-foreground">
                     <EditableText
-                      demoKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.heading`)}
+                      contentKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.heading`)}
                       value={column.heading}
                       as="span"
                       showIcon={false}
@@ -266,7 +266,7 @@ export function LegalSection(props: LegalSectionProps) {
                         {item.label ? (
                           <span className="font-medium text-foreground">
                             <EditableText
-                              demoKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.items.${itemIndex}.label`)}
+                              contentKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.items.${itemIndex}.label`)}
                               value={item.label}
                               as="span"
                               showIcon={false}
@@ -275,7 +275,7 @@ export function LegalSection(props: LegalSectionProps) {
                         ) : null}
                         {item.label ? " " : null}
                         <EditableText
-                          demoKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.items.${itemIndex}.text`)}
+                          contentKey={key(`legal.sections.${props.sectionId}.columns.${columnIndex}.items.${itemIndex}.text`)}
                           value={item.text}
                           as="span"
                           showIcon={false}
@@ -294,7 +294,7 @@ export function LegalSection(props: LegalSectionProps) {
                 <div key={subsectionIndex} className="space-y-3">
                   <h3 className="text-lg font-semibold text-foreground">
                     <EditableText
-                      demoKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.heading`)}
+                      contentKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.heading`)}
                       value={subsection.heading}
                       as="span"
                       showIcon={false}
@@ -303,7 +303,7 @@ export function LegalSection(props: LegalSectionProps) {
                   {normalizeStringItems(subsection.paragraphs).map((paragraph, paragraphIndex) => (
                     <p key={paragraphIndex} className="text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.paragraphs.${paragraphIndex}`)}
+                        contentKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.paragraphs.${paragraphIndex}`)}
                         value={paragraph}
                         as="span"
                         multiline
@@ -318,7 +318,7 @@ export function LegalSection(props: LegalSectionProps) {
                           {item.label ? (
                             <span className="font-medium text-foreground">
                               <EditableText
-                                demoKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.items.${itemIndex}.label`)}
+                                contentKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.items.${itemIndex}.label`)}
                                 value={item.label}
                                 as="span"
                                 showIcon={false}
@@ -327,7 +327,7 @@ export function LegalSection(props: LegalSectionProps) {
                           ) : null}
                           {item.label ? " " : null}
                           <EditableText
-                            demoKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.items.${itemIndex}.text`)}
+                            contentKey={key(`legal.sections.${props.sectionId}.subsections.${subsectionIndex}.items.${itemIndex}.text`)}
                             value={item.text}
                             as="span"
                             showIcon={false}
@@ -339,7 +339,7 @@ export function LegalSection(props: LegalSectionProps) {
                   {normalizeStringItems(subsection.outroParagraphs).map((paragraph, paragraphIndex) => (
                     <p key={paragraphIndex} className="text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key(
+                        contentKey={key(
                           `legal.sections.${props.sectionId}.subsections.${subsectionIndex}.outroParagraphs.${paragraphIndex}`,
                         )}
                         value={paragraph}
@@ -361,7 +361,7 @@ export function LegalSection(props: LegalSectionProps) {
                   {group.intro ? (
                     <p className="text-sm text-muted-foreground">
                       <EditableText
-                        demoKey={key(`legal.sections.${props.sectionId}.listGroups.${groupIndex}.intro`)}
+                        contentKey={key(`legal.sections.${props.sectionId}.listGroups.${groupIndex}.intro`)}
                         value={group.intro}
                         as="span"
                         multiline
@@ -376,7 +376,7 @@ export function LegalSection(props: LegalSectionProps) {
                           {item.label ? (
                             <span className="font-medium text-foreground">
                               <EditableText
-                                demoKey={key(
+                                contentKey={key(
                                   `legal.sections.${props.sectionId}.listGroups.${groupIndex}.items.${itemIndex}.label`,
                                 )}
                                 value={item.label}
@@ -387,7 +387,7 @@ export function LegalSection(props: LegalSectionProps) {
                           ) : null}
                           {item.label ? " " : null}
                           <EditableText
-                            demoKey={key(
+                            contentKey={key(
                               `legal.sections.${props.sectionId}.listGroups.${groupIndex}.items.${itemIndex}.text`,
                             )}
                             value={item.text}
@@ -410,7 +410,7 @@ export function LegalSection(props: LegalSectionProps) {
                   {item.label ? (
                     <span className="font-medium text-foreground">
                       <EditableText
-                        demoKey={key(`legal.sections.${props.sectionId}.listItems.${index}.label`)}
+                        contentKey={key(`legal.sections.${props.sectionId}.listItems.${index}.label`)}
                         value={item.label}
                         as="span"
                         showIcon={false}
@@ -419,7 +419,7 @@ export function LegalSection(props: LegalSectionProps) {
                   ) : null}
                   {item.label ? " " : null}
                   <EditableText
-                    demoKey={key(`legal.sections.${props.sectionId}.listItems.${index}.text`)}
+                    contentKey={key(`legal.sections.${props.sectionId}.listItems.${index}.text`)}
                     value={item.text}
                     as="span"
                     showIcon={false}
@@ -432,7 +432,7 @@ export function LegalSection(props: LegalSectionProps) {
           {outroParagraphs.map((paragraph, index) => (
             <p key={index} className="text-sm text-muted-foreground">
               <EditableText
-                demoKey={key(`legal.sections.${props.sectionId}.outroParagraphs.${index}`)}
+                contentKey={key(`legal.sections.${props.sectionId}.outroParagraphs.${index}`)}
                 value={paragraph}
                 as="span"
                 multiline

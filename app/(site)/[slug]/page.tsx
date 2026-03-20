@@ -13,6 +13,7 @@ const RESERVED_SLUGS = new Set([
   'api',
   'edit',
   'preview',
+  'work',
   'sign-in',
   'sign-up',
   'docs',
