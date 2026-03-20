@@ -24,7 +24,9 @@ export default defineConfig({
     }
   },
   webServer: {
-    command: `MONGODB_URI= VD_EDITOR_SMOKE_TOKEN=${smokeToken} bun run start -- -p ${resolvedPort}`,
+    command:
+      `MONGODB_URI= VD_EDITOR_SMOKE_TOKEN=${smokeToken} VD_DISABLE_ANALYTICS=true ` +
+      `bun run start -- -p ${resolvedPort}`,
     port: resolvedPort,
     reuseExistingServer,
     timeout: 120_000

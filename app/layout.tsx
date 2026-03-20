@@ -35,6 +35,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
+  const disableAnalytics = process.env.VD_DISABLE_ANALYTICS === 'true';
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci
@@ -75,12 +76,16 @@ export default async function RootLayout({
     >
       <body className="min-h-screen bg-[var(--vd-bg)] text-[var(--vd-fg)] antialiased">
         {children}
-        <Suspense fallback={null}>
-          <VisitorTracker />
-        </Suspense>
-        <Suspense fallback={null}>
-          <ThirdPartyAnalytics />
-        </Suspense>
+        {disableAnalytics ? null : (
+          <>
+            <Suspense fallback={null}>
+              <VisitorTracker />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ThirdPartyAnalytics />
+            </Suspense>
+          </>
+        )}
       </body>
     </html>
   );
