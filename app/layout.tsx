@@ -35,7 +35,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
-  const disableAnalytics = process.env.VD_DISABLE_ANALYTICS === 'true';
+  const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci

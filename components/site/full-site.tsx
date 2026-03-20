@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Hero1 } from "@/components/hero1"
 import { PixelImage } from "@/components/holding/pixel-image.client"
 import { EchoNavbar } from "./echo-navbar"
@@ -21,6 +22,7 @@ export function FullSite() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
+  const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"
 
   return (
     <div className="relative min-h-dvh overflow-hidden">
@@ -57,16 +59,27 @@ export function FullSite() {
               imageSlot={
                 <div>
                   <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-transparent p-3 shadow-none backdrop-blur-none hover:border-border/60 hover:bg-background/45 hover:backdrop-blur">
-                    <PixelImage
-                      src="/dinosaur.webp"
-                      alt="Velvet Dinosaur mascot assembling from grayscale to full color"
-                      grid="8x8"
-                      grayscaleAnimation={false}
-                      maxAnimationDelay={0}
-                      pixelFadeInDuration={0}
-                      className="rounded-xl"
-                      sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
-                    />
+                    {isLhci ? (
+                      <Image
+                        src="/dinosaur.webp"
+                        alt="Velvet Dinosaur mascot assembling from grayscale to full color"
+                        width={800}
+                        height={800}
+                        priority
+                        className="h-[min(24rem,84vw)] w-[min(24rem,84vw)] rounded-xl object-cover sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
+                      />
+                    ) : (
+                      <PixelImage
+                        src="/dinosaur.webp"
+                        alt="Velvet Dinosaur mascot assembling from grayscale to full color"
+                        grid="8x8"
+                        grayscaleAnimation={false}
+                        maxAnimationDelay={0}
+                        pixelFadeInDuration={0}
+                        className="rounded-xl"
+                        sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
+                      />
+                    )}
                   </div>
                 </div>
               }
