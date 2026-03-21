@@ -1,15 +1,16 @@
 import './globals.css';
 import './velvet-site.css';
 import { Suspense, type CSSProperties } from 'react';
-import { Space_Grotesk, Bebas_Neue, JetBrains_Mono } from 'next/font/google';
+import { PT_Sans, Bebas_Neue, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
 import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytics.client';
 import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
 
-const spaceGrotesk = Space_Grotesk({
+const ptSans = PT_Sans({
   subsets: ['latin'],
+  weight: ['400', '700'],
   display: 'swap',
   variable: '--font-sans',
 });
@@ -38,7 +39,7 @@ export default async function RootLayout({
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
   const fontClasses = isLhci
     ? ''
-    : `${spaceGrotesk.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`;
+    : `${ptSans.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci
@@ -69,7 +70,7 @@ export default async function RootLayout({
     : {};
 
   return (
-      <html
+    <html
       lang="en"
       suppressHydrationWarning
       className={fontClasses}

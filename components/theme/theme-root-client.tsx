@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import type { ThemeStatePayload } from 'tweakcn-ui';
 import { ThemeRoot, ThemeScript } from 'tweakcn-ui/client';
 
-const DEFAULT_SKIP_FONTS = ['Space Grotesk', 'Bebas Neue', 'JetBrains Mono'];
+const DEFAULT_SKIP_FONTS = ['PT Sans', 'Space Grotesk', 'Bebas Neue', 'JetBrains Mono'];
 
 type ThemeRootClientProps = {
   children: ReactNode;

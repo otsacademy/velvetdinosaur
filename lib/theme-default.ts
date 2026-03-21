@@ -40,7 +40,7 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
       'sidebar-border': 'oklch(0.922 0 0)',
       'sidebar-ring': 'oklch(0.708 0 0)',
       'font-sans':
-        "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        'var(--font-pt-sans), "PT Sans", ui-sans-serif, system-ui, sans-serif',
       'font-serif': 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       'font-mono':
         'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
@@ -112,7 +112,7 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
       'sidebar-border': 'oklch(0.275 0 0)',
       'sidebar-ring': 'oklch(0.439 0 0)',
       'font-sans':
-        "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        'var(--font-pt-sans), "PT Sans", ui-sans-serif, system-ui, sans-serif',
       'font-serif': 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       'font-mono':
         'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
@@ -154,12 +154,12 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
   fonts: [
     {
       role: 'sans',
-      family: null,
+      family: 'PT Sans',
       cssFamilyValue:
-        "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        'var(--font-pt-sans), "PT Sans", ui-sans-serif, system-ui, sans-serif',
       importUrl: null,
-      defaultWeights: ['400'],
-      isKnownNextGoogleFont: false
+      defaultWeights: ['400', '700'],
+      isKnownNextGoogleFont: true
     },
     {
       role: 'serif',
@@ -185,4 +185,3 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
     lightnessScale: 1
   }
 };
-
