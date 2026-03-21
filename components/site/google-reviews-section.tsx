@@ -1,17 +1,18 @@
 import { BadgeCheck, Star } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type RatingBand = {
   label: string
   percentage: number
 }
 
-type Review = {
+export type Review = {
   name: string
   company: string
   quote: string
   date: string
   sourceUrl: string
-  className: string
+  className?: string
 }
 
 const ratingBands: RatingBand[] = [
@@ -22,7 +23,7 @@ const ratingBands: RatingBand[] = [
   { label: "1 star", percentage: 0 },
 ]
 
-const reviews: Review[] = [
+export const googleReviews: Review[] = [
   {
     name: "Faye Taylor",
     company: "Founder, The Brave",
@@ -43,9 +44,27 @@ const reviews: Review[] = [
   },
 ]
 
-function ReviewCard({ name, company, quote, date, sourceUrl, className }: Review) {
+type ReviewCardProps = Review & {
+  compact?: boolean
+}
+
+export function GoogleReviewCard({
+  name,
+  company,
+  quote,
+  date,
+  sourceUrl,
+  className,
+  compact = false,
+}: ReviewCardProps) {
   return (
-    <article className={`vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card p-6 ${className}`}>
+    <article
+      className={cn(
+        "vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card",
+        compact ? "p-4 sm:p-5" : "p-6",
+        className,
+      )}
+    >
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="font-medium text-foreground">{name}</p>
@@ -71,6 +90,52 @@ function ReviewCard({ name, company, quote, date, sourceUrl, className }: Review
   )
 }
 
+type GoogleRatingCardProps = {
+  className?: string
+  compact?: boolean
+}
+
+export function GoogleRatingCard({ className, compact = false }: GoogleRatingCardProps) {
+  return (
+    <article
+      className={cn(
+        "vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card",
+        compact ? "p-4 sm:p-5" : "p-6",
+        className,
+      )}
+    >
+      <div className="mb-5 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-sm font-semibold">
+            G
+          </div>
+          <p className="text-sm font-medium">Google rating</p>
+        </div>
+        <BadgeCheck className="h-4 w-4 text-foreground" />
+      </div>
+
+      <div className="mb-6 flex items-end gap-2">
+        <span className="text-4xl font-bold text-foreground">5.0</span>
+        <span className="pb-1 text-sm text-muted-foreground">out of 5</span>
+      </div>
+
+      <div className="space-y-3">
+        {ratingBands.map((band) => (
+          <div key={band.label} className="grid grid-cols-[3.5rem_1fr] items-center gap-3">
+            <span className="text-xs text-muted-foreground">{band.label}</span>
+            <div className="h-2 rounded-full bg-muted">
+              <div
+                className="h-full rounded-full bg-foreground"
+                style={{ width: `${band.percentage}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </article>
+  )
+}
+
 export function GoogleReviewsSection() {
   return (
     <section id="reviews" className="py-6 md:py-8">
@@ -84,39 +149,10 @@ export function GoogleReviewsSection() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
-          <article className="vd-review-card vd-hover-lift-sm vd-surface-card border border-border bg-card p-6 sm:col-span-2 lg:col-span-4">
-            <div className="mb-5 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-sm font-semibold">
-                  G
-                </div>
-                <p className="text-sm font-medium">Google rating</p>
-              </div>
-              <BadgeCheck className="h-4 w-4 text-foreground" />
-            </div>
+          <GoogleRatingCard className="sm:col-span-2 lg:col-span-4" />
 
-            <div className="mb-6 flex items-end gap-2">
-              <span className="text-4xl font-bold text-foreground">5.0</span>
-              <span className="pb-1 text-sm text-muted-foreground">out of 5</span>
-            </div>
-
-            <div className="space-y-3">
-              {ratingBands.map((band) => (
-                <div key={band.label} className="grid grid-cols-[3.5rem_1fr] items-center gap-3">
-                  <span className="text-xs text-muted-foreground">{band.label}</span>
-                  <div className="h-2 rounded-full bg-muted">
-                    <div
-                      className="h-full rounded-full bg-foreground"
-                      style={{ width: `${band.percentage}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          {reviews.map((review) => (
-            <ReviewCard key={review.name} {...review} />
+          {googleReviews.map((review) => (
+            <GoogleReviewCard key={review.name} {...review} />
           ))}
         </div>
       </div>

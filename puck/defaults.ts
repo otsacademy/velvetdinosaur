@@ -35,7 +35,10 @@ export function defaultData(slug = 'home'): Data {
     },
     {
       type: 'Image',
-      props: { id: makeId(slug, 'image') }
+      props: {
+        id: makeId(slug, 'image'),
+        ...(slug === 'about' ? { loading: 'eager', fetchPriority: 'high' } : {})
+      }
     },
     {
       type: 'CTA',

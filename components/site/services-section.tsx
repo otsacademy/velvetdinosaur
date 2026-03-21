@@ -9,12 +9,12 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
   return (
-    <div className="vd-hover-lift-sm vd-icon-card rounded-xl border border-border bg-card p-5">
+    <div className="vd-hover-lift-sm vd-icon-card rounded-xl border border-transparent bg-card p-5">
       <div className="vd-icon-badge mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
         <Icon className="vd-icon-accent h-5 w-5 text-primary" />
       </div>
       <h3 className="text-xl font-semibold tracking-tight text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <p className="text-sm text-[var(--vd-copy)]">{description}</p>
     </div>
   )
 }
@@ -27,7 +27,7 @@ export function ServicesSection() {
           <div className="space-y-5">
             <h2 className="vd-section-heading text-2xl font-semibold">Services</h2>
 
-            <div className="max-w-xl space-y-4 leading-relaxed text-muted-foreground">
+            <div className="max-w-xl space-y-4 leading-relaxed text-[var(--vd-copy)]">
               <p>
                 I build bespoke websites and apps from the ground up. Some clients come with a clear brief. Others
                 come with a knotty problem, an ageing site, or the start of an idea that needs shaping. I enjoy both,
@@ -40,10 +40,10 @@ export function ServicesSection() {
               </p>
             </div>
 
-            <Button asChild className="vd-email-cta h-11 gap-2 px-5 text-base font-semibold">
+            <Button asChild className="vd-email-cta vd-pill-primary h-11 gap-2 rounded-full px-6 text-[0.9375rem] font-medium">
               <a href="#contact">
                 Get in touch
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 vd-inline-arrow" />
               </a>
             </Button>
           </div>

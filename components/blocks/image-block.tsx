@@ -6,12 +6,16 @@ export type ImageBlockProps = {
   src?: string;
   alt?: string;
   caption?: string;
+  loading?: 'lazy' | 'eager';
+  fetchPriority?: 'high' | 'low' | 'auto';
 };
 
 export function ImageBlock({
   src = '/images/placeholder.svg',
   alt = 'Placeholder image',
-  caption = 'Drop in R2-hosted assets or external images.'
+  caption = 'Drop in R2-hosted assets or external images.',
+  loading = 'lazy',
+  fetchPriority
 }: ImageBlockProps) {
   const resolvedSrc = resolveAssetImageUrl(src, { width: 1200, height: 800, fit: 'cover' });
 
@@ -25,7 +29,8 @@ export function ImageBlock({
             className="h-full w-full object-cover"
             width={1200}
             height={800}
-            loading="lazy"
+            loading={loading}
+            fetchPriority={fetchPriority}
             decoding="async"
           />
         </div>

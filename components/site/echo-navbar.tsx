@@ -49,12 +49,12 @@ function NavButton({
       href={href}
       onClick={handleClick}
       className={cn(
-        "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3 text-sm font-medium transition-colors",
+        "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-all",
         highlight
-          ? "border-[hsl(204,88%,36%)] bg-[hsl(204,88%,40%)] text-white hover:bg-[hsl(204,88%,36%)]"
+          ? "vd-pill-primary border-transparent px-5 text-[0.8125rem] font-medium shadow-none"
           : isActive
-            ? "border-primary/30 bg-primary/10 text-foreground"
-            : "border-border bg-background/80 text-muted-foreground hover:text-foreground"
+            ? "border-[color-mix(in_oklch,var(--vd-primary)_20%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg))] text-[var(--vd-fg)]"
+            : "border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] hover:text-[var(--vd-fg)]"
       )}
       aria-label={label}
       aria-current={isActive ? "page" : undefined}
@@ -88,7 +88,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="vd-theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground transition-colors hover:text-foreground"
+      className="vd-theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] transition-all hover:text-[var(--vd-fg)]"
       aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
       type="button"
     >
@@ -122,7 +122,7 @@ export function EchoNavbar() {
   return (
     <header className="supports-backdrop-filter:bg-background/60 fixed left-0 right-0 top-0 z-50 w-full backdrop-blur">
       <div className="mx-auto mt-4 max-w-6xl px-4 md:mt-6 md:px-6">
-        <div className="flex items-center gap-2 rounded-full bg-background/70 p-2 shadow-[0_18px_36px_-30px_color-mix(in_oklch,oklch(var(--vd-foreground))_30%,transparent)]">
+        <div className="flex items-center gap-2 rounded-full border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/82 p-2 shadow-[0_1px_4px_-1px_color-mix(in_oklch,var(--vd-fg)_10%,transparent)]">
           <nav className="flex min-w-0 grow items-center gap-2 overflow-x-auto pb-0.5 no-scrollbar">
             {navItems.map((item) => (
               <NavButton

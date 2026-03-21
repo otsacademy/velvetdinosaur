@@ -56,22 +56,27 @@ export function Hero1({
   return (
     <section className={cn("py-28", className)}>
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(20rem,0.92fr)] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:gap-10">
           <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
             {badge ? (
-              <Badge variant="outline" className="border-primary/20 bg-background/75 text-foreground">
+              <Badge
+                variant="outline"
+                className="rounded-full border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-card px-4 py-2 text-[0.75rem] font-medium text-[var(--vd-muted-fg)]"
+              >
                 {badge}
-                <ArrowUpRight className="ml-2 size-4" />
+                <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
             <h1
-              className="vd-hero-heading max-w-[11ch] text-4xl text-foreground sm:text-5xl lg:text-[clamp(4rem,5vw,5.6rem)]"
+              className="vd-hero-heading max-w-[14ch] text-4xl font-semibold text-foreground sm:text-[3.5rem] lg:text-[clamp(4rem,5vw,5.1rem)]"
               style={{ fontFamily: "var(--vd-font-hero)" }}
             >
               {heading}
             </h1>
-            <p className="max-w-[34rem] text-base leading-relaxed text-foreground/80 lg:text-lg">{description}</p>
-            <div className="mt-1 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <p className="max-w-[34rem] text-base leading-[1.72] text-[var(--vd-copy)] lg:text-[1.0625rem]">
+              {description}
+            </p>
+            <div className="mt-2 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               {buttons?.primary ? (
                 <Button
                   asChild
@@ -90,13 +95,13 @@ export function Hero1({
                 >
                   <a href={buttons.secondary.url} className={buttons.secondary.className}>
                     {buttons.secondary.text}
-                    <ArrowRight className="size-4" />
+                    <ArrowRight className="size-4 vd-inline-arrow" />
                   </a>
                 </Button>
               ) : null}
             </div>
             {supportingLine ? (
-              <p className="vd-hero-note max-w-[32rem] text-sm leading-relaxed text-foreground/65 lg:text-base">
+              <p className="vd-hero-note max-w-[32rem] text-sm leading-relaxed text-[var(--vd-copy)] lg:text-[0.975rem]">
                 {supportingLine}
               </p>
             ) : null}

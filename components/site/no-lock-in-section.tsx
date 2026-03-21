@@ -30,25 +30,25 @@ export function NoLockInSection() {
   return (
     <section id="ownership" className="py-6 md:py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="vd-surface-panel grid gap-6 border border-border bg-card p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
+        <div className="vd-surface-panel vd-soft-panel grid gap-6 p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-4">
             <p className="vd-section-kicker">Ownership model</p>
             <h2 className="text-2xl font-semibold tracking-tight">Your website. Your way.</h2>
-            <p className="max-w-2xl text-muted-foreground">
+            <p className="max-w-2xl text-[var(--vd-copy)]">
               No lock-in contracts and no platform traps. You own your domain,
               content, and website code from day one, with access set up in your
               name so you stay in control.
             </p>
-            <p className="max-w-2xl text-muted-foreground">
+            <p className="max-w-2xl text-[var(--vd-copy)]">
               If you ever decide to move providers, we support the migration with
               handover notes and practical help so your website and email continue
               running smoothly.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild>
+              <Button asChild className="vd-email-cta vd-pill-primary rounded-full px-6 text-[0.9375rem] font-medium">
                 <a href="#contact">Talk through your project</a>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="vd-pill-outline rounded-full px-6 text-[0.9375rem] font-medium">
                 <a href="#pricing">See pricing</a>
               </Button>
             </div>
@@ -61,10 +61,10 @@ export function NoLockInSection() {
               return (
                 <article
                   key={stat.label}
-                  className="rounded-xl border border-border bg-background p-4"
+                  className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-4"
                 >
                   <div className="mb-2 flex items-center justify-between gap-3">
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    <p className="text-xs uppercase tracking-wide text-[var(--vd-muted-fg)]">
                       {stat.label}
                     </p>
                     <Icon className="h-4 w-4 text-foreground" />

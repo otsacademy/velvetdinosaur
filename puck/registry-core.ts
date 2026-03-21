@@ -190,7 +190,13 @@ const renderTextBlock: PuckComponent<TextBlockProps> = (props) =>
   TextBlock({ heading: props.heading, body: props.body });
 
 const renderImageBlock: PuckComponent<ImageBlockProps> = (props) =>
-  ImageBlock({ src: props.src, alt: props.alt, caption: props.caption });
+  ImageBlock({
+    src: props.src,
+    alt: props.alt,
+    caption: props.caption,
+    loading: props.loading,
+    fetchPriority: props.fetchPriority
+  });
 
 const renderCTAStrip: PuckComponent<CTAStripProps> = (props) =>
   CTAStrip({

@@ -1,10 +1,8 @@
 import type { ReactNode } from "react"
-import Image from "next/image"
 import { Hero1 } from "@/components/hero1"
 import { PixelImage } from "@/components/holding/pixel-image.client"
 import { EchoNavbar } from "./echo-navbar"
 import { SelectedWork } from "./selected-work"
-import { GoogleReviewsSection } from "./google-reviews-section"
 import { MyStack } from "./my-stack"
 import { AboutSection } from "./about-section"
 import { ServicesSection } from "./services-section"
@@ -24,6 +22,10 @@ export function FullSite() {
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
   const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"
+  const heroMascotSizeClassName =
+    "h-[min(15.5rem,60vw)] w-[min(15.5rem,60vw)] sm:h-[min(19rem,50vw)] sm:w-[min(19rem,50vw)] lg:h-[min(22rem,29vw)] lg:w-[min(22rem,29vw)]"
+  const heroTrustPillClassName =
+    "vd-hover-lift-sm pointer-events-auto flex flex-col items-start gap-0.5 rounded-xl border border-border/80 bg-background/90 px-3.5 py-2 shadow-sm backdrop-blur-xl transition-all"
   const withReveal = (content: ReactNode, delay?: number) =>
     isLhci ? content : <ScrollReveal delay={delay}>{content}</ScrollReveal>
 
@@ -42,7 +44,7 @@ export function FullSite() {
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="py-6 md:py-10 lg:py-8"
+              className="py-4 md:py-8 lg:py-6"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}
@@ -51,49 +53,52 @@ export function FullSite() {
                 primary: {
                   text: "Start your project",
                   url: "#contact",
-                  buttonClassName: "vd-email-cta h-12 px-6 text-base font-semibold",
+                  buttonClassName: "vd-email-cta vd-pill-primary h-12 rounded-full px-7 text-[0.9375rem] font-medium",
                 },
                 secondary: {
                   text: "Chat on WhatsApp",
                   url: whatsappHref,
-                  buttonClassName: "h-12 px-6 text-base",
+                  buttonClassName: "vd-pill-outline h-12 rounded-full px-7 text-[0.9375rem] font-medium",
                 },
               }}
-              imageSlot={
-                <div className="relative flex w-full items-center justify-center lg:justify-end">
+              imageSlot={isLhci ? undefined : (
+                <div className="relative flex w-full items-center justify-center overflow-visible">
                   <div
-                    className="pointer-events-none absolute h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,oklch(var(--vd-primary))_18%,transparent)_0%,color-mix(in_oklch,oklch(var(--vd-primary))_8%,transparent)_45%,transparent_76%)] blur-3xl sm:h-[18rem] sm:w-[18rem] lg:h-[20rem] lg:w-[20rem]"
+                    className="pointer-events-none absolute h-[13rem] w-[13rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,oklch(var(--vd-primary))_14%,transparent)_0%,color-mix(in_oklch,oklch(var(--vd-primary))_6%,transparent)_45%,transparent_76%)] blur-2xl sm:h-[15rem] sm:w-[15rem] lg:h-[17rem] lg:w-[17rem]"
                     aria-hidden="true"
                   />
                   <div
-                    className="pointer-events-none absolute bottom-[8%] h-10 w-[62%] rounded-full bg-[color-mix(in_oklch,var(--vd-fg)_10%,transparent)] blur-3xl"
+                    className="pointer-events-none absolute bottom-[10%] h-8 w-[56%] rounded-full bg-[color-mix(in_oklch,var(--vd-fg)_8%,transparent)] blur-2xl"
                     aria-hidden="true"
                   />
                   <div className="motion-safe:animate-vd-float relative [animation-duration:8.5s] [animation-delay:180ms]">
-                    {isLhci ? (
-                      <Image
-                        src="/dinosaur.webp"
-                        alt="Velvet Dinosaur mascot assembling from grayscale to full color"
-                        width={800}
-                        height={800}
-                        priority
-                        className="vd-hero-mascot h-[min(18rem,68vw)] w-[min(18rem,68vw)] object-cover sm:h-[min(22rem,56vw)] sm:w-[min(22rem,56vw)] lg:h-[min(26rem,34vw)] lg:w-[min(26rem,34vw)]"
-                      />
-                    ) : (
-                      <PixelImage
-                        src="/dinosaur.webp"
-                        alt="Velvet Dinosaur mascot assembling from grayscale to full color"
-                        grid="8x8"
-                        grayscaleAnimation={false}
-                        maxAnimationDelay={0}
-                        pixelFadeInDuration={0}
-                        className="vd-hero-mascot"
-                        sizeClassName="h-[min(18rem,68vw)] w-[min(18rem,68vw)] sm:h-[min(22rem,56vw)] sm:w-[min(22rem,56vw)] lg:h-[min(26rem,34vw)] lg:w-[min(26rem,34vw)]"
-                      />
-                    )}
+                    <div className="pointer-events-none absolute inset-0 z-10 hidden lg:block">
+                      <div className={`${heroTrustPillClassName} absolute left-[2%] top-[5%]`}>
+                        <span className="text-[0.9375rem] font-semibold text-foreground">100/100</span>
+                        <span className="text-[0.6875rem] font-medium text-muted-foreground">Lighthouse</span>
+                      </div>
+                      <div className={`${heroTrustPillClassName} absolute left-[-6%] top-[42%]`}>
+                        <span className="text-[0.9375rem] font-semibold text-foreground">5.0 ★</span>
+                        <span className="text-[0.6875rem] font-medium text-muted-foreground">Google rated</span>
+                      </div>
+                      <div className={`${heroTrustPillClassName} absolute bottom-[8%] left-[-3%]`}>
+                        <span className="text-[0.9375rem] font-semibold text-foreground">4–6 wk</span>
+                        <span className="text-[0.6875rem] font-medium text-muted-foreground">Delivery</span>
+                      </div>
+                    </div>
+                    <PixelImage
+                      src="/dinosaur.webp"
+                      alt="Velvet Dinosaur mascot assembling from grayscale to full color"
+                      grid="8x8"
+                      grayscaleAnimation={false}
+                      maxAnimationDelay={0}
+                      pixelFadeInDuration={0}
+                      className="vd-hero-mascot"
+                      sizeClassName={heroMascotSizeClassName}
+                    />
                   </div>
                 </div>
-              }
+              )}
             />
           </div>
         </section>
@@ -102,10 +107,6 @@ export function FullSite() {
 
         {isLhci ? null : (
           <>
-            <div className="bg-[color-mix(in_srgb,var(--vd-muted)_82%,var(--vd-bg))]">
-              {withReveal(<GoogleReviewsSection />, 100)}
-            </div>
-
             {withReveal(<MyStack />, 100)}
 
             <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">

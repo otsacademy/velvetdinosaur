@@ -1,31 +1,18 @@
 import './globals.css';
 import './velvet-site.css';
 import { Suspense, type CSSProperties } from 'react';
-import { PT_Sans, Bebas_Neue, Fraunces, JetBrains_Mono } from 'next/font/google';
+import { DM_Sans, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
 import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytics.client';
 import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
 
-const ptSans = PT_Sans({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-pt-sans',
-});
-
-const bebasNeue = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-display',
-});
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-hero',
+  variable: '--font-dm-sans',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -43,9 +30,7 @@ export default async function RootLayout({
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
-  const fontClasses = isLhci
-    ? ''
-    : `${ptSans.variable} ${bebasNeue.variable} ${fraunces.variable} ${jetbrainsMono.variable}`;
+  const fontClasses = isLhci ? '' : `${dmSans.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci

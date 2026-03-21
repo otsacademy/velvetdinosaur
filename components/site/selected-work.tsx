@@ -19,8 +19,8 @@ function WorkCard({
   return (
     <article
       className={cn(
-        'vd-hover-lift vd-work-card group overflow-hidden border border-border/75 bg-card/92',
-        'rounded-[calc(var(--vd-radius)+12px)]',
+        'vd-hover-lift vd-work-card group overflow-hidden rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-card',
+        'transition-all duration-300 hover:bg-accent hover:shadow-[0_1px_6px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]',
         isFeatured && 'xl:col-span-6 xl:grid xl:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)]',
         !isFeatured && 'xl:col-span-2',
       )}
@@ -48,7 +48,7 @@ function WorkCard({
             href={article.website}
             target="_blank"
             rel="noreferrer"
-            className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-primary/25 bg-background/85 px-2.5 py-1 text-[11px] font-medium text-foreground"
+            className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background/92 px-2.5 py-1 text-[11px] font-medium text-[var(--vd-muted-fg)]"
           >
             Live project
             <ExternalLink className="h-3 w-3" />
@@ -58,8 +58,8 @@ function WorkCard({
 
       <div className={cn('flex flex-col justify-between gap-5 p-5 sm:p-6', isFeatured && 'xl:p-8')}>
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            <span className="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-foreground/82">
+          <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--vd-muted-fg)]">
+            <span className="rounded-full border border-transparent bg-background/72 px-3 py-1 text-[var(--vd-muted-fg)]">
               {isFeatured ? 'Featured case study' : article.tag}
             </span>
             {secondaryTag ? <span>{secondaryTag}</span> : null}
@@ -76,7 +76,7 @@ function WorkCard({
             {article.subtitle ? (
               <p
                 className={cn(
-                  'text-sm leading-relaxed text-muted-foreground',
+                  'text-sm leading-relaxed text-[var(--vd-muted-fg)]',
                   isFeatured && 'max-w-[34rem] text-base',
                 )}
               >
@@ -84,14 +84,14 @@ function WorkCard({
               </p>
             ) : null}
           </div>
-          <p className={cn('text-sm leading-relaxed text-foreground/78', isFeatured && 'max-w-[36rem] text-base')}>
+          <p className={cn('text-sm leading-relaxed text-[var(--vd-copy)]', isFeatured && 'max-w-[36rem] text-base')}>
             {article.desc}
           </p>
         </div>
         {article.outcome ? (
-          <div className="rounded-[calc(var(--vd-radius)+8px)] border border-border/65 bg-background/62 p-4 shadow-[0_18px_32px_-30px_color-mix(in_oklch,var(--vd-fg)_20%,transparent)] transition-colors duration-300 group-hover:border-primary/18 group-hover:bg-background/82">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Outcome</p>
-            <p className={cn('mt-2 text-sm leading-relaxed text-foreground/82', isFeatured && 'text-base')}>
+          <div className="rounded-[calc(var(--vd-radius)+6px)] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background/78 p-4 transition-colors duration-300 group-hover:border-[color-mix(in_oklch,var(--vd-primary)_18%,var(--vd-border))] group-hover:bg-background/86">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--vd-muted-fg)]">Outcome</p>
+            <p className={cn('mt-2 text-sm leading-relaxed text-[var(--vd-copy)]', isFeatured && 'text-base')}>
               {article.outcome}
             </p>
           </div>
@@ -100,18 +100,18 @@ function WorkCard({
           <Link
             href={`/work/${article.slug}`}
             aria-label={`Read more about ${article.title}`}
-            className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-transform duration-200 group-hover:translate-x-0.5"
+            className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary"
           >
             Read case study
             <span className="sr-only"> about {article.title}</span>
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 vd-inline-arrow" />
           </Link>
           {article.website ? (
             <a
               href={article.website}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs text-[var(--vd-muted-fg)] transition-colors hover:text-foreground"
             >
               Visit site
             </a>
@@ -132,7 +132,7 @@ export async function SelectedWork() {
           <h2 className="vd-section-heading text-2xl font-semibold tracking-tight md:text-[2.2rem]">
             Selected work
           </h2>
-          <p className="max-w-2xl text-[15px] leading-relaxed text-foreground/76">
+          <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--vd-copy)]">
             Real projects across charities, service businesses, and product platforms.
           </p>
         </div>

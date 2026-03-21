@@ -162,49 +162,55 @@ const Contact25 = ({
   return (
     <section className={cn('py-20', className)}>
       <div className="container">
-        <div className="vd-surface-panel mx-auto max-w-6xl border border-border bg-gradient-to-br from-background via-background to-muted/30 p-6 md:p-10">
+        <div className="vd-surface-panel vd-soft-panel mx-auto max-w-6xl p-6 md:p-10">
           <div className="mb-10 max-w-3xl space-y-3">
-            <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+            <p className="inline-flex rounded-full border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
               Let&apos;s build something valuable
             </p>
             <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
-            <p className="text-foreground/80">{description}</p>
+            <p className="text-[var(--vd-copy)]">{description}</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="vd-surface-card border border-border bg-background/70 p-5 md:p-6">
+            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/80 p-5 md:p-6">
               <div className="mb-6 flex items-center gap-2">
-                <MessageCircle className="size-5 text-muted-foreground" />
+                <MessageCircle className="size-5 text-[var(--vd-muted-fg)]" />
                 <h3 className="vd-section-heading text-lg font-medium">{faqTitle}</h3>
               </div>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="vd-faq-item">
-                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="vd-faq-item border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)]"
+                  >
+                    <AccordionTrigger className="text-left text-base font-medium text-[var(--vd-fg)] hover:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[var(--vd-copy)]">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
 
-            <div className="vd-surface-card border border-border bg-background/75 p-5 md:p-6">
+            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/84 p-5 md:p-6">
               <div className="mb-4 flex items-center gap-2">
-                <MailIcon className="size-5 text-muted-foreground" />
+                <MailIcon className="size-5 text-[var(--vd-muted-fg)]" />
                 <h3 className="vd-section-heading text-lg font-medium">Project enquiry</h3>
               </div>
 
-              <p className="mb-4 text-sm text-foreground/80">You&apos;ll hear directly from Ian with clear next steps.</p>
+              <p className="mb-4 text-sm text-[var(--vd-copy)]">You&apos;ll hear directly from Ian with clear next steps.</p>
 
               <div className="mb-5 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-border bg-muted/45 p-3">
-                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
+                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
                     <Star className="h-3.5 w-3.5 text-primary" />
                     Google rating
                   </p>
                   <p className="text-sm font-semibold text-foreground">5.0 average from clients</p>
                 </div>
-                <div className="rounded-xl border border-border bg-muted/45 p-3">
-                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
+                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
                     <Clock3 className="h-3.5 w-3.5 text-primary" />
                     Typical response
                   </p>
@@ -213,7 +219,7 @@ const Contact25 = ({
               </div>
 
               {whatsapp?.href ? (
-                <div className="mb-5 rounded-xl border border-border bg-card p-4">
+                <div className="mb-5 rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-4">
                   <a
                     href={whatsapp.href}
                     target="_blank"
@@ -222,20 +228,20 @@ const Contact25 = ({
                     data-analytics-category="contact"
                     data-analytics-label={whatsapp.label || 'Message on WhatsApp'}
                     data-analytics-section={analyticsSectionId}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-primary"
                   >
                     <MessageCircle className="size-4" />
                     {whatsapp.label || 'Message on WhatsApp'}
                   </a>
                   {whatsapp.helperText ? (
-                    <p className="mt-1 text-xs text-muted-foreground">{whatsapp.helperText}</p>
+                    <p className="mt-1 text-xs text-[var(--vd-muted-fg)]">{whatsapp.helperText}</p>
                   ) : null}
                 </div>
               ) : null}
 
               <form
                 onSubmit={form.handleSubmit(handleFormSubmit)}
-                className="vd-contact-form flex flex-col gap-5 rounded-xl bg-muted/40 p-5"
+                className="vd-contact-form flex flex-col gap-5 rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5"
                 data-analytics-form={analyticsFormId}
               >
                 {isSubmitted && (
@@ -333,7 +339,11 @@ const Contact25 = ({
                     <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
                   )}
 
-                  <Button size="lg" className="w-full" disabled={form.formState.isSubmitting}>
+                  <Button
+                    size="lg"
+                    className="vd-pill-primary h-12 w-full rounded-full text-[0.9375rem] font-medium hover:bg-[var(--vd-primary-solid-hover)]"
+                    disabled={form.formState.isSubmitting}
+                  >
                     {form.formState.isSubmitting ? (
                       <>
                         <LoaderIcon className="mr-2 size-4 animate-spin" />
