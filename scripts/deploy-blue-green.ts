@@ -1,4 +1,4 @@
-import { copyFile, mkdtemp, mkdir, readFile, readdir, realpath, rm, stat, symlink, writeFile } from 'node:fs/promises';
+import { copyFile, mkdtemp, mkdir, readFile, readdir, realpath, rm, stat, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -294,19 +294,14 @@ async function writeUpstreamConf(config: DeployConfig, slotName: SlotName) {
   await rm(tempFile, { force: true });
 }
 
-async function setActiveLink(config: DeployConfig, slotName: SlotName) {
-  await mkdir(path.dirname(config.activeLink), { recursive: true });
-  const targetPath = path.resolve(config.slots[slotName].path);
-  if (process.getuid?.() === 0) {
-    await rm(config.activeLink, { force: true });
-    await symlink(targetPath, config.activeLink);
-    return;
-  }
+function updateActiveLinkPrivileged(activeLink: string, targetPath: string, cwd: string) {
+  runPrivileged('mkdir', ['-p', path.dirname(activeLink)], cwd);
+  runPrivileged('ln', ['-sfn', targetPath, activeLink], cwd);
+}
 
-  if (await pathExists(config.activeLink)) {
-    await rm(config.activeLink, { force: true });
-  }
-  await symlink(targetPath, config.activeLink);
+async function setActiveLink(config: DeployConfig, slotName: SlotName) {
+  const targetPath = path.resolve(config.slots[slotName].path);
+  updateActiveLinkPrivileged(config.activeLink, targetPath, config.controllerPath);
 }
 
 function verifyLocalHealth(url: string, hostHeader?: string) {
@@ -439,8 +434,7 @@ async function main() {
     }
   } catch (error) {
     if (previousLink) {
-      await rm(config.activeLink, { force: true });
-      await symlink(previousLink, config.activeLink);
+      updateActiveLinkPrivileged(config.activeLink, previousLink, config.controllerPath);
     }
     if (previousUpstream) {
       const tempFile = path.join(os.tmpdir(), `vd-upstream-rollback-${Date.now()}.conf`);
