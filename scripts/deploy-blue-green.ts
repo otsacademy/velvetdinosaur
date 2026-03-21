@@ -1,4 +1,4 @@
-import { copyFile, mkdtemp, mkdir, readFile, realpath, rm, stat, symlink, writeFile } from 'node:fs/promises';
+import { copyFile, mkdtemp, mkdir, readFile, readdir, realpath, rm, stat, symlink, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -251,6 +251,15 @@ async function restorePreservedFiles(tempPreserveDir: string, slotPath: string) 
   }
 }
 
+async function clearDirectoryContents(targetPath: string) {
+  await mkdir(targetPath, { recursive: true });
+  const entries = await readdir(targetPath);
+
+  for (const entry of entries) {
+    await rm(path.join(targetPath, entry), { recursive: true, force: true });
+  }
+}
+
 async function syncCommitIntoSlot(controllerPath: string, commit: string, slotPath: string) {
   const tempSourceDir = await mkdtemp(path.join(os.tmpdir(), 'vd-blue-green-source-'));
   const tempPreserveDir = await mkdtemp(path.join(os.tmpdir(), 'vd-blue-green-preserve-'));
@@ -259,8 +268,7 @@ async function syncCommitIntoSlot(controllerPath: string, commit: string, slotPa
     run('bash', ['-lc', `git archive ${commit} | tar -x -C "${tempSourceDir}"`], controllerPath);
     await mkdir(slotPath, { recursive: true });
     await preserveSlotFiles(slotPath, tempPreserveDir);
-    await rm(slotPath, { recursive: true, force: true });
-    await mkdir(slotPath, { recursive: true });
+    await clearDirectoryContents(slotPath);
     run('bash', ['-lc', `cp -a "${tempSourceDir}/." "${slotPath}/"`], controllerPath);
     await restorePreservedFiles(tempPreserveDir, slotPath);
   } finally {
