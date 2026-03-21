@@ -1,9 +1,9 @@
 {
   "deploy": {
     "mode": "blue-green",
-    "activeSlot": "blue",
-    "lastCommit": "8abbcaf829ad4a6c6deb5a1d62053767037488ec",
-    "updatedAt": "2026-03-20T23:48:26.714Z",
+    "activeSlot": "green",
+    "lastCommit": "b92b5f0bfedd922f837f4f398ce2a26fe2386a76",
+    "updatedAt": "2026-03-21T00:25:30.054Z",
     "upstreamConf": "/etc/nginx/snippets/velvetdinosaur-active-upstream.conf",
     "activeLink": "/srv/apps/velvetdinosaur-current",
     "slots": {

@@ -12,7 +12,7 @@ const ptSans = PT_Sans({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
-  variable: '--font-sans',
+  variable: '--font-pt-sans',
 });
 
 const bebasNeue = Bebas_Neue({
