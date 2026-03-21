@@ -32,7 +32,7 @@ export function FullSite() {
       {isLhci ? null : <EchoNavbar />}
       {isLhci ? null : <FloatingWhatsApp href={whatsappHref} />}
 
-      <main className="pt-24 md:pt-28">
+      <main className="pt-20 md:pt-24">
         <section id="home" className="relative px-6">
           <div className="pointer-events-none absolute inset-0 -z-10 holding-bg" aria-hidden="true" />
           <div
@@ -42,7 +42,7 @@ export function FullSite() {
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="py-10 md:py-14 lg:py-16"
+              className="py-6 md:py-10 lg:py-8"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}
@@ -60,8 +60,16 @@ export function FullSite() {
                 },
               }}
               imageSlot={
-                <div>
-                  <div className="vd-dino-card mx-auto w-fit rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-transparent p-3 shadow-none backdrop-blur-none hover:border-border/60 hover:bg-background/45 hover:backdrop-blur">
+                <div className="relative flex w-full items-center justify-center lg:justify-end">
+                  <div
+                    className="pointer-events-none absolute h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,oklch(var(--vd-primary))_18%,transparent)_0%,color-mix(in_oklch,oklch(var(--vd-primary))_8%,transparent)_45%,transparent_76%)] blur-3xl sm:h-[18rem] sm:w-[18rem] lg:h-[20rem] lg:w-[20rem]"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="pointer-events-none absolute bottom-[8%] h-10 w-[62%] rounded-full bg-[color-mix(in_oklch,var(--vd-fg)_10%,transparent)] blur-3xl"
+                    aria-hidden="true"
+                  />
+                  <div className="motion-safe:animate-vd-float relative [animation-duration:8.5s] [animation-delay:180ms]">
                     {isLhci ? (
                       <Image
                         src="/dinosaur.webp"
@@ -69,7 +77,7 @@ export function FullSite() {
                         width={800}
                         height={800}
                         priority
-                        className="h-[min(24rem,84vw)] w-[min(24rem,84vw)] rounded-xl object-cover sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
+                        className="vd-hero-mascot h-[min(18rem,68vw)] w-[min(18rem,68vw)] object-cover sm:h-[min(22rem,56vw)] sm:w-[min(22rem,56vw)] lg:h-[min(26rem,34vw)] lg:w-[min(26rem,34vw)]"
                       />
                     ) : (
                       <PixelImage
@@ -79,8 +87,8 @@ export function FullSite() {
                         grayscaleAnimation={false}
                         maxAnimationDelay={0}
                         pixelFadeInDuration={0}
-                        className="rounded-xl"
-                        sizeClassName="h-[min(24rem,84vw)] w-[min(24rem,84vw)] sm:h-[min(28rem,68vw)] sm:w-[min(28rem,68vw)] lg:h-[min(32rem,40vw)] lg:w-[min(32rem,40vw)]"
+                        className="vd-hero-mascot"
+                        sizeClassName="h-[min(18rem,68vw)] w-[min(18rem,68vw)] sm:h-[min(22rem,56vw)] sm:w-[min(22rem,56vw)] lg:h-[min(26rem,34vw)] lg:w-[min(26rem,34vw)]"
                       />
                     )}
                   </div>

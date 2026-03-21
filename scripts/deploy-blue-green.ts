@@ -17,6 +17,7 @@ type DeployConfig = {
   activeLink: string;
   upstreamConf: string;
   publicHealthUrl: string;
+  publicAuthSmokeUrl?: string;
   healthPath: string;
   healthHost?: string;
   activeSlot?: SlotName;
@@ -176,6 +177,7 @@ async function loadConfig(cwd: string, envFilePath: string, configPath: string |
   const publicHealthUrl =
     env.VD_DEPLOY_PUBLIC_HEALTH_URL ||
     `${env.PUBLIC_BASE_URL || env.NEXT_PUBLIC_BASE_URL || `https://${env.DOMAIN}`}${healthPath}`;
+  const publicAuthSmokeUrl = env.VD_DEPLOY_PUBLIC_AUTH_SMOKE_URL || undefined;
 
   const slot = (name: SlotName): SlotConfig => {
     const upper = name.toUpperCase();
@@ -200,6 +202,7 @@ async function loadConfig(cwd: string, envFilePath: string, configPath: string |
       env.VD_DEPLOY_UPSTREAM_CONF ||
       `/etc/nginx/snippets/${env.SITE_SLUG || 'site'}-active-upstream.conf`,
     publicHealthUrl,
+    publicAuthSmokeUrl,
     healthPath,
     healthHost: env.VD_DEPLOY_HEALTH_HOST || undefined,
     activeSlot: env.VD_DEPLOY_ACTIVE_SLOT === 'green' ? 'green' : 'blue',
@@ -311,6 +314,51 @@ function verifyPublicHealth(url: string) {
   run('curl', ['-fsS', '--retry', '10', '--retry-delay', '2', url], process.cwd());
 }
 
+function verifyPublicAuthSmoke(url: string) {
+  const result = spawnSync(
+    'curl',
+    [
+      '-sS',
+      '-X',
+      'POST',
+      '-H',
+      'content-type: application/json',
+      '--data',
+      '{"email":"deploy-auth-smoke@invalid.local","password":"invalid-password"}',
+      '-w',
+      '\n%{http_code}',
+      url
+    ],
+    {
+      cwd: process.cwd(),
+      env: process.env,
+      encoding: 'utf8'
+    }
+  );
+
+  if (typeof result.status !== 'number' || result.status !== 0) {
+    throw new Error((result.stderr || result.stdout || '').trim() || `Command failed: curl ${url}`);
+  }
+
+  const output = (result.stdout || '').trimEnd();
+  const match = output.match(/\n(\d{3})$/);
+  if (!match || typeof match.index !== 'number') {
+    throw new Error(`[deploy:blue-green] auth smoke did not return an HTTP status for ${url}`);
+  }
+
+  const status = Number(match[1]);
+  const body = output.slice(0, match.index).trim();
+  if (status === 502) {
+    throw new Error(`[deploy:blue-green] auth smoke hit 502 for ${url}`);
+  }
+  if (status !== 400 && status !== 401) {
+    throw new Error(`[deploy:blue-green] auth smoke expected 400/401 from ${url}, received ${status}`);
+  }
+  if (!body.includes('INVALID_EMAIL_OR_PASSWORD')) {
+    throw new Error(`[deploy:blue-green] auth smoke received unexpected body from ${url}`);
+  }
+}
+
 async function updateDeployState(controllerPath: string, config: DeployConfig, activeSlot: SlotName, commit: string) {
   const statePath = path.join(controllerPath, '.state.json');
   const existing = (await pathExists(statePath))
@@ -378,6 +426,9 @@ async function main() {
     runPrivileged('nginx', ['-t'], config.controllerPath);
     runPrivileged('systemctl', ['reload', 'nginx'], config.controllerPath);
     verifyPublicHealth(config.publicHealthUrl);
+    if (config.publicAuthSmokeUrl) {
+      verifyPublicAuthSmoke(config.publicAuthSmokeUrl);
+    }
   } catch (error) {
     if (previousLink) {
       await rm(config.activeLink, { force: true });

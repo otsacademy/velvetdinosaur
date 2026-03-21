@@ -95,8 +95,9 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --vd-sidebar-ring: var(--sidebar-ring, var(--ring));
   --vd-inverse-bg: var(--vd-fg);
   --vd-inverse-fg: var(--vd-bg);
-  --vd-font-sans: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --vd-font-sans: var(--font-pt-sans, ui-sans-serif, system-ui, sans-serif);
   --vd-font-display: var(--font-display, var(--font-sans, ui-sans-serif, system-ui, sans-serif));
+  --vd-font-hero: var(--font-hero, var(--vd-font-display));
   --vd-font-mono: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
   --vd-fab-edge: max(0.5rem, calc((100vw - 80rem) / 2 - 2.5rem));
   --vd-fab-whatsapp-offset: calc(var(--vd-fab-edge) + 4.75rem);

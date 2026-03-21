@@ -3,6 +3,7 @@
   "activeLink": "/srv/apps/velvetdinosaur-current",
   "upstreamConf": "/etc/nginx/snippets/velvetdinosaur-active-upstream.conf",
   "publicHealthUrl": "https://velvetdinosaur.com/api/session",
+  "publicAuthSmokeUrl": "https://velvetdinosaur.com/api/auth/sign-in/email",
   "healthPath": "/api/session",
   "slots": {
     "blue": {

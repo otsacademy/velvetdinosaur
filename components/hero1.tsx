@@ -56,26 +56,22 @@ export function Hero1({
   return (
     <section className={cn("py-28", className)}>
       <div className="container">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
-          <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(20rem,0.92fr)] lg:gap-16">
+          <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
             {badge ? (
               <Badge variant="outline" className="border-primary/20 bg-background/75 text-foreground">
                 {badge}
                 <ArrowUpRight className="ml-2 size-4" />
               </Badge>
             ) : null}
-            <h1 className="font-body text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1
+              className="vd-hero-heading max-w-[11ch] text-4xl text-foreground sm:text-5xl lg:text-[clamp(4rem,5vw,5.6rem)]"
+              style={{ fontFamily: "var(--vd-font-hero)" }}
+            >
               {heading}
             </h1>
-            <div className="max-w-xl space-y-3">
-              <p className="text-base leading-relaxed text-foreground/80 lg:text-lg">{description}</p>
-              {supportingLine ? (
-                <p className="vd-hero-origin text-base leading-relaxed text-foreground/65 lg:text-lg">
-                  {supportingLine}
-                </p>
-              ) : null}
-            </div>
-            <div className="mt-2 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <p className="max-w-[34rem] text-base leading-relaxed text-foreground/80 lg:text-lg">{description}</p>
+            <div className="mt-1 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               {buttons?.primary ? (
                 <Button
                   asChild
@@ -99,6 +95,11 @@ export function Hero1({
                 </Button>
               ) : null}
             </div>
+            {supportingLine ? (
+              <p className="vd-hero-note max-w-[32rem] text-sm leading-relaxed text-foreground/65 lg:text-base">
+                {supportingLine}
+              </p>
+            ) : null}
           </div>
 
           {imageSlot ? imageSlot : null}

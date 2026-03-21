@@ -90,6 +90,27 @@
     text-wrap: balance;
   }
 
+  .vd-hero-heading {
+    font-family: var(--vd-font-hero, var(--vd-font-display));
+    font-feature-settings: "liga" 1, "clig" 1, "kern" 1;
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+    text-wrap: pretty;
+  }
+
+  .vd-hero-note {
+    border-left: 1px solid color-mix(in oklch, var(--vd-border) 72%, transparent);
+    padding-left: 1rem;
+    text-wrap: pretty;
+  }
+
+  .vd-hero-mascot {
+    filter:
+      drop-shadow(0 26px 34px color-mix(in oklch, var(--vd-primary) 18%, transparent))
+      drop-shadow(0 42px 32px color-mix(in oklch, var(--vd-fg) 12%, transparent));
+  }
+
   .vd-section-heading::after {
     content: "";
     position: absolute;

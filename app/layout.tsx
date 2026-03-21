@@ -1,7 +1,7 @@
 import './globals.css';
 import './velvet-site.css';
 import { Suspense, type CSSProperties } from 'react';
-import { PT_Sans, Bebas_Neue, JetBrains_Mono } from 'next/font/google';
+import { PT_Sans, Bebas_Neue, Fraunces, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
@@ -22,6 +22,12 @@ const bebasNeue = Bebas_Neue({
   variable: '--font-display',
 });
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-hero',
+});
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
@@ -39,7 +45,7 @@ export default async function RootLayout({
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
   const fontClasses = isLhci
     ? ''
-    : `${ptSans.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`;
+    : `${ptSans.variable} ${bebasNeue.variable} ${fraunces.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci
