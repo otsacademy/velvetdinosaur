@@ -113,9 +113,9 @@ function StackItemCard({ item }: { item: StackItem }) {
 
 export function MyStack() {
   return (
-    <section className="py-6 md:py-8">
+    <section className="py-9">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-6 text-2xl font-semibold">My stack</h2>
+        <h2 className="vd-section-heading mb-6 text-2xl font-semibold">My stack</h2>
         <p className="mb-6 max-w-2xl text-sm text-foreground/70">
           Hover or tap each tool to see what it helps with.
         </p>

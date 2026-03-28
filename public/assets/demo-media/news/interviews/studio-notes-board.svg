@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#EEE7DD"/>
+  <rect x="84" y="84" width="1432" height="832" rx="40" fill="#FBF8F4" stroke="#D8CDBE" stroke-width="4"/>
+  <rect x="134" y="142" width="420" height="716" rx="28" fill="#D9D3C8"/>
+  <rect x="592" y="142" width="408" height="332" rx="28" fill="#E9D7CA"/>
+  <rect x="592" y="514" width="408" height="344" rx="28" fill="#D6E0D7"/>
+  <rect x="1040" y="142" width="426" height="716" rx="28" fill="#22473E"/>
+  <path d="M654 222H930" stroke="#7A5844" stroke-width="10" stroke-linecap="round"/>
+  <path d="M654 268H944" stroke="#7A5844" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+  <path d="M654 314H920" stroke="#7A5844" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+  <path d="M654 598H934" stroke="#355B50" stroke-width="10" stroke-linecap="round"/>
+  <path d="M654 644H916" stroke="#355B50" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+  <path d="M654 690H924" stroke="#355B50" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+  <path d="M1108 228H1382" stroke="#FBF8F4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1108 278H1344" stroke="#FBF8F4" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+  <path d="M1108 328H1370" stroke="#FBF8F4" stroke-width="12" stroke-linecap="round" opacity=".7"/>
+  <text x="130" y="936" fill="#72685C" font-family="Georgia, serif" font-size="42" letter-spacing=".16em">FICTIONAL INTERVIEW NOTES BOARD</text>
+</svg>

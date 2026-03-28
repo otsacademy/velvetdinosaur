@@ -1,0 +1,25 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#EEF4F2"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#F8FCFB" stroke="#C3D5D0" stroke-width="4"/>
+  <rect x="114" y="114" width="654" height="772" rx="30" fill="#E3F0EC"/>
+  <path d="M184 746C256 628 336 550 418 492C500 434 584 356 688 258" stroke="#184E53" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="216" cy="690" r="30" fill="#F0CA7A"/>
+  <circle cx="388" cy="520" r="26" fill="#184E53"/>
+  <circle cx="516" cy="410" r="22" fill="#D88857"/>
+  <circle cx="678" cy="268" r="24" fill="#184E53"/>
+  <rect x="220" y="240" width="286" height="170" rx="28" fill="#B5CBCB"/>
+  <path d="M246 372C284 332 334 316 390 322C434 326 468 346 490 368V384H246V372Z" fill="#6E8586"/>
+  <circle cx="320" cy="288" r="26" fill="#F6D7A9"/>
+  <rect x="822" y="114" width="662" height="248" rx="30" fill="#18363A"/>
+  <rect x="874" y="170" width="220" height="18" rx="9" fill="#D7E7E5"/>
+  <rect x="874" y="216" width="338" height="18" rx="9" fill="#D7E7E5" fill-opacity="0.82"/>
+  <rect x="874" y="262" width="272" height="18" rx="9" fill="#D7E7E5" fill-opacity="0.7"/>
+  <text x="874" y="322" fill="#F8FCFB" font-family="Georgia, serif" font-size="52" font-weight="700">Coastal Foraging Loop</text>
+  <rect x="822" y="404" width="662" height="196" rx="30" fill="#F3E9D6"/>
+  <rect x="874" y="454" width="186" height="92" rx="20" fill="#184E53"/>
+  <rect x="1084" y="454" width="160" height="92" rx="20" fill="#D88857"/>
+  <rect x="1266" y="454" width="166" height="92" rx="20" fill="#F0CA7A"/>
+  <rect x="822" y="640" width="662" height="206" rx="30" fill="#EEF4F2"/>
+  <text x="874" y="716" fill="#18363A" font-family="Arial, sans-serif" font-size="28">3 days  /  linked to Tide House  /  food-led coastal route</text>
+  <text x="874" y="772" fill="#4D696B" font-family="Arial, sans-serif" font-size="22">Dummy route visual for the Sauro travel demo</text>
+</svg>

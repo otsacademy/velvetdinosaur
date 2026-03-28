@@ -6,8 +6,8 @@ export type TextBlockProps = {
 };
 
 export function TextBlock({
-  heading = 'Make it yours',
-  body = 'Swap blocks, edit copy, and publish instantly. Everything persists in MongoDB so you can version and roll back.'
+  heading = 'Use this section for the fuller explanation',
+  body = 'A short paragraph here can introduce the studio, explain the approach, or add context that would feel too heavy inside the hero.'
 }: TextBlockProps) {
   return (
     <Card>

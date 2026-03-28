@@ -6,7 +6,7 @@ export function SiteFooter() {
     "vd-footer-link inline-flex min-h-11 items-center rounded-md px-1.5 py-2 transition-colors hover:text-foreground"
 
   return (
-    <footer className="border-t border-border py-6 md:py-8">
+    <footer className="border-t border-border py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-6 border-b border-border/60 pb-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">

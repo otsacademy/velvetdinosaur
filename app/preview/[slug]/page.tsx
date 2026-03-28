@@ -5,20 +5,23 @@ import { getAuth } from '@/lib/auth';
 import { config } from '@/puck/registry';
 import { getDraftPageData } from '@/lib/pages';
 import { getDraftSiteChrome } from '@/lib/site-chrome';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 
-export default async function PreviewPage({ params }: { params: { slug: string } }) {
-  if (isAdminOnly()) {
-    redirect(adminHomePath);
-  }
+type PreviewPageParams = { slug: string };
+
+export default async function PreviewPage({
+  params
+}: {
+  params: PreviewPageParams | Promise<PreviewPageParams>;
+}) {
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: await headers() });
+  const resolvedParams = await Promise.resolve(params);
   if (!session) {
-    redirect(`/sign-in?next=/preview/${encodeURIComponent(params.slug)}`);
+    redirect(`/sign-in?next=/preview/${encodeURIComponent(resolvedParams.slug)}`);
   }
 
-  const slug = params.slug || 'home';
+  const slug = resolvedParams.slug || 'home';
   const data = await getDraftPageData(slug);
 
   const isChrome = isSiteChromeSlug(slug);

@@ -70,7 +70,7 @@ const processSteps: Timeline12Item[] = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-6 md:py-8">
+    <section id="pricing" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
@@ -123,7 +123,7 @@ export function PricingSection() {
             Hosting is £120/year after Year 1. Domain registration is not included and can be procured at cost price.
           </p>
 
-          <Button asChild className="vd-email-cta vd-pill-primary h-11 rounded-full px-6 text-[0.9375rem] font-medium">
+          <Button asChild className="vd-dino-cta h-11 rounded-full px-6 text-[0.9375rem] font-medium">
             <a href="#contact" className="inline-flex items-center gap-2">
               Get a fixed quote for your scope
               <ChevronRight className="h-4 w-4 vd-inline-arrow" />

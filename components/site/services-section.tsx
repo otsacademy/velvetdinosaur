@@ -9,7 +9,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
   return (
-    <div className="vd-hover-lift-sm vd-icon-card rounded-xl border border-transparent bg-card p-5">
+    <div className="vd-service-card vd-icon-card rounded-xl border border-transparent bg-card p-5">
       <div className="vd-icon-badge mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
         <Icon className="vd-icon-accent h-5 w-5 text-primary" />
       </div>
@@ -21,7 +21,7 @@ function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-6 md:py-8">
+    <section id="services" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="space-y-5">
@@ -40,7 +40,7 @@ export function ServicesSection() {
               </p>
             </div>
 
-            <Button asChild className="vd-email-cta vd-pill-primary h-11 gap-2 rounded-full px-6 text-[0.9375rem] font-medium">
+            <Button asChild className="vd-dino-cta h-11 gap-2 rounded-full px-6 text-[0.9375rem] font-medium">
               <a href="#contact">
                 Get in touch
                 <ArrowRight className="h-4 w-4 vd-inline-arrow" />

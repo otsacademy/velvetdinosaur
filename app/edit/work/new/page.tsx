@@ -7,7 +7,6 @@ import { WorkArticleEditorPotion } from '@/components/edit/work-article-editor.c
 import { getAuth } from '@/lib/auth'
 import { getWorkArticleBySlug } from '@/lib/work-articles.server'
 import { requireAdmin } from '@/lib/roles'
-import { adminHomePath, isAdminOnly } from '@/lib/site-config'
 
 type AddWorkArticlePageProps = {
   searchParams?: Promise<{ slug?: string; duplicate?: string }>
@@ -15,9 +14,6 @@ type AddWorkArticlePageProps = {
 
 async function AddWorkArticleContent({ searchParams }: AddWorkArticlePageProps) {
   unstable_noStore()
-  if (isAdminOnly()) {
-    redirect(adminHomePath)
-  }
 
   const auth = getAuth()
   const requestHeaders = await headers()

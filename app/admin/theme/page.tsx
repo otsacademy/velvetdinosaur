@@ -10,7 +10,7 @@ import { ThemeEditorView } from '@/components/admin/theme/theme-editor-view.clie
 export default async function ThemePage({
   searchParams
 }: {
-  searchParams?: { page?: string; slug?: string };
+  searchParams?: Promise<{ page?: string; slug?: string }> | { page?: string; slug?: string };
 }) {
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: await headers() });
@@ -30,7 +30,8 @@ export default async function ThemePage({
     );
   }
 
-  const rawPage = searchParams?.page || searchParams?.slug || 'home';
+  const resolvedSearchParams = await Promise.resolve(searchParams);
+  const rawPage = resolvedSearchParams?.page || resolvedSearchParams?.slug || 'home';
   const selectedSlug = typeof rawPage === 'string' && rawPage.trim() ? rawPage.trim() : 'home';
 
   const pages = await listPages({ includeEmpty: true });

@@ -193,6 +193,7 @@ async function main() {
       await page.addStyleTag({
         content: `
           header,
+          [data-floating-whatsapp],
           [aria-label="Chat on WhatsApp"] {
             display: none !important;
           }

@@ -29,22 +29,33 @@ export function FloatingWhatsApp({ href, delayMs = 1400 }: FloatingWhatsAppProps
   if (!href) return null
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Chat on WhatsApp"
-      data-analytics-event="whatsapp_click"
-      data-analytics-category="contact"
-      data-analytics-label="Floating WhatsApp"
-      data-analytics-section="floating_whatsapp"
+    <div
+      data-floating-whatsapp
       className={cn(
-        "fixed bottom-4 right-4 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/25 bg-primary text-primary-foreground shadow-[0_16px_28px_-18px_color-mix(in_oklch,oklch(var(--vd-primary))_70%,transparent)] transition-all duration-500 md:bottom-6 md:right-6",
+        "vd-whatsapp-dock fixed z-40 flex items-center gap-3 transition-all duration-500",
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       )}
     >
-      <MessageCircle className="h-5 w-5" />
-      <span className="sr-only">Open WhatsApp chat</span>
-    </a>
+      <span
+        aria-hidden="true"
+        className="animate-vd-whatsapp-bubble vd-whatsapp-bubble pointer-events-none inline-flex whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium"
+      >
+        Chat with me
+      </span>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        data-analytics-event="whatsapp_click"
+        data-analytics-category="contact"
+        data-analytics-label="Floating WhatsApp"
+        data-analytics-section="floating_whatsapp"
+        className="vd-hover-lift-sm inline-flex h-12 w-12 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] bg-[var(--vd-primary-solid)] text-[var(--vd-primary-fg)] shadow-[0_16px_28px_-18px_color-mix(in_oklch,var(--vd-primary)_54%,transparent)] transition-all duration-300 hover:bg-[var(--vd-primary-solid-hover)]"
+      >
+        <MessageCircle className="h-5 w-5" />
+        <span className="sr-only">Open WhatsApp chat</span>
+      </a>
+    </div>
   )
 }

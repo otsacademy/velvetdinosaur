@@ -24,10 +24,24 @@ type PageOption = {
   title?: string | null;
 };
 
+type ThemeActionResult = {
+  payload?: ThemeStatePayload | null;
+  checkpoint?: boolean;
+};
+
+type ThemeSaveHandler = (payload: ThemeStatePayload) => Promise<ThemeActionResult | void>;
+type ThemeResetHandler = () => Promise<ThemeActionResult | void>;
+
 type ThemeEditorViewProps = {
   pages: PageOption[];
   selectedSlug: string;
   onPageChange?: (slug: string) => void;
+  mode?: 'live' | 'demo';
+  initialPayload?: ThemeStatePayload | null;
+  onSaveDraft?: ThemeSaveHandler;
+  onPublish?: ThemeSaveHandler;
+  onReset?: ThemeResetHandler;
+  importSuccessMessage?: string;
   children: React.ReactNode;
 };
 
@@ -110,7 +124,18 @@ function mergePresetStyles(
   };
 }
 
-export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }: ThemeEditorViewProps) {
+export function ThemeEditorView({
+  pages,
+  selectedSlug,
+  onPageChange,
+  mode = 'live',
+  initialPayload,
+  onSaveDraft,
+  onPublish,
+  onReset,
+  importSuccessMessage,
+  children
+}: ThemeEditorViewProps) {
   const router = useRouter();
   const themeState = useEditorStore((state) => state.themeState);
   const setThemeState = useEditorStore((state) => state.setThemeState);
@@ -151,6 +176,16 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   useEffect(() => {
     let active = true;
     setLoading(true);
+    if (mode === 'demo') {
+      if (initialPayload) {
+        applyPayload(initialPayload);
+      }
+      setLoading(false);
+      return () => {
+        active = false;
+      };
+    }
+
     requestJson('/api/theme/draft')
       .then((payload) => {
         if (!active) return;
@@ -171,7 +206,7 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
     return () => {
       active = false;
     };
-  }, [applyPayload]);
+  }, [applyPayload, initialPayload, mode]);
 
   useEffect(() => {
     const nextPreset = typeof themeState.preset === 'string' ? themeState.preset : '';
@@ -216,12 +251,22 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
     try {
       const rawPayload = buildPayload(themeState as ThemeState);
       const payload = normalizeThemePayloadToOklch(rawPayload, { strict: true }) as ThemeStatePayload;
-      await requestJson('/api/theme/draft', {
-        method: 'POST',
-        body: JSON.stringify({ payload })
-      });
-      saveThemeCheckpoint();
-      toast.success('Theme draft saved');
+      if (onSaveDraft) {
+        const result = await onSaveDraft(payload);
+        if (result?.payload) {
+          applyPayload(result.payload);
+        }
+        if (result?.checkpoint) {
+          saveThemeCheckpoint();
+        }
+      } else {
+        await requestJson('/api/theme/draft', {
+          method: 'POST',
+          body: JSON.stringify({ payload })
+        });
+        saveThemeCheckpoint();
+        toast.success('Theme draft saved');
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to save theme draft';
       toast.error(message);
@@ -233,11 +278,23 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   const handlePublish = async () => {
     setPublishing(true);
     try {
-      const response = await requestJson('/api/theme/publish', { method: 'POST' });
-      if (response?.payload) {
-        applyPayload(response.payload as ThemeStatePayload);
+      if (onPublish) {
+        const rawPayload = buildPayload(themeState as ThemeState);
+        const payload = normalizeThemePayloadToOklch(rawPayload, { strict: true }) as ThemeStatePayload;
+        const result = await onPublish(payload);
+        if (result?.payload) {
+          applyPayload(result.payload);
+        }
+        if (result?.checkpoint) {
+          saveThemeCheckpoint();
+        }
+      } else {
+        const response = await requestJson('/api/theme/publish', { method: 'POST' });
+        if (response?.payload) {
+          applyPayload(response.payload as ThemeStatePayload);
+        }
+        toast.success('Theme published');
       }
-      toast.success('Theme published');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to publish theme';
       toast.error(message);
@@ -249,11 +306,21 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   const handleReset = async () => {
     setResetting(true);
     try {
-      const response = await requestJson('/api/theme/reset', { method: 'POST' });
-      if (response?.payload) {
-        applyPayload(response.payload as ThemeStatePayload);
+      if (onReset) {
+        const result = await onReset();
+        if (result?.payload) {
+          applyPayload(result.payload);
+        }
+        if (result?.checkpoint) {
+          saveThemeCheckpoint();
+        }
+      } else {
+        const response = await requestJson('/api/theme/reset', { method: 'POST' });
+        if (response?.payload) {
+          applyPayload(response.payload as ThemeStatePayload);
+        }
+        toast.success('Theme reset to default');
       }
-      toast.success('Theme reset to default');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to reset theme';
       toast.error(message);
@@ -282,7 +349,7 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
       }
       const normalized = normalizeThemePayloadToOklch(parsed as ThemeStatePayload, { strict: true });
       applyPayload(normalized as ThemeStatePayload);
-      toast.success('Theme imported. Save draft to keep changes.');
+      toast.success(importSuccessMessage || 'Theme imported. Save draft to keep changes.');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to import theme';
       toast.error(message);

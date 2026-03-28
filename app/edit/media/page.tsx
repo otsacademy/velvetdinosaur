@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { LoadingCard } from '@/components/ui/loading-card';
 import { MediaLibraryClient } from '@/components/edit/media-library.client';
 
@@ -29,9 +28,6 @@ export default function MediaLibraryPage() {
 }
 
 async function MediaLibraryContent() {
-  if (isAdminOnly()) {
-    redirect(adminHomePath);
-  }
   const auth = getAuth();
   const requestHeaders = await headers();
   const session = await auth.api.getSession({ headers: requestHeaders });

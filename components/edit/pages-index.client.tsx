@@ -13,10 +13,14 @@ import { EditIndexPreviewSheet } from '@/components/edit/edit-index-preview-shee
 import { DeletePageDialog, DuplicatePageDialog, NewPageDialog } from '@/components/edit/pages-index-dialogs';
 import type { PageRow, SectionKey, SortKey, ViewMode, WorkArticleRow } from '@/components/edit/pages-index-types';
 import { getSortValue, isStayPageSlug, isTextPageSlug, liveHref } from '@/components/edit/pages-index-utils';
+import type { DemoRouteVariant } from '@/lib/demo-site';
+import { cn } from '@/lib/utils';
 
 type PagesIndexProps = {
   pages: PageRow[];
   workArticles: WorkArticleRow[];
+  mode?: 'live' | 'demo';
+  demoVariant?: DemoRouteVariant;
 };
 
 function parseTime(value?: string | null) {
@@ -32,8 +36,14 @@ function getWorkSortValue(article: WorkArticleRow, sortKey: SortKey) {
   return Math.max(parseTime(article.updatedAt), parseTime(article.date), parseTime(article.pendingPublishRequestedAt));
 }
 
-export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
+export function PagesIndex({
+  pages,
+  workArticles,
+  mode = 'live',
+  demoVariant = 'host'
+}: PagesIndexProps) {
   const router = useRouter();
+  const isDemo = mode === 'demo';
   const [query, setQuery] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('slug-asc');
   const [viewMode, setViewMode] = useState<ViewMode>('list');
@@ -51,6 +61,12 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
   const [duplicateSource, setDuplicateSource] = useState<PageRow | null>(null);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<PageRow | null>(null);
+
+  const showDemoAction = (action: string) => {
+    toast(action, {
+      description: 'This public sandbox mirrors the real editor index, but write actions and deep editors stay disabled.'
+    });
+  };
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -123,6 +139,10 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
   };
 
   const openPreview = (pageSlug: string) => {
+    if (isDemo) {
+      showDemoAction(`Preview /${pageSlug}`);
+      return;
+    }
     setPreviewSlug(pageSlug);
     setPreviewMode('draft');
     setPreviewOpen(true);
@@ -137,11 +157,19 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
   };
 
   const openDuplicate = (page: PageRow) => {
+    if (isDemo) {
+      showDemoAction(`Duplicate /${page.slug}`);
+      return;
+    }
     setDuplicateSource(page);
     setDuplicateOpen(true);
   };
 
   const openDelete = (page: PageRow) => {
+    if (isDemo) {
+      showDemoAction(`Delete /${page.slug}`);
+      return;
+    }
     setDeleteTarget(page);
     setDeleteOpen(true);
   };
@@ -160,9 +188,14 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
   const filteredCount = filteredPages.length + filteredWorkArticles.length;
 
   return (
-    <main className="min-h-screen bg-[var(--vd-bg)] pb-12">
-      <div className="sticky top-0 z-30 border-b border-[var(--vd-border)] bg-[var(--vd-bg)]/95 backdrop-blur">
-        <div className="container py-5">
+    <main className={cn('min-h-screen bg-[var(--vd-bg)] pb-12', isDemo && 'vd-demo-editor')}>
+      <div
+        className={cn(
+          'sticky top-0 z-30 border-b border-[var(--vd-border)] bg-[var(--vd-bg)]/95 backdrop-blur',
+          isDemo && 'vd-demo-toolbar-shell'
+        )}
+      >
+        <div className={cn('container py-5', isDemo && 'relative z-10')}>
           <EditIndexHeaderBar
             query={query}
             onQueryChange={setQuery}
@@ -173,13 +206,28 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
             filteredCount={filteredCount}
             totalCount={totalCount}
             hasContractsPage={hasContractsPage}
-            onNewPage={() => setNewOpen(true)}
-            onNewWorkArticle={() => router.push('/edit/work/new')}
+            mode={mode}
+            demoVariant={demoVariant}
+            onDemoAction={showDemoAction}
+            onNewPage={() => {
+              if (isDemo) {
+                showDemoAction('Create a new page');
+                return;
+              }
+              setNewOpen(true);
+            }}
+            onNewWorkArticle={() => {
+              if (isDemo) {
+                showDemoAction('Create a new work article');
+                return;
+              }
+              router.push('/edit/work/new');
+            }}
           />
         </div>
       </div>
 
-      <div className="container space-y-8 py-8">
+      <div className={cn('container space-y-8 py-8', isDemo && 'vd-demo-editor-content')}>
         {totalCount === 0 ? (
           <div className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)] p-6">
             <div className="space-y-2">
@@ -189,8 +237,11 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
               </p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <Button onClick={() => setNewOpen(true)}>New page</Button>
-              <Button variant="outline" onClick={() => router.push('/edit/work/new')}>
+              <Button onClick={() => (isDemo ? showDemoAction('Create a new page') : setNewOpen(true))}>New page</Button>
+              <Button
+                variant="outline"
+                onClick={() => (isDemo ? showDemoAction('Create a new work article') : router.push('/edit/work/new'))}
+              >
                 New work article
               </Button>
             </div>
@@ -205,8 +256,11 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
               <Button variant="outline" onClick={() => setQuery('')}>
                 Clear filters
               </Button>
-              <Button onClick={() => setNewOpen(true)}>New page</Button>
-              <Button variant="outline" onClick={() => router.push('/edit/work/new')}>
+              <Button onClick={() => (isDemo ? showDemoAction('Create a new page') : setNewOpen(true))}>New page</Button>
+              <Button
+                variant="outline"
+                onClick={() => (isDemo ? showDemoAction('Create a new work article') : router.push('/edit/work/new'))}
+              >
                 New work article
               </Button>
             </div>
@@ -219,9 +273,16 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                 count={filteredWorkArticles.length}
                 open={sectionsOpen.work}
                 onOpenChange={(open) => setSectionsOpen((prev) => ({ ...prev, work: open }))}
+                mode={mode}
+                animationIndex={0}
                 testId="edit-index-section-work"
               >
-                <EditIndexWorkTable articles={filteredWorkArticles} viewMode={viewMode} />
+                <EditIndexWorkTable
+                  articles={filteredWorkArticles}
+                  viewMode={viewMode}
+                  mode={mode}
+                  onDemoAction={showDemoAction}
+                />
               </EditIndexSection>
             ) : null}
             {stayPages.length ? (
@@ -230,6 +291,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                 count={stayPages.length}
                 open={sectionsOpen.stays}
                 onOpenChange={(open) => setSectionsOpen((prev) => ({ ...prev, stays: open }))}
+                mode={mode}
+                animationIndex={1}
                 testId="edit-index-section-stays"
               >
                 {viewMode === 'list' ? (
@@ -240,6 +303,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                     onPreview={openPreview}
                     onDuplicate={openDuplicate}
                     onDelete={openDelete}
+                    mode={mode}
+                    onDemoAction={showDemoAction}
                   />
                 ) : (
                   <div className={layoutClass}>
@@ -252,6 +317,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                         onPreview={openPreview}
                         onDuplicate={openDuplicate}
                         onDelete={openDelete}
+                        mode={mode}
+                        onDemoAction={showDemoAction}
                       />
                     ))}
                   </div>
@@ -264,6 +331,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                 count={otherPages.length}
                 open={sectionsOpen.pages}
                 onOpenChange={(open) => setSectionsOpen((prev) => ({ ...prev, pages: open }))}
+                mode={mode}
+                animationIndex={2}
                 testId="edit-index-section-pages"
               >
                 {viewMode === 'list' ? (
@@ -274,6 +343,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                     onPreview={openPreview}
                     onDuplicate={openDuplicate}
                     onDelete={openDelete}
+                    mode={mode}
+                    onDemoAction={showDemoAction}
                   />
                 ) : (
                   <div className={layoutClass}>
@@ -286,6 +357,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                         onPreview={openPreview}
                         onDuplicate={openDuplicate}
                         onDelete={openDelete}
+                        mode={mode}
+                        onDemoAction={showDemoAction}
                       />
                     ))}
                   </div>
@@ -298,6 +371,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                 count={textPages.length}
                 open={sectionsOpen.text}
                 onOpenChange={(open) => setSectionsOpen((prev) => ({ ...prev, text: open }))}
+                mode={mode}
+                animationIndex={3}
                 testId="edit-index-section-text"
               >
                 {viewMode === 'list' ? (
@@ -308,6 +383,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                     onPreview={openPreview}
                     onDuplicate={openDuplicate}
                     onDelete={openDelete}
+                    mode={mode}
+                    onDemoAction={showDemoAction}
                   />
                 ) : (
                   <div className={layoutClass}>
@@ -320,6 +397,8 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
                         onPreview={openPreview}
                         onDuplicate={openDuplicate}
                         onDelete={openDelete}
+                        mode={mode}
+                        onDemoAction={showDemoAction}
                       />
                     ))}
                   </div>
@@ -330,25 +409,29 @@ export function PagesIndex({ pages, workArticles }: PagesIndexProps) {
         )}
       </div>
 
-      <EditIndexPreviewSheet
-        open={previewOpen}
-        onOpenChange={closePreview}
-        previewSlug={previewSlug}
-        previewMode={previewMode}
-        onPreviewModeChange={handlePreviewModeChange}
-        activePage={activePage}
-        previewHref={previewHref}
-        liveHref={livePreviewHref}
-      />
+      {isDemo ? null : (
+        <>
+          <EditIndexPreviewSheet
+            open={previewOpen}
+            onOpenChange={closePreview}
+            previewSlug={previewSlug}
+            previewMode={previewMode}
+            onPreviewModeChange={handlePreviewModeChange}
+            activePage={activePage}
+            previewHref={previewHref}
+            liveHref={livePreviewHref}
+          />
 
-      <NewPageDialog open={newOpen} onOpenChange={setNewOpen} />
-      <DuplicatePageDialog open={duplicateOpen} onOpenChange={handleDuplicateOpenChange} source={duplicateSource} />
-      <DeletePageDialog
-        open={deleteOpen}
-        onOpenChange={handleDeleteOpenChange}
-        target={deleteTarget}
-        onDeleted={handleDeleted}
-      />
+          <NewPageDialog open={newOpen} onOpenChange={setNewOpen} />
+          <DuplicatePageDialog open={duplicateOpen} onOpenChange={handleDuplicateOpenChange} source={duplicateSource} />
+          <DeletePageDialog
+            open={deleteOpen}
+            onOpenChange={handleDeleteOpenChange}
+            target={deleteTarget}
+            onDeleted={handleDeleted}
+          />
+        </>
+      )}
     </main>
   );
 }

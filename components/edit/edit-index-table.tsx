@@ -28,6 +28,8 @@ type EditIndexTableProps = {
   onPreview: (slug: string) => void;
   onDuplicate: (page: PageRow) => void;
   onDelete: (page: PageRow) => void;
+  mode?: 'live' | 'demo';
+  onDemoAction?: (label: string) => void;
 };
 
 export function EditIndexTable({
@@ -36,26 +38,38 @@ export function EditIndexTable({
   previewOpen,
   onPreview,
   onDuplicate,
-  onDelete
+  onDelete,
+  mode = 'live',
+  onDemoAction
 }: EditIndexTableProps) {
+  const isDemo = mode === 'demo';
+
   return (
     <div
-      className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)]"
+      className={cn(
+        'rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)]',
+        isDemo && 'vd-demo-table-shell'
+      )}
       data-testid="edit-index-pages-table"
     >
       <Table className="text-sm text-[var(--vd-fg)]">
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[55%] text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]">
+            <TableHead className={cn('w-[55%] text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]', isDemo && 'vd-demo-table-head')}>
               Title / Slug
             </TableHead>
-            <TableHead className="text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]">
+            <TableHead className={cn('text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]', isDemo && 'vd-demo-table-head')}>
               Status
             </TableHead>
-            <TableHead className="text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]">
+            <TableHead className={cn('text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]', isDemo && 'vd-demo-table-head')}>
               Updated
             </TableHead>
-            <TableHead className="text-right text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]">
+            <TableHead
+              className={cn(
+                'text-right text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]',
+                isDemo && 'vd-demo-table-head'
+              )}
+            >
               Actions
             </TableHead>
           </TableRow>
@@ -73,13 +87,32 @@ export function EditIndexTable({
               <TableRow
                 key={page.slug}
                 data-state={isActive ? 'selected' : undefined}
-                className={cn(isActive ? 'bg-[var(--vd-muted)]/60' : '')}
+                className={cn(isActive ? 'bg-[var(--vd-muted)]/60' : '', isDemo && 'vd-demo-table-row')}
               >
-                <TableCell className="py-3 align-top whitespace-normal">
+                <TableCell className={cn('py-3 align-top whitespace-normal', isDemo && 'vd-demo-table-cell-leading')}>
                   <div className="space-y-1">
-                    <Link href={editHref} className="text-sm font-semibold text-[var(--vd-fg)] hover:underline">
-                      {page.slug}
-                    </Link>
+                    {isDemo ? (
+                      <button
+                        type="button"
+                        className={cn(
+                          'text-left text-sm font-semibold text-[var(--vd-fg)]',
+                          isDemo ? 'vd-demo-row-link' : 'hover:underline'
+                        )}
+                        onClick={() => onDemoAction?.(`Edit /${page.slug}`)}
+                      >
+                        {page.slug}
+                      </button>
+                    ) : (
+                      <Link
+                        href={editHref}
+                        className={cn(
+                          'text-sm font-semibold text-[var(--vd-fg)]',
+                          isDemo ? 'vd-demo-row-link' : 'hover:underline'
+                        )}
+                      >
+                        {page.slug}
+                      </Link>
+                    )}
                     {page.title && page.title !== page.slug ? (
                       <p className="text-xs text-[var(--vd-muted-fg)]">{page.title}</p>
                     ) : null}
@@ -88,10 +121,13 @@ export function EditIndexTable({
                 <TableCell className="align-top whitespace-normal">
                   <Badge
                     className={cn(
-                      published
-                        ? 'border-transparent bg-[var(--vd-accent)] text-[var(--vd-accent-fg)]'
-                        : 'bg-[var(--vd-muted)] text-[var(--vd-muted-fg)]'
+                      isDemo
+                        ? 'vd-demo-status-badge'
+                        : published
+                          ? 'border-transparent bg-[color-mix(in_oklch,var(--vd-score-perfect)_18%,var(--vd-bg))] text-[color-mix(in_oklch,var(--vd-score-perfect)_72%,var(--vd-fg))]'
+                          : 'bg-[var(--vd-muted)] text-[var(--vd-muted-fg)]'
                     )}
+                    data-tone={published ? 'published' : 'draft'}
                   >
                     {published ? 'Published' : 'Draft'}
                   </Badge>
@@ -107,6 +143,7 @@ export function EditIndexTable({
                     <Button
                       variant="ghost"
                       size="sm"
+                      className={cn(isDemo && 'vd-demo-ghost-button')}
                       onClick={() => onPreview(page.slug)}
                       aria-label={`Preview ${page.slug}`}
                     >
@@ -115,24 +152,40 @@ export function EditIndexTable({
                     </Button>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className={cn('h-9 w-9 p-0', isDemo && 'vd-demo-icon-button')}
+                        >
                           <MoreHorizontal className="h-4 w-4" />
                           <span className="sr-only">Page actions</span>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuItem asChild>
-                          <Link href={editHref}>Edit page</Link>
-                        </DropdownMenuItem>
+                        {isDemo ? (
+                          <DropdownMenuItem onSelect={() => onDemoAction?.(`Edit /${page.slug}`)}>
+                            Edit page
+                          </DropdownMenuItem>
+                        ) : (
+                          <DropdownMenuItem asChild>
+                            <Link href={editHref}>Edit page</Link>
+                          </DropdownMenuItem>
+                        )}
                         <DropdownMenuItem onSelect={() => onDuplicate(page)}>
                           <Copy className="h-4 w-4" />
                           Duplicate
                         </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href={live} target="_blank" rel="noreferrer">
+                        {isDemo ? (
+                          <DropdownMenuItem onSelect={() => onDemoAction?.(`View live /${page.slug}`)}>
                             View live
-                          </Link>
-                        </DropdownMenuItem>
+                          </DropdownMenuItem>
+                        ) : (
+                          <DropdownMenuItem asChild>
+                            <Link href={live} target="_blank" rel="noreferrer">
+                              View live
+                            </Link>
+                          </DropdownMenuItem>
+                        )}
                         <DropdownMenuSeparator />
                         <DropdownMenuItem
                           disabled={!canDelete}

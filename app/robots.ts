@@ -5,6 +5,7 @@ const DISALLOW_PATHS = [
   '/admin',
   '/edit',
   '/preview',
+  '/login',
   '/sign-in',
   '/sign-up',
   '/api',
@@ -14,7 +15,8 @@ const DISALLOW_PATHS = [
   '/theme',
   '/installer',
   '/components',
-  '/cms'
+  '/cms',
+  '/demo'
 ];
 
 export default function robots(): MetadataRoute.Robots {

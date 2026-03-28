@@ -15,21 +15,21 @@ export type FeatureGridBlockProps = {
 };
 
 export function FeatureGridBlock({
-  heading = 'Everything you need to ship fast',
+  heading = 'Three clear selling points',
   items = [
     {
-      title: 'Puck-ready blocks',
-      description: 'All blocks are shadcn-based and editor-safe.',
+      title: 'Clear offer',
+      description: 'Explain the core service in a way a new visitor can understand in seconds.',
       icon: 'sparkles'
     },
     {
-      title: 'Design tokens',
-      description: 'OKLCH tokens editable from the admin panel.',
+      title: 'Distinct point of view',
+      description: 'Use this block to show what makes the business feel considered rather than interchangeable.',
       icon: 'layers'
     },
     {
-      title: 'Secure by default',
-      description: 'BetterAuth + per-site Mongo users + R2 uploads.',
+      title: 'Trust and clarity',
+      description: 'Turn vague promises into practical reasons someone would enquire.',
       icon: 'shield'
     }
   ]

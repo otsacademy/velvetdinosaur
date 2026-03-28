@@ -1,0 +1,23 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#EEF1EB"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#FAFCF8" stroke="#C9D0C2" stroke-width="4"/>
+  <rect x="114" y="114" width="664" height="772" rx="30" fill="#E5E8DE"/>
+  <path d="M178 732C268 694 324 638 374 566C426 490 480 404 564 304C608 252 650 220 704 190" stroke="#5C4A3A" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="214" cy="716" r="28" fill="#E2BE83"/>
+  <circle cx="354" cy="588" r="24" fill="#5C4A3A"/>
+  <circle cx="476" cy="432" r="22" fill="#7A8B73"/>
+  <circle cx="694" cy="198" r="24" fill="#5C4A3A"/>
+  <rect x="222" y="214" width="236" height="152" rx="26" fill="#BEC8C1"/>
+  <path d="M246 340L340 252L432 340H246Z" fill="#596C64"/>
+  <rect x="822" y="114" width="662" height="248" rx="30" fill="#314038"/>
+  <text x="874" y="194" fill="#E5ECE7" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">TRAVEL DEMO / ROUTE</text>
+  <text x="874" y="272" fill="#FAFCF8" font-family="Georgia, serif" font-size="54" font-weight="700">Stone and Fire Loop</text>
+  <text x="874" y="324" fill="#C7D0CA" font-family="Arial, sans-serif" font-size="24">Cabins, ridgelines, and fire-cooking</text>
+  <rect x="822" y="404" width="662" height="190" rx="30" fill="#F2E9DC"/>
+  <rect x="874" y="452" width="166" height="88" rx="18" fill="#5C4A3A"/>
+  <rect x="1060" y="452" width="202" height="88" rx="18" fill="#7A8B73"/>
+  <rect x="1282" y="452" width="150" height="88" rx="18" fill="#E2BE83"/>
+  <rect x="822" y="636" width="662" height="210" rx="30" fill="#E5E8DE"/>
+  <text x="874" y="712" fill="#314038" font-family="Arial, sans-serif" font-size="28">4 days  /  linked to Ember Lake Cabins  /  walking and kitchen demo</text>
+  <text x="874" y="770" fill="#607168" font-family="Arial, sans-serif" font-size="22">Fictional route art used for the sandboxed travel module</text>
+</svg>

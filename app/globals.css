@@ -68,7 +68,12 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --font-pt-sans: var(--font-dm-sans);
   --font-display: var(--font-dm-sans);
   --font-hero: var(--font-dm-sans);
-  --vd-interaction-blue: oklch(0.6818 0.1584 243.35);
+  --vd-dino-blue: oklch(from #0b84d4 l c h);
+  --vd-dino-blue-hover: oklch(from #0a76be l c h);
+  --vd-dino-blue-solid: oklch(from #0a76be l c h);
+  --vd-dino-blue-solid-hover: oklch(from #0968a8 l c h);
+  --vd-dino-cta-fg: oklch(1 0 0);
+  --vd-interaction-blue: var(--vd-dino-blue);
   --vd-primary-solid: oklch(0.5737 0.1946 257.86);
   --vd-primary-hover: oklch(0.6211 0.1524 244.75);
   --vd-primary-solid-hover: oklch(0.5134 0.1603 255.67);

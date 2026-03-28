@@ -1,0 +1,23 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F8F1E2"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#FFF9EF" stroke="#D9C8A7" stroke-width="4"/>
+  <rect x="114" y="114" width="664" height="772" rx="30" fill="#EFE7D8"/>
+  <path d="M190 718C262 672 322 618 380 552C430 494 496 404 604 326C650 294 692 272 704 266" stroke="#6E8A5D" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="224" cy="700" r="30" fill="#D28F5B"/>
+  <circle cx="380" cy="554" r="24" fill="#6E8A5D"/>
+  <circle cx="560" cy="364" r="22" fill="#D28F5B"/>
+  <rect x="230" y="206" width="216" height="152" rx="26" fill="#C9B898"/>
+  <circle cx="298" cy="266" r="34" fill="#6E8A5D"/>
+  <circle cx="380" cy="288" r="22" fill="#8EA26D"/>
+  <rect x="822" y="114" width="662" height="248" rx="30" fill="#40563E"/>
+  <text x="874" y="194" fill="#DCE8D6" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">TRAVEL DEMO / ROUTE</text>
+  <text x="874" y="272" fill="#FFF9EF" font-family="Georgia, serif" font-size="52" font-weight="700">Tramuntana Olive Road</text>
+  <text x="874" y="324" fill="#D6E1D0" font-family="Arial, sans-serif" font-size="24">Orchards, hillside roads, and sea-view suppers</text>
+  <rect x="822" y="404" width="662" height="190" rx="30" fill="#F3E7D5"/>
+  <rect x="874" y="450" width="202" height="92" rx="18" fill="#6E8A5D"/>
+  <rect x="1100" y="450" width="156" height="92" rx="18" fill="#D28F5B"/>
+  <rect x="1278" y="450" width="154" height="92" rx="18" fill="#E9D29B"/>
+  <rect x="822" y="636" width="662" height="210" rx="30" fill="#EEE6D6"/>
+  <text x="874" y="712" fill="#40563E" font-family="Arial, sans-serif" font-size="28">5 days  /  linked to Olive Courtyard House  /  mixed stay and route data</text>
+  <text x="874" y="770" fill="#716A58" font-family="Arial, sans-serif" font-size="22">Fictional Mediterranean route asset for the demo gallery</text>
+</svg>

@@ -6,7 +6,6 @@ import { unstable_noStore } from 'next/cache'
 import { WorkArticleEditorPotion } from '@/components/edit/work-article-editor.client'
 import { getAuth } from '@/lib/auth'
 import { getWorkArticleBySlug } from '@/lib/work-articles.server'
-import { adminHomePath, isAdminOnly } from '@/lib/site-config'
 
 type EditWorkArticlePageProps = {
   params: Promise<{ slug: string }>
@@ -14,9 +13,6 @@ type EditWorkArticlePageProps = {
 
 async function EditWorkArticleContent({ params }: EditWorkArticlePageProps) {
   unstable_noStore()
-  if (isAdminOnly()) {
-    redirect(adminHomePath)
-  }
 
   const auth = getAuth()
   const requestHeaders = await headers()

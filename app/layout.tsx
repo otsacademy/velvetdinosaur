@@ -1,5 +1,6 @@
 import './globals.css';
 import './velvet-site.css';
+import './demo-polish.css';
 import { Suspense, type CSSProperties } from 'react';
 import { DM_Sans, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';

@@ -73,7 +73,10 @@ const nextConfig = {
       { source: '/admin', headers: noStore },
       { source: '/admin/:path*', headers: noStore },
       { source: '/preview', headers: noStore },
-      { source: '/preview/:path*', headers: noStore }
+      { source: '/preview/:path*', headers: noStore },
+      { source: '/login', headers: noStore },
+      { source: '/demo', headers: noStore },
+      { source: '/demo/:path*', headers: noStore }
     ];
   },
   images: {

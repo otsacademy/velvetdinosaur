@@ -11,9 +11,9 @@ export type ImageBlockProps = {
 };
 
 export function ImageBlock({
-  src = '/images/placeholder.svg',
-  alt = 'Placeholder image',
-  caption = 'Drop in R2-hosted assets or external images.',
+  src = '/assets/hero-panel.svg',
+  alt = 'Neutral placeholder visual',
+  caption = 'Replace this with your own photography, product imagery, or campaign artwork.',
   loading = 'lazy',
   fetchPriority
 }: ImageBlockProps) {

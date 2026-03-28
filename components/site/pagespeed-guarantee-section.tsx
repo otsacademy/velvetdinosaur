@@ -15,7 +15,7 @@ const metrics: Metric[] = [
 
 export function PageSpeedGuaranteeSection() {
   return (
-    <section id="pagespeed" className="py-6 md:py-8">
+    <section id="pagespeed" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
         <div className="vd-surface-panel relative overflow-hidden border border-white/8 bg-[radial-gradient(circle_at_top_left,color-mix(in_oklch,var(--vd-primary)_24%,transparent),transparent_38%),linear-gradient(155deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-surface-strong)_84%,black))] px-6 py-8 text-[var(--vd-surface-strong-fg)] md:px-8 md:py-10">
           <div

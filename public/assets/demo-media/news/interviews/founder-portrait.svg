@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <rect width="1200" height="1200" fill="#EFE7DC"/>
+  <rect x="88" y="88" width="1024" height="1024" rx="44" fill="#F9F6F1" stroke="#D7CCBD" stroke-width="4"/>
+  <circle cx="600" cy="420" r="188" fill="#D7B89B"/>
+  <path d="M420 864C420 720 500 632 600 632C700 632 780 720 780 864V1012H420V864Z" fill="#2B4D45"/>
+  <path d="M468 388C468 314 526 250 600 250C674 250 732 314 732 388V430H468V388Z" fill="#704D37"/>
+  <rect x="330" y="1026" width="540" height="18" rx="9" fill="#B5AA99"/>
+  <text x="600" y="1102" text-anchor="middle" fill="#6A5F53" font-family="Georgia, serif" font-size="42" letter-spacing=".16em">DEMO AUTHOR PORTRAIT</text>
+</svg>

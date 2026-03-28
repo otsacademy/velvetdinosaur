@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#EFF2EA"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#F8FAF5" stroke="#C9D1BE" stroke-width="4"/>
+  <rect x="110" y="110" width="820" height="780" rx="28" fill="#D7DED0"/>
+  <rect x="166" y="154" width="708" height="426" rx="26" fill="#B9C8C0"/>
+  <path d="M166 410L340 286L492 410H444L340 332L240 410H166Z" fill="#495A53"/>
+  <path d="M432 410L604 262L774 410H728L604 308L486 410H432Z" fill="#566860"/>
+  <rect x="210" y="430" width="620" height="100" rx="18" fill="#6A4B3A"/>
+  <rect x="196" y="612" width="318" height="220" rx="34" fill="#7A5B4B"/>
+  <rect x="552" y="612" width="278" height="220" rx="34" fill="#C89269"/>
+  <rect x="246" y="660" width="86" height="86" rx="16" fill="#F4E4C0"/>
+  <rect x="356" y="660" width="86" height="86" rx="16" fill="#A5B39E"/>
+  <rect x="604" y="662" width="172" height="26" rx="13" fill="#F4E4C0"/>
+  <rect x="604" y="712" width="132" height="24" rx="12" fill="#E6D6BE"/>
+  <rect x="980" y="110" width="508" height="310" rx="30" fill="#2F433B"/>
+  <rect x="1032" y="164" width="176" height="16" rx="8" fill="#CCD8CF"/>
+  <rect x="1032" y="208" width="284" height="16" rx="8" fill="#CCD8CF" fill-opacity="0.82"/>
+  <rect x="1032" y="252" width="214" height="16" rx="8" fill="#CCD8CF" fill-opacity="0.72"/>
+  <rect x="1032" y="316" width="168" height="18" rx="9" fill="#D8BA7A"/>
+  <rect x="980" y="460" width="508" height="200" rx="30" fill="#F2ECDF"/>
+  <circle cx="1100" cy="560" r="52" fill="#7A5B4B"/>
+  <rect x="1176" y="512" width="242" height="24" rx="12" fill="#55655D"/>
+  <rect x="1176" y="556" width="196" height="24" rx="12" fill="#A5B39E"/>
+  <rect x="1176" y="600" width="154" height="24" rx="12" fill="#D7C3A2"/>
+  <rect x="980" y="700" width="508" height="146" rx="30" fill="#5B6C62"/>
+  <text x="1032" y="778" fill="#F8FAF5" font-family="Georgia, serif" font-size="48" font-weight="700">Ember Lake Cabins</text>
+  <text x="1032" y="818" fill="#D9E4DC" font-family="Arial, sans-serif" font-size="24">Cabin cluster and route base</text>
+</svg>

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Badge } from '@/components/ui/badge';
@@ -10,6 +10,8 @@ type EditIndexSectionProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   children: ReactNode;
+  mode?: 'live' | 'demo';
+  animationIndex?: number;
   testId: string;
 };
 
@@ -19,30 +21,50 @@ export function EditIndexSection({
   open,
   onOpenChange,
   children,
+  mode = 'live',
+  animationIndex = 0,
   testId
 }: EditIndexSectionProps) {
+  const isDemo = mode === 'demo';
+
   return (
     <Collapsible
       open={open}
       onOpenChange={onOpenChange}
-      className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)]"
+      className={cn(
+        'rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)]',
+        isDemo && 'vd-demo-section'
+      )}
+      style={
+        isDemo
+          ? ({
+              '--vd-demo-delay': `${40 + animationIndex * 70}ms`
+            } as CSSProperties)
+          : undefined
+      }
       data-testid={testId}
     >
-      <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-[var(--vd-border)]">
+      <div
+        className={cn(
+          'flex items-center justify-between gap-3 border-b border-[var(--vd-border)] px-5 py-4',
+          isDemo && 'vd-demo-section-header'
+        )}
+      >
         <CollapsibleTrigger asChild>
           <button
             type="button"
-            className="group inline-flex items-center gap-3 text-left text-sm font-semibold text-[var(--vd-fg)]"
+            className={cn(
+              'group inline-flex items-center gap-3 text-left text-sm font-semibold text-[var(--vd-fg)]',
+              isDemo && 'vd-demo-section-trigger'
+            )}
           >
-            <ChevronDown
-              className={cn('h-4 w-4 transition-transform', open ? 'rotate-0' : '-rotate-90')}
-            />
+            <ChevronDown className={cn('h-4 w-4 transition-transform', open ? 'rotate-0' : '-rotate-90')} />
             <span>{title}</span>
           </button>
         </CollapsibleTrigger>
-        <Badge className="text-[11px]">{count} pages</Badge>
+        <Badge className={cn('text-[11px]', isDemo && 'vd-demo-count-badge')}>{count} pages</Badge>
       </div>
-      <CollapsibleContent className="px-5 pb-5 pt-4">
+      <CollapsibleContent className={cn('px-5 pb-5 pt-4', isDemo && 'vd-demo-section-content')}>
         {children}
       </CollapsibleContent>
     </Collapsible>

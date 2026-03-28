@@ -18,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import {
   buildAssetUrl,
   createAssetFolder,
+  listAssets,
   listAssetFolders,
   resolveAssetImageUrl,
   updateAssetMetadata,
@@ -97,18 +98,14 @@ export function AssetPickerField({
   const loadLibrary = async (options?: { reset?: boolean }) => {
     const reset = Boolean(options?.reset);
     const nextCursor = reset ? null : cursor;
-    const url = new URL('/api/assets/list', window.location.origin);
-    if (query) url.searchParams.set('q', query);
-    if (mimePrefix) url.searchParams.set('mimePrefix', mimePrefix);
     const folderValue = resolveFolderParam(folderFilter);
-    if (typeof folderValue === 'string') url.searchParams.set('folder', folderValue);
-    url.searchParams.set('limit', '24');
-    if (nextCursor) url.searchParams.set('cursor', nextCursor);
-    const res = await fetch(url.toString(), { credentials: 'include', cache: 'no-store' });
-    const data = await res.json().catch(() => null);
-    if (!res.ok) {
-      throw new Error(data?.error || 'Failed to load assets');
-    }
+    const data = await listAssets({
+      q: query,
+      mimePrefix,
+      folder: typeof folderValue === 'string' ? folderValue : null,
+      limit: 24,
+      cursor: nextCursor
+    });
     setItems((prev) => (reset ? data.items || [] : [...prev, ...(data.items || [])]));
     setCursor(data.nextCursor || null);
   };

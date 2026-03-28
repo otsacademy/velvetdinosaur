@@ -9,9 +9,9 @@ export type CTAStripProps = {
 };
 
 export function CTAStrip({
-  title = 'Ready to ship your next site?',
-  subtitle = 'Spin up another site in minutes with the same core stack.',
-  buttonLabel = 'Create a new site',
+  title = 'Ready for the real version?',
+  subtitle = 'Swap out the placeholder copy, bring in proper imagery, and shape the page around the actual business.',
+  buttonLabel = 'Call to action',
   buttonLink
 }: CTAStripProps) {
   const normalizeRel = (link?: LinkValue) => {

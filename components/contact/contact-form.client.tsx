@@ -35,19 +35,23 @@ function useStyles(variant: ContactFormVariant) {
   return useMemo(() => {
     if (variant === 'inline') {
       return {
-        label: 'text-xs font-black uppercase tracking-widest text-[var(--vd-fg)]',
-        input: 'w-full rounded-xl border border-[var(--vd-border)] bg-[var(--vd-card)] px-4 py-3 text-sm',
-        textarea: 'min-h-[120px] w-full rounded-xl border border-[var(--vd-border)] bg-[var(--vd-card)] px-4 py-3 text-sm',
+        label: 'text-xs font-semibold uppercase tracking-[0.16em] text-[var(--vd-muted-fg)]',
+        input:
+          'w-full rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[var(--vd-card)] px-4 py-3 text-sm text-[var(--vd-fg)] placeholder:text-[var(--vd-placeholder)]',
+        textarea:
+          'min-h-[120px] w-full rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[var(--vd-card)] px-4 py-3 text-sm text-[var(--vd-fg)] placeholder:text-[var(--vd-placeholder)]',
         button:
-          'w-fit rounded-full border border-[var(--vd-border)] bg-[var(--vd-primary)] px-6 py-3 text-xs font-black uppercase tracking-[0.2em] text-[var(--vd-primary-fg)]'
+          'vd-dino-cta w-fit rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.2em]'
       } as const;
     }
     return {
-      label: 'text-xs font-black uppercase tracking-widest text-neutral-400 ml-1',
-      input: 'rounded-xl bg-neutral-50 border-neutral-100 font-bold',
-      textarea: 'rounded-xl bg-neutral-50 border-neutral-100 font-medium min-h-[140px]',
+      label: 'ml-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--vd-muted-fg)]',
+      input:
+        'rounded-xl border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background font-medium text-[var(--vd-fg)] placeholder:text-[var(--vd-placeholder)]',
+      textarea:
+        'min-h-[140px] rounded-xl border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background font-medium text-[var(--vd-fg)] placeholder:text-[var(--vd-placeholder)]',
       button:
-        'w-full py-6 bg-[var(--vd-fg)] text-white font-black rounded-xl shadow-lg hover:bg-[var(--vd-primary)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-[0.2em] text-xs mt-2'
+        'vd-dino-cta mt-2 w-full rounded-xl py-6 text-xs font-black uppercase tracking-[0.2em] shadow-lg'
     } as const;
   }, [variant]);
 }

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#EEE8DB"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#FBF8F1" stroke="#D7CEBE" stroke-width="4"/>
+  <rect x="116" y="116" width="620" height="768" rx="32" fill="#D8CCBC"/>
+  <rect x="168" y="168" width="516" height="288" rx="28" fill="#18333E"/>
+  <text x="212" y="246" fill="#E8EFE7" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">EDITORIAL DEMO</text>
+  <text x="212" y="330" fill="#FBF8F1" font-family="Georgia, serif" font-size="62" font-weight="700">Story-led pages</text>
+  <text x="212" y="386" fill="#C8D7D8" font-family="Arial, sans-serif" font-size="24">Fictional cover art for the Sauro article editor</text>
+  <rect x="168" y="500" width="236" height="330" rx="26" fill="#F0E6D7"/>
+  <circle cx="286" cy="614" r="86" fill="#D39A68"/>
+  <path d="M226 742C254 694 290 668 334 664C370 660 404 674 428 702V830H226V742Z" fill="#8A634B"/>
+  <rect x="440" y="500" width="244" height="330" rx="26" fill="#2C5058"/>
+  <path d="M468 734C530 676 590 650 656 644V830H468V734Z" fill="#79939B"/>
+  <circle cx="562" cy="600" r="44" fill="#F4DBA6"/>
+  <rect x="792" y="116" width="692" height="446" rx="32" fill="#F2E7D6"/>
+  <rect x="842" y="166" width="272" height="18" rx="9" fill="#7A6454"/>
+  <rect x="842" y="214" width="388" height="18" rx="9" fill="#A28C79"/>
+  <rect x="842" y="262" width="302" height="18" rx="9" fill="#C5AF97"/>
+  <rect x="842" y="322" width="594" height="176" rx="28" fill="#D3B28A"/>
+  <path d="M868 464C934 390 1002 348 1084 340C1164 332 1262 370 1410 454V498H868V464Z" fill="#A87651"/>
+  <rect x="792" y="602" width="692" height="282" rx="32" fill="#18333E"/>
+  <rect x="842" y="654" width="220" height="18" rx="9" fill="#D1E0E2"/>
+  <rect x="842" y="702" width="338" height="18" rx="9" fill="#AFC6CA"/>
+  <rect x="842" y="750" width="264" height="18" rx="9" fill="#8BA3A6"/>
+  <text x="842" y="838" fill="#FBF8F1" font-family="Georgia, serif" font-size="46" font-weight="700">Editorial workflows</text>
+</svg>

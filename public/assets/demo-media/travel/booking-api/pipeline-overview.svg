@@ -1,0 +1,24 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#EEF1F6"/>
+  <rect x="56" y="56" width="1488" height="888" rx="40" fill="#FAFBFE" stroke="#C8D2E0" stroke-width="4"/>
+  <rect x="114" y="114" width="1372" height="130" rx="30" fill="#1F334D"/>
+  <rect x="164" y="164" width="210" height="24" rx="12" fill="#DDE6F2"/>
+  <rect x="164" y="202" width="320" height="16" rx="8" fill="#AFC3DE"/>
+  <rect x="114" y="294" width="420" height="238" rx="28" fill="#FFF4DE"/>
+  <rect x="150" y="338" width="116" height="82" rx="20" fill="#E59B63"/>
+  <rect x="288" y="338" width="104" height="82" rx="20" fill="#50755B"/>
+  <rect x="414" y="338" width="84" height="82" rx="20" fill="#2E5A85"/>
+  <text x="150" y="476" fill="#25344A" font-family="Georgia, serif" font-size="44" font-weight="700">Pipeline</text>
+  <rect x="564" y="294" width="454" height="238" rx="28" fill="#E9EEF6"/>
+  <rect x="612" y="342" width="358" height="18" rx="9" fill="#6B84A4"/>
+  <rect x="612" y="388" width="276" height="18" rx="9" fill="#90A7C3"/>
+  <rect x="612" y="434" width="320" height="18" rx="9" fill="#B7C7DC"/>
+  <rect x="1048" y="294" width="438" height="238" rx="28" fill="#F1E8DB"/>
+  <path d="M1100 470L1170 356H1242L1172 470H1100Z" fill="#D38858"/>
+  <path d="M1270 470L1344 388H1414L1340 470H1270Z" fill="#355E63"/>
+  <rect x="114" y="572" width="1372" height="264" rx="28" fill="#FFFFFF"/>
+  <rect x="156" y="626" width="1200" height="24" rx="12" fill="#C7D4E6"/>
+  <rect x="156" y="684" width="1104" height="24" rx="12" fill="#E2E8F2"/>
+  <rect x="156" y="742" width="1242" height="24" rx="12" fill="#D6E0EE"/>
+  <text x="156" y="812" fill="#25344A" font-family="Arial, sans-serif" font-size="28">Fictional Booking API overview asset for the Sauro CMS travel sandbox</text>
+</svg>

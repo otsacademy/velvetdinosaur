@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 import type { Article } from '@/lib/articles'
@@ -20,7 +19,7 @@ function WorkCard({
     <article
       className={cn(
         'vd-hover-lift vd-work-card group overflow-hidden rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-card',
-        'transition-all duration-300 hover:bg-accent hover:shadow-[0_1px_6px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]',
+        'hover:bg-accent hover:shadow-[0_1px_6px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]',
         isFeatured && 'xl:col-span-6 xl:grid xl:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)]',
         !isFeatured && 'xl:col-span-2',
       )}
@@ -97,15 +96,14 @@ function WorkCard({
           </div>
         ) : null}
         <div className="flex items-center justify-between gap-3">
-          <Link
+          <a
             href={`/work/${article.slug}`}
-            aria-label={`Read more about ${article.title}`}
             className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary"
           >
             Read case study
             <span className="sr-only"> about {article.title}</span>
             <ArrowRight className="h-4 w-4 vd-inline-arrow" />
-          </Link>
+          </a>
           {article.website ? (
             <a
               href={article.website}
@@ -126,7 +124,7 @@ export async function SelectedWork() {
   const workItems = await listLatestPublishedWorkArticles(4)
 
   return (
-    <section id="portfolio" className="pb-10 pt-2 md:pb-12 md:pt-4">
+    <section id="portfolio" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 space-y-3 md:mb-10">
           <h2 className="vd-section-heading text-2xl font-semibold tracking-tight md:text-[2.2rem]">

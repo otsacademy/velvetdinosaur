@@ -17,16 +17,20 @@ export type HeroBlockProps = {
   secondaryLabel?: string;
   primaryLink?: LinkValue;
   secondaryLink?: LinkValue;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export function HeroBlock({
-  eyebrow = 'Velvet Dinosaur',
-  title = 'Design-forward websites in days, not months.',
-  subtitle = 'A modular Puck system with shadcn components and Tailwind tokens.',
-  primaryLabel = 'Launch now',
-  secondaryLabel = 'View blocks',
+  eyebrow = 'Demonstration page',
+  title = 'A polished starting point for a fictional service business.',
+  subtitle = 'Use neutral placeholder copy and imagery here, then replace it with the real brand once the project starts.',
+  primaryLabel = 'Primary action',
+  secondaryLabel = 'Secondary action',
   primaryLink,
-  secondaryLink
+  secondaryLink,
+  imageSrc = '/assets/hero-panel.svg',
+  imageAlt = 'Abstract placeholder visual'
 }: HeroBlockProps) {
   const normalizeRel = (link?: LinkValue) => {
     if (!link?.target || link.target !== '_blank') return link?.rel;
@@ -66,8 +70,8 @@ export function HeroBlock({
     <section className="rounded-[calc(var(--vd-radius)+8px)] border border-[var(--vd-border)] bg-[var(--vd-card)] px-10 py-16">
       <div className="mb-6 h-40 w-full overflow-hidden rounded-[calc(var(--vd-radius)+4px)] border border-[var(--vd-border)]">
         <img
-          src="/assets/hero-panel.svg"
-          alt=""
+          src={imageSrc}
+          alt={imageAlt}
           width={1200}
           height={600}
           className="h-full w-full object-cover"

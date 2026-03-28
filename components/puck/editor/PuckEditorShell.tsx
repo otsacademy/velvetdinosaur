@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { MenuDock, MenuDockItem } from '@/components/ui/menu-dock';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { DemoHelpTooltip } from '@/components/demo/demo-help-tooltip';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 type EditorPanel = 'components' | 'outline' | 'properties' | 'theme' | null;
@@ -89,6 +90,7 @@ export type PuckEditorShellProps = {
   children: React.ReactNode;
   title: string;
   statusLabel?: string;
+  headerActionAfterSave?: React.ReactNode;
   onPublish: () => void;
   onSaveDraft: () => void;
   onResetDraft?: () => void;
@@ -106,6 +108,7 @@ export function PuckEditorShell({
   children,
   title,
   statusLabel,
+  headerActionAfterSave,
   onPublish,
   onSaveDraft,
   onResetDraft,
@@ -174,34 +177,43 @@ export function PuckEditorShell({
             ) : null}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={onSaveDraft}
-              disabled={saveDisabled || isPublishing || isSaving}
-            >
-              {saveLabel}
-            </Button>
-            {onResetDraft ? (
+            <DemoHelpTooltip content="Save the current page state inside this demo workspace. The draft stays local and disappears when you leave or refresh.">
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
-                onClick={onResetDraft}
-                disabled={resetDisabled || isPublishing || isSaving}
+                onClick={onSaveDraft}
+                disabled={saveDisabled || isPublishing || isSaving}
               >
-                Reset draft
+                {saveLabel}
               </Button>
+            </DemoHelpTooltip>
+            {headerActionAfterSave}
+            {onResetDraft ? (
+              <DemoHelpTooltip content="Put the page back to the seeded demo version so you can start the walkthrough again from a clean slate.">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onResetDraft}
+                  disabled={resetDisabled || isPublishing || isSaving}
+                >
+                  Reset draft
+                </Button>
+              </DemoHelpTooltip>
             ) : null}
-            <Button
-              size="sm"
-              onClick={onPublish}
-              disabled={publishDisabled || isPublishing}
-            >
-              {publishLabel}
-            </Button>
-            <Button variant="ghost" size="sm" onClick={onClose}>
-              Close
-            </Button>
+            <DemoHelpTooltip content="Run the same publish action clients use, but keep the result inside this sandbox instead of updating a live site.">
+              <Button
+                size="sm"
+                onClick={onPublish}
+                disabled={publishDisabled || isPublishing}
+              >
+                {publishLabel}
+              </Button>
+            </DemoHelpTooltip>
+            <DemoHelpTooltip content="Leave the page editor and return to the demo site. Any unsaved demo changes are discarded.">
+              <Button variant="ghost" size="sm" onClick={onClose}>
+                Close
+              </Button>
+            </DemoHelpTooltip>
           </div>
         </div>
       </div>
@@ -216,43 +228,53 @@ export function PuckEditorShell({
           animated
           aria-label="Editor navigation"
         >
-          <MenuDockItem
-            icon={<LayoutGrid className="h-5 w-5" />}
-            label="Components"
-            active={activePanel === 'components' || (leftPinned && leftPanelTab === 'components')}
-            onClick={() => handlePanelToggle('components')}
-          />
-          <MenuDockItem
-            icon={<ListTree className="h-5 w-5" />}
-            label="Outline"
-            active={activePanel === 'outline' || (leftPinned && leftPanelTab === 'outline')}
-            onClick={() => handlePanelToggle('outline')}
-          />
-          <MenuDockItem
-            icon={<SlidersHorizontal className="h-5 w-5" />}
-            label="Properties"
-            active={activePanel === 'properties' || propertiesPinned}
-            onClick={() => handlePanelToggle('properties')}
-          />
-          <MenuDockItem
-            icon={<Palette className="h-5 w-5" />}
-            label="Theme"
-            active={activePanel === 'theme'}
-            onClick={() => {
-              if (hasThemePanel) {
-                handlePanelToggle('theme');
-              } else {
-                onOpenTheme?.();
-              }
-            }}
-            disabled={!hasThemePanel && !onOpenTheme}
-          />
-          <MenuDockItem
-            icon={<Send className="h-5 w-5" />}
-            label="Publish"
-            onClick={onPublish}
-            disabled={publishDisabled || isPublishing}
-          />
+          <DemoHelpTooltip content="Browse the reusable blocks you can drag onto the page.">
+            <MenuDockItem
+              icon={<LayoutGrid className="h-5 w-5" />}
+              label="Components"
+              active={activePanel === 'components' || (leftPinned && leftPanelTab === 'components')}
+              onClick={() => handlePanelToggle('components')}
+            />
+          </DemoHelpTooltip>
+          <DemoHelpTooltip content="See the structure of the current page and jump straight to a section.">
+            <MenuDockItem
+              icon={<ListTree className="h-5 w-5" />}
+              label="Outline"
+              active={activePanel === 'outline' || (leftPinned && leftPanelTab === 'outline')}
+              onClick={() => handlePanelToggle('outline')}
+            />
+          </DemoHelpTooltip>
+          <DemoHelpTooltip content="Edit settings for the currently selected block, including copy, images, and layout options.">
+            <MenuDockItem
+              icon={<SlidersHorizontal className="h-5 w-5" />}
+              label="Properties"
+              active={activePanel === 'properties' || propertiesPinned}
+              onClick={() => handlePanelToggle('properties')}
+            />
+          </DemoHelpTooltip>
+          <DemoHelpTooltip content="Open the page-level design controls and adjust colours, spacing, and visual tokens.">
+            <MenuDockItem
+              icon={<Palette className="h-5 w-5" />}
+              label="Theme"
+              active={activePanel === 'theme'}
+              onClick={() => {
+                if (hasThemePanel) {
+                  handlePanelToggle('theme');
+                } else {
+                  onOpenTheme?.();
+                }
+              }}
+              disabled={!hasThemePanel && !onOpenTheme}
+            />
+          </DemoHelpTooltip>
+          <DemoHelpTooltip content="Trigger the demo publish flow from the dock without changing the seeded site content.">
+            <MenuDockItem
+              icon={<Send className="h-5 w-5" />}
+              label="Publish"
+              onClick={onPublish}
+              disabled={publishDisabled || isPublishing}
+            />
+          </DemoHelpTooltip>
         </MenuDock>
       </div>
 

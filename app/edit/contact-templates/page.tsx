@@ -7,13 +7,9 @@ import { ContactTemplatesEditor } from '@/components/edit/contact-templates-edit
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
 import { defaultContactEmailTemplates } from '@/lib/contact-email-templates';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { ContactSettings } from '@/models/ContactSettings';
 
 async function ContactTemplatesContent() {
-  if (isAdminOnly()) {
-    redirect(adminHomePath);
-  }
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) {

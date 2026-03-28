@@ -28,7 +28,7 @@ const trustStats: TrustStat[] = [
 
 export function NoLockInSection() {
   return (
-    <section id="ownership" className="py-6 md:py-8">
+    <section id="ownership" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
         <div className="vd-surface-panel vd-soft-panel grid gap-6 p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-4">
@@ -45,7 +45,7 @@ export function NoLockInSection() {
               running smoothly.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild className="vd-email-cta vd-pill-primary rounded-full px-6 text-[0.9375rem] font-medium">
+              <Button asChild className="vd-dino-cta rounded-full px-6 text-[0.9375rem] font-medium">
                 <a href="#contact">Talk through your project</a>
               </Button>
               <Button asChild variant="outline" className="vd-pill-outline rounded-full px-6 text-[0.9375rem] font-medium">

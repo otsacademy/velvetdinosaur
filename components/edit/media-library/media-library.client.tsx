@@ -15,6 +15,8 @@ import {
   buildAssetUrl,
   createAssetFolder,
   deleteAssets,
+  isDemoEditorAssetMode,
+  listAssets,
   listAssetFolders,
   updateAssetMetadata,
   uploadFile,
@@ -78,6 +80,7 @@ export function MediaLibraryClient() {
   const [saving, setSaving] = useState(false);
 
   const [confirmDeleteKeys, setConfirmDeleteKeys] = useState<string[] | null>(null);
+  const [backToEditorHref, setBackToEditorHref] = useState('/edit');
 
   const mimePrefix = useMemo(() => resolveMimePrefix(filter), [filter]);
 
@@ -97,20 +100,16 @@ export function MediaLibraryClient() {
       const reset = Boolean(options?.reset);
       setLoading(true);
       try {
-        const url = new URL('/api/assets/list', window.location.origin);
         const qValue = typeof options?.q === 'string' ? options.q : query;
         const folderValue = resolveFolderParam(folderFilter) ?? undefined;
-        if (qValue.trim()) url.searchParams.set('q', qValue.trim());
-        if (mimePrefix) url.searchParams.set('mimePrefix', mimePrefix);
-        if (typeof folderValue === 'string') url.searchParams.set('folder', folderValue);
-        url.searchParams.set('limit', String(PAGE_SIZE));
-        url.searchParams.set('sort', sort);
-        if (!reset && typeof options?.cursor === 'string' && options.cursor) {
-          url.searchParams.set('cursor', options.cursor);
-        }
-        const res = await fetch(url.toString(), { cache: 'no-store' });
-        const data = await res.json().catch(() => null);
-        if (!res.ok) throw new Error(data?.error || 'Failed to load assets');
+        const data = await listAssets({
+          q: qValue.trim() || undefined,
+          mimePrefix: mimePrefix || undefined,
+          folder: typeof folderValue === 'string' ? folderValue : null,
+          limit: PAGE_SIZE,
+          sort,
+          cursor: !reset && typeof options?.cursor === 'string' && options.cursor ? options.cursor : null
+        });
         setItems((prev) => (reset ? data.items || [] : [...prev, ...(data.items || [])]));
         setCursor(data.nextCursor || null);
       } catch (error) {
@@ -133,6 +132,12 @@ export function MediaLibraryClient() {
     didInitialLoad.current = true;
     void fetchAssets({ reset: true, cursor: null });
   }, [fetchAssets]);
+
+  useEffect(() => {
+    if (!isDemoEditorAssetMode()) return;
+    const pathname = window.location.pathname;
+    setBackToEditorHref(pathname.startsWith('/demo/') ? '/demo/new' : '/new');
+  }, []);
 
   // Debounced reload for search/filter/sort/folder.
   useEffect(() => {
@@ -544,8 +549,8 @@ export function MediaLibraryClient() {
                 Refresh assets
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/edit" prefetch={false}>
-                  Back to editor
+                <Link href={backToEditorHref} prefetch={false}>
+                  Back to page editor
                 </Link>
               </Button>
             </CardContent>

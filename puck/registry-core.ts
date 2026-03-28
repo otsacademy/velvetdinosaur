@@ -180,7 +180,9 @@ const renderHero: PuckComponent<HeroBlockProps> = (props) =>
     primaryLabel: props.primaryLabel,
     secondaryLabel: props.secondaryLabel,
     primaryLink: props.primaryLink,
-    secondaryLink: props.secondaryLink
+    secondaryLink: props.secondaryLink,
+    imageSrc: props.imageSrc,
+    imageAlt: props.imageAlt
   });
 
 const renderFeatureGrid: PuckComponent<FeatureGridBlockProps> = (props) =>
@@ -215,6 +217,8 @@ export const coreComponents: Config['components'] = {
       eyebrow: { type: 'text', contentEditable: true },
       title: { type: 'text', contentEditable: true },
       subtitle: { type: 'textarea', contentEditable: true },
+      imageSrc: { type: 'text' },
+      imageAlt: { type: 'text' },
       primaryLabel: { type: 'text', contentEditable: true },
       primaryLink: {
         type: 'object',
@@ -247,17 +251,19 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      eyebrow: 'Velvet Dinosaur',
-      title: 'Design-forward websites in days, not months.',
+      eyebrow: 'Demonstration page',
+      title: 'A polished starting point for a fictional service business.',
       subtitle:
-        'A modular Puck-powered system with shadcn components, Tailwind 4 tokens, and R2 storage baked in.',
-      primaryLabel: 'Launch now',
+        'Use neutral placeholder copy and imagery here, then replace it with the real brand once the project starts.',
+      imageSrc: '/assets/hero-panel.svg',
+      imageAlt: 'Abstract placeholder visual',
+      primaryLabel: 'Primary action',
       primaryLink: {
         href: '',
         target: '_self',
         rel: ''
       },
-      secondaryLabel: 'View blocks',
+      secondaryLabel: 'Secondary action',
       secondaryLink: {
         href: '',
         target: '_self',
@@ -286,21 +292,21 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      heading: 'Everything you need to ship fast',
+      heading: 'Three clear selling points',
       items: [
         {
-          title: 'Puck-ready blocks',
-          description: 'All blocks are shadcn-based and editor-safe.',
+          title: 'Clear offer',
+          description: 'Explain the core service in a way a new visitor can understand in seconds.',
           icon: 'sparkles'
         },
         {
-          title: 'Design tokens',
-          description: 'OKLCH tokens editable from the admin panel.',
+          title: 'Distinct point of view',
+          description: 'Use this block to show what makes the business feel considered rather than interchangeable.',
           icon: 'layers'
         },
         {
-          title: 'Secure by default',
-          description: 'BetterAuth + per-site Mongo users + R2 uploads.',
+          title: 'Trust and clarity',
+          description: 'Turn vague promises into practical reasons someone would enquire.',
           icon: 'shield'
         }
       ]
@@ -313,8 +319,8 @@ export const coreComponents: Config['components'] = {
       body: { type: 'textarea', contentEditable: true }
     },
     defaultProps: {
-      heading: 'Make it yours',
-      body: 'Swap blocks, edit copy, and publish instantly. Everything persists in MongoDB so you can version and roll back.'
+      heading: 'Use this section for the fuller explanation',
+      body: 'A short paragraph here can introduce the studio, explain the approach, or add context that would feel too heavy inside the hero.'
     },
     render: renderTextBlock
   },
@@ -325,9 +331,9 @@ export const coreComponents: Config['components'] = {
       caption: { type: 'text', contentEditable: true }
     },
     defaultProps: {
-      src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Team collaborating',
-      caption: 'Drop in R2-hosted assets or external images.'
+      src: '/assets/hero-panel.svg',
+      alt: 'Neutral placeholder visual',
+      caption: 'Replace this with your own photography, product imagery, or campaign artwork.'
     },
     render: renderImageBlock
   },
@@ -352,9 +358,9 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      title: 'Ready to ship your next site?',
-      subtitle: 'Spin up another site in minutes with the same core stack.',
-      buttonLabel: 'Create a new site',
+      title: 'Ready for the real version?',
+      subtitle: 'Swap out the placeholder copy, bring in proper imagery, and shape the page around the actual business.',
+      buttonLabel: 'Call to action',
       buttonLink: {
         href: '',
         target: '_self',

@@ -1,8 +1,20 @@
 import type { AssetImageOptions } from './asset-images';
 import { buildCdnImageUrl, resolveAssetImageUrl } from './asset-images';
+import {
+  createDemoEditorAssetFolder,
+  deleteDemoEditorAssets,
+  isDemoEditorAssetMode,
+  isDirectAssetUrl,
+  listDemoEditorAssetFolders,
+  listDemoEditorAssets,
+  resolveDemoEditorAssetUrl,
+  updateDemoEditorAssetMetadata,
+  uploadDemoEditorFile
+} from './demo-editor-assets';
 
 export type { AssetImageOptions } from './asset-images';
 export { buildCdnImageUrl, resolveAssetImageUrl } from './asset-images';
+export { isDemoEditorAssetMode } from './demo-editor-assets';
 
 export type UploadedFileResult = {
   key: string;
@@ -48,6 +60,11 @@ function readStatus(error: unknown): number | null {
 }
 
 export function buildAssetUrl(key: string) {
+  if (isDirectAssetUrl(key)) return key;
+  if (isDemoEditorAssetMode()) {
+    const demoUrl = resolveDemoEditorAssetUrl(key);
+    if (demoUrl) return demoUrl;
+  }
   return `/api/assets/file?key=${encodeURIComponent(key)}`;
 }
 
@@ -59,6 +76,9 @@ export async function updateAssetMetadata(
   key: string,
   update: { name?: string; caption?: string; alt?: string; folder?: string; width?: number; height?: number }
 ): Promise<{ key: string; name?: string; caption?: string; alt?: string; folder?: string; width?: number; height?: number }> {
+  if (isDemoEditorAssetMode()) {
+    return updateDemoEditorAssetMetadata(key, update);
+  }
   const res = await fetch('/api/assets/update', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -77,6 +97,9 @@ export async function updateAssetMetadata(
 }
 
 export async function listAssetFolders(): Promise<AssetFolderItem[]> {
+  if (isDemoEditorAssetMode()) {
+    return listDemoEditorAssetFolders();
+  }
   const res = await fetch('/api/assets/folders', { credentials: 'include', cache: 'no-store' });
   const payload = await res.json().catch(() => ({}));
   if (!res.ok) {
@@ -88,6 +111,9 @@ export async function listAssetFolders(): Promise<AssetFolderItem[]> {
 }
 
 export async function createAssetFolder(input: { path: string; label?: string }): Promise<AssetFolderItem> {
+  if (isDemoEditorAssetMode()) {
+    return createDemoEditorAssetFolder(input);
+  }
   const res = await fetch('/api/assets/folders', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -239,6 +265,9 @@ export async function uploadFile(
   file: File,
   opts: UploadViaPresignOptions = {}
 ): Promise<UploadedFileResult> {
+  if (isDemoEditorAssetMode()) {
+    return uploadDemoEditorFile(file, opts);
+  }
   try {
     return await uploadViaServer(file, opts);
   } catch (error) {
@@ -286,6 +315,9 @@ async function finalizeUpload(input: {
 }
 
 export async function deleteAssets(keys: string[]) {
+  if (isDemoEditorAssetMode()) {
+    return deleteDemoEditorAssets(keys);
+  }
   const res = await fetch('/api/assets/delete', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -298,6 +330,56 @@ export async function deleteAssets(keys: string[]) {
     throw new Error(message);
   }
   return payload as { ok: boolean; results?: Array<{ key: string; ok: boolean; error?: string }> };
+}
+
+export async function listAssets(input: {
+  q?: string;
+  mimePrefix?: string;
+  folder?: string | null;
+  limit?: number;
+  cursor?: string | null;
+  sort?: 'newest' | 'oldest';
+}): Promise<{
+  items: Array<{
+    key: string;
+    name?: string;
+    caption?: string;
+    alt?: string;
+    folder?: string;
+    mime?: string;
+    size?: number;
+    width?: number;
+    height?: number;
+    createdAt?: string;
+  }>;
+  nextCursor: string | null;
+  sort: 'newest' | 'oldest';
+}> {
+  if (isDemoEditorAssetMode()) {
+    return listDemoEditorAssets(input);
+  }
+
+  const url = new URL('/api/assets/list', window.location.origin);
+  if (input.q) url.searchParams.set('q', input.q);
+  if (input.mimePrefix) url.searchParams.set('mimePrefix', input.mimePrefix);
+  if (typeof input.folder === 'string') url.searchParams.set('folder', input.folder);
+  if (input.folder === '') url.searchParams.set('folder', '');
+  if (input.limit) url.searchParams.set('limit', String(input.limit));
+  if (input.cursor) url.searchParams.set('cursor', input.cursor);
+  if (input.sort) url.searchParams.set('sort', input.sort);
+
+  const res = await fetch(url.toString(), { credentials: 'include', cache: 'no-store' });
+  const payload = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const message = payload?.error || 'Failed to load assets';
+    throw new Error(message);
+  }
+
+  return {
+    items: Array.isArray(payload?.items) ? payload.items : [],
+    nextCursor: typeof payload?.nextCursor === 'string' ? payload.nextCursor : null,
+    sort: payload?.sort === 'oldest' ? 'oldest' : 'newest'
+  };
 }
 
 async function putObjectWithProgress({

@@ -2,20 +2,16 @@ import { Suspense } from 'react';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { listPages } from '@/lib/pages';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { PagesIndex } from '@/components/edit/pages-index.client';
 import { getWorkArticlesForEdit } from '@/lib/work-articles.server';
 
 type EditIndexProps = {
-  searchParams?: { slug?: string };
+  searchParams?: Promise<{ slug?: string }> | { slug?: string };
 };
 
 async function EditIndexContent({ searchParams }: EditIndexProps) {
-  if (isAdminOnly()) {
-    redirect(adminHomePath);
-  }
   const auth = getAuth();
   const requestHeaders = await headers();
   const session = await auth.api.getSession({ headers: requestHeaders });
@@ -25,7 +21,9 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
     redirect('/sign-in?next=/edit');
   }
 
-  const querySlug = typeof searchParams?.slug === 'string' ? searchParams.slug : '';
+  const resolvedSearchParams = await Promise.resolve(searchParams);
+  const querySlug =
+    typeof resolvedSearchParams?.slug === 'string' ? resolvedSearchParams.slug : '';
   if (querySlug) {
     redirect(`/edit/${encodeURIComponent(querySlug)}`);
   }

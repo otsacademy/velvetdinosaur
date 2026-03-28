@@ -3,7 +3,6 @@ import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
 import { EditorShell } from '@/components/edit/editor-shell';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { getDraftPageData } from '@/lib/pages';
 
 type EditPageProps = {
@@ -11,9 +10,6 @@ type EditPageProps = {
 };
 
 async function EditPageContent({ params }: EditPageProps) {
-  if (isAdminOnly()) {
-    redirect(adminHomePath);
-  }
   const auth = getAuth();
   const requestHeaders = await headers();
   const session = await auth.api.getSession({ headers: requestHeaders });

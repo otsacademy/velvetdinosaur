@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#F2ECE3"/>
+  <rect x="72" y="72" width="1456" height="856" rx="42" fill="#FAF7F2" stroke="#D7CCBD" stroke-width="4"/>
+  <rect x="154" y="188" width="284" height="164" rx="28" fill="#1F483D"/>
+  <rect x="658" y="188" width="284" height="164" rx="28" fill="#D3C1AC"/>
+  <rect x="1162" y="188" width="284" height="164" rx="28" fill="#E6D5C6"/>
+  <rect x="406" y="582" width="284" height="164" rx="28" fill="#D8DED3"/>
+  <rect x="910" y="582" width="284" height="164" rx="28" fill="#C8D3CB"/>
+  <path d="M438 270H658" stroke="#91745F" stroke-width="12" stroke-linecap="round"/>
+  <path d="M942 270H1162" stroke="#91745F" stroke-width="12" stroke-linecap="round"/>
+  <path d="M800 352V582" stroke="#91745F" stroke-width="12" stroke-linecap="round"/>
+  <path d="M548 582L548 430H800" stroke="#91745F" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1052 582L1052 430H800" stroke="#91745F" stroke-width="12" stroke-linecap="round"/>
+  <text x="296" y="282" text-anchor="middle" fill="#FAF7F2" font-family="Arial, sans-serif" font-size="38">Brief</text>
+  <text x="800" y="282" text-anchor="middle" fill="#5F4A3D" font-family="Arial, sans-serif" font-size="38">Draft</text>
+  <text x="1304" y="282" text-anchor="middle" fill="#7A5D4C" font-family="Arial, sans-serif" font-size="38">Publish</text>
+  <text x="548" y="676" text-anchor="middle" fill="#45635A" font-family="Arial, sans-serif" font-size="38">Proof</text>
+  <text x="1052" y="676" text-anchor="middle" fill="#45635A" font-family="Arial, sans-serif" font-size="38">Refresh</text>
+  <text x="124" y="936" fill="#72685C" font-family="Georgia, serif" font-size="42" letter-spacing=".16em">FICTIONAL CONTENT OPERATIONS DIAGRAM</text>
+</svg>

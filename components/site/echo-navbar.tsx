@@ -51,7 +51,7 @@ function NavButton({
       className={cn(
         "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-all",
         highlight
-          ? "vd-pill-primary border-transparent px-5 text-[0.8125rem] font-medium shadow-none"
+          ? "vd-dino-cta border-transparent px-5 text-[0.8125rem] font-medium shadow-none"
           : isActive
             ? "border-[color-mix(in_oklch,var(--vd-primary)_20%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg))] text-[var(--vd-fg)]"
             : "border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] hover:text-[var(--vd-fg)]"
