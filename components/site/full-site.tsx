@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"
-import { Hero187b } from "@/components/hero187b"
+import { Hero1 } from "@/components/hero1"
 import { SelectedWork } from "./selected-work"
 import { SiteFooter } from "./site-footer"
-import { mainHeroCopy, mainHeroFeatures, mainHeroSlides } from "@/lib/site-copy"
+import { mainHeroCopy } from "@/lib/site-copy"
 
 type RevealWrapper = (content: ReactNode, delay?: number) => ReactNode
 
@@ -17,6 +17,52 @@ async function renderSiteChrome(whatsappHref: string) {
       <EchoNavbar />
       <FloatingWhatsApp href={whatsappHref} />
     </>
+  )
+}
+
+async function renderHeroImageSlot(
+  heroMascotSizeClassName: string,
+  heroTrustPillClassName: string,
+) {
+  const { PixelImage } = await import("@/components/holding/pixel-image.client")
+
+  return (
+    <div className="relative flex w-full items-center justify-center overflow-visible">
+      <div
+        className="pointer-events-none absolute h-[13rem] w-[13rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,oklch(var(--vd-primary))_14%,transparent)_0%,color-mix(in_oklch,oklch(var(--vd-primary))_6%,transparent)_45%,transparent_76%)] blur-2xl sm:h-[15rem] sm:w-[15rem] lg:h-[17rem] lg:w-[17rem]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute bottom-[10%] h-8 w-[56%] rounded-full bg-[color-mix(in_oklch,var(--vd-fg)_8%,transparent)] blur-2xl"
+        aria-hidden="true"
+      />
+      <div className="motion-safe:animate-vd-float relative [animation-delay:180ms] [animation-duration:8.5s]">
+        <div className="pointer-events-none absolute inset-0 z-10 hidden lg:block">
+          <div className={`${heroTrustPillClassName} absolute left-[2%] top-[5%]`}>
+            <span className="text-[0.9375rem] font-semibold text-foreground">100/100</span>
+            <span className="text-[0.6875rem] font-medium text-muted-foreground">Lighthouse</span>
+          </div>
+          <div className={`${heroTrustPillClassName} absolute left-[-6%] top-[42%]`}>
+            <span className="text-[0.9375rem] font-semibold text-foreground">5.0 ★</span>
+            <span className="text-[0.6875rem] font-medium text-muted-foreground">Google rated</span>
+          </div>
+          <div className={`${heroTrustPillClassName} absolute bottom-[8%] left-[-3%]`}>
+            <span className="text-[0.9375rem] font-semibold text-foreground">4–6 wk</span>
+            <span className="text-[0.6875rem] font-medium text-muted-foreground">Delivery</span>
+          </div>
+        </div>
+        <PixelImage
+          src="/dinosaur.webp"
+          alt="Velvet Dinosaur mascot assembling from grayscale to full color"
+          grid="8x8"
+          grayscaleAnimation={false}
+          maxAnimationDelay={0}
+          pixelFadeInDuration={0}
+          className="vd-hero-mascot"
+          sizeClassName={heroMascotSizeClassName}
+        />
+      </div>
+    </div>
   )
 }
 
@@ -85,7 +131,14 @@ export async function FullSite() {
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
   const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"
+  const heroMascotSizeClassName =
+    "h-[min(15.5rem,60vw)] w-[min(15.5rem,60vw)] sm:h-[min(19rem,50vw)] sm:w-[min(19rem,50vw)] lg:h-[min(22rem,29vw)] lg:w-[min(22rem,29vw)]"
+  const heroTrustPillClassName =
+    "vd-hover-lift-sm pointer-events-auto flex flex-col items-start gap-0.5 rounded-xl border border-border/80 bg-background/90 px-3.5 py-2 shadow-sm backdrop-blur-xl transition-all"
   const siteChrome = isLhci ? null : await renderSiteChrome(whatsappHref)
+  const heroImageSlot = isLhci
+    ? undefined
+    : await renderHeroImageSlot(heroMascotSizeClassName, heroTrustPillClassName)
   const selectedWork = isLhci
     ? <SelectedWork />
     : await renderSelectedWorkSection()
@@ -108,18 +161,12 @@ export async function FullSite() {
           />
 
           <div className="mx-auto w-full max-w-6xl">
-            <Hero187b
+            <Hero1
               className="py-4 md:py-8 lg:py-6"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}
               supportingLine={mainHeroCopy.supportingLine}
-              features={mainHeroFeatures.map((feature) => ({
-                title: feature.title,
-                description: feature.description,
-              }))}
-              slides={mainHeroSlides}
-              autoplay={!isLhci}
               buttons={{
                 primary: {
                   text: "Start your project",
@@ -132,6 +179,7 @@ export async function FullSite() {
                   buttonClassName: "vd-pill-outline h-12 rounded-full px-7 text-[0.9375rem] font-medium",
                 },
               }}
+              imageSlot={heroImageSlot}
             />
           </div>
         </section>
