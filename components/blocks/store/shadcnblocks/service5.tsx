@@ -1,29 +1,46 @@
 "use client"
 
 import type { ComponentConfig } from "@measured/puck"
-import { Code, Droplet, Layout, Smartphone } from "lucide-react"
+import {
+  Briefcase,
+  Clock,
+  Code,
+  Droplet,
+  Globe,
+  Handshake,
+  Layout,
+  Smartphone,
+  Star,
+} from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
+import { cn } from "@/lib/utils"
 
-const RELATED_ICONS = {
+const ICONS = {
   Droplet,
   Code,
   Smartphone,
   Layout,
+  Briefcase,
+  Handshake,
+  Star,
+  Clock,
+  Globe,
 } as const
 
-type RelatedIcon = keyof typeof RELATED_ICONS
+type ServiceIcon = keyof typeof ICONS
 
 type ServiceStat = {
-  iconSrc: string
-  iconAlt: string
+  icon?: ServiceIcon
+  iconSrc?: string
+  iconAlt?: string
   title: string
   description: string
   value?: string
 }
 
 type RelatedService = {
-  icon: RelatedIcon
+  icon: ServiceIcon
   title: string
   description: string
   href: string
@@ -36,6 +53,8 @@ type ServiceSection = {
 }
 
 export type ShadcnblocksService5Props = {
+  eyebrow?: string
+  headerIcon?: ServiceIcon
   headerIconSrc: string
   headerIconAlt: string
   title: string
@@ -45,41 +64,73 @@ export type ShadcnblocksService5Props = {
   stats: ServiceStat[]
   relatedTitle: string
   relatedServices: RelatedService[]
+  sectionClassName?: string
+  titleTag?: "h1" | "h2" | "h3"
+  titleClassName?: string
+  introClassName?: string
+  proseClassName?: string
+  sidebarCardClassName?: string
 }
 
 export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
   const sections = props.sections || []
   const stats = props.stats || []
   const relatedServices = props.relatedServices || []
+  const TitleTag = props.titleTag || "h1"
+  const HeaderIcon = props.headerIcon ? ICONS[props.headerIcon] : null
 
   return (
     <ShadcnblocksContainer>
-      <section className="py-8">
+      <section className={cn("py-8", props.sectionClassName)}>
         <div className="container max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <div className="mb-12 space-y-8">
                 <div className="flex justify-center lg:justify-start">
                   <div className="rounded-lg bg-muted p-4">
-                    <img
-                      src={props.headerIconSrc}
-                      alt={props.headerIconAlt}
-                      className="h-12 dark:invert"
-                    />
+                    {HeaderIcon ? (
+                      <HeaderIcon className="h-12 w-12 text-primary" />
+                    ) : (
+                      <img
+                        src={props.headerIconSrc}
+                        alt={props.headerIconAlt}
+                        className="h-12 dark:invert"
+                      />
+                    )}
                   </div>
                 </div>
 
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+                  {props.eyebrow ? (
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      {props.eyebrow}
+                    </p>
+                  ) : null}
+                  <TitleTag
+                    className={cn(
+                      "text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl",
+                      props.titleClassName,
+                    )}
+                  >
                     {props.title}
-                  </h1>
-                  <p className="text-xl leading-relaxed text-muted-foreground">
+                  </TitleTag>
+                  <p
+                    className={cn(
+                      "text-xl leading-relaxed text-muted-foreground",
+                      props.introClassName,
+                    )}
+                  >
                     {props.intro}
                   </p>
                 </div>
               </div>
 
-              <div className="prose prose-sm max-w-none dark:prose-invert">
+              <div
+                className={cn(
+                  "prose prose-sm max-w-none dark:prose-invert",
+                  props.proseClassName,
+                )}
+              >
                 {sections.map((section, sectionIndex) => {
                   const paragraphs = (section.paragraphs || [])
                     .map((item) => (typeof item === "string" ? item : item?.value))
@@ -108,17 +159,24 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
             </div>
 
             <div className="space-y-8 lg:col-span-1">
-              <div className="rounded-lg bg-muted/50 p-6">
+              <div className={cn("rounded-lg bg-muted/50 p-6", props.sidebarCardClassName)}>
                 <h3 className="mb-6 text-lg font-semibold">{props.expertiseTitle}</h3>
                 <div className="space-y-6">
                   {stats.map((stat, index) => (
                     <div key={`${stat.title}-${index}`} className="flex items-center gap-4">
                       <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center">
-                        <img
-                          src={stat.iconSrc}
-                          alt={stat.iconAlt}
-                          className="h-6 w-6 object-contain"
-                        />
+                        {stat.icon ? (
+                          (() => {
+                            const StatIcon = ICONS[stat.icon]
+                            return <StatIcon className="h-5 w-5 text-primary" />
+                          })()
+                        ) : stat.iconSrc ? (
+                          <img
+                            src={stat.iconSrc}
+                            alt={stat.iconAlt || stat.title}
+                            className="h-6 w-6 object-contain"
+                          />
+                        ) : null}
                       </div>
                       <div className="flex-1">
                         <div className="text-sm font-medium">{stat.title}</div>
@@ -138,11 +196,11 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
                 </div>
               </div>
 
-              <div className="rounded-lg bg-muted/50 p-6">
+              <div className={cn("rounded-lg bg-muted/50 p-6", props.sidebarCardClassName)}>
                 <h3 className="mb-6 text-lg font-semibold">{props.relatedTitle}</h3>
                 <div className="space-y-4">
                   {relatedServices.map((service, index) => {
-                    const Icon = RELATED_ICONS[service.icon] || Layout
+                    const Icon = ICONS[service.icon] || Layout
                     return (
                       <div key={`${service.title}-${index}`} className="group">
                         <a
@@ -210,6 +268,11 @@ export const shadcnblocksService5Config: ComponentConfig<ShadcnblocksService5Pro
             { label: "Code", value: "Code" },
             { label: "Smartphone", value: "Smartphone" },
             { label: "Layout", value: "Layout" },
+            { label: "Briefcase", value: "Briefcase" },
+            { label: "Handshake", value: "Handshake" },
+            { label: "Star", value: "Star" },
+            { label: "Clock", value: "Clock" },
+            { label: "Globe", value: "Globe" },
           ],
         },
         title: { type: "text" },

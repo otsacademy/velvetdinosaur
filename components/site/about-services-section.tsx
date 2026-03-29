@@ -1,28 +1,14 @@
 import type { ElementType } from "react"
 import Image from "next/image"
-import {
-  ArrowRight,
-  Briefcase,
-  Clock,
-  Code2,
-  Globe,
-  Handshake,
-  Smartphone,
-  Star,
-} from "lucide-react"
+import { ArrowRight, Briefcase, Handshake, Star } from "lucide-react"
 
+import { ShadcnblocksService5 } from "@/components/blocks/store/shadcnblocks/service5"
 import { Button } from "@/components/ui/button"
 import { r2PublicUrl } from "@/lib/public-assets"
 
 interface StatCardProps {
   icon: ElementType
   eyebrow: string
-  title: string
-  description: string
-}
-
-interface ServiceCardProps {
-  icon: ElementType
   title: string
   description: string
 }
@@ -51,29 +37,6 @@ const statCards: StatCardProps[] = [
   },
 ]
 
-const serviceCards: ServiceCardProps[] = [
-  {
-    icon: Globe,
-    title: "Websites",
-    description: "Marketing sites, portfolios, blogs, and landing pages designed to convert cleanly.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile apps",
-    description: "React Native apps for iOS and Android when the project needs more than the browser.",
-  },
-  {
-    icon: Code2,
-    title: "Web apps",
-    description: "Custom products, dashboards, member areas, and internal tools shaped around your workflow.",
-  },
-  {
-    icon: Clock,
-    title: "Typical timeline",
-    description: "Most brochure-style builds ship in 4 to 6 weeks, with scope and integrations agreed up front.",
-  },
-]
-
 function StatCard({ icon: Icon, eyebrow, title, description }: StatCardProps) {
   return (
     <article className="vd-as-stat-card rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_94%,var(--vd-bg))] p-5">
@@ -82,18 +45,6 @@ function StatCard({ icon: Icon, eyebrow, title, description }: StatCardProps) {
       </div>
       <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{eyebrow}</p>
       <h4 className="mt-2 text-base font-semibold tracking-tight text-foreground">{title}</h4>
-      <p className="mt-2 text-sm leading-6 text-[var(--vd-copy)]">{description}</p>
-    </article>
-  )
-}
-
-function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
-  return (
-    <article className="vd-as-service-card rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_94%,var(--vd-bg))] p-5">
-      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-dino-blue)_18%,transparent)] bg-[color-mix(in_oklch,var(--vd-dino-blue)_9%,transparent)] text-[var(--vd-dino-blue)]">
-        <Icon className="h-5 w-5" />
-      </div>
-      <h4 className="text-lg font-semibold tracking-tight text-foreground">{title}</h4>
       <p className="mt-2 text-sm leading-6 text-[var(--vd-copy)]">{description}</p>
     </article>
   )
@@ -168,20 +119,78 @@ export function AboutServicesSection() {
           </div>
 
           <div id="services" className="scroll-mt-28 space-y-6">
-            <div className="space-y-3">
-              <h3 className="vd-as-section-heading text-xl">Services</h3>
-              <p className="text-base leading-7 text-[var(--vd-copy)]">
-                Some clients arrive with a clear brief. Others come with an ageing site, a knotty internal problem, or
-                the start of an idea that still needs shaping. I enjoy both, and I focus on turning that early
-                uncertainty into something clear, useful, and well built.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {serviceCards.map((service) => (
-                <ServiceCard key={service.title} {...service} />
-              ))}
-            </div>
+            <ShadcnblocksService5
+              eyebrow="Services"
+              headerIcon="Layout"
+              headerIconSrc=""
+              headerIconAlt="Velvet Dinosaur services"
+              title="Projects shaped around your goals, your users, and how your organisation actually works."
+              intro="Some clients arrive with a clear brief. Others come with an ageing site, a knotty internal problem, or the start of an idea that still needs shaping. I enjoy both, and I focus on turning that early uncertainty into something clear, useful, and well built."
+              sections={[
+                {
+                  heading: "How the work takes shape",
+                  paragraphs: [
+                    "Each project is scoped around what the organisation actually needs, not around a recycled package or a previous client template.",
+                    "That means aligning the structure, functionality, and content model with your goals from the start, then building it cleanly enough that it stays maintainable after launch.",
+                  ],
+                  bullets: [],
+                },
+                {
+                  heading: "What I typically build",
+                  paragraphs: [],
+                  bullets: [
+                    "Websites: Marketing sites, portfolios, blogs, and landing pages designed to convert cleanly.",
+                    "Mobile apps: React Native apps for iOS and Android when the project needs more than the browser.",
+                    "Web apps: Custom products, dashboards, member areas, and internal tools shaped around your workflow.",
+                  ],
+                },
+              ]}
+              expertiseTitle="Why clients hire me"
+              stats={[
+                {
+                  icon: "Briefcase",
+                  title: "Founder-led delivery",
+                  description: "You work with me directly from discovery to launch.",
+                },
+                {
+                  icon: "Handshake",
+                  title: "Bespoke scope",
+                  description: "The build is shaped around your business rather than squeezed into a stock format.",
+                },
+                {
+                  icon: "Clock",
+                  title: "4 to 6 weeks",
+                  description: "Typical brochure-style project timeline from first call to launch.",
+                },
+              ]}
+              relatedTitle="Project types"
+              relatedServices={[
+                {
+                  icon: "Globe",
+                  title: "Websites",
+                  description: "Fast brochure sites, portfolios, editorial sites, and campaign landing pages.",
+                  href: "#contact",
+                },
+                {
+                  icon: "Smartphone",
+                  title: "Mobile apps",
+                  description: "React Native builds for teams who need iOS and Android without two codebases.",
+                  href: "#contact",
+                },
+                {
+                  icon: "Code",
+                  title: "Web apps",
+                  description: "Member areas, custom platforms, admin tools, dashboards, and product MVPs.",
+                  href: "#contact",
+                },
+              ]}
+              sectionClassName="py-0"
+              titleTag="h3"
+              titleClassName="vd-as-section-heading text-2xl md:text-3xl lg:text-[2.5rem]"
+              introClassName="text-base leading-7 text-[var(--vd-copy)]"
+              proseClassName="prose-headings:font-semibold prose-headings:tracking-[-0.01em] prose-headings:text-foreground prose-p:text-[var(--vd-copy)] prose-li:text-[var(--vd-copy)] prose-ul:space-y-2"
+              sidebarCardClassName="rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_94%,var(--vd-bg))]"
+            />
 
             <Button asChild className="vd-dino-cta h-12 gap-2 rounded-full px-7 text-[0.9375rem] font-medium">
               <a href="#contact">
