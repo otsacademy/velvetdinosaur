@@ -14,7 +14,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
 
 type Gallery16Item = {
@@ -92,23 +91,28 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
             className="[&>div[data-slot=carousel-content]]:overflow-visible"
           >
             <div className="flex items-center justify-between">
-              <Tabs
-                value={current}
-                onValueChange={setCurrent}
-                className="mb-8 flex justify-center"
-              >
-                <TabsList className="relative h-auto gap-6 bg-background">
+              <div className="mb-8 flex justify-center">
+                <div
+                  role="group"
+                  aria-label="Selected work categories"
+                  className="relative flex h-auto flex-wrap gap-6 bg-background"
+                >
                   {items.map((item, idx) => (
-                    <TabsTrigger
+                    <button
                       key={idx}
                       ref={(el) => {
                         tabRefs.current[idx] = el
                       }}
-                      value={item.category}
-                      className="text-base transition-all duration-700 ease-out md:whitespace-nowrap [&[data-state=active]]:shadow-none"
+                      type="button"
+                      aria-pressed={item.category === current}
+                      onClick={() => setCurrent(item.category)}
+                      className={cn(
+                        "inline-flex items-center justify-center px-1 py-1 text-base font-medium text-[var(--vd-muted-fg)] transition-all duration-700 ease-out hover:text-[var(--vd-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--vd-ring)] md:whitespace-nowrap",
+                        item.category === current && "text-[var(--vd-fg)]",
+                      )}
                     >
                       {item.category}
-                    </TabsTrigger>
+                    </button>
                   ))}
                   <div
                     className="absolute bottom-0 h-0.5 bg-primary transition-all duration-700 ease-out"
@@ -117,8 +121,8 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                       left: `${indicatorStyle.left}px`,
                     }}
                   />
-                </TabsList>
-              </Tabs>
+                </div>
+              </div>
               <div className="hidden items-center gap-4 sm:flex">
                 <CarouselPrevious className="static size-10 translate-0" />
                 <CarouselNext className="static size-10 translate-0" />

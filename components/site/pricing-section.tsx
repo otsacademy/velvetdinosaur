@@ -1,6 +1,9 @@
 import { Check, ChevronRight } from "lucide-react"
 
-import { Timeline12, type Timeline12Item } from "@/components/timeline12"
+import {
+  TimelineCenteredSpine,
+  type TimelineCenteredSpineItem,
+} from "@/components/timeline-centered-spine"
 import { Button } from "@/components/ui/button"
 
 const packageFeatures: string[] = [
@@ -21,50 +24,54 @@ const launchEssentials: string[] = [
   "Full ownership of your domain, content, and website files",
 ]
 
-const processSteps: Timeline12Item[] = [
+const processSteps: TimelineCenteredSpineItem[] = [
   {
     id: "discovery",
     phase: "01",
-    title: "Discovery",
-    date: "Week 1",
-    heading: "Discovery and scope alignment",
+    window: "Week 1",
+    category: "Discovery",
+    title: "Discovery and scope alignment",
     description:
       "We align on goals, users, and scope before build starts so priorities are clear and delivery stays focused.",
-    imageSrc: "/portfolio/asap.png",
-    imageAlt: "Discovery phase example from a live client website",
+    details:
+      "We review your goals, audience, offer, content needs, and any integrations up front, then turn that into an agreed scope so the rest of the build moves without guesswork.",
+    proof: "Clear scope before build starts",
   },
   {
     id: "design-build",
     phase: "02",
-    title: "Design & build",
-    date: "Weeks 2-3",
-    heading: "Design and build in active sprints",
+    window: "Weeks 2-3",
+    category: "Build",
+    title: "Design and build in active sprints",
     description:
       "You get iterative progress updates, practical feedback loops, and visible momentum as core pages and flows come together.",
-    imageSrc: "/portfolio/the-brave.png",
-    imageAlt: "Design and build phase example from a live client website",
+    details:
+      "I build in working sections rather than disappearing for weeks. You see progress early, respond to practical questions quickly, and keep decisions moving while the structure and design take shape.",
+    proof: "Visible progress every week",
   },
   {
     id: "refinement",
     phase: "03",
-    title: "Refinement",
-    date: "Week 4",
-    heading: "Refinement and quality pass",
+    window: "Week 4",
+    category: "Refinement",
+    title: "Refinement and quality pass",
     description:
       "We polish UX details, tighten copy, and complete technical quality checks to ensure the site is fast, stable, and conversion-ready.",
-    imageSrc: "/portfolio/rising-dust.png",
-    imageAlt: "Refinement phase example from a completed website",
+    details:
+      "This is where content flow, mobile spacing, performance, accessibility, and conversion details get tightened so the finished site feels intentional rather than merely assembled.",
+    proof: "Quality gates before launch",
   },
   {
     id: "launch-support",
     phase: "04",
-    title: "Launch & support",
-    date: "Weeks 5-6",
-    heading: "Launch with guided handover",
+    window: "Weeks 5-6",
+    category: "Launch",
+    title: "Launch with guided handover",
     description:
       "The project goes live with post-launch support and clear handover guidance so you can manage content confidently after release.",
-    imageSrc: "/portfolio/scholardemia.png",
-    imageAlt: "Launch and support phase example from a production platform",
+    details:
+      "I handle the launch and stay close through handover so domains, content updates, and next-step questions do not become your problem the moment the site goes live.",
+    proof: "Launch support and handover included",
   },
 ]
 
@@ -132,8 +139,12 @@ export function PricingSection() {
         </div>
 
         <div className="mt-9">
-          <h3 className="mb-4 text-lg font-semibold text-foreground">Delivery process</h3>
-          <Timeline12 items={processSteps} />
+          <TimelineCenteredSpine
+            heading="Delivery process"
+            summary="A founder-led build process with clear checkpoints, practical feedback loops, and a proper handover at the end."
+            rangeLabel="Week 1 to Week 6"
+            items={processSteps}
+          />
         </div>
       </div>
     </section>
