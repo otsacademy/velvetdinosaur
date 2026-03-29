@@ -1,6 +1,6 @@
 import type { ElementType } from "react"
 import Image from "next/image"
-import { ArrowRight, Briefcase, Handshake, Star } from "lucide-react"
+import { ArrowRight, Handshake, Star } from "lucide-react"
 
 import { ShadcnblocksService5 } from "@/components/blocks/store/shadcnblocks/service5"
 import { Button } from "@/components/ui/button"
@@ -14,13 +14,6 @@ interface StatCardProps {
 }
 
 const statCards: StatCardProps[] = [
-  {
-    icon: Briefcase,
-    eyebrow: "Background",
-    title: "NHS and independent web work",
-    description:
-      "Years across medical equipment, clinical research, governance, and hands-on digital builds.",
-  },
   {
     icon: Handshake,
     eyebrow: "Approach",
