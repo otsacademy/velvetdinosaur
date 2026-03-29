@@ -89,10 +89,13 @@ export function AboutServicesSection() {
                   </div>
                 </div>
 
-                <p className="pt-1 text-foreground">
-                  I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building
-                  bespoke websites and apps for organisations that want something carefully made and properly theirs.
-                </p>
+                <div className="space-y-3 pt-1">
+                  <h4 className="text-xl font-semibold tracking-tight text-foreground">Ian Wickens</h4>
+                  <p className="text-foreground">
+                    I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building
+                    bespoke websites and apps for organisations that want something carefully made and properly theirs.
+                  </p>
+                </div>
               </div>
 
               <p>
