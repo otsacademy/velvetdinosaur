@@ -69,8 +69,7 @@ async function renderHeroImageSlot(
 async function renderSecondarySections(withReveal: RevealWrapper) {
   const [
     { MyStack },
-    { AboutSection },
-    { ServicesSection },
+    { AboutServicesSection },
     { SauroCmsSection },
     { PageSpeedGuaranteeSection },
     { PricingSection },
@@ -79,8 +78,7 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
     { ContactSection },
   ] = await Promise.all([
     import("./my-stack"),
-    import("./about-section"),
-    import("./services-section"),
+    import("./about-services-section"),
     import("./sauro-cms-section"),
     import("./pagespeed-guarantee-section"),
     import("./pricing-section"),
@@ -94,10 +92,8 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
       {withReveal(<MyStack />, 100)}
 
       <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
-        {withReveal(<AboutSection />, 100)}
+        {withReveal(<AboutServicesSection />, 100)}
       </div>
-
-      {withReveal(<ServicesSection />, 100)}
 
       <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
         {withReveal(<SauroCmsSection />, 100)}

@@ -40,8 +40,8 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
       'sidebar-border': 'oklch(0.8941 0.0059 264.53)',
       'sidebar-ring': 'oklch(0.6818 0.1584 243.35)',
       'font-sans':
-        'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
-      'font-serif': 'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
+        'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
+      'font-serif': 'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
       'font-mono':
         'var(--font-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
       'shadow-color': 'oklch(0 0 0)',
@@ -112,8 +112,8 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
       'sidebar-border': 'oklch(0.275 0 0)',
       'sidebar-ring': 'oklch(0.6818 0.1584 243.35)',
       'font-sans':
-        'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
-      'font-serif': 'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
+        'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
+      'font-serif': 'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
       'font-mono':
         'var(--font-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
       'shadow-color': 'oklch(0 0 0)',
@@ -154,17 +154,17 @@ export const DEFAULT_THEME_PAYLOAD: ThemeStatePayload = {
   fonts: [
     {
       role: 'sans',
-      family: 'DM Sans',
+      family: 'Inter',
       cssFamilyValue:
-        'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
+        'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
       importUrl: null,
       defaultWeights: ['300', '400', '500', '600', '700'],
       isKnownNextGoogleFont: true
     },
     {
       role: 'serif',
-      family: 'DM Sans',
-      cssFamilyValue: 'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
+      family: 'Inter',
+      cssFamilyValue: 'var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif',
       importUrl: null,
       defaultWeights: ['400'],
       isKnownNextGoogleFont: true

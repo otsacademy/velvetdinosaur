@@ -2,18 +2,18 @@ import './globals.css';
 import './velvet-site.css';
 import './demo-polish.css';
 import { Suspense, type CSSProperties } from 'react';
-import { DM_Sans, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
 import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytics.client';
 import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-dm-sans',
+  variable: '--font-inter',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -31,7 +31,7 @@ export default async function RootLayout({
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
-  const fontClasses = isLhci ? '' : `${dmSans.variable} ${jetbrainsMono.variable}`;
+  const fontClasses = isLhci ? '' : `${inter.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci

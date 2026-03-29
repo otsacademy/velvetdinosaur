@@ -65,9 +65,9 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --input: oklch(0.8941 0.0059 264.53);
   --ring: oklch(0.6818 0.1584 243.35);
   --radius: 0.5rem;
-  --font-pt-sans: var(--font-dm-sans);
-  --font-display: var(--font-dm-sans);
-  --font-hero: var(--font-dm-sans);
+  --font-pt-sans: var(--font-inter);
+  --font-display: var(--font-inter);
+  --font-hero: var(--font-inter);
   --vd-dino-blue: oklch(from #0b84d4 l c h);
   --vd-dino-blue-hover: oklch(from #0a76be l c h);
   --vd-dino-blue-solid: oklch(from #0a76be l c h);
@@ -110,9 +110,9 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --vd-sidebar-ring: var(--sidebar-ring, var(--ring));
   --vd-inverse-bg: var(--vd-fg);
   --vd-inverse-fg: var(--vd-bg);
-  --vd-font-sans: var(--font-dm-sans, "DM Sans", ui-sans-serif, system-ui, sans-serif);
-  --vd-font-display: var(--font-dm-sans, "DM Sans", ui-sans-serif, system-ui, sans-serif);
-  --vd-font-hero: var(--font-dm-sans, "DM Sans", ui-sans-serif, system-ui, sans-serif);
+  --vd-font-sans: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
+  --vd-font-display: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
+  --vd-font-hero: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
   --vd-font-mono: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
   --vd-fab-edge: max(0.5rem, calc((100vw - 80rem) / 2 - 2.5rem));
   --vd-fab-whatsapp-offset: calc(var(--vd-fab-edge) + 4.75rem);

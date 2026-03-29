@@ -134,6 +134,38 @@
     );
   }
 
+  .vd-as-container {
+    max-width: 48rem;
+  }
+
+  .vd-as-title {
+    color: var(--vd-fg);
+    font-family: var(--vd-font-display, var(--vd-font-sans));
+    font-size: clamp(2.35rem, 5vw, 2.75rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .vd-as-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    text-wrap: pretty;
+  }
+
+  .vd-as-section-heading {
+    color: var(--vd-fg);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .vd-as-prose-heading {
+    color: var(--vd-fg);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
   .vd-dino-cta {
     border-color: transparent;
     background: var(--vd-dino-blue-solid);
@@ -250,6 +282,8 @@
   .vd-pagespeed-score,
   .vd-step-dot,
   .vd-about-photo-image,
+  .vd-as-stat-card,
+  .vd-as-service-card,
   .vd-theme-toggle svg,
   .vd-faq-item [data-slot="accordion-trigger"],
   .vd-faq-item [data-slot="accordion-trigger"] > svg {
@@ -265,6 +299,14 @@
       transform 250ms var(--vd-hover-ease),
       box-shadow 250ms var(--vd-hover-ease),
       border-color 250ms var(--vd-hover-ease);
+  }
+
+  .vd-as-stat-card,
+  .vd-as-service-card {
+    transition:
+      transform 200ms var(--vd-hover-ease),
+      box-shadow 200ms var(--vd-hover-ease),
+      border-color 200ms var(--vd-hover-ease);
   }
 
   .vd-work-card {
@@ -343,6 +385,13 @@
 
     .vd-service-card:hover {
       transform: translateY(-1px);
+      border-color: color-mix(in oklch, var(--vd-dino-blue) 20%, var(--vd-border));
+      box-shadow: 0 8px 24px -8px color-mix(in oklch, var(--vd-dino-blue) 26%, transparent);
+    }
+
+    .vd-as-stat-card:hover,
+    .vd-as-service-card:hover {
+      transform: translateY(-2px);
       border-color: color-mix(in oklch, var(--vd-dino-blue) 20%, var(--vd-border));
       box-shadow: 0 8px 24px -8px color-mix(in oklch, var(--vd-dino-blue) 26%, transparent);
     }
@@ -537,6 +586,8 @@
   .vd-step-dot,
   .vd-about-photo-card,
   .vd-about-photo-image,
+  .vd-as-stat-card,
+  .vd-as-service-card,
   .vd-faq-item,
   .vd-faq-item [data-slot="accordion-trigger"],
   .vd-faq-item [data-slot="accordion-trigger"] > svg,
@@ -553,6 +604,8 @@
   .vd-dino-cta:hover,
   .vd-footer-social:hover,
   .vd-review-card:hover,
+  .vd-as-stat-card:hover,
+  .vd-as-service-card:hover,
   .vd-faq-item:hover,
   .vd-email-cta:hover,
   .vd-dino-card:hover,
