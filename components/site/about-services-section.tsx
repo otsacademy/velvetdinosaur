@@ -64,60 +64,65 @@ export function AboutServicesSection() {
             </p>
           </div>
 
-          <div id="about" className="scroll-mt-28 space-y-6">
-            <h3 className="vd-as-prose-heading vd-section-heading text-xl">About me</h3>
+          <div id="about" className="scroll-mt-28">
+            <div className="grid gap-12 lg:grid-cols-3">
+              <div className="space-y-6 lg:col-span-2">
+                <h3 className="vd-as-prose-heading vd-section-heading text-xl">About me</h3>
 
-            <div className="space-y-5 text-[var(--vd-copy)]">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                <div
-                  className="vd-about-photo-card vd-hover-lift-sm w-[104px] min-w-[104px] overflow-hidden rounded-full border border-border/70 bg-card p-1"
-                  style={{ borderRadius: "9999px" }}
-                >
-                  <div
-                    className="relative aspect-square w-full overflow-hidden rounded-full"
-                    style={{ borderRadius: "9999px" }}
-                  >
-                    <Image
-                      src={r2PublicUrl("profile.webp")}
-                      alt="Ian Wickens"
-                      fill
-                      sizes="104px"
-                      priority
-                      fetchPriority="high"
-                      className="vd-about-photo-image rounded-full object-cover"
-                    />
+                <div className="space-y-5 text-[var(--vd-copy)]">
+                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                    <div
+                      className="vd-about-photo-card vd-hover-lift-sm w-[104px] min-w-[104px] overflow-hidden rounded-full border border-border/70 bg-card p-1"
+                      style={{ borderRadius: "9999px" }}
+                    >
+                      <div
+                        className="relative aspect-square w-full overflow-hidden rounded-full"
+                        style={{ borderRadius: "9999px" }}
+                      >
+                        <Image
+                          src={r2PublicUrl("profile.webp")}
+                          alt="Ian Wickens"
+                          fill
+                          sizes="104px"
+                          priority
+                          fetchPriority="high"
+                          className="vd-about-photo-image rounded-full object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 pt-1">
+                      <h4 className="text-xl font-semibold tracking-tight text-foreground">Ian Wickens</h4>
+                      <p className="text-foreground">
+                        I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio
+                        building bespoke websites and apps for organisations that want something carefully made and
+                        properly theirs.
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-3 pt-1">
-                  <h4 className="text-xl font-semibold tracking-tight text-foreground">Ian Wickens</h4>
-                  <p className="text-foreground">
-                    I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building
-                    bespoke websites and apps for organisations that want something carefully made and properly theirs.
+                  <p>
+                    Most of my professional career was spent in the NHS across medical equipment, clinical research,
+                    and governance. That taught me how to work through complex problems, communicate clearly, and treat
+                    important work with care.
+                  </p>
+                  <p>
+                    Alongside that, I spent years designing and building websites independently: rebuilding my own
+                    charity site, creating conference websites, helping friends with theirs, and following
+                    self-directed projects wherever they led.
+                  </p>
+                  <p>
+                    Velvet Dinosaur grew out of that path. You work directly with me from first conversation to launch.
+                    No templates. No page builders. No borrowed frameworks squeezed to fit the wrong brief.
                   </p>
                 </div>
               </div>
 
-              <p>
-                Most of my professional career was spent in the NHS across medical equipment, clinical research, and
-                governance. That taught me how to work through complex problems, communicate clearly, and treat
-                important work with care.
-              </p>
-              <p>
-                Alongside that, I spent years designing and building websites independently: rebuilding my own charity
-                site, creating conference websites, helping friends with theirs, and following self-directed projects
-                wherever they led.
-              </p>
-              <p>
-                Velvet Dinosaur grew out of that path. You work directly with me from first conversation to launch. No
-                templates. No page builders. No borrowed frameworks squeezed to fit the wrong brief.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {statCards.map((card) => (
-                <StatCard key={card.eyebrow} {...card} />
-              ))}
+              <div className="space-y-4 lg:col-span-1 lg:pt-14">
+                {statCards.map((card) => (
+                  <StatCard key={card.eyebrow} {...card} />
+                ))}
+              </div>
             </div>
           </div>
 
