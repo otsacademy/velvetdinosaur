@@ -70,6 +70,7 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
   const [
     { MyStack },
     { AboutServicesSection },
+    { SelectedWork },
     { SauroCmsSection },
     { PageSpeedGuaranteeSection },
     { PricingSection },
@@ -79,6 +80,7 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
   ] = await Promise.all([
     import("./my-stack"),
     import("./about-services-section"),
+    import("./selected-work"),
     import("./sauro-cms-section"),
     import("./pagespeed-guarantee-section"),
     import("./pricing-section"),
@@ -94,6 +96,8 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
       <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
         {withReveal(<AboutServicesSection />, 100)}
       </div>
+
+      {withReveal(<SelectedWork />, 100)}
 
       <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
         {withReveal(<SauroCmsSection />, 100)}
@@ -116,16 +120,6 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
   )
 }
 
-async function renderSelectedWorkSection() {
-  const { ScrollReveal } = await import("./scroll-reveal")
-
-  return (
-    <ScrollReveal>
-      <SelectedWork />
-    </ScrollReveal>
-  )
-}
-
 export async function FullSite() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
@@ -139,9 +133,6 @@ export async function FullSite() {
   const heroImageSlot = isLhci
     ? undefined
     : await renderHeroImageSlot(heroMascotSizeClassName, heroTrustPillClassName)
-  const selectedWork = isLhci
-    ? <SelectedWork />
-    : await renderSelectedWorkSection()
   const secondarySections = isLhci
     ? null
     : await import("./scroll-reveal").then(({ ScrollReveal }) =>
@@ -184,7 +175,7 @@ export async function FullSite() {
           </div>
         </section>
 
-        {selectedWork}
+        {isLhci ? <SelectedWork /> : null}
 
         {secondarySections}
 

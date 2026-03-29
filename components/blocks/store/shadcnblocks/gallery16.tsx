@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
+import { ArrowRight, ExternalLink } from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import {
@@ -12,7 +13,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { cn } from "@/lib/utils"
 
 type Gallery16Item = {
   category: string
@@ -24,10 +27,16 @@ type Gallery16Item = {
   note: string
   image: string
   imageAlt: string
+  primaryLabel?: string
+  primaryHref?: string
+  secondaryLabel?: string
+  secondaryHref?: string
 }
 
 export type ShadcnblocksGallery16Props = {
   items: Gallery16Item[]
+  containerClassName?: string
+  sectionClassName?: string
 }
 
 export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
@@ -75,8 +84,8 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
   if (!items.length) return null
 
   return (
-    <ShadcnblocksContainer>
-      <section className="overflow-hidden py-8">
+    <ShadcnblocksContainer className={props.containerClassName}>
+      <section className={cn("overflow-hidden py-8", props.sectionClassName)}>
         <div className="container">
           <Carousel
             setApi={setApi}
@@ -146,9 +155,33 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                           ) : null}
                         </div>
                       </div>
-                      <p className="mt-4 text-xs text-muted-foreground sm:mt-6">
-                        {item.note}
-                      </p>
+                      <div className="space-y-4">
+                        <p className="text-xs text-muted-foreground">{item.note}</p>
+                        {(item.primaryHref && item.primaryLabel) || (item.secondaryHref && item.secondaryLabel) ? (
+                          <div className="flex flex-wrap items-center gap-3">
+                            {item.primaryHref && item.primaryLabel ? (
+                              <Button asChild className="vd-dino-cta h-10 rounded-full px-5 text-sm font-medium">
+                                <a href={item.primaryHref}>
+                                  {item.primaryLabel}
+                                  <ArrowRight className="h-4 w-4 vd-inline-arrow" />
+                                </a>
+                              </Button>
+                            ) : null}
+                            {item.secondaryHref && item.secondaryLabel ? (
+                              <Button
+                                asChild
+                                variant="outline"
+                                className="h-10 rounded-full px-5 text-sm font-medium"
+                              >
+                                <a href={item.secondaryHref} target="_blank" rel="noreferrer">
+                                  {item.secondaryLabel}
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              </Button>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="rounded-xl border border-border p-2">
                       <img

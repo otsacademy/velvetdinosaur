@@ -1,123 +1,27 @@
-import Image from 'next/image'
-import { ArrowRight, ExternalLink } from 'lucide-react'
-
 import type { Article } from '@/lib/articles'
+import { ShadcnblocksGallery16 } from '@/components/blocks/store/shadcnblocks/gallery16'
 import { listLatestPublishedWorkArticles } from '@/lib/work-articles.server'
-import { cn } from '@/lib/utils'
 
-function WorkCard({
-  article,
-  index,
-}: {
-  article: Article
-  index: number
-}) {
-  const isFeatured = index === 0
-  const secondaryTag = article.tags?.find((tag) => tag !== article.tag) || article.readTime
+function mapArticleToGalleryItem(article: Article) {
+  const secondaryTag = article.tags?.find((tag) => tag !== article.tag) || article.readTime || article.date
+  const hasSubtitle = Boolean(article.subtitle && article.subtitle.trim() && article.subtitle !== article.desc)
+  const category = secondaryTag || article.tag || article.title
 
-  return (
-    <article
-      className={cn(
-        'vd-hover-lift vd-work-card group overflow-hidden rounded-[calc(var(--vd-radius)+10px)] border border-transparent bg-card',
-        'hover:bg-accent hover:shadow-[0_1px_6px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]',
-        isFeatured && 'xl:col-span-6 xl:grid xl:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)]',
-        !isFeatured && 'xl:col-span-2',
-      )}
-    >
-      <div
-        className={cn(
-          'vd-work-media relative w-full overflow-hidden bg-muted',
-          isFeatured ? 'aspect-[16/10] xl:order-2 xl:aspect-auto xl:min-h-[22rem]' : 'aspect-[16/10]',
-        )}
-      >
-        <Image
-          src={article.img || '/placeholder.svg'}
-          alt={article.imageCaption || article.title}
-          fill
-          sizes={
-            isFeatured
-              ? '(max-width: 1280px) 100vw, 48vw'
-              : '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
-          }
-          className="object-cover object-top"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,transparent_52%,color-mix(in_oklch,var(--vd-bg)_92%,transparent)_100%)]" />
-        {article.website ? (
-          <a
-            href={article.website}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background/92 px-2.5 py-1 text-[11px] font-medium text-[var(--vd-muted-fg)]"
-          >
-            Live project
-            <ExternalLink className="h-3 w-3" />
-          </a>
-        ) : null}
-      </div>
-
-      <div className={cn('flex flex-col justify-between gap-5 p-5 sm:p-6', isFeatured && 'xl:p-8')}>
-        <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--vd-muted-fg)]">
-            <span className="rounded-full border border-transparent bg-background/72 px-3 py-1 text-[var(--vd-muted-fg)]">
-              {isFeatured ? 'Featured case study' : article.tag}
-            </span>
-            {secondaryTag ? <span>{secondaryTag}</span> : null}
-          </div>
-          <div className="space-y-2">
-            <h3
-              className={cn(
-                'text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary',
-                isFeatured && 'text-2xl sm:text-[2rem]',
-              )}
-            >
-              {article.title}
-            </h3>
-            {article.subtitle ? (
-              <p
-                className={cn(
-                  'text-sm leading-relaxed text-[var(--vd-muted-fg)]',
-                  isFeatured && 'max-w-[34rem] text-base',
-                )}
-              >
-                {article.subtitle}
-              </p>
-            ) : null}
-          </div>
-          <p className={cn('text-sm leading-relaxed text-[var(--vd-copy)]', isFeatured && 'max-w-[36rem] text-base')}>
-            {article.desc}
-          </p>
-        </div>
-        {article.outcome ? (
-          <div className="rounded-[calc(var(--vd-radius)+6px)] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background/78 p-4 transition-colors duration-300 group-hover:border-[color-mix(in_oklch,var(--vd-primary)_18%,var(--vd-border))] group-hover:bg-background/86">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--vd-muted-fg)]">Outcome</p>
-            <p className={cn('mt-2 text-sm leading-relaxed text-[var(--vd-copy)]', isFeatured && 'text-base')}>
-              {article.outcome}
-            </p>
-          </div>
-        ) : null}
-        <div className="flex items-center justify-between gap-3">
-          <a
-            href={`/work/${article.slug}`}
-            className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary"
-          >
-            Read case study
-            <span className="sr-only"> about {article.title}</span>
-            <ArrowRight className="h-4 w-4 vd-inline-arrow" />
-          </a>
-          {article.website ? (
-            <a
-              href={article.website}
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs text-[var(--vd-muted-fg)] transition-colors hover:text-foreground"
-            >
-              Visit site
-            </a>
-          ) : null}
-        </div>
-      </div>
-    </article>
-  )
+  return {
+    category,
+    eyebrow: article.website ? 'Live project' : 'Case study',
+    title: article.title,
+    description: hasSubtitle ? article.subtitle! : article.desc,
+    descriptionSecondary: hasSubtitle ? article.desc : undefined,
+    bullets: article.outcome ? [`Outcome: ${article.outcome}`] : [],
+    note: article.tag && article.tag !== category ? article.tag : 'Real project',
+    image: article.img || '/placeholder.svg',
+    imageAlt: article.imageCaption || article.title,
+    primaryLabel: 'Read case study',
+    primaryHref: `/work/${article.slug}`,
+    secondaryLabel: article.website ? 'Visit site' : undefined,
+    secondaryHref: article.website,
+  }
 }
 
 export async function SelectedWork() {
@@ -134,12 +38,12 @@ export async function SelectedWork() {
             Real projects across charities, service businesses, and product platforms.
           </p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-6">
-          {workItems.map((article, index) => (
-            <WorkCard key={article.slug} article={article} index={index} />
-          ))}
-        </div>
       </div>
+      <ShadcnblocksGallery16
+        items={workItems.map(mapArticleToGalleryItem)}
+        containerClassName="max-w-6xl"
+        sectionClassName="py-0"
+      />
     </section>
   )
 }
