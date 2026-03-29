@@ -59,7 +59,13 @@ export function AboutServicesSection() {
 
           <div id="about" className="scroll-mt-28">
             <div className="grid gap-12 lg:grid-cols-3">
-              <div className="space-y-6 lg:col-span-2">
+              <div className="space-y-4 lg:order-1 lg:col-span-1 lg:pt-14">
+                {statCards.map((card) => (
+                  <StatCard key={card.eyebrow} {...card} />
+                ))}
+              </div>
+
+              <div className="space-y-6 lg:order-2 lg:col-span-2">
                 <h3 className="vd-as-prose-heading vd-section-heading text-xl">About me</h3>
 
                 <div className="space-y-5 text-[var(--vd-copy)]">
@@ -111,11 +117,6 @@ export function AboutServicesSection() {
                 </div>
               </div>
 
-              <div className="space-y-4 lg:col-span-1 lg:pt-14">
-                {statCards.map((card) => (
-                  <StatCard key={card.eyebrow} {...card} />
-                ))}
-              </div>
             </div>
           </div>
 
