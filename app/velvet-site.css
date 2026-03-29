@@ -134,10 +134,6 @@
     );
   }
 
-  .vd-as-container {
-    max-width: 48rem;
-  }
-
   .vd-as-title {
     color: var(--vd-fg);
     font-family: var(--vd-font-display, var(--vd-font-sans));

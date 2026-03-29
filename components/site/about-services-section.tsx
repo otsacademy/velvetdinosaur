@@ -47,7 +47,7 @@ export function AboutServicesSection() {
   return (
     <section id="about-services" className="py-9">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="vd-as-container mx-auto space-y-10">
+        <div className="space-y-10">
           <div className="space-y-4">
             <p className="vd-section-kicker">About & services</p>
             <h2 className="vd-as-title">Founder-led websites and apps, built carefully and handed over properly.</h2>
