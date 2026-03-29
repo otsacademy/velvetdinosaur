@@ -105,7 +105,7 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                         tabRefs.current[idx] = el
                       }}
                       value={item.category}
-                      className="text-base transition-all duration-700 ease-out [&[data-state=active]]:shadow-none"
+                      className="text-base transition-all duration-700 ease-out md:whitespace-nowrap [&[data-state=active]]:shadow-none"
                     >
                       {item.category}
                     </TabsTrigger>
