@@ -93,26 +93,19 @@ export function AboutServicesSection() {
                     <div className="space-y-3 pt-1">
                       <h4 className="text-xl font-semibold tracking-tight text-foreground">Ian Wickens</h4>
                       <p className="text-foreground">
-                        I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio
-                        building bespoke websites and apps for organisations that want something carefully made and
-                        properly theirs.
+                        Based in Minster Lovell, I build bespoke websites and mobile apps for organisations that want something carefully made and uniquely theirs.
                       </p>
                     </div>
                   </div>
 
                   <p>
-                    Most of my professional career was spent in the NHS across medical equipment, clinical research,
-                    and governance. That taught me how to work through complex problems, communicate clearly, and treat
-                    important work with care.
+                    Most of my professional career was spent in the NHS working across specialist medical devices, clinical research, and governance. That environment taught me how to work through complex problems, communicate clearly, and handle critical work with absolute care—standards I now bring to every digital project.
                   </p>
                   <p>
-                    Alongside that, I spent years designing and building websites independently: rebuilding my own
-                    charity site, creating conference websites, helping friends with theirs, and following
-                    self-directed projects wherever they led.
+                    Alongside my NHS work, I spent years building sites independently: rebuilding charity platforms, coding conference websites, and figuring out how the web really works under the hood. I love what I do, and I build each project with the same passion and curiosity as the first.
                   </p>
                   <p>
-                    Velvet Dinosaur grew out of that path. You work directly with me from first conversation to launch.
-                    No templates. No page builders. No borrowed frameworks squeezed to fit the wrong brief.
+                    Velvet Dinosaur grew naturally out of that experience. When we work together, you deal directly with me from our first conversation to launch. No templates. No page builders. No borrowed frameworks squeezed to fit the wrong brief. Just clean code and design built entirely for you.
                   </p>
                 </div>
               </div>
