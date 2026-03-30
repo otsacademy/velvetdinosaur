@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Sparkles } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -39,28 +40,25 @@ export function TimelineCenteredSpine({
   }
 
   return (
-    <div
-      className={cn(
-        "w-full overflow-hidden rounded-[1.5rem] border border-border bg-card/90 shadow-sm",
-        className,
-      )}
-    >
-      <div className="flex flex-col gap-3 border-b border-border/80 px-5 py-5 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-foreground">{heading}</h3>
-          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{summary}</p>
-        </div>
-        <Badge variant="outline" className="w-fit rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-[0.16em]">
+    <div className={cn("w-full py-12", className)}>
+      <div className="mb-12 flex flex-col gap-4 md:items-center md:text-center">
+        <Badge 
+          variant="outline" 
+          className="w-fit rounded-full border-primary/20 bg-primary/5 px-4 py-1 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary"
+        >
           {rangeLabel}
         </Badge>
+        <h3 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{heading}</h3>
+        <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground">{summary}</p>
       </div>
 
-      <div className="relative px-5 py-6 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
         <div
           aria-hidden="true"
-          className="absolute bottom-6 left-[1.125rem] top-6 w-px bg-[color-mix(in_oklch,var(--vd-primary)_18%,var(--vd-border))] md:left-1/2 md:w-[3px] md:-translate-x-1/2 md:rounded-full"
+          className="absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-transparent via-[color-mix(in_oklch,var(--vd-primary)_25%,var(--vd-border))] to-transparent md:left-1/2 md:w-[2px] md:-translate-x-1/2"
         />
-        <ol>
+        
+        <ol className="relative space-y-12">
           {items.map((item, index) => {
             const isLeft = index % 2 === 0
             const isExpanded = expanded === item.id
@@ -69,71 +67,95 @@ export function TimelineCenteredSpine({
               <li
                 key={item.id}
                 className={cn(
-                  "relative pl-9",
-                  index < items.length - 1 ? "pb-5 md:pb-6" : "",
-                  "md:pl-0",
+                  "relative pl-10 md:pl-0",
+                  "flex flex-col md:grid md:grid-cols-2 md:gap-24"
                 )}
               >
                 <div
                   aria-hidden="true"
-                  className="absolute left-[1.125rem] top-6 z-10 size-3 -translate-x-1/2 rotate-45 border border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] bg-background md:left-1/2"
+                  className="absolute left-6 top-8 z-10 size-3 -translate-x-1/2 rotate-45 border-2 border-primary bg-background md:left-1/2"
                 />
 
-                <div className="md:grid md:grid-cols-[minmax(0,1fr)_3.5rem_minmax(0,1fr)]">
-                  <div className={cn(isLeft ? "md:col-start-1" : "md:col-start-3")}>
-                    <article className="rounded-[1.25rem] border border-border/80 bg-background/95 p-5 shadow-sm">
-                      <div
-                        className={cn(
-                          "flex flex-wrap items-center gap-2",
-                          isLeft && "md:justify-end md:text-right",
-                        )}
-                      >
-                        <Badge variant="secondary" className="rounded-full px-3 py-1 text-[0.7rem]">
-                          {item.category}
-                        </Badge>
-                        <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/85">
-                          {item.phase}
-                        </span>
-                        <span className="text-[0.72rem] uppercase tracking-[0.16em] text-muted-foreground">
-                          {item.window}
-                        </span>
-                      </div>
+                <div className={cn(
+                  "relative",
+                  isLeft ? "md:text-right" : "md:col-start-2"
+                )}>
+                  <motion.article 
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={cn(
+                      "group relative rounded-3xl border border-border/50 bg-background/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 shadow-sm",
+                      isExpanded && "border-primary/20 ring-1 ring-primary/10"
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "flex flex-wrap items-center gap-3 mb-4",
+                        isLeft && "md:justify-end"
+                      )}
+                    >
+                      <span className="text-[0.75rem] font-black uppercase tracking-widest text-primary/80">
+                        PHASE {item.phase}
+                      </span>
+                      <div className="h-1 w-1 rounded-full bg-border" />
+                      <span className="text-[0.75rem] font-medium text-muted-foreground">
+                        {item.window}
+                      </span>
+                    </div>
 
-                      <div className={cn("mt-4 space-y-3", isLeft && "md:text-right")}>
-                        <h4 className="text-lg font-semibold tracking-tight text-foreground">{item.title}</h4>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-                        {item.proof ? (
-                          <p className="text-sm font-medium text-[var(--vd-dino-blue)]">{item.proof}</p>
-                        ) : null}
-                      </div>
-
-                      <div className={cn("mt-4", isLeft && "md:flex md:justify-end")}>
-                        <button
-                          type="button"
-                          onClick={() => setExpanded(isExpanded ? null : item.id)}
-                          className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                          More detail
-                          <ChevronRight
-                            className={cn("h-4 w-4 transition-transform duration-200", isExpanded && "rotate-90")}
-                          />
-                        </button>
-                      </div>
-
-                      {isExpanded ? (
-                        <div className="mt-4 rounded-xl bg-[color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg))] p-4">
-                          <p
-                            className={cn(
-                              "text-sm leading-relaxed text-[var(--vd-copy)]",
-                              isLeft && "md:text-right",
-                            )}
-                          >
-                            {item.details}
-                          </p>
+                    <div className="space-y-3">
+                      <h4 className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-[0.9375rem] leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                      
+                      {item.proof ? (
+                        <div className={cn(
+                          "flex items-center gap-2 pt-1",
+                          isLeft && "md:justify-end"
+                        )}>
+                          <Sparkles className="size-3.5 text-primary" />
+                          <span className="text-sm font-semibold text-primary">{item.proof}</span>
                         </div>
                       ) : null}
-                    </article>
-                  </div>
+                    </div>
+
+                    <div className={cn("mt-6", isLeft && "md:flex md:justify-end")}>
+                      <button
+                        type="button"
+                        onClick={() => setExpanded(isExpanded ? null : item.id)}
+                        className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
+                      >
+                        {isExpanded ? "Show less" : "View breakdown"}
+                        <ChevronRight
+                          className={cn("h-4 w-4 transition-transform duration-300", isExpanded && "rotate-90")}
+                        />
+                      </button>
+                    </div>
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-6 border-t border-border/50 pt-6">
+                            <p className="text-[0.9375rem] leading-relaxed text-muted-foreground italic">
+                              &ldquo;{item.details}&rdquo;
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.article>
                 </div>
               </li>
             )
