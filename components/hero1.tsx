@@ -67,10 +67,7 @@ export function Hero1({
                 <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
-            <h1
-              className="vd-hero-heading max-w-[14ch] text-4xl font-semibold text-foreground sm:text-[3.5rem] lg:text-[clamp(4rem,5vw,5.1rem)]"
-              style={{ fontFamily: "var(--vd-font-hero)" }}
-            >
+            <h1 className="vd-hero-heading max-w-[14ch] text-4xl text-foreground sm:text-[3.5rem] lg:text-[clamp(4rem,5vw,5.1rem)]">
               {heading}
             </h1>
             <p className="max-w-[34rem] text-base leading-[1.72] text-[var(--vd-copy)] lg:text-[1.0625rem]">

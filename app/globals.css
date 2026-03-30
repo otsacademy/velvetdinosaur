@@ -66,8 +66,8 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --ring: oklch(0.6818 0.1584 243.35);
   --radius: 0.5rem;
   --font-pt-sans: var(--font-inter);
-  --font-display: var(--font-inter);
-  --font-hero: var(--font-inter);
+  --font-display: var(--font-display, "Instrument Serif", Georgia, serif);
+  --font-hero: var(--font-display, "Instrument Serif", Georgia, serif);
   --vd-dino-blue: oklch(from #0b84d4 l c h);
   --vd-dino-blue-hover: oklch(from #0a76be l c h);
   --vd-dino-blue-solid: oklch(from #0a76be l c h);
@@ -78,9 +78,26 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --vd-primary-hover: oklch(0.6211 0.1524 244.75);
   --vd-primary-solid-hover: oklch(0.5134 0.1603 255.67);
   --vd-copy: oklch(0.3688 0.0074 240.02);
+  --vd-copy-muted: oklch(0.52 0.008 240);
   --vd-placeholder: oklch(0.7028 0.0111 247.99);
   --vd-border-soft: oklch(0.9364 0.0046 258.33);
   --vd-hover-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --vd-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Elevation system */
+  --vd-shadow-xs: 0 1px 2px oklch(0.2 0 0 / 0.04);
+  --vd-shadow-sm: 0 1px 3px oklch(0.2 0 0 / 0.06), 0 1px 2px oklch(0.2 0 0 / 0.04);
+  --vd-shadow-md: 0 4px 6px -1px oklch(0.2 0 0 / 0.08), 0 2px 4px -2px oklch(0.2 0 0 / 0.05);
+  --vd-shadow-lg: 0 10px 15px -3px oklch(0.2 0 0 / 0.08), 0 4px 6px -4px oklch(0.2 0 0 / 0.04);
+  --vd-shadow-xl: 0 20px 25px -5px oklch(0.2 0 0 / 0.08), 0 8px 10px -6px oklch(0.2 0 0 / 0.03);
+  --vd-shadow-primary: 0 8px 24px -8px color-mix(in oklch, var(--vd-primary) 35%, transparent);
+  --vd-shadow-glow: 0 0 20px color-mix(in oklch, var(--vd-primary) 15%, transparent);
+
+  /* Border opacity scale */
+  --vd-border-opacity-subtle: 0.5;
+  --vd-border-opacity-soft: 0.65;
+  --vd-border-opacity-base: 0.8;
+  --vd-border-opacity-strong: 1;
 
   --vd-bg: var(--background);
   --vd-fg: var(--foreground);
@@ -111,8 +128,8 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --vd-inverse-bg: var(--vd-fg);
   --vd-inverse-fg: var(--vd-bg);
   --vd-font-sans: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
-  --vd-font-display: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
-  --vd-font-hero: var(--font-inter, "Inter", ui-sans-serif, system-ui, sans-serif);
+  --vd-font-display: var(--font-display, "Instrument Serif", Georgia, serif);
+  --vd-font-hero: var(--font-display, "Instrument Serif", Georgia, serif);
   --vd-font-mono: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
   --vd-fab-edge: max(0.5rem, calc((100vw - 80rem) / 2 - 2.5rem));
   --vd-fab-whatsapp-offset: calc(var(--vd-fab-edge) + 4.75rem);
@@ -342,24 +359,36 @@ h1,
   h5,
   h6 {
     color: var(--vd-fg);
-    letter-spacing: -0.025em;
     text-wrap: balance;
   }
 
   h1 {
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
+    font-family: var(--vd-font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   h2 {
-    font-weight: 600;
+    font-family: var(--vd-font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
     line-height: 1.15;
   }
 
   h3 {
+    font-family: var(--vd-font-sans);
     font-weight: 600;
+    letter-spacing: -0.01em;
     line-height: 1.3;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-family: var(--vd-font-sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   p {

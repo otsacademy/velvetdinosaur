@@ -90,18 +90,25 @@
   .vd-section-heading {
     position: relative;
     display: inline-block;
-    font-family: var(--vd-font-sans, ui-sans-serif, system-ui, sans-serif);
-    letter-spacing: -0.02em;
+    font-family: var(--vd-font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
 
   .vd-hero-heading {
     font-family: var(--vd-font-hero, var(--vd-font-display));
     font-feature-settings: "liga" 1, "clig" 1, "kern" 1;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 0.98;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
     text-wrap: pretty;
+  }
+
+  .vd-heading-accent {
+    font-style: italic;
+    color: var(--vd-primary);
   }
 
   .vd-hero-note {
@@ -136,37 +143,53 @@
 
   .vd-as-title {
     color: var(--vd-fg);
-    font-family: var(--vd-font-display, var(--vd-font-sans));
-    font-size: clamp(2.35rem, 5vw, 2.75rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
+    font-family: var(--vd-font-display);
+    font-size: clamp(2.25rem, 5vw, 2.75rem);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
     text-wrap: balance;
   }
 
   .vd-as-subtitle {
-    font-size: 1.125rem;
-    line-height: 1.7;
+    font-family: var(--vd-font-sans);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.75;
     text-wrap: pretty;
   }
 
   .vd-as-section-heading {
     color: var(--vd-fg);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: var(--vd-font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
   }
 
   .vd-as-prose-heading {
     color: var(--vd-fg);
-    font-weight: 700;
+    font-family: var(--vd-font-display);
+    font-weight: 400;
     letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   .vd-dino-cta {
-    border-color: transparent;
-    background: var(--vd-dino-blue-solid);
+    position: relative;
+    border: 1px solid color-mix(in oklch, var(--vd-dino-blue-solid) 90%, oklch(0.3 0 0));
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--vd-dino-blue-solid) 100%, oklch(0.75 0 0) 0%) 0%,
+      var(--vd-dino-blue-solid) 50%,
+      color-mix(in oklch, var(--vd-dino-blue-solid) 95%, oklch(0.25 0 0) 5%) 100%
+    );
     color: var(--vd-dino-cta-fg);
-    box-shadow: 0 12px 28px -20px color-mix(in oklch, var(--vd-dino-blue-solid) 72%, transparent);
+    box-shadow:
+      0 1px 0 inset color-mix(in oklch, oklch(1 0 0) 20%, transparent),
+      0 1px 2px color-mix(in oklch, var(--vd-dino-blue-solid) 30%, transparent),
+      0 8px 20px -10px color-mix(in oklch, var(--vd-dino-blue-solid) 50%, transparent);
+    text-shadow: 0 1px 1px color-mix(in oklch, oklch(0.2 0 0) 25%, transparent);
   }
 
   .vd-section-heading:hover::after {
@@ -178,16 +201,30 @@
     display: inline-flex;
     width: fit-content;
     align-items: center;
-    border: 1px solid color-mix(in oklch, var(--vd-border) 84%, transparent);
+    gap: 0.5rem;
+    border: 1px solid color-mix(in oklch, var(--vd-border) 70%, transparent);
     border-radius: 999px;
-    background: color-mix(in oklch, var(--vd-card) 94%, var(--vd-bg));
-    color: var(--vd-muted-fg);
-    padding: 0.4rem 0.78rem;
-    font-size: 0.7rem;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--vd-card) 98%, var(--vd-primary) 2%),
+      color-mix(in oklch, var(--vd-card) 96%, var(--vd-bg))
+    );
+    color: var(--vd-copy-muted, var(--vd-muted-fg));
+    padding: 0.375rem 0.875rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.1em;
     line-height: 1;
     text-transform: uppercase;
+    box-shadow: var(--vd-shadow-xs);
+  }
+
+  .vd-section-kicker-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: var(--vd-primary);
+    opacity: 0.7;
   }
 
   .vd-surface-panel {
@@ -205,24 +242,48 @@
   }
 
   .vd-pill-outline {
-    border: 1.5px solid var(--vd-border);
+    border: 1.5px solid color-mix(in oklch, var(--vd-border) 85%, var(--vd-fg) 15%);
     border-radius: 999px;
-    background: transparent;
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--vd-bg) 100%, transparent) 0%,
+      color-mix(in oklch, var(--vd-muted) 30%, var(--vd-bg)) 100%
+    );
     color: var(--vd-fg);
-    box-shadow: none;
+    box-shadow:
+      0 1px 0 inset color-mix(in oklch, oklch(1 0 0) 50%, transparent),
+      var(--vd-shadow-xs);
+    transition: all 280ms var(--vd-hover-ease);
   }
 
   .vd-soft-panel {
-    border: 1px solid color-mix(in oklch, var(--vd-border) 82%, transparent);
+    border: 1px solid color-mix(in oklch, var(--vd-border) 75%, transparent);
     border-radius: calc(var(--vd-radius) + 8px);
-    background: var(--vd-card);
-    box-shadow: none;
+    background: linear-gradient(
+      180deg,
+      var(--vd-card) 0%,
+      color-mix(in oklch, var(--vd-card) 98%, var(--vd-muted)) 100%
+    );
+    box-shadow: var(--vd-shadow-sm);
   }
 
   .vd-soft-card {
+    border: 1px solid color-mix(in oklch, var(--vd-border) 70%, transparent);
     border-radius: calc(var(--vd-radius) + 6px);
-    background: var(--vd-card);
-    box-shadow: none;
+    background: linear-gradient(
+      180deg,
+      var(--vd-card) 0%,
+      color-mix(in oklch, var(--vd-card) 97%, var(--vd-muted)) 100%
+    );
+    box-shadow: var(--vd-shadow-xs);
+  }
+
+  .vd-glass-card {
+    border: 1px solid color-mix(in oklch, var(--vd-border) 50%, transparent);
+    border-radius: calc(var(--vd-radius) + 6px);
+    background: color-mix(in oklch, var(--vd-card) 80%, transparent);
+    backdrop-filter: blur(12px) saturate(150%);
+    box-shadow: var(--vd-shadow-sm);
   }
 
   .vd-whatsapp-dock {
@@ -273,6 +334,7 @@
 
   .vd-work-media,
   .vd-tech-stack-shell,
+  .vd-tech-stack-icon,
   .vd-icon-accent,
   .vd-icon-badge,
   .vd-pagespeed-score,
@@ -287,7 +349,8 @@
       transform 320ms var(--vd-hover-ease),
       color 320ms var(--vd-hover-ease),
       background-color 320ms var(--vd-hover-ease),
-      box-shadow 320ms var(--vd-hover-ease);
+      box-shadow 320ms var(--vd-hover-ease),
+      filter 320ms var(--vd-hover-ease);
   }
 
   .vd-service-card {
@@ -339,15 +402,15 @@
 
   @media (hover: hover) and (pointer: fine) {
     .vd-hover-lift:hover {
-      transform: translateY(-2px);
-      border-color: color-mix(in oklch, var(--vd-primary) 18%, var(--vd-border));
-      box-shadow: 0 1px 6px color-mix(in oklch, var(--vd-fg) 8%, transparent);
+      transform: translateY(-3px);
+      border-color: color-mix(in oklch, var(--vd-primary) 22%, var(--vd-border));
+      box-shadow: var(--vd-shadow-md);
     }
 
     .vd-hover-lift-sm:hover {
-      transform: translateY(-1px);
-      border-color: color-mix(in oklch, var(--vd-primary) 14%, var(--vd-border));
-      box-shadow: 0 1px 4px color-mix(in oklch, var(--vd-fg) 7%, transparent);
+      transform: translateY(-2px);
+      border-color: color-mix(in oklch, var(--vd-primary) 18%, var(--vd-border));
+      box-shadow: var(--vd-shadow-sm);
     }
 
     .vd-nav-icon:not(.vd-pill-primary):hover {
@@ -370,13 +433,19 @@
     }
 
     .vd-dino-cta:hover {
-      transform: translateY(-1px);
-      border-color: transparent;
-      background: var(--vd-dino-blue-solid-hover);
+      transform: translateY(-2px);
+      border-color: color-mix(in oklch, var(--vd-dino-blue-solid-hover) 90%, oklch(0.2 0 0));
+      background: linear-gradient(
+        180deg,
+        color-mix(in oklch, var(--vd-dino-blue-solid-hover) 100%, oklch(0.78 0 0) 0%) 0%,
+        var(--vd-dino-blue-solid-hover) 50%,
+        color-mix(in oklch, var(--vd-dino-blue-solid-hover) 94%, oklch(0.22 0 0) 6%) 100%
+      );
       color: var(--vd-dino-cta-fg);
       box-shadow:
-        0 1px 3px color-mix(in oklch, var(--vd-dino-blue-solid) 34%, transparent),
-        0 8px 18px -12px color-mix(in oklch, var(--vd-dino-blue-solid) 28%, transparent);
+        0 1px 0 inset color-mix(in oklch, oklch(1 0 0) 22%, transparent),
+        0 2px 4px color-mix(in oklch, var(--vd-dino-blue-solid) 35%, transparent),
+        0 12px 28px -12px color-mix(in oklch, var(--vd-dino-blue-solid) 55%, transparent);
     }
 
     .vd-service-card:hover {
@@ -387,17 +456,26 @@
 
     .vd-as-stat-card:hover,
     .vd-as-service-card:hover {
-      transform: translateY(-2px);
-      border-color: color-mix(in oklch, var(--vd-dino-blue) 20%, var(--vd-border));
-      box-shadow: 0 8px 24px -8px color-mix(in oklch, var(--vd-dino-blue) 26%, transparent);
+      transform: translateY(-3px);
+      border-color: color-mix(in oklch, var(--vd-primary) 25%, var(--vd-border));
+      box-shadow:
+        var(--vd-shadow-md),
+        0 12px 28px -12px color-mix(in oklch, var(--vd-primary) 20%, transparent);
     }
 
     .vd-pill-outline:hover {
-      transform: translateY(-1px);
-      border-color: var(--vd-primary);
-      background: color-mix(in oklch, var(--vd-primary) 4%, transparent);
+      transform: translateY(-2px);
+      border-color: color-mix(in oklch, var(--vd-primary) 50%, var(--vd-border));
+      background: linear-gradient(
+        180deg,
+        color-mix(in oklch, var(--vd-bg) 100%, transparent) 0%,
+        color-mix(in oklch, var(--vd-primary) 6%, var(--vd-bg)) 100%
+      );
       color: var(--vd-primary);
-      box-shadow: none;
+      box-shadow:
+        0 1px 0 inset color-mix(in oklch, oklch(1 0 0) 55%, transparent),
+        0 2px 4px color-mix(in oklch, var(--vd-fg) 8%, transparent),
+        0 8px 16px -8px color-mix(in oklch, var(--vd-primary) 15%, transparent);
     }
 
     .vd-theme-toggle:hover {
@@ -427,19 +505,22 @@
     }
 
     .vd-tech-stack-item:hover .vd-tech-stack-shell {
-      transform: translateY(-4px) scale(1.04);
-      background: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 12%, var(--vd-muted));
-      border-color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 26%, var(--vd-border));
-      box-shadow: 0 14px 28px -20px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 55%, transparent);
+      transform: translateY(-5px) scale(1.05);
+      background: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 10%, var(--vd-card));
+      border-color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 30%, var(--vd-border));
+      box-shadow:
+        var(--vd-shadow-md),
+        0 16px 32px -18px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 45%, transparent);
     }
 
     .vd-tech-stack-item:hover .vd-tech-stack-icon {
       color: var(--vd-tech-brand, var(--vd-interaction-blue));
-      filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 40%, transparent));
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 8px color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 35%, transparent));
     }
 
     .vd-tech-stack-item:hover .vd-tech-stack-label {
-      color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 78%, var(--vd-fg));
+      color: color-mix(in srgb, var(--vd-tech-brand, var(--vd-interaction-blue)) 85%, var(--vd-fg));
     }
 
     .vd-icon-card:hover .vd-icon-badge {
