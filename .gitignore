@@ -16,3 +16,7 @@ logs/
 .env*.local
 !.env.example
 .state.json
+
+# Agent working files
+.agents/
+skills-lock.json
