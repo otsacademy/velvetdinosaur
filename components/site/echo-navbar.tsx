@@ -3,8 +3,10 @@
 import type { ElementType, MouseEvent } from "react"
 import { useEffect, useState } from "react"
 import { Briefcase, House, Images, Mail, Moon, Sun, UserRound } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 import { cn } from "@/lib/utils"
+import { Magnetic } from "@/components/ui/magnetic"
 
 interface NavItem {
   icon: ElementType
@@ -45,23 +47,32 @@ function NavButton({
   }
 
   return (
-    <a
-      href={href}
-      onClick={handleClick}
-      className={cn(
-        "vd-nav-icon inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-all",
-        highlight
-          ? "vd-dino-cta border-transparent px-5 text-[0.8125rem] font-medium shadow-none"
-          : isActive
-            ? "border-[color-mix(in_oklch,var(--vd-primary)_20%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg))] text-[var(--vd-fg)]"
-            : "border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] hover:text-[var(--vd-fg)]"
-      )}
-      aria-label={label}
-      aria-current={isActive ? "page" : undefined}
-    >
-      <Icon className="h-4 w-4" />
-      <span className="vd-nav-icon-label leading-none">{label}</span>
-    </a>
+    <Magnetic strength={0.2}>
+      <a
+        href={href}
+        onClick={handleClick}
+        className={cn(
+          "vd-nav-icon relative inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
+          highlight
+            ? "vd-dino-cta border-transparent px-5 text-[0.8125rem] font-medium shadow-none hover:opacity-90"
+            : isActive
+              ? "border-[color-mix(in_oklch,var(--vd-primary)_20%,var(--vd-border))] text-[var(--vd-fg)]"
+              : "border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] hover:text-[var(--vd-fg)]"
+        )}
+        aria-label={label}
+        aria-current={isActive ? "page" : undefined}
+      >
+        {isActive && !highlight && (
+          <motion.div
+            layoutId="nav-active"
+            className="absolute inset-0 z-[-1] rounded-full bg-[color-mix(in_oklch,var(--vd-primary)_8%,var(--vd-bg))]"
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+        <Icon className="h-4 w-4" />
+        <span className="vd-nav-icon-label leading-none">{label}</span>
+      </a>
+    </Magnetic>
   )
 }
 
@@ -86,14 +97,26 @@ function ThemeToggle() {
   }
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="vd-theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] transition-all hover:text-[var(--vd-fg)]"
-      aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
-      type="button"
-    >
-      {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-    </button>
+    <Magnetic strength={0.3}>
+      <button
+        onClick={toggleTheme}
+        className="vd-theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/72 text-[var(--vd-muted-fg)] transition-all hover:text-[var(--vd-fg)]"
+        aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
+        type="button"
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={isDark ? "dark" : "light"}
+            initial={{ y: -20, opacity: 0, rotate: -90 }}
+            animate={{ y: 0, opacity: 1, rotate: 0 }}
+            exit={{ y: 20, opacity: 0, rotate: 90 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
+            {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </motion.div>
+        </AnimatePresence>
+      </button>
+    </Magnetic>
   )
 }
 

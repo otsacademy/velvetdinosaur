@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
 import { ArrowRight, ExternalLink } from "lucide-react"
+import { motion } from "framer-motion"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import {
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { Magnetic } from "@/components/ui/magnetic"
 
 type Gallery16Item = {
   category: string
@@ -164,35 +166,41 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                         {(item.primaryHref && item.primaryLabel) || (item.secondaryHref && item.secondaryLabel) ? (
                           <div className="flex flex-wrap items-center gap-3">
                             {item.primaryHref && item.primaryLabel ? (
-                              <Button asChild className="vd-dino-cta h-10 rounded-full px-5 text-sm font-medium">
-                                <a href={item.primaryHref}>
-                                  {item.primaryLabel}
-                                  <ArrowRight className="h-4 w-4 vd-inline-arrow" />
-                                </a>
-                              </Button>
+                              <Magnetic strength={0.2}>
+                                <Button asChild className="vd-dino-cta h-10 rounded-full px-5 text-sm font-medium">
+                                  <a href={item.primaryHref}>
+                                    {item.primaryLabel}
+                                    <ArrowRight className="h-4 w-4 vd-inline-arrow" />
+                                  </a>
+                                </Button>
+                              </Magnetic>
                             ) : null}
                             {item.secondaryHref && item.secondaryLabel ? (
-                              <Button
-                                asChild
-                                variant="outline"
-                                className="h-10 rounded-full px-5 text-sm font-medium"
-                              >
-                                <a href={item.secondaryHref} target="_blank" rel="noreferrer">
-                                  {item.secondaryLabel}
-                                  <ExternalLink className="h-4 w-4" />
-                                </a>
-                              </Button>
+                              <Magnetic strength={0.2}>
+                                <Button
+                                  asChild
+                                  variant="outline"
+                                  className="h-10 rounded-full px-5 text-sm font-medium"
+                                >
+                                  <a href={item.secondaryHref} target="_blank" rel="noreferrer">
+                                    {item.secondaryLabel}
+                                    <ExternalLink className="h-4 w-4" />
+                                  </a>
+                                </Button>
+                              </Magnetic>
                             ) : null}
                           </div>
                         ) : null}
                       </div>
                     </div>
-                    <div className="rounded-xl border border-border p-2">
-                      <img
-                        src={item.image}
-                        alt={item.imageAlt}
-                        className="h-full w-full rounded-xl object-cover"
-                      />
+                    <div className="group rounded-xl border border-border p-2">
+                      <div className="overflow-hidden rounded-xl">
+                        <motion.img
+                          src={item.image}
+                          alt={item.imageAlt}
+                          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>
