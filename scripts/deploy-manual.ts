@@ -1,36 +1,18 @@
-import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { rebuildSiteAndRestart } from '@/lib/component-store-runtime';
 
 type Options = {
-  branch: string | null;
-  commit: string | null;
-  configPath: string | null;
   envFile: string;
   skipQuality: boolean;
 };
 
 function parseArgs(argv: string[]): Options {
-  let branch: string | null = null;
-  let commit: string | null = null;
-  let configPath: string | null = 'deploy/local-first.json';
   let envFile = '.env.production';
   let skipQuality = false;
 
   for (const arg of argv) {
-    if (arg.startsWith('--branch=')) {
-      branch = arg.slice('--branch='.length).trim() || null;
-      continue;
-    }
-    if (arg.startsWith('--commit=')) {
-      commit = arg.slice('--commit='.length).trim() || null;
-      continue;
-    }
-    if (arg.startsWith('--config=')) {
-      configPath = arg.slice('--config='.length).trim() || null;
-      continue;
-    }
-
     if (arg.startsWith('--env-file=')) {
       envFile = arg.slice('--env-file='.length).trim() || envFile;
       continue;
@@ -41,7 +23,7 @@ function parseArgs(argv: string[]): Options {
     }
   }
 
-  return { branch, commit, configPath, envFile, skipQuality };
+  return { envFile, skipQuality };
 }
 
 function runOrThrow(command: string, args: string[], cwd: string, env?: NodeJS.ProcessEnv) {
@@ -70,11 +52,16 @@ function readStdout(command: string, args: string[], cwd: string) {
   return (result.stdout || '').trim();
 }
 
-async function ensureFile(filePath: string) {
-  try {
-    await fs.access(filePath);
-  } catch {
+function ensureFile(filePath: string) {
+  if (!existsSync(filePath)) {
     throw new Error(`Missing required file: ${filePath}`);
+  }
+}
+
+function ensureCleanWorktree(cwd: string) {
+  const status = readStdout('git', ['status', '--porcelain'], cwd);
+  if (status) {
+    throw new Error('Deploy requires a clean git worktree.');
   }
 }
 
@@ -83,40 +70,30 @@ async function main() {
   const repoDir = process.cwd();
   const envFilePath = path.resolve(repoDir, options.envFile);
 
-  await ensureFile(envFilePath);
+  ensureFile(envFilePath);
+  ensureCleanWorktree(repoDir);
 
-  const branch = options.branch || readStdout('git', ['rev-parse', '--abbrev-ref', 'HEAD'], repoDir);
+  const branch = readStdout('git', ['rev-parse', '--abbrev-ref', 'HEAD'], repoDir);
   if (!branch || branch === 'HEAD') {
-    throw new Error('Unable to determine deploy branch. Pass --branch=<name>.');
+    throw new Error('Unable to determine deploy branch.');
   }
-  const commit = options.commit || readStdout('git', ['rev-parse', branch], repoDir);
+  const commit = readStdout('git', ['rev-parse', 'HEAD'], repoDir);
 
-  console.log(`[manual-deploy] preparing local ${branch} deploy from ${commit}`);
-  runOrThrow('git', ['switch', branch], repoDir);
+  console.log(`[deploy:manual] preparing ${branch} deploy from ${commit}`);
 
   if (!options.skipQuality) {
     runOrThrow('bun', ['run', 'quality:validate'], repoDir);
     runOrThrow('bun', ['run', 'quality', '--all'], repoDir, { ...process.env, CI: 'true' });
   } else {
-    console.log('[manual-deploy] skipping local quality gates');
+    console.log('[deploy:manual] skipping local quality gates');
   }
 
-  console.log('[manual-deploy] running deploy:blue-green');
-  runOrThrow(
-    'bun',
-    [
-      'run',
-      'deploy:blue-green',
-      '--',
-      `--env-file=${options.envFile}`,
-      `--branch=${branch}`,
-      `--commit=${commit}`,
-      ...(options.configPath ? [`--config=${options.configPath}`] : [])
-    ],
-    repoDir
-  );
+  const result = await rebuildSiteAndRestart({ siteRoot: repoDir, envFile: envFilePath });
+  if (!result.restarted) {
+    throw new Error(result.message || 'Deploy completed without restarting the runtime.');
+  }
 
-  console.log(`[manual-deploy] ${branch} deployed locally from ${commit}`);
+  console.log(`[deploy:manual] restarted ${result.name || 'the configured runtime'} for ${branch} at ${commit}`);
 }
 
 main().catch((error) => {

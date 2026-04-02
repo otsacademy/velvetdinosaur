@@ -70,24 +70,6 @@ async function resolveBinary(name: string, candidates: string[]) {
   return '';
 }
 
-async function hasBlueGreenDeployConfig(siteRoot: string) {
-  try {
-    await fs.access(path.join(siteRoot, 'deploy', 'local-first.json'));
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-async function isBlueGreenProductionRuntime(siteRoot: string, fileEnv: EnvMap) {
-  const deployMode = String(fileEnv.VD_DEPLOY_MODE || process.env.VD_DEPLOY_MODE || '').trim();
-  const slotName = String(fileEnv.VD_SLOT_NAME || process.env.VD_SLOT_NAME || '').trim();
-  const slotService = String(fileEnv.VD_SLOT_SERVICE || process.env.VD_SLOT_SERVICE || '').trim();
-  const slotDir = /-(blue|green)$/.test(path.basename(siteRoot));
-  const hasConfig = await hasBlueGreenDeployConfig(siteRoot);
-  return slotDir || slotName !== '' || slotService !== '' || (process.env.NODE_ENV === 'production' && (deployMode === 'blue-green' || hasConfig));
-}
-
 async function restartSystemdService(systemctlBin: string, serviceName: string, siteRoot: string, env: NodeJS.ProcessEnv) {
   try {
     await execFileAsync(systemctlBin, ['restart', serviceName], { cwd: siteRoot, env });
@@ -103,13 +85,6 @@ async function restartSystemdService(systemctlBin: string, serviceName: string, 
 
 export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOptions) {
   const fileEnv = await loadEnvFile(envFile);
-  if (await isBlueGreenProductionRuntime(siteRoot, fileEnv)) {
-    return {
-      restarted: false,
-      message:
-        'Blue/green production disables in-place rebuild/restart. Activate component changes from the controller checkout with `bun run release:local`.'
-    };
-  }
 
   const env = {
     ...process.env,
@@ -138,9 +113,13 @@ export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOption
   }
 
   if ((fileEnv.VD_PROCESS_MANAGER || '').trim() === 'systemd') {
-    const serviceName = fileEnv.VD_SLOT_SERVICE || fileEnv.SYSTEMD_SERVICE_NAME || process.env.VD_SLOT_SERVICE;
+    const serviceName =
+      fileEnv.SYSTEMD_SERVICE_NAME ||
+      fileEnv.VD_SLOT_SERVICE ||
+      process.env.SYSTEMD_SERVICE_NAME ||
+      process.env.VD_SLOT_SERVICE;
     if (!serviceName) {
-      return { restarted: false, message: 'VD_SLOT_SERVICE not set; rebuild skipped.' };
+      return { restarted: false, message: 'SYSTEMD_SERVICE_NAME not set; rebuild skipped.' };
     }
 
     try {

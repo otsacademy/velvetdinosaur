@@ -11,7 +11,7 @@
     "doctor": "tsx scripts/doctor.ts",
     "seed": "tsx scripts/seed.ts",
     "add-component": "tsx scripts/add-component.ts",
-    "deploy:blue-green": "tsx scripts/deploy-blue-green.ts",
+    "deploy": "tsx scripts/deploy-manual.ts",
     "deploy:safe": "tsx scripts/deploy-safe.ts",
     "deploy:manual": "tsx scripts/deploy-manual.ts",
     "release:local": "tsx scripts/release-local.ts",

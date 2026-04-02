@@ -33,7 +33,7 @@ This file provides a concise, machine-readable overview of how to work in this c
 ## Infrastructure Notes
 
 - **nginx + certbot:** The installer writes nginx site configs and obtains TLS certificates via certbot.
-- **systemd + blue/green:** New deployed sites run under systemd using blue/green slot services and nginx upstream switching. Treat this as the default production process model for new installs.
+- **systemd or PM2:** Sites may run under systemd or PM2. Prefer direct in-place build + restart unless a site override documents a different production model.
 
 ## Tooling Requirements
 
@@ -42,9 +42,8 @@ This file provides a concise, machine-readable overview of how to work in this c
 ## Operations Guardrails
 
 - Release locally. Do not depend on GitHub Actions for the primary build/test/deploy path.
-- Work on `develop`, validate locally, promote locally to `main`, deploy the exact `main` commit, then push `develop` and `main` to GitHub as backup/mirror.
-- Prefer the local release entrypoint (`bun run release:local` when present) over ad-hoc deploy commands.
-- For blue/green site deploys, build and validate the inactive slot first, then switch nginx to the healthy slot. Never rebuild the live slot in place.
+- Use `main` as the default long-lived branch. Validate locally, commit intentionally, and push the exact commit you plan to deploy to GitHub.
+- Prefer `bun run deploy:manual` for the full local quality + deploy path and `bun run deploy:safe` for direct rebuild/restart of the current checkout.
 - GitHub push-triggered deploy loops are not allowed. If GitHub workflows exist, keep them manual-only unless there is a documented exception.
 - Legacy PM2 sites may still exist during migration. When a site override explicitly documents legacy PM2 operation, follow that override until the site is migrated.
 
@@ -58,12 +57,12 @@ This file provides a concise, machine-readable overview of how to work in this c
 
 - When adapting or cloning an existing website, achieve **100% pixel parity** with the source design while still following all constraints in this AGENTS.md (tech choices, shadcn-only UI, tokens, etc.).
 
-## Workflow Safety (Green → Main)
+## Workflow Safety
 
-- Complete required local quality gates before promoting `develop` to `main`.
-- Never promote or deploy if Lighthouse or visual snapshot gates fail for targets that require them.
+- Complete required local quality gates before deploying from `main`.
+- Never deploy if Lighthouse or visual snapshot gates fail for targets that require them.
 - Production deploys must use an already-created commit. Do not create a fresh commit as part of the deploy itself.
-- After production is healthy, push the already-deployed `develop` and `main` history to GitHub so the remote remains a backup of the local source of truth.
+- Push the same deployable commit to GitHub so remote history stays aligned with production.
 
 ## Quality Gates (Required)
 
@@ -84,7 +83,7 @@ This file provides a concise, machine-readable overview of how to work in this c
 
 - Use Snapshot MCP when you need pixel-level verification of UI changes or regression checks.
 - Store baselines in `tests/visual/__screenshots__` and update intentionally with `bun run visual:update`.
-- Local release automation must run `bun run visual:test` and fail on any diff.
+- Local deploy automation must run `bun run visual:test` and fail on any diff.
 - Capture both mobile and desktop viewports for key URLs (minimum `/` plus one stable secondary route).
 
 ## When Checks Fail
@@ -139,20 +138,15 @@ This file provides a concise, machine-readable overview of how to work in this c
 - `bun run quality --only <target>` (or `bun run quality --all`)
 - `bun run quality:validate`
 - `bun run sync:agents` (if `template/AGENTS.md` changed)
-- If releasing: promote locally from `develop` to `main`, deploy the exact `main` commit with the local blue/green flow, verify health, then push `develop` and `main` to GitHub
+- If releasing: validate locally on `main`, push the deployable commit to GitHub, run `bun run deploy:manual`, then verify health
 
 ## Site Overrides
 
 - Site slug: velvetdinosaur
 - Primary domain: velvetdinosaur.com
 - Branch + deploy flow override:
-  - Release from the local checkout on `develop`.
-  - Use `bun run release:local` to run local quality, promote the exact tested commit to local `main`, deploy it with blue/green, then push `develop` and `main`.
-  - GitHub should remain a backup/mirror only. Do not introduce push-triggered production deploys.
-  - The committed blue/green config lives at `deploy/local-first.json`.
-  - The production runtime still needs one-time host bootstrap before the first cutover: create `/srv/apps/velvetdinosaur-blue` and `/srv/apps/velvetdinosaur-green`, install the matching systemd units, and install the nginx upstream snippet referenced by the deploy config.
-- Deploy safety override:
-  - Never rebuild the live slot in place.
-  - Manual one-off deploys should use `bun run deploy:manual` or `bun run deploy:blue-green`.
-  - Keep schema and content migrations backward-compatible across one release step because blue and green may overlap during cutover.
-- Notes: This site now uses the shared local-first blue/green release flow.
+  - `main` is the only long-lived branch for this site.
+  - GitHub (`git@github.com:otsacademy/velvetdinosaur.git`) is the canonical remote for shared history.
+  - Use `bun run deploy:manual` from a clean `main` checkout for the full local quality + deploy path.
+  - Use `bun run deploy:safe` when you intentionally want a faster in-place rebuild/restart of the current checkout.
+- Notes: This site no longer uses a `develop -> main` promotion step or blue/green slot switching.

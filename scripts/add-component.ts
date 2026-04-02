@@ -48,7 +48,7 @@ async function main() {
       console.log(result.message || 'Restart skipped.');
     }
   } else {
-    console.log('Run `bun run build` for a local check, then use `bun run release:local` to activate on blue/green production.');
+    console.log('Run `bun run build` for a local check, then use `bun run deploy:safe` to activate the current checkout.');
   }
 }
 

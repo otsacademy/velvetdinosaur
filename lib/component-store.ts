@@ -123,15 +123,6 @@ const GENERATED_INDEX_FILE = path.join(
 );
 const ENV_FILE = path.join(SITE_ROOT, '.env.production');
 
-function hasBlueGreenDeployConfig(siteRoot = SITE_ROOT) {
-  return existsSync(path.join(siteRoot, 'deploy', 'local-first.json'));
-}
-
-function isBlueGreenSlotRuntime(siteRoot = SITE_ROOT) {
-  const baseName = path.basename(siteRoot);
-  return /-(blue|green)$/.test(baseName) || Boolean(process.env.VD_SLOT_NAME || process.env.VD_SLOT_SERVICE);
-}
-
 type LocalStoreMeta = {
   id?: string;
   name?: string;
@@ -339,23 +330,8 @@ export function getStoreApiUrl() {
 }
 
 export function getComponentStoreInstallPolicy(): ComponentStoreInstallPolicy {
-  const deployMode = (process.env.VD_DEPLOY_MODE || '').trim();
-  const isSlotRuntime = isBlueGreenSlotRuntime();
-  const isBlueGreenManaged = hasBlueGreenDeployConfig() || isSlotRuntime || deployMode === 'blue-green';
-
-  if (isSlotRuntime || (process.env.NODE_ENV === 'production' && isBlueGreenManaged)) {
-    return {
-      activationCommand: 'bun run release:local',
-      activationMode: 'release',
-      installBlockedReason:
-        'Runtime component installs are disabled on blue/green production. Install from the controller checkout and activate with `bun run release:local`.',
-      rebuildAllowed: false,
-      runtimeInstallAllowed: false
-    };
-  }
-
   return {
-    activationCommand: 'bun run build',
+    activationCommand: process.env.NODE_ENV === 'production' ? 'bun run deploy:safe' : 'bun run build',
     activationMode: 'restart',
     installBlockedReason: null,
     rebuildAllowed: true,
