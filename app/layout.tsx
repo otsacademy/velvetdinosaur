@@ -8,7 +8,6 @@ import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
 import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytics.client';
 import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
-import { CustomCursor } from '@/components/ui/custom-cursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -81,7 +80,6 @@ export default async function RootLayout({
       }}
     >
       <body className="min-h-screen bg-[var(--vd-bg)] text-[var(--vd-fg)] antialiased">
-        <CustomCursor />
         {children}
         {disableAnalytics ? null : (
           <>

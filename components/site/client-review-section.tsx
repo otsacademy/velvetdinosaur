@@ -10,7 +10,7 @@ const featuredReview = {
 
 export function ClientReviewSection() {
   return (
-    <section aria-labelledby="client-review-title" className="py-9">
+    <section aria-labelledby="client-review-title" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <article className="vd-surface-panel relative overflow-hidden border border-border bg-accent/35 px-6 py-12 text-center shadow-sm md:px-14 md:py-16">
           <span

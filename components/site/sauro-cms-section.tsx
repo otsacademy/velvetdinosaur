@@ -3,10 +3,10 @@ import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function SauroCmsSection() {
-  const demoHomeHref = "/demo/new"
+  const demoHomeHref = "/demo"
 
   return (
-    <section id="cms" className="py-9">
+    <section id="cms" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <p className="vd-section-kicker">Content control</p>
@@ -18,20 +18,78 @@ export function SauroCmsSection() {
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-dino-blue)_16%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-dino-blue)_3%,var(--vd-bg))] px-6 py-8 shadow-[0_18px_36px_-30px_color-mix(in_oklch,var(--vd-dino-blue)_24%,transparent)] sm:px-10 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">Interactive sandbox</p>
-            <h3 className="text-xl font-semibold tracking-tight text-foreground">Let prospects click around before they ever book a call.</h3>
-            <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-              The demo routes use dummy content and disposable state, so visitors can explore the Page Editor, Article Editor, Contact Templates, Newsletter, Reviews, Theme Editor, Inbox, Calendar, Media Library, Support Portal, Stays, Routes, and the Booking API safely.
-            </p>
+        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div className="flex h-full flex-col gap-4 rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-dino-blue)_16%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-dino-blue)_3%,var(--vd-bg))] px-6 py-8 shadow-[0_18px_36px_-30px_color-mix(in_oklch,var(--vd-dino-blue)_24%,transparent)] sm:px-10">
+            <div className="space-y-2">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                Interactive sandbox
+              </p>
+              <h3 className="text-xl font-semibold tracking-tight text-foreground">
+                Let prospects click around before they ever book a call.
+              </h3>
+              <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                The demo routes use dummy content and disposable state, so visitors can explore the Page Editor,
+                Article Editor, Contact Templates, Newsletter, Reviews, Theme Editor, Inbox, Calendar, Media Library,
+                Support Portal, Stays, Routes, and the Booking API safely.
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-[1rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background/80 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                Preview sizing
+              </p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                The live workspace preview is intentionally squashed to 50% so the whole UI reads like a compact,
+                glanceable product shot.
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <Button asChild className="vd-dino-cta min-h-12 rounded-full px-6 text-sm font-medium">
+                <a href={demoHomeHref}>
+                  Try the editor
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
-          <Button asChild className="vd-dino-cta min-h-12 rounded-full px-6 text-sm font-medium">
-            <a href={demoHomeHref}>
-              Try the editor
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </Button>
+
+          <div className="overflow-hidden rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[linear-gradient(180deg,color-mix(in_oklch,var(--vd-card)_92%,white),color-mix(in_oklch,var(--vd-bg)_96%,white))] shadow-[0_28px_80px_-56px_color-mix(in_oklch,var(--vd-fg)_32%,transparent)]">
+            <div className="flex items-center justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[color-mix(in_oklch,var(--destructive)_72%,white)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[color-mix(in_oklch,var(--vd-accent)_72%,white)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[color-mix(in_oklch,var(--vd-score-perfect)_72%,white)]" />
+              </div>
+              <p className="text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground">
+                Public sandbox preview at 50%
+              </p>
+            </div>
+
+            <div className="relative aspect-[16/10] overflow-hidden bg-white">
+              <div className="absolute inset-0 h-[200%] w-[200%] origin-top-left scale-[0.5] transform">
+                <iframe
+                  title="Sauro CMS demo preview"
+                  src={demoHomeHref}
+                  loading="lazy"
+                  className="h-full w-full border-0 bg-white"
+                />
+              </div>
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/78 to-transparent" />
+            </div>
+
+            <div className="flex flex-col gap-3 border-t border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                Live route, dummy content, and disposable state. Open the full-size version when you want to interact.
+              </p>
+              <Button asChild variant="outline" className="rounded-full px-5 text-sm">
+                <a href={demoHomeHref}>
+                  Open full demo
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

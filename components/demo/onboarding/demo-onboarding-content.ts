@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 
 export type DemoOnboardingPageKey =
+  | 'overview'
   | 'pages'
   | 'news'
   | 'contact-templates'
@@ -56,6 +57,38 @@ export type DemoOnboardingGuide = {
 };
 
 export const demoOnboardingContent: Record<DemoOnboardingPageKey, DemoOnboardingGuide> = {
+  overview: {
+    label: 'Overview',
+    title: 'Welcome to the Sauro CMS demo',
+    description: 'This is a sandbox workspace with fictional data. Use the sidebar to explore each module.',
+    icon: LayoutDashboard,
+    steps: [
+      {
+        id: 'navigate',
+        title: 'Use the sidebar to navigate',
+        description: 'Every module in the CMS is accessible from the sidebar on the left. Click any item to jump straight into that workspace.',
+        icon: LayoutDashboard,
+      },
+      {
+        id: 'editor',
+        title: 'Try the page editor first',
+        description: 'The page editor is the best place to start. Open it to see drag-and-drop editing, the component library, and the media picker.',
+        icon: LayoutDashboard,
+      },
+      {
+        id: 'safe',
+        title: 'Everything is disposable',
+        description: 'All content is fictional and all changes are local. Refreshing the page or clicking Reset restores the original demo state.',
+        icon: LayoutDashboard,
+      },
+      {
+        id: 'explore',
+        title: 'Explore at your own pace',
+        description: 'There is no fixed order. Each module has its own guided tour that opens automatically the first time you visit.',
+        icon: LayoutDashboard,
+      },
+    ],
+  },
   pages: {
     label: 'Page Editor',
     title: 'How the page editor demo works',

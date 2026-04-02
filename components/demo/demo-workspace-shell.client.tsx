@@ -7,6 +7,7 @@ import {
   BedDouble,
   ArrowUpRight,
   CalendarDays,
+  House,
   ChevronRight,
   Database,
   Image as ImageIcon,
@@ -32,6 +33,7 @@ import { DemoOnboardingControls } from '@/components/demo/onboarding/demo-onboar
 import { cn } from '@/lib/utils';
 
 type DemoWorkspaceNavKey =
+  | 'overview'
   | 'pages'
   | 'news'
   | 'contact-templates'
@@ -71,6 +73,7 @@ const navGroups: NavGroup[] = [
   {
     label: 'Workspace',
     items: [
+      { key: 'overview', label: 'Overview', href: '/demo', icon: House },
       { key: 'inbox', label: 'Inbox', href: '/demo/inbox', icon: Inbox },
       { key: 'calendar', label: 'Calendar', href: '/demo/calendar', icon: CalendarDays },
       { key: 'support', label: 'Support Portal', href: '/demo/support', icon: LifeBuoy }

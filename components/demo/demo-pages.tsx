@@ -24,18 +24,8 @@ type DemoLoginWorkspacePageProps = DemoPageProps & {
   nextPath: string
 }
 
-export function DemoHomePage({ variant }: DemoPageProps) {
-  return (
-    <DemoShell
-      currentPath="/"
-      variant={variant}
-      mode="landing"
-      title="A safe public sandbox for exploring Sauro CMS."
-      description="Use this as a marketing and sales layer: prospects can open the feature demos directly, test the workflow, and leave without creating any permanent changes."
-    >
-      <DemoHome variant={variant} />
-    </DemoShell>
-  )
+export function DemoHomePage(_: DemoPageProps) {
+  return <DemoHome />
 }
 
 export function DemoLoginWorkspacePage({ nextPath, variant }: DemoLoginWorkspacePageProps) {

@@ -21,7 +21,7 @@ function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-9">
+    <section id="services" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="space-y-5">

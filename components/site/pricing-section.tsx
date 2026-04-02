@@ -5,7 +5,6 @@ import {
   type TimelineCenteredSpineItem,
 } from "@/components/timeline-centered-spine"
 import { Button } from "@/components/ui/button"
-import { Magnetic } from "@/components/ui/magnetic"
 
 const packageFeatures: string[] = [
   "Custom design and build tailored to your goals, audience, and offer.",
@@ -78,7 +77,7 @@ const processSteps: TimelineCenteredSpineItem[] = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-9">
+    <section id="pricing" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
@@ -131,14 +130,12 @@ export function PricingSection() {
             Hosting is £120/year after Year 1. Domain registration is not included and can be procured at cost price.
           </p>
 
-          <Magnetic strength={0.2}>
-            <Button asChild className="vd-dino-cta h-11 rounded-full px-6 text-[0.9375rem] font-medium">
-              <a href="#contact" className="inline-flex items-center gap-2">
-                Get a fixed quote for your scope
-                <ChevronRight className="h-4 w-4 vd-inline-arrow" />
-              </a>
-            </Button>
-          </Magnetic>
+          <Button asChild className="vd-dino-cta h-11 rounded-full px-6 text-[0.9375rem] font-medium">
+            <a href="#contact" className="inline-flex items-center gap-2">
+              Get a fixed quote for your scope
+              <ChevronRight className="h-4 w-4 vd-inline-arrow" />
+            </a>
+          </Button>
         </div>
 
         <div className="mt-9">

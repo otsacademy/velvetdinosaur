@@ -1,178 +1,173 @@
-import Link from "next/link"
-import { BedDouble, CalendarDays, Database, FilePenLine, FolderKanban, Images, Inbox, LifeBuoy, Mail, MessageSquare, Palette, Play, Route as RouteIcon, Send, ShieldCheck } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { demoFeatures, getDemoRoutePath, type DemoRouteVariant } from "@/lib/demo-site"
+'use client'
 
-const featureIcons = {
-  new: FolderKanban,
-  news: FilePenLine,
-  "contact-templates": Mail,
-  newsletter: Send,
-  reviews: MessageSquare,
-  stays: BedDouble,
-  routes: RouteIcon,
-  bookings: Database,
-  "theme-editor": Palette,
-  inbox: Inbox,
-  calendar: CalendarDays,
-  media: Images,
-  support: LifeBuoy
-} as const
+import { useState } from 'react'
+import Link from 'next/link'
+import {
+  ArrowRight,
+  FileText,
+  FolderKanban,
+  Images,
+  LayoutGrid,
+  MapPin,
+  Palette,
+  ShieldCheck,
+  Star,
+} from 'lucide-react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { DemoWorkspaceShell } from '@/components/demo/demo-workspace-shell.client'
+import { resolvePrimarySiteUrl } from '@/lib/demo-site'
 
-type DemoHomeProps = {
-  variant: DemoRouteVariant
-}
+const categories = [
+  {
+    icon: LayoutGrid,
+    title: 'Visual Editor',
+    description: 'Drag-and-drop page building with live preview',
+  },
+  {
+    icon: FileText,
+    title: 'Content Tools',
+    description: 'Rich text editing, media management, and SEO controls',
+  },
+  {
+    icon: MapPin,
+    title: 'Travel Modules',
+    description: 'Stays, routes, and booking integrations built-in',
+  },
+  {
+    icon: Palette,
+    title: 'Design System',
+    description: 'Theme editor with typography and color controls',
+  },
+]
 
-export function DemoHome({ variant }: DemoHomeProps) {
-  const primaryHref = getDemoRoutePath("/new", variant)
+const stats = [
+  { value: '12', label: 'Active modules' },
+  { value: '100%', label: 'No-code friendly' },
+  { value: '<2s', label: 'Avg. save time' },
+  { value: '24/7', label: 'Auto-backup' },
+]
+
+const activity = [
+  { icon: FolderKanban, title: 'Homepage draft created', time: 'Just now' },
+  { icon: Images, title: '3 images uploaded to Media Library', time: '2 minutes ago' },
+  { icon: Star, title: 'New review received (5 stars)', time: '5 minutes ago' },
+]
+
+export function DemoHome() {
+  const [workspaceKey, setWorkspaceKey] = useState(0)
+  const mainSiteHref = resolvePrimarySiteUrl('/')
 
   return (
-    <div className="grid gap-8">
-      <section className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
-        <div className="space-y-6">
-          <div className="max-w-2xl space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--vd-muted-fg)]">
-              Explore the client-side experience
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-[var(--vd-fg)] md:text-4xl">
-              Open the live page editor first, then branch into templates, newsletter, reviews, travel tools, and the rest of the client workspace.
-            </h2>
-            <p className="text-base leading-7 text-[var(--vd-muted-fg)]">
-              This sandbox is designed for sales calls and self-serve exploration. Visitors can drop straight into the
-              editor surface, test the component library, upload assets, and move through the surrounding messaging,
-              publishing, review, travel, and support workflows without risking real content.
-            </p>
-          </div>
+    <DemoWorkspaceShell
+      breadcrumbLabel="Overview"
+      activeNav="overview"
+      mainSiteHref={mainSiteHref}
+      onResetDemo={() => {
+        setWorkspaceKey((current) => current + 1)
+        toast.success('The demo has been reset.')
+      }}
+    >
+      <DemoHomeContent key={workspaceKey} />
+    </DemoWorkspaceShell>
+  )
+}
 
-          <div className="flex flex-wrap items-center gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-[var(--vd-primary)] px-6 text-[var(--vd-primary-fg)] shadow-[0_24px_50px_-28px_color-mix(in_oklch,var(--vd-primary)_60%,transparent)]"
-            >
-              <Link href={primaryHref}>Try the editor</Link>
-            </Button>
-            <p className="text-sm leading-6 text-[var(--vd-muted-fg)]">
-              No real auth, no persistent data, and no production risk.
-            </p>
-          </div>
+function DemoHomeContent() {
+  return (
+    <div className="mx-auto w-full max-w-[36rem] space-y-4 md:space-y-5">
+      {/* Welcome header */}
+      <section className="space-y-2 pt-2 text-center">
+        <h2 className="text-2xl font-semibold tracking-tight text-[var(--vd-fg)] md:text-[2rem]">
+          Welcome to Sauro CMS
+        </h2>
+        <p className="mx-auto max-w-md text-sm leading-6 text-[var(--vd-muted-fg)] md:text-[0.95rem]">
+          Explore the full workspace — page editor, content tools, travel modules, and design controls.
+          Everything you need to manage your site, tailored for your workflow.
+        </p>
+      </section>
 
-          <div className="flex flex-wrap gap-3">
-            {demoFeatures.map((feature) => (
-              <Link
-                key={feature.slug}
-                href={getDemoRoutePath(feature.path, variant)}
-                className="inline-flex min-h-11 items-center rounded-full border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] px-4 text-sm font-medium text-[var(--vd-fg)] transition-colors hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg))]"
-              >
-                {feature.title}
-              </Link>
-            ))}
-          </div>
+      {/* Start exploring CTA */}
+      <section className="grid gap-4 rounded-[1.15rem] border border-[color-mix(in_oklch,var(--vd-primary)_18%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-card)_94%,white)] p-4 shadow-[0_16px_34px_-30px_color-mix(in_oklch,var(--vd-primary)_22%,transparent)] md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+        <div className="space-y-1">
+          <p className="text-base font-semibold tracking-tight text-[var(--vd-fg)]">Start exploring</p>
+          <p className="text-[13px] leading-5 text-[var(--vd-muted-fg)]">
+            Start with the page editor to see how the CMS works, then use the sidebar to explore.
+          </p>
         </div>
+        <Button asChild className="vd-dino-cta h-10 shrink-0 rounded-xl px-4 text-sm font-medium">
+          <Link href="/demo/new">
+            Open the page editor
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </Link>
+        </Button>
+      </section>
 
-        <div className="overflow-hidden rounded-[2rem] border border-[color-mix(in_oklch,var(--vd-border)_80%,transparent)] bg-[linear-gradient(155deg,color-mix(in_oklch,var(--vd-primary)_6%,var(--vd-bg)),color-mix(in_oklch,var(--vd-card)_92%,white))] p-6 shadow-[0_26px_90px_-60px_color-mix(in_oklch,var(--vd-primary)_28%,transparent)]">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--vd-muted-fg)]">
-                Guided walkthrough
-              </p>
-              <p className="mt-2 text-lg font-semibold text-[var(--vd-fg)]">Recommended route</p>
-            </div>
-            <Badge className="border-transparent bg-[color-mix(in_oklch,var(--vd-primary)_12%,var(--vd-bg))] text-[var(--vd-primary)]">
-              {demoFeatures.length} steps
-            </Badge>
-          </div>
-
-          <div className="mt-6 space-y-4">
-            {demoFeatures.map((feature, index) => {
-              const Icon = featureIcons[feature.slug]
-              return (
-                <div
-                  key={feature.slug}
-                  className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_86%,transparent)] p-4"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[color-mix(in_oklch,var(--vd-primary)_10%,var(--vd-bg))] text-[var(--vd-primary)]">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--vd-muted-fg)]">
-                        Step {index + 1}
-                      </p>
-                      <p className="font-semibold text-[var(--vd-fg)]">{feature.title}</p>
-                      <p className="text-sm leading-6 text-[var(--vd-muted-fg)]">{feature.description}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+      {/* Safe by default */}
+      <section className="flex items-start gap-3 rounded-[1.15rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-primary)_3%,var(--vd-card))] px-4 py-5">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklch,var(--vd-primary)_10%,var(--vd-bg))]">
+          <ShieldCheck className="h-4 w-4 text-[var(--vd-primary)]" />
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-[var(--vd-fg)]">Safe by default</p>
+          <p className="mt-0.5 text-[12px] leading-5 text-[var(--vd-muted-fg)]">
+            No customer data, no persistent writes, no real permissions. Everything resets when you leave.
+          </p>
         </div>
       </section>
 
-      <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {demoFeatures.map((feature) => {
-          const Icon = featureIcons[feature.slug]
+      {/* Category cards */}
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {categories.map((cat) => {
+          const Icon = cat.icon
           return (
-            <Link
-              key={feature.slug}
-              href={getDemoRoutePath(feature.path, variant)}
-              className="group overflow-hidden rounded-[2rem] border border-[color-mix(in_oklch,var(--vd-border)_80%,transparent)] bg-[linear-gradient(180deg,color-mix(in_oklch,var(--vd-card)_92%,white),color-mix(in_oklch,var(--vd-bg)_96%,white))] p-6 shadow-[0_22px_70px_-56px_color-mix(in_oklch,var(--vd-fg)_34%,transparent)] transition-transform duration-300 hover:-translate-y-1"
+            <div
+              key={cat.title}
+              className="rounded-[1.05rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_96%,white)] p-4 shadow-[0_10px_24px_-24px_color-mix(in_oklch,var(--vd-fg)_26%,transparent)]"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color-mix(in_oklch,var(--vd-primary)_10%,var(--vd-bg))] text-[var(--vd-primary)]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <Play className="h-4 w-4 text-[var(--vd-muted-fg)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--vd-fg)]" />
+              <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-[color-mix(in_oklch,var(--vd-primary)_10%,var(--vd-bg))] text-[var(--vd-primary)]">
+                <Icon className="h-4 w-4" />
               </div>
-              <div className="mt-6 space-y-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--vd-muted-fg)]">
-                  {feature.eyebrow}
-                </p>
-                <h3 className="text-xl font-semibold text-[var(--vd-fg)]">{feature.title}</h3>
-                <p className="text-sm leading-6 text-[var(--vd-muted-fg)]">{feature.description}</p>
-              </div>
-              <div className="mt-6 space-y-2 text-sm text-[var(--vd-muted-fg)]">
-                {feature.bullets.map((bullet) => (
-                  <div key={bullet} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--vd-primary)]" />
-                    <span>{bullet}</span>
-                  </div>
-                ))}
-              </div>
-            </Link>
+              <p className="text-[13px] font-semibold leading-5 text-[var(--vd-fg)]">{cat.title}</p>
+              <p className="mt-1 text-[11px] leading-4 text-[var(--vd-muted-fg)]">{cat.description}</p>
+            </div>
           )
         })}
       </section>
 
-      <section className="grid gap-4 rounded-[2rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))] p-6 md:grid-cols-[minmax(0,1fr)_320px] md:items-center">
-        <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--vd-muted-fg)]">
-            Why this works in sales
-          </p>
-          <h3 className="text-2xl font-semibold tracking-tight text-[var(--vd-fg)]">
-            Prospects can explore the software directly without touching a live database or a real customer account.
-          </h3>
-          <p className="text-sm leading-6 text-[var(--vd-muted-fg)]">
-            Every message, page section, upload, and theme change is disposable, so the demos stay convincing without
-            creating operational risk.
-          </p>
-        </div>
-
-        <div className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_88%,transparent)] p-5">
-          <div className="flex items-start gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[color-mix(in_oklch,var(--vd-primary)_10%,var(--vd-bg))] text-[var(--vd-primary)]">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
-            <div className="space-y-2">
-              <p className="font-semibold text-[var(--vd-fg)]">Safe by default</p>
-              <p className="text-sm leading-6 text-[var(--vd-muted-fg)]">
-                No customer data, no persistent writes, no real permissions, and no accidental edits to the production
-                site.
-              </p>
-            </div>
+      {/* Stats row */}
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="rounded-[1.05rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_96%,white)] p-4 text-center shadow-[0_10px_24px_-24px_color-mix(in_oklch,var(--vd-fg)_24%,transparent)]"
+          >
+            <p className="text-[1.35rem] font-semibold tracking-tight text-[var(--vd-primary)]">{stat.value}</p>
+            <p className="mt-1 text-[11px] leading-4 text-[var(--vd-muted-fg)]">{stat.label}</p>
           </div>
+        ))}
+      </section>
+
+      {/* Recent activity */}
+      <section className="rounded-[1.15rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_96%,white)] p-4 shadow-[0_14px_32px_-28px_color-mix(in_oklch,var(--vd-fg)_26%,transparent)]">
+        <p className="text-base font-semibold tracking-tight text-[var(--vd-fg)]">Recent demo activity</p>
+        <p className="mt-1 text-[12px] leading-5 text-[var(--vd-muted-fg)]">Sample activity from this sandbox session</p>
+        <div className="mt-4 space-y-2">
+          {activity.map((item) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={item.title}
+                className="flex items-center gap-3 rounded-lg bg-[color-mix(in_oklch,var(--vd-muted)_68%,white)] px-3 py-2.5"
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 text-[var(--vd-muted-fg)]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[12px] font-medium leading-5 text-[var(--vd-fg)]">{item.title}</p>
+                  <p className="text-[10px] leading-4 text-[var(--vd-muted-fg)]">{item.time}</p>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
     </div>

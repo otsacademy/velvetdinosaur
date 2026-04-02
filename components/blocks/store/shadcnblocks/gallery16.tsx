@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Magnetic } from "@/components/ui/magnetic"
 
 type Gallery16Item = {
   category: string
@@ -166,28 +165,24 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                         {(item.primaryHref && item.primaryLabel) || (item.secondaryHref && item.secondaryLabel) ? (
                           <div className="flex flex-wrap items-center gap-3">
                             {item.primaryHref && item.primaryLabel ? (
-                              <Magnetic strength={0.2}>
-                                <Button asChild className="vd-dino-cta h-10 rounded-full px-5 text-sm font-medium">
-                                  <a href={item.primaryHref}>
-                                    {item.primaryLabel}
-                                    <ArrowRight className="h-4 w-4 vd-inline-arrow" />
-                                  </a>
-                                </Button>
-                              </Magnetic>
+                              <Button asChild className="vd-dino-cta h-10 rounded-full px-5 text-sm font-medium">
+                                <a href={item.primaryHref}>
+                                  {item.primaryLabel}
+                                  <ArrowRight className="h-4 w-4 vd-inline-arrow" />
+                                </a>
+                              </Button>
                             ) : null}
                             {item.secondaryHref && item.secondaryLabel ? (
-                              <Magnetic strength={0.2}>
-                                <Button
-                                  asChild
-                                  variant="outline"
-                                  className="h-10 rounded-full px-5 text-sm font-medium"
-                                >
-                                  <a href={item.secondaryHref} target="_blank" rel="noreferrer">
-                                    {item.secondaryLabel}
-                                    <ExternalLink className="h-4 w-4" />
-                                  </a>
-                                </Button>
-                              </Magnetic>
+                              <Button
+                                asChild
+                                variant="outline"
+                                className="h-10 rounded-full px-5 text-sm font-medium"
+                              >
+                                <a href={item.secondaryHref} target="_blank" rel="noreferrer">
+                                  {item.secondaryLabel}
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              </Button>
                             ) : null}
                           </div>
                         ) : null}

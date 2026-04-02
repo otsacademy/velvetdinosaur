@@ -209,7 +209,7 @@ export function resolvePrimarySiteUrl(path = "/") {
 }
 
 export function getDemoDefaultWorkspacePath(variant: DemoRouteVariant) {
-  return variant === "path" ? "/demo/new" : "/new"
+  return variant === "path" ? "/demo" : "/"
 }
 
 export function getDemoRoutePath(path: string, variant: DemoRouteVariant) {

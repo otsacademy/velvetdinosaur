@@ -1,35 +1,27 @@
 @import "tailwindcss" source(none);
 html[data-scroll-reveal="true"] section {
-  opacity: 0.38;
-  transform: translateY(18px) scale(0.992);
-  filter: blur(3px);
-  transition: opacity 1200ms cubic-bezier(0.22, 1, 0.36, 1), transform 1200ms cubic-bezier(0.22, 1, 0.36, 1), filter 1200ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
 }
 
 html[data-scroll-reveal="true"] section.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
 }
 
 html[data-scroll-reveal="true"] section [data-sr-child] {
-  translate: 0 12px;
-  transition: translate 600ms ease;
+  opacity: 0;
+  transition: opacity 400ms ease-out;
   transition-delay: var(--sr-delay, 0ms);
 }
 
 html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
-  translate: 0 0;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html[data-scroll-reveal="true"] section,
   html[data-scroll-reveal="true"] section [data-sr-child] {
     opacity: 1;
-    transform: none;
-    translate: none;
-    filter: none;
     transition: none;
   }
 }
@@ -370,10 +362,10 @@ h1,
   }
 
   h2 {
-    font-family: var(--vd-font-display);
-    font-weight: 400;
+    font-family: var(--vd-font-sans);
+    font-weight: 600;
     letter-spacing: -0.015em;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 
   h3 {

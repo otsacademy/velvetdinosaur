@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Magnetic } from "@/components/ui/magnetic"
 
 export interface Hero1Props {
   badge?: string
@@ -57,7 +56,7 @@ export function Hero1({
   return (
     <section className={cn("py-28", className)}>
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,1fr)] lg:gap-14">
           <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
             {badge ? (
               <Badge
@@ -68,7 +67,7 @@ export function Hero1({
                 <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
-            <h1 className="vd-hero-heading max-w-[14ch] text-balance text-4xl text-foreground sm:text-[3.5rem] lg:text-[clamp(4rem,5vw,5.1rem)]">
+            <h1 className="vd-hero-heading max-w-[20ch] text-balance text-3xl text-foreground sm:text-4xl lg:text-5xl">
               {heading}
             </h1>
             <p className="max-w-[34rem] text-base leading-[1.72] text-[var(--vd-copy)] lg:text-[1.0625rem]">
@@ -76,30 +75,26 @@ export function Hero1({
             </p>
             <div className="mt-2 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               {buttons?.primary ? (
-                <Magnetic strength={0.25}>
-                  <Button
-                    asChild
-                    className={cn("w-full sm:w-auto", buttons.primary.buttonClassName)}
-                  >
-                    <a href={buttons.primary.url} className={buttons.primary.className}>
-                      {buttons.primary.text}
-                    </a>
-                  </Button>
-                </Magnetic>
+                <Button
+                  asChild
+                  className={cn("w-full sm:w-auto", buttons.primary.buttonClassName)}
+                >
+                  <a href={buttons.primary.url} className={buttons.primary.className}>
+                    {buttons.primary.text}
+                  </a>
+                </Button>
               ) : null}
               {buttons?.secondary ? (
-                <Magnetic strength={0.25}>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className={cn("w-full sm:w-auto", buttons.secondary.buttonClassName)}
-                  >
-                    <a href={buttons.secondary.url} className={buttons.secondary.className}>
-                      {buttons.secondary.text}
-                      <ArrowRight className="size-4 vd-inline-arrow" />
-                    </a>
-                  </Button>
-                </Magnetic>
+                <Button
+                  asChild
+                  variant="outline"
+                  className={cn("w-full sm:w-auto", buttons.secondary.buttonClassName)}
+                >
+                  <a href={buttons.secondary.url} className={buttons.secondary.className}>
+                    {buttons.secondary.text}
+                    <ArrowRight className="size-4 vd-inline-arrow" />
+                  </a>
+                </Button>
               ) : null}
             </div>
             {supportingLine ? (

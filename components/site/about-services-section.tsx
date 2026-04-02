@@ -45,7 +45,7 @@ function StatCard({ icon: Icon, eyebrow, title, description }: StatCardProps) {
 
 export function AboutServicesSection() {
   return (
-    <section id="about-services" className="py-9">
+    <section id="about-services" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="space-y-10">
           <div className="space-y-4">

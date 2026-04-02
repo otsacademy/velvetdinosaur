@@ -28,25 +28,17 @@ async function renderHeroImageSlot(
 
   return (
     <div className="relative flex w-full items-center justify-center overflow-visible">
-      <div
-        className="pointer-events-none absolute h-[13rem] w-[13rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,oklch(var(--vd-primary))_14%,transparent)_0%,color-mix(in_oklch,oklch(var(--vd-primary))_6%,transparent)_45%,transparent_76%)] blur-2xl sm:h-[15rem] sm:w-[15rem] lg:h-[17rem] lg:w-[17rem]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute bottom-[10%] h-8 w-[56%] rounded-full bg-[color-mix(in_oklch,var(--vd-fg)_8%,transparent)] blur-2xl"
-        aria-hidden="true"
-      />
-      <div className="motion-safe:animate-vd-float relative [animation-delay:180ms] [animation-duration:8.5s]">
+      <div className="relative">
         <div className="pointer-events-none absolute inset-0 z-10 hidden lg:block">
-          <div className={`${heroTrustPillClassName} absolute left-[2%] top-[5%]`}>
+          <div className={`${heroTrustPillClassName} absolute left-[-8%] top-[5%]`}>
             <span className="text-[0.9375rem] font-semibold text-foreground">100/100</span>
             <span className="text-[0.6875rem] font-medium text-muted-foreground">Lighthouse</span>
           </div>
-          <div className={`${heroTrustPillClassName} absolute left-[-6%] top-[42%]`}>
+          <div className={`${heroTrustPillClassName} absolute left-[-14%] top-[42%]`}>
             <span className="text-[0.9375rem] font-semibold text-foreground">5.0 ★</span>
             <span className="text-[0.6875rem] font-medium text-muted-foreground">Google rated</span>
           </div>
-          <div className={`${heroTrustPillClassName} absolute bottom-[8%] left-[-3%]`}>
+          <div className={`${heroTrustPillClassName} absolute bottom-[8%] left-[-10%]`}>
             <span className="text-[0.9375rem] font-semibold text-foreground">4–6 wk</span>
             <span className="text-[0.6875rem] font-medium text-muted-foreground">Delivery</span>
           </div>
@@ -93,27 +85,25 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
     <>
       {withReveal(<MyStack />, 100)}
 
-      <div className="bg-[color-mix(in_srgb,var(--vd-accent)_78%,var(--vd-bg))]">
+      <div className="bg-muted/40">
         {withReveal(<AboutServicesSection />, 100)}
       </div>
 
       {withReveal(<SelectedWork />, 100)}
 
-      <div className="bg-[color-mix(in_srgb,var(--vd-primary)_4%,var(--vd-bg))]">
-        {withReveal(<SauroCmsSection />, 100)}
-      </div>
+      {withReveal(<SauroCmsSection />, 100)}
 
       {withReveal(<PageSpeedGuaranteeSection />, 100)}
 
-      {withReveal(<PricingSection />, 100)}
-
-      <div className="bg-[color-mix(in_srgb,var(--vd-accent)_65%,var(--vd-bg))]">
-        {withReveal(<NoLockInSection />, 100)}
+      <div className="bg-muted/40">
+        {withReveal(<PricingSection />, 100)}
       </div>
+
+      {withReveal(<NoLockInSection />, 100)}
 
       {withReveal(<ClientReviewSection />, 100)}
 
-      <div className="bg-[color-mix(in_srgb,var(--vd-muted)_84%,var(--vd-bg))]">
+      <div className="bg-muted/40">
         {withReveal(<ContactSection />, 100)}
       </div>
     </>
@@ -126,7 +116,7 @@ export async function FullSite() {
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
   const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"
   const heroMascotSizeClassName =
-    "h-[min(15.5rem,60vw)] w-[min(15.5rem,60vw)] sm:h-[min(19rem,50vw)] sm:w-[min(19rem,50vw)] lg:h-[min(22rem,29vw)] lg:w-[min(22rem,29vw)]"
+    "h-[min(17rem,65vw)] w-[min(17rem,65vw)] sm:h-[min(21rem,50vw)] sm:w-[min(21rem,50vw)] lg:h-[min(26rem,36vw)] lg:w-[min(26rem,36vw)]"
   const heroTrustPillClassName =
     "vd-hover-lift-sm pointer-events-auto flex flex-col items-start gap-0.5 rounded-xl border border-border/80 bg-background/90 px-3.5 py-2 shadow-sm backdrop-blur-xl transition-all"
   const siteChrome = isLhci ? null : await renderSiteChrome(whatsappHref)
@@ -145,15 +135,10 @@ export async function FullSite() {
 
       <main className="pt-20 md:pt-24">
         <section id="home" className="relative px-6 pb-6">
-          <div className="pointer-events-none absolute inset-0 -z-10 holding-bg" aria-hidden="true" />
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 opacity-[0.22] [background-image:radial-gradient(circle_at_1px_1px,color-mix(in_oklch,oklch(var(--vd-foreground))_18%,transparent)_1px,transparent_0)] [background-size:22px_22px]"
-            aria-hidden="true"
-          />
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="py-4 md:py-8 lg:py-6"
+              className="py-8 md:py-12 lg:py-10"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}

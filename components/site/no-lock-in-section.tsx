@@ -28,7 +28,7 @@ const trustStats: TrustStat[] = [
 
 export function NoLockInSection() {
   return (
-    <section id="ownership" className="py-9">
+    <section id="ownership" className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="vd-surface-panel vd-soft-panel grid gap-6 p-6 md:p-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-4">
