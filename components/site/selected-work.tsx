@@ -28,7 +28,7 @@ export async function SelectedWork() {
   const workItems = await listLatestPublishedWorkArticles(4)
 
   return (
-    <section id="portfolio" className="py-16">
+    <section id="portfolio" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 space-y-3 md:mb-10">
           <h2 className="vd-section-heading text-2xl font-semibold tracking-tight md:text-[2.2rem]">

@@ -95,13 +95,12 @@
   }
 
   .vd-hero-heading {
-    font-family: var(--vd-font-hero, var(--vd-font-display));
-    font-feature-settings: "liga" 1, "clig" 1, "kern" 1;
-    font-weight: 400;
-    font-style: normal;
+    font-family: var(--vd-font-sans);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 600;
     letter-spacing: -0.02em;
-    line-height: 1.05;
-    text-wrap: pretty;
+    line-height: 1.25;
+    text-wrap: balance;
   }
 
   .vd-heading-accent {

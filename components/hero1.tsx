@@ -67,7 +67,7 @@ export function Hero1({
                 <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
-            <h1 className="vd-hero-heading max-w-[20ch] text-balance text-3xl text-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="vd-hero-heading">
               {heading}
             </h1>
             <p className="max-w-[34rem] text-base leading-[1.72] text-[var(--vd-copy)] lg:text-[1.0625rem]">

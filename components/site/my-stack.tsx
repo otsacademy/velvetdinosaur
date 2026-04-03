@@ -113,7 +113,7 @@ function StackItemCard({ item }: { item: StackItem }) {
 
 export function MyStack() {
   return (
-    <section className="py-16">
+    <section className="py-8">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">My stack</h2>
         <p className="mb-6 max-w-2xl text-sm text-foreground/70">

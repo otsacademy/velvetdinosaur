@@ -355,10 +355,10 @@ h1,
   }
 
   h1 {
-    font-family: var(--vd-font-display);
-    font-weight: 400;
+    font-family: var(--vd-font-sans);
+    font-weight: 600;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   h2 {

@@ -1,10 +1,9 @@
 export const mainHeroCopy = {
   badge: '17 years of product and platform experience',
-  heading: 'Fast, beautiful, secure websites that turn visitors into clients.',
+  heading: 'Fast, beautiful websites and bespoke mobile apps that turn visitors into clients.',
   description:
-    'Work directly with an experienced developer to launch a custom site built for conversion, search visibility, and long-term maintainability.',
-  supportingLine:
-    'Named by a 3-year-old who loved blue dinosaurs. Built with senior-level engineering discipline.'
+    'Skip the agency runaround. Work directly with an experienced developer to launch custom digital products built for conversion, search visibility, and long-term maintainability.',
+  supportingLine: ''
 };
 
 export const holdingHeroCopy = {

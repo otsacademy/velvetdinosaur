@@ -6,45 +6,36 @@ export function SauroCmsSection() {
   const demoHomeHref = "/demo"
 
   return (
-    <section id="cms" className="py-16">
+    <section id="cms" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <p className="vd-section-kicker">Content control</p>
-          <h2 className="text-2xl font-semibold tracking-tight">Sauro CMS</h2>
-          <p className="text-muted-foreground">
-            To give clients flexibility after launch, I built Sauro CMS: a founder-friendly editing system designed to
-            stay simple while being tailored to each project. It keeps day-to-day content updates easy without forcing
-            you into a generic platform model.
-          </p>
-        </div>
-
-        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          <div className="flex h-full flex-col gap-4 rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-dino-blue)_16%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-dino-blue)_3%,var(--vd-bg))] px-6 py-8 shadow-[0_18px_36px_-30px_color-mix(in_oklch,var(--vd-dino-blue)_24%,transparent)] sm:px-10">
-            <div className="space-y-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                Interactive sandbox
-              </p>
-              <h3 className="text-xl font-semibold tracking-tight text-foreground">
-                Let prospects click around before they ever book a call.
-              </h3>
-              <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-                The demo routes use dummy content and disposable state, so visitors can explore the Page Editor,
-                Article Editor, Contact Templates, Newsletter, Reviews, Theme Editor, Inbox, Calendar, Media Library,
-                Support Portal, Stays, Routes, and the Booking API safely.
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          {/* Left column: all text */}
+          <div className="flex flex-col gap-5">
+            <div className="space-y-4">
+              <p className="vd-section-kicker">Content control</p>
+              <h2 className="vd-as-title">Manage your own content with Sauro CMS</h2>
+              <p className="text-[0.9375rem] leading-7 text-[var(--vd-copy)]">
+                Its important to me that I leave you with a product that can grow with your needs. I built Sauro CMS
+                to be an easy and simple content management system (CMS) so that you can update content without forcing
+                you to learn how to code. Each instance of the CMS is tailor made to your needs and to your requirements.
               </p>
             </div>
 
-            <div className="space-y-3 rounded-[1rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background/80 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                Preview sizing
+            <div className="space-y-2">
+              <p className="text-sm font-semibold text-foreground">
+                Explore the editor before you even book a call.
               </p>
               <p className="text-sm leading-6 text-muted-foreground">
-                The live workspace preview is intentionally squashed to 50% so the whole UI reads like a compact,
-                glanceable product shot.
+                The interactive sandbox uses dummy content and disposable state, so you can safely test drive
+                the Page Editor, Article Editor, and other tools.
+              </p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                This sandbox is purely illustrative. Your final interface will be custom-engineered entirely
+                around your specific workflows and content.
               </p>
             </div>
 
-            <div className="mt-auto">
+            <div>
               <Button asChild className="vd-dino-cta min-h-12 rounded-full px-6 text-sm font-medium">
                 <a href={demoHomeHref}>
                   Try the editor
@@ -54,6 +45,7 @@ export function SauroCmsSection() {
             </div>
           </div>
 
+          {/* Right column: demo preview (unchanged) */}
           <div className="overflow-hidden rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[linear-gradient(180deg,color-mix(in_oklch,var(--vd-card)_92%,white),color-mix(in_oklch,var(--vd-bg)_96%,white))] shadow-[0_28px_80px_-56px_color-mix(in_oklch,var(--vd-fg)_32%,transparent)]">
             <div className="flex items-center justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
               <div className="flex items-center gap-2">

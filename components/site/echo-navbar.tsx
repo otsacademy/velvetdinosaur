@@ -122,7 +122,7 @@ export function EchoNavbar() {
   return (
     <header className="supports-backdrop-filter:bg-background/60 fixed left-0 right-0 top-0 z-50 w-full backdrop-blur">
       <div className="mx-auto mt-4 max-w-6xl px-4 md:mt-6 md:px-6">
-        <div className="flex items-center gap-2 rounded-full border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-background/82 p-2 shadow-[0_1px_4px_-1px_color-mix(in_oklch,var(--vd-fg)_10%,transparent)]">
+        <div className="flex items-center gap-2 rounded-full bg-background/82 p-2">
           <nav className="flex min-w-0 grow items-center gap-2 overflow-x-auto pb-0.5 no-scrollbar">
             {navItems.map((item) => (
               <NavButton

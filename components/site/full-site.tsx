@@ -60,6 +60,7 @@ async function renderHeroImageSlot(
 
 async function renderSecondarySections(withReveal: RevealWrapper) {
   const [
+    { ServicesSection },
     { MyStack },
     { AboutServicesSection },
     { SelectedWork },
@@ -70,6 +71,7 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
     { ClientReviewSection },
     { ContactSection },
   ] = await Promise.all([
+    import("./services-section"),
     import("./my-stack"),
     import("./about-services-section"),
     import("./selected-work"),
@@ -83,6 +85,8 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
 
   return (
     <>
+      {withReveal(<ServicesSection />, 100)}
+
       {withReveal(<MyStack />, 100)}
 
       <div className="bg-muted/40">
@@ -138,7 +142,7 @@ export async function FullSite() {
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="py-8 md:py-12 lg:py-10"
+              className="py-4 md:py-6 lg:py-4"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}

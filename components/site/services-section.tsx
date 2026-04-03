@@ -1,76 +1,103 @@
-import { ArrowRight, Clock, Code2, Globe, Smartphone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Briefcase, Clock, Code, Globe, Search, Smartphone, Star } from "lucide-react"
 
-interface ServiceCardProps {
-  icon: React.ElementType
-  title: string
-  description: string
-}
+const whyHireMe = [
+  {
+    icon: Briefcase,
+    title: "Founder-led delivery",
+    description: "You work directly with me from discovery to launch. No account managers, no hand-offs, and no agency runaround.",
+  },
+  {
+    icon: Search,
+    title: "Rigorous problem-solving",
+    description: "Drawing on my background in NHS clinical governance and medical devices, I treat complex digital builds with absolute care, security, and precision.",
+  },
+  {
+    icon: Clock,
+    title: "Predictable timelines",
+    description: "Rapid 4 to 6-week turnarounds for brochure websites, and clear, structured milestones for complex mobile and web apps.",
+  },
+]
 
-function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
-  return (
-    <div className="vd-service-card vd-icon-card rounded-xl border border-transparent bg-card p-5">
-      <div className="vd-icon-badge mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
-        <Icon className="vd-icon-accent h-5 w-5 text-primary" />
-      </div>
-      <h3 className="text-xl font-semibold tracking-tight text-foreground">{title}</h3>
-      <p className="text-sm text-[var(--vd-copy)]">{description}</p>
-    </div>
-  )
-}
+const projectTypes = [
+  {
+    icon: Globe,
+    title: "Websites",
+    description: "High-performance marketing sites, portfolios, editorial platforms, and landing pages designed to convert cleanly.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile apps",
+    description: "Bespoke React Native builds for teams who need seamless iOS and Android applications without the headache of managing two codebases.",
+  },
+  {
+    icon: Code,
+    title: "Web apps",
+    description: "Custom products, member areas, secure admin tools, dashboards, and scalable product MVPs tailored to your workflow.",
+  },
+]
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-16">
+    <section id="services" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid items-start gap-10 lg:grid-cols-2">
-          <div className="space-y-5">
-            <h2 className="vd-section-heading text-2xl font-semibold">Services</h2>
+        <h2 className="vd-as-title mb-4">Custom digital products, shaped around your goals.</h2>
 
-            <div className="max-w-xl space-y-4 leading-relaxed text-[var(--vd-copy)]">
-              <p>
-                I build bespoke websites and apps from the ground up. Some clients come with a clear brief. Others
-                come with a knotty problem, an ageing site, or the start of an idea that needs shaping. I enjoy both,
-                and I focus on turning that early uncertainty into something clear, useful, and well built.
-              </p>
-              <p>
-                Each project is shaped around your goals, your users, and how your organisation actually works.
-                Everything is built from scratch, so nothing is borrowed from a previous client or squeezed into
-                someone else&apos;s framework.
+        <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_280px] lg:items-start">
+          <div>
+            <p className="text-[0.9375rem] leading-7 text-[var(--vd-copy)]">
+              Whether you arrive with a clear brief, an ageing platform, or a knotty internal problem that needs
+              untangling, I build solutions mapped exactly to how your organisation works. No recycled packages.
+              No forced templates. Just bespoke architecture, clean code, and digital products that stay
+              maintainable long after launch.
+            </p>
+          </div>
+          <div className="flex items-start gap-3 lg:pt-10">
+            <Star className="mt-0.5 h-5 w-5 shrink-0 text-[var(--vd-primary)]" />
+            <div>
+              <p className="text-sm font-semibold text-foreground">5.0 Google rating</p>
+              <p className="mt-1 text-sm leading-snug text-muted-foreground">
+                Independent reviews from clients who trusted Velvet Dinosaur with redesigns, migrations, and full builds.
               </p>
             </div>
+          </div>
+        </div>
 
-            <Button asChild className="vd-dino-cta h-11 gap-2 rounded-full px-6 text-[0.9375rem] font-medium">
-              <a href="#contact">
-                Get in touch
-                <ArrowRight className="h-4 w-4 vd-inline-arrow" />
-              </a>
-            </Button>
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* Column 1: Why clients hire me */}
+          <div>
+            <h3 className="mb-5 text-sm font-semibold text-foreground">Why clients hire me</h3>
+            <div className="space-y-5">
+              {whyHireMe.map((item) => {
+                const Icon = item.icon
+                return (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--vd-primary)]" />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="pointer-events-none absolute bottom-4 left-0 top-4 w-1 rounded-full bg-primary" aria-hidden="true" />
-            <div className="grid grid-cols-1 gap-4 pl-6 sm:grid-cols-2 sm:pl-8">
-              <ServiceCard
-                icon={Globe}
-                title="Websites"
-                description="Marketing sites, portfolios, blogs, and landing pages"
-              />
-              <ServiceCard
-                icon={Smartphone}
-                title="Mobile apps"
-                description="iOS and Android apps with React Native"
-              />
-              <ServiceCard
-                icon={Code2}
-                title="Web apps"
-                description="Custom platforms, dashboards, and SaaS products"
-              />
-              <ServiceCard
-                icon={Clock}
-                title="4-6 weeks"
-                description="Typical project timeline from start to launch"
-              />
+          {/* Column 2: Project types */}
+          <div>
+            <h3 className="mb-5 text-sm font-semibold text-foreground">Project types</h3>
+            <div className="space-y-5">
+              {projectTypes.map((item) => {
+                const Icon = item.icon
+                return (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--vd-primary)]" />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>

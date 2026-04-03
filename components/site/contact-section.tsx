@@ -43,7 +43,7 @@ export function ContactSection() {
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
 
   return (
-    <section id="contact" className="py-16">
+    <section id="contact" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
         <div className="vd-surface-panel vd-soft-panel rounded-[calc(var(--vd-radius)+18px)] p-6 md:p-10">
           <div className="mb-10 max-w-3xl space-y-3">
