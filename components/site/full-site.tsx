@@ -31,16 +31,22 @@ async function renderHeroImageSlot(
       <div className="relative">
         <div className="pointer-events-none absolute inset-0 z-10 hidden lg:block">
           <div className={`${heroTrustPillClassName} absolute left-[-8%] top-[5%]`}>
-            <span className="text-[0.9375rem] font-semibold text-foreground">100/100</span>
-            <span className="text-[0.6875rem] font-medium text-muted-foreground">Lighthouse</span>
+            <span className="text-[0.95rem] font-bold text-foreground">100/100</span>
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.04em] [color:color-mix(in_oklch,var(--vd-muted-fg)_72%,transparent)]">
+              Lighthouse
+            </span>
           </div>
           <div className={`${heroTrustPillClassName} absolute left-[-14%] top-[42%]`}>
-            <span className="text-[0.9375rem] font-semibold text-foreground">5.0 ★</span>
-            <span className="text-[0.6875rem] font-medium text-muted-foreground">Google rated</span>
+            <span className="text-[0.95rem] font-bold text-foreground">5.0 ★</span>
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.04em] [color:color-mix(in_oklch,var(--vd-muted-fg)_72%,transparent)]">
+              Google rated
+            </span>
           </div>
           <div className={`${heroTrustPillClassName} absolute bottom-[8%] left-[-10%]`}>
-            <span className="text-[0.9375rem] font-semibold text-foreground">4–6 wk</span>
-            <span className="text-[0.6875rem] font-medium text-muted-foreground">Delivery</span>
+            <span className="text-[0.95rem] font-bold text-foreground">4–6 wk</span>
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.04em] [color:color-mix(in_oklch,var(--vd-muted-fg)_72%,transparent)]">
+              Delivery
+            </span>
           </div>
         </div>
         <PixelImage
@@ -122,7 +128,7 @@ export async function FullSite() {
   const heroMascotSizeClassName =
     "h-[min(17rem,65vw)] w-[min(17rem,65vw)] sm:h-[min(21rem,50vw)] sm:w-[min(21rem,50vw)] lg:h-[min(26rem,36vw)] lg:w-[min(26rem,36vw)]"
   const heroTrustPillClassName =
-    "vd-hover-lift-sm pointer-events-auto flex flex-col items-start gap-0.5 rounded-xl border border-border/80 bg-background/90 px-3.5 py-2 shadow-sm backdrop-blur-xl transition-all"
+    "vd-hover-lift-sm pointer-events-auto flex flex-col items-start gap-[0.15rem] rounded-[0.875rem] border border-[color-mix(in_oklch,var(--vd-border)_80%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_90%,transparent)] px-4 py-[0.65rem] shadow-[0_2px_12px_color-mix(in_oklch,var(--vd-fg)_6%,transparent)] backdrop-blur-xl transition-all"
   const siteChrome = isLhci ? null : await renderSiteChrome(whatsappHref)
   const heroImageSlot = isLhci
     ? undefined
@@ -138,11 +144,11 @@ export async function FullSite() {
       {siteChrome}
 
       <main className="pt-20 md:pt-24">
-        <section id="home" className="relative px-6 pb-6">
+        <section id="home" className="relative mb-2 px-6 pb-6">
 
           <div className="mx-auto w-full max-w-6xl">
             <Hero1
-              className="py-4 md:py-6 lg:py-4"
+              className="!pt-10 !pb-8"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
               description={mainHeroCopy.description}
