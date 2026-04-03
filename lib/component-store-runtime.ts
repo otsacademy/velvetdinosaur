@@ -12,6 +12,12 @@ type RebuildOptions = {
   envFile: string;
 };
 
+type SystemdServiceInfo = {
+  environmentFiles: string[];
+  name: string;
+  workingDirectory: string;
+};
+
 function parseEnv(content: string): EnvMap {
   const map: EnvMap = {};
   for (const line of content.split(/\r?\n/)) {
@@ -83,8 +89,96 @@ async function restartSystemdService(systemctlBin: string, serviceName: string, 
   }
 }
 
+function parseSystemdProperties(stdout: string) {
+  const properties: Record<string, string> = {};
+  for (const line of stdout.split(/\r?\n/)) {
+    const index = line.indexOf('=');
+    if (index < 0) continue;
+    properties[line.slice(0, index)] = line.slice(index + 1);
+  }
+  return properties;
+}
+
+function parseSystemdEnvironmentFiles(value: string) {
+  return value.match(/\/[^\s)]+/g) ?? [];
+}
+
+async function listSystemdServiceNames(systemctlBin: string, slug: string) {
+  try {
+    const result = await execFileAsync(
+      systemctlBin,
+      ['list-unit-files', `vd-${slug}*.service`, '--type=service', '--no-legend', '--no-pager'],
+      { encoding: 'utf8' }
+    );
+
+    return (result.stdout || '')
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => line.split(/\s+/)[0] || '')
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+async function inspectSystemdService(systemctlBin: string, serviceName: string): Promise<SystemdServiceInfo | null> {
+  try {
+    const result = await execFileAsync(
+      systemctlBin,
+      ['show', serviceName, '-p', 'Id', '-p', 'WorkingDirectory', '-p', 'EnvironmentFiles'],
+      { encoding: 'utf8' }
+    );
+    const properties = parseSystemdProperties(result.stdout || '');
+    return {
+      environmentFiles: parseSystemdEnvironmentFiles(properties.EnvironmentFiles || ''),
+      name: (properties.Id || serviceName).trim(),
+      workingDirectory: (properties.WorkingDirectory || '').trim()
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function resolveSystemdService(
+  systemctlBin: string,
+  slug: string,
+  siteRoot: string,
+  envFile: string,
+  explicitServiceName: string
+) {
+  const serviceNames = explicitServiceName
+    ? [explicitServiceName]
+    : await listSystemdServiceNames(systemctlBin, slug);
+
+  if (!serviceNames.length) {
+    return { candidates: [] as SystemdServiceInfo[], service: null as SystemdServiceInfo | null };
+  }
+
+  const candidates = (await Promise.all(serviceNames.map((name) => inspectSystemdService(systemctlBin, name)))).filter(
+    (value): value is SystemdServiceInfo => Boolean(value)
+  );
+
+  const resolvedSiteRoot = path.resolve(siteRoot);
+  const resolvedEnvFile = path.resolve(envFile);
+
+  const service =
+    candidates.find((candidate) => candidate.workingDirectory && path.resolve(candidate.workingDirectory) === resolvedSiteRoot) ||
+    candidates.find((candidate) => candidate.environmentFiles.some((entry) => path.resolve(entry) === resolvedEnvFile)) ||
+    (explicitServiceName ? candidates[0] || null : candidates.length === 1 ? candidates[0] : null);
+
+  return { candidates, service };
+}
+
 export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOptions) {
   const fileEnv = await loadEnvFile(envFile);
+  const processManager = (fileEnv.VD_PROCESS_MANAGER || process.env.VD_PROCESS_MANAGER || '').trim().toLowerCase();
+  const explicitServiceName =
+    fileEnv.SYSTEMD_SERVICE_NAME ||
+    fileEnv.VD_SLOT_SERVICE ||
+    process.env.SYSTEMD_SERVICE_NAME ||
+    process.env.VD_SLOT_SERVICE ||
+    '';
 
   const env = {
     ...process.env,
@@ -98,6 +192,64 @@ export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOption
     return { restarted: false, message: 'SITE_SLUG not set; rebuild skipped.' };
   }
 
+  const systemctlBin = await resolveBinary('systemctl', ['/usr/bin/systemctl', '/bin/systemctl']);
+  const bunBin = await resolveBinary('bun', ['/usr/local/bin/bun', '/usr/bin/bun', '/bin/bun']);
+  if (!bunBin) {
+    throw new Error('bun not found in PATH');
+  }
+
+  if (systemctlBin) {
+    const { candidates, service } = await resolveSystemdService(systemctlBin, slug, siteRoot, envFile, explicitServiceName);
+    const prefersSystemd = processManager !== 'pm2' && (processManager === 'systemd' || Boolean(explicitServiceName) || candidates.length > 0);
+
+    if (prefersSystemd && !service) {
+      const candidateNames = candidates.map((candidate) => candidate.name).join(', ');
+      const baseMessage = explicitServiceName
+        ? `Configured systemd service "${explicitServiceName}" was not found.`
+        : candidateNames
+          ? `Detected systemd services for slug "${slug}" (${candidateNames}), but none match checkout ${path.resolve(siteRoot)} and env file ${path.resolve(envFile)}.`
+          : `Detected systemd runtime for slug "${slug}", but no matching systemd service could be resolved.`;
+      return {
+        restarted: false,
+        message: `${baseMessage} Run the deploy from the matching service checkout or set SYSTEMD_SERVICE_NAME/VD_SLOT_SERVICE for that checkout.`
+      };
+    }
+
+    if (prefersSystemd && service?.workingDirectory && path.resolve(service.workingDirectory) !== path.resolve(siteRoot)) {
+      return {
+        restarted: false,
+        message: `Systemd service "${service.name}" runs from ${service.workingDirectory}, but this checkout is ${path.resolve(siteRoot)}. Run the deploy from the service checkout instead of this repo clone.`
+      };
+    }
+
+    if (prefersSystemd && service) {
+      try {
+        await execFileAsync(bunBin, ['run', 'build'], { cwd: siteRoot, env });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'build failed';
+        return { restarted: false, message };
+      }
+
+      try {
+        await fs.access(path.join(siteRoot, '.next', 'BUILD_ID'));
+      } catch {
+        return { restarted: false, message: 'Build did not produce .next/BUILD_ID; restart skipped.' };
+      }
+
+      try {
+        await restartSystemdService(systemctlBin, service.name, siteRoot, env);
+        return { restarted: true, name: service.name };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'systemd restart failed';
+        return { restarted: false, message };
+      }
+    }
+  }
+
+  if (processManager === 'systemd' && !systemctlBin) {
+    return { restarted: false, message: 'systemctl not found in PATH; rebuild skipped.' };
+  }
+
   const name =
     fileEnv.PM2_PROCESS_NAME ||
     fileEnv.VD_PM2_NAME ||
@@ -106,47 +258,6 @@ export async function rebuildSiteAndRestart({ siteRoot, envFile }: RebuildOption
     `vd-${slug}`;
 
   const pm2Bin = await resolveBinary('pm2', ['/usr/local/bin/pm2', '/usr/bin/pm2', '/bin/pm2']);
-  const systemctlBin = await resolveBinary('systemctl', ['/usr/bin/systemctl', '/bin/systemctl']);
-  const bunBin = await resolveBinary('bun', ['/usr/local/bin/bun', '/usr/bin/bun', '/bin/bun']);
-  if (!bunBin) {
-    throw new Error('bun not found in PATH');
-  }
-
-  if ((fileEnv.VD_PROCESS_MANAGER || '').trim() === 'systemd') {
-    const serviceName =
-      fileEnv.SYSTEMD_SERVICE_NAME ||
-      fileEnv.VD_SLOT_SERVICE ||
-      process.env.SYSTEMD_SERVICE_NAME ||
-      process.env.VD_SLOT_SERVICE;
-    if (!serviceName) {
-      return { restarted: false, message: 'SYSTEMD_SERVICE_NAME not set; rebuild skipped.' };
-    }
-
-    try {
-      await execFileAsync(bunBin, ['run', 'build'], { cwd: siteRoot, env });
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'build failed';
-      return { restarted: false, message };
-    }
-
-    try {
-      await fs.access(path.join(siteRoot, '.next', 'BUILD_ID'));
-    } catch {
-      return { restarted: false, message: 'Build did not produce .next/BUILD_ID; restart skipped.' };
-    }
-
-    if (!systemctlBin) {
-      return { restarted: false, message: 'systemctl not found in PATH; rebuild completed but restart skipped.' };
-    }
-
-    try {
-      await restartSystemdService(systemctlBin, serviceName, siteRoot, env);
-      return { restarted: true, name: serviceName };
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'systemd restart failed';
-      return { restarted: false, message };
-    }
-  }
 
   let stoppedForBuild = false;
   if (pm2Bin) {
