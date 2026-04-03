@@ -9,9 +9,13 @@ import { Button } from "@/components/ui/button"
 
 export interface Hero1Props {
   badge?: string
+  badgeClassName?: string
   heading: string
+  headingClassName?: string
   description: string
+  descriptionClassName?: string
   supportingLine?: string
+  supportingLineClassName?: string
   buttons?: {
     primary?: {
       text: string
@@ -36,9 +40,13 @@ export interface Hero1Props {
 
 export function Hero1({
   badge = "Your Website Builder",
+  badgeClassName,
   heading = "Blocks Built With Shadcn & Tailwind",
+  headingClassName,
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+  descriptionClassName,
   supportingLine,
+  supportingLineClassName,
   buttons = {
     primary: {
       text: "Discover all components",
@@ -61,16 +69,24 @@ export function Hero1({
             {badge ? (
               <Badge
                 variant="outline"
-                className="rounded-full border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-card px-4 py-[0.4rem] text-[0.7rem] font-medium tracking-[0.04em] text-[var(--vd-muted-fg)] opacity-90"
+                className={cn(
+                  "rounded-full border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-card px-4 py-[0.4rem] text-[0.7rem] font-medium tracking-[0.04em] text-[var(--vd-muted-fg)] opacity-90",
+                  badgeClassName
+                )}
               >
                 {badge}
                 <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
-            <h1 className="vd-hero-heading mb-1 leading-[1.08] tracking-[-0.01em]">
+            <h1 className={cn("vd-hero-heading mb-1 leading-[1.08] tracking-[-0.01em]", headingClassName)}>
               {heading}
             </h1>
-            <p className="max-w-[30rem] text-base leading-7 [color:color-mix(in_oklch,var(--vd-copy)_82%,var(--vd-bg))] lg:text-[1.0625rem]">
+            <p
+              className={cn(
+                "max-w-[30rem] text-base leading-7 [color:color-mix(in_oklch,var(--vd-copy)_82%,var(--vd-bg))] lg:text-[1.0625rem]",
+                descriptionClassName
+              )}
+            >
               {description}
             </p>
             <div className="mt-3 flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
@@ -98,7 +114,12 @@ export function Hero1({
               ) : null}
             </div>
             {supportingLine ? (
-              <p className="vd-hero-note max-w-[32rem] text-sm leading-relaxed text-[var(--vd-copy)] lg:text-[0.975rem]">
+              <p
+                className={cn(
+                  "vd-hero-note max-w-[32rem] text-sm leading-relaxed text-[var(--vd-copy)] lg:text-[0.975rem]",
+                  supportingLineClassName
+                )}
+              >
                 {supportingLine}
               </p>
             ) : null}

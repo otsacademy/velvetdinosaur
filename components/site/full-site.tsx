@@ -151,18 +151,21 @@ export async function FullSite() {
               className="!pt-10 !pb-8"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
+              headingClassName="text-[46px] [font-family:var(--font-inter)] font-semibold leading-[1.08] tracking-[-0.02em]"
               description={mainHeroCopy.description}
+              descriptionClassName="text-[17px] leading-[1.75]"
               supportingLine={mainHeroCopy.supportingLine}
+              supportingLineClassName="text-[17px] leading-[1.75]"
               buttons={{
                 primary: {
                   text: "Start your project",
                   url: "#contact",
-                  buttonClassName: "vd-dino-cta h-12 rounded-full px-7 text-[0.9375rem] font-medium",
+                  buttonClassName: "vd-dino-cta h-12 rounded-full px-7 text-[17px] font-medium",
                 },
                 secondary: {
                   text: "Chat on WhatsApp",
                   url: whatsappHref,
-                  buttonClassName: "vd-pill-outline h-12 rounded-full px-7 text-[0.9375rem] font-medium",
+                  buttonClassName: "vd-pill-outline h-12 rounded-full px-7 text-[17px] font-medium",
                 },
               }}
               imageSlot={heroImageSlot}
