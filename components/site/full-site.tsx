@@ -151,7 +151,12 @@ export async function FullSite() {
               className="!pt-10 !pb-8"
               badge={mainHeroCopy.badge}
               heading={mainHeroCopy.heading}
-              headingClassName="text-[46px] [font-family:var(--font-inter)] font-semibold leading-[1.08] tracking-[-0.02em]"
+              headingStyle={{
+                fontFamily: "var(--font-inter)",
+                fontSize: "46px",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+              }}
               description={mainHeroCopy.description}
               descriptionClassName="text-[17px] leading-[1.75]"
               supportingLine={mainHeroCopy.supportingLine}

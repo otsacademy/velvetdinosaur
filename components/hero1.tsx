@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- block supports arbitrary media sources */
-import type { ReactNode } from "react"
+import type { CSSProperties, ReactNode } from "react"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -12,6 +12,7 @@ export interface Hero1Props {
   badgeClassName?: string
   heading: string
   headingClassName?: string
+  headingStyle?: CSSProperties
   description: string
   descriptionClassName?: string
   supportingLine?: string
@@ -43,6 +44,7 @@ export function Hero1({
   badgeClassName,
   heading = "Blocks Built With Shadcn & Tailwind",
   headingClassName,
+  headingStyle,
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
   descriptionClassName,
   supportingLine,
@@ -78,7 +80,10 @@ export function Hero1({
                 <ArrowUpRight className="ml-2 size-4 vd-inline-arrow" />
               </Badge>
             ) : null}
-            <h1 className={cn("vd-hero-heading mb-1 leading-[1.08] tracking-[-0.01em]", headingClassName)}>
+            <h1
+              className={cn("vd-hero-heading mb-1 leading-[1.08] tracking-[-0.01em]", headingClassName)}
+              style={headingStyle}
+            >
               {heading}
             </h1>
             <p
