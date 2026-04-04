@@ -51,7 +51,7 @@ function useStyles(variant: ContactFormVariant) {
       textarea:
         'min-h-[140px] rounded-xl border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background font-medium text-[var(--vd-fg)] placeholder:text-[var(--vd-placeholder)]',
       button:
-        'vd-dino-cta mt-2 w-full rounded-xl py-6 text-xs font-black uppercase tracking-[0.2em] shadow-lg'
+        'vd-dino-cta mt-2 w-full rounded-[10px] py-6 text-xs font-semibold uppercase tracking-[0.2em] shadow-[0_1px_3px_color-mix(in_oklch,var(--vd-fg)_7%,transparent)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_4px_12px_color-mix(in_oklch,var(--vd-fg)_12%,transparent)]'
     } as const;
   }, [variant]);
 }

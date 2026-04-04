@@ -81,7 +81,7 @@ export function ContactSection() {
               </a>
             </div>
 
-            <div className="aspect-[16/10] w-full bg-muted/30">
+            <div className="h-[220px] w-full bg-muted/30">
               <iframe
                 title="Velvet Dinosaur location on Google Maps"
                 src={MAP_EMBED_SRC}
@@ -103,7 +103,7 @@ export function ContactSection() {
             <div className="grid gap-3 sm:grid-cols-2">
               <a
                 href={callHref}
-                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-colors hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))]"
+                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-all duration-200 hover:-translate-y-px hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))] hover:shadow-[0_2px_8px_color-mix(in_oklch,var(--vd-fg)_6%,transparent)]"
               >
                 <span className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <Phone className="size-4 text-[var(--vd-primary)]" />
@@ -120,7 +120,7 @@ export function ContactSection() {
                 data-analytics-category="contact"
                 data-analytics-label="Quick chat on WhatsApp"
                 data-analytics-section="contact"
-                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-colors hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))]"
+                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-all duration-200 hover:-translate-y-px hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))] hover:shadow-[0_2px_8px_color-mix(in_oklch,var(--vd-fg)_6%,transparent)]"
               >
                 <span className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <MessageCircle className="size-4 text-[var(--vd-primary)]" />

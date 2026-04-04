@@ -64,6 +64,15 @@ interface Contact25Props {
   analyticsSectionId?: string;
 }
 
+const shellSurfaceClassName =
+  'vd-surface-panel vd-soft-panel mx-auto max-w-6xl rounded-[1.25rem] border border-[color-mix(in_oklch,var(--vd-border)_62%,transparent)] bg-[linear-gradient(165deg,color-mix(in_oklch,var(--vd-bg)_94%,transparent)_0%,color-mix(in_oklch,var(--vd-bg)_84%,var(--vd-muted))_100%)] p-8 shadow-[0_1px_3px_color-mix(in_oklch,var(--vd-fg)_5%,transparent),0_8px_24px_color-mix(in_oklch,var(--vd-fg)_4%,transparent)] backdrop-blur-xl md:p-10';
+
+const faqCardClassName =
+  'vd-surface-card self-start rounded-2xl border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-[linear-gradient(165deg,color-mix(in_oklch,var(--vd-bg)_92%,transparent)_0%,color-mix(in_oklch,var(--vd-bg)_82%,var(--vd-muted))_100%)] p-7 shadow-[0_1px_3px_color-mix(in_oklch,var(--vd-fg)_4%,transparent),0_4px_12px_color-mix(in_oklch,var(--vd-fg)_3%,transparent)] backdrop-blur-xl lg:sticky lg:top-6';
+
+const enquiryCardClassName =
+  'vd-surface-card self-start rounded-2xl border border-[color-mix(in_oklch,var(--vd-border)_60%,transparent)] bg-[linear-gradient(165deg,color-mix(in_oklch,var(--vd-bg)_94%,transparent)_0%,color-mix(in_oklch,var(--vd-bg)_84%,var(--vd-muted))_100%)] p-7 shadow-[0_1px_3px_color-mix(in_oklch,var(--vd-fg)_4%,transparent),0_4px_12px_color-mix(in_oklch,var(--vd-fg)_3%,transparent)] backdrop-blur-xl';
+
 const Contact25 = ({
   sectionId,
   title = 'How can we help?',
@@ -176,7 +185,7 @@ const Contact25 = ({
       className={cn('py-20', className)}
     >
       <div className="container">
-        <div className="vd-surface-panel vd-soft-panel mx-auto max-w-6xl p-6 md:p-10">
+        <div className={shellSurfaceClassName}>
           <div className="mb-10 max-w-3xl space-y-3">
             <p className="inline-flex rounded-full border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
               Let&apos;s build something valuable
@@ -185,9 +194,9 @@ const Contact25 = ({
             <p className="text-[var(--vd-copy)]">{description}</p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/80 p-5 md:p-6">
-              <div className="mb-6 flex items-center gap-2">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className={faqCardClassName}>
+              <div className="mb-5 flex items-center gap-2 border-b border-[color-mix(in_oklch,var(--vd-border)_50%,transparent)] pb-4">
                 <MessageCircle className="size-5 text-[var(--vd-muted-fg)]" />
                 <h3 className="vd-section-heading text-lg font-medium">{faqTitle}</h3>
               </div>
@@ -196,19 +205,19 @@ const Contact25 = ({
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="vd-faq-item border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)]"
+                    className="vd-faq-item mb-0.5 rounded-lg border-b border-[color-mix(in_oklch,var(--vd-border)_40%,transparent)] px-1 transition-colors duration-200 hover:bg-[color-mix(in_oklch,var(--vd-fg)_3%,transparent)] last:mb-0 last:border-b-0"
                   >
-                    <AccordionTrigger className="text-left text-base font-medium text-[var(--vd-fg)] hover:text-primary">
+                    <AccordionTrigger className="px-1 py-3.5 text-left text-[0.9rem] font-medium text-[var(--vd-fg)] hover:text-[var(--vd-fg)]">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-[var(--vd-copy)]">{faq.answer}</AccordionContent>
+                    <AccordionContent className="px-1 pb-4 text-[var(--vd-copy)]">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
 
-            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/84 p-5 md:p-6">
-              <div className="mb-4 flex items-center gap-2">
+            <div className={enquiryCardClassName}>
+              <div className="mb-4 flex items-center gap-2 border-b border-[color-mix(in_oklch,var(--vd-border)_50%,transparent)] pb-3.5">
                 <MailIcon className="size-5 text-[var(--vd-muted-fg)]" />
                 <h3 className="vd-section-heading text-lg font-medium">{formTitle}</h3>
               </div>
@@ -216,14 +225,14 @@ const Contact25 = ({
               <p className="mb-4 text-sm text-[var(--vd-copy)]">{formDescription}</p>
 
               <div className="mb-5 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
+                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-[color-mix(in_oklch,var(--vd-fg)_2%,transparent)] px-3.5 py-3 transition-all duration-200 hover:-translate-y-px hover:shadow-[0_2px_8px_color-mix(in_oklch,var(--vd-fg)_6%,transparent)]">
                   <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
                     <Star className="h-3.5 w-3.5 text-primary" />
                     Google rating
                   </p>
                   <p className="text-sm font-semibold text-foreground">5.0 average from clients</p>
                 </div>
-                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
+                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-[color-mix(in_oklch,var(--vd-fg)_2%,transparent)] px-3.5 py-3 transition-all duration-200 hover:-translate-y-px hover:shadow-[0_2px_8px_color-mix(in_oklch,var(--vd-fg)_6%,transparent)]">
                   <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
                     <Clock3 className="h-3.5 w-3.5 text-primary" />
                     Typical response
