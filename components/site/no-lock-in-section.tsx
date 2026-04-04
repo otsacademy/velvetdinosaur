@@ -10,8 +10,8 @@ type TrustStat = {
 
 const trustStats: TrustStat[] = [
   {
-    label: "After Year 1",
-    value: "£120/year hosting",
+    label: "Ongoing care",
+    value: "Performance & security plan",
     icon: PoundSterling,
   },
   {

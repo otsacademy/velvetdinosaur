@@ -35,7 +35,7 @@ export async function SelectedWork() {
             Selected work
           </h2>
           <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--vd-copy)]">
-            Real projects across charities, service businesses, and product platforms.
+            Real projects across charities, professional services, and product platforms.
           </p>
         </div>
       </div>

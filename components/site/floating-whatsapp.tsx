@@ -51,7 +51,7 @@ export function FloatingWhatsApp({ href, delayMs = 1400 }: FloatingWhatsAppProps
         data-analytics-category="contact"
         data-analytics-label="Floating WhatsApp"
         data-analytics-section="floating_whatsapp"
-        className="vd-hover-lift-sm inline-flex h-12 w-12 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] bg-[var(--vd-primary-solid)] text-[var(--vd-primary-fg)] shadow-[0_16px_28px_-18px_color-mix(in_oklch,var(--vd-primary)_54%,transparent)] transition-all duration-300 hover:bg-[var(--vd-primary-solid-hover)]"
+        className="vd-hover-lift-sm inline-flex h-12 w-12 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-dino-blue)_24%,var(--vd-border))] bg-[var(--vd-dino-blue)] text-[var(--vd-dino-cta-fg)] shadow-[0_16px_28px_-18px_color-mix(in_oklch,var(--vd-dino-blue)_54%,transparent)] transition-all duration-300 hover:bg-[var(--vd-dino-blue-hover)]"
       >
         <MessageCircle className="h-5 w-5" />
         <span className="sr-only">Open WhatsApp chat</span>

@@ -23,15 +23,15 @@ export function AboutServicesSection() {
         <div className="space-y-10">
           <div id="about" className="scroll-mt-28">
             <h2 className="vd-as-title mb-6">About</h2>
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,1fr)] lg:gap-10">
-              <div className="space-y-6">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.75fr)_minmax(18rem,0.95fr)] lg:gap-10">
+              <div className="space-y-7 lg:pr-4">
                 <figure className="w-fit text-center">
-                  <div className="h-[84px] w-[84px] shrink-0 overflow-hidden rounded-full">
+                  <div className="h-[110px] w-[110px] shrink-0 overflow-hidden rounded-full">
                     <Image
                       src={r2PublicUrl("profile.webp")}
                       alt="Ian Wickens"
-                      width={84}
-                      height={84}
+                      width={110}
+                      height={110}
                       className="h-full w-full object-cover"
                       priority
                     />
@@ -50,7 +50,7 @@ export function AboutServicesSection() {
                 </div>
               </div>
 
-              <aside className="vd-surface-panel vd-soft-panel rounded-[1.5rem] p-6 lg:p-7">
+              <aside className="vd-surface-panel vd-soft-panel self-start rounded-[1.5rem] p-6 lg:p-7">
                 <div className="space-y-5">
                   <Badge
                     variant="outline"
@@ -78,7 +78,7 @@ export function AboutServicesSection() {
                         value={review.sourceUrl}
                         className="last:border-b-0"
                       >
-                        <AccordionTrigger className="py-4">
+                        <AccordionTrigger className="py-4 text-left">
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                               <span className="text-sm font-semibold text-foreground">{review.name}</span>

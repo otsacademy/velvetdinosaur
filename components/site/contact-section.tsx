@@ -11,9 +11,9 @@ const WHATSAPP_HREF =
 
 const faqs = [
   {
-    question: "What's included in the £2,500 package?",
+    question: "What's included in the base package?",
     answer:
-      "The £2,500 package includes custom design and build, SEO-ready page structure, performance optimisation, contact forms, launch support, SSL, daily backups, support portal access, and handover guidance. I agree the scope with you before development starts so the deliverables are clear. Advanced features are quoted separately before build begins.",
+      "The base package includes custom design and build, SEO-ready page structure, performance optimisation, contact forms, launch support, SSL, daily backups, support portal access, and handover guidance. I agree the scope with you before development starts so the deliverables are clear. Advanced features are quoted separately before build begins.",
   },
   {
     question: "Do I own my website and domain?",
@@ -59,6 +59,39 @@ export function ContactSection() {
       faqs={faqs}
       detailsContent={
         <>
+          <div className="overflow-hidden rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card">
+            <div className="flex items-start justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
+              <div className="min-w-0">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
+                  <MapPin className="size-4 text-[var(--vd-primary)]" />
+                  Google map
+                </p>
+                <p className="mt-1 text-sm font-medium text-foreground">
+                  16 Holloway Lane, Minster Lovell, Witney
+                </p>
+              </div>
+
+              <a
+                href={MAPS_APP_HREF}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              >
+                Open map
+              </a>
+            </div>
+
+            <div className="aspect-[16/10] w-full bg-muted/30">
+              <iframe
+                title="Velvet Dinosaur location on Google Maps"
+                src={MAP_EMBED_SRC}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full border-0"
+              />
+            </div>
+          </div>
+
           <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-4">
             <div className="mb-3 flex items-center gap-2">
               <Phone className="size-4 text-[var(--vd-primary)]" />
@@ -95,39 +128,6 @@ export function ContactSection() {
                 </span>
                 <span className="mt-1 block text-sm text-[var(--vd-copy)]">Message about your project</span>
               </a>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card">
-            <div className="flex items-start justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
-              <div className="min-w-0">
-                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
-                  <MapPin className="size-4 text-[var(--vd-primary)]" />
-                  Google map
-                </p>
-                <p className="mt-1 text-sm font-medium text-foreground">
-                  16 Holloway Lane, Minster Lovell, Witney
-                </p>
-              </div>
-
-              <a
-                href={MAPS_APP_HREF}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 text-sm font-medium text-foreground underline-offset-4 hover:underline"
-              >
-                Open map
-              </a>
-            </div>
-
-            <div className="aspect-[16/10] w-full bg-muted/30">
-              <iframe
-                title="Velvet Dinosaur location on Google Maps"
-                src={MAP_EMBED_SRC}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full border-0"
-              />
             </div>
           </div>
         </>
