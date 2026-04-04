@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Clock3, LoaderIcon, MailIcon, MessageCircle, Star } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -48,10 +48,15 @@ interface WhatsAppContact {
 }
 
 interface Contact25Props {
+  sectionId?: string;
   title?: string;
   description?: string;
   faqTitle?: string;
+  formTitle?: string;
+  formDescription?: string;
   faqs?: FAQ[];
+  detailsContent?: ReactNode;
+  formContent?: ReactNode;
   whatsapp?: WhatsAppContact;
   className?: string;
   onSubmit?: (data: ContactFormData) => Promise<void>;
@@ -60,9 +65,12 @@ interface Contact25Props {
 }
 
 const Contact25 = ({
+  sectionId,
   title = 'How can we help?',
   description = 'Check our FAQ for quick answers or send us a message.',
   faqTitle = 'Frequently Asked Questions',
+  formTitle = 'Project enquiry',
+  formDescription = "You'll hear directly from Ian with clear next steps.",
   faqs = [
     {
       question: 'What are your business hours?',
@@ -90,6 +98,8 @@ const Contact25 = ({
         'Please include your account email (if applicable), a detailed description of your question or issue, and any relevant screenshots or error messages.',
     },
   ],
+  detailsContent,
+  formContent,
   whatsapp,
   className,
   onSubmit,
@@ -160,7 +170,11 @@ const Contact25 = ({
   };
 
   return (
-    <section className={cn('py-20', className)}>
+    <section
+      id={sectionId}
+      data-analytics-section={analyticsSectionId}
+      className={cn('py-20', className)}
+    >
       <div className="container">
         <div className="vd-surface-panel vd-soft-panel mx-auto max-w-6xl p-6 md:p-10">
           <div className="mb-10 max-w-3xl space-y-3">
@@ -196,10 +210,10 @@ const Contact25 = ({
             <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/84 p-5 md:p-6">
               <div className="mb-4 flex items-center gap-2">
                 <MailIcon className="size-5 text-[var(--vd-muted-fg)]" />
-                <h3 className="vd-section-heading text-lg font-medium">Project enquiry</h3>
+                <h3 className="vd-section-heading text-lg font-medium">{formTitle}</h3>
               </div>
 
-              <p className="mb-4 text-sm text-[var(--vd-copy)]">You&apos;ll hear directly from Ian with clear next steps.</p>
+              <p className="mb-4 text-sm text-[var(--vd-copy)]">{formDescription}</p>
 
               <div className="mb-5 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
@@ -239,122 +253,130 @@ const Contact25 = ({
                 </div>
               ) : null}
 
-              <form
-                onSubmit={form.handleSubmit(handleFormSubmit)}
-                className="vd-contact-form flex flex-col gap-5 rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5"
-                data-analytics-form={analyticsFormId}
-              >
-                {isSubmitted && (
-                  <div
-                    className={cn(
-                      'rounded-lg border border-green-500/20 bg-green-500/10 p-4 text-center transition-opacity duration-500',
-                      showSuccess ? 'opacity-100' : 'opacity-0'
-                    )}
-                  >
-                    <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                      Thank you! We&apos;ll get back to you soon.
-                    </p>
-                  </div>
-                )}
+              {detailsContent ? <div className="mb-5 space-y-5">{detailsContent}</div> : null}
 
-                <FieldGroup>
-                  <Controller
-                    control={form.control}
-                    name="name"
-                    render={({ field, fieldState }) => (
-                      <Field data-invalid={fieldState.invalid}>
-                        <FieldLabel htmlFor={field.name}>
-                          Name <span className="text-destructive">*</span>
-                        </FieldLabel>
-                        <Input
-                          {...field}
-                          id={field.name}
-                          aria-invalid={fieldState.invalid}
-                          placeholder="Your name"
-                          className="bg-background"
-                          onFocus={trackFormStart}
-                          onChange={(event) => {
-                            trackFormStart();
-                            field.onChange(event);
-                          }}
-                        />
-                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                      </Field>
-                    )}
-                  />
-
-                  <Controller
-                    control={form.control}
-                    name="email"
-                    render={({ field, fieldState }) => (
-                      <Field data-invalid={fieldState.invalid}>
-                        <FieldLabel htmlFor={field.name}>
-                          Email <span className="text-destructive">*</span>
-                        </FieldLabel>
-                        <Input
-                          {...field}
-                          id={field.name}
-                          type="email"
-                          aria-invalid={fieldState.invalid}
-                          placeholder="you@example.com"
-                          className="bg-background"
-                          onFocus={trackFormStart}
-                          onChange={(event) => {
-                            trackFormStart();
-                            field.onChange(event);
-                          }}
-                        />
-                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                      </Field>
-                    )}
-                  />
-
-                  <Controller
-                    control={form.control}
-                    name="message"
-                    render={({ field, fieldState }) => (
-                      <Field data-invalid={fieldState.invalid}>
-                        <FieldLabel htmlFor={field.name}>
-                          Message <span className="text-destructive">*</span>
-                        </FieldLabel>
-                        <Textarea
-                          {...field}
-                          id={field.name}
-                          aria-invalid={fieldState.invalid}
-                          placeholder="Tell me what you need and where your current site is falling short."
-                          rows={4}
-                          className="bg-background"
-                          onFocus={trackFormStart}
-                          onChange={(event) => {
-                            trackFormStart();
-                            field.onChange(event);
-                          }}
-                        />
-                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                      </Field>
-                    )}
-                  />
-
-                  {form.formState.errors.root && (
-                    <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
+              {formContent ? (
+                <div className="rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5">
+                  {formContent}
+                </div>
+              ) : (
+                <form
+                  onSubmit={form.handleSubmit(handleFormSubmit)}
+                  className="vd-contact-form flex flex-col gap-5 rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5"
+                  data-analytics-form={analyticsFormId}
+                >
+                  {isSubmitted && (
+                    <div
+                      className={cn(
+                        'rounded-lg border border-green-500/20 bg-green-500/10 p-4 text-center transition-opacity duration-500',
+                        showSuccess ? 'opacity-100' : 'opacity-0'
+                      )}
+                    >
+                      <p className="text-sm font-medium text-green-600 dark:text-green-400">
+                        Thank you! We&apos;ll get back to you soon.
+                      </p>
+                    </div>
                   )}
 
-                  <Button
-                    size="lg"
-                    className="vd-pill-primary h-12 w-full rounded-full text-[0.9375rem] font-medium hover:bg-[var(--vd-primary-solid-hover)]"
-                    disabled={form.formState.isSubmitting}
-                  >
-                    {form.formState.isSubmitting ? (
-                      <>
-                        <LoaderIcon className="mr-2 size-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      'Start your project'
+                  <FieldGroup>
+                    <Controller
+                      control={form.control}
+                      name="name"
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={field.name}>
+                            Name <span className="text-destructive">*</span>
+                          </FieldLabel>
+                          <Input
+                            {...field}
+                            id={field.name}
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Your name"
+                            className="bg-background"
+                            onFocus={trackFormStart}
+                            onChange={(event) => {
+                              trackFormStart();
+                              field.onChange(event);
+                            }}
+                          />
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      control={form.control}
+                      name="email"
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={field.name}>
+                            Email <span className="text-destructive">*</span>
+                          </FieldLabel>
+                          <Input
+                            {...field}
+                            id={field.name}
+                            type="email"
+                            aria-invalid={fieldState.invalid}
+                            placeholder="you@example.com"
+                            className="bg-background"
+                            onFocus={trackFormStart}
+                            onChange={(event) => {
+                              trackFormStart();
+                              field.onChange(event);
+                            }}
+                          />
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      control={form.control}
+                      name="message"
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={field.name}>
+                            Message <span className="text-destructive">*</span>
+                          </FieldLabel>
+                          <Textarea
+                            {...field}
+                            id={field.name}
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Tell me what you need and where your current site is falling short."
+                            rows={4}
+                            className="bg-background"
+                            onFocus={trackFormStart}
+                            onChange={(event) => {
+                              trackFormStart();
+                              field.onChange(event);
+                            }}
+                          />
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
+                      )}
+                    />
+
+                    {form.formState.errors.root && (
+                      <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
                     )}
-                  </Button>
-                </FieldGroup>
-              </form>
+
+                    <Button
+                      size="lg"
+                      className="vd-pill-primary h-12 w-full rounded-full text-[0.9375rem] font-medium hover:bg-[var(--vd-primary-solid-hover)]"
+                      disabled={form.formState.isSubmitting}
+                    >
+                      {form.formState.isSubmitting ? (
+                        <>
+                          <LoaderIcon className="mr-2 size-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Start your project'
+                      )}
+                    </Button>
+                  </FieldGroup>
+                </form>
+              )}
             </div>
           </div>
         </div>

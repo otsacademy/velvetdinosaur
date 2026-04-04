@@ -1,8 +1,13 @@
-import { Clock3, MailIcon, MessageCircle, Star } from "lucide-react"
+import { MapPin, MessageCircle, Phone } from "lucide-react"
 
+import { Contact25 } from "@/components/contact25"
 import { ContactForm } from "@/components/contact/contact-form.client"
 
 const CONTACT_FORM_ID = "velvet_contact_section"
+const MAPS_APP_HREF = "https://maps.app.goo.gl/qXGMvoF1E36RWeDS9"
+const MAP_EMBED_SRC = "https://www.google.com/maps?q=51.7936206,-1.5530184&z=16&output=embed"
+const WHATSAPP_HREF =
+  "https://wa.me/447438460437?text=Hi%20Ian%2C%20I'd%20like%20to%20discuss%20a%20website%20project."
 
 const faqs = [
   {
@@ -39,103 +44,116 @@ const faqs = [
 
 export function ContactSection() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
-  const whatsappDigits = phoneNumber.replace(/\D/g, "")
-  const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
+  const callHref = `tel:${phoneNumber.replace(/\s+/g, "")}`
+  const phoneDisplay = formatPhoneDisplay(phoneNumber)
 
   return (
-    <section id="contact" className="py-8">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="vd-surface-panel vd-soft-panel rounded-[calc(var(--vd-radius)+18px)] p-6 md:p-10">
-          <div className="mb-10 max-w-3xl space-y-3">
-            <p className="inline-flex rounded-full border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
-              Let&apos;s build something valuable
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight">Tell me about your project</h2>
-            <p className="text-[var(--vd-copy)]">
-              Share your goals, current pain points, and timeline. You will hear back directly from Ian within one business day.
-            </p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/80 p-5 md:p-6">
-              <div className="mb-6 flex items-center gap-2">
-                <MessageCircle className="size-5 text-[var(--vd-muted-fg)]" />
-                <h3 className="vd-section-heading text-lg font-medium">Questions people usually ask</h3>
-              </div>
-              <div className="space-y-3">
-                {faqs.map((faq) => (
-                  <details
-                    key={faq.question}
-                    className="group rounded-[calc(var(--vd-radius)+4px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background/90 px-4 py-3"
-                  >
-                    <summary className="cursor-pointer list-none text-base font-medium text-[var(--vd-fg)] marker:hidden">
-                      <span className="flex items-start justify-between gap-4">
-                        <span>{faq.question}</span>
-                        <span className="mt-0.5 text-[var(--vd-muted-fg)] transition-transform group-open:rotate-45">+</span>
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm leading-relaxed text-[var(--vd-copy)]">{faq.answer}</p>
-                  </details>
-                ))}
-              </div>
+    <Contact25
+      sectionId="contact"
+      className="py-8"
+      title="Tell me about your project"
+      description="Share your goals, current pain points, and timeline. You will hear back directly from Ian within one business day."
+      faqTitle="Questions people usually ask"
+      formTitle="Project enquiry"
+      formDescription={"You'll hear directly from Ian with clear next steps."}
+      faqs={faqs}
+      detailsContent={
+        <>
+          <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-4">
+            <div className="mb-3 flex items-center gap-2">
+              <Phone className="size-4 text-[var(--vd-primary)]" />
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
+                Direct contact
+              </p>
             </div>
 
-            <div className="vd-surface-card border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-background/84 p-5 md:p-6">
-              <div className="mb-4 flex items-center gap-2">
-                <MailIcon className="size-5 text-[var(--vd-muted-fg)]" />
-                <h3 className="vd-section-heading text-lg font-medium">Project enquiry</h3>
-              </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href={callHref}
+                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-colors hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))]"
+              >
+                <span className="flex items-center gap-2 text-sm font-medium text-foreground">
+                  <Phone className="size-4 text-[var(--vd-primary)]" />
+                  Call Ian
+                </span>
+                <span className="mt-1 block text-sm text-[var(--vd-copy)]">{phoneDisplay}</span>
+              </a>
 
-              <p className="mb-4 text-sm text-[var(--vd-copy)]">You&apos;ll hear directly from Ian with clear next steps.</p>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-event="whatsapp_click"
+                data-analytics-category="contact"
+                data-analytics-label="Quick chat on WhatsApp"
+                data-analytics-section="contact"
+                className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background px-4 py-3 transition-colors hover:border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] hover:bg-[color-mix(in_oklch,var(--vd-primary)_4%,var(--vd-bg))]"
+              >
+                <span className="flex items-center gap-2 text-sm font-medium text-foreground">
+                  <MessageCircle className="size-4 text-[var(--vd-primary)]" />
+                  WhatsApp
+                </span>
+                <span className="mt-1 block text-sm text-[var(--vd-copy)]">Message about your project</span>
+              </a>
+            </div>
+          </div>
 
-              <div className="mb-5 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
-                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
-                    <Star className="h-3.5 w-3.5 text-primary" />
-                    Google rating
-                  </p>
-                  <p className="text-sm font-semibold text-foreground">5.0 average from clients</p>
-                </div>
-                <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-3">
-                  <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
-                    <Clock3 className="h-3.5 w-3.5 text-primary" />
-                    Typical response
-                  </p>
-                  <p className="text-sm font-semibold text-foreground">Within 1 business day</p>
-                </div>
-              </div>
-
-              <div className="mb-5 rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-4">
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  data-analytics-event="whatsapp_click"
-                  data-analytics-category="contact"
-                  data-analytics-label="Quick chat on WhatsApp"
-                  data-analytics-section="contact"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-primary"
-                >
-                  <MessageCircle className="size-4" />
-                  Quick chat on WhatsApp
-                </a>
-                <p className="mt-1 text-xs text-[var(--vd-muted-fg)]">
-                  Prefer chat first? WhatsApp is often the fastest route.
+          <div className="overflow-hidden rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card">
+            <div className="flex items-start justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
+              <div className="min-w-0">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
+                  <MapPin className="size-4 text-[var(--vd-primary)]" />
+                  Google map
+                </p>
+                <p className="mt-1 text-sm font-medium text-foreground">
+                  16 Holloway Lane, Minster Lovell, Witney
                 </p>
               </div>
 
-              <div className="rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5">
-                <ContactForm
-                  analyticsFormId={CONTACT_FORM_ID}
-                  messagePlaceholder="Tell me about your goals, audience, and what needs fixing."
-                  submitLabel="Send project enquiry"
-                  successDelayMs={0}
-                />
-              </div>
+              <a
+                href={MAPS_APP_HREF}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              >
+                Open map
+              </a>
+            </div>
+
+            <div className="aspect-[16/10] w-full bg-muted/30">
+              <iframe
+                title="Velvet Dinosaur location on Google Maps"
+                src={MAP_EMBED_SRC}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full border-0"
+              />
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </>
+      }
+      formContent={
+        <ContactForm
+          analyticsFormId={CONTACT_FORM_ID}
+          messagePlaceholder="Tell me about your goals, audience, and what needs fixing."
+          submitLabel="Send project enquiry"
+          successDelayMs={0}
+        />
+      }
+    />
   )
+}
+
+function formatPhoneDisplay(phoneNumber: string) {
+  const digits = phoneNumber.replace(/\D/g, "")
+
+  if (digits.length === 12 && digits.startsWith("44")) {
+    return `+44 ${digits.slice(2, 6)} ${digits.slice(6)}`
+  }
+
+  if (digits.length === 11 && digits.startsWith("0")) {
+    return `${digits.slice(0, 5)} ${digits.slice(5)}`
+  }
+
+  return phoneNumber
 }

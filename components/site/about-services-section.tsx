@@ -1,100 +1,116 @@
-import type { ElementType } from "react"
 import Image from "next/image"
-import { Handshake, Star } from "lucide-react"
+import { Star } from "lucide-react"
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
 import { r2PublicUrl } from "@/lib/public-assets"
+import { googleReviews } from "./google-reviews-section"
 
-interface StatCardProps {
-  icon: ElementType
-  eyebrow: string
-  title: string
-  description: string
-}
-
-const statCards: StatCardProps[] = [
-  {
-    icon: Handshake,
-    eyebrow: "Approach",
-    title: "Direct from first call to launch",
-    description:
-      "You work with me throughout. No handoffs, no templates, and no platform lock-in at the end.",
-  },
-  {
-    icon: Star,
-    eyebrow: "Proof",
-    title: "5.0 Google rating",
-    description:
-      "Independent reviews from clients who trusted Velvet Dinosaur with redesigns, migrations, and full builds.",
-  },
+const bioParagraphs = [
+  "Based in Oxfordshire, I build bespoke websites and apps for organisations seeking something different.",
+  "For most of my professional career, I have worked in the NHS across specialist medical devices, clinical research, and corporate governance. This unique medical background enables me to bring precision, clear communication, and a problem-solving mindset to complex digital projects; these values are consistently embedded in my work.",
+  "In addition, I have spent most of my adult life building sites independently: rebuilding charity platforms, coding conference websites, and understanding web technologies at a fundamental level. This hands-on experience fuels my passion and means my clients benefit from both technical depth and genuine curiosity.",
+  "Velvet Dinosaur was inspired by my 3-year-old daughter, who is obsessed with blue and dinosaurs.",
 ]
 
-function StatCard({ icon: Icon, eyebrow, title, description }: StatCardProps) {
-  return (
-    <article className="border-t border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] pt-5">
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--vd-dino-blue)_18%,transparent)] bg-[color-mix(in_oklch,var(--vd-dino-blue)_9%,transparent)] text-[var(--vd-dino-blue)]">
-          <Icon className="h-4 w-4" />
-        </div>
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{eyebrow}</p>
-      </div>
-      <h4 className="text-base font-semibold tracking-tight text-foreground">{title}</h4>
-      <p className="mt-2 text-[0.95rem] leading-7 text-[var(--vd-copy)]">{description}</p>
-    </article>
-  )
-}
+const bioParagraphClassName =
+  "font-body text-base font-normal leading-8 text-[var(--vd-copy)] [text-align:justify]"
 
 export function AboutServicesSection() {
   return (
-    <section id="about-services" className="py-10 md:py-12">
+    <section id="about-services" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div id="about" className="scroll-mt-28">
-          <div className="grid gap-x-12 gap-y-8 lg:grid-cols-[minmax(15rem,20rem)_minmax(0,1fr)]">
-            <div>
-              <h2 className="vd-as-title">About</h2>
-            </div>
-
-            <div className="hidden lg:block" aria-hidden="true" />
-
-            <div className="space-y-5 lg:pr-2">
-              {statCards.map((card) => (
-                <StatCard key={card.eyebrow} {...card} />
-              ))}
-            </div>
-
-            <article className="space-y-7">
-              <div className="grid gap-5 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-start">
-                <div className="relative h-28 w-28 overflow-hidden rounded-[1.75rem] border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_94%,var(--vd-bg))] shadow-[0_12px_28px_-24px_color-mix(in_oklch,var(--vd-fg)_32%,transparent)] sm:h-30 sm:w-30">
-                  <Image
-                    src={r2PublicUrl("profile.webp")}
-                    alt="Ian Wickens"
-                    width={120}
-                    height={120}
-                    className="h-full w-full object-cover object-center"
-                    priority
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em] text-foreground sm:text-[1.8rem]">
-                    Ian Wickens
-                  </h3>
-                  <div className="space-y-5 text-[1.03rem] leading-8 text-[var(--vd-copy)]">
-                    <p className="text-[1.1rem] leading-8 [color:color-mix(in_oklch,var(--vd-fg)_88%,var(--vd-bg))]">
-                      Based in Oxfordshire, I build bespoke websites and apps for organisations seeking something different.
-                    </p>
-                    <p>
-                      For most of my professional career, I have worked in the NHS across specialist medical devices, clinical research, and corporate governance. This unique medical background enables me to bring precision, clear communication, and a problem-solving mindset to complex digital projects; these values are consistently embedded in my work.
-                    </p>
-                    <p>
-                      In addition, I have spent most of my adult life building sites independently: rebuilding charity platforms, coding conference websites, and understanding web technologies at a fundamental level. This hands-on experience fuels my passion and means my clients benefit from both technical depth and genuine curiosity.
-                    </p>
-                    <p className="border-l-2 border-[color-mix(in_oklch,var(--vd-primary)_42%,transparent)] pl-4 [color:color-mix(in_oklch,var(--vd-fg)_82%,var(--vd-bg))]">
-                      Velvet Dinosaur was inspired by my 3-year-old daughter, who is obsessed with blue and dinosaurs.
-                    </p>
+        <div className="space-y-10">
+          <div id="about" className="scroll-mt-28">
+            <h2 className="vd-as-title mb-6">About</h2>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,1fr)] lg:gap-10">
+              <div className="space-y-6">
+                <figure className="w-fit text-center">
+                  <div className="h-[84px] w-[84px] shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={r2PublicUrl("profile.webp")}
+                      alt="Ian Wickens"
+                      width={84}
+                      height={84}
+                      className="h-full w-full object-cover"
+                      priority
+                    />
                   </div>
+                  <figcaption className="mt-3 text-sm font-medium tracking-[0.01em] text-foreground">
+                    Ian Wickens
+                  </figcaption>
+                </figure>
+
+                <div className="space-y-5">
+                  {bioParagraphs.map((paragraph) => (
+                    <p key={paragraph} className={bioParagraphClassName}>
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
               </div>
-            </article>
+
+              <aside className="vd-surface-panel vd-soft-panel rounded-[1.5rem] p-6 lg:p-7">
+                <div className="space-y-5">
+                  <Badge
+                    variant="outline"
+                    className="w-fit gap-2 border-[color-mix(in_oklch,var(--vd-primary)_24%,var(--vd-border))] bg-[color-mix(in_oklch,var(--vd-primary)_8%,var(--vd-bg))] px-3 py-1.5 text-[var(--vd-primary)]"
+                  >
+                    <Star className="h-3.5 w-3.5 fill-current" />
+                    Google rating: 5.0
+                  </Badge>
+
+                  <div className="space-y-2">
+                    <h3 className="vd-as-section-heading text-xl">Reviews &amp; credentials</h3>
+                    <p className="text-sm leading-6 text-[var(--vd-copy)]">
+                      Founder-led from first call to launch, backed by independent Google reviews from recent client work.
+                    </p>
+                  </div>
+
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="rounded-[1rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-background/80 px-4"
+                  >
+                    {googleReviews.map((review) => (
+                      <AccordionItem
+                        key={review.sourceUrl}
+                        value={review.sourceUrl}
+                        className="last:border-b-0"
+                      >
+                        <AccordionTrigger className="py-4">
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                              <span className="text-sm font-semibold text-foreground">{review.name}</span>
+                              <span className="text-xs text-[var(--vd-copy-muted)]">{review.company}</span>
+                            </div>
+                            <div className="mt-1 flex items-center gap-2 text-xs text-[var(--vd-copy-muted)]">
+                              <span className="flex items-center gap-0.5 text-[var(--vd-primary)]">
+                                {Array.from({ length: 5 }).map((_, index) => (
+                                  <Star key={index} className="h-3.5 w-3.5 fill-current" />
+                                ))}
+                              </span>
+                              <span>{review.date}</span>
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[var(--vd-copy)]">
+                          <p className="text-sm leading-7 [text-align:justify]">{review.quote}</p>
+                          <a
+                            className="mt-3 inline-flex text-sm font-medium text-foreground underline-offset-4 hover:underline"
+                            href={review.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View on Google Maps
+                          </a>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </div>
