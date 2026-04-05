@@ -25,23 +25,23 @@ export function AboutServicesSection() {
             <h2 className="vd-as-title mb-6">About</h2>
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.75fr)_minmax(18rem,0.95fr)] lg:gap-10">
               <div className="space-y-7 lg:pr-4">
-                <figure className="w-fit text-center">
-                  <div className="h-[110px] w-[110px] shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src={r2PublicUrl("profile.webp")}
-                      alt="Ian Wickens"
-                      width={110}
-                      height={110}
-                      className="h-full w-full object-cover"
-                      priority
-                    />
-                  </div>
-                  <figcaption className="mt-3 text-sm font-medium tracking-[0.01em] text-foreground">
-                    Ian Wickens
-                  </figcaption>
-                </figure>
+                <div className="space-y-5 after:table after:clear-both after:content-[''] [&>figure+*]:mt-0">
+                  <figure className="float-left mb-2 mr-6 w-fit text-center">
+                    <div className="h-[110px] w-[110px] shrink-0 overflow-hidden rounded-full">
+                      <Image
+                        src={r2PublicUrl("profile.webp")}
+                        alt="Ian Wickens"
+                        width={110}
+                        height={110}
+                        className="h-full w-full object-cover"
+                        priority
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm font-medium tracking-[0.01em] text-foreground">
+                      Ian Wickens
+                    </figcaption>
+                  </figure>
 
-                <div className="space-y-5">
                   {bioParagraphs.map((paragraph) => (
                     <p key={paragraph} className={bioParagraphClassName}>
                       {paragraph}
