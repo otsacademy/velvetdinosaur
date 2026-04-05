@@ -12,9 +12,9 @@ export const WORK_FIXTURES: Article[] = [
     subtitle: 'International academic network fighting poverty',
     tag: 'Case Study',
     tags: ['Case Study', 'Charity'],
-    desc: 'International network and journal platform redesign with bespoke CMS tooling.',
+    desc: 'Academic journal and WordPress rebuild after three years without core updates.',
     website: 'https://academicsstand.org',
-    outcome: 'Improved publishing workflow and cleaner information architecture.',
+    outcome: 'Non-technical staff can publish articles and manage communications without external support.',
     img: '/portfolio/asap.png',
     imageCaption: 'Academics Stand Against Poverty homepage after redesign and CMS migration.',
     date: 'Posted on 15 Jan 2026',
@@ -26,49 +26,49 @@ export const WORK_FIXTURES: Article[] = [
         id: 'challenge',
         heading: 'Challenge',
         paragraphs: [
-          'ASAP had outgrown an ageing WordPress and Elementor setup that made publishing, event updates, and journal administration harder than it needed to be.',
-          'The site needed a cleaner structure for public visitors while giving editors a more dependable workflow behind the scenes.',
+          'ASAP approached Velvet Dinosaur to resolve technical issues with its academic journal and a WordPress installation that had become difficult to manage. Conflicting plugins and an outdated theme had blocked core updates for three years. The site was insecure. The mobile performance score was 32.',
+          'The first phase focused on stabilization. Velvet Dinosaur audited the existing architecture and optimized asset delivery. The mobile performance score rose to 67. The team had a working platform while the transition was planned.',
         ],
       },
       {
         id: 'approach',
         heading: 'Approach',
         paragraphs: [
-          'Velvet Dinosaur first supported ASAP with hosting and journal platform maintenance, then redesigned the wider site around a bespoke publishing stack.',
-          'The rebuild introduced a flexible drag-and-drop page builder, a dedicated news workflow, and a simpler event creation process tailored to the organization’s editorial needs.',
+          'The site was rebuilt on a Next.js stack to move away from the limits of the previous setup. The new platform covered four functions. It provided a news editor with a word-processing interface. It included a version of Sauro CMS for page management. It added a newsletter system with double opt-in and a media library for asset organization.',
+          'The work focused on reducing technical friction for the academic team. Legacy data was migrated to the new system, including user profiles, newsletter subscribers, and archival content. Administrators and the public could keep using the site on the new platform.',
         ],
       },
       {
         id: 'result',
         heading: 'Result',
         paragraphs: [
-          'The finished platform gives ASAP a clearer public presence and a much smoother editorial workflow for ongoing publishing.',
-          'Editors can now manage content with less friction while visitors get a cleaner, more legible information architecture.',
+          'The new site launched with a new interface. The administrative workflow was simplified. Non-technical staff could publish articles and manage communications without external support.',
+          'Velvet Dinosaur continues to host and maintain the platform for ASAP. Sauro CMS provides ongoing platform updates. ASAP can keep the platform updated through the same setup.',
         ],
       },
     ],
     content: {
       intro:
-        'ASAP needed a modern publishing platform that could support news, journal updates, events, and institutional content without the drag of an aging CMS stack.',
+        'Conflicting plugins and an outdated theme had blocked core updates for three years.',
       heroImg: '/portfolio/asap.png',
       sections: [
         {
           id: 'challenge',
           title: 'Challenge',
           body:
-            'ASAP had outgrown an ageing WordPress and Elementor setup that made publishing, event updates, and journal administration harder than it needed to be.\n\nThe site needed a cleaner structure for public visitors while giving editors a more dependable workflow behind the scenes.',
+            'ASAP approached Velvet Dinosaur to resolve technical issues with its academic journal and a WordPress installation that had become difficult to manage. Conflicting plugins and an outdated theme had blocked core updates for three years. The site was insecure. The mobile performance score was 32.\n\nThe first phase focused on stabilization. Velvet Dinosaur audited the existing architecture and optimized asset delivery. The mobile performance score rose to 67. The team had a working platform while the transition was planned.',
         },
         {
           id: 'approach',
           title: 'Approach',
           body:
-            'Velvet Dinosaur first supported ASAP with hosting and journal platform maintenance, then redesigned the wider site around a bespoke publishing stack.\n\nThe rebuild introduced a flexible drag-and-drop page builder, a dedicated news workflow, and a simpler event creation process tailored to the organization’s editorial needs.',
+            'The site was rebuilt on a Next.js stack to move away from the limits of the previous setup. The new platform covered four functions. It provided a news editor with a word-processing interface. It included a version of Sauro CMS for page management. It added a newsletter system with double opt-in and a media library for asset organization.\n\nThe work focused on reducing technical friction for the academic team. Legacy data was migrated to the new system, including user profiles, newsletter subscribers, and archival content. Administrators and the public could keep using the site on the new platform.',
         },
         {
           id: 'result',
           title: 'Result',
           body:
-            'The finished platform gives ASAP a clearer public presence and a much smoother editorial workflow for ongoing publishing.\n\nEditors can now manage content with less friction while visitors get a cleaner, more legible information architecture.',
+            'The new site launched with a new interface. The administrative workflow was simplified. Non-technical staff could publish articles and manage communications without external support.\n\nVelvet Dinosaur continues to host and maintain the platform for ASAP. Sauro CMS provides ongoing platform updates. ASAP can keep the platform updated through the same setup.',
         },
       ],
     },
