@@ -46,6 +46,40 @@ export function ContactSection() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const callHref = `tel:${phoneNumber.replace(/\s+/g, "")}`
   const phoneDisplay = formatPhoneDisplay(phoneNumber)
+  const mapCard = (
+    <div className="overflow-hidden rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card">
+      <div className="flex items-start justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
+        <div className="min-w-0">
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
+            <MapPin className="size-4 text-[var(--vd-primary)]" />
+            Google map
+          </p>
+          <p className="mt-1 text-sm font-medium text-foreground">
+            16 Holloway Lane, Minster Lovell, Witney
+          </p>
+        </div>
+
+        <a
+          href={MAPS_APP_HREF}
+          target="_blank"
+          rel="noreferrer"
+          className="shrink-0 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+        >
+          Open map
+        </a>
+      </div>
+
+      <div className="h-[220px] w-full bg-muted/30">
+        <iframe
+          title="Velvet Dinosaur location on Google Maps"
+          src={MAP_EMBED_SRC}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="h-full w-full border-0"
+        />
+      </div>
+    </div>
+  )
 
   return (
     <Contact25
@@ -54,44 +88,12 @@ export function ContactSection() {
       title="Tell me about your project"
       description="Share your goals, current pain points, and timeline. You will hear back directly from Ian within one business day."
       faqTitle="Questions people usually ask"
+      faqTopContent={mapCard}
       formTitle="Project enquiry"
       formDescription={"You'll hear directly from Ian with clear next steps."}
       faqs={faqs}
       detailsContent={
         <>
-          <div className="overflow-hidden rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card">
-            <div className="flex items-start justify-between gap-4 border-b border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] px-4 py-3">
-              <div className="min-w-0">
-                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--vd-muted-fg)]">
-                  <MapPin className="size-4 text-[var(--vd-primary)]" />
-                  Google map
-                </p>
-                <p className="mt-1 text-sm font-medium text-foreground">
-                  16 Holloway Lane, Minster Lovell, Witney
-                </p>
-              </div>
-
-              <a
-                href={MAPS_APP_HREF}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 text-sm font-medium text-foreground underline-offset-4 hover:underline"
-              >
-                Open map
-              </a>
-            </div>
-
-            <div className="h-[220px] w-full bg-muted/30">
-              <iframe
-                title="Velvet Dinosaur location on Google Maps"
-                src={MAP_EMBED_SRC}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full border-0"
-              />
-            </div>
-          </div>
-
           <div className="rounded-xl border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-card p-4">
             <div className="mb-3 flex items-center gap-2">
               <Phone className="size-4 text-[var(--vd-primary)]" />

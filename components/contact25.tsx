@@ -52,6 +52,7 @@ interface Contact25Props {
   title?: string;
   description?: string;
   faqTitle?: string;
+  faqTopContent?: ReactNode;
   formTitle?: string;
   formDescription?: string;
   faqs?: FAQ[];
@@ -78,6 +79,7 @@ const Contact25 = ({
   title = 'How can we help?',
   description = 'Check our FAQ for quick answers or send us a message.',
   faqTitle = 'Frequently Asked Questions',
+  faqTopContent,
   formTitle = 'Project enquiry',
   formDescription = "You'll hear directly from Ian with clear next steps.",
   faqs = [
@@ -200,6 +202,7 @@ const Contact25 = ({
                 <MessageCircle className="size-5 text-[var(--vd-muted-fg)]" />
                 <h3 className="vd-section-heading text-lg font-medium">{faqTitle}</h3>
               </div>
+              {faqTopContent ? <div className="mb-5 space-y-5">{faqTopContent}</div> : null}
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
                   <AccordionItem
