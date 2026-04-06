@@ -46,6 +46,33 @@ export type ArticleChapterSnapshot = {
   capturedAt?: string | null;
 };
 
+export type ArticleHeroImage = {
+  fit?: 'cover' | 'contain';
+  width?: number;
+  height?: number;
+  alt?: string;
+};
+
+export type ArticlePageSpeedSnapshot = {
+  title: string;
+  description: string;
+  capturedAt: string;
+  reportUrl: string;
+  reportLabel?: string;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  scores: {
+    performance: number;
+    accessibility: number;
+    bestPractices: number;
+    seo: number;
+  };
+};
+
 export interface Article {
   slug: string;
   img: string;
@@ -59,6 +86,8 @@ export interface Article {
   date: string;
   readTime?: string;
   imageCaption?: string;
+  heroImage?: ArticleHeroImage;
+  pageSpeedSnapshot?: ArticlePageSpeedSnapshot;
   author: { img: string; name: string };
   authorUserId?: string | null;
   primaryChapterSlug?: string;

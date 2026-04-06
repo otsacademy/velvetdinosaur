@@ -16,7 +16,34 @@ export const WORK_FIXTURES: Article[] = [
     website: 'https://academicsstand.org',
     outcome: 'Non-technical staff can publish articles and manage communications without external support.',
     img: '/portfolio/asap.png',
-    imageCaption: 'Academics Stand Against Poverty homepage after redesign and CMS migration.',
+    imageCaption: 'Live ASAP homepage captured in April 2026 after the redesign and CMS migration.',
+    heroImage: {
+      fit: 'contain',
+      width: 1280,
+      height: 978,
+      alt: 'Academics Stand Against Poverty homepage showing the redesigned hero and navigation.',
+    },
+    pageSpeedSnapshot: {
+      title: 'Current PageSpeed Insights scores',
+      description:
+        'Live desktop Lighthouse report for academicsstand.org, verified on April 6, 2026.',
+      capturedAt: 'Captured on April 6, 2026',
+      reportUrl:
+        'https://pagespeed.web.dev/analysis/https-academicsstand-org/5ufoyogu3c?hl=en&form_factor=desktop',
+      reportLabel: 'Open live PageSpeed report',
+      image: {
+        src: '/portfolio/asap-pagespeed-desktop-apr-2026.webp',
+        alt: 'Google PageSpeed Insights desktop snapshot showing scores of 100 Performance, 100 Accessibility, 96 Best Practices, and 100 SEO for academicsstand.org.',
+        width: 1100,
+        height: 980,
+      },
+      scores: {
+        performance: 100,
+        accessibility: 100,
+        bestPractices: 96,
+        seo: 100,
+      },
+    },
     date: 'Posted on 15 Jan 2026',
     readTime: '4 min read',
     author: DEFAULT_AUTHOR,
@@ -50,7 +77,7 @@ export const WORK_FIXTURES: Article[] = [
     content: {
       intro:
         'Conflicting plugins and an outdated theme had blocked core updates for three years.',
-      heroImg: '/portfolio/asap.png',
+      heroImg: '/portfolio/asap-homepage-apr-2026.webp',
       sections: [
         {
           id: 'challenge',

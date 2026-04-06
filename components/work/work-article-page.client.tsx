@@ -21,6 +21,11 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
   const normalizedAuthor = normalizeArticleAuthor(article.author)
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const sectionRefs = useRef<Record<string, HTMLElement>>({})
+  const heroImage = article.heroImage
+  const heroImageFit = heroImage?.fit ?? 'cover'
+  const heroImageWidth = heroImage?.width ?? 1200
+  const heroImageHeight = heroImage?.height ?? 600
+  const heroImageAlt = heroImage?.alt ?? article.imageCaption ?? article.title
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -83,15 +88,71 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
           </div>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-xl border border-border p-2">
+        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-xl border border-border bg-card p-2">
           <Image
             src={article.content.heroImg || article.img || '/placeholder.svg'}
-            alt={article.title}
-            width={1200}
-            height={600}
-            className="aspect-video w-full rounded-lg object-cover"
+            alt={heroImageAlt}
+            width={heroImageWidth}
+            height={heroImageHeight}
+            className={
+              heroImageFit === 'contain'
+                ? 'h-auto w-full rounded-lg'
+                : 'aspect-video w-full rounded-lg object-cover'
+            }
+            sizes="(min-width: 1280px) 1024px, 100vw"
           />
+          {article.imageCaption ? (
+            <p className="px-2 pb-1 pt-3 text-sm text-muted-foreground">{article.imageCaption}</p>
+          ) : null}
         </div>
+
+        {article.pageSpeedSnapshot ? (
+          <section className="mx-auto mt-10 max-w-5xl rounded-2xl border border-border bg-card/70 p-6">
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div className="space-y-2">
+                <Badge variant="secondary" className="w-fit">
+                  Live Proof
+                </Badge>
+                <div className="space-y-1">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
+                    {article.pageSpeedSnapshot.title}
+                  </h2>
+                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                    {article.pageSpeedSnapshot.description}
+                  </p>
+                  <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    {article.pageSpeedSnapshot.capturedAt}
+                  </p>
+                </div>
+              </div>
+
+              <Button asChild variant="outline" className="gap-2 bg-transparent">
+                <Link href={article.pageSpeedSnapshot.reportUrl} rel="noreferrer" target="_blank">
+                  <ExternalLink className="h-4 w-4" />
+                  {article.pageSpeedSnapshot.reportLabel || 'Open report'}
+                </Link>
+              </Button>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <ScoreCard label="Performance" score={article.pageSpeedSnapshot.scores.performance} />
+              <ScoreCard label="Accessibility" score={article.pageSpeedSnapshot.scores.accessibility} />
+              <ScoreCard label="Best Practices" score={article.pageSpeedSnapshot.scores.bestPractices} />
+              <ScoreCard label="SEO" score={article.pageSpeedSnapshot.scores.seo} />
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-xl border border-border bg-background p-2">
+              <Image
+                src={article.pageSpeedSnapshot.image.src}
+                alt={article.pageSpeedSnapshot.image.alt}
+                width={article.pageSpeedSnapshot.image.width}
+                height={article.pageSpeedSnapshot.image.height}
+                className="h-auto w-full rounded-lg"
+                sizes="(min-width: 1280px) 1024px, 100vw"
+              />
+            </div>
+          </section>
+        ) : null}
 
         <div className="relative mx-auto mt-16 grid max-w-6xl gap-10 lg:grid-cols-4">
           <div className="sticky top-24 hidden h-fit lg:block">
@@ -214,5 +275,19 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
         ) : null}
       </div>
     </section>
+  )
+}
+
+type ScoreCardProps = {
+  label: string
+  score: number
+}
+
+function ScoreCard({ label, score }: ScoreCardProps) {
+  return (
+    <div className="rounded-xl border border-border bg-background/80 p-4">
+      <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{label}</p>
+      <p className="mt-3 text-3xl font-semibold text-foreground">{score}</p>
+    </div>
   )
 }
