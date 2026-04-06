@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { connection } from 'next/server';
-import { ArrowRight, Download, Globe, Mail, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, Download, Globe, Mail, MessageCircle, Phone } from 'lucide-react';
 import { getNfcContactDetails } from '@/lib/nfc-contact';
 
 export const metadata: Metadata = {
@@ -69,8 +70,15 @@ async function IanWickensNfcPageContent() {
       <div className="relative w-full max-w-md space-y-6">
         {/* Header */}
         <header className="space-y-4 text-center">
-          <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-[hsl(204,88%,40%)] shadow-[var(--vd-shadow-primary)]">
-            <Sparkles className="size-7 text-white" aria-hidden />
+          <div className="mx-auto flex size-20 items-center justify-center">
+            <Image
+              src="/dinosaur.webp"
+              alt="Velvet Dinosaur"
+              width={80}
+              height={100}
+              className="h-20 w-auto drop-shadow-lg"
+              priority
+            />
           </div>
           <div className="space-y-2">
             <h1 className="text-3xl font-semibold tracking-tight text-[var(--vd-fg)] md:text-4xl">
