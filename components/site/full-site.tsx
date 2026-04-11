@@ -2,7 +2,6 @@ import type { ReactNode } from "react"
 import { Hero1 } from "@/components/hero1"
 import { SelectedWork } from "./selected-work"
 import { SiteFooter } from "./site-footer"
-import { ImageIcon } from "@/components/icons/pixel-image"
 import { mainHeroCopy } from "@/lib/site-copy"
 
 type RevealWrapper = (content: ReactNode, delay?: number) => ReactNode
@@ -62,18 +61,14 @@ async function renderHeroImageSlot(
           ))}
         </div>
         <div className="absolute inset-[11%] rounded-[2rem] bg-[radial-gradient(circle_at_top,color-mix(in_oklch,var(--vd-primary)_18%,transparent),transparent_62%)] blur-3xl" />
-        <div className="relative overflow-hidden rounded-[2rem] border border-[color-mix(in_oklch,var(--vd-border)_85%,transparent)] bg-[color-mix(in_oklch,var(--vd-card)_92%,var(--vd-bg))] p-4 shadow-[0_24px_80px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]">
-          <div className="pointer-events-none absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-[color-mix(in_oklch,var(--vd-border)_82%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_92%,transparent)] text-[var(--vd-primary)] shadow-[0_10px_24px_color-mix(in_oklch,var(--vd-fg)_8%,transparent)]">
-            <ImageIcon className="h-4 w-4" />
-          </div>
+        <div className="relative animate-vd-float [animation-delay:220ms]">
           <PixelImage
             src="/dinosaur.webp"
             alt="Velvet Dinosaur mascot assembling from grayscale to full color"
             grid="8x8"
-            grayscaleAnimation={false}
-            maxAnimationDelay={0}
-            pixelFadeInDuration={0}
-            className="vd-hero-mascot"
+            grayscaleAnimation
+            colorRevealDelay={1500}
+            className="vd-hero-mascot drop-shadow-[0_24px_80px_color-mix(in_oklch,var(--vd-fg)_10%,transparent)]"
             sizeClassName={heroMascotSizeClassName}
           />
         </div>
