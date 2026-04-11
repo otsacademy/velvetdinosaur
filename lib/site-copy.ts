@@ -14,4 +14,4 @@ export const holdingHeroCopy = {
 };
 
 export const socialPreviewAlt =
-  'Velvet Dinosaur homepage preview with the blue dinosaur and the main hero text.';
+  'Velvet Dinosaur social preview showing the current founder-led web studio branding and mascot.';

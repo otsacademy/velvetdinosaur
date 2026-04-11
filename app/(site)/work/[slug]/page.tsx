@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 
 import { WorkArticlePageClient } from '@/components/work/work-article-page.client'
 import { getPublishedWorkArticleBySlug, listPublishedWorkArticles } from '@/lib/work-articles.server'
+import { buildWorkArticleMetadata } from '@/lib/work-social-metadata'
 
 type WorkArticlePageProps = {
   params: Promise<{ slug: string }>
@@ -16,15 +17,7 @@ export async function generateMetadata({ params }: WorkArticlePageProps): Promis
     return { title: 'Work' }
   }
 
-  return {
-    title: article.seoTitle || article.title,
-    description: article.seoDescription || article.desc,
-    openGraph: {
-      title: article.openGraphTitle || article.seoTitle || article.title,
-      description: article.openGraphDescription || article.seoDescription || article.desc,
-      images: article.openGraphImage ? [article.openGraphImage] : article.img ? [article.img] : [],
-    },
-  }
+  return buildWorkArticleMetadata(article)
 }
 
 export default async function WorkArticlePage({ params }: WorkArticlePageProps) {
