@@ -82,7 +82,9 @@ export function AboutServicesSection() {
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                               <span className="text-sm font-semibold text-foreground">{review.name}</span>
-                              <span className="text-xs text-[var(--vd-copy-muted)]">{review.company}</span>
+                              {review.company ? (
+                                <span className="text-xs text-[var(--vd-copy-muted)]">{review.company}</span>
+                              ) : null}
                             </div>
                             <div className="mt-1 flex items-center gap-2 text-xs text-[var(--vd-copy-muted)]">
                               <span className="flex items-center gap-0.5 text-[var(--vd-primary)]">

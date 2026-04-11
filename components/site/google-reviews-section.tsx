@@ -8,7 +8,7 @@ type RatingBand = {
 
 export type Review = {
   name: string
-  company: string
+  company?: string
   quote: string
   date: string
   sourceUrl: string
@@ -24,6 +24,23 @@ const ratingBands: RatingBand[] = [
 ]
 
 export const googleReviews: Review[] = [
+  {
+    name: "Lynn Casey",
+    company: "Froxfield Parish Council",
+    quote:
+      "With the involvement of Velvet Dinosaur (Ian) we are now able to present a modern website with structured content and a clear purpose, not just a homepage. The result is a trusted source of information that reflects the council's commitment to openness and service.",
+    date: "1 day ago",
+    sourceUrl: "https://maps.app.goo.gl/BY3mKgFkLysYTG7VA",
+    className: "sm:col-span-2 lg:col-span-8",
+  },
+  {
+    name: "Vikram Katoch",
+    quote:
+      "I had a wonderful experience working with Ian Wickens from Velvet Dinosaur. He was swift, responsive, highly professional, and delivered excellent results with great attention to detail for my ITB Berlin presentation website.",
+    date: "Edited 4 days ago",
+    sourceUrl: "https://maps.app.goo.gl/Bnr7Q8WgRWqUfDraA",
+    className: "sm:col-span-1 lg:col-span-4",
+  },
   {
     name: "Faye Taylor",
     company: "Founder, The Brave",
@@ -68,7 +85,7 @@ export function GoogleReviewCard({
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="font-medium text-foreground">{name}</p>
-          <p className="text-sm text-muted-foreground">{company}</p>
+          {company ? <p className="text-sm text-muted-foreground">{company}</p> : null}
         </div>
         <span className="text-xs text-muted-foreground">{date}</span>
       </div>
