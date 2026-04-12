@@ -1,9 +1,10 @@
-import { Check, ChevronRight } from "lucide-react"
+import { ArrowRight, Check, ShieldCheck } from "lucide-react"
 
 import {
   TimelineCenteredSpine,
   type TimelineCenteredSpineItem,
 } from "@/components/timeline-centered-spine"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 const packageFeatures: string[] = [
@@ -23,6 +24,12 @@ const launchEssentials: string[] = [
   "Domain migration support",
   "Full ownership of your domain, content, and website files",
 ]
+
+const pricingHighlights = [
+  { label: "Agency equivalent", value: "£10k-£15k" },
+  { label: "Deposit", value: "20%" },
+  { label: "Maintenance", value: "£120/year" },
+] as const
 
 const processSteps: TimelineCenteredSpineItem[] = [
   {
@@ -81,69 +88,130 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="vd-section-heading mb-6 text-2xl font-semibold">Pricing & process</h2>
 
-        <div className="vd-surface-panel vd-soft-panel p-6 md:p-8">
-          <p className="mb-3 text-sm font-medium text-[var(--vd-muted-fg)]">Bespoke website package</p>
-          <p className="mb-4 text-5xl font-bold leading-none text-foreground">
-            <span className="mb-[2px] block text-[0.45em] font-medium tracking-[0.02em] opacity-70">from</span>
-            £2,500
-          </p>
-          <p className="mb-6 max-w-3xl text-[var(--vd-copy)]">
-            A fixed-price launch package for most professional websites. If your scope includes advanced functionality
-            (for example bookings, portals, or custom integrations), it is scoped and quoted separately before build
-            starts.
-          </p>
-          <p className="mb-6 max-w-3xl text-sm italic text-[var(--vd-muted-fg)]">
-            An equivalent React / Next.js build at a London agency typically starts at £10k-£15k. Working directly
-            with the founder means you get the same enterprise-grade stack without the agency markup.
-          </p>
+        <div className="relative overflow-hidden rounded-[2rem] border border-[color-mix(in_oklch,var(--vd-border)_78%,transparent)] bg-[color-mix(in_oklch,var(--vd-muted)_42%,var(--vd-bg))] p-6 shadow-[0_24px_80px_color-mix(in_oklch,var(--vd-fg)_4%,transparent)] md:p-8 lg:p-10">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top_left,color-mix(in_oklch,var(--vd-primary)_16%,transparent),transparent_58%)]"
+          />
 
-          <div className="mb-6 border-l-2 border-[color-mix(in_oklch,var(--vd-primary)_35%,var(--vd-border))] pl-4">
-            <h3 className="mb-2 text-lg font-semibold text-foreground">How payments work</h3>
-            <p className="text-sm text-[var(--vd-muted-fg)]">
-              Projects usually start with a 20% deposit, then milestone payments tied to agreed deliverables. Before
-              development starts, scope, timeline, and deliverables are documented clearly so there are no surprises.
+          <div className="relative grid gap-8 xl:grid-cols-[minmax(0,1.5fr)_minmax(16rem,0.7fr)]">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--vd-muted-fg)]">
+                Simple pricing
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <h3 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  All-inclusive launch package
+                </h3>
+                <Badge className="rounded-full bg-[hsl(204,88%,40%)] px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white">
+                  Best value
+                </Badge>
+              </div>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--vd-copy)]">
+                A fixed-price launch package for most professional websites. If your scope includes advanced
+                functionality (for example bookings, portals, or custom integrations), it is scoped and quoted
+                separately before build starts.
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-end gap-3">
+                <div className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">£2,500</div>
+                <p className="max-w-xs pb-1 text-sm text-[var(--vd-muted-fg)]">
+                  Fixed-price launch package for most professional websites.
+                </p>
+              </div>
+
+              <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[var(--vd-muted-fg)]">
+                An equivalent React / Next.js build at a London agency typically starts at £10k-£15k. Working
+                directly with the founder means you get the same enterprise-grade stack without the agency markup.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              {pricingHighlights.map((highlight) => (
+                <div
+                  key={highlight.label}
+                  className="rounded-[1.35rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_88%,transparent)] px-4 py-4 shadow-sm backdrop-blur"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--vd-muted-fg)]">
+                    {highlight.label}
+                  </p>
+                  <p className="mt-2 text-2xl font-bold tracking-tight text-foreground">{highlight.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative mt-10 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_86%,transparent)] p-5 md:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--vd-muted-fg)]">
+                How payments work
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--vd-copy)]">
+                Projects usually start with a 20% deposit, then milestone payments tied to agreed deliverables.
+                Before development starts, scope, timeline, and deliverables are documented clearly so there are no
+                surprises.
+              </p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_86%,transparent)] p-5 md:p-6">
+              <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                <ShieldCheck className="h-4 w-4 text-[hsl(204,88%,40%)]" />
+                Performance, security, and ownership
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--vd-copy)]">
+                Performance & security maintenance is £120/year after Year 1 and includes managed hosting, monitoring,
+                SSL, and daily backups. Domain registration is not included and can be procured at cost price.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative mt-4 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_86%,transparent)] p-5 md:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--vd-muted-fg)]">
+                Core package scope
+              </p>
+              <ul className="mt-4 space-y-3">
+                {packageFeatures.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklch,var(--vd-primary)_12%,transparent)] text-[hsl(204,88%,40%)]">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-sm leading-relaxed text-[var(--vd-copy)]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] bg-[color-mix(in_oklch,var(--vd-bg)_86%,transparent)] p-5 md:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--vd-muted-fg)]">
+                Launch essentials included
+              </p>
+              <ul className="mt-4 space-y-3">
+                {launchEssentials.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklch,var(--vd-primary)_12%,transparent)] text-[hsl(204,88%,40%)]">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-sm leading-relaxed text-[var(--vd-copy)]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="relative mt-8 flex flex-col gap-4 border-t border-[color-mix(in_oklch,var(--vd-border)_75%,transparent)] pt-6 md:flex-row md:items-center md:justify-between">
+            <p className="max-w-xl text-sm leading-relaxed text-[var(--vd-muted-fg)]">
+              Scope, timeline, and deliverables are documented before development starts so the build stays clear,
+              practical, and free from avoidable surprises.
             </p>
+
+            <Button asChild className="vd-dino-cta h-11 rounded-full px-6 text-[0.9375rem] font-medium">
+              <a href="#contact" className="inline-flex items-center gap-2">
+                Get a quote tailored to your scope
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
-
-          <div className="mb-8 space-y-3">
-            <h3 className="text-lg font-semibold">Core package scope</h3>
-            <ul className="space-y-3">
-              {packageFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
-                    <Check className="h-3.5 w-3.5 text-primary" />
-                  </span>
-                  <span className="text-sm text-[var(--vd-copy)]">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mb-8 space-y-3">
-            <h3 className="text-lg font-semibold">Launch essentials included</h3>
-            <ul className="grid gap-3 md:grid-cols-2">
-              {launchEssentials.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
-                    <Check className="h-3.5 w-3.5 text-primary" />
-                  </span>
-                  <span className="text-sm text-[var(--vd-copy)]">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p className="mb-6 text-sm text-[var(--vd-muted-fg)]">
-            Performance & security maintenance is £120/year after Year 1 and includes managed hosting, monitoring,
-            SSL, and daily backups. Domain registration is not included and can be procured at cost price.
-          </p>
-
-          <Button asChild className="vd-dino-cta h-11 rounded-full px-6 text-[0.9375rem] font-medium">
-            <a href="#contact" className="inline-flex items-center gap-2">
-              Get a quote tailored to your scope
-              <ChevronRight className="h-4 w-4 vd-inline-arrow" />
-            </a>
-          </Button>
         </div>
 
         <div className="mt-9">
