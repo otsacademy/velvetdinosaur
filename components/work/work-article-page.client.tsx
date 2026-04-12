@@ -106,53 +106,6 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
           ) : null}
         </div>
 
-        {article.pageSpeedSnapshot ? (
-          <section className="mx-auto mt-10 max-w-5xl rounded-2xl border border-border bg-card/70 p-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <div className="space-y-2">
-                <Badge variant="secondary" className="w-fit">
-                  Live Proof
-                </Badge>
-                <div className="space-y-1">
-                  <h2 className="font-serif text-2xl font-bold text-foreground">
-                    {article.pageSpeedSnapshot.title}
-                  </h2>
-                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                    {article.pageSpeedSnapshot.description}
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    {article.pageSpeedSnapshot.capturedAt}
-                  </p>
-                </div>
-              </div>
-
-              <Button asChild variant="outline" className="gap-2 bg-transparent">
-                <Link href={article.pageSpeedSnapshot.reportUrl} rel="noreferrer" target="_blank">
-                  <ExternalLink className="h-4 w-4" />
-                  {article.pageSpeedSnapshot.reportLabel || 'Open report'}
-                </Link>
-              </Button>
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <ScoreCard label="Performance" score={article.pageSpeedSnapshot.scores.performance} />
-              <ScoreCard label="Accessibility" score={article.pageSpeedSnapshot.scores.accessibility} />
-              <ScoreCard label="Best Practices" score={article.pageSpeedSnapshot.scores.bestPractices} />
-              <ScoreCard label="SEO" score={article.pageSpeedSnapshot.scores.seo} />
-            </div>
-
-            <div className="mt-6 overflow-hidden rounded-xl border border-border bg-background p-2">
-              <Image
-                src={article.pageSpeedSnapshot.image.src}
-                alt={article.pageSpeedSnapshot.image.alt}
-                width={article.pageSpeedSnapshot.image.width}
-                height={article.pageSpeedSnapshot.image.height}
-                className="h-auto w-full rounded-lg"
-                sizes="(min-width: 1280px) 1024px, 100vw"
-              />
-            </div>
-          </section>
-        ) : null}
 
         <div className="relative mx-auto mt-16 grid max-w-6xl gap-10 lg:grid-cols-4">
           <div className="sticky top-24 hidden h-fit lg:block">
@@ -198,6 +151,64 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
                 ))}
               </section>
             ))}
+
+            {article.pageSpeedSnapshot ? (
+              <section id="pagespeed-proof" className="mb-12">
+                <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">Live Performance Proof</h2>
+                <p className="mb-6 text-muted-foreground leading-relaxed">
+                  {article.pageSpeedSnapshot.description}
+                </p>
+
+                <div className="mb-6 overflow-hidden rounded-xl border border-border bg-card">
+                  <div className="relative h-[140px] w-full overflow-hidden">
+                    <Image
+                      src={article.pageSpeedSnapshot.image.src}
+                      alt="Lighthouse score circles showing Performance 100, Accessibility 100, Best Practices 96, SEO 100"
+                      width={article.pageSpeedSnapshot.image.width}
+                      height={article.pageSpeedSnapshot.image.height}
+                      className="absolute left-1/2 h-auto w-[1040px] max-w-none -translate-x-1/2"
+                      style={{ top: '-525px' }}
+                      sizes="1040px"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-4 text-sm text-muted-foreground">
+                  <div>
+                    <span className="font-medium text-foreground">Performance ({article.pageSpeedSnapshot.scores.performance})</span>
+                    <span className="mx-2">—</span>
+                    Page loads in under a second with optimised assets, efficient caching, and minimal render-blocking resources.
+                  </div>
+                  <div>
+                    <span className="font-medium text-foreground">Accessibility ({article.pageSpeedSnapshot.scores.accessibility})</span>
+                    <span className="mx-2">—</span>
+                    Semantic HTML, proper heading hierarchy, sufficient colour contrast, and keyboard navigation throughout.
+                  </div>
+                  <div>
+                    <span className="font-medium text-foreground">Best Practices ({article.pageSpeedSnapshot.scores.bestPractices})</span>
+                    <span className="mx-2">—</span>
+                    HTTPS everywhere, no deprecated APIs, secure external links, and modern image formats.
+                  </div>
+                  <div>
+                    <span className="font-medium text-foreground">SEO ({article.pageSpeedSnapshot.scores.seo})</span>
+                    <span className="mx-2">—</span>
+                    Crawlable content, valid meta tags, descriptive link text, and mobile-friendly viewport.
+                  </div>
+                </div>
+
+                <p className="mt-6 text-xs text-muted-foreground">
+                  {article.pageSpeedSnapshot.capturedAt} ·{' '}
+                  <Link
+                    href={article.pageSpeedSnapshot.reportUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    View full report
+                  </Link>
+                </p>
+              </section>
+            ) : null}
           </div>
 
           <div className="sticky top-24 hidden h-fit rounded-xl border border-border bg-card p-6 lg:block">
@@ -278,16 +289,3 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
   )
 }
 
-type ScoreCardProps = {
-  label: string
-  score: number
-}
-
-function ScoreCard({ label, score }: ScoreCardProps) {
-  return (
-    <div className="rounded-xl border border-border bg-background/80 p-4">
-      <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{label}</p>
-      <p className="mt-3 text-3xl font-semibold text-foreground">{score}</p>
-    </div>
-  )
-}
