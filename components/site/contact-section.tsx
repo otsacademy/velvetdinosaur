@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What happens after the first year?",
     answer:
-      "Hosting is £120/year after Year 1. Domain renewal is separate and procured at cost price. You can keep ongoing support if you want it, or run the site independently with full access and handover documentation.",
+      "Performance and security maintenance is £250/year after Year 1. Domain renewal is separate and procured at cost price. You can keep ongoing support if you want it, or run the site independently with full access and handover documentation.",
   },
   {
     question: "Can I move my site elsewhere later?",

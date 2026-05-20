@@ -28,7 +28,7 @@ const launchEssentials: string[] = [
 const pricingHighlights = [
   { label: "Agency equivalent", value: "£10k-£15k" },
   { label: "Deposit", value: "20%" },
-  { label: "Maintenance", value: "£120/year" },
+  { label: "Maintenance", value: "£250/year" },
 ] as const
 
 const processSteps: TimelineCenteredSpineItem[] = [
@@ -159,7 +159,7 @@ export function PricingSection() {
                 Performance, security, and ownership
               </div>
               <p className="mt-3 text-sm leading-relaxed text-[var(--vd-copy)]">
-                Performance & security maintenance is £120/year after Year 1 and includes managed hosting, monitoring,
+                Performance & security maintenance is £250/year after Year 1 and includes managed hosting, monitoring,
                 SSL, and daily backups. Domain registration is not included and can be procured at cost price.
               </p>
             </div>

@@ -3,10 +3,17 @@ import { resolveSiteUrl } from '@/lib/site-metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = resolveSiteUrl().replace(/\/$/, '');
+  const baseUrl = siteUrl || 'http://localhost:3000';
+  const lastModified = new Date();
+
   return [
     {
-      url: siteUrl || 'http://localhost:3000',
-      lastModified: new Date()
+      url: baseUrl,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/work`,
+      lastModified
     }
   ];
 }

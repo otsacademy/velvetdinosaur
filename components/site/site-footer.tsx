@@ -60,6 +60,7 @@ export function SiteFooter() {
               <a href="#services" className={footerAnchorClass}>Services</a>
               <a href="#about" className={footerAnchorClass}>About</a>
               <a href="#portfolio" className={footerAnchorClass}>Portfolio</a>
+              <Link href="/work" className={footerAnchorClass}>All work</Link>
               <a href="#contact" className={footerAnchorClass}>Contact</a>
             </nav>
             <nav className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:justify-end">

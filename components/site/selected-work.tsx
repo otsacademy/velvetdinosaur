@@ -1,5 +1,9 @@
 import type { Article } from '@/lib/articles'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+
 import { ShadcnblocksGallery16 } from '@/components/blocks/store/shadcnblocks/gallery16'
+import { Button } from '@/components/ui/button'
 import { listLatestPublishedWorkArticles } from '@/lib/work-articles.server'
 
 function mapArticleToGalleryItem(article: Article) {
@@ -30,13 +34,21 @@ export async function SelectedWork() {
   return (
     <section id="portfolio" className="py-8">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-8 space-y-3 md:mb-10">
-          <h2 className="vd-section-heading text-2xl font-semibold tracking-tight md:text-[2.2rem]">
-            Selected work
-          </h2>
-          <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--vd-copy)]">
-            Real projects across charities, professional services, and product platforms.
-          </p>
+        <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
+          <div className="space-y-3">
+            <h2 className="vd-section-heading text-2xl font-semibold tracking-tight md:text-[2.2rem]">
+              Selected work
+            </h2>
+            <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--vd-copy)]">
+              Real projects across charities, professional services, and product platforms.
+            </p>
+          </div>
+          <Button asChild variant="outline" className="h-11 w-fit rounded-full px-5 text-sm font-medium">
+            <Link href="/work">
+              View all work
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
       <ShadcnblocksGallery16
