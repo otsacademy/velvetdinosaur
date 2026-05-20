@@ -2,6 +2,7 @@
 
 import type { ElementType, MouseEvent } from "react"
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import { Briefcase, House, Images, Mail, Moon, Sun, UserRound } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -13,11 +14,16 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { icon: House, label: "Home", href: "#home" },
-  { icon: Briefcase, label: "Services", href: "#services" },
-  { icon: UserRound, label: "About", href: "#about" },
-  { icon: Images, label: "Work", href: "#portfolio" },
+  { icon: House, label: "Home", href: "/#home" },
+  { icon: Briefcase, label: "Services", href: "/#services" },
+  { icon: UserRound, label: "About", href: "/#about" },
+  { icon: Images, label: "Work", href: "/#portfolio" },
 ]
+
+function getHashId(href: string) {
+  const hashIndex = href.indexOf("#")
+  return hashIndex >= 0 ? href.slice(hashIndex + 1) : ""
+}
 
 function NavButton({
   icon: Icon,
@@ -34,11 +40,13 @@ function NavButton({
   const isExternal = href.startsWith("mailto:") || href.startsWith("http")
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (!isExternal && href.startsWith("#")) {
+    const hashId = getHashId(href)
+    if (!isExternal && hashId && window.location.pathname === "/") {
       e.preventDefault()
-      const target = document.querySelector(href)
+      const target = document.getElementById(hashId)
       if (target) {
         target.scrollIntoView({ behavior: "smooth" })
+        window.history.pushState(null, "", `/#${hashId}`)
       }
       onClick?.()
     }
@@ -98,11 +106,17 @@ function ThemeToggle() {
 }
 
 export function EchoNavbar() {
-  const [activeSection, setActiveSection] = useState("home")
+  const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState<string | null>("home")
 
   useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection(null)
+      return
+    }
+
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.replace("#", ""))
+      const sections = navItems.map((item) => getHashId(item.href)).filter(Boolean)
       const scrollPosition = window.scrollY + 180
 
       for (let index = sections.length - 1; index >= 0; index -= 1) {
@@ -117,7 +131,7 @@ export function EchoNavbar() {
     window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
 
   return (
     <header className="supports-backdrop-filter:bg-background/60 fixed left-0 right-0 top-0 z-50 w-full backdrop-blur">
@@ -128,12 +142,12 @@ export function EchoNavbar() {
               <NavButton
                 key={item.href}
                 {...item}
-                isActive={activeSection === item.href.replace("#", "")}
+                isActive={pathname === "/" && activeSection === getHashId(item.href)}
               />
             ))}
           </nav>
           <ThemeToggle />
-          <NavButton icon={Mail} label="Contact" href="#contact" highlight />
+          <NavButton icon={Mail} label="Contact" href="/#contact" highlight />
         </div>
       </div>
     </header>

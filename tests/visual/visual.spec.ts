@@ -2,7 +2,8 @@ import { test, expect, type Page } from '@playwright/test';
 
 const routes = [
   { name: 'home', path: '/' },
-  { name: 'about', path: '/about' }
+  { name: 'about', path: '/about' },
+  { name: 'work', path: '/work' }
 ];
 
 async function stabilize(page: Page) {

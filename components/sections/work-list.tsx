@@ -25,6 +25,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 
 type WorkListProps = {
   articles: Article[]
@@ -55,14 +56,37 @@ function normalizeWorkImageSource(src?: string) {
   return value || DEFAULT_NEWS_IMAGE
 }
 
+function usesContainedWorkImage(article: Article) {
+  return article.heroImage?.fit === 'contain'
+}
+
+function workImageFrameClass(article: Article, className?: string) {
+  return cn(
+    'relative aspect-video overflow-hidden',
+    usesContainedWorkImage(article)
+      ? 'bg-[color-mix(in_oklch,var(--vd-muted)_70%,var(--vd-bg))] ring-1 ring-inset ring-[color-mix(in_oklch,var(--vd-border)_72%,transparent)]'
+      : null,
+    className
+  )
+}
+
+function workImageClass(article: Article, className?: string) {
+  return cn(
+    usesContainedWorkImage(article) ? 'object-contain p-3 sm:p-4' : 'object-cover',
+    className
+  )
+}
+
 type WorkCardImageProps = {
   src?: string
   alt: string
   className: string
+  loading?: 'eager' | 'lazy'
+  priority?: boolean
   sizes: string
 }
 
-function WorkCardImage({ src, alt, className, sizes }: WorkCardImageProps) {
+function WorkCardImage({ src, alt, className, loading, priority, sizes }: WorkCardImageProps) {
   const normalizedSource = normalizeWorkImageSource(src)
   const [resolvedSource, setResolvedSource] = useState(normalizedSource)
 
@@ -75,6 +99,8 @@ function WorkCardImage({ src, alt, className, sizes }: WorkCardImageProps) {
       alt={alt}
       className={className}
       fill
+      loading={priority ? undefined : loading}
+      priority={priority}
       sizes={sizes}
       src={resolvedSource}
       style={{ objectPosition: focalToObjectPosition(parseFocalFromUrl(resolvedSource)) }}
@@ -179,10 +205,14 @@ export function WorkList({
                 <Link href={`/work/${featuredArticle.slug}`} className="group">
                   <Card className="overflow-hidden py-0 transition-all group-hover:border-accent/30 group-hover:shadow-lg">
                     <div className="grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-                      <div className="relative aspect-video overflow-hidden">
+                      <div className={workImageFrameClass(featuredArticle)}>
                         <WorkCardImage
                           alt={featuredArticle.title}
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          className={workImageClass(
+                            featuredArticle,
+                            'transition-transform duration-300 group-hover:scale-105'
+                          )}
+                          priority
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 46vw"
                           src={featuredArticle.img}
                         />
@@ -246,14 +276,18 @@ export function WorkList({
             ) : null}
 
             <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {visibleRegularArticles.map((article) => (
+              {visibleRegularArticles.map((article, index) => (
                 <Link key={article.slug} href={`/work/${article.slug}`} className="group">
                   <Card className="h-full overflow-hidden py-0 transition-all group-hover:border-accent/30 group-hover:shadow-lg">
                     <CardHeader className="p-4 pb-0">
-                      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                      <div className={workImageFrameClass(article, 'w-full rounded-lg')}>
                         <WorkCardImage
                           alt={article.title}
-                          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                          className={workImageClass(
+                            article,
+                            'object-center transition-transform duration-300 group-hover:scale-105'
+                          )}
+                          loading={index < 3 ? 'eager' : 'lazy'}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           src={article.img}
                         />

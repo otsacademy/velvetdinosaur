@@ -14,13 +14,13 @@ export function SiteFooter() {
             <p className="max-w-md text-sm text-foreground/80">
               Founder-led bespoke websites and apps that are fast, well built, and easy to own long term.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
             >
               Talk through a project
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">
@@ -56,12 +56,12 @@ export function SiteFooter() {
           <p className="text-xs text-muted-foreground">© 2026 Velvet Dinosaur. All rights reserved.</p>
           <div className="flex flex-col items-center gap-3 sm:items-end">
             <nav className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:justify-end">
-              <a href="#home" className={footerAnchorClass}>Home</a>
-              <a href="#services" className={footerAnchorClass}>Services</a>
-              <a href="#about" className={footerAnchorClass}>About</a>
-              <a href="#portfolio" className={footerAnchorClass}>Portfolio</a>
+              <Link href="/#home" className={footerAnchorClass}>Home</Link>
+              <Link href="/#services" className={footerAnchorClass}>Services</Link>
+              <Link href="/#about" className={footerAnchorClass}>About</Link>
+              <Link href="/#portfolio" className={footerAnchorClass}>Portfolio</Link>
               <Link href="/work" className={footerAnchorClass}>All work</Link>
-              <a href="#contact" className={footerAnchorClass}>Contact</a>
+              <Link href="/#contact" className={footerAnchorClass}>Contact</Link>
             </nav>
             <nav className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:justify-end">
               <Link href="/privacy" className={footerAnchorClass}>Privacy Policy</Link>
