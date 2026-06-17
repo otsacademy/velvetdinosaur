@@ -14,6 +14,7 @@
     "deploy": "tsx scripts/deploy-manual.ts",
     "deploy:safe": "tsx scripts/deploy-safe.ts",
     "deploy:manual": "tsx scripts/deploy-manual.ts",
+    "deploy:blue-green": "tsx scripts/deploy-blue-green.ts",
     "release:local": "tsx scripts/release-local.ts",
     "export:hero-video": "tsx scripts/export-hero-video.ts",
     "pm2:check-env": "tsx scripts/pm2-sync-env.ts --check",

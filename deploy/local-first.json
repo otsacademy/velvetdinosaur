@@ -1,0 +1,19 @@
+{
+  "controllerPath": ".",
+  "activeLink": "/srv/apps/.ops/sites/velvetdinosaur/current",
+  "upstreamConf": "/etc/nginx/snippets/velvetdinosaur-active-upstream.conf",
+  "publicHealthUrl": "https://velvetdinosaur.com/api/session",
+  "healthPath": "/api/session",
+  "slots": {
+    "blue": {
+      "path": "/srv/apps/.ops/sites/velvetdinosaur/slots/blue",
+      "port": 3018,
+      "service": "vd-velvetdinosaur-blue"
+    },
+    "green": {
+      "path": "/srv/apps/.ops/sites/velvetdinosaur/slots/green",
+      "port": 3019,
+      "service": "vd-velvetdinosaur-green"
+    }
+  }
+}
