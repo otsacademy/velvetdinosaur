@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import type { ComponentConfig } from '@measured/puck';
 import { getStayBySlug } from '@/lib/content/stays';
 import { ChevronLeft } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StayGalleryHeroProps = {
   staySlug?: string;
@@ -25,7 +25,17 @@ export async function StayGalleryHero(props: StayGalleryHeroProps) {
     <div className="relative h-[60vh] bg-neutral-100 overflow-hidden group">
       <div className="grid grid-cols-4 h-full gap-1">
         <div className="col-span-2 h-full relative">
-          {first ? <img src={first} alt={stay.name} className="w-full h-full object-cover" /> : null}
+          {first ? (
+            <OptimizedImage
+              src={first}
+              alt={stay.name}
+              fill
+              priority
+              className="object-cover"
+              sizes="50vw"
+              imageOptions={{ width: 960, height: 600, fit: 'cover' }}
+            />
+          ) : null}
           <div className="absolute top-6 left-6 z-20">
             <Link
               href={props.backHref || '/stays'}
@@ -37,15 +47,40 @@ export async function StayGalleryHero(props: StayGalleryHeroProps) {
           </div>
         </div>
         <div className="col-span-1 h-full flex flex-col gap-1">
-          {second ? <img src={second} alt="Detail 1" className="w-full h-1/2 object-cover" /> : null}
-          {third ? <img src={third} alt="Detail 2" className="w-full h-1/2 object-cover" /> : null}
+          {second ? (
+            <div className="relative w-full h-1/2">
+              <OptimizedImage
+                src={second}
+                alt="Detail 1"
+                fill
+                className="object-cover"
+                sizes="25vw"
+                imageOptions={{ width: 480, height: 300, fit: 'cover' }}
+              />
+            </div>
+          ) : null}
+          {third ? (
+            <div className="relative w-full h-1/2">
+              <OptimizedImage
+                src={third}
+                alt="Detail 2"
+                fill
+                className="object-cover"
+                sizes="25vw"
+                imageOptions={{ width: 480, height: 300, fit: 'cover' }}
+              />
+            </div>
+          ) : null}
         </div>
         <div className="col-span-1 h-full relative">
           {fourth ? (
-            <img
+            <OptimizedImage
               src={fourth}
               alt="Detail 3"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              sizes="25vw"
+              imageOptions={{ width: 480, height: 600, fit: 'cover' }}
             />
           ) : null}
           {props.buttonLabel ? (

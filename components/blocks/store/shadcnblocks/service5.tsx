@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { cn } from "@/lib/utils"
 
 const ICONS = {
@@ -91,10 +92,13 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
                     {HeaderIcon ? (
                       <HeaderIcon className="h-12 w-12 text-primary" />
                     ) : (
-                      <img
+                      <OptimizedImage
                         src={props.headerIconSrc}
                         alt={props.headerIconAlt}
-                        className="h-12 dark:invert"
+                        width={48}
+                        height={48}
+                        imageOptions={{ width: 48, height: 48 }}
+                        className="h-12 w-auto dark:invert"
                       />
                     )}
                   </div>
@@ -171,9 +175,12 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
                             return <StatIcon className="h-5 w-5 text-primary" />
                           })()
                         ) : stat.iconSrc ? (
-                          <img
+                          <OptimizedImage
                             src={stat.iconSrc}
                             alt={stat.iconAlt || stat.title}
+                            width={24}
+                            height={24}
+                            imageOptions={{ width: 24, height: 24 }}
                             className="h-6 w-6 object-contain"
                           />
                         ) : null}

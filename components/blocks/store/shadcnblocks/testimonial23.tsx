@@ -9,6 +9,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 type TestimonialItem = {
   id: string
@@ -58,7 +59,13 @@ function TestimonialCard({
         </div>
         <div className="ml-auto">
           {socialIconSrc ? (
-            <img src={socialIconSrc} alt={socialIconAlt} className="h-4 w-4" />
+            <OptimizedImage
+              src={socialIconSrc}
+              alt={socialIconAlt}
+              width={16}
+              height={16}
+              className="h-4 w-4"
+            />
           ) : null}
         </div>
       </div>

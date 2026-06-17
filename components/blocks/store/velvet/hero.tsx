@@ -5,6 +5,7 @@ import type { ComponentConfig } from "@measured/puck"
 
 import { EditableImage, EditableText } from "@/components/content/editable"
 import { contentKey } from "@/components/content/content-keys"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { Button } from "@/components/ui/button"
 import { Section } from "@/components/ui/section"
 import { TrustStrip } from "@/components/blocks/store/velvet/shared/trust-strip"
@@ -265,12 +266,14 @@ export function Hero(props: HeroProps) {
             </div>
             <div className="flex items-start justify-center md:justify-end mt-8 md:mt-0 lg:pt-6 animate-slide-up">
               <div className="relative w-[18rem] h-[22rem] md:w-[24rem] md:h-[30rem] lg:w-[28rem] lg:h-[35rem] origin-bottom hover-lift">
-                <img
+                <OptimizedImage
                   src="/dinosaur.webp"
                   alt="Velvet Dinosaur mascot"
                   width={560}
                   height={700}
-                  loading="eager"
+                  priority
+                  sizes="(max-width: 768px) 18rem, (max-width: 1024px) 24rem, 28rem"
+                  imageOptions={{ width: 560, height: 700 }}
                   className="absolute inset-0 h-full w-full object-contain drop-shadow-xl"
                 />
               </div>

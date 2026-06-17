@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StaysVideo = {
   slug: string;
@@ -89,10 +89,13 @@ export function StaysVideoCarouselView({ title, accent, videos }: StaysVideoCaro
                   ) : (
                     <>
                       {poster ? (
-                        <img
+                        <OptimizedImage
                           src={poster}
                           alt={video.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-110"
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover/vid:scale-110"
+                          sizes="280px"
+                          imageOptions={{ width: 280, height: 498, fit: 'cover' }}
                         />
                       ) : (
                         <div className="w-full h-full grid place-items-center text-[var(--vd-muted-fg)]">
@@ -152,7 +155,14 @@ export function StaysVideoCarouselView({ title, accent, videos }: StaysVideoCaro
                 ) : (
                   <div className="relative w-full h-full cursor-pointer group" onClick={() => togglePlay(video.slug)}>
                     {poster ? (
-                      <img src={poster} alt={video.title} className="w-full h-full object-cover opacity-80" />
+                      <OptimizedImage
+                        src={poster}
+                        alt={video.title}
+                        fill
+                        className="object-cover opacity-80"
+                        sizes="100vw"
+                        imageOptions={{ width: 450, height: 800, fit: 'cover' }}
+                      />
                     ) : (
                       <div className="w-full h-full grid place-items-center text-white/70">
                         <Play className="h-8 w-8" />

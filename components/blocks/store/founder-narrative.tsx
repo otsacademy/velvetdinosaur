@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { Quote } from 'lucide-react';
 import type { ComponentConfig } from '@measured/puck';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type FounderNarrativeProps = {
   headline?: string;
@@ -70,11 +70,14 @@ export function FounderNarrative(props: FounderNarrativeProps) {
       </div>
 
       {props.image ? (
-        <div className="rounded-[2.5rem] overflow-hidden border border-[var(--vd-border)] shadow-lg">
-          <img
+        <div className="relative h-64 w-full rounded-[2.5rem] overflow-hidden border border-[var(--vd-border)] shadow-lg">
+          <OptimizedImage
             src={props.image}
             alt={props.name || 'Founder portrait'}
-            className="h-64 w-full object-cover"
+            fill
+            sizes="(max-width: 896px) 100vw, 896px"
+            imageOptions={{ width: 1200, height: 512, fit: 'cover' }}
+            className="object-cover"
           />
         </div>
       ) : null}

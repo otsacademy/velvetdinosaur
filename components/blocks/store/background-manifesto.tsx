@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from '@measured/puck';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type BackgroundManifestoProps = {
   imageUrl?: string;
@@ -23,11 +23,16 @@ export function BackgroundManifesto(props: BackgroundManifestoProps) {
     <section className="mb-24 max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div className="relative">
         {props.imageUrl ? (
-          <img
-            src={props.imageUrl}
-            alt={props.imageAlt || ''}
-            className="rounded-[3rem] w-full aspect-[16/10] object-cover"
-          />
+          <div className="relative w-full aspect-[16/10]">
+            <OptimizedImage
+              src={props.imageUrl}
+              alt={props.imageAlt || ''}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              imageOptions={{ width: 1200, height: 750, fit: 'cover' }}
+              className="rounded-[3rem] object-cover"
+            />
+          </div>
         ) : null}
         {props.imageHeading ? (
           <div className="absolute inset-0 flex items-center justify-center">

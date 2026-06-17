@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from '@measured/puck';
 import { getSimilarStays } from '@/lib/content/stays';
 import { Home, MapPin } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StaySimilarListingsProps = {
   staySlug?: string;
@@ -20,7 +20,14 @@ export async function StaySimilarListings(props: StaySimilarListingsProps) {
           <div key={listing.slug} className="group cursor-pointer">
             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 relative shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
               {listing.heroImage ? (
-                <img src={listing.heroImage} alt={listing.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <OptimizedImage
+                  src={listing.heroImage}
+                  alt={listing.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  imageOptions={{ width: 600, height: 450, fit: 'cover' }}
+                />
               ) : null}
               {listing.price ? (
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-[var(--vd-fg)] text-xs font-black uppercase tracking-wider">

@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { resolveAssetImageUrl } from '@/lib/uploads';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type ImageBlockProps = {
   src?: string;
@@ -17,21 +16,18 @@ export function ImageBlock({
   loading = 'lazy',
   fetchPriority
 }: ImageBlockProps) {
-  const resolvedSrc = resolveAssetImageUrl(src, { width: 1200, height: 800, fit: 'cover' });
-
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-0">
-        <div className="aspect-[3/2] w-full overflow-hidden bg-[var(--vd-muted)]">
-          <img
-            src={resolvedSrc}
+        <div className="relative aspect-[3/2] w-full overflow-hidden bg-[var(--vd-muted)]">
+          <OptimizedImage
+            src={src}
             alt={alt}
+            fill
             className="h-full w-full object-cover"
-            width={1200}
-            height={800}
-            loading={loading}
-            fetchPriority={fetchPriority}
-            decoding="async"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            priority={loading === 'eager' || fetchPriority === 'high'}
+            imageOptions={{ width: 1200, height: 800, fit: 'cover' }}
           />
         </div>
       </CardContent>

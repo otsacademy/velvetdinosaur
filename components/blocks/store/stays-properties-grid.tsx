@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { Heart, Home, MapPin } from 'lucide-react';
 import type { ComponentConfig } from '@measured/puck';
 import { listStays } from '@/lib/content/stays';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StaysPropertiesGridProps = {
   title?: string;
@@ -44,10 +44,13 @@ export async function StaysPropertiesGrid(props: StaysPropertiesGridProps) {
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               {stay.heroImage ? (
-                <img
+                <OptimizedImage
                   src={stay.heroImage}
                   alt={stay.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  imageOptions={{ width: 800, height: 600, fit: 'cover' }}
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               ) : (
                 <div className="w-full h-full bg-[var(--vd-muted)]" />

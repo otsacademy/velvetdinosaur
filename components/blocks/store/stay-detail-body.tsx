@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from '@measured/puck';
 import { getLatestStays, getStayBySlug } from '@/lib/content/stays';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import {
   Bath,
   Bed,
@@ -75,8 +75,15 @@ export async function StayDetailBody(props: StayDetailBodyProps) {
           {stay.gallery && stay.gallery.length > 1 ? (
             <div className="grid grid-cols-1 gap-8">
               {stay.gallery.slice(1).map((img, i) => (
-                <div key={`${stay.slug}-gallery-${i}`} className="rounded-3xl overflow-hidden aspect-video shadow-lg">
-                  <img src={img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div key={`${stay.slug}-gallery-${i}`} className="relative rounded-3xl overflow-hidden aspect-video shadow-lg">
+                  <OptimizedImage
+                    src={img}
+                    alt=""
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    imageOptions={{ width: 900, height: 506, fit: 'cover' }}
+                  />
                 </div>
               ))}
             </div>
@@ -306,7 +313,16 @@ export async function StayDetailBody(props: StayDetailBodyProps) {
               <div className="space-y-6">
                 {latestListings.map((listing) => (
                   <div key={listing.slug} className="flex gap-4 group cursor-pointer hover:bg-neutral-50 p-2 -mx-2 rounded-xl transition-colors">
-                    {listing.heroImage ? <img src={listing.heroImage} alt="" className="w-20 h-16 object-cover rounded-xl shadow-sm" /> : null}
+                    {listing.heroImage ? (
+                      <OptimizedImage
+                        src={listing.heroImage}
+                        alt=""
+                        width={80}
+                        height={64}
+                        className="w-20 h-16 object-cover rounded-xl shadow-sm"
+                        imageOptions={{ width: 80, height: 64, fit: 'cover' }}
+                      />
+                    ) : null}
                     <div>
                       <h5 className="text-sm font-bold text-[var(--vd-fg)] group-hover:text-[var(--vd-primary)] transition-colors line-clamp-1">
                         {listing.name}

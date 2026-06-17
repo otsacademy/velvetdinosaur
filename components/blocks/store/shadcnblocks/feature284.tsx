@@ -6,6 +6,7 @@ import { HelpCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 type FeatureItem = {
   title: string
@@ -47,11 +48,14 @@ export function ShadcnblocksFeature284(props: ShadcnblocksFeature284Props) {
                   <p className="text-muted-foreground">{feature.badgeTitle}</p>
                   <HelpCircle className="size-4 text-muted-foreground" />
                 </div>
-                <div className="w-full flex-1 overflow-hidden rounded-3xl bg-muted">
-                  <img
+                <div className="relative w-full flex-1 min-h-[12rem] overflow-hidden rounded-3xl bg-muted">
+                  <OptimizedImage
                     src={feature.image}
                     alt={feature.imageAlt}
-                    className="pointer-events-none h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    imageOptions={{ width: 800, height: 600, fit: "cover" }}
+                    className="pointer-events-none object-cover"
                   />
                 </div>
                 <h3 className="mt-4 text-2xl font-semibold tracking-tight">

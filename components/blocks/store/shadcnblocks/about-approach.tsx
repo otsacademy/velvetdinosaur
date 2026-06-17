@@ -4,6 +4,7 @@ import type { ComponentConfig } from "@measured/puck"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 type ApproachStep = {
   title: string
@@ -51,11 +52,14 @@ export function ShadcnblocksAboutApproach(props: ShadcnblocksAboutApproachProps)
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-3xl border bg-muted">
-              <img
+            <div className="relative min-h-[20rem] overflow-hidden rounded-3xl border bg-muted">
+              <OptimizedImage
                 src={props.imageSrc}
                 alt={props.imageAlt}
-                className="h-full w-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                imageOptions={{ width: 900, height: 700, fit: "cover" }}
+                className="object-cover"
               />
             </div>
           </div>

@@ -6,6 +6,7 @@ import React from "react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { Card, CardContent } from "@/components/ui/card"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 const handwrittenTextClasses = "flex gap-3 font-caveat text-xs md:text-xl tracking-tight text-foreground"
 
@@ -85,8 +86,15 @@ export function ShadcnblocksFeature245(props: ShadcnblocksFeature245Props) {
               className="relative z-0"
             >
               <Card className="group h-130 w-full rounded-4xl border border-border bg-background p-2 shadow-none lg:p-3">
-                <CardContent className="size-full rounded-3xl border-2 border-background bg-muted">
-                  <img src={props.imageSrc} className="size-full" alt={props.imageAlt} />
+                <CardContent className="relative size-full rounded-3xl border-2 border-background bg-muted">
+                  <OptimizedImage
+                    src={props.imageSrc}
+                    alt={props.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    imageOptions={{ width: 700, height: 700, fit: 'cover' }}
+                  />
                 </CardContent>
               </Card>
             </motion.div>

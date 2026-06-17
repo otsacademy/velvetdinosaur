@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useRef } from 'react';
@@ -6,6 +5,7 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import type { VideoAsset } from '@/lib/content/types';
 import { cn } from '@/lib/utils';
 import { openShorts } from '@/lib/shorts/store';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 type VerticalFeedScrollerViewProps = {
   title?: string;
@@ -93,7 +93,14 @@ export function VerticalFeedScrollerView({
                   disabled={!useShortsOverlay}
                 >
                   {poster ? (
-                    <img src={poster} alt={video.title} className="w-full h-full object-cover opacity-80" />
+                    <OptimizedImage
+                      src={poster}
+                      alt={video.title}
+                      fill
+                      className="object-cover opacity-80"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      imageOptions={{ width: 400, height: 711, fit: 'cover' }}
+                    />
                   ) : (
                     <div className="w-full h-full grid place-items-center text-white/70">
                       <Play className="h-8 w-8" />

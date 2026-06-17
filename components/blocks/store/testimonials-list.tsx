@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from '@measured/puck';
 import { Leaf, Star } from 'lucide-react';
 import { listReviews } from '@/lib/content/reviews';
 import type { Review } from '@/lib/content/types';
 import { cn } from '@/lib/utils';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type TestimonialsListProps = {
   title?: string;
@@ -75,9 +75,12 @@ export async function TestimonialsList(props: TestimonialsListProps) {
             >
               <div className="flex items-start gap-4 mb-6">
                 {review.avatar ? (
-                  <img
+                  <OptimizedImage
                     src={review.avatar}
                     alt={review.author}
+                    width={56}
+                    height={56}
+                    imageOptions={{ width: 56, height: 56, fit: 'cover' }}
                     className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
                   />
                 ) : (

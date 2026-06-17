@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import type { KeyboardEvent } from "react"
 import { cn } from "@/lib/utils"
-import { buildCdnImageUrl } from "@/lib/uploads"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 const deckTransforms = [
   "rotate-[0deg] translate-y-[0px] scale-[1]",
@@ -113,11 +113,13 @@ export function PortfolioDeck({
             <div className="absolute left-1/2 top-0 h-full w-[46%] -translate-x-[104%] rounded-2xl border border-border/60 bg-background/60 shadow-sm transition-transform duration-300 motion-reduce:transition-none md:-translate-x-[106%]">
               {leftImage ? (
                 <div className="relative h-full w-full">
-                  <img
-                    src={buildCdnImageUrl(leftImage, { width: 1400, height: 900, fit: "cover" })}
+                  <OptimizedImage
+                    src={leftImage}
                     alt={`${title} magazine preview left`}
-                    draggable={false}
-                    className="absolute inset-0 h-full w-full rounded-2xl object-cover"
+                    fill
+                    sizes="(max-width: 768px) 46vw, 600px"
+                    imageOptions={{ width: 1400, height: 900, fit: "cover" }}
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               ) : null}
@@ -125,11 +127,13 @@ export function PortfolioDeck({
             <div className="absolute left-1/2 top-0 h-full w-[46%] translate-x-[4%] rounded-2xl border border-border/60 bg-background/60 shadow-sm transition-transform duration-300 motion-reduce:transition-none md:translate-x-[6%]">
               {rightImage ? (
                 <div className="relative h-full w-full">
-                  <img
-                    src={buildCdnImageUrl(rightImage, { width: 1400, height: 900, fit: "cover" })}
+                  <OptimizedImage
+                    src={rightImage}
                     alt={`${title} magazine preview right`}
-                    draggable={false}
-                    className="absolute inset-0 h-full w-full rounded-2xl object-cover"
+                    fill
+                    sizes="(max-width: 768px) 46vw, 600px"
+                    imageOptions={{ width: 1400, height: 900, fit: "cover" }}
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               ) : null}
@@ -165,11 +169,13 @@ export function PortfolioDeck({
           style={{ zIndex: displayImages.length - index, opacity: deckOpacities[index] ?? 1 }}
         >
           <div className="relative h-full w-full">
-            <img
-              src={buildCdnImageUrl(src, { width: 1200, height: 1600, fit: "cover" })}
+            <OptimizedImage
+              src={src}
               alt={`${title} preview ${index + 1}`}
-              draggable={false}
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              sizes="(max-width: 640px) 90vw, 34rem"
+              imageOptions={{ width: 1200, height: 1600, fit: "cover" }}
+              className="object-cover"
             />
           </div>
         </span>

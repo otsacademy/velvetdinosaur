@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from "@measured/puck"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { r2PublicUrl } from "@/lib/public-assets"
 
 export type MakeHeroProps = {
@@ -113,10 +113,14 @@ export function MakeHero({
           <div className="relative w-full lg:h-[600px]">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-muted/40 shadow-2xl lg:h-full lg:aspect-auto">
               {imageSrc ? (
-                <img
+                <OptimizedImage
                   src={imageSrc}
                   alt={imageAlt || "Hero image"}
-                  className="h-full w-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  imageOptions={{ width: 1200, height: 900, fit: "cover" }}
+                  className="object-cover"
                 />
               ) : null}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />

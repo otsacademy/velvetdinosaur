@@ -12,6 +12,7 @@ import { Section, SectionHeading } from "@/components/ui/section"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import type { Review } from "@/lib/content/types"
 import { cn } from "@/lib/utils"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 type TestimonialItem = {
   quote: string
@@ -228,8 +229,14 @@ export function TestimonialsSection(props: TestimonialsSectionProps) {
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-muted text-foreground flex items-center justify-center text-xs font-semibold overflow-hidden">
                         {item.avatar ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={item.avatar} alt={item.name} className="h-full w-full object-cover" />
+                          <OptimizedImage
+                            src={item.avatar}
+                            alt={item.name}
+                            width={40}
+                            height={40}
+                            className="h-full w-full object-cover"
+                            imageOptions={{ width: 40, height: 40, fit: 'cover' }}
+                          />
                         ) : (
                           <span>{getInitial(item.name)}</span>
                         )}
