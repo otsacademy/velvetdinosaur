@@ -5,6 +5,7 @@ import { Plate, usePlateEditor } from 'platejs/react';
 import { CalendarDays, Clock3 } from 'lucide-react';
 import { Editor, EditorContainer } from '@/registry/ui/editor';
 import { NEWS_EDITOR_PLUGINS } from '@/components/edit/news-editor/news-document-toolbar';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import { createArticleExcerpt } from '@/lib/news-presentation';
 import { type DemoNewsDocument } from '@/lib/demo-news-seed';
 
@@ -75,11 +76,15 @@ export function DemoNewsArticleRenderer({ document, mode }: DemoNewsArticleRende
           <div className="px-6 py-6">
             {document.heroImage ? (
               <figure className="overflow-hidden rounded-[1.5rem] border border-[var(--vd-border)] bg-[var(--vd-muted)]/20">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <OptimizedImage
                   src={document.heroImage}
                   alt={document.imageCaption || document.title}
+                  width={1600}
+                  height={900}
                   className="h-auto w-full object-cover"
+                  sizes="100vw"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {document.imageCaption ? (
                   <figcaption className="border-t border-[var(--vd-border)] px-4 py-3 text-sm text-[var(--vd-muted-fg)]">

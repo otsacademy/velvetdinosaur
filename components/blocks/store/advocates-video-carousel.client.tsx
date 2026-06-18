@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useRef, useState } from 'react';
 import { Play } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 type VideoItem = {
   slug: string;
@@ -85,10 +85,15 @@ export function AdvocatesVideoCarouselView({
                   ) : (
                     <>
                       {poster ? (
-                        <img
+                        <OptimizedImage
                           src={poster}
                           alt={video.title}
+                          fill
                           className="w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-110"
+                          sizes="280px"
+                          loading="lazy"
+                          decoding="async"
+                          imageOptions={{ width: 560, height: 996, fit: 'cover' }}
                         />
                       ) : (
                         <div className="w-full h-full grid place-items-center text-[var(--vd-muted-fg)]">
