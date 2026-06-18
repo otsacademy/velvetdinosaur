@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { Suspense, type ReactNode } from "react"
 import { Hero1 } from "@/components/hero1"
 import { SelectedWork } from "./selected-work"
 import { SiteFooter } from "./site-footer"
@@ -144,6 +144,11 @@ async function renderSecondarySections(withReveal: RevealWrapper) {
   )
 }
 
+async function SecondarySections() {
+  const { ScrollReveal } = await import("./scroll-reveal")
+  return renderSecondarySections((content, delay) => <ScrollReveal delay={delay}>{content}</ScrollReveal>)
+}
+
 export async function FullSite() {
   const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
@@ -157,11 +162,17 @@ export async function FullSite() {
   const heroImageSlot = isLhci
     ? undefined
     : await renderHeroImageSlot(heroMascotSizeClassName, heroTrustPillClassName)
-  const secondarySections = isLhci
-    ? null
-    : await import("./scroll-reveal").then(({ ScrollReveal }) =>
-        renderSecondarySections((content, delay) => <ScrollReveal delay={delay}>{content}</ScrollReveal>)
-      )
+  const belowFold = isLhci ? (
+    <>
+      <SelectedWork />
+      <SiteFooter />
+    </>
+  ) : (
+    <Suspense fallback={null}>
+      <SecondarySections />
+      <SiteFooter />
+    </Suspense>
+  )
 
   return (
     <div className="relative min-h-dvh overflow-hidden">
@@ -202,11 +213,7 @@ export async function FullSite() {
           </div>
         </section>
 
-        {isLhci ? <SelectedWork /> : null}
-
-        {secondarySections}
-
-        <SiteFooter />
+        {belowFold}
       </main>
     </div>
   )

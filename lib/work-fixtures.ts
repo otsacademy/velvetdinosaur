@@ -15,7 +15,7 @@ export const WORK_FIXTURES: Article[] = [
     desc: 'Academic journal and WordPress rebuild after three years without core updates.',
     website: 'https://academicsstand.org',
     outcome: 'Non-technical staff can publish articles and manage communications without external support.',
-    img: '/portfolio/asap.png',
+    img: '/portfolio/asap-864w.webp',
     imageCaption: 'Live ASAP homepage captured in April 2026 after the redesign and CMS migration.',
     heroImage: {
       fit: 'contain',
@@ -109,7 +109,7 @@ export const WORK_FIXTURES: Article[] = [
     desc: 'Values-led ethical travel platform with integrated advocacy and media storytelling.',
     website: 'https://thebrave.online',
     outcome: 'Stronger brand differentiation and clearer user pathways.',
-    img: '/portfolio/the-brave.png',
+    img: '/portfolio/the-brave-864w.webp',
     imageCaption: 'The Brave homepage presenting the brand and travel offer.',
     date: 'Posted on 2 Feb 2026',
     readTime: '3 min read',
@@ -144,7 +144,7 @@ export const WORK_FIXTURES: Article[] = [
     content: {
       intro:
         'The Brave needed a website that could feel premium and personal at the same time, combining ethical travel positioning with strong founder-led storytelling.',
-      heroImg: '/portfolio/the-brave.png',
+      heroImg: '/portfolio/the-brave-1440w.webp',
       sections: [
         {
           id: 'challenge',
@@ -176,7 +176,7 @@ export const WORK_FIXTURES: Article[] = [
     desc: 'Premium motorcycle expedition experience focused on route clarity and trust-building.',
     website: 'https://risingdustadventures.com',
     outcome: 'Higher-quality visual storytelling and better route conversion flow.',
-    img: '/portfolio/rising-dust.png',
+    img: '/portfolio/rising-dust-864w.webp',
     imageCaption: 'Rising Dust Adventures route and expedition storytelling interface.',
     date: 'Posted on 10 Feb 2026',
     readTime: '3 min read',
@@ -211,7 +211,7 @@ export const WORK_FIXTURES: Article[] = [
     content: {
       intro:
         'Rising Dust Adventures needed a digital presence that balanced aspiration with trust, helping prospective riders understand the experience and the practical details in the same journey.',
-      heroImg: '/portfolio/rising-dust.png',
+      heroImg: '/portfolio/rising-dust-1440w.webp',
       sections: [
         {
           id: 'challenge',
@@ -243,7 +243,7 @@ export const WORK_FIXTURES: Article[] = [
     desc: 'Academic networking and publishing product with secure auth and scalable architecture.',
     website: 'https://scholardemia.com',
     outcome: 'Unified product direction across community, collaboration, and publishing tools.',
-    img: '/portfolio/scholardemia.png',
+    img: '/portfolio/scholardemia-864w.webp',
     imageCaption: 'Scholardemia product interface and sign-in flow.',
     date: 'Posted on 18 Feb 2026',
     readTime: '4 min read',
@@ -278,7 +278,7 @@ export const WORK_FIXTURES: Article[] = [
     content: {
       intro:
         'Scholardemia needed product and platform work that could connect several academic workflows into a clearer, more scalable whole.',
-      heroImg: '/portfolio/scholardemia.png',
+      heroImg: '/portfolio/scholardemia-1440w.webp',
       sections: [
         {
           id: 'challenge',

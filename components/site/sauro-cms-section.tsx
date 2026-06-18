@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 
+import { DeferredIframe } from "@/components/site/deferred-iframe.client"
 import { Button } from "@/components/ui/button"
 
 export function SauroCmsSection() {
@@ -60,9 +61,10 @@ export function SauroCmsSection() {
 
             <div className="relative aspect-[16/10] overflow-hidden bg-white">
               <div className="absolute inset-0 h-[200%] w-[200%] origin-top-left scale-[0.5] transform">
-                <iframe
+                <DeferredIframe
                   title="Sauro CMS demo preview"
                   src={demoHomeHref}
+                  placeholderLabel="Load demo preview"
                   loading="lazy"
                   className="h-full w-full border-0 bg-white"
                 />

@@ -3,6 +3,7 @@ import { assertServerOnly } from '@/lib/_server/guard'
 import type { Article } from '@/lib/articles'
 import { getChapterName, normalizeChapterSlug, normalizeChapterSlugs } from '@/lib/chapters'
 import { connectDB } from '@/lib/db'
+import { normalizePortfolioImageSrc } from '@/lib/portfolio-images'
 import { normalizeArticleAuthor } from '@/lib/work-presentation'
 import { normalizeWorkEditorDocumentSettings } from '@/lib/work-editor-document-settings'
 import { shouldExcludeFromWorkListings } from '@/lib/work-listing-filters'
@@ -142,7 +143,8 @@ function normalizeContent(row: DatabaseArticle): Article['content'] {
   const rawPlateContent = normalizePlateValue(row.content)
   if (hasContent(rawPlateContent)) {
     const sections = plateToArticleSections(rawPlateContent)
-    const hero = isRealImageUrl(clean(row.img)) ? clean(row.img) : extractHeroImageFromPlate(rawPlateContent) || '/images/placeholder.svg'
+    const rowImage = normalizePortfolioImageSrc(clean(row.img), 'hero')
+    const hero = isRealImageUrl(rowImage) ? rowImage : normalizePortfolioImageSrc(extractHeroImageFromPlate(rawPlateContent), 'hero') || '/images/placeholder.svg'
     const introSource =
       (sections[0] && Array.isArray(sections[0].paragraphs) ? sections[0].paragraphs[0] : '') || clean(row.desc)
 
@@ -163,7 +165,7 @@ function normalizeContent(row: DatabaseArticle): Article['content'] {
 
   return {
     intro: introSource,
-    heroImg: clean(row.img) || '/images/placeholder.svg',
+    heroImg: normalizePortfolioImageSrc(clean(row.img), 'hero') || '/images/placeholder.svg',
     sections: sections.map((section, index) => ({
       id: section.id || `section-${index + 1}`,
       title: section.heading || `Section ${index + 1}`,
@@ -194,7 +196,7 @@ export function mapDbArticleToPublicArticle(row: DatabaseArticle): Article {
     outcome: clean(row.outcome) || undefined,
     tag: clean(row.tag) || 'Case Study',
     tags: normalizeTags(row),
-    img: clean(row.img) || '/images/placeholder.svg',
+    img: normalizePortfolioImageSrc(clean(row.img), 'card') || '/images/placeholder.svg',
     imageCaption: clean(row.imageCaption) || undefined,
     date: getDateLabel(row),
     readTime: clean(row.readTime) || '1 min read',

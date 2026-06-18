@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { ComponentConfig } from "@measured/puck"
 import { ArrowRight, ExternalLink } from "lucide-react"
-import { motion } from "framer-motion"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import {
@@ -15,6 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { cn } from "@/lib/utils"
 
 type Gallery16Item = {
@@ -188,12 +188,15 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                         ) : null}
                       </div>
                     </div>
-                    <div className="group rounded-xl border border-border p-2">
-                      <div className="overflow-hidden rounded-xl">
-                        <motion.img
+                    <div className="group rounded-xl border border-border p-2 md:min-h-0">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-xl md:h-full md:min-h-[280px]">
+                        <OptimizedImage
                           src={item.image}
                           alt={item.imageAlt}
-                          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 767px) 82vw, (max-width: 1023px) 42vw, 430px"
+                          imageOptions={{ width: 864, height: 540, fit: "cover" }}
                         />
                       </div>
                     </div>

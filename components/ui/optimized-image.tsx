@@ -7,6 +7,7 @@ type BaseProps = {
   alt: string;
   className?: string;
   sizes?: string;
+  preload?: boolean;
   priority?: boolean;
   quality?: number;
   /** Resize hint passed to resolveAssetImageUrl (and used for fixed-size rendering). */
@@ -42,9 +43,10 @@ function isOptimizable(src: string) {
  * object-cover layouts — or `width`/`height` for fixed-size images (avatars, logos).
  */
 export function OptimizedImage(props: OptimizedImageProps) {
-  const { src, alt, className, sizes, priority, quality, imageOptions } = props;
+  const { src, alt, className, sizes, preload, priority, quality, imageOptions } = props;
   const safeSrc = src || '';
   const resolved = resolveAssetImageUrl(safeSrc, imageOptions);
+  const shouldPreload = preload ?? priority ?? false;
 
   if (!safeSrc || !isOptimizable(resolved)) {
     const dimProps = props.fill
@@ -55,8 +57,8 @@ export function OptimizedImage(props: OptimizedImageProps) {
         src={resolved || undefined}
         alt={alt}
         className={className}
-        loading={priority ? 'eager' : 'lazy'}
-        fetchPriority={priority ? 'high' : undefined}
+        loading={shouldPreload ? 'eager' : 'lazy'}
+        fetchPriority={shouldPreload ? 'high' : undefined}
         decoding="async"
         {...dimProps}
       />
@@ -71,7 +73,7 @@ export function OptimizedImage(props: OptimizedImageProps) {
         fill
         className={className}
         sizes={sizes || '100vw'}
-        priority={priority}
+        preload={shouldPreload || undefined}
         quality={quality}
       />
     );
@@ -85,7 +87,7 @@ export function OptimizedImage(props: OptimizedImageProps) {
       height={props.height}
       className={className}
       sizes={sizes}
-      priority={priority}
+      preload={shouldPreload || undefined}
       quality={quality}
     />
   );

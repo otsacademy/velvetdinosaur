@@ -2,6 +2,7 @@ import { MapPin, MessageCircle, Phone } from "lucide-react"
 
 import { Contact25 } from "@/components/contact25"
 import { ContactForm } from "@/components/contact/contact-form.client"
+import { DeferredIframe } from "@/components/site/deferred-iframe.client"
 
 const CONTACT_FORM_ID = "velvet_contact_section"
 const MAPS_APP_HREF = "https://maps.app.goo.gl/qXGMvoF1E36RWeDS9"
@@ -70,9 +71,10 @@ export function ContactSection() {
       </div>
 
       <div className="h-[220px] w-full bg-muted/30">
-        <iframe
+        <DeferredIframe
           title="Velvet Dinosaur location on Google Maps"
           src={MAP_EMBED_SRC}
+          placeholderLabel="Load map preview"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="h-full w-full border-0"

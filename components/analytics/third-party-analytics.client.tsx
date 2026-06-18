@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -23,10 +23,52 @@ const LINKEDIN_PARTNER_ID = (process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || '').
 export function ThirdPartyAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [shouldLoadThirdParties, setShouldLoadThirdParties] = useState(false);
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_LHCI === 'true') return;
     if (typeof window === 'undefined') return;
+    let loaded = false;
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      setShouldLoadThirdParties(true);
+    };
+
+    const scheduleIdleLoad = () => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(() => load(), { timeout: 7000 });
+      } else {
+        timeoutId = setTimeout(load, 7000);
+      }
+    };
+
+    const events: Array<keyof WindowEventMap> = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+    for (const eventName of events) {
+      window.addEventListener(eventName, load, { once: true, passive: true });
+    }
+    scheduleIdleLoad();
+
+    return () => {
+      for (const eventName of events) {
+        window.removeEventListener(eventName, load);
+      }
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_LHCI === 'true') return;
+    if (typeof window === 'undefined') return;
+    if (!shouldLoadThirdParties) return;
 
     const search = searchParams?.toString() || '';
     const pagePath = search ? `${pathname}?${search}` : pathname || window.location.pathname;
@@ -42,7 +84,9 @@ export function ThirdPartyAnalytics() {
     if (META_PIXEL_ID && typeof window.fbq === 'function') {
       window.fbq('track', 'PageView');
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, shouldLoadThirdParties]);
+
+  if (!shouldLoadThirdParties) return null;
 
   return (
     <>

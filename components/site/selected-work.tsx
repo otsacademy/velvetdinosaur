@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 
 import { ShadcnblocksGallery16 } from '@/components/blocks/store/shadcnblocks/gallery16'
 import { Button } from '@/components/ui/button'
+import { normalizePortfolioImageSrc } from '@/lib/portfolio-images'
 import { listLatestPublishedWorkArticles } from '@/lib/work-articles.server'
 
 function mapArticleToGalleryItem(article: Article) {
@@ -19,7 +20,7 @@ function mapArticleToGalleryItem(article: Article) {
     descriptionSecondary: hasSubtitle ? article.desc : undefined,
     bullets: article.outcome ? [`Outcome: ${article.outcome}`] : [],
     note: article.tag && article.tag !== category ? article.tag : 'Real project',
-    image: article.img || '/placeholder.svg',
+    image: normalizePortfolioImageSrc(article.img, 'card') || '/placeholder.svg',
     imageAlt: article.imageCaption || article.title,
     primaryLabel: 'Read case study',
     primaryHref: `/work/${article.slug}`,

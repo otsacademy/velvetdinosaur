@@ -18,6 +18,10 @@
           "command": "bun run build"
         },
         {
+          "name": "portfolio-images",
+          "command": "bun run portfolio:images:check"
+        },
+        {
           "name": "visual",
           "command": "bun run visual:test"
         },
