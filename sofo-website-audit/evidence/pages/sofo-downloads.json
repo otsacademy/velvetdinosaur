@@ -1,0 +1,130 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/sofo-downloads/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:18:10.390Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/wp-login.php",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/wp-login.php",
+  "title": "Log In ‹ Soldiers of Oxfordshire Museum — WordPress",
+  "metaDescription": "",
+  "canonical": "",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Powered by WordPress"
+    }
+  ],
+  "links": [
+    {
+      "text": "Powered by WordPress",
+      "href": "https://wordpress.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Lost your password?",
+      "href": "https://www.sofo.org.uk/my-account/lost-password/",
+      "pathname": "/my-account/lost-password/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "← Go to Soldiers of Oxfordshire Museum",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [],
+  "images": [],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/wp-login.php",
+      "method": "post",
+      "text": "Username or Email Address Password Remember Me",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "log",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Username or Email Address",
+          "id": "user_login",
+          "required": false
+        },
+        {
+          "type": "password",
+          "name": "pwd",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Password",
+          "id": "user_pass",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "rememberme",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Remember Me",
+          "id": "rememberme",
+          "required": false
+        },
+        {
+          "type": "submit",
+          "name": "wp-submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "wp-submit",
+          "required": false
+        },
+        {
+          "type": "hidden",
+          "name": "redirect_to",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "hidden",
+          "name": "testcookie",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Show password",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "text": "Log In",
+      "type": "submit",
+      "visible": true
+    }
+  ],
+  "wordCount": 20,
+  "bodyText": "Powered by WordPress\n\nUsername or Email Address \n\nPassword\n\n Remember Me\n\nLost your password?\n\n← Go to Soldiers of Oxfordshire Museum",
+  "footerText": ""
+}

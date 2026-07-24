@@ -1,0 +1,1056 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:03:07.176Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/",
+  "title": "A Brief History of Cowley Barracks – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "A Brief History of Cowley Barracks"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month (Christmas 2025): Princess Mary Gift Tin"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "collection",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IVAN REANEY",
+      "href": "https://www.sofo.org.uk/author/ivanreaney/",
+      "pathname": "/author/ivanreaney/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-Postcard-SOFO-3639-c1914.jpg",
+      "pathname": "/wp-content/uploads/2022/12/Cowley-Barracks-Postcard-SOFO-3639-c1914.jpg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-recruiting-July-1956.jpg",
+      "pathname": "/wp-content/uploads/2022/12/Cowley-Barracks-recruiting-July-1956.jpg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-from-the-Air-c1914.jpg",
+      "pathname": "/wp-content/uploads/2022/12/Cowley-Barracks-from-the-Air-c1914.jpg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd",
+      "href": "https://www.sofo.org.uk/tag/43rd/",
+      "pathname": "/tag/43rd/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd (Monmouthshire) Regiment",
+      "href": "https://www.sofo.org.uk/tag/43rd-monmouthshire-regiment/",
+      "pathname": "/tag/43rd-monmouthshire-regiment/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd (Monmouthshire) Regiment of Foot",
+      "href": "https://www.sofo.org.uk/tag/43rd-monmouthshire-regiment-of-foot/",
+      "pathname": "/tag/43rd-monmouthshire-regiment-of-foot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd Foot",
+      "href": "https://www.sofo.org.uk/tag/43rd-foot/",
+      "pathname": "/tag/43rd-foot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd",
+      "href": "https://www.sofo.org.uk/tag/52nd/",
+      "pathname": "/tag/52nd/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd (Oxfordshire) Regiment",
+      "href": "https://www.sofo.org.uk/tag/52nd-oxfordshire-regiment/",
+      "pathname": "/tag/52nd-oxfordshire-regiment/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd (Oxfordshire) Regiment of Foot",
+      "href": "https://www.sofo.org.uk/tag/52nd-oxfordshire-regiment-of-foot/",
+      "pathname": "/tag/52nd-oxfordshire-regiment-of-foot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd Foot",
+      "href": "https://www.sofo.org.uk/tag/52nd-foot/",
+      "pathname": "/tag/52nd-foot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Barracks",
+      "href": "https://www.sofo.org.uk/tag/barracks/",
+      "pathname": "/tag/barracks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Charlbury",
+      "href": "https://www.sofo.org.uk/tag/charlbury/",
+      "pathname": "/tag/charlbury/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cowley",
+      "href": "https://www.sofo.org.uk/tag/cowley/",
+      "pathname": "/tag/cowley/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cowley Barracks",
+      "href": "https://www.sofo.org.uk/tag/cowley-barracks/",
+      "pathname": "/tag/cowley-barracks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Depot",
+      "href": "https://www.sofo.org.uk/tag/depot/",
+      "pathname": "/tag/depot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "James Wolfe",
+      "href": "https://www.sofo.org.uk/tag/james-wolfe/",
+      "pathname": "/tag/james-wolfe/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "James Wolfe Road",
+      "href": "https://www.sofo.org.uk/tag/james-wolfe-road/",
+      "pathname": "/tag/james-wolfe-road/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxf. & Bucks",
+      "href": "https://www.sofo.org.uk/tag/oxf-bucks/",
+      "pathname": "/tag/oxf-bucks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxford",
+      "href": "https://www.sofo.org.uk/tag/oxford/",
+      "pathname": "/tag/oxford/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxford Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/oxford-light-infantry/",
+      "pathname": "/tag/oxford-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxford University",
+      "href": "https://www.sofo.org.uk/tag/oxford-university/",
+      "pathname": "/tag/oxford-university/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire and Buckinghamshire Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "pathname": "/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Regimental Depot",
+      "href": "https://www.sofo.org.uk/tag/regimental-depot/",
+      "pathname": "/tag/regimental-depot/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: The Man Behind the Medals: Sgt Henry Neill of the 43rd",
+      "href": "https://www.sofo.org.uk/tmbtmsgthenryneill/",
+      "pathname": "/tmbtmsgthenryneill/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Share your story at our Their Finest Hour Second World War Collections Day",
+      "href": "https://www.sofo.org.uk/share-your-story-at-our-their-finest-hour-second-world-war-collections-day/",
+      "pathname": "/share-your-story-at-our-their-finest-hour-second-world-war-collections-day/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "pathname": "/objectofthemonthchristmas2025/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Ivan Reaney",
+      "href": "https://www.sofo.org.uk/author/ivanreaney/",
+      "pathname": "/author/ivanreaney/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/#respond",
+      "pathname": "/a-brief-history-of-cowley-barracks/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fa-brief-history-of-cowley-barracks%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "IVAN REANEY",
+      "href": "https://www.sofo.org.uk/author/ivanreaney/",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/a-brief-history-of-cowley-barracks/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-Postcard-SOFO3868-e1671033354169-718x400.jpg",
+      "alt": "",
+      "width": "718",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-Postcard-SOFO3868-e1671033354169-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-Postcard-SOFO-3639-c1914-1024x606.jpg",
+      "alt": "",
+      "width": "1024",
+      "height": "606",
+      "naturalWidth": 1024,
+      "naturalHeight": 606,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-recruiting-July-1956-1024x718.jpg",
+      "alt": "",
+      "width": "1024",
+      "height": "718",
+      "naturalWidth": 1024,
+      "naturalHeight": 718,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/12/Cowley-Barracks-from-the-Air-c1914-1024x640.jpg",
+      "alt": "Cowley Barracks from the Air (c1914)",
+      "width": "1024",
+      "height": "640",
+      "naturalWidth": 1024,
+      "naturalHeight": 640,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/2030178-1536x1152.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 1280,
+      "naturalHeight": 960,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/12/4300-1536x1152.jpg",
+      "alt": "",
+      "width": "2048",
+      "height": "1536",
+      "naturalWidth": 1280,
+      "naturalHeight": 960,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/18b7859e6a44cc8d65433692dcce8161?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 888,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n14\nDec\nBYIVAN REANEY// COLLECTION, OXFORD AND BUCKS LIGHT INFANTRY\nA Brief History of Cowley Barracks\nA Brief History of Cowley Barracks\n\nA postcard photograph of Cowley Barracks (SOFO 3639) c.1914.\n\nCowley Barracks was the spiritual home of the Oxfordshire & Buckinghamshire Light Infantry and its antecedent regiments from 1876.\n\nUnder the Localisation Scheme introduced in 1873, the British Isles were divided into sixty-six Sub- districts. For recruiting and recruit training purposes, two regular infantry battalions were allocated\nto each Sub-district, where a ‘brigade depot’ was established to house their depot companies. Previously, the depot companies did not have a permanent base. The aims of the Localisation Scheme were to boost recruiting and to promote closer links between the regular army and the reserve forces – the Militia and the Rifle Volunteers. The new depots also assisted with the training of the reserve units within their Sub-district.\n\nThe 52nd (Oxfordshire) Regiment of Foot (Light Infantry) and the 85th or King’s Light Infantry Regiment of Foot, which each comprised one battalion of regular infantry, were allocated to the\n42nd Sub-district, covering Oxfordshire and Buckinghamshire. In the absence of a suitable barracks within the Sub-district, Oxford was selected for the site of new barracks, despite the opposition of the university. A 20-acre site on Bullingdon Green, two miles south-east of Oxford, was acquired at a cost of £120 per acre.\n\nBetween 1874 and 1876, new barracks, initially named Bullingdon Barracks, were constructed in Charlbury stone at a cost of £45,000. Each regiment’s depot companies were housed in their own two-storey block, each accommodating 4 NCOs and 112 recruits. A castellated keep, housing an armoury, a guardroom, cells and a 5,000-gallon water tank, was built next to the main entrance. Other buildings included a drill shed, officers’ quarters, married soldiers’ quarters, canteen, reading and recreation rooms, sergeants’ mess, orderly room, quartermaster’s stores, workshops, straw and\ncoal sheds, hospital, chapel, and infant school.\n\nIn 1881 the Territorialisation Scheme saw the two regular battalions, the local Militia and the local Rifle Volunteers of each Sub-district merged into a new ‘territorial’ infantry regiment. However, in light of their history of serving together as light infantry, it was decided that the 43rd (Monmouthshire) Regiment of Foot (Light Infantry) should join with the 52nd Foot as the regular battalions of the newly-created Oxfordshire Light Infantry, whose depot remained at Cowley Barracks.  The barracks also housed the administrative Regimental Headquarters of the Oxfordshire Light Infantry, which now consisted of two regular, two Militia and four Volunteer battalions. At the same time, the 42nd Brigade Sub-district was renamed the 43rd Regimental District.\n\nA recruitment drive for the Oxfordshire and Buckinghamshire Light Infantry in July 1956. Though expecting to be posted to Hong Kong, 1st Battalion would actually find themselves deployed to Cyprus the following month.\n\nExcept for periods when infantry recruit training was centralised, Cowley Barracks continued to house the Oxf. & Bucks LI’s depot until 31 st December 1958, when recruit training for the OBLI and the other two regiments of the Green Jackets Brigade was consolidated at the Brigade’s depot at Winchester. The barracks were finally vacated in 1966, and the site was sold off. Subsequently, the keep and many of the buildings were demolished. The depot is now commemorated by a number of plaques.\n\nCowley Barracks from the Air (Photo from a regimental chronicle, though to be taken in 1914)\n\n Tags: 43rd, 43rd (Monmouthshire) Regiment, 43rd (Monmouthshire) Regiment of Foot, 43rd Foot, 52nd, 52nd (Oxfordshire) Regiment, 52nd (Oxfordshire) Regiment of Foot, 52nd Foot, Barracks, Charlbury, Cowley, Cowley Barracks, Depot, James Wolfe, James Wolfe Road, Oxf. & Bucks, Oxford, Oxford Light Infantry, Oxford University, Oxfordshire and Buckinghamshire Light Infantry, Regimental Depot\n\nPrevious:\nThe Man Behind the Medals: Sgt Henry Neill of the 43rd\nNext:\nShare your story at our Their Finest Hour Second World War Collections Day\nRelated posts\nOBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION\n\nFebruary’s Object of the Month follows a Valentine’s Day theme! Volunteer Geraldine has selected a First World War pin cushion, shaped like a heart, it has quite a story behind it! Sweetheart Pin Cushion By Geraldine Howell Object photography by Colin Morris   This sweetheart pin cushion was made during the First World War by a member of the Oxfordshire and Buckinghamshire Light Infantry. Sweetheart cushions were not unknown before…\n\nOBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN\n\nDecember’s Object of the Month had to be a Christmas special! Volunteer Geraldine has selected the iconic First World War gift sent out to troops overseas, researching the boxes themselves and where the men of the Oxfordshire & Buckinghamshire Light Infantry would have been spent their Christmas in 1914. Princess Mary’s Gift Boxes By Geraldine Howell Her Royal Highness The Princess Victoria Alexandra Alice Mary was the only daughter of…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

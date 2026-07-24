@@ -1,0 +1,932 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/product/ww1capbadges/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:17:19.544Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/product/ww1capbadges/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/product/ww1capbadges/",
+  "title": "British Army Cap Badges of the First World War – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/product/ww1capbadges/",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "British Army Cap Badges of the First World War"
+    },
+    {
+      "level": "h2",
+      "text": "British Army Cap Badges of the First World War"
+    },
+    {
+      "level": "h2",
+      "text": "Related products"
+    },
+    {
+      "level": "h2",
+      "text": "Mister Brownrigg’s Boys: Magdalen College School and the Great War"
+    },
+    {
+      "level": "h2",
+      "text": "History of the 43rd and 52nd (Oxfordshire and Buckinghamshire) Light Infantry in the Great War 1914-1918 Volume II The 52nd Light Infantry in France and Belgium"
+    },
+    {
+      "level": "h2",
+      "text": "Redcoats to Riflemen: A Short History of the Oxfordshire and Buckinghamshire County Regiment"
+    },
+    {
+      "level": "h2",
+      "text": "Winston Churchill: Oxfordshire Hussar – A Bugle & Sabre Special"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Books",
+      "href": "https://www.sofo.org.uk/product-category/sofobookshop/",
+      "pathname": "/product-category/sofobookshop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Gifts",
+      "href": "https://www.sofo.org.uk/product-category/sofogiftsshop/",
+      "pathname": "/product-category/sofogiftsshop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd Light Infantry",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=books&tag=52nd%20Light%20Infantry",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Battle of Britain",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=books&tag=Battle%20of%20Britain",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Churchill",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=books&tag=Churchill",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "First World War",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=books&tag=First%20World%20War",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Military History",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=books&tag=Military%20History",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/ww1capbadges/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Books",
+      "href": "https://www.sofo.org.uk/product-category/sofobookshop/",
+      "pathname": "/product-category/sofobookshop/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Mister Brownrigg’s Boys: Magdalen College School and the Great War £15.00",
+      "href": "https://www.sofo.org.uk/product/misterbrownriggsboys/",
+      "pathname": "/product/misterbrownriggsboys/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/?add-to-cart=5226",
+      "pathname": "/product/ww1capbadges/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "History of the 43rd and 52nd (Oxfordshire and Buckinghamshire) Light Infantry in the Great War 1914-1918 Volume II The 52nd Light Infantry in France and Belgium £30.00",
+      "href": "https://www.sofo.org.uk/product/history-of-the-43rd-and-52nd-oxfordshire-and-buckinghamshire-light-infantry-in-the-great-war-1914-1918-volume-ii-the-52nd-light-infantry-in-france-and-belgium/",
+      "pathname": "/product/history-of-the-43rd-and-52nd-oxfordshire-and-buckinghamshire-light-infantry-in-the-great-war-1914-1918-volume-ii-the-52nd-light-infantry-in-france-and-belgium/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/?add-to-cart=4352",
+      "pathname": "/product/ww1capbadges/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Redcoats to Riflemen: A Short History of the Oxfordshire and Buckinghamshire County Regiment £4.50",
+      "href": "https://www.sofo.org.uk/product/redcoats-to-riflemen-a-short-history-of-the-oxfordshire-and-buckinghamshire-county-regiment/",
+      "pathname": "/product/redcoats-to-riflemen-a-short-history-of-the-oxfordshire-and-buckinghamshire-county-regiment/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/?add-to-cart=4350",
+      "pathname": "/product/ww1capbadges/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Winston Churchill: Oxfordshire Hussar – A Bugle & Sabre Special £2.00",
+      "href": "https://www.sofo.org.uk/product/winston-churchill-oxfordshire-hussar-a-bugle-sabre-special/",
+      "pathname": "/product/winston-churchill-oxfordshire-hussar-a-bugle-sabre-special/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/ww1capbadges/?add-to-cart=2540",
+      "pathname": "/product/ww1capbadges/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/product/ww1capbadges/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/06/sofo-shop.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 420,
+      "naturalHeight": 180,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/10/British-Army-Cap-Badges-WWI-scaled.jpg",
+      "alt": "British Army Cap Badges of the First World War",
+      "width": null,
+      "height": null,
+      "naturalWidth": 1947,
+      "naturalHeight": 2560,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/10/Mister-Brownriggs-Boys-e1545147719646-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/06/HistoryoftheOBLI1914-18-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/06/RedcoatstoRiflemen-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/woocommerce-placeholder-300x300.png",
+      "alt": "Placeholder",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://www.sofo.org.uk/product/ww1capbadges/",
+      "method": "post",
+      "text": "British Army Cap Badges of the First World War quantity Add to Cart",
+      "inputs": [
+        {
+          "type": "number",
+          "name": "quantity",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "British Army Cap Badges of the First World War quantity",
+          "id": "quantity_6a2858ae62814",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Add to Cart",
+      "type": "submit",
+      "visible": true
+    },
+    {
+      "text": "Close (Esc)",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Share",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Toggle fullscreen",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Zoom in/out",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Previous (arrow left)",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Next (arrow right)",
+      "type": "",
+      "visible": false
+    }
+  ],
+  "wordCount": 470,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nBooks\nGifts\nBritish Army Cap Badges of the First World War\n£14.99\n\nLow stock, 2 remaining\nBritish Army Cap Badges of the First World War quantity\nAdd to Cart\n\nThe fascination with the British involvement in the First World War extends to all aspects of the conflict. The battles and their outcomes; the armies and their leaders; the conditions of trench warfare; and the controversies form part of the growing literature examining every aspect of a war that was to cast a shadow over the rest of the twentieth century, the effects of which are still being felt today.\n\nFor the British army, the cap badge is the most easily identifiable form of insignia. It represents a distillation of the pride of the regiment, its various battle honours and symbols borne proudly on the metallic emblem that was worn on all headdress, even within the trenches. Identification of the cap badge on old photographs is a first, important step in unravelling the military service of an individual.\n\nCap badges have been collected avidly since they were first thought of in the nineteenth century. Cap-badge collecting is as popular now as it has ever been; yet with a growing number of fakes and forgeries, there is a need for a book that illustrates clearly the main types, and allows the collector and family historian alike to understand their meaning. This book illustrates, for the first time in full colour and high quality, images of the main types of badges used by the British Army in World War I. In addition, contemporary illustrations of the soldiers themselves wearing the badges, and the wider importance of their symbolism, is also included.\n\nEmploying the skills of an established writer (and collector) and artist, it provides a unique reference guide for all people interested in the World War I.\n\nRelated products\nMister Brownrigg’s Boys: Magdalen College School and the Great War\n£15.00 Add to cart\nHistory of the 43rd and 52nd (Oxfordshire and Buckinghamshire) Light Infantry in the Great War 1914-1918 Volume II The 52nd Light Infantry in France and Belgium\n£30.00 Add to cart\nRedcoats to Riflemen: A Short History of the Oxfordshire and Buckinghamshire County Regiment\n£4.50 Add to cart\nWinston Churchill: Oxfordshire Hussar – A Bugle & Sabre Special\n£2.00 Add to cart\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

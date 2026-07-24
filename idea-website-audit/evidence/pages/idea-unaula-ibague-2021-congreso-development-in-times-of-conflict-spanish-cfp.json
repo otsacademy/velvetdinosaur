@@ -1,0 +1,480 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+    "lastmod": "2022-07-06T16:29:29+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:20.192Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+  "title": "IDEA",
+  "metaDescription": "Sitio principal del Congreso: http://devethics2021.unaula.edu.co/  Las últimas actualizaciones de la conferencia se publicarán en este enlace: https://tinyurl.com/DTC-Update Cualquier información preliminar concerniente a la programación del evento, podrá ser encontrada en el siguiente link: https://tinyurl.com/DTCMarch. Serie de seminarios web previos a la conferencia. Details, English: https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/ Propuestas aceptadas para la conferencia pospuesta del 2021, fueron aceptadas para la…",
+  "canonical": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+  "headings": [
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/#content",
+      "pathname": "/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://devethics2021.unaula.edu.co/",
+      "href": "http://devethics2021.unaula.edu.co/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://tinyurl.com/DTC-Update",
+      "href": "https://tinyurl.com/DTC-Update",
+      "pathname": "/DTC-Update",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://tinyurl.com/DTCMarch",
+      "href": "https://tinyurl.com/DTCMarch",
+      "pathname": "/DTCMarch",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Serie de seminarios web previos a la conferencia.",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "pathname": "/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "conference2022med@unaula.edu.co.",
+      "href": "mailto:conference2022med@unaula.edu.co",
+      "pathname": "conference2022med@unaula.edu.co",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "premio Denis Goulet",
+      "href": "https://developmentethics.org/news-and-events/#Goulet",
+      "pathname": "/news-and-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://medellin.travel/en/",
+      "href": "https://medellin.travel/en/",
+      "pathname": "/en/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://medellin.travel/en/destinations/santa-fe-de-antioquia",
+      "href": "https://medellin.travel/en/destinations/santa-fe-de-antioquia",
+      "pathname": "/en/destinations/santa-fe-de-antioquia",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://travelgrafia.co/en/blog/guatape-piedra-del-penol/",
+      "href": "https://travelgrafia.co/en/blog/guatape-piedra-del-penol/",
+      "pathname": "/en/blog/guatape-piedra-del-penol/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://devethics2021.unaula.edu.co/",
+      "href": "http://devethics2021.unaula.edu.co/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.unaula.edu.co",
+      "href": "http://www.unaula.edu.co/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://redetica.org/",
+      "href": "https://redetica.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/joining-idea-2/",
+      "href": "https://developmentethics.org/joining-idea-2/",
+      "pathname": "/joining-idea-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "conference2022med@unaula.edu.co",
+      "href": "mailto:conference2021med@unaula.edu.co",
+      "pathname": "conference2021med@unaula.edu.co",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/#",
+      "pathname": "/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fidea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-cu",
+      "pathname": "/P1D93l-cu",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/#",
+      "pathname": "/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/#",
+      "pathname": "/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/#",
+      "pathname": "/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2022/03/from-website-heading.png?w=768&h=172",
+      "alt": "From website heading",
+      "width": null,
+      "height": null,
+      "naturalWidth": 577,
+      "naturalHeight": 129,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2022/03/unaula-idea-redetica-rosario.png?w=768&h=295",
+      "alt": "Unaula IDEA REDETICA Rosario",
+      "width": null,
+      "height": null,
+      "naturalWidth": 579,
+      "naturalHeight": 222,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=774&subd=developmentethics&host=developmentethics.org&ref=&rand=0.37253565093727425",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 1694,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\n\nSitio principal del Congreso: http://devethics2021.unaula.edu.co/ \n\nLas últimas actualizaciones de la conferencia se publicarán en este enlace: https://tinyurl.com/DTC-Update\n\nCualquier información preliminar concerniente a la programación del evento, podrá ser encontrada en el siguiente link: https://tinyurl.com/DTCMarch.\n\nSerie de seminarios web previos a la conferencia.\n\nDetails, English: https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/\n\nPropuestas aceptadas para la conferencia pospuesta del 2021, fueron aceptadas para la Conferencia del año 2022. El pasado enero, se emitió un llamado para la presentación de nuevas propuestas. La convocatoria ha cerrado a la fecha. Cualquier información adicional por favor dirigirla a Camila Carmona, coordinadora de la conferencia, al correo conference2022med@unaula.edu.co.\n\nLa Asociación Internacional de Ética del Desarrollo (IDEA), la Universidad Autónoma Latinoamericana – (UNAULA) y la Red para la formación ética y ciudadana (REDETICA) invitan a académicos, profesionales, legisladores y otras partes interesadas a presentar propuestas para presentaciones dentro del Congreso “Desarrollo en tiempos de conflicto: caminos éticos hacia la paz y la justicia”.\n\nTema de la Conferencia \n\nDurante décadas, Colombia ha vivido uno de los conflictos armados más complejos de América del Sur. Más de cincuenta años de conflicto armado han deteriorado los cimientos institucionales, desgarrado el tejido social básico, generado desconfianza en la figura del Estado y obstaculizado la construcción de un proyecto nacional común. Estos hechos y la exclusión actual reflejan un fracaso del desarrollo, que es tanto un foco de preocupación en los conflictos y en la generación de conflictos como en una sociedad más ordenada. En algunas regiones, la violencia, naturalizada como medio de resolución de conflictos, ha llegado a constituir un ethos en el que el resentimiento y la venganza son expresiones habituales, y el alzamiento de las armas suele verse como la única opción para resolver las disputas, mientras que la exclusión continua y los recurrentes actos de injusticia conforman la realidad nacional de Colombia.\n\nLa firma del acuerdo de paz entre el Estado colombiano y la guerrilla de las FARC ha dado lugar a un momento crucial en el desarrollo del país. En este nuevo período posacuerdo, palabras como verdad, justicia, reparación, no repetición, perdón, reconciliación, entre otras, señalan la posibilidad de caminos políticos y morales para la resolución de conflictos. Abren espacios de diálogo, reflexión y acción en los que la educación en ética debe ocupar un lugar central; de lo contrario, la construcción de una sociedad pluralista y democrática es imposible. El contexto actual demanda propuestas para el mantenimiento de la paz, así como la asunción crítica de nuevos paradigmas enmarcados en una jurisdicción especial para el proceso de paz y la realización de la justicia transicional. Las recientes protestas y la violencia estatal en Colombia durante los últimos meses solo resaltan la urgencia de los procesos de paz y reconciliación.\n\nEs de gran importancia para esta región específicamente, y para el contexto nacional y latinoamericano en general, promover espacios de diálogo e investigación sobre el acuerdo de paz, la justicia transicional, el ambiente posacuerdo y la construcción comunitaria, entre otros temas.  Por lo tanto, los organizadores de la conferencia alientan particularmente las presentaciones de profesionales y académicos del desarrollo sobre los siguientes temas en su aplicación al desarrollo ético:\n\nConflicto, justicia transicional y reconciliación;\nExperiencias de organizaciones y acción colectiva en la transformación de territorios por la paz;\nConstrucción y mantenimiento de la paz: los desafíos;\nCompartir y comparar experiencias de construcción de paz de otras regiones del mundo;\nDesplazamiento interno e internacional por conflicto: inmigración y refugiados;\nCaminos hacia la paz: desarrollo, posdesarrollo, enfoques decoloniales, buen vivir y otras ideas inspiracionales para el diálogo;\nLímites del paradigma de paz liberal;\nConcepciones híbridas de consolidación de la paz;\nProgreso social y protesta;\nDerechos humanos y protesta social;\nCOVID 19 en tiempos de conflicto;\nAcción política reciente y disrupción que surge de las bases y las universidades dentro de Colombia.\n\nLos congresos de la Asociación Internacional de Ética del Desarrollo están abiertos a propuestas relativas a todos los aspectos de la ética en el contexto del desarrollo; otros focos incluyen pero no se limitan a:\n\nPlanificación urbana / desplazamiento por desarrollo;\nÉtica del desarrollo en tiempos de crisis climática;\nComplejidad, incertidumbre y desarrollo sostenible;\nInnovación social y de base para un cambio transformador;\n¿De quién es el conocimiento? Justicia epistémica y ecología de saberes;\nResponsabilidad política: oportunidades y desafíos;\n\nSe invita a académicos y a activistas a examinar estos temas desde diversas perspectivas prácticas, teóricas y conceptuales que incluyan argumentos filosóficos, análisis empíricos, relatos de observadores y participantes, evaluaciones de políticas y estrategias de acción. La conferencia acogerá académicos y activistas de todo el mundo, y de una amplia variedad de disciplinas y actividades (incluida la filosofía y otras humanidades, ciencias sociales, estudios de políticas, desarrollo, trabajo social, ONG, agencias y organizaciones locales y globales, funcionarios gubernamentales y formuladores de políticas). Serán especialmente bienvenidas las propuestas de académicos y activistas del sur global.\n\nConferencias y sesiones plenarias\n\nLa conferencia albergará diferentes tipos de actividades plenarias:\n\nLa conferencia David Crocker de la Asociación Internacional de Ética del Desarrollo estará a cargo de la Prof. Adela Cortina, Profesora de Filosofía, Universidad de Valencia, España.\nProf. Karina Batthyány, Directora Ejecutiva del Consejo Latinoamericano de Ciencias Sociales – CLACSO, impartirá una conferencia magistral sobre el pensamiento latinoamericano sobre conflictos y desarrollo local.\nRed para la formación ética y ciudadana (REDETICA) presidirá un simposio sobre Educación, Ética y Construcción de la Paz.\n\nEl evento se llevará a cabo del 13 al 15 de julio de 2022. Se planea un retiro de IDEA y una visita de campo por separado, a la que también se invitará a los delegados, del 16 al 17 de julio.\n\nOtras sesiones\n\nAdemás de las conferencias magistrales y otras plenarias, la conferencia albergará diferentes tipos de sesiones:\n\nPaneles. Estos constarán de 3 o 4 presentaciones sobre un tema. Las propuestas del panel deben consistir en un resumen de aproximadamente 1000 palabras que incluya título, abordaje general y algunos detalles.\nPresentaciones de activistas. Se invita a activistas a enviar un resumen de 300 palabras para compartir experiencias sobre el tema de la conferencia o temas relacionados.\nPresentaciones de trabajos académicos. Cada trabajo se presentará en una sesión con 2 o 3 trabajos más (25 minutos por trabajo, incluidas preguntas y respuestas). Se invita a enviar un resumen de 500 palabras, con una lista de 3-5 palabras clave.\nEncuentros entre estudiantes e investigadores. Estas jornadas serán para estudiantes de pregrado y postgrado que deseen presentar su plan de investigación o trabajo en progreso (las propuestas deben tener 500 palabras con 3-5 palabras clave). Los académicos senior proporcionarán comentarios y presidirán la discusión. Los estudiantes que participen de esta jornada pueden ser candidatos al premio Denis Goulet.\nMesas redondas. Orientada al diálogo con diseñadores de política pública y otros actores gubernamentales y activistas sobre aquellos enfoques prácticos que permitirían enfrentar mejor los problemas que constituyen el foco de la conferencia. Se invita a enviar un resumen de 500 a 1000 palabras con 3-5 palabras clave. Incluya también información sobre los participantes de la mesa redonda, afiliaciones y si la participación de cada ponente está ya confirmada. \nParticipación en videoconferencias. El Congreso incluye actividades en formatos presencial y virtual. Como mínimo, esperamos proporcionar a los participantes virtuales acceso a la mayoría de las sesiones plenarias (en español o inglés) y a algunos paneles en línea. Las tarifas de la conferencia se reducirán para los participantes que hayan indicado su participación en línea antes de la fecha límite indicada anteriormente.\n\nIdiomas de la conferencia \n\nEspañol e inglés. Los resúmenes y las presentaciones de trabajos pueden ser en cualquiera de estos dos idiomas. Algunas sesiones de la conferencia contarán con el apoyo de servicios de traducción.\n\nComité organizador\n\nAlexandra Agudelo López, Universidad Autónoma Latinoamericana, Medellín, Colombia\nAlejandra Boni, Ingenio (CSIC-Universitat Politècnica de València), Spain\nAnna Malavisi, Department of Philosophy & Humanistic Studies, Western Connecticut State University, United States of America\nEric Palmer, International Development Ethics Association (IDEA)\nEduardo Rueda Barrera, Red para la formación ética y ciudadana (REDETICA)\nSalim Chalela Naffah, Universidad del Rosario, Bogotá, Colombia\nCamila Carmona, UNAULA, Medellín, Colombia\nDiana Velasco, Ingenio (CSIC-Universitat Politècnica de València), Spain\nStephen Esquith, Michigan State University, United States of America\nJohannes Waldmuller, FLACSO and Universidad de las Américas (UDLA), Quito, Ecuador\nCarlos Zorro Sánchez, Universidad de los Andes, Bogotá, Colombia\n\nVisita de campo\n\nEl plan contempla una visita de campo opcional a las comunas 8 y 13 de Medellín, donde se trabaja por la paz y la reconciliación, y a un proyecto ecológico (Parque Arví). Después del evento, también se prevé un retiro de dos días para planear futuros trabajos de la IDEA. Al retiro también están invitados todos los participantes del evento. Los detalles están por anunciarse.\n\nMedellín\n\nRodeada de montañas y conocida como la ciudad de la “eterna primavera” por su encantador clima de 23 a 28 °C, Medellín es la segunda capital más grande de Colombia. Tiene una importante oferta cultural: museos, restaurantes, parques y edificios históricos y, además, uno de sus principales atractivos es apreciar el esfuerzo por transformar sus territorios a través del sistema de transporte masivo. Desde Medellín es fácil llegar en carro particular o transporte público a muchos pueblos cercanos de interés turístico como Santa Fe de Antioquia (a una hora y media) y Guatapé (a dos horas).\n\nMás información:\n\nhttps://medellin.travel/en/\n\nhttps://medellin.travel/en/destinations/santa-fe-de-antioquia\n\nhttps://travelgrafia.co/en/blog/guatape-piedra-del-penol/\n\nSitios Web\n\nSitio principal del Congreso: http://devethics2021.unaula.edu.co/ \n\nUniversidad Autónoma Latinoamericana: http://www.unaula.edu.co\n\nInternational Development Ethics Association (IDEA): https://developmentethics.org/\n\nRed para la formación ética y ciudadana (REDETICA) https://redetica.org/\n\nTarifas\n\nSerán anunciadas en próximos días (anticipado: 17 de marzo). Las tarifas serán bajas para estudiantes y profesionales proveniente de países de ingresos medios o bajos.\n\nTodos los participantes a la conferencia deben ser miembros de la International Development Ethics Association. La membresía debe obtenerse antes de la Conferencia. Usted puede ingresar o renovar su membresía, en cualquier momento aquí: https://developmentethics.org/joining-idea-2/\n\nContacto\n\nTodas las preguntas acerca de los envíos pueden hacerse en la siguiente dirección: conference2022med@unaula.edu.co\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

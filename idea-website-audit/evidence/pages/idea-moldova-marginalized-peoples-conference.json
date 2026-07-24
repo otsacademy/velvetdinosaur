@@ -1,0 +1,430 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+    "lastmod": "2018-07-06T09:45:39+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:19.325Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+  "title": "IDEA-Moldova Marginalized Peoples Conference – IDEA",
+  "metaDescription": "Marginalized Peoples, Human Rights, and Development Ethics  17-18 May, 2018 Chişinău, Moldova Conference program:  ROMANA   ENGLISH  RUSSIAN ***Original conference call for papers below***               International Development Ethics Association 2018 Conference: Marginalized Peoples, Human Rights, and Development Ethics  Conference languages: Romanian, English, Russian -- simultaneous translation is anticipated. Proposals in English,…",
+  "canonical": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "IDEA-Moldova Marginalized Peoples Conference"
+    },
+    {
+      "level": "h3",
+      "text": "Marginalized Peoples, Human Rights, and Development Ethics"
+    },
+    {
+      "level": "h3",
+      "text": "Marginalized Peoples, Human Rights, and Development Ethics"
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/#content",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "ROMANA",
+      "href": "https://developmentethics.org/wp-content/uploads/2018/07/abstracts_chisinau-conference_romana.pdf",
+      "pathname": "/wp-content/uploads/2018/07/abstracts_chisinau-conference_romana.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "ENGLISH",
+      "href": "https://developmentethics.org/wp-content/uploads/2018/07/abstracts_chisinau-conference.pdf",
+      "pathname": "/wp-content/uploads/2018/07/abstracts_chisinau-conference.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "RUSSIAN",
+      "href": "https://developmentethics.org/wp-content/uploads/2018/07/chisinau-conference_program_russian_final.pdf",
+      "pathname": "/wp-content/uploads/2018/07/chisinau-conference_program_russian_final.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/joining-idea-2/",
+      "href": "https://developmentethics.org/joining-idea-2/",
+      "pathname": "/joining-idea-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.tandfonline.com/toc/rjge20/current.",
+      "href": "http://www.tandfonline.com/toc/rjge20/current.",
+      "pathname": "/toc/rjge20/current.",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.facebook.com/events/720540004820945/",
+      "href": "https://www.facebook.com/events/720540004820945/",
+      "pathname": "/events/720540004820945/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/#",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fidea-moldova-marginalized-peoples-conference%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-aa",
+      "pathname": "/P1D93l-aa",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/#",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/#",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/#",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2018/04/moldova3.png?w=114&h=147",
+      "alt": "moldova.png",
+      "width": "114",
+      "height": "147",
+      "naturalWidth": 113,
+      "naturalHeight": 146,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2018/04/idea-moldova-images3.png?w=510&h=138",
+      "alt": "IDEA Moldova images.png",
+      "width": "510",
+      "height": "138",
+      "naturalWidth": 510,
+      "naturalHeight": 138,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2018/04/moldova1.png?w=94&h=121",
+      "alt": "moldova.png",
+      "width": "94",
+      "height": "121",
+      "naturalWidth": 94,
+      "naturalHeight": 121,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2018/04/idea-moldova-images2.png?w=355",
+      "alt": "IDEA Moldova images.png",
+      "width": "355",
+      "height": "96",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=630&subd=developmentethics&host=developmentethics.org&ref=&rand=0.7165143630202487",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 1194,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nIDEA-MOLDOVA MARGINALIZED PEOPLES CONFERENCE\nMarginalized Peoples, Human Rights, and Development Ethics \n\n17-18 May, 2018 Chişinău, Moldova\n\nConference program:  ROMANA   ENGLISH  RUSSIAN\n\n***Original conference call for papers below***\n\n             \n\nInternational Development Ethics Association 2018 Conference:\n\nMarginalized Peoples, Human Rights, and Development Ethics \n\nConference languages: Romanian, English, Russian — simultaneous translation is anticipated. Proposals in English, please. If you will need interpretation for hearing impairment, or have mobility needs, please contact the conference organizers for accommodation.\n\n17-18 May, 2018 Chişinău, Moldova\nHosted by:  Universitatea de Stat din Moldova (The State University of Moldova)\n\nOrganized by: The International Development Ethics Association\nThe State University of Moldova, Department of Anthropology and Philosophy\nThe Ombudsman Office of the Republic of Moldova\nThe Moldova School of Public Health and Management\nThe Department of Philosophy & Anthropology of Moldova State University\n\nIn partnership with the Moldovan Minority Youth Platform\n\nThe Universitatae de Stat din Moldova and the International Development Ethics Association (IDEA) invite you to submit an abstract for a presentation at an international, interdisciplinary conference for scholars, development practitioners, government policy makers, and representatives from local and regional marginalized groups.\n\nThe conference will explore the ethical dimensions of international, national, and community development by and for marginalized populations, with an emphasis on human rights and democratic participation. The concept of marginalization recognizes the myriad ways in which individuals and groups might be economically, socially, or politically excluded, and the developmental, democratic, health, and ethical consequences of that exclusion. Presentations will address the challenges to marginalized populations and ethno-cultural minorities, as well as other economically or geographically isolated groups, in the region and in Moldova especially, but also beyond, where there are valuable insights and lessons to be learned.\n\nKeynote Speakers:\n\nDr. Beatrice Ioan, Chair of the Committee on Bioethics, Council of Europe & Professor of Legal Medicine and Bioethics at Grigore T. Popa University of Medicine and Pharmacy, Iaşi, Romania\n\n \n\nDr. Chloe Schwenke, Director of the Global Program on Violence, Rights and Inclusion at the International Center for Research on Women (USA), former Obama Administration Senior Advisor on Human Rights at the Africa Bureau of USAID, former Vice President for Global Programs at Freedom House.\n\n \n\nConference Format:\n\nPlenary sessions and individual presentations composed into panels. Presentations in English, Romanian, and Russian with simultaneous translation available.\n\nTopics might include, but ARE NOT limited to, the following:\n\nTheorizing, Mapping, and Assessing Marginalization\nEthics, Governments, and Marginalization\nCorruption as a driver of Marginalization\nMarginalization and the Right to Health\nLocal Norms, Group Rights, and Universal; Rights\nMarginalized Groups and Democratic Transitions\nDevelopment Ethics and Autonomy\nMovements in Moldova and Eastern Europe\nAutonomy and Self-Determination as Tools of Cultural Freedom\nThe Process Aspect of Self-Determination\nDemocratic Approaches to Conflicts of Culture\nMinorities within Minorities\nIntersectionality and “Universal” Rights\nLanguage, Culture, and Identity Rights\nThe Rights of Linguistic Majorities and Minorities\nMarginalization and Displacement by Development\nHuman Rights and Targeting Marginalized Groups\n“Mere Words?” – Indigenous, Minority, First, and/or Marginalized Peoples?\nSocial, Economic, and Cultural rights in the Republic of Moldova\nHuman Trafficking as Cause and Consequence of Marginalization\n\nIn addition to papers on the conference theme, papers on all core IDEA themes are welcome:\n\nthe nature of ethically desirable development\nethical means for achieving development\nethical dilemmas arising in the practice of development.\n\n \n\nIDEA Bordeaux Fellowship: We anticipate that the conversation will not end in Chişinău. This conference will be held one month before the IDEA Congress in Bordeaux, France (June 25-27, 2018). In keeping with IDEA’s commitment to supporting local and marginalized scholars and practitioners, organizers hope to select two or more participants—from the State University of Moldova or other local or regional universities or groups—for a fellowship to attend the Bordeaux IDEA Congress. The fellowship will pay the conference fee, and travel and lodging expenses. If you wish to be considered for the IDEA Bordeaux Fellowship, please indicate this in your submission. Selection will be based on the merit of the proposed papers and relevance to the core objectives of the conference.\n\nProgram Committee and Conference Chairs:\nDr. Gheorghe Ciocanu, Rector, State University of Moldova (Moldova)\nDr. Rodica Gramma, School of Public Health and Management (Moldova)\nDr. Stacy J. Kosko, University of Maryland (USA), Conference Chair\nDr. Amandine Sabourin, State University of Moldova (Moldova)\nDr. Valentina Teosa, State University of Moldova (Moldova), Conference Chair Ms. Natalia Visanu, Ombudsman’s Office of the Republic of Moldova\n\n \n\nCall for papers is now closed. Details below are for information purposes only.\n\nPresentation can be made in English, Romanian, or Russian. However, submissions should all be in English, and include the name, email, and affiliation of the presenter(s), an abstract of no more than 300 words, and a statement of whether you wish to be considered for the IDEA Bordeaux Fellowship.\n\n* Organizers especially encourage participation from members of marginalized groups, including but not limited to European minority and indigenous peoples and sexual and gender minorities. *\n\nSubmissions should be sent to: Prof. Stacy J. Kosko, sjkosko@umd.edu by 15 March, 2018 (extension from 1 March).\n\nConference Registration Fee Schedule:\n\nOn-line conference registration will open around April 2018.\nFee includes coffee and tea breaks, lunch both days, and evening reception.\n\n• Professional, high-income country, early (€100)\n• Professional, high-income country, standard (€125)\n• Professional, low- or mid-income country, all (free)\n• Student, high-income country, early (€25)\n• Student, high-income country, standard (€50)\n• Student, low- or mid-income country, all (free)\n• Low- or mid-income country, Journal subscription and postage (€35)\n\nPlease note that the registration fee does not include a year’s membership in IDEA, which is compulsory for conference attendance for individuals from high-income countries.  Membership may be secured at https://developmentethics.org/joining-idea-2/.  \n\nFor those not required to pay a registration fee, IDEA has set aside a grant to support one year’s membership for a limited number of participants of this conference from low and middle-income countries — it is expected that the grant is likely to cover all such cases.  Membership includes a year’s subscription to the Journal of Global Ethics.\n\nImportant deadlines:\n\nMarch 15, 2018 – Submission of proposals (extension from March 1)\nApril 1, 2018 – Announcement of acceptance/rejection\nApril 15, 2018 – Deadline for conference registration at early-bird rates May 1, 2018 – Submission of full papers/posters\nMay 1, 2018 – Final deadline for conference registration at standard rates\n\nJournal of Global Ethics:\n\nWe encourage papers presented at the conference to be submitted for publication in the Journal of Global Ethics. This IDEA-affiliated journal is a peer reviewed, multi-disciplinary journal on all aspects of the theory and practice of global ethics as well as ethics in the context of globalisation. See the journal webpage for more information on the journal and on how to submit your paper: http://www.tandfonline.com/toc/rjge20/current.\n\n \n\nFor more information contact:\n\nProf. Stacy J. Kosko, sjkosko@umd.edu (English, French)\nProf. Valentina Teosa, vteosa@yahoo.com (Romanian, Russian)\n\n \n\nIDEA-Moldova event updates are on Facebook here:  https://www.facebook.com/events/720540004820945/.\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

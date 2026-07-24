@@ -1,0 +1,858 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/research/",
+    "lastmod": null,
+    "manual": true
+  },
+  "capturedAt": "2026-06-09T18:17:40.391Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/research/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/research/",
+  "title": "Research – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/research/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Research"
+    },
+    {
+      "level": "h1",
+      "text": "Our Archive Enquiry Service & Family History"
+    },
+    {
+      "level": "h2",
+      "text": "Our Resources"
+    },
+    {
+      "level": "h2",
+      "text": "Research Enquiry Fees"
+    },
+    {
+      "level": "h2",
+      "text": "Before submitting an enquiry, please be aware:"
+    },
+    {
+      "level": "h2",
+      "text": "How long does it take?"
+    },
+    {
+      "level": "h2",
+      "text": "Research Service Reviews"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "You find out more and begin an application for a copy of a relative's Service Record using this link (gov.uk)",
+      "href": "https://www.gov.uk/get-copy-military-service-records/",
+      "pathname": "/get-copy-military-service-records/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Soldier Search",
+      "href": "https://www.sofo.org.uk/soldiers/soldier/",
+      "pathname": "/soldiers/soldier/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Buckinghamshire Military Museum Trust.",
+      "href": "http://www.bmmt.co.uk/ask-the-experts",
+      "pathname": "/ask-the-experts",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Rifleman's Museum.",
+      "href": "http://rgjmuseum.co.uk/our-collection/research/",
+      "pathname": "/our-collection/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Woodstock Remembers",
+      "href": "https://woodstockremembers.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "A Parish at War - A Military Record of Three Oxfordshire Villages Deddington - Clifton - Hempton.",
+      "href": "https://www.deddingtonhistory.uk/worldwars",
+      "pathname": "/worldwars",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire Family History Society.",
+      "href": "https://www.ofhs.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Oxfordshire Local History Association.",
+      "href": "https://olha.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/soldiers/soldier/",
+      "pathname": "/soldiers/soldier/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/archive-enquiry/",
+      "pathname": "/archive-enquiry/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-regiments/",
+      "pathname": "/oxfordshires-regiments/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-vcs/",
+      "pathname": "/oxfordshires-vcs/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/ww2-bombings/",
+      "pathname": "/ww2-bombings/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+      "pathname": "/oxfordshires-war-memorials/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/research/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/research.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1100,
+      "naturalHeight": 732,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/soldiersearch.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/archive.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/regiments.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/vcs.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/bombings.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/memorials.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 1101,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nOur Archive Enquiry Service & Family History\n\nFor those wanting to find out more about their relatives' wartime service, our Research Enquiry Service aims to provide a summary report on the details of a soldier’s service with the county regiments that we hold archival collections for: The Oxfordshire and Buckinghamshire Light Infantry, and Oxfordshire Yeomanry (Queens Own Oxfordshire Hussars), including copies of original documents and photographs relevant to the soldier (where possible).\n\nWith a primary focus on pulling together details of Great War servicemen where their original personal service records are not available (many were destroyed or damaged), the team can in some cases also complete enquiries about those that served with the county regiments during other periods - but we recommend contacting us before submitting enquiries like this.\n\nUse the 'Archive Enquiry' tab on this page to submit your enquiry online.\n\nOur Resources\n\nAt our purpose built museum in Woodstock we have a regimental library and archival store. Here, we house and manage Soldiers of Oxfordshire Trust's collections. The collections include everything from large objects such as heavy weaponry, to small artefacts like badges and buttons.\n\nWe also have an extensive archive of paperwork including regimental war diaries, chronicles and journals, as well as letters and photographs. Personal memoirs, diaries and letters exist from most periods, and we hold a wealth of information on regimental history and uniform.\n\nOur library contains over 1000 books, mostly focusing on the county's regiments throughout history, along with a number of other military related publications. In addition to this we are expanding a collection of digital media, including an oral history collection of recorded interviews.\n\nResearch Enquiry Fees\n\nSoldiers of Oxfordshire Trust is a registered charity (No. 1145408) and while the research service led by our dedicated team of expert volunteers, we charge a fee for this service which is used so support the continued conservation and maintenance of the museum and its archival collections, as well as cover any costs incurred in the process.\n\nOur Standard Research Enquiry fee is £50.00 per soldier.\n\nWhen an enquiry is received, the Research Team will assess it and evaluate whether or not sufficient information has been provided in order to proceed. They will also evaluate whether we have the relevant resources to answer your particular enquiry.\n\nIf the team believe a submitted enquiry cannot be completed to the usual standard, you will normally be advised within two weeks of submitting your enquiry. Your payment will be refunded, less an administration fee of £10.00, if your enquiry cannot be answered. In this case, we will also try to advise you on alternative steps for finding out more about the soldier you are researching.\n\nBefore submitting an enquiry, please be aware:\n\nService Records of soldiers who served post-1921 (including those who served during the Second World War) have recently been transferred from the Army Personnel Centre, Kentigern House, to the National Archives. You find out more and begin an application for a copy of a relative's Service Record using this link (gov.uk).  We recommend obtaining these records first if you are considering submitting a research enquiry with us regarding a soldier serving post-1921, as they often contain information vital in allowing us to conduct further research, and not available anywhere else.\n\nCurrent wait times for copies of records can be up to 12 months, unfortunately the museum is not able to assist with, or hasten, applications for service records.\n\nIf you do not know the soldiers full name, regiment, service number (if they were not a Commissioned Officer) or year of birth, and cannot identify them through our Soldier Search, please contact us before submitting an enquiry online. Please include as much information as possible on the soldier and we will let you know whether we are able to help, or otherwise try to point you in the right direction for further help.\n\nUnfortunately, we hold little personal information on soldiers whose service predates 1899 and we may not be able to undertake this research through this service. If your enquiry concerns a soldier serving before this date, please get in touch with us before submitting an enquiry online. Pre-1899 enquiries will often require further off-site research and use of external archives, which our team are often able to carry out, but this will require more time and incur extra costs.\n\nContact Email: frontofhouse@sofo.org.uk\nPost: Research Enquiry Service, SOFO Office, Harrisons Lane, Woodstock, Oxfordshire OX20 1SS\n\nFor more information on soldiers who served in Buckinghamshire's local military units beyond the Oxfordshire & Buckinghamshire Light Infantry, such as Bucks Yeomanry, Milita and Rifle Volunteers, please refer to The Buckinghamshire Military Museum Trust.\n\nFor more information on soldiers who served in The Royal Green Jackets, please refer to The Rifleman's Museum.\n\nMany Oxfordshire towns and villages have their own memorial projects, finding further details about those names on their local memorials, such as Woodstock Remembers and A Parish at War - A Military Record of Three Oxfordshire Villages Deddington - Clifton - Hempton.\n\nFor further resources in researching an Oxfordshire relative, see Oxfordshire Family History Society.\n\nFind more local history societies through The Oxfordshire Local History Association.\n\nHow long does it take?\n\nEnquiries are researched in the order in which they are received by our small but dedicated team of researchers, and the nature of the work means that completion times can vary as every case is different. At peak times when we have received a large number of enquiries we estimate that enquiries may take up to 3 - 6 months (from the date a new enquiry is submitted) before completed research reports are delivered.\n\nWe typically provide finished Research Enquiry reports and supporting documents digitally via email, but if you submit an enquiry and would prefer a printed copy posted to you, please let us know\n\nResearch Service Reviews\n\n'What a time is was for the young men then. Thank you for your wonderful work and knowledge – all done with your great enthusiasm' (August 2018)\n\nGreatly Appreciate all the work that has gone in to this (September 2018)\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

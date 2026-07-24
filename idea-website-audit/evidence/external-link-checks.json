@@ -1,0 +1,2673 @@
+{
+  "capturedAt": "2026-05-21T13:58:50.753Z",
+  "checked": 189,
+  "failed": 70,
+  "results": [
+    {
+      "url": "https://sites.google.com/d/1uwuUVIW5Ig84D4v-u_gqDx579JOQiypO/p/1hJVQhIQ0Hehc1NTufGbyWPfUcgD0D4uU/edit",
+      "sourcePages": [
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "Development in times of conflict: Ethical pathways towards peace and justice"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fsites.google.com%2Fd%2F1uwuUVIW5Ig84D4v-u_gqDx579JOQiypO%2Fp%2F1hJVQhIQ0Hehc1NTufGbyWPfUcgD0D4uU%2Fedit&dsh=S-550956017%3A1779371464595656&followup=https%3A%2F%2Fsites.google.com%2Fd%2F1uwuUVIW5Ig84D4v-u_gqDx579JOQiypO%2Fp%2F1hJVQhIQ0Hehc1NTufGbyWPfUcgD0D4uU%2Fedit&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AWa2Pasf6dXrHBaFbAvwZCqc9kC3wQ7hUGxIs8OKALcdicMcgTpGLuaefnJy-GP-8WSJRK1MAraa5A",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://medellin.travel/en/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "https://medellin.travel/en/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.medellin.travel/en-medellin-hay-mucho-para-hacer/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://medellin.travel/en/destinations/santa-fe-de-antioquia",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "https://medellin.travel/en/destinations/santa-fe-de-antioquia"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.medellin.travel/en/destinations/santa-fe-de-antioquia",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://travelgrafia.co/en/blog/guatape-piedra-del-penol/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "https://travelgrafia.co/en/blog/guatape-piedra-del-penol/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://travelgrafia.co/blog/guatape/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Denis_Goulet",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "Denis Goulet"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://en.wikipedia.org/wiki/Denis_Goulet",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "sourcePages": [
+        "https://developmentethics.org/2018conference/",
+        "https://developmentethics.org/announcements/idea-conferences/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "certificate has expired"
+    },
+    {
+      "url": "http://www.okanagan.bc.ca/Page38646.aspx",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "http://www.okanagan.bc.ca/Page38646.aspx"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.okanagancollege.ca/arts",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://fsm2016.org/en/",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "Website"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://m88asia8.com/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://fsm2016.org/en/groupes/international-development-ethics-association/events/",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "as of June 15"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://m88asia8.com/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://dl.dropboxusercontent.com/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "Event Abstracts."
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://dl.dropboxusercontent.com/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://cuportfolio.carleton.ca/view/view.php?t=i4VjGAae5bB0RUyOpIWJ",
+      "sourcePages": [
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "NASSP posting for this event may be found here"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://cuportfolio.carleton.ca/view/view.php?t=i4VjGAae5bB0RUyOpIWJ",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://blog.chemonics.com/development-ethics-hiding-in-plain-site",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/past-events/"
+      ],
+      "linkTexts": [
+        "http://blog.chemonics.com/development-ethics-hiding-in-plain-site"
+      ],
+      "status": 409,
+      "ok": false,
+      "finalUrl": "http://blog.chemonics.com/development-ethics-hiding-in-plain-site",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "sourcePages": [
+        "https://developmentethics.org/",
+        "https://developmentethics.org/2018conference/",
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about-2/what-is-development-ethics/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/announcements/",
+        "https://developmentethics.org/announcements/declarations-2/",
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+        "https://developmentethics.org/announcements/idea-conferences/",
+        "https://developmentethics.org/bylaws/",
+        "https://developmentethics.org/contact/",
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+        "https://developmentethics.org/idea-2018-elections-june-26-7/",
+        "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/joining-idea-2/",
+        "https://developmentethics.org/joining-idea/",
+        "https://developmentethics.org/member-news/",
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/",
+        "https://developmentethics.org/p/",
+        "https://developmentethics.org/past-events/",
+        "https://developmentethics.org/pre-conference-discussion-series/",
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/",
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+        "https://developmentethics.org/reading-list/",
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/",
+        "https://developmentethics.org/teaching-resources/",
+        "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+        "https://developmentethics.org/teaching-resources/discussion-forum/",
+        "https://developmentethics.org/teaching-resources/youtube-video-library/"
+      ],
+      "linkTexts": [
+        "T",
+        "The Routledge Handbook of Development Ethics",
+        "he Routledge Handbook of Development Ethics"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "sourcePages": [
+        "https://developmentethics.org/",
+        "https://developmentethics.org/2018conference/",
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about-2/what-is-development-ethics/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/announcements/",
+        "https://developmentethics.org/announcements/declarations-2/",
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+        "https://developmentethics.org/announcements/idea-conferences/",
+        "https://developmentethics.org/bylaws/",
+        "https://developmentethics.org/contact/",
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+        "https://developmentethics.org/idea-2018-elections-june-26-7/",
+        "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/joining-idea-2/",
+        "https://developmentethics.org/joining-idea/",
+        "https://developmentethics.org/member-news/",
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/",
+        "https://developmentethics.org/p/",
+        "https://developmentethics.org/past-events/",
+        "https://developmentethics.org/pre-conference-discussion-series/",
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/",
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+        "https://developmentethics.org/reading-list/",
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/",
+        "https://developmentethics.org/teaching-resources/",
+        "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+        "https://developmentethics.org/teaching-resources/discussion-forum/",
+        "https://developmentethics.org/teaching-resources/youtube-video-library/"
+      ],
+      "linkTexts": [],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://developmentethics.org/wp-content/uploads/2023/07/idea-blue-1.png",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://wordpress.com/?ref=footer_custom_svg",
+      "sourcePages": [
+        "https://developmentethics.org/",
+        "https://developmentethics.org/2018conference/",
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about-2/what-is-development-ethics/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/announcements/",
+        "https://developmentethics.org/announcements/declarations-2/",
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+        "https://developmentethics.org/announcements/idea-conferences/",
+        "https://developmentethics.org/bylaws/",
+        "https://developmentethics.org/contact/",
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+        "https://developmentethics.org/idea-2018-elections-june-26-7/",
+        "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+        "https://developmentethics.org/joining-idea-2/",
+        "https://developmentethics.org/joining-idea/",
+        "https://developmentethics.org/member-news/",
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/news-and-events/",
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/",
+        "https://developmentethics.org/p/",
+        "https://developmentethics.org/past-events/",
+        "https://developmentethics.org/pre-conference-discussion-series/",
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/",
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+        "https://developmentethics.org/reading-list/",
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/",
+        "https://developmentethics.org/teaching-resources/",
+        "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+        "https://developmentethics.org/teaching-resources/discussion-forum/",
+        "https://developmentethics.org/teaching-resources/youtube-video-library/"
+      ],
+      "linkTexts": [
+        "Create a website or blog at WordPress.com"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://wordpress.com/?ref=footer_custom_svg",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-discussion-series/",
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "recording (Español and English)",
+        "recording (Español and English) may be found here",
+        "recordings (Español and English) may be found here"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg?cbrd=1&ucbcb=1",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.unaula.edu.co/maestria/edh/profesores",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Universidad Autónoma LatinoAmericana (UNAULA)"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.unaula.edu.co/maestria/edh/profesores",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://developmentethics.wordpress.com/wp-admin/Comit%C3%A9%20Directivo,",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Centro de Pensamiento y Diálogo Político"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://developmentethics.wordpress.com/wp-admin/Comit%C3%A9%20Directivo",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.instituto-capaz.org/en/carlos-m-nupia-takes-over-as-the-new-manager-of-instituto-capaz/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Instituto Colombo-Alemán para la Paz (CAPAZ)"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.instituto-capaz.org/en/carlos-m-nupia-takes-over-as-the-new-manager-of-instituto-capaz/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.facebook.com/corporacionIFT/about/?ref=page_internal",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Organizacíon social-investigacíon y Formacion para la Transformación (IFT"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/corporacionIFT/about/?ref=page_internal",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "https://comisiondelaverdad.co/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Comisión de la verdad"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "ERR_TLS_CERT_ALTNAME_INVALID fetching \"https://comisiondelaverdad.co/\". For more information, pass `verbose: true` in the second argument to fetch()"
+    },
+    {
+      "url": "https://www.arcoiris.com.co/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Corporación Arco Iris"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://arcoiris.com.co/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://noref.no/Publications/Regions/Colombia",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Norwegian Center for Conflic Resolution"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://noref.no/Publications/Regions/Colombia",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://peaceaccords.nd.edu/barometer/colombia-reports",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Peace Accord Matrix (University of Notre Dame)"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://peaceaccords.nd.edu/barometer/colombia-reports",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.brookings.edu/wp-content/uploads/2019/06/FP_20190708_colombia.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Peace with justice: the colombian experience with transitional Justice"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.brookings.edu/wp-content/uploads/2019/06/FP_20190708_colombia.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.msu.edu/~phl/EandDWebsite/index.htm",
+      "sourcePages": [
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/teaching-resources/"
+      ],
+      "linkTexts": [
+        "Michigan State University Graduate Certificate in Development Ethics",
+        "https://www.msu.edu/~phl/EandDWebsite/index.htm"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://tech.msu.edu/about/guidelines-policies/afs-retirement/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.ophi.org.uk/",
+      "sourcePages": [
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/teaching-resources/"
+      ],
+      "linkTexts": [
+        "Oxford Poverty & Human Development Initiative",
+        "http://www.ophi.org.uk"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://ophi.org.uk/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://hdr.undp.org/en/nhdr/training/",
+      "sourcePages": [
+        "https://developmentethics.org/member-resources/",
+        "https://developmentethics.org/teaching-resources/"
+      ],
+      "linkTexts": [
+        "UN Training in Human Development",
+        "http://hdr.undp.org/en/nhdr/training/"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://hdr.undp.org/nhdr/training/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://easychair.org/conferences/?conf=ideagretha2018",
+      "sourcePages": [
+        "https://developmentethics.org/2018conference/"
+      ],
+      "linkTexts": [
+        "https://easychair.org/conferences/?conf=ideagretha2018"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://easychair.org/account/signin?l=2442284995130135892.1779378699.89ef9dff",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://gretha.u-bordeaux.fr/en/7th-gretha-international-conference-economic-development/practical-information",
+      "sourcePages": [
+        "https://developmentethics.org/2018conference/"
+      ],
+      "linkTexts": [
+        "http://gretha.u-bordeaux.fr/en/7th-gretha-international-conference-economic-development/practical-information"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "certificate has expired"
+    },
+    {
+      "url": "https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk",
+      "sourcePages": [
+        "https://developmentethics.org/2018conference/"
+      ],
+      "linkTexts": [
+        "https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.bordeaux-tourisme.com/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme",
+      "sourcePages": [
+        "https://developmentethics.org/2018conference/"
+      ],
+      "linkTexts": [
+        "https://www.bordeaux-tourisme.com/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.bordeaux-tourisme.com/sites-monuments/darwin-ecosysteme",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/global-vaccine-justice-justicia-global-en-vacunas-tickets-159539144877",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Para registrarse para la sesión 2, vaya aquí.",
+        "Registration for session 2, please go here"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.eventbrite.com/e/global-vaccine-justice-justicia-global-en-vacunas-tickets-159539144877",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://clacso.academia.edu/EduardoARueda",
+      "sourcePages": [
+        "https://developmentethics.org/p/",
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "Eduardo Rueda",
+        "https://clacso.academia.edu/EduardoARueda"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://unal-co.academia.edu/EduardoARueda",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.kcl.ac.uk/people/sridhar-venkatapuram",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Sridhar Venkatapuram"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.kcl.ac.uk/people/sridhar-venkatapuram",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://filosofia.ucr.ac.cr/en/personal/profesores/gabriela-arguedas/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Gabriela Arguedas,"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://filosofia.ucr.ac.cr/en/personal/profesores/gabriela-arguedas/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.usainteanne.ca/contact/departement-des-sciences-humaines/james-crombie",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "James Crombie"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.usainteanne.ca/contact/departement-des-sciences-humaines/james-crombie",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Ames-Dhai-2",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Ames Dhai,"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.researchgate.net/profile/Ames-Dhai-2",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.knowledgeportalia.org/covid19-vaccine-manufacturing",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "COVID-19 Vaccine Manufacturing | Knowledge Portal"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.knowledgeportalia.org/covid19-vaccine-manufacturing",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.bbc.com/news/world-55795297",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Covax: How many Covid vaccines have the US and the other G7 countries pledged?"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.bbc.com/news/world-55795297",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.who.int/home/search?indexCatalogue=genericsearchindex1&searchQuery=Weekly%20epidemiological%20update%20on%20COVID-19&wordsMode=AnyWord&healthtopic=undefined&country=undefined",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Weekly epidemiological updates on COVID-19"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.who.int/home/search-results?indexCatalogue=genericsearchindex1&searchQuery=Weekly+epidemiological+update+on+COVID-19&wordsMode=AnyWord&healthtopic=undefined&country=undefined",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://peoplesvaccine.org/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Peoples Vaccine: Home"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://peoplesmedicines.org/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://noprofitonpandemic.eu/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "No profit on pandemic. Everyone deserves protection from COVID-19."
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://noprofitonpandemic.eu/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://covid19advocacy.org/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "COVID 19 Advocacy"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://covid19advocacy.org/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.canada.ca/en/health-canada/services/canada-access-medicines-regime.html",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Canada’s Access to Medicines Regime"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.canada.ca/en/health-canada/services/canada-access-medicines-regime.html",
+      "contentType": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://www.thehastingscenter.org/covid-vaccine-patent-waivers-are-for-health-sovereignty/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Covid Vaccine Patent Waivers are for Health Sovereignty"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.thehastingscenter.org/covid-vaccine-patent-waivers-are-for-health-sovereignty/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.reuters.com/world/wto-boss-sees-way-deal-speed-covid-vaccines-poor-nations-2021-06-12/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "WTO boss sees way for deal to speed COVID vaccines for poor nations"
+      ],
+      "status": 401,
+      "ok": false,
+      "finalUrl": "https://www.reuters.com/world/wto-boss-sees-way-deal-speed-covid-vaccines-poor-nations-2021-06-12/",
+      "contentType": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://blogs.lse.ac.uk/covid19/2021/06/25/scaling-up-vaccine-production-through-copying-exactly/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Scaling up vaccine production"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://blogs.lse.ac.uk/covid19/2021/06/25/scaling-up-vaccine-production-through-copying-exactly/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.internationalhealthpolicies.org/featured-article/self-interested-altruism-and-global-health-crises/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Sridhar Venkatapuram: Self-interested altruism and global health crises/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.internationalhealthpolicies.org/featured-article/self-interested-altruism-and-global-health-crises/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/pdf/10.1080/19452829.2020.1786028",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Sridhar Venkatapuram: Human Capabilities and Pandemics"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/19452829.2020.1786028",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://press.uottawa.ca/vulnerable.html.html",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Vulnerable – The Law, Policy and Ethics of COVID-19"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://press.uottawa.ca/vulnerable.html.html",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.washingtonpost.com/es/post-opinion/2021/01/05/vacunas-covid-19-america-latina-propiedad-intelectual/",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Opinión | Hay que replantear la propiedad intelectual en situación de pandemia"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "https://www.bbc.com/mundo/noticias-56433141",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Vacunas de covid-19: ¿por qué no se liberan las patentes para que puedan producirse de manera masiva y lleguen a todo el mundo?"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.bbc.com/mundo/noticias-56433141",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.oas.org/es/cidh/decisiones/pdf/Resolucion-1-21-es.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Las vacunas contra el COVID-19 en el marco de las obligaciones interamericanas de",
+        "derechos humanos"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.oas.org/es/cidh/decisiones/pdf/Resolucion-1-21-es.pdf",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.france24.com/es/europa/20210506-union-europea-patentes-vacunas-coronavirus-pandemia",
+      "sourcePages": [
+        "https://developmentethics.org/p/"
+      ],
+      "linkTexts": [
+        "Los gobiernos se enfrentan por la liberación de las patentes de las vacunas"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.france24.com/es/europa/20210506-union-europea-patentes-vacunas-coronavirus-pandemia",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.iias.nl/iiasn/iiasn3/south/ethics.txt",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "Conference announcement"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://siteresources.worldbank.org/INTANTICORRUPTION/Resources/383901-1317672198081/idea_description.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "Conference details"
+      ],
+      "status": 502,
+      "ok": false,
+      "finalUrl": "https://siteresources.worldbank.org/INTANTICORRUPTION/Resources/383901-1317672198081/idea_description.pdf",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://www.tandfonline.com/doi/full/10.1080/17449620802496248",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "Conference overview"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/17449620802496248",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.tandfonline.com/toc/rjge20/4/3",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "Journal of Global Ethics vol.4 #3"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/rjge20/4/3",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.worldcat.org/title/7th-idea-international-conference-proceedings-in-ethics-and-international-development-on-accountability-responsibility-and-integrity-in-development-the-ethical-challenges-in-sub-saharan-africa-and-beyond-from-19th-22nd-july-2006-makerere-university-kampala-uganda/oclc/812195927",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "OCLC entry"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "http://www.worldcat.org/title/7th-idea-international-conference-proceedings-in-ethics-and-international-development-on-accountability-responsibility-and-integrity-in-development-the-ethical-challenges-in-sub-saharan-africa-and-beyond-from-19th-22nd-july-2006-makerere-university-kampala-uganda/oclc/812195927",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://dl.dropboxusercontent.com/u/36043317/paperfile%20copy/IDEA%20Uganda%20Proceedings%20TOC.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "Table of contents"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://dl.dropboxusercontent.com/u/36043317/paperfile%20copy/IDEA%20Uganda%20Proceedings%20TOC.pdf",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://www.uv.es/congresodesarrollo/",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "C",
+        "http://www.uv.es/congresodesarrollo/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.uv.es/congresodesarrollo/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://books.google.com/books?id=akMzv9ySjVgC&pg=PA113&lpg=PA113&dq=Poverty,+social+exclusion+and+bridging+social+capital:+The+brokering+role+of+the+Third+Sector+Kevin+M+Brown+(presenting+author)+Bronwyn+Boon+John+Farnsworth&source=bl&ots=xCmsicd_Wm&sig=MA-upHQfI0HhhlLZCl7mubSKNzM&hl=en&sa=X&ei=nIMLVOblL8eyyATZpoH4DQ&ved=0CB4Q6AEwAA",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "may be found here"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://books.google.de/books?id=akMzv9ySjVgC&pg=PA113&lpg=PA113&dq=Poverty,+social+exclusion+and+bridging+social+capital:+The+brokering+role+of+the+Third+Sector+Kevin+M+Brown+(presenting+author)+Bronwyn+Boon+John+Farnsworth&source=bl&ots=xCmsicd_Wm&sig=MA-upHQfI0HhhlLZCl7mubSKNzM&hl=en&sa=X&ei=nIMLVOblL8eyyATZpoH4DQ&redir_esc=y",
+      "contentType": "text/html; charset=ISO-8859-1"
+    },
+    {
+      "url": "http://ethique-economique.net/Volume-8-Issue-1.html",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "http://ethique-economique.net/Volume-8-Issue-1.html"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://ethique-economique.net/Volume-8-Issue-1.html",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://www.brynmawr.edu/internationalstudies/idea/",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "http://www.brynmawr.edu/internationalstudies/idea/"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.brynmawr.edu/internationalstudies/idea/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.tandfonline.com/toc/rjge20/9/3",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "http://www.tandfonline.com/toc/rjge20/9/3"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/rjge20/9/3",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.tandfonline.com/toc/resw20/6/3",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "http://www.tandfonline.com/toc/resw20/6/3#.VAt_iWRdVE8"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/resw20/6/3",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://ethique-economique.net/Volume-10-Issue-2.html",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "http://ethique-economique.net/Volume-10-Issue-2.html"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://ethique-economique.net/Volume-10-Issue-2.html",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://www.inif.ucr.ac.cr/congreso_inif/docs/MEMORIA.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "http://www.inif.ucr.ac.cr/congreso_inif/docs/MEMORIA.pdf",
+        "www.inif.ucr.ac.cr/congreso_inif/docs/MEMORIA.pdf"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://inif.ucr.ac.cr/congreso_inif/docs/MEMORIA.pdf",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.inif.ucr.ac.cr/congreso_inif/",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "http://www.inif.ucr.ac.cr/congreso_inif",
+        "http://www.inif.ucr.ac.cr/congreso_inif/"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://inif.ucr.ac.cr/congreso_inif/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://hd-ca.org/events/sustainability-and-human-rights-ethical-dimensions-of-an-urban-agenda",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about-2/history-of-idea/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "https://hd-ca.org/events/sustainability-and-human-rights-ethical-dimensions-of-an-urban-agenda"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/8804",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.tandfonline.com/toc/rjge20/current.",
+      "sourcePages": [
+        "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/"
+      ],
+      "linkTexts": [
+        "http://www.tandfonline.com/toc/rjge20/current."
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/rjge20/current.",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.facebook.com/events/720540004820945/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/"
+      ],
+      "linkTexts": [
+        "https://www.facebook.com/events/720540004820945/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/events/720540004820945/",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "https://www.eventbrite.com/e/desarrollo-etico-en-tiempos-de-conflicto-development-ethics-and-conflict-tickets-169663342625",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "For registration to participate in session 4, please go here, to the eventbrite page. A zoom link will come available closer to event time."
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.eventbrite.com/e/desarrollo-etico-en-tiempos-de-conflicto-development-ethics-and-conflict-tickets-169663342625",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.wcsu.edu/philosophy/anna-malavisi/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://www.wcsu.edu/philosophy/anna-malavisi/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.wcsu.edu/philosophy/anna-malavisi/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://spp.umd.edu/our-community/faculty-staff/david-crocker",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://spp.umd.edu/our-community/faculty-staff/david-crocker"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://spp.umd.edu/our-community/faculty-staff/david-crocker",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://philpapers.org/s/Luis%20Camacho3.",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://philpapers.org/s/Luis%20Camacho"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://philpapers.org/s/Luis%20Camacho3.",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.indepaz.org.co/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "http://www.indepaz.org.co"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://indepaz.org.co/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.corteidh.or.cr/tablas/r33442.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://www.corteidh.or.cr/tablas/r33442.pdf"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.corteidh.or.cr/tablas/r33442.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://cider.uniandes.edu.co/sites/default/files/publicaciones/documentos-de-politica/004_el_desarrollo_economico_local_y_consolidacion_de_la_paz%20(4).pdf",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://cider.uniandes.edu.co/sites/default/files/publicaciones/documentos-de-politica/004_el_desarrollo_economico_local_y_consolidacion_de_la_paz%20(4).pdf"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://cider.uniandes.edu.co/sites/default/files/publicaciones/documentos-de-politica/004_el_desarrollo_economico_local_y_consolidacion_de_la_paz%20(4).pdf",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.cinep.org.co/publicaciones/PDFS/20160704.construccion_desarrollo_paz.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://www.cinep.org.co/publicaciones/PDFS/20160704.construccion_desarrollo_paz.pdf"
+      ],
+      "status": 202,
+      "ok": true,
+      "finalUrl": "https://www.cinep.org.co/publicaciones/PDFS/20160704.construccion_desarrollo_paz.pdf",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://www.pdcnet.org/idea",
+      "sourcePages": [
+        "https://developmentethics.org/joining-idea-2/",
+        "https://developmentethics.org/joining-idea/"
+      ],
+      "linkTexts": [
+        "https://www.pdcnet.org/idea"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.pdcnet.org/idea",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://nehinstitute.philosophy.msu.edu/?page_id=466",
+      "sourcePages": [
+        "https://developmentethics.org/teaching-resources/youtube-video-library/"
+      ],
+      "linkTexts": [
+        "http://nehinstitute.philosophy.msu.edu/?page_id=466"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://nehinstitute.philosophy.msu.edu/?page_id=464",
+      "sourcePages": [
+        "https://developmentethics.org/teaching-resources/youtube-video-library/"
+      ],
+      "linkTexts": [
+        "http://nehinstitute.philosophy.msu.edu/?page_id=464"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://newsweekme.com/a-degree-of-uncertainty/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "closed by Turkish authorities on 23 July 2016"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://www.hyd.org.tr/tr/hyd-nin-hikayesi/kurucu-uyeler",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "Helsinki Citizens’ Assembly"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://hyd.org.tr/tr/hyd-nin-hikayesi/kurucu-uyeler",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "Biography from Opendemocracy.net",
+        "https://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.opendemocracy.net/en/turkey-s-draft-constitutional-amendments-harking-back-to-1876/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.facebook.com/istar.gozaydin?fref=ts",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.facebook.com/istar.gozaydin?fref=ts"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/istar.gozaydin?fref=ts",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://mesana.org/advocacy/committee-on-academic-freedom/-/-/turkey",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.newswire.ca/news-releases/public-statement---the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.newswire.ca/news-releases/public-statement—the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.newswire.ca/news-releases/public-statement---the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html",
+      "contentType": "text/html;charset=utf-8"
+    },
+    {
+      "url": "http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "http://www.huffingtonpost.com/entry/58cc8fe8e4b0537abd9570d5",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.huffingtonpost.com/entry/58cc8fe8e4b0537abd9570d5"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.huffpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_b_58cc8fe8e4b0537abd9570d5",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.hurriyet.com.tr/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.hurriyet.com.tr/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.hurriyet.com.tr/gundem/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://bianet.org/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://bianet.org/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://bianet.org/haber/prof-istar-gozaydin-released-after-94-days-of-arrest-185017",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.amnesty.org/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.amnesty.org/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.amnesty.org/en/latest/press-release/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.latimes.com/world/la-fg-turkey-20170718-story.html",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.latimes.com/world/la-fg-turkey-20170718-story.html"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.latimes.com/world/la-fg-turkey-20170718-story.html",
+      "contentType": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx?pageID=238&nID=94169&NewsCatID=339",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx?pageID=238&nID=94169&NewsCatID=339"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader-94169",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Was there a typo in the url or port?"
+    },
+    {
+      "url": "https://www.facebook.com/istar.gozaydin",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.facebook.com/istar.gozaydin"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/istar.gozaydin",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "http://salsa4.salsalabs.com/o/50943/p/dia/action3/common/public/index.sjs?action_KEY=19309",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://salsa4.salsalabs.com/o/50943/p/dia/action3/common/public/index.sjs?action_KEY=19309"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://tinyurl.com/gozaydin",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://tinyurl.com/gozaydin"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.freeistargozaydin.com/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "www.freeistargozaydin.com"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://www.huffingtonpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.huffingtonpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.huffpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_b_58cc8fe8e4b0537abd9570d5",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.hyd.org.tr/tr/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://www.hyd.org.tr/tr/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hyd.org.tr/tr/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.scholarsatrisk.org/people/clare-robinson/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.scholarsatrisk.org/people/clare-robinson/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.scholarsatrisk.org/people/clare-robinson/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://fb.me/gozaydinsavasir",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "fb.me/gozaydinsavasir"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/gozaydinsavasir",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "https://www.facebook.com/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.facebook.com/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fnotes%2Fi%25C5%259Ftar-g%25C3%25B6zayd%25C4%25B1n-i%25C3%25A7in-kad%25C4%25B1nlara-bir-%25C3%25A7a%25C4%259Fr%25C4%25B1%2Fi%25C5%259Ftar-g%25C3%25B6zayd%25C4%25B1n-kimdir%2F1910398559242609",
+      "contentType": "text/html; charset=\"utf-8\""
+    },
+    {
+      "url": "http://standinggroups.ecpr.eu/religion/?p=518",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "http://standinggroups.ecpr.eu/religion/?p=518"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://ecpr.eu/Group/religion-politics?p=518",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.change.org/p/free-istar-g%C3%B6zaydin",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.change.org/p/free-istar-g%C3%B6zaydin"
+      ],
+      "status": 202,
+      "ok": true,
+      "finalUrl": "https://www.change.org/p/free-istar-g%C3%B6zaydin",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.scholarsatrisk.org/turkey-response/",
+      "sourcePages": [
+        "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/"
+      ],
+      "linkTexts": [
+        "https://www.scholarsatrisk.org/turkey-response/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.scholarsatrisk.org/turkey-response/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.bloomsbury.com/ca/ethics-of-water-9781350348813/",
+      "sourcePages": [
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "The Ethics of Water: From Commodification to Common Ownership"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.bloomsbury.com/ca/ethics-of-water-9781350348813/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://annamalavisi.com/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-2018-elections-june-26-7/",
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "https://annamalavisi.com"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://annamalavisi.com/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://iss.academia.edu/desgasper.&nbsp",
+      "sourcePages": [
+        "https://developmentethics.org/officers-board/"
+      ],
+      "linkTexts": [],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://iss.academia.edu/desgasper.&nbsp",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://nehinstitute.philosophy.msu.edu/",
+      "sourcePages": [
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "National Endowment for the Humanities Institutes focused upon development ethics"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://www.tandfonline.com/toc/rjge20/current",
+      "sourcePages": [
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "Journal of Global Ethics"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/rjge20/current",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://sites.allegheny.edu/philo/faculty/eric-palmer/",
+      "sourcePages": [
+        "https://developmentethics.org/officers-board/",
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "http://sites.allegheny.edu/philo/faculty/eric-palmer/"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://sites.allegheny.edu/philo/faculty/eric-palmer/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://devethics2021.unaula.edu.co/",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/"
+      ],
+      "linkTexts": [
+        "Development in times of conflict",
+        "http://devethics2021.unaula.edu.co/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://www.unaula.edu.co/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/"
+      ],
+      "linkTexts": [
+        "http://www.unaula.edu.co"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.unaula.edu.co/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://redetica.org/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+        "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/"
+      ],
+      "linkTexts": [
+        "https://redetica.org/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "https://fsm2016.org/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "https://fsm2016.org/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://m88asia8.com/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://fsm2016.org/en/groupes/international-development-ethics-association/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "https://fsm2016.org/en/groupes/international-development-ethics-association/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://m88asia8.com/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.mcgill.ca/maps/leacock-building",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/"
+      ],
+      "linkTexts": [
+        "https://www.mcgill.ca/maps/leacock-building"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.mcgill.ca/maps/leacock-building",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.mcgill.ca/maps/arts-building",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/"
+      ],
+      "linkTexts": [
+        "https://www.mcgill.ca/maps/arts-building"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.mcgill.ca/maps/arts-building",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.capabilityapproach.com/index.php",
+      "sourcePages": [
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "www.capabilityapproach.com/index.php"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.pitt.edu/~nassp/nassp.html",
+      "sourcePages": [
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "http://www.pitt.edu/~nassp/nassp.html"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://sites.pitt.edu/~nassp/nassp.html",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.radicalphilosophy.org/",
+      "sourcePages": [
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "http://www.radicalphilosophy.org/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://www.iaffe.org/",
+      "sourcePages": [
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "http://www.iaffe.org/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://www.uh.edu/~cfreelan/SWIP/",
+      "sourcePages": [
+        "https://developmentethics.org/related-links-2/",
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "http://www.uh.edu/~cfreelan/SWIP/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.uh.edu/~cfreelan/SWIP/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://www.centerforvalues.international/",
+      "sourcePages": [
+        "https://developmentethics.org/related-links/"
+      ],
+      "linkTexts": [
+        "https://www.centerforvalues.international/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://www.psu.press.org/",
+      "sourcePages": [
+        "https://developmentethics.org/member-news/"
+      ],
+      "linkTexts": [
+        "http://www.psu.press.org"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://www.focuss.info/",
+      "sourcePages": [
+        "https://developmentethics.org/member-news/"
+      ],
+      "linkTexts": [
+        "http://www.Focuss.Info"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://focuss.info/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://journals.warwick.ac.uk/index.php/alternautas/indexd",
+      "sourcePages": [
+        "https://developmentethics.org/officers/"
+      ],
+      "linkTexts": [
+        "Alternautas"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://journals.warwick.ac.uk/index.php/alternautas/indexd",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=aKS5ISs_Jm0&t=3921s",
+      "sourcePages": [
+        "https://developmentethics.org/about-2/",
+        "https://developmentethics.org/about/"
+      ],
+      "linkTexts": [
+        "a reflection upon the history of development ethics"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.youtube.com/watch?v=aKS5ISs_Jm0&t=3921s",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://devethics2021.unaula.edu.co/?page_id=2",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-discussion-series/"
+      ],
+      "linkTexts": [
+        "Twelfth Congress of the International Development Ethics Association"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "http://www.guadalupe-institute.com/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-discussion-series/"
+      ],
+      "linkTexts": [
+        "Guadalupe Institute",
+        "The Guadalupe Institute"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://www.guadalupe-institute.com/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://docs.google.com/document/d/e/2PACX-1vQAKCBng9m7lxmjTXyi-CVqPDJ-5rdecu0FgnVs1TbJAGtKhlq7ojmKJNLMmL4xXHsDX26vlACarCBI/pub",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-discussion-series/"
+      ],
+      "linkTexts": [
+        "About the sixth seminar: an introduction and program schedule"
+      ],
+      "status": 410,
+      "ok": false,
+      "finalUrl": "https://docs.google.com/document/d/e/2PACX-1vQAKCBng9m7lxmjTXyi-CVqPDJ-5rdecu0FgnVs1TbJAGtKhlq7ojmKJNLMmL4xXHsDX26vlACarCBI/pub",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.google.com/document/d/e/2PACX-1vSwRJbJiapMsH8zMq-14-Cis5C9qEZ6wz9Mr8GEdS0OSQ82P1k3szxL4LjbHx4FACfeeIvot2YQb-Xc/pub",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "Call for Papers:"
+      ],
+      "status": 410,
+      "ok": false,
+      "finalUrl": "https://docs.google.com/document/d/e/2PACX-1vSwRJbJiapMsH8zMq-14-Cis5C9qEZ6wz9Mr8GEdS0OSQ82P1k3szxL4LjbHx4FACfeeIvot2YQb-Xc/pub",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tandfonline.com%2Ftoc%2Frjge20%2F17%2F2%3Fnav%3DtocList&data=04%7C01%7Cgasper%40iss.nl%7C8d12f67e0e244c26290208d9b1da1ef2%7C715902d6f63e4b8d929b4bb170bad492%7C0%7C0%7C637736372641962904%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=HB5NUyHhKqBYAMxcCAoDNvdtjWCag8udPfgrM9ejYbM%3D&reserved=0",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://www.tandfonline.com/toc/rjge20/17/2?nav=tocList"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/toc/rjge20/17/2?nav=tocList",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://2021webinarseries.com/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://2021webinarseries.com/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "https://www.devstudies.cam.ac.uk/news/3rd-ccc-cambridge-capability-conference-2018",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://www.devstudies.cam.ac.uk/news/3rd-ccc-cambridge-capability-conference-2018"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.devstudies.cam.ac.uk/news/3rd-ccc-cambridge-capability-conference-2018",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://tinyurl.com/GlobalJusticeForChildren",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://tinyurl.com/GlobalJusticeForChildren"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "https://hd-ca.org/conferences/2018-hdca-conference-buenos-aires-argentina",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://hd-ca.org/conferences/2018-hdca-conference-buenos-aires-argentina"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/conferences/2018-hdca-conference-buenos-aires-argentina",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://hd-ca.org/thematic-groups",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://hd-ca.org/thematic-groups"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/thematic-groups",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://philevents.org/event/show/26350",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://philevents.org/event/show/26350"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://philevents.org/event/show/26350",
+      "contentType": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://hd-ca.org/wp-content/uploads/2016/12/HDCA_2017-Call-for-Papers_FINAL.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "https://hd-ca.org/wp-content/uploads/2016/12/HDCA_2017-Call-for-Papers_FINAL.pdf"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/wp-content/uploads/2016/12/HDCA_2017-Call-for-Papers_FINAL.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "http://philevents.org/search/index?keywords=mancept&search=true",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://philevents.org/search/index?keywords=mancept&search=true"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://philevents.org/search/index?keywords=mancept&search=true",
+      "contentType": "text/html;charset=utf-8"
+    },
+    {
+      "url": "http://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan%23anchor6",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan#anchor6"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://hd-ca.org/conferences/2016-hdca-conference-tokyo-japan%23anchor6",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.theglobaljusticenetwork.org/index.php/gjn/pages/view/gj-network",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "The Global Justice Network"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.theglobaljusticenetwork.org/index.php/gjn/gj-network",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://mail.msu.edu/imp/compose.php?to=anders%40huitfeldt.net",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "anders@huitfeldt.net"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://tech.msu.edu/technology/collaborative-tools/spartan365/spartan-mail/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.brocher.ch/en/events/203/brocher-summer-academy-in-population-level-bioethics-ethical-design-of-randomized-studies-in-developing-countries/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "www.brocher.ch/en/events/203/brocher-summer-academy-in-population-level-bioethics-ethical-design-of-randomized-studies-in-developing-countries"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.brocher.ch/en/events/203/brocher-summer-academy-in-population-level-bioethics-ethical-design-of-randomized-studies-in-developing-countries/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://www.tandfonline.com/action/journalInformation?show=specialIssues&journalCode=rjge",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://www.tandfonline.com/action/journalInformation?show=specialIssues&journalCode=rjge"
+      ],
+      "status": 403,
+      "ok": false,
+      "finalUrl": "https://www.tandfonline.com/action/journalInformation?show=specialIssues&journalCode=rjge",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://fieldschool.pucp.edu.pe/courses/indigenous-rights-legal-pluralism/general-information/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://fieldschool.pucp.edu.pe/courses/indigenous-rights-legal-pluralism/general-information/"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://ethicsanddevelopment.org/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://ethicsanddevelopment.org"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "Unable to connect. Is the computer able to access the url?"
+    },
+    {
+      "url": "http://www.neh.gov/files/divisions/education/eligibility/college_university_eligibility_criteria.pdf",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/"
+      ],
+      "linkTexts": [
+        "http://www.neh.gov/files/divisions/education/eligibility/college_university_eligibility_criteria.pdf"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.neh.gov/sites/default/files/2018-10/college_university_eligibility_criteria.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "http://personnel.usainteanne.ca/jcrombie",
+      "sourcePages": [
+        "https://developmentethics.org/idea-2018-elections-june-26-7/"
+      ],
+      "linkTexts": [
+        "http://personnel.usainteanne.ca/jcrombie"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://personnel.usainteanne.ca/jcrombie/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://medellin.travel/en/",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://medellin.travel/en/"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.medellin.travel/en-medellin-hay-mucho-para-hacer/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://medellin.travel/en/destinations/santa-fe-de-antioquiamedellin.travel/en/destinations/santa-fe-de-antioquia",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/"
+      ],
+      "linkTexts": [
+        "https://medellin.travel/en/destinations/santa-fe-de-antioquia"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.medellin.travel/en/destinations/santa-fe-de-antioquiamedellin.travel/en/destinations/santa-fe-de-antioquia",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kSeWK5Nvvmo&t=54s",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Français"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.youtube.com/watch?v=kSeWK5Nvvmo&t=54s",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=b07LcwbRLTs&t=4s",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Español"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.youtube.com/watch?v=b07LcwbRLTs&t=4s",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=hRk6iRXq2eM&t=5749s",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "English"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.youtube.com/watch?v=hRk6iRXq2eM&t=5749s",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://rcah.msu.edu/about/people/faculty-staff/esquith-stephen.html",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Stephen L. Esquith"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://rcah.msu.edu/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://www.canr.msu.edu/people/julia-bello-bravo",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Julia Bello-Bravo"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.canr.msu.edu/people/julia-bello-bravo",
+      "contentType": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Barry_Pittendrigh",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Barry Pittendrigh"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://en.wikipedia.org/wiki/Barry_Pittendrigh",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://cvjrmali.com/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Commission, Vérité, Justice et Réconciliation (Mali): Accueil"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://1winbetci.app/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://rcah.msu.edu/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Residential College in the Arts and Humanities"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://rcah.msu.edu/",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://africa.isp.msu.edu/news_article/22214",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "News Article"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://africa.isp.msu.edu/news_article/22214",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.ulshb.edu.ml/index.php/iut/les-filieres-de-formations",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Institut Universitaire de Technologie"
+      ],
+      "status": null,
+      "ok": false,
+      "finalUrl": null,
+      "error": "The operation was aborted."
+    },
+    {
+      "url": "https://sawbo-animations.org/",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Scientific Animation Without Borders Video Library"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://sawbo-animations.org/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://sawbo-animations.org/745",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Building Peace [Language: French (Mali)]"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://sawbo-animations.org/745",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://sawbo-animations.org/1297",
+      "sourcePages": [
+        "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/"
+      ],
+      "linkTexts": [
+        "Kidnapping [Language: French (Mali)]"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://sawbo-animations.org/1297",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.development-ethics.org/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "THE INTERNATIONAL DEVELOPMENT ETHICS ASSOCIATION"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://www.development-ethics.org/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.carleton.ca/cove/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "Centre on Values and Ethics"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://carleton.ca/cove/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://www.carleton.ca/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "Carleton University,"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://carleton.ca/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://brynmawr.edu/internationalstudies/center/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "Center for International Studies"
+      ],
+      "status": 404,
+      "ok": false,
+      "finalUrl": "https://www.brynmawr.edu/internationalstudies/center/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://brynmawr.edu/philosophy/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "Department of Philosophy"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.brynmawr.edu/inside/academic-information/departments-programs/philosophy",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "http://brynmawr.edu/",
+      "sourcePages": [
+        "https://developmentethics.org/announcements/idea-conferences/"
+      ],
+      "linkTexts": [
+        "Bryn Mawr College"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.brynmawr.edu/",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://tinyurl.com/DTC-Update",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/"
+      ],
+      "linkTexts": [
+        "https://tinyurl.com/DTC-Update"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://docs.google.com/document/d/e/2PACX-1vRvSvjzPW6aa7SAXMAjwKfHCTL84v0pjrh-gb5Z1Iprn8isHk2ICjbqF3JLaukK-WsljPL2pfGua-Cu/pub",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://tinyurl.com/DTCMarch",
+      "sourcePages": [
+        "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/"
+      ],
+      "linkTexts": [
+        "https://tinyurl.com/DTCMarch"
+      ],
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://docs.google.com/document/d/e/2PACX-1vRlq2j4luAqCt6PfO-0id5zGvQuLnw-AlbC9CGtlbhLqESWfJljJi8riPMR007V3q7HfLjktXSAKhiZ/pub",
+      "contentType": "text/html; charset=utf-8"
+    }
+  ]
+}

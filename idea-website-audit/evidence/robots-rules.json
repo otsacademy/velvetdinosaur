@@ -1,0 +1,17 @@
+{
+  "disallow": [
+    "/wp-admin/",
+    "/wp-login.php",
+    "/wp-signup.php",
+    "/press-this.php",
+    "/remote-login.php",
+    "/activate/",
+    "/cgi-bin/",
+    "/mshots/v1/",
+    "/next/",
+    "/public.api/"
+  ],
+  "allow": [
+    "/wp-admin/admin-ajax.php"
+  ]
+}

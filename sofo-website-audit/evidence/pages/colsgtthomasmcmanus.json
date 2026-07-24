@@ -1,0 +1,983 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/colsgtthomasmcmanus/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:04:47.097Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/colsgtthomasmcmanus/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/colsgtthomasmcmanus/",
+  "title": "The Man Behind the Medals: Colour Sergeant Thomas McManus – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/colsgtthomasmcmanus/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "The Man Behind the Medals"
+    },
+    {
+      "level": "h1",
+      "text": "Colour Sergeant Thomas McManus"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month (Christmas 2025): Princess Mary Gift Tin"
+    },
+    {
+      "level": "h2",
+      "text": "The Man Behind the Medals: Lt. Charles Morgan Hoare"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Stored Items",
+      "href": "https://www.sofo.org.uk/category/stored-items/",
+      "pathname": "/category/stored-items/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DAVID RUSHTON",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "pathname": "/author/david-rushton/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "STORED ITEMS",
+      "href": "https://www.sofo.org.uk/category/stored-items/",
+      "pathname": "/category/stored-items/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research Service",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd, Cpl. Neill",
+      "href": "https://www.sofo.org.uk/tmbtmsgthenryneill/",
+      "pathname": "/tmbtmsgthenryneill/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd",
+      "href": "https://www.sofo.org.uk/tag/43rd/",
+      "pathname": "/tag/43rd/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "43rd Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/43rd-light-infantry/",
+      "pathname": "/tag/43rd-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Curragh",
+      "href": "https://www.sofo.org.uk/tag/curragh/",
+      "pathname": "/tag/curragh/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Dublin",
+      "href": "https://www.sofo.org.uk/tag/dublin/",
+      "pathname": "/tag/dublin/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "India",
+      "href": "https://www.sofo.org.uk/tag/india/",
+      "pathname": "/tag/india/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Maketu",
+      "href": "https://www.sofo.org.uk/tag/maketu/",
+      "pathname": "/tag/maketu/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Man Behind the Medals",
+      "href": "https://www.sofo.org.uk/tag/man-behind-the-medals/",
+      "pathname": "/tag/man-behind-the-medals/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Maori",
+      "href": "https://www.sofo.org.uk/tag/maori/",
+      "pathname": "/tag/maori/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Medals",
+      "href": "https://www.sofo.org.uk/tag/medals/",
+      "pathname": "/tag/medals/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Men Behind the Medals",
+      "href": "https://www.sofo.org.uk/tag/men-behind-the-medals/",
+      "pathname": "/tag/men-behind-the-medals/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "New Zealand",
+      "href": "https://www.sofo.org.uk/tag/new-zealand/",
+      "pathname": "/tag/new-zealand/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Te Ranga",
+      "href": "https://www.sofo.org.uk/tag/te-ranga/",
+      "pathname": "/tag/te-ranga/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The New Zealand Wars",
+      "href": "https://www.sofo.org.uk/tag/the-new-zealand-wars/",
+      "pathname": "/tag/the-new-zealand-wars/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Waikatu Expedition",
+      "href": "https://www.sofo.org.uk/tag/waikatu-expedition/",
+      "pathname": "/tag/waikatu-expedition/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: Join us for our Armed Forces Day celebration on 1st July 2023",
+      "href": "https://www.sofo.org.uk/join-us-for-our-armed-forces-day-celebration-on-1st-july-2023/",
+      "pathname": "/join-us-for-our-armed-forces-day-celebration-on-1st-july-2023/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Join us at one of the regular Veterans’ coffee mornings at Soldiers of Oxfordshire Museum",
+      "href": "https://www.sofo.org.uk/join-one-of-the-regular-veterans-coffee-mornings-at-soldiers-of-oxfordshire-museum/",
+      "pathname": "/join-one-of-the-regular-veterans-coffee-mornings-at-soldiers-of-oxfordshire-museum/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "pathname": "/objectofthemonthchristmas2025/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "THE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE",
+      "href": "https://www.sofo.org.uk/lt-charles-morgan-hoare/",
+      "pathname": "/lt-charles-morgan-hoare/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "David Rushton",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "pathname": "/author/david-rushton/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/colsgtthomasmcmanus/#respond",
+      "pathname": "/colsgtthomasmcmanus/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fcolsgtthomasmcmanus%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DAVID RUSHTON",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "visible": true
+    },
+    {
+      "text": "STORED ITEMS",
+      "href": "https://www.sofo.org.uk/category/stored-items/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "visible": true
+    },
+    {
+      "text": "THE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE",
+      "href": "https://www.sofo.org.uk/lt-charles-morgan-hoare/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/colsgtthomasmcmanus/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/07/MedalM8-600x400.jpg",
+      "alt": "",
+      "width": "600",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/07/MedalM8.jpg",
+      "alt": "",
+      "width": "600",
+      "height": "600",
+      "naturalWidth": 600,
+      "naturalHeight": 600,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/07/MedalM8-300x300.jpg",
+      "alt": "A silver medal with Queen Victoria's image. It hangs from a blue tibbon with a vertical red stripe down its centre. The New Zealand medal.",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/11/13-OBLI5247-600x764.jpg",
+      "alt": "Alex Baker painting depicting a Private of the 43rd Regiment, wearing the type of uniform adopted during the New Zealand Wars",
+      "width": "248",
+      "height": "317",
+      "naturalWidth": 248,
+      "naturalHeight": 315,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/08/MedalM38-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/12/4300.jpg",
+      "alt": "",
+      "width": "2048",
+      "height": "1536",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/08/Charles-Morgan-Hoare.jpg",
+      "alt": "",
+      "width": "1428",
+      "height": "1913",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/3c4d6454008475408cae145f8ec264a1?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 1248,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n16\nAug\nBYDAVID RUSHTON// STORED ITEMS\nThe Man Behind the Medals: Colour Sergeant Thomas McManus\nThe Man Behind the Medals \n\nIn this blog series, SOFO Museum’s Research volunteers look at the stories behind some of the medal sets in the museum’s collection, from those that can be seen on a visit in our dedicated Medals display, to some of those that are still tucked away in the archive.\n\nWhile medals will tell you a little bit about a soldier’s service, it’s only with further research that their full story can be revealed. SOFO’s Research volunteers respond to enquiries we receive through our Research Service, helping people find out more about their relatives who served in the county regiments, and raising funds to support the museum in the process. Using a combination of the museum’s records and those available elsewhere, they piece together stories like this one.\n\n \n\nColour Sergeant Thomas McManus\n\nThomas McManus first appeared in our records when he walked into the army base at Runeegunge in India on the 29th of Sept 1862, seeking to join the 43rd Light Infantry. He stated he had been born in Van Diemen’s Land (Tasmania) and gave his age as 17.5 years. Pte McManus 710 had joined the army! Like many soldiers in India, he was promptly taken ill with fever 2 weeks later and spent 11 days in hospital.\n\nAbout a year later, Pte McManus & the 43rd left Calcutta for New Zealand, where there was civil unrest. The ship diverted to Mauritius on safety grounds – a lack of ballast – hence it was a long voyage. It was especially long for Pte McManus, who had disciplinary problems on the ship and was awarded 7 days confinement in the ship’s brig. He wasn’t alone – his comrade in the 43rd, Cpl. Neill, also faced charges for drunkeness on duty during the voyage.\n\nThe 43rd arrived in NZ on 11 Dec 1863, to assist in quelling Maori unrest following the British Waikatu Expedition.\n\nThe NZ Campaign was a series of small engagements, with the 43rd operating mostly in company sized detachments or smaller against a brave, skilful enemy.  The largest engagement was at Gate Pa, where a Maori force in a strong position defeated a force of regular British troops, including half of the 43rd. Fortunately for Pte McManus, he missed this, but did take part in two other important actions – Maketu and Te Ranga. Te Ranga was the decisive combat of the war and after this the 43rd were in effect garrison troops for nearly two years.  Pte Mc Manus once again had medical problems, spending 52 days in hospital in New Plymouth during the campaign.\n\nA New Zealand medal from the museum’ display. McManus would have been awarded one like this.\n\nThe 43rd arrived back in England in July 1866, to be based initially at Portsmouth, whilst Thomas was promoted to Cpl McManus the next year – and was once again in hospital for 24 days.  In April 1868 the 43rd were posted to the Channel Islands, serving in St Helier where Cpl McManus was promoted to Sergeant.  However, a year later more disciplinary issues saw Sgt McManus demoted to Private once again.\n\nIn April 1869, the 43rd sailed for Ireland, serving at Curragh and Dublin, where Pte McManus signed on to extend his service. Promoted to Corporal again in Jan 1872, he was with the 43rd when they sailed for India in Sept 1872 and was then once again promoted to Sergeant  in July 1873.\n\nThomas left the 43rd in India two years later and returned to the Home Depot in March 1875 as Sgt Instructor. His health was obviously deteriorating, being in hospital again in November 1875 with bronchitis, and later with dyspepsia.\n\nAlex Baker painting depicting a Private of the 43rd Regiment, wearing the type of uniform adopted during the New Zealand Wars\n\nSgt McManus now married in Ireland – to Frances Huggins – at the Cork HQ and was promoted Col/Sgt in May 1877.  He transferred to the Militia – the Rifle Volunteers – in Sept 1877, joining the Shropshire Volunteer Rifle Corps at Shrewsbury.  It was quite usual for old senior NCOs to serve as the core of Volunteer units, the professionals amidst the very amateur officers. The family settled in Market Drayton, and had 8 children there, though sadly losing 2 as infants.\n\nThis was a time of change for the British Army, with the Childers Reforms of 1881 putting Regiments on a geographical basis with 2 Battalions each. The 43rd joined with the 52nd to become the Oxfordshire Light Infantry based in Oxford, whilst the Shrewsbury regiment became the King’s Shropshire Light Infantry. Hence Col/Sgt McManus transferred regiments, probably much to his disgust.\n\n \n\nC/Sgt McManus was finally discharged from Army in Feb 1891, after over 28 years’ service. The Census of 1891 recorded him as the publican at the Bell in Market Drayton, but this does not seem to have lasted long, since Kelly’s Almanac of 1895 had him as deputy Registrar of Births/Deaths – an office job.\n\n \n\nThomas McManus died in Market Drayton in 1903 aged only about 58.  In many ways he was typical of the Victorian soldier; a man of Irish background; a man who served all round the world often in very hazardous conditions which seriously affected his health; a man who probably had issues at times, but a man who knew no other life outside the army, and a man who loyally served the colours.\n\n \n\nAwards: New Zealand Medal, Long Service & Good Conduct Medal\n\nExamples from the museum’s collection of the medals awarded to Col/Sgt McManus\n\n Tags: 43rd, 43rd Light Infantry, Curragh, Dublin, India, Maketu, Man Behind the Medals, Maori, Medals, Men Behind the Medals, New Zealand, Te Ranga, The New Zealand Wars, Waikatu Expedition\n\nPrevious:\nJoin us for our Armed Forces Day celebration on 1st July 2023\nNext:\nJoin us at one of the regular Veterans’ coffee mornings at Soldiers of Oxfordshire Museum\nRelated posts\nOBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN\n\nDecember’s Object of the Month had to be a Christmas special! Volunteer Geraldine has selected the iconic First World War gift sent out to troops overseas, researching the boxes themselves and where the men of the Oxfordshire & Buckinghamshire Light Infantry would have been spent their Christmas in 1914. Princess Mary’s Gift Boxes By Geraldine Howell Her Royal Highness The Princess Victoria Alexandra Alice Mary was the only daughter of…\n\nTHE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE\n\nFrom Midshipman to Yeoman: Charles Morgan Hoare Charles Morgan Hoare was the son of Charles Twysden Hoare of Bignell Park, Bicester, and the Hon. Blanche Frances Hoare, daughter of the 1st Baron Tredegar. He was educated at Osborne and Dartmouth, with the intention of him joining the Royal Navy, but he elected for the Army, being Gazetted into the Queen’s Own Oxfordshire Hussars in 1911 and then the 15th Hussars…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

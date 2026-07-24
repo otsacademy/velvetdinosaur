@@ -1,0 +1,810 @@
+{
+  "capturedAt": "2026-06-09T18:43:01.526Z",
+  "reports": [
+    {
+      "file": "home-desktop.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/",
+      "fetchTime": "2026-06-09T18:41:02.103Z",
+      "scores": {
+        "performance": 84,
+        "accessibility": 88,
+        "best-practices": 96,
+        "seo": 83,
+        "pwa": 29
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.8 s",
+        "largestContentfulPaint": "2.6 s",
+        "speedIndex": "1.2 s",
+        "cumulativeLayoutShift": "0.039",
+        "totalBlockingTime": "0 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 4,802 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 4
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 14
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 7
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "home-mobile.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/",
+      "fetchTime": "2026-06-09T18:40:48.330Z",
+      "scores": {
+        "performance": 65,
+        "accessibility": 87,
+        "best-practices": 96,
+        "seo": 86,
+        "pwa": 38
+      },
+      "metrics": {
+        "firstContentfulPaint": "3.1 s",
+        "largestContentfulPaint": "8.8 s",
+        "speedIndex": "5.1 s",
+        "cumulativeLayoutShift": "0.053",
+        "totalBlockingTime": "90 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 4,802 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 4
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 14
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 7
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "learning-at-sofo-desktop.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/learning-at-sofo/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/learning-at-sofo/",
+      "fetchTime": "2026-06-09T18:42:23.383Z",
+      "scores": {
+        "performance": 80,
+        "accessibility": 86,
+        "best-practices": 96,
+        "seo": 83,
+        "pwa": 29
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.8 s",
+        "largestContentfulPaint": "3.2 s",
+        "speedIndex": "1.4 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "0 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 6,420 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 1
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 5
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "learning-at-sofo-mobile.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/learning-at-sofo/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/learning-at-sofo/",
+      "fetchTime": "2026-06-09T18:42:10.434Z",
+      "scores": {
+        "performance": 67,
+        "accessibility": 85,
+        "best-practices": 96,
+        "seo": 86,
+        "pwa": 38
+      },
+      "metrics": {
+        "firstContentfulPaint": "3.1 s",
+        "largestContentfulPaint": "9.5 s",
+        "speedIndex": "4.3 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "100 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,713 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 1
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 5
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "shop-desktop.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/shop/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/shop/",
+      "fetchTime": "2026-06-09T18:42:50.192Z",
+      "scores": {
+        "performance": 84,
+        "accessibility": 83,
+        "best-practices": 96,
+        "seo": 83,
+        "pwa": 29
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.8 s",
+        "largestContentfulPaint": "2.7 s",
+        "speedIndex": "1.0 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "0 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 3,315 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 16
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "itemCount": 12
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 9
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "shop-mobile.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/shop/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/shop/",
+      "fetchTime": "2026-06-09T18:42:36.627Z",
+      "scores": {
+        "performance": 65,
+        "accessibility": 83,
+        "best-practices": 96,
+        "seo": 84,
+        "pwa": 38
+      },
+      "metrics": {
+        "firstContentfulPaint": "3.2 s",
+        "largestContentfulPaint": "9.7 s",
+        "speedIndex": "4.6 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "140 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 4,833 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 16
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "itemCount": 12
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 9
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "visit-us-desktop.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/visit-us/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/visit-us/",
+      "fetchTime": "2026-06-09T18:41:29.242Z",
+      "scores": {
+        "performance": 90,
+        "accessibility": 77,
+        "best-practices": 78,
+        "seo": 83,
+        "pwa": 29
+      },
+      "metrics": {
+        "firstContentfulPaint": "1.0 s",
+        "largestContentfulPaint": "1.9 s",
+        "speedIndex": "1.1 s",
+        "cumulativeLayoutShift": "0.037",
+        "totalBlockingTime": "0 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,257 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "itemCount": 1
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 1
+        },
+        {
+          "id": "frame-title",
+          "title": "`<frame>` or `<iframe>` elements do not have a title",
+          "itemCount": 1
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 9
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 9
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 7
+        },
+        {
+          "id": "link-in-text-block",
+          "title": "Links rely on color to be distinguishable.",
+          "itemCount": 2
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "visit-us-mobile.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/visit-us/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/visit-us/",
+      "fetchTime": "2026-06-09T18:41:15.799Z",
+      "scores": {
+        "performance": 64,
+        "accessibility": 77,
+        "best-practices": 78,
+        "seo": 86,
+        "pwa": 38
+      },
+      "metrics": {
+        "firstContentfulPaint": "3.8 s",
+        "largestContentfulPaint": "8.3 s",
+        "speedIndex": "4.8 s",
+        "cumulativeLayoutShift": "0.009",
+        "totalBlockingTime": "110 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,277 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "itemCount": 1
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 1
+        },
+        {
+          "id": "frame-title",
+          "title": "`<frame>` or `<iframe>` elements do not have a title",
+          "itemCount": 1
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 9
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 9
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 7
+        },
+        {
+          "id": "link-in-text-block",
+          "title": "Links rely on color to be distinguishable.",
+          "itemCount": 2
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "whats-on-desktop.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/whats-on/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/whats-on/",
+      "fetchTime": "2026-06-09T18:41:56.433Z",
+      "scores": {
+        "performance": 87,
+        "accessibility": 86,
+        "best-practices": 96,
+        "seo": 83,
+        "pwa": 29
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.9 s",
+        "largestContentfulPaint": "2.3 s",
+        "speedIndex": "1.1 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "0 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 5,416 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 1
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 5
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    },
+    {
+      "file": "whats-on-mobile.report.report.json",
+      "requestedUrl": "https://www.sofo.org.uk/whats-on/",
+      "finalDisplayedUrl": "https://www.sofo.org.uk/whats-on/",
+      "fetchTime": "2026-06-09T18:41:42.655Z",
+      "scores": {
+        "performance": 68,
+        "accessibility": 86,
+        "best-practices": 96,
+        "seo": 79,
+        "pwa": 38
+      },
+      "metrics": {
+        "firstContentfulPaint": "3.2 s",
+        "largestContentfulPaint": "7.4 s",
+        "speedIndex": "4.1 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "80 ms"
+      },
+      "diagnostics": {
+        "totalByteWeight": "Total size was 3,256 KiB",
+        "largestContentfulPaintElement": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "itemCount": 3
+        },
+        {
+          "id": "installable-manifest",
+          "title": "Web app manifest or service worker do not meet the installability requirements",
+          "itemCount": 1
+        },
+        {
+          "id": "splash-screen",
+          "title": "Is not configured for a custom splash screen",
+          "itemCount": 1
+        },
+        {
+          "id": "themed-omnibox",
+          "title": "Does not set a theme color for the address bar.",
+          "itemCount": 1
+        },
+        {
+          "id": "maskable-icon",
+          "title": "Manifest doesn't have a maskable icon",
+          "itemCount": 0
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "itemCount": 1
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "itemCount": 8
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 5
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "itemCount": 0
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "itemCount": 3
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "itemCount": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+    "lastmod": "2022-07-17T09:07:18+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:50:02.924Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+  "title": "Reading List – IDEA",
+  "metaDescription": "General Readings in Global Development: Addendum: NEWLY AVAILABLE Resource: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. — (The list below was composed in 2013 -- obviously, updates are needed.) Collier, Paul. 2008. The Bottom Billion: Why the…",
+  "canonical": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Reading List"
+    },
+    {
+      "level": "h3",
+      "text": "General Readings in Global Development:"
+    },
+    {
+      "level": "h3",
+      "text": "Addendum:"
+    },
+    {
+      "level": "h3",
+      "text": "(The list below was composed in 2013 — obviously, updates are needed.)"
+    },
+    {
+      "level": "h3",
+      "text": "Collier, Paul. 2008. The Bottom Billion: Why the Poorest Countries are Failing and What Can be Done about It. New York: Oxford University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Crocker, David. 2008. Ethics of Global Development: Agency, Capability, and Deliberative Democracy. Cambridge: Cambridge University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Dower, Nigel. 2007. World Ethics: The New Agenda. Edinburgh: Edinburgh University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Dower, Nigel. 2003. An Introduction to Global Citizenship. New York: Routledge."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Drydyk, Jay., Chatterjee, Deen. 2011. “Development Ethics.” In Encyclopedia of Global Justice. New York: Springer."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Gasper, Des. 2004. The Ethics of Development. Edinburgh: Edinburgh University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Gasper, Des., Lera St. Clair, Asuncion. (EDS.) 2010. Development Ethics. Farnham: Ashgate."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Goulet, Denis. 1995. Development Ethics: A Guide to Theory and Practice. New York: Rowman & Littlefield Publishers."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Goulet, Denis. 1989. The Uncertain Promise: Value Conflicts in Technology Transfer. Apex Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Goulet, Denis. 1985. The Cruel Choice: A New Concept in the Theory of Development. New York: Atheneum."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Lera St. Clair, Asuncion and McNeill, Desmond. 2009. Global Poverty, Ethics, and Human Rights: The Role of Multilateral Organizations, New York and London: Routledge."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Murithi, Tim. 2009. The Ethics of Peace building. Edinburgh: Edinburgh University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Nussbaum, Martha. 2001. Women and Human Development: The Capabilities Approach. Cambridge: Cambridge University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Penz, Peter., Drydyk, Jay., and Bose, Pablo. 2011. Displacement by Development: Ethics, Rights, and Responsibilities. Cambridge: Cambridge University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Pogge, Thomas. 2008. World, Poverty, and Human Rights. Cambridge: Polity Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Sachs, Jeffrey. 2006. The End of Poverty:Economic Possibilities for Our Time. New York: Penguin Books."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Sen, Amartya. 2000. Development as Freedom. New York: Anchor."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Readings in Development and the Environment:"
+    },
+    {
+      "level": "h3",
+      "text": "Harris, Paul. 2010. World Ethics and Climate Change:From International to Global Justice. Edinburgh: Edinburgh University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Lera St. Clair, Asuncion. et al. (eds.)2010. Climate Change, Ethics, and Human Security. Cambridge: Cambridge University Press."
+    },
+    {
+      "level": "h3",
+      "text": "_________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Shrader-Frechette, Kristin. Environmental Justice: Creating Equality, Reclaiming Democracy (Environmental Ethics & Science Policy). New York: Routledge."
+    },
+    {
+      "level": "h3",
+      "text": "________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Thompson, Paul. 1992. The Ethics of Aid and Trade: US Food Policy, Foreign Competition, and the Social Contract. Cambridge: Cambridge University Press."
+    },
+    {
+      "level": "h3",
+      "text": "________________________________________________________"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a comment"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/#content",
+      "pathname": "/teaching-resources/development-ethics-reading-list/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "T",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "he Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/#",
+      "pathname": "/teaching-resources/development-ethics-reading-list/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fteaching-resources%252Fdevelopment-ethics-reading-list%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-1x",
+      "pathname": "/P1D93l-1x",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=95&subd=developmentethics&host=developmentethics.org&ref=&rand=0.8064441840113076",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/wp-comments-post.php",
+      "method": "post",
+      "text": "",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "comment_post_ID",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_post_ID"
+        },
+        {
+          "type": "hidden",
+          "name": "comment_parent",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_parent"
+        },
+        {
+          "type": "hidden",
+          "name": "highlander_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "highlander_comment_nonce"
+        },
+        {
+          "type": "hidden",
+          "name": "verbum_show_subscription_modal",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "akismet_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "akismet_comment_nonce"
+        },
+        {
+          "type": "textarea",
+          "name": "ak_hp_textarea",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "ak_js",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "ak_js_1"
+        }
+      ]
+    }
+  ],
+  "wordCount": 3015,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nREADING LIST\nGeneral Readings in Global Development:\nAddendum:\n\nNEWLY AVAILABLE Resource: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\n—\n\n(The list below was composed in 2013 — obviously, updates are needed.)\nCollier, Paul. 2008. The Bottom Billion: Why the Poorest Countries are Failing and What Can be Done about It. New York: Oxford University Press.\n\nIn the universally acclaimed and award-winning The Bottom Billion, Paul Collier reveals that fifty failed states–home to the poorest one billion people on Earth–pose the central challenge of the developing world in the twenty-first century. The book shines much-needed light on this group of small nations, largely unnoticed by the industrialized West, that are dropping further and further behind the majority of the world’s people, often falling into an absolute decline in living standards. A struggle rages within each of these nations between reformers and corrupt leaders–and the corrupt are winning. Collier analyzes the causes of failure, pointing to a set of traps that ensnare these countries, including civil war, a dependence on the extraction and export of natural resources, and bad governance. Standard solutions do not work, he writes; aid is often ineffective, and globalization can actually make matters worse, driving development to more stable nations. What the bottom billion need, Collier argues, is a bold new plan supported by the Group of Eight industrialized nations. If failed states are ever to be helped, the G8 will have to adopt preferential trade policies, new laws against corruption, new international charters, and even conduct carefully calibrated military interventions. Collier has spent a lifetime working to end global poverty. In The Bottom Billion, he offers real hope for solving one of the great humanitarian crises facing the world today.\n\n_________________________________________________________\nCrocker, David. 2008. Ethics of Global Development: Agency, Capability, and Deliberative Democracy. Cambridge: Cambridge University Press.\n\nPoverty, inequality, violence, environmental degradation, and tyranny continue to afflict the world. Ethics of Global Development offers a moral reflection on the ends and means of local, national, and global efforts to overcome these five scourges. After emphasizing the role of ethics in development studies, policy-making, and practice, David A. Crocker analyzes and evaluates Amartya Sen’s philosophy of development in relation to alternative ethical outlooks. He argues that Sen’s turn to robust ideals of human agency and democracy improves on both Sen’s earlier emphasis on ‘capabilities and functionings’ and Martha Nussbaum’s version of the capability orientation. This agency-focused capability approach is then extended and strengthened by applying it to the challenges of consumerism and hunger, the development responsibilities of affluent individuals and nations, and the dilemmas of globalization. Throughout the book the author argues for the importance of more inclusive and deliberative democratic institutions.\n\n_________________________________________________________\nDower, Nigel. 2007. World Ethics: The New Agenda. Edinburgh: Edinburgh University Press.\n\nWorld Ethics: The New Agenda identifies different ways of thinking about ethics, and of thinking ethically about international and global relations. It also considers several theories of world ethics in the context of issues such as war and peace, world poverty, the environment and the United Nations.\n\n_________________________________________________________\nDower, Nigel. 2003. An Introduction to Global Citizenship. New York: Routledge.\n\nIn this short introduction to the idea of global citizenship, Nigel Dower examines the arguments from ethical, social and political theory for and against the view that we are global citizens. The discussion is set in its historical context but the main emphasis is on the idea of global citizenship as a cultural process, and its application in the modern world. The book is divided into three parts — the Framework, which explores the historical context and the ethical and institutional aspects of the concept of global citizenship; Applications, covering key areas of current global concern, including the environment, aid and poverty elimination, human rights, peace, and global governance; and Theoretical Issues, which explores the arguments for and against global citizenship in more depth. The book includes chapters on the environment, aid and poverty, human rights, peace, and global governance, as well as a chapter placing issues surrounding September 11th in the context of global citizenship. It also covers the role of the UN; anti-globalization campaigns (e.g. in Genoa); corporate global citizenship; Oxfam; Amnesty International; and Jubilee 2000.\n\n_________________________________________________________\nDrydyk, Jay., Chatterjee, Deen. 2011. “Development Ethics.” In Encyclopedia of Global Justice. New York: Springer.\n\nThis essay is found in the two-volume Encyclopedia of Global Justice, published by Springer, along with Springer’s book series, Studies in Global Justice, is a major publication venture toward a comprehensive coverage of this timely topic. The Encyclopedia is an international, interdisciplinary, and collaborative project, spanning all the relevant areas of scholarship related to issues of global justice, and edited and advised by leading scholars from around the world. The wide-ranging entries present the latest ideas on this complex subject by authors who are at the cutting edge of inquiry. The Encyclopedia sets the tone and direction of this increasingly important area of scholarship for years to come. The entries number around 500 and consist of essays of 300 to 5000 words. The inclusion and length of entries are based on their significance to the topic of global justice, regardless of their importance in other areas.\n\n_________________________________________________________\nGasper, Des. 2004. The Ethics of Development. Edinburgh: Edinburgh University Press.\n\nThis book focuses on clarifying what is meant by “development”. Its central thread is the reassessment of economic growth, asking who benefits? The author considers why economic growth and respect for diversity are widely seen to be good. and examines the moral implications of this view, drawing on the ideas of Len Doyal, Ian Gough, Martha Nussbaum and Amartya Sen.\n\n_________________________________________________________\nGasper, Des., Lera St. Clair, Asuncion. (EDS.) 2010. Development Ethics. Farnham: Ashgate.\n\nA volume in the International Library of Essays in Public and Professional Ethics. The traditional definition of development ethics considers the ‘ethical and value questions posed by development theory, planning and practice’ (Goulet 1977:5). The field parallels the traditional question of ethics ‘How ought one to live as an individual?’ by asking in addition ‘How ought a society exist and move into the future’? This inter-disciplinary field is well represented by a substantial collection of previously-published articles and papers. The volume illustrates a wide range of academic and practitioner writings on the theories and concepts of development ethics as well as ethical development policy and practice.\n\n _________________________________________________________\nGoulet, Denis. 1995.  Development Ethics: A Guide to Theory and Practice. New York: Rowman & Littlefield Publishers.\n\nA pioneering work by one of the pioneers in development ethics, who has long been at the leading edge of development in linking the worlds of thought and action. This new field of study has emerged from a heightened awareness of social issues and values in development and a recognition of the need for application of something more than “normal ethics” in this important realm of human endeavor. After setting forth the contours of this new discipline, the author formulates general principles underlying ethical strategies in development and discusses their application in such topics as technology for development, ecology and ethics, culture and tradition, and the ethics of aid. Written for scholars, students, and practitioners of development: national and international policy-makers, program planners, project managers, field workers, and those local “communities of need”, the presumed beneficiaries of development.\n\n_________________________________________________________\nGoulet, Denis. 1989. The Uncertain Promise: Value Conflicts in Technology Transfer. Apex Press.\n_________________________________________________________\nGoulet, Denis. 1985. The Cruel Choice: A New Concept in the Theory of Development. New York: Atheneum.\n_________________________________________________________\nLera St. Clair, Asuncion and McNeill, Desmond. 2009. Global Poverty, Ethics, and Human Rights: The Role of Multilateral Organizations, New York and London: Routledge.\n\nSevere poverty is one of the greatest moral challenges of our times. But what place, if any, do ethical thinking and questions of global justice have in the policies and practice of international organizations? This books examines this question in depth, based on an analysis of the two major multilateral development organizations – the World Bank and the UNDP – and two specific initiatives where poverty and ethics or human rights have been explicitly in focus: in the Inter-American Development Bank and UNESCO.\n\nThe current development aid framework may be seen as seeking to make globalization work for the poor; and multilateral organizations such as these are powerful global actors, whether by virtue of their financial resources, or in their role as global norm-setting bodies and as sources of hegemonic knowledge about poverty. Drawing on their backgrounds in political economy, ethics and sociology of knowledge, as well as their inside knowledge of some of the case studies, the authors show how, despite the rhetoric, issues of ethics and human rights have – for very varying reasons and in differing ways – been effectively prevented from impinging on actual practice.\n\nGlobal Poverty, Ethics and Human Rights will be of interest to researchers and advanced students, as well as practitioners and activists, in the fields of international relations, development studies, and international political economy. It will also be of relevance for political philosophy, human rights, development ethics and applied ethics more generally.\n\n_________________________________________________________\nMurithi, Tim. 2009. The Ethics of Peace building. Edinburgh: Edinburgh University Press. \n\nIn the aftermath of the Cold War the hope for a more stable and just international order rapidly dissolved underneath the pressure of internecine conflicts raging on all continents.The Rwanda and Srebrenica genocides especially proved that promoting peace is a particularly fraught challenge in the face of intra-state conflict and sub-national groups that boldy confront nation-states.\n\nTim Murithi investigates the role that ethics plays in promoting and consolidating peacebuilding, synthesizing the fields of moral philosophy and international relations through an analysis of the ethics of negotiation, mediation, forgiveness, and reconciliation. In its exploration of the extent to which ethical concerns influence and inform peacebuilding, this book contributes to a growing body of literature on ethics and international relations that enable students, scholars, and practitioners to contextualize their understanding of a principled peacebuilding.\n\n_________________________________________________________\nNussbaum, Martha. 2001. Women and Human Development: The Capabilities Approach. Cambridge: Cambridge University Press.\n\nProposing a new kind of feminism that is genuinely international, Martha Nussbaum argues for an ethical underpinning to all thought about development planning and public policy, and dramatically moves beyond the abstractions of economists and philosophers to embed thought about justice in the concrete reality of the struggles of poor women. In this book, Nussbaum argues that international political and economic thought must be sensitive to gender difference as a problem of justice, and that feminist thought must begin to focus on the problems of women in the third world. Taking as her point of departure the predicament of poor women in India, she shows how philosophy should undergird basic constitutional principles that should be respected and implemented by all governments, and used as a comparative measure of quality of life across nations. Nussbaum concludes by calling for a new international focus to feminism, and shows through concrete detail how philosophical arguments about justice really do connect with the practical concerns of public policy.\n\n_________________________________________________________\nPenz, Peter., Drydyk, Jay., and Bose, Pablo. 2011. Displacement by Development: Ethics, Rights, and Responsibilities. Cambridge: Cambridge University Press.\n\nFor decades, policy-makers in government, development banks and foundations, NGOs, researchers and students have struggled with the problem of how to protect people who are displaced from their homes and livelihoods by development projects. This volume addresses these concerns and explores how debates often become deadlocked between “managerial” and “movementist” perspectives. Using development ethics to determine the rights and responsibilities of various stakeholders, the authors find that displaced people must be empowered so as to share equitably in benefits rather than being victimized. They propose a governance model for development projects that would transform conflict over displacement into a more manageable collective bargaining process and would empower displaced people to achieve equitable results.\n\n_________________________________________________________\nPogge, Thomas. 2008. World, Poverty, and Human Rights. Cambridge: Polity Press.\n\nSome 2.5 billion human beings live in severe poverty, deprived of such essentials as adequate nutrition, safe drinking water, basic sanitation, adequate shelter, literacy, and basic health care. One third of all human deaths are from poverty-related causes: 18 million annually, including over 10 million children under five.\n\nHowever huge in human terms, the world poverty problem is tiny economically. Just 1 percent of the national incomes of the high-income countries would suffice to end severe poverty worldwide. Yet, these countries, unwilling to bear an opportunity cost of this magnitude, continue to impose a grievously unjust global institutional order that foreseeably and avoidably perpetuates the catastrophe. Most citizens of affluent countries believe that we are doing nothing wrong.\n\nThomas Pogge seeks to explain how this belief is sustained. He analyses how our moral and economic theorizing and our global economic order have adapted to make us appear disconnected from massive poverty abroad. Dispelling the illusion, he also offers a modest, widely sharable standard of global economic justice and makes detailed, realistic proposals toward fulfilling it.\n\n_________________________________________________________\nSachs, Jeffrey. 2006. The End of Poverty:Economic Possibilities for Our Time. New York: Penguin Books.\nJeffrey D. Sachs has been cited by The New York Times Magazine as “probably the most important economist in the world” and by Time as “the world’s best-known economist.” He has advised an extraordinary range of world leaders and international institutions on the full range of issues related to creating economic success and reducing the world’s poverty and misery. Now, at last, he draws on his entire twenty-five-year body of experience to offer a thrilling and inspiring big-picture vision of the keys to economic success in the world today and the steps that are necessary to achieve prosperity for all.\n_________________________________________________________\n Sen, Amartya. 2000. Development as Freedom. New York: Anchor.\n\nFreedom, Sen argues, is both the end and most efficient means of sustaining economic life and the key to securing the general welfare of the world’s entire population. Releasing the idea of individual freedom from association with any particular historical, intellectual, political, or religious tradition, Sen clearly demonstrates its current applicability and possibilities. In the new global economy, where, despite unprecedented increases in overall opulence, the contemporary world denies elementary freedoms to vast numbers–perhaps even the majority of people–he concludes, it is still possible to practically and optimistically restain a sense of social accountability. Development as Freedom is essential reading.\n\n_________________________________________________________\nReadings in Development and the Environment:\nHarris, Paul. 2010. World Ethics and Climate Change:From International to Global Justice. Edinburgh: Edinburgh University Press.\n\nGlobal warming and climate change present profound challenges, with scientific predictions of devastating impact in the coming decades, yet rich countries are doing little to address the problem and developing countries are becoming the largest source of the problem.\n\nGrounded in practical cosmopolitan ethics, this book presents a serious and workable solution to climate change. It particularly addresses the role of individuals, proposing a new way of approaching the global politics of climate change and recommending more explicit involvement of people by incorporating practical cosmopolitan ethics (which focus on the rights and obligations of individuals) into international environmental diplomacy.\n\nPaul G. Harris argues that people in developing countries should join in efforts to limit greenhouse gas pollution, and that this would lead the governments of rich countries, and in turn their citizens, to cut their future pollution, live up to their responsibilities in regards to historical pollution, and aid those who will suffer the most from climate change.\n\n_________________________________________________________\nLera St. Clair, Asuncion. et al. (eds.)2010. Climate Change, Ethics, and Human Security. Cambridge: Cambridge University Press.\n\nThis book presents the concept of human security as a new approach to the challenges of climate change, and to shaping a more equitable and sustainable future. Raising issues of equity, ethics and environmental justice, this book provides important perspectives for researchers and policy makers as well as upper-level social sciences students.\n\n_________________________________________________________\nShrader-Frechette, Kristin. Environmental Justice: Creating Equality, Reclaiming Democracy (Environmental Ethics & Science Policy). New York: Routledge.\n\nShrader-Frechette offers a rigorous philosophical discussion of environmental justice. Explaining fundamental ethical concepts such as equality, property rights, procedural justice, free informed consent, intergenerational equity, and just compensation–and then bringing them to bear on real-world social issues–she shows how many of these core concepts have been compromised for a large segment of the global population, including Appalachians, African-Americans, workers in hazardous jobs, and indigenous people in developing nations. She argues that burdens like pollution and resource depletion need to be apportioned more equally, and that there are compelling ethical grounds for remedying our environmental problems. She also argues that those affected by environmental problems must be included in the process of remedying those problems; that all citizens have a duty to engage in activism on behalf of environmental justice; and that in a democracy it is the people, not the government, that are ultimately responsible for fair use of the environment.\n\n________________________________________________________\nThompson, Paul. 1992. The Ethics of Aid and Trade: US Food Policy, Foreign Competition, and the Social Contract. Cambridge: Cambridge University Press.\nThe traditional military-territorial model of the nation state defines international duties in terms of protecting citizens’ property from foreign threats. In this book about the principles of the U.S. agricultural policy and foreign aid, Professor Thompson replaces this model with the notion of the trading state that sees its role in terms of the establishment of international institutions that stabilize and facilitate cultural and intellectual, as well as commercial exchanges between nations. The argument focuses on protectionist challenges to foreign aid and development assistance programs, and engages with the views of a variety of economists, commodity organizations, and philosophers on world hunger and development. What emerges is a new interpretation of social contract theory that can determine goals for international trade and development policy.\n________________________________________________________\nLeave a comment\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

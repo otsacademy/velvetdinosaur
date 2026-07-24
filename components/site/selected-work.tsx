@@ -2,7 +2,7 @@ import type { Article } from '@/lib/articles'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-import { ShadcnblocksGallery16 } from '@/components/blocks/store/shadcnblocks/gallery16'
+import { DeferredGallery16 } from '@/components/site/deferred-gallery16.client'
 import { Button } from '@/components/ui/button'
 import { normalizePortfolioImageSrc } from '@/lib/portfolio-images'
 import { listLatestPublishedWorkArticles } from '@/lib/work-articles.server'
@@ -52,7 +52,7 @@ export async function SelectedWork() {
           </Button>
         </div>
       </div>
-      <ShadcnblocksGallery16
+      <DeferredGallery16
         items={workItems.map(mapArticleToGalleryItem)}
         containerClassName="max-w-6xl"
         sectionClassName="py-0"

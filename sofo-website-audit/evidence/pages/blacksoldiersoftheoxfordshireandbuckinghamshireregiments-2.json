@@ -1,0 +1,852 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:03:56.616Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+  "title": "The Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (Part 2) – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "The Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (John D Ellis)"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Oxford and Bucks Light Infantry",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "RESEARCH",
+      "href": "https://www.sofo.org.uk/category/research/",
+      "pathname": "/category/research/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "STORED ITEMS",
+      "href": "https://www.sofo.org.uk/category/stored-items/",
+      "pathname": "/category/stored-items/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.academia.edu/",
+      "href": "http://www.academia.edu/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.academia.edu/",
+      "href": "http://www.academia.edu/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.africansinyorkshireproject.com",
+      "href": "http://www.africansinyorkshireproject.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://library.brown.edu/info/collections/askb/index/",
+      "href": "https://library.brown.edu/info/collections/askb/index/",
+      "pathname": "/info/collections/askb/index/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://thisreilluminatedschoolofmars.wordpress.com/tag/cymbals/",
+      "href": "https://thisreilluminatedschoolofmars.wordpress.com/tag/cymbals/",
+      "pathname": "/tag/cymbals/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: The Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831",
+      "href": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments/",
+      "pathname": "/blacksoldiersoftheoxfordshireandbuckinghamshireregiments/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: The Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (Part 3)",
+      "href": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments3/",
+      "pathname": "/blacksoldiersoftheoxfordshireandbuckinghamshireregiments3/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Duncan Parsons",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/#respond",
+      "pathname": "/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fblacksoldiersoftheoxfordshireandbuckinghamshireregiments-2%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "visible": true
+    },
+    {
+      "text": "RESEARCH",
+      "href": "https://www.sofo.org.uk/category/research/",
+      "visible": true
+    },
+    {
+      "text": "STORED ITEMS",
+      "href": "https://www.sofo.org.uk/category/stored-items/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/blacksoldiersoftheoxfordshireandbuckinghamshireregiments-2/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/OBLI-7362-1892-Kettle-Drum-0228-1-1600x400.jpg",
+      "alt": "",
+      "width": "1600",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/OBLI-7362-1892-Kettle-Drum-0228-1-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/10/MedalM15-290x300.jpg",
+      "alt": "",
+      "width": "183",
+      "height": "189",
+      "naturalWidth": 182,
+      "naturalHeight": 189,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/OBLI-7362-1892-Kettle-Drum-0228-1-300x184.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "184",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/ede4445374058997b8f0ab3d69d767c9?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 3348,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n19\nOct\nBYDUNCAN PARSONS// OXFORD AND BUCKS LIGHT INFANTRY, RESEARCH, STORED ITEMS\nThe Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (Part 2)\nThe Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (John D Ellis)\n\nMarking Black History Month 2020, we’re publishing a series posts by John D Ellis, researcher, historian and educator specialising in race and ethnicity in Britain and Ireland during the eighteenth and nineteenth centuries. John’s research sheds light on little-known stories of black soldiers serving with the forerunners to the Oxfordshire and Buckinghamshire Light Infantry.\n\nThis second part goes into more detail about the experiences of black soldiers serving with individual Oxfordshire and Buckinghamshire regiments and militias.\n\nJohn has supplied the museum with full biographies and references for each individual identified by his research in addition to his article, and has identified potentially the largest black presence (including both soldiers and their families, but not assuming ethnicity simply based upon place of birth) confirmed by any similar study of the UK during this period of history.\n\n \n\nThe 14th (Buckinghamshire) Foot.\n\nThe 14th Foot employed enlisted Black military musicians between 1782 and 1831, during which time it saw action in the Low Countries and West Indies (1790s), India (the Mauritius, Java and Deccan campaigns), the Peninsular (1808-1809), Walcheren (1809) and Waterloo (1815). Black soldiers served with both battalions of the regiment, including John Cummings a native of Calcutta (served 1782-1822) and James Charles from Grenada (enlisted 1802).(1) Some of the men were recruited whilst the 14th served overseas, such as John Harry from St Vincent, (who enlisted in Trinidad in 1797), however, others, like Francis Burton an African, joined the regiment when it was stationed in Chatham, Kent in 1792.(2)\n\nAlthough officially linked with Bedfordshire since 1782, the 14th recruited heavily from Buckinghamshire, and in 1807 one-hundred and fifty members of the Buckinghamshire Militia volunteered for the regiment in Oxford.(3) This connection was formalised in 1809 when the regiment was officially linked to Buckinghamshire; becoming the 14th (Buckinghamshire) Foot whilst stationed in the county. Present with the regiment in Buckingham in 1809 was Marcus Cato an African, (served 1795-1812).(4) The last known Black soldier in the 14th Foot was William Thomas from Madagascar, (served 1815-1831). Thomas, a veteran of the Deccan Campaign (1817-1818), settled in Britain after being discharged as an out-pensioner of the Royal Hospital Chelsea.(5)\n\nDuring the Cardwell reforms of 1881 the 14th Foot lost its link with Buckinghamshire and became the Prince of Wales’s Own (West Yorkshire Regiment).\n\nThe 43rd (Monmouthshire) Foot (Light Infantry). Later the 1st Battalion the Oxfordshire and Buckinghamshire Light Infantry.\n\nThe 43rd Foot employed enlisted Black military musicians in the bands of both battalions between 1796 and 1826, during which time it saw action at Copenhagen (1807), in the Peninsular (1808-1814), New Orleans (1815) and the Capture of Paris (1815). As part of Wellington’s famous Light Division, the 43rd was present in some of the fiercest battles of the Peninsular Campaign, including Corunna, Salamanca and Badajoz. The records of two Black soldiers, Privates Charles Arundell of St Kitts and Gibeon Lippett of Rhode Island, (both described as “mulattoes”), reveal extensive campaign service. From Arundell’s records: “With the 43rd Regiment at the capture of Copenhagen in 1807. General Sir John Moore’s retreat in 1809, and in every siege and battle in which the 43rd Regiment was engaged from the Battle of Coa 24th July 1810, to the end of the war in the South of France. Served at New Orleans in America, 8th January 1815 and present at the Capture of Paris in July 1815. In the West Indies six years.”\n\nArundell had enlisted in the 43rd in 1806 and was one of the Black bandsmen still serving with the regiment when it arrived in Canterbury in November 1818 after serving with the Army of Occupation in France. A number of newspapers reported that “Two hundred men of the 43rd Regiment, which are under orders for Ireland, were discharged on Thursday last in Canterbury. Report says that a great proportion of the discharged Black Soldiers will be sent to Africa, such of them as are entitled to pensions receiving them there.”(8) Charles Arundell was discharged on a pension in 1822 being described \nas “a good and efficient soldier.” He later re-enlisted in the 69th (South Lincolnshire) Foot in Dublin in 1827 and retired for a second time in 1838. He was not “sent to Africa”, instead like many former Black soldiers he settled in Britain. He died in Chatham in 1842.(9) If he had survived to claim the retrospectively awarded Military General Service Medal 1793-1814 in the late 1840s he would have been eligible to claim fourteen clasps, (as would Gibeon Lippett). This would have made him one of the most decorated veterans of the Light Division.\n\n \n\nAbove left: Example of the Military General Service Medal 1793-1814 from the SOFO collection. Arundell could have been eligible for one with 14 clasps.\n\n \n\nThe 52nd (Oxfordshire Foot). Later the 2nd Battalion the Oxfordshire and Buckinghamshire Light Infantry.\n\nBlack soldiers served intermittently in the 52nd Foot between 1796 and 1820. The first Black soldier known to have served was Private Thomas Hargar, “an East Indian” who enlisted with the regiment in India in 1796 and transferred to the 77th Foot when it replaced the 52nd on the latter’s return to Britain in 1798.(10) The last to serve was Richard Lisles. Born in Washington, USA Lisles served as a Private in the band of the regiment between 1815 and 1820.(11) He joined the 52nd after Waterloo and for most of his service the regiment was either on occupation duty in France, or acting as an aide to civil power to the authorities facing civil unrest in the midlands and north of England. (It was a role that the regiment carried out so successfully that the Commanding Officer during that period, Charles Rowan, was later asked to establish the Metropolitan Police).(12) Unlike the 14th and 43rd, the 52nd could not retain the services of its Black soldiers: John Fitzhenry, a Jamaican joined in 1798 and left in 1802, only to re-enlist in the 14th Light Dragoons (served 1803-1825) – suggesting that whilst he enjoyed army life he was not happy in the 52nd.(13) John Williams from Malta enlisted in the regiment in Deal, Kent in 1809 only to desert at Shorncliffe in 1812.(14)\n\nIn summer 1820 the Head-quarters of the 52nd Foot were stationed in Hull on anti-smuggling duties. At half past seven on the morning of Friday 11th August 1820 Richard Lisles was one of a group of soldiers who left the Citadel on the north bank to bathe in the river Humber. Newly arrived, it is unlikely that the soldiers were aware that in the years preceding their arrival the Hull Packet had reported several cases of drownings: From fishermen whose boats had capsized, to experienced sailors who had lost their footing on the docks, fallen into the Humber and been swept away by the currents.(15) The Public Ledger and Daily Advertiser recounted what happened next:\n\n‘As the Black belonging to the band of the 52nd regiment was bathing in the Humber, he got out of his depth, and was drowned, in the presence of about dozen of his comrades; some of whom, it is said, were good swimmers, and yet did not attempt to render him assistance.’(16)\n\nIt is not known what exactly what happened, but the journalist concerned viewed the inaction of the soldiers who “did not to render assistance” as being out of the ordinary. It might be that they were frozen with shock, fearful of trying to risk their lives in a rescue attempt – an unlikely scenario considering the initiative required to be a light-infantryman and the previous combat and policing experience of the men concerned. It could have been because either Lisles was personally unpopular (and therefore deemed undeserving of help), or because he was Black.(17) Perhaps, it was simply that the men of the 52nd, hardened to death by years of campaigning and brutalised by policing duties had quickly and accurately calculated the risks involved in any rescue and deemed them too great.​ Private Richard Lisles, the last Black soldier of the 52nd Foot, was buried in Drypool, Hull on Saturday 12th August 1820.\n\nA “Regimental Family” – Wives, partners and children “of colour” in the 52nd Foot in the 1790s.\n\nThe presence of “people of colour” within the 52nd was not restricted to the soldiery. Indian born wives, partners and children within the regimental family predated the enlistment of Black soldiers. In 1783 the 52nd arrived in India, where it was to serve until 1798. It was present at the battles of Cannonore (1785), Pollighautcherry (1790), Bangalore, Arakere and Savandroog (1791), Seringapatam (1792), Pondicherry (1793), and Trincomalee (1796). The parish register transcripts for Madras (from the British India Office – BIO – and available on findmypast.co.uk), reveal marriages between White soldiers of the 52nd and Indian women, (described as either “native” or “Indo-European”). These unions resulted in several children being born and baptised in the regiment whilst it was in India:\n\nPrivate Henry Booth of the 52nd and his partner Nella Tanjah had their son Henry baptised in Nagapatam in August 1796.(18) Henry had been born in 1792 in Trippasore, Punamallee. His older brother, William, had been born in 1790 at Wallajabad.(19) Both sons followed their father into the colours:\n\nWilliam Booth enlisted as a boy-soldier in the 52nd Foot in 1795 and served until the regiment returned to Britain in 1798. He transferred to the incoming 77th (East Middlesex) Foot, and between 1798 and 1825 subsequently served in the 86th (Royal County Down) Foot and the 69th (South Lincolnshire) Foot.(20) Discharged as a Private on a pension in 1825 being worn out, (and described as an “East Indian”), William married a native woman, raised a family and settled in India, where he died in 1863.(21) His son, also named William, served in the East India Company as a Bugle Major.(22) His daughter Eliza (described as an “Indo-Briton”), married a Drummer of the 41st Foot.(23)\n\nHenry Booth joined his brother in the 77th Foot and subsequently served in the 86th Foot (1806-1819) and the 69th Foot. (1819-1823). Discharged as a Private on a pension in 1823 due to a hernia, (and described as an “East Indian”), Henry married a native woman and settled in India, where he died in 1831.(24)\n\nPrivate Richard Groom of the 52nd had his 3-month old son William baptised in Nagagpatam in August 1795. The mother’s name was left blank – indicating both that the parents were unmarried and that the mother was not a Christian.(25) Like the Booth brothers, William Groom also followed in his father’s boot-steps: Serving in the 77th, 86th and 69th Regiments of Foot (1805-1824).(26) He was discharged on a pension in 1824 being worn out. However, his extensive service in the East Indies did not contribute towards his pension by reason of him “being a native.”(27)\n\nPrivate Ludwick Fisher of the 52nd and his wife Johanna (nee’ De Costa – an “Indo-European” surname) baptised their infant son Henry in Tanjore in December 1796.(28) Henry Fisher’s god-parents included Private John Henry Conmer of the band of the 52nd, (who he was probably named after).(29) Revealing that not only were the relationships between White soldiers and Indian women accepted, but that the children of those relationships were valued and invested in by the men of the 52nd Foot. Henry Fisher (described as “an East Indian”) subsequently served as a Private in the 86th Foot (1807-1819), the 69th Foot (1819-1824) and the 48th (Northamptonshire) Foot (1824-).(30) A married man with a family, in Cannonore in 1822, Henry Fisher was a witness at the wedding of Henry Booth to his native bride Hannah Gaspadeah.(31) Both men were serving as Privates in the 69th Foot at the time, however, their life-long friendship had started many years before when they were children in the barrack rooms of the 52nd Foot.\n\nThe Buckinghamshire Militia.\n\nThe presence of Black soldiers was not restricted to the regular regiments of the British Army. Locally raised militia units, such as the Buckinghamshire Militia also enlisted Black recruits to serve as bandsman. Military costume studies painted by Captain Sir William Young of the Buckinghamshire Militia in 1793 depict a Black cymbalist and a Black tambourinist in the band of the unit.\n\nBlack Musicians of the Buckinghamshire Militia c.1793.(32)\n\nMilitary service, militia or otherwise, was not for everyone however, and the Evening Mail (28th January 1805) reported that: A publican in Wapping, named Dempsey, was a few days since fined £20 by the Magistrates of the Thames Police-office, under the Mutiny Act, for seducing John Watson, a man of colour, in the band of the Buckinghamshire Militia, from his duty in that regiment, and entering him on board a vessel bound to New York, for which he received four guineas crimpage-money. Watson was clearly complicit in his attempt to desert, although his fate, and that of publican Dempsey remains unknown.(33)\n\n \n\nNotes and References.\n\nEllis, JD. The Visual Representation, Role and Origin of Black Soldiers in British Army Regiments During the Early Nineteenth Century. Unpublished MA thesis. MA Degree in Nineteenth Century Culture and Society. University of Nottingham, September 2000. See www.academia.edu/\n\nEllis, JD. “Soldiers of African origin in British Army Regiments in England and Yorkshire, 1700s to 1840s”. A paper presented at “What’s happening in Black British History? VIII.” University of Huddersfield, 10th May 2018. See www.academia.edu/\n\n1)For Cummings see: TNA WO 23/147, WO 25/357 and WO 97/351/70. For Charles see: TNA WO 25/337.\n\n2)For Harry see: TNA WO 25/338. For Burton see: TNA WO 25/337. Also see Cannon, R. “Historical Record of the Fourteenth, or the Buckinghamshire Regiment of Foot.” (Furnivall and Parker, London. 1845). Page 65.\n\n3)Oxford Journal, 12th September 1807.\n\n4)For Cato see: TNA WO 25/339. Also see Cannon, R.\n\n5)For Thomas see: TNA WO 22/114. WO 23/2 and 37. WO 97/359.\n\n6)For Arundell see: TNA WO 12/5574. WO 23/10, WO 25/454 and WO 97/724. For Lippett see: TNA WO 25/386 and WO 97/587 and WO 120/35.\n\n7)1841 English Census for the High Street, Chatham, Medway, Kent. HO107. Piece 487. Book 3. Folio 16. Page 3. Also see: England & Wales Deaths 1837-2007. 1842. Quarter 2. Chatham, Medway, Kent. Volume 5. Page 246.\n\n8)See Morning Advertiser, 11th November 1818. Also see: Globe, 11th November 1818. The Suffolk Chronicle; or Weekly General Advertiser & County Express, 14th November 1818. Salisbury and Winchester Journal, 16th November 1818.\n\n9)1841 English Census for the High Street, Chatham, Medway, Kent. HO107. Piece 487. Book 3. Folio 16. Page 3. Also see: England & Wales Deaths 1837-2007. 1842. Quarter 2. Chatham, Medway, Kent. Volume 5. Page 246.\n\n10)For Hargar see: TNA WO 25/119, 333 and 473.\n\n11)For Lisles see: TNA WO 12/6253. WO 25/407 and 410. Also Ellis, JD. “The drowning of Richard Lisles.” www.africansinyorkshireproject.com\n\n12)Ibid.\n\n13)For Fitzhenry see: TNA WO 97/47.\n\n14)For Williams see: TNA WO 25/409.\n\n15)Editions of the Hull Packet for the following dates reference either individual or multiple drownings in the Humber: 3rd April 1810, 23rd June 1812, 22nd July 1817, 14th February 1815, 17th March 1818 and 28th July 1818.\n\n16)Public Ledger and Daily Advertiser, 15th August 1820.\n\n17)It is not the intent of this writer to retrospectively label the 52nd as racist, they were after all providing employment and a level of equality to Black soldiers during the period of slavery. The Public Ledger and Daily Advertiser did not accuse the regiment of racism. However, the regiment failed to retain the service of Black soldiers and Richard Lisles died with no attempt being made to save him.\n\n18)BIO. Parish baptisms. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-11/107 & 108. Baptism: 7th August 1796. Nagapatam. Henry. Aged 4 years. Son of Henry Booth and Nella Tanjah. Private HM 52nd Regiment.\n\n19)For Henry Booth see: TNA WO 25/511. TNA WO 97/816/91. For William Booth see: TNA WO 25/511. TNA WO 97/816/92.\n\n20)See TNA WO 25/511. TNA WO 97/816/92.\n\n21)BIO. Parish baptisms. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-11/265 & 266. Baptism: 7th May 1815. Masulipatam, Madras.  Eliza. Daughter of William and Joannah Booth. Private HM 86th Regiment. BIO. Parish baptisms. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-8/30. Baptism: 26th September 1821. Cannanore, Madras. Ellenor. Daughter of William Booth, Private HM 69th Regiment and a native woman. Born 2nd September 1819. BIO. Parish baptisms. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-9/315. Baptism. St Mary’s Church, Madras. 28th March 1825. William, son of William Booth, HM 69th Regiment. Born 5th March 1824. BIO. Parish marriages. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-/13/56. Marriage. 23rd December 1831. Poonamallee, Madras. Richard Phillip. Drummer HM 41st Regiment. Eliza Booth. Indo Briton spinster. Parish burials. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-44/. Page 308. Death and Burial: Burial performed by laymen at St Thomas Mount, Madras. William Booth. Pensioner. 76 years old. Died 31st October 1863. Bronchitis.  Buried 31st October 1863.\n\n22)findmypast.co.uk has a marriage in 1849 of a William Booth, of Poonamallee, a Bugler Major in the 5th Battery Artillery, (an EIC unit), with a Caroline Damerum. (He was the son of William Booth, and she the daughter of an Anglo-Indian former soldier named James Damerum).\n\n23)BIO. Parish marriages. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-/13/56. Marriage. 23rd December 1831. Poonamallee, Madras. Richard Phillip. Drummer HM 41st Regiment. Eliza Booth. Indo Briton spinster.\n\n24) TNA WO 25/511. TNA WO 97/816/91. BIO. Parish marriages. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-8/368. Marriage: 9th October 1822. Church at Cannanore. Henry Booth. Private HM 69th Regiment and Hannah Gaspadeah widow and a native. BIO. Parish burials. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-14/. Page 63. Burial: 24th May 1831. Poonamallee. Henry Booth. Private HM Pensioner.\n\n25)BIO. Parish register transcripts from the Presidency of Madras. Parish Baptisms. N-2-11. Folio 95 and 96. Baptism: Nagagpatam. 23rd August 1795. William, son of Richard Groome (mother unknown), Private in the 52nd Regiment. Aged 3 months.\n\n26)TNA WO 23/147. WO 97/818/131.\n\n27)TNA WO 23/147. WO 97/818/131.\n\n28)For Henry Fisher see: BIO, Baptisms. Parish register transcripts from the Presidency of Madras. N-2-C3. Folio 39. N-2-C5. Folio 1260. N-2-11. Folio 111 and 112. Baptism: 19th December 1796. Tanjore. John Henry Fisher. Born 21st November 1796. Son of Ludwick Fisher and Johanna De Costa. Lawfully married. Private HM 52d. Sponsors: John Henry Conmer of the Band of the 52nd Regiment and Sarah Brown a protestant legally married.\n\n29)Ibid.\n\n30)TNA WO 25/404 and 511.\n\n31)BIO, Parish register transcripts from the Presidency of Madras. N-2-7. Folio 439. Baptism: Henry Fisher, 25th April 1821, (born 10th December 1820), in Cannanore, Madras. Son of Henry Fisher, Drummer 69th Regiment, and Francina his wife. BIO. Parish marriages. Parish register transcripts from the Presidency of Madras, 1698-1948. N-2-8/368. Marriage: 9th October 1822. Church at Cannanore. Henry Booth. Private HM 69th Regiment and Hannah Gaspadeah widow and a native. Witnesses were James Bartley and H. Fisher. (Private James Bartley was also an East Indian soldier in the 69th).\n\n32)The originals, in the British Museum collection, are not available online, but copies are in the Anne S K Brown Military collection. See https://library.brown.edu/info/collections/askb/index/ Also see https://thisreilluminatedschoolofmars.wordpress.com/tag/cymbals/\n\n33)Evening Mail, 28th January 1805. Bath Chronicle and Weekly Gazette, 31st January 1805.\n\n \n\nPrevious:\nThe Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831\nNext:\nThe Black Soldiers of the Oxfordshire and Buckinghamshire Regiments 1782-1831 (Part 3)\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

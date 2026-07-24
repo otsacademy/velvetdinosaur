@@ -1,0 +1,15 @@
+# Velvet Dinosaur
+
+Velvet Dinosaur is a founder-led web studio building bespoke websites, web apps, and mobile apps with a focus on performance, accessibility, maintainability, and conversion.
+
+## Key Pages
+
+- [Homepage](https://velvetdinosaur.com/)
+- [Selected work](https://velvetdinosaur.com/work)
+- [Contact](https://velvetdinosaur.com/#contact)
+- [Sitemap](https://velvetdinosaur.com/sitemap.xml)
+- [Robots](https://velvetdinosaur.com/robots.txt)
+
+## Crawling Guidance
+
+Public marketing and case-study pages may be crawled for search and discovery. Administrative, preview, edit, and demo routes should not be crawled or indexed.

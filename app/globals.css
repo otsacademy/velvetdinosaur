@@ -60,8 +60,8 @@ html[data-scroll-reveal="true"] section.is-visible [data-sr-child] {
   --font-pt-sans: var(--font-inter);
   --font-display: var(--font-display, "Instrument Serif", Georgia, serif);
   --font-hero: var(--font-display, "Instrument Serif", Georgia, serif);
-  --vd-dino-blue: oklch(from #0a76be l c h);
-  --vd-dino-blue-hover: oklch(from #0968a8 l c h);
+  --vd-dino-blue: oklch(from #005eb8 l c h);
+  --vd-dino-blue-hover: oklch(from #004a93 l c h);
   --vd-dino-blue-solid: var(--vd-dino-blue);
   --vd-dino-blue-solid-hover: var(--vd-dino-blue-hover);
   --vd-dino-cta-fg: oklch(1 0 0);

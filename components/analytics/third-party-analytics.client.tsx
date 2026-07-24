@@ -29,8 +29,6 @@ export function ThirdPartyAnalytics() {
     if (process.env.NEXT_PUBLIC_LHCI === 'true') return;
     if (typeof window === 'undefined') return;
     let loaded = false;
-    let idleId: number | null = null;
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const load = () => {
       if (loaded) return;
@@ -38,29 +36,14 @@ export function ThirdPartyAnalytics() {
       setShouldLoadThirdParties(true);
     };
 
-    const scheduleIdleLoad = () => {
-      if ('requestIdleCallback' in window) {
-        idleId = window.requestIdleCallback(() => load(), { timeout: 7000 });
-      } else {
-        timeoutId = setTimeout(load, 7000);
-      }
-    };
-
     const events: Array<keyof WindowEventMap> = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
     for (const eventName of events) {
       window.addEventListener(eventName, load, { once: true, passive: true });
     }
-    scheduleIdleLoad();
 
     return () => {
       for (const eventName of events) {
         window.removeEventListener(eventName, load);
-      }
-      if (idleId !== null && 'cancelIdleCallback' in window) {
-        window.cancelIdleCallback(idleId);
-      }
-      if (timeoutId) {
-        clearTimeout(timeoutId);
       }
     };
   }, []);

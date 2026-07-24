@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import type { VideoAsset } from '@/lib/content/types';
 import { cn } from '@/lib/utils';
 import { openShorts } from '@/lib/shorts/store';
@@ -121,11 +121,15 @@ export function ArchedVideoCarouselView({
                   disabled={!useShortsOverlay}
                 >
                   {poster ? (
-                    <img
+                    <OptimizedImage
                       src={poster}
                       alt={video.title}
+                      fill
                       className="w-full h-full object-cover transition-all duration-500 group-hover/card:scale-110"
+                      sizes="280px"
                       loading="lazy"
+                      decoding="async"
+                      imageOptions={{ width: 560, height: 996, fit: 'cover' }}
                     />
                   ) : (
                     <div className="w-full h-full grid place-items-center text-[var(--vd-muted-fg)]">

@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useState } from 'react';
 import { Play } from 'lucide-react';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StayVideoSectionViewProps = {
   videoId?: string;
@@ -32,10 +32,15 @@ export function StayVideoSectionView({ videoId, poster }: StayVideoSectionViewPr
               aria-label="Play property tour"
               type="button"
             >
-              <img
+              <OptimizedImage
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                fill
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                 alt="Video cover"
+                sizes="100vw"
+                loading="lazy"
+                decoding="async"
+                imageOptions={{ width: 1280, height: 720, fit: 'cover' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -67,10 +72,15 @@ export function StayVideoSectionView({ videoId, poster }: StayVideoSectionViewPr
               aria-label="Play property tour"
               type="button"
             >
-              <img
+              <OptimizedImage
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                fill
                 className="w-full h-full object-cover opacity-80"
                 alt="Video cover"
+                sizes="100vw"
+                loading="lazy"
+                decoding="async"
+                imageOptions={{ width: 1280, height: 720, fit: 'cover' }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -97,10 +107,15 @@ export function StayVideoSectionView({ videoId, poster }: StayVideoSectionViewPr
         </div>
       </div>
       {poster ? (
-        <img
+        <OptimizedImage
           src={poster}
+          fill
           className="w-full h-full object-cover opacity-70 group-hover:opacity-60 transition-opacity"
           alt="Video cover"
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          imageOptions={{ width: 1280, height: 720, fit: 'cover' }}
         />
       ) : (
         <div className="w-full h-full bg-neutral-900" />

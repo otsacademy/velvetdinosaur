@@ -1,0 +1,946 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/9627-2_cavalrymanuals/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:03:05.035Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/9627-2_cavalrymanuals/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/9627-2_cavalrymanuals/",
+  "title": "Cavalry training manuals to go on display at SOFO – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/9627-2_cavalrymanuals/",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "Cavalry training manuals to go on display at SOFO"
+    },
+    {
+      "level": "h4",
+      "text": "Enjoyed reading this article? Please consider supporting SOFO Museum with a donation:"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "The Man Behind the Medals: Lt. Charles Morgan Hoare"
+    },
+    {
+      "level": "h2",
+      "text": "Man Behind the Medals: Frank Kirby VC"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "collection",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "PEGGY AINSWORTH",
+      "href": "https://www.sofo.org.uk/author/peggy-ainsworth/",
+      "pathname": "/author/peggy-ainsworth/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "FEATURED ITEMS",
+      "href": "https://www.sofo.org.uk/category/featured-items/",
+      "pathname": "/category/featured-items/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "QUEENS OWN OXFORDSHIRE HUSSARS",
+      "href": "https://www.sofo.org.uk/category/queens-own-oxfordshire-hussars/",
+      "pathname": "/category/queens-own-oxfordshire-hussars/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "DONATE NOW",
+      "href": "https://cafdonate.cafonline.org/1035#/DonationDetails",
+      "pathname": "/1035",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "1911",
+      "href": "https://www.sofo.org.uk/tag/1911/",
+      "pathname": "/tag/1911/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blenheim",
+      "href": "https://www.sofo.org.uk/tag/blenheim/",
+      "pathname": "/tag/blenheim/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Churchill",
+      "href": "https://www.sofo.org.uk/tag/churchill/",
+      "pathname": "/tag/churchill/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Displays",
+      "href": "https://www.sofo.org.uk/tag/displays/",
+      "pathname": "/tag/displays/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "loan",
+      "href": "https://www.sofo.org.uk/tag/loan/",
+      "pathname": "/tag/loan/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "QOOH",
+      "href": "https://www.sofo.org.uk/tag/qooh/",
+      "pathname": "/tag/qooh/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: When the Oxf and Bucks went “A Bridge Too Far” – 26th September 1944",
+      "href": "https://www.sofo.org.uk/oxandbucksbridgetoofar26sept1944/",
+      "pathname": "/oxandbucksbridgetoofar26sept1944/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Visiting the E H Shepard Archives",
+      "href": "https://www.sofo.org.uk/visitingtheshepardarchives/",
+      "pathname": "/visitingtheshepardarchives/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "THE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE",
+      "href": "https://www.sofo.org.uk/lt-charles-morgan-hoare/",
+      "pathname": "/lt-charles-morgan-hoare/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "MAN BEHIND THE MEDALS: FRANK KIRBY VC",
+      "href": "https://www.sofo.org.uk/mbtmfrankkirbyvc/",
+      "pathname": "/mbtmfrankkirbyvc/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Peggy Ainsworth",
+      "href": "https://www.sofo.org.uk/author/peggy-ainsworth/",
+      "pathname": "/author/peggy-ainsworth/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/9627-2_cavalrymanuals/#respond",
+      "pathname": "/9627-2_cavalrymanuals/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2F9627-2_cavalrymanuals%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "PEGGY AINSWORTH",
+      "href": "https://www.sofo.org.uk/author/peggy-ainsworth/",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "visible": true
+    },
+    {
+      "text": "FEATURED ITEMS",
+      "href": "https://www.sofo.org.uk/category/featured-items/",
+      "visible": true
+    },
+    {
+      "text": "QUEENS OWN OXFORDSHIRE HUSSARS",
+      "href": "https://www.sofo.org.uk/category/queens-own-oxfordshire-hussars/",
+      "visible": true
+    },
+    {
+      "text": "THE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE",
+      "href": "https://www.sofo.org.uk/lt-charles-morgan-hoare/",
+      "visible": true
+    },
+    {
+      "text": "MAN BEHIND THE MEDALS: FRANK KIRBY VC",
+      "href": "https://www.sofo.org.uk/mbtmfrankkirbyvc/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/9627-2_cavalrymanuals/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/20211014_130453-1600x400.jpg",
+      "alt": "",
+      "width": "1600",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/20211014_130453-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/20211014_130453-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 225,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/20211014_130653-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 225,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/OXFYT976-600x372.jpg",
+      "alt": "",
+      "width": "441",
+      "height": "274",
+      "naturalWidth": 441,
+      "naturalHeight": 273,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/10/OXYT1071-600x383.jpg",
+      "alt": "",
+      "width": "434",
+      "height": "276",
+      "naturalWidth": 433,
+      "naturalHeight": 277,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/08/Charles-Morgan-Hoare.jpg",
+      "alt": "",
+      "width": "1428",
+      "height": "1913",
+      "naturalWidth": 1280,
+      "naturalHeight": 1714,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/10/Kirby-VC-Newspaper-Clipping-Photo.jpg",
+      "alt": "A grainy photograph of Cpl. Frank Kirby following his award of the Victoria Cross, as printed in a local newspaper.",
+      "width": "464",
+      "height": "773",
+      "naturalWidth": 464,
+      "naturalHeight": 773,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/9922264532ab1bcb733455c9c5aaed81?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 752,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n15\nOct\nBYPEGGY AINSWORTH// COLLECTION, FEATURED ITEMS, QUEENS OWN OXFORDSHIRE HUSSARS\nCavalry training manuals to go on display at SOFO\nCavalry training manuals to go on display at SOFO\n\n1891 Cavalry Drill manual; loan from Blenheim Palace archives\n\nFour cavalry training manuals from the collection at Blenheim Palace are due to go on display at the Soldiers of Oxfordshire Museum, Woodstock in November 2021 including a copy of Field Service Regulations (1905) signed by Charles Spencer-Churchill, 9th Duke of Marlborough. These manuals offer an insight into the manoeuvres and training of cavalry regiments including the Queen’s Own Oxfordshire Hussars (QOOH), and will help tell the stories of Winston Churchill’s regiment.\n\nWinston Churchill was born at Blenheim Palace in 1874, and joined the Woodstock squadron of the QOOH in November 1901 following his service with the 4th Queen’s Own Hussars and 21st Lancers in India and South Africa. Many of the Officers in the squadron were members of Churchill’s family, and after moving to the Henley squadron he quickly rose up the ranks to become Captain in 1902, then Major in 1905. Following his appointment to First Lord of the Admiralty in 1911 Churchill stepped down from his commanding duties, yet he maintained a strong interest and affiliation with the regiment until his death in 1965.\n\nWinston Churchill display pod at SOFO\n\nThe QOOH had one of their permanent duty training camps at Blenheim Park, where soldiers would practice military skills ready for a potential outbreak of war. As Captain then Major, Churchill was heavily involved in training the men in cavalry and military techniques.\n\nOXFYT:976 QOOH camp at Blenheim Park, 1912. Copyright Army Museums Ogilby Trust.\n\nWinston wrote to his wife Clementine from Blenheim Camp in 1911 – ‘We all marched past this morning – walk, trot & gallop… After the march I made the General form the whole Brigade into Brigade Mass & galloped 1200 strong the whole length of the park in one solid square of men & horses. It went awfully well.’\n\nAs well as practising various manoeuvres, the men took advantage of their settings at Blenheim by taking part in sporting contests and social activities. Photographs in the Oxfordshire Yeomanry Trust collection show the QOOH on parade in the palace grounds, camping near the Column of Victory, and letting their horses drink from the lake.\n\nOXFYT:1071 The QOOH training camp near the Column of Victory at Blenheim Park c.1911. Copyright Oxfordshire Yeomanry Trust.\n\nThe four cavalry manuals date to 1891, 1902, 1905 and 1912 and will provide an insight into the training and manoeuvres that shaped Winston Churchill’s military career, and helped prepare the QOOH for their many actions in the First World War. They will go on display at the Soldiers of Oxfordshire Museum in November 2021.\n\nEnjoyed reading this article? Please consider supporting SOFO Museum with a donation:\nDONATE NOW\n\n Tags: 1911, Blenheim, Churchill, Displays, loan, QOOH\n\nPrevious:\nWhen the Oxf and Bucks went “A Bridge Too Far” – 26th September 1944\nNext:\nVisiting the E H Shepard Archives\nRelated posts\nTHE MAN BEHIND THE MEDALS: LT. CHARLES MORGAN HOARE\n\nFrom Midshipman to Yeoman: Charles Morgan Hoare Charles Morgan Hoare was the son of Charles Twysden Hoare of Bignell Park, Bicester, and the Hon. Blanche Frances Hoare, daughter of the 1st Baron Tredegar. He was educated at Osborne and Dartmouth, with the intention of him joining the Royal Navy, but he elected for the Army, being Gazetted into the Queen’s Own Oxfordshire Hussars in 1911 and then the 15th Hussars…\n\nMAN BEHIND THE MEDALS: FRANK KIRBY VC\n\nThe Man Behind the Medals  In this blog series, SOFO Museum’s Research volunteers look at the stories behind some of the medal sets in the museum’s collection, from those that can be seen on a visit in our dedicated Medals display, to some of those that are still tucked away in the archive. This is our third VC special, looking instead at men named on our new Oxfordshire Gallantry Board,…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

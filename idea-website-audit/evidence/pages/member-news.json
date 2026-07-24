@@ -1,0 +1,427 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/member-news/",
+    "lastmod": "2015-03-26T14:18:39+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:33.095Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/member-news/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/member-news/",
+  "title": "Member News – IDEA",
+  "metaDescription": "IDEA members, please post any news you want to share with others below.",
+  "canonical": "https://developmentethics.org/member-news/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Member News"
+    },
+    {
+      "level": "h2",
+      "text": "3 Replies to “Member News”"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a comment"
+    },
+    {
+      "level": "h2",
+      "text": "Why are you reporting this comment?"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/member-news/#content",
+      "pathname": "/member-news/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "2011-07-14 AT 21:44",
+      "href": "https://developmentethics.org/member-news/#comment-2",
+      "pathname": "/member-news/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Report",
+      "href": "https://developmentethics.org/member-news/#",
+      "pathname": "/member-news/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.psu.press.org",
+      "href": "http://www.psu.press.org/",
+      "pathname": "/",
+      "rel": "nofollow ugc",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "2011-07-14 AT 21:44",
+      "href": "https://developmentethics.org/member-news/#comment-3",
+      "pathname": "/member-news/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Report",
+      "href": "https://developmentethics.org/member-news/#",
+      "pathname": "/member-news/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.Focuss.Info",
+      "href": "http://www.focuss.info/",
+      "pathname": "/",
+      "rel": "nofollow ugc",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "2011-07-14 AT 21:46",
+      "href": "https://developmentethics.org/member-news/#comment-5",
+      "pathname": "/member-news/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Report",
+      "href": "https://developmentethics.org/member-news/#",
+      "pathname": "/member-news/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.Focuss.Info",
+      "href": "http://www.focuss.info/",
+      "pathname": "/",
+      "rel": "nofollow ugc",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/member-news/#",
+      "pathname": "/member-news/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fmember-news%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-1e",
+      "pathname": "/P1D93l-1e",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/member-news/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://1.gravatar.com/avatar/7ad2a40c376b1f09fe6de22980f28cfa84407157e13be6d6063a7f6e5841fe22?s=100&d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&r=G",
+      "alt": "IDEA Webmaster's avatar",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 100,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://1.gravatar.com/avatar/7ad2a40c376b1f09fe6de22980f28cfa84407157e13be6d6063a7f6e5841fe22?s=100&d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&r=G",
+      "alt": "IDEA Webmaster's avatar",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 100,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://1.gravatar.com/avatar/7ad2a40c376b1f09fe6de22980f28cfa84407157e13be6d6063a7f6e5841fe22?s=100&d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&r=G",
+      "alt": "IDEA Webmaster's avatar",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 100,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=76&subd=developmentethics&host=developmentethics.org&ref=&rand=0.6616577879332525",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/wp-comments-post.php",
+      "method": "post",
+      "text": "",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "comment_post_ID",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_post_ID"
+        },
+        {
+          "type": "hidden",
+          "name": "comment_parent",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_parent"
+        },
+        {
+          "type": "hidden",
+          "name": "highlander_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "highlander_comment_nonce"
+        },
+        {
+          "type": "hidden",
+          "name": "verbum_show_subscription_modal",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "akismet_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "akismet_comment_nonce"
+        },
+        {
+          "type": "textarea",
+          "name": "ak_hp_textarea",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "ak_js",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "ak_js_1"
+        }
+      ]
+    }
+  ],
+  "wordCount": 1073,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nMEMBER NEWS\n\nIDEA members, please post any news you want to share with others below.\n\n3 Replies to “Member News”\nSamantha\n2011-07-14 AT 21:44\nReport\n\nForthcoming volume: Capabilities, Power, and Institutions\nSubmitted by admin_Malavisi on Mon, 2010-04-05 11:57\n\nIDEA member Stephen Esquith together with Fred Gifford are the editors of the forthcoming volume:\nCAPABILITIES, POWER, AND INSTITUTIONS Toward a more critical development ethics.\n\nDevelopment economics, political theory, and ethics long carried on their own scholarly dialogues and investigations with almost no interaction among them. Only in the mid-1990s did this situation begin to change, primarily as a result of the pioneering work of an economist, Amartya Sen, and a philosopher who doubled as a classicist and legal scholar, Martha Nussbaum. Sen’s\nDevelopment as Freedom (1999)\nand Nussbaum’s\nWomen and Human Development (2000)\ntogether signalled the emergence of a powerful new paradigm that is commonly known as the “capabilities approach” to development ethics. Key to this approach is the recognition that citizens must have basic “capabilities” provided most crucially through health care and education if they are to function effectively as agents of economic development. Capabilities can be measured in terms of skills and abilities, opportunities and control over resources, and even moral virtues like the virtue of care and concern for others. The essays in this collection extend, criticize, and reformulate the capabilities approach to better understand the importance of power, especially institutional power.\n\nIn addition to the editors, the contributors are Sabina Alkire. David Barkin, Nigel Dower, Shelley Feldman, Des Gasper, Daniel Little, Asuncion Lera St. Clair, A. Allan Schmid, Paul B. Thompson, and Thanh-Dam Truong.\n\nFor further information go to:\n\nhttp://www.psu.press.org\n\nSamantha\n2011-07-14 AT 21:44\nReport\n\nWorking Paper on Development Ethics\nSubmitted by ideacms on Tue, 2009-06-16 22:57\n\nWe are pleased to alert you to the latest ISS working paper 459,\nDEVELOPMENT ETHICS THROUGH THE LENSES OF CARING, GENDER, AND HUMAN\nSECURITY by Des Gasper, Associate Professor\nof Public Policy Management, and Thanh-Dam Truong, Associate Professor\nof Women, Gender and Development, at the Institute of Social Studies.\n\nAbstract\n\nThinking about ethics of development and ‘human development’ must\nboth treat development in a global perspective and yet reflect on the\ncontent of ‘human’. The paper explores some faces of globalization by\nusing a gender perspective, in order to consider reproduction\n(psychological and emotional as well as biological) and the activities\nand attitudes of care that give moral resources for response to\nsystemic tragedy, not only for identifying and understanding it. There\nnow exist globally interconnected systems of vulnerability and\ncapability, for which matching systems of human security, care and\nresponsibility are needed in order to protect human dignity. The\ndiscourse of ‘human security’ helps here by better grounding an agenda\nof basic human needs, in an ethnography of ordinary lives rather than\nonly an abstracted accounting of deficiencies or an elevated language\nof opportunities. It must be emotionally and existentially grounded\ntoo. We examine the potential contributions here of three diverse\nbodies of thought: the tradition of Mahayana Buddhism; the work of\nphilosopher-anthropologist Ananta Giri; and feminist care ethics.\nKeywords\nDevelopment ethics, Buddhism, care ethics, globalization, human development, human security, migration, vulnerability.\nClick here to download the full text of the working paper\nYou can access the complete list of working papers by clicking here.\nStart your searches at http://www.Focuss.Info\n\nSamantha\n2011-07-14 AT 21:46\nReport\n\nWorking Paper on Development Ethics by Des Gasper\n\nEthics of Global Development: Agency, Capability and Deliberative Democracy\n\nDavid Crocker, one of the founding members of IDEA has just published a book titled, “Ethics of Global Development: Agency, Capability and Deliberative Democracy.”\n\nThis volume is a work in global development ethics. It explains, justifies, applies and extends ethical reflection on development goals, policies, projects and institutions from the local to the global level.\n\nWorking Paper on Development Ethics by Des Gasper\n\nFrom the Focuss.Info searchengine for workers, researchers andstudents in development – http://www.Focuss.Info:\n\nWe are pleased to alert you to the latest ISS working paper 456, DENIS GOULET AND THE PROJECT OF DEVELOPMENT ETHICS: Choices in Methodology, Focus and Organization by Des Gasper, Associate Professor of Public Policy Management at the Institute of social studies. You can access the profile of Des by clicking here.\n\nAbstract\nDenis Goulet (1931-2006) was a pioneer of human development theory and the main founder of work on “development ethics” as a self-conscious field that, by his definition, treats the ethical and value questions posed by development theory, planning, and practice. The paper looks at aspects of Goulet’s work in relation to four issues concerning the project of development ethics—[1] scope, [2] methodology, [3] roles, [4] organisational format and identity. It compares his views with subsequent trends in the field and suggests lessons for work on human development. [1] Goulet’s definition of the scope of development ethics remains serviceable and allows us to combine a view of it as social change ethics (including global change ethics) with yet a relatively specific primary audience of those who recognize themselves as working in development studies or development policy. [2] His approach in development ethics espoused intense existential immersion in each context and was often deeply illuminating, but was limited by the time and skills it requires and its relative disconnection from communicable theory. [3] Goulet wrote profoundly about ethics’ possible lines of influence, through prophetic force and more routinely through incorporation in methods, movements, and education. His own ideas did not become sufficiently embodied in methods and methodologies, but some have become so thanks to other authors. [4] Goulet saw development ethics as a new discipline or subdiscipline. However the required types of immersion, in particular contexts and/or in understanding and changing the methods and systems that structure routine practice, have to be undertaken by people coming from and remaining close to diverse disciplinary and professional backgrounds. Development ethics is and has to be, he gradually came to accept, not a distinct subdiscipline but an interdisciplinary field.\n\nKeywords\ndevelopment ethics, Denis Goulet, human development, interdisciplinarity\n\nClick here to download the full text of the working paper\n\nYou can access the complete list of working papers by clicking here.\n\nLeave a comment\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Samantha 2011-07-14 AT 21:44 Report"
+}

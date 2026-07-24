@@ -1,0 +1,8 @@
+{
+  "disallow": [
+    "/wp-admin/"
+  ],
+  "allow": [
+    "/wp-admin/admin-ajax.php"
+  ]
+}

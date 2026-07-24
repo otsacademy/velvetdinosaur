@@ -1,0 +1,1064 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/archive-enquiry/",
+    "lastmod": null,
+    "manual": true
+  },
+  "capturedAt": "2026-06-09T18:03:31.822Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/archive-enquiry/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/archive-enquiry/",
+  "title": "Archive Enquiry – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/archive-enquiry/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Archive Enquiry"
+    },
+    {
+      "level": "h3",
+      "text": "Submit Your Research Enquiry"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Research Page",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "You can view an example of a completed Enquiry Report here",
+      "href": "https://www.sofo.org.uk/example-of-a-completed-enquiry-for-100/",
+      "pathname": "/example-of-a-completed-enquiry-for-100/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "(Download PDF)",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2023/11/SOFO-Research-Enquiry-Service-Form.pdf",
+      "pathname": "/wp-content/uploads/2023/11/SOFO-Research-Enquiry-Service-Form.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "(Download Word Document)",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2023/11/SOFO-Research-Enquiry-Service-Form.docx",
+      "pathname": "/wp-content/uploads/2023/11/SOFO-Research-Enquiry-Service-Form.docx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "using the listing on our website store.",
+      "href": "https://www.sofo.org.uk/product/research-enquiry-fee/",
+      "pathname": "/product/research-enquiry-fee/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/soldiers/soldier/",
+      "pathname": "/soldiers/soldier/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/archive-enquiry/",
+      "pathname": "/archive-enquiry/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-regiments/",
+      "pathname": "/oxfordshires-regiments/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-vcs/",
+      "pathname": "/oxfordshires-vcs/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/ww2-bombings/",
+      "pathname": "/ww2-bombings/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+      "pathname": "/oxfordshires-war-memorials/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/archive-enquiry/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/soldiersearch.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/archive.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/regiments.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/vcs.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/bombings.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/memorials.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://www.sofo.org.uk/process_details",
+      "method": "post",
+      "text": "Basic Service £50 Bespoke Service £100 Section 1. Section 2. (Nature of enquiry) Please choose the nature of your enquiry. (You may select multiple options) Operational service Where is my soldier buried/commemorated? In what action was my soldier killed/wounded? Where was my soldier a prisoner of war? Service and gallantry awards",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "researchType",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "researchType",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "serviceNumber",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "serviceNumber",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "fullName",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "fullName",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "DOB",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "DOB",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "nature[]",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "nature[]",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "nature[]",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "nature[]",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "checkbox",
+          "name": "nature[]",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "nature_additional",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "nature_additional",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierrank",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierrank",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierbirthplace",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierbirthplace",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierservice",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierservice",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierbattalion",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierbattalion",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "dateofservice",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierdates",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierserved",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierserved",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierhonours",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierhonours",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "soldierinfo",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "soldierinfo",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "button",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "submitButton",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 339,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nSUBMIT YOUR RESEARCH ENQUIRY\n\nUse the online form below to submit your enquiry, or download a copy of the form and email or post it to us using the details below.\n\nPlease make sure you have read the details on our main Research Page before submitting your enquiry, or contact us for more information if unsure.\n\nIf there is more information potentially available and therefore more time is needed, you will be advised in advance. In some cases this may result in a quotation for additional work.\n\nTo start your research enquiry please choose which type of search you would like, then complete at least 2 parts in section 1.\n\nYou can view an example of a completed Enquiry Report here.\n\n---\n\nDownload and fill out a copy of our Research Service Form: (Download PDF) (Download Word Document)\n\nEmail a copy of your completed form to us at frontofhouse@sofo.org.uk. You can still pay for Research Enquiry fees online using the listing on our website store.\n\nAlternatively, completed forms can be posted to us at: Research Service, SOFO Office, Harrisons Lane, Woodstock, OX20 1SN along with a cheque for the enquiry fee made out to 'Soldiers of Oxfordshire Museum'.\n\n---\n\nBasic Service £50\nBespoke Service £100\n\nSection 1.\n\n  \n\nSection 2. (Nature of enquiry)\n\nPlease choose the nature of your enquiry. (You may select multiple options)\n\n Operational service\n Where is my soldier buried/commemorated?\n In what action was my soldier killed/wounded?\n Where was my soldier a prisoner of war?\n Service and gallantry awards\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

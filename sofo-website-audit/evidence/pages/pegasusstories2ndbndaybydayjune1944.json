@@ -1,0 +1,959 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:10:38.089Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/",
+  "title": "Pegasus Stories: Day by Day – A 2nd Battalion, Ox and Bucks Light Infantry Diary, June 1944 – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Day by Day: A 2nd Battalion, Oxfordshire and Buckinghamshire Light Infantry Diary, June 1944"
+    },
+    {
+      "level": "h1",
+      "text": "June 6th - June 25th, 1944"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month: Evacuee’s Coat (Oxfordshire’s Military Heritage in 50 Objects)"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Oxford and Bucks Light Infantry",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Pegasus Bridge Story",
+      "href": "https://www.sofo.org.uk/whats-on/thepegasusbridgestorymaf/",
+      "pathname": "/whats-on/thepegasusbridgestorymaf/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Parachute Battalions",
+      "href": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+      "pathname": "/pegasusstoriesparachuteoperations/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Captain Priday, whose own glider came down a few miles from where it was intended to land.",
+      "href": "https://www.sofo.org.uk/pegasusstoriesbrianpriday/",
+      "pathname": "/pegasusstoriesbrianpriday/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Airborne",
+      "href": "https://www.sofo.org.uk/tag/airborne/",
+      "pathname": "/tag/airborne/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "D-Day",
+      "href": "https://www.sofo.org.uk/tag/d-day/",
+      "pathname": "/tag/d-day/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "DDay",
+      "href": "https://www.sofo.org.uk/tag/dday/",
+      "pathname": "/tag/dday/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Ox & Bucks",
+      "href": "https://www.sofo.org.uk/tag/ox-bucks/",
+      "pathname": "/tag/ox-bucks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire and Buckinghamshire Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "pathname": "/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Parachute Regiment",
+      "href": "https://www.sofo.org.uk/tag/parachute-regiment/",
+      "pathname": "/tag/parachute-regiment/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Pegasus Bridge",
+      "href": "https://www.sofo.org.uk/tag/pegasus-bridge/",
+      "pathname": "/tag/pegasus-bridge/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "PegasusStories",
+      "href": "https://www.sofo.org.uk/tag/pegasusstories/",
+      "pathname": "/tag/pegasusstories/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Second World War",
+      "href": "https://www.sofo.org.uk/tag/second-world-war/",
+      "pathname": "/tag/second-world-war/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "WW2",
+      "href": "https://www.sofo.org.uk/tag/ww2/",
+      "pathname": "/tag/ww2/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: Pegasus Stories: Captain Priday’s Account",
+      "href": "https://www.sofo.org.uk/pegasusstoriesbrianpriday/",
+      "pathname": "/pegasusstoriesbrianpriday/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Star Objects – Waterloo",
+      "href": "https://www.sofo.org.uk/7starobjectswaterloo/",
+      "pathname": "/7starobjectswaterloo/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "pathname": "/ootm-evacueecoat/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Duncan Parsons",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/#respond",
+      "pathname": "/pegasusstories2ndbndaybydayjune1944/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fpegasusstories2ndbndaybydayjune1944%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/pegasusstories2ndbndaybydayjune1944/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/D-Day-Map-2nd-Battalion-OBLI-1600x400.jpg",
+      "alt": "",
+      "width": "1600",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/D-Day-Map-2nd-Battalion-OBLI-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/D-Day-Map-2nd-Battalion-OBLI-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1865",
+      "naturalWidth": 1280,
+      "naturalHeight": 932,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/52ndCaptureofbridges1944.png",
+      "alt": "",
+      "width": "973",
+      "height": "716",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/08/20180801_134522-e1533289518178-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "2004",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/01/Childs-evacuation-coat-scaled.jpg",
+      "alt": "",
+      "width": "1459",
+      "height": "2560",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/2030178-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/ede4445374058997b8f0ab3d69d767c9?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 3530,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n06\nFeb\nBYDUNCAN PARSONS// OXFORD AND BUCKS LIGHT INFANTRY\nPegasus Stories: Day by Day – A 2nd Battalion, Ox and Bucks Light Infantry Diary, June 1944\nDay by Day: A 2nd Battalion, Oxfordshire and Buckinghamshire Light Infantry Diary, June 1944\n\nAfter individual accounts from officers in our last two Pegasus Stories, this time we’re sharing a broader regimental account which covers the men’s experiences day by day, and at times hour by hour, following their gliderborne arrival on 6th June 1944. Building on details from the last two accounts we posted, we hear more about the rest of 2nd Battalion Ox. & Bucks landing after the successful operation to capture the bridges by the ‘coup de main’ party detailed in our Lockdown Lecture The Pegasus Bridge Story as well as the actions of various Parachute Battalions. Elsewhere, we hear about how the rest of the regiment were reunited with the coup de main group, including Captain Priday, whose own glider came down a few miles from where it was intended to land.\n\nLike Brain Priday’s account, this diary was originally published in The Oxfordshire and Buckinghamshire Light Infantry Quarterly Journal for February 1945.\n\nAs with many of these article from the Journals, 2nd Battalion are often referred to as 'Colbornes' - a reference to John Colborne, who led the 52nd Regiment of Foot, precursors to 2nd Battalion, at Waterloo. Waterloo will of course will be covered in our next Lockdown Lecture (Date TBA) with Gareth Glover.\n\nIn some cases abbreviations have been expanded or explained in square brackets for clarity, but the text is otherwise as it was printed 1945.\n\nJune 6th - June 25th, 1944\n\nThe following brief diary of events has been received from Colborne's, for the period 6th-25th June. From this date to July 31st the Regiment had various positions East of the River Orne during which time no battles were fought but patrols were active and exchanges of mortar and artillery fire continued daily. During August the Regiment took part in the pursuit of the enemy to the River Seine, a slow process at first, overcoming obstacles, mopping up minor resistance, crossing rivers on improvised bridges. After advancing through Deauville and making further attacks on enemy rear-guards the Regiment was engaged in heavier fighting round Manneville. At the end of this month the Regiment ceased to take part in the fighting in France.\n\n--\n\nThe Regiment, less Bridge Assault Party of D Company and 2 platoons of B Company, took off from the airfields at 1840 hrs and 1910 hrs respectively. The trip was rather bumpy over land but all became very calm over the sea. At approx. 2055 hrs we approached the French coast and could see a large fleet of ships standing off shore and occasional bursts of fire coming from their guns. It was very easy to pick out the river and canal below and ahead of us and we knew there had been no mistake in navigation. All gliders except four landed on or somewhere near the L.Z, although in most cases crash landings occurred and many collisions took place. A certain amount of flak as the gliders ran in added to the many difficulties of the glider pilots who in the majority of cases did magnificently. There was a certain amount of firing on the L.Z. and some snipers still seemed to be holding out in the area of the bridges at Benouville. After some delay, due to the fact that some gliders landed rather a long way south and also some were very badly smashed which made unloading difficult, the Regiment formed up in the area of Road Junc. at Le Port.\n\n2215 hrs - The Regiment began to move forward to cross the bridges to the pre-arranged concentration area. At this time four gliders loads had failed to land, comprising Bn HQ No. 5, 1 Rifle Pl B Company, 1/2 B Company HQ, 1 Mortar Pl glider. A few people had been hurt in crash landings including the commanding officer who managed to carry on and the loading officer who had to be evacuated. Major Howard commanding the Bridge Assault Force reported to the commanding officer and said that the route to the concentration area was clear. Despite the darkness of the night the Regiment moved quickly into the concentration area and a temporary HQ was set up. 2300 hrs - The commanding officer met the brigadier commanding Airlanding Brigade on the bridge at Benouville and was taken forward to the area of the church at Ranville. The commanding officer received orders to move forward into the area of the 13 Parachute Battalion at Ranville with intention of occupying Herouvillette as soon as possible and then to move on to occupy Escoville as was originally intended.\n\nMen standing by the wreckage of one of the many Horsa gliders used to land men and equipment on D-Day\n\nJune 7th, 0130 hrs - Regiment passed S.P, moving forward to the chateau in Ranville, a temporary HQ was set up there. The remainder of the Regiment moved into the area of the chateau grounds and took up a position of all round defence. Elements of the Bridge Assault Party joined us in this area including Capt. B. C. E. Priday and the load from his glider, who having landed in the area of Varaville Bridge, fought their way back to join the Regiment.\n\n0230hrs - 13 Para Bn had been in contact with the enemy up to dark and reported that he was occupying Herouvillette. On arrival at the chateau it was arranged that the Regiment should take over the patrolling in front of 13 Para Bn and C Company was ordered to send out fighting patrols to discover whether the enemy were still in Herouvillette. These patrols reported by 0430 hrs that there was no sign of the enemy in the village though they had not entered it. C Company was therefore ordered to move forward and seize the western portion of Herouvillette and send patrols to discover whether the enemy were holding the eastern portion, A and B Companies were then to move forward and seize the eastern portion. Meanwhile the remainder of the Regiment were to move forward to the area of the farm. This move was completed without opposition by 0830 hrs.\n\n0830 hrs - The commanding officer then decided to make a similar advance by bounds to seize and occupy Escoville, the task allotted to the Regiment in the original plan before leaving England. A and B Company patrols moved forward to the village which they reported clear except for a few snipers. 1000 hrs - At 1000 hrs A and B Company were ordered to move up and occupy the positions already allotted to them and they were followed by D Company and Regiment HQ. C Company was to remain at Herouvillette as a firm base until the remainder of the Regiment was established in Escoville. At 1030 hrs the leading Companies reached Escoville and started to dig in.\n\n1100 hrs - Regimental HQ attempted to establish itself in the chateau as arranged but came under accurate fire from an enemy SP [self-propelled] gun firing from a hull-down position about 250x south of the chateau. Attempts were made to dislodge this enemy gun with 6pdr guns and Piat parties but these proved unsuccessful. The SP gun appeared to be well protected by snipers. Meanwhile D- Company moved round into its allotted position.\n\n1200 hrs – Companies were in position but experiencing difficulty owing to fire from armoured cars and other SP guns and snipers who appeared to be on a reverse slope position just south of the village and were continually moving about. We were visited about this time by the brigade commander. Bn HQ had still failed to get into the chateau and HQ had been set up in a line of trees about 1000 North of the chateau itself. Shortly after this the enemy started accurate mortar fire in area of Regimental HQ and some casualties were suffered. Owing to veil accurate fire from enemy armoured vehicles, A and D Companies had been unable to get well forward into good positions of observation and in particular the anti-tank guns were unable to get into their allotted positions or even into positions from which they could engage the enemy SP guns.\n\n1400 hrs - Mortar fire and gun fire continued to be experienced by all Companies and in appreciable number of casualties were incurred. The enemy were very still concealed and although 3 in. mortars were brought to bear on any SP guns that showed themselves, fire was rather ineffective due to lack of observation.\n\nApprox 1500 hrs - The enemy began to become more bold and succeeded in shooting up the right forward Company rather badly. At about this time fire from mortars and SP guns became intensified and enemy infantry began to infiltrate forward supported by tanks and one or two armoured cars. Owing to the fact that the Regiment had neither managed to get into an organized co-ordinated defensive position and there was considerable danger of becoming outflanked in a position not suitable for defence in view of the fact that St. Honorine had not been captured, the commanding officer asked for permission from brigade to withdraw to higher ground in the village of Herouvillette. This permission was granted.\n\n1600 hrs - The Regiment withdrew to Herouvillette with C Company acting as rearguard protection. A portion of D Company the left forward Company and A Company the right forward Company who were heavily engaged at the time, became cut off and had a spirited battle with enemy AFVs [Armoured Fighting Vehicles]. The Vickers machine guns with A Company did some very good work before they withdrew. B Company reformed about 400x north of Escoville and were sent in as a counter attack to extricate the forward Companies. This was successfully accomplished with some casualties.\n\n1700 hrs-- The Regiment took up a position in the area of Herouvillette and commenced to dig in. Recce Patrols were sent forward to discover the enemy’s further intentions. The remainder of the day and night was spent digging in. During the day the regiment had suffered about 60 casualties. The commanding officer who had been injured on landing and was unable to get about on foot was evacuated at about 2100 hrs and command of the Regiment was taken over by Major M. Darell Brown, 2nd in command.\n\nTelescopic sniper rifle sight c.1944 (No. 32 scope for the Lee Enfield No. 4T), from one of the museum displays.\n\nJune 8th, Herouvillette -A quiet day preparing defences and some shelling in the area of A Company.\n\nJune 9th, Herouvillette - Owing to the fact that the commanding officer decided to send C Company forward to occupy the village, the Company moved out at about 1245 hrs and reached the area of the chateau at approx. 1330 hrs without opposition. At 1345 hrs, C Company came under fire from enemy armoured cars which came forward from the south of Escoville as soon as C Company started to move into the village. C Company fought back in a spirited manner until about 1630 hrs when the enemy appeared to be being reinforced and C Company therefore withdrew to their defensive positions on the south side of Herouvillette. At about 1730 hrs it was observed that the enemy were moving up to Escoville in some strength and tanks had been reported. At 1900 hrs heavy fire was opened on the area of the village of SP guns, artillery and mortars. The enemy attacked with tanks, armoured cars and a certain number of infantry. M.E. 109s appeared overhead and carried out a short strafing attack. Early in the attack one 6-pdr crew were knocked out by mortar fire which left a gap in the anti-tank defence. The commanding officer quickly organized a Piat party and this gap was soon covered. D.F. artillery fire was called for and came down very quickly and accurately. The enemy then withdrew leaving 2 Mk IV tanks burning about 100x from our leading Companies and at least 3 more tanks retired on fire. We later recovered an armoured car from the area of Escoville and found another one which we were unfortunately unable to bring back. During this very sharp engagement the Regiment suffered a total of about 40 casualties. Recce Patrols were sent forward to Escoville during the night but nothing was reported.\n\nJune 10th, 0730 hrs, Herouvillette - Enemy infantry began to move forward from Breville towards Ranville and they were engaged by our Vickers MGs as they moved across the open. They appeared to be moving across the glider L.Z. in some strength towards Ranville. A small party of enemy moved into the wood to our front and were kept under observation. 1400 hrs - By this time the enemy attack was still held in the area of the glider L.Z. and apart from intermittent shelling had not developed in the area of Herouvillette. At about 1600 hrs a heavy counter attack by artillery and tanks with the 7th Para Battalion drove the enemy back into the area of the high ground at Breville. Throughout their attack the enemy appeared to move with little or no supporting fire except from small arms weapons. Units of the 51st Highland Division were seen to move on our flanks during the night.\n\nJune 11th, Herouvillette - A quiet day, slight shelling accompanied by the report that a large enemy concentration of tanks and infantry was moving towards St. Honorine from the direction of Caen. This threat failed to materialize and a quiet night was spent.\n\nJune 12th, Herouvillette - A fairly quiet day except for intermittent shelling, spent improving defences; patrolling to Escoville and checking up on a few administration details. During the evening we were spectators of the \"closing of the Breville gap\" and its accompanying spectacular artillery shoot.\n\nJune 13th - At 1215 hrs the Regiment was ordered to move to the area of St. Come south of Breville to relieve the 9thPara Battalion and to come under command of Para Brigade. We learnt that the attack on Breville had not been as successful as was hoped and we were ordered to prevent the enemy forming up for a counter attack on Breville at all costs. The Regiment moved from Herouvillette at about 0300 hrs and reached a new location, St. Come, at approx. 0700 hrs. We took over positions from the 9th Para Bn who had been fighting gallantly in the area for some time, evidence of which was found in the number of enemy dead which surrounded their position. Throughout this day we were fortunate in that the enemy left us well alone except for bursts of mortar fire and a little trouble from snipers in the area of the chateau. By nightfall these snipers had been cleared. During the night recce patrols were sent out to locate and if possible, identify the enemy.\n\nJune 14th, St. Come - A lot of good, work was put in on this day strengthening the position with wire and mines and in digging deeper slit trenches. The area was cleared of a large quantity of dead and a lot of salvaged equipment was collected and sent back to the maintenance area. The remainder of the brigade moved up into our area and we returned to command of Airlanding Brigade. A few casualties were caused by mortar and shell fire. Recce patrols were sent out during the night.\n\nJune 15th, St. Come - Day spent mainly in improving positions, a few casualties from mortar fire. Our own snipers had quite a good day and accounted for at least 4 enemy dead. Patrols were sent out at night.\n\nJune 16th, St. Come - Much quieter day, patrols were working well, fire and mortar and shell fire became less frequent.\n\nJune 17th, St. Come - At about 0100 hrs we were given warning that the enemy might attack at first light. At about 0430 hrs the enemy commenced mortar and shell fire on our area. This fire was returned by our own artillery and mortars, At about 0600 hrs an enemy attack developed from the direction of Culverville to Escoville and Herouvillette, well to our south. certain amount of small arms fire was directed on to our position but no attack developed to our own front. Patrols were sent out in the evening.\n\nJune 18th, St. Come - Patrols reported enemy in area of chateau and in the evening B Company made a feint attack on the wood supported by artillery. This attack revealed certain other enemy positions and also that the wood was being held by enemy strength at least one platoon with probably SP guns.\n\nJune 19th, St. Come - After, a quiet day the enemy sent over a heavy mortar concentration including some “Moaning Minnies\" at 2000 hrs for 30 mins. At 2100 hrs a fighting patrol of 2 platoons of B Company commanded by B Company commander attacked towards wood. The patrol came under very heavy fire from the flank in the area of the wood and the officer commanding B Company was wounded. The patrol withdrew and owing to the fact that the enemy appeared to be following up the withdrawal. D Company were sent forward to cover the patrol back. The enemy put down considerable mortar and \"Moaning Minnie\" fire and a number of casualties were incurred particularly in the area of Regimental HQ. The patrol reported enemy in strength in the wood as already stated and that they had succeeded in killing a number of the enemy before being forced to withdraw. Enemy small arms fire on this occasion was noticeably very inaccurate. Officer commanding S Company assumed command of B Company.\n\nJune 20th, St. Come\n\nAt about 0400 hrs enemy commenced more mortar and shell fire and officer commanding B Coy was killed. 2nd in command D Company assumed command of B Company. Commanding officer received orders to move into brigade reserve at Le Mesnal handing over to the Devons. The enemy put down considerable artillery and mortar fire in the area at about 1600 hrs. At 1800 hrs HQ moved to Le Mesnal. Companies handed over and moved down to Le Mesnal at approx. 2300 hrs. Work started immediately to improve existing trenches.\n\nJune 21st, Le Mesnal - A comparatively quiet day, little shelling and our ranks now managed to take some undisturbed rest for the first time since landing.\n\nJune 22nd, Le Mesnal - A fairly quiet day, everyone showing benefit from sleep, baths organized for all ranks. Intermittent mortar and shelling during the day.\n\nJune 23rd, Le Mesnal - At 0310 hrs the enemy commenced heavy shelling of our area for about 70 mins. No serious casualties. The remainder of the day was fairly quiet.\n\nJune 24th, Le Mesnal – Lieut/Col. M. W. Roberts returned from England by air and reassumed command of the Regiment. A quiet day spent cleaning up. At approx. 2330 hrs the enemy put in an attack to our south from the area of Barent supported by fire from mortars and artillery, a lot of fire from which fell in our area. The attack was beaten off to our south but the enemy continued to shell our area until dawn. We had 4 killed and a few wounded due to shelling.\n\n Tags: Airborne, D-Day, DDay, Ox & Bucks, Oxfordshire and Buckinghamshire Light Infantry, Parachute Regiment, Pegasus Bridge, PegasusStories, Second World War, WW2\n\nPrevious:\nPegasus Stories: Captain Priday’s Account\nNext:\nStar Objects – Waterloo\nRelated posts\nOBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)\n\nEvacuee’s Coat from our Oxfordshire’s Military Heritage in 50 Objects Exhibition By Geraldine Howell Object photography by Colin Morris Philip Williams’ woollen, fully-lined children’s coat would certainly have satisfied the requirement for evacuees to take with them a warm winter coat as they moved from their homes to safer locations elsewhere, often in the countryside. This smart, yet also sensible and practical design, very much reflected the type of coat…\n\nOBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION\n\nFebruary’s Object of the Month follows a Valentine’s Day theme! Volunteer Geraldine has selected a First World War pin cushion, shaped like a heart, it has quite a story behind it! Sweetheart Pin Cushion By Geraldine Howell Object photography by Colin Morris   This sweetheart pin cushion was made during the First World War by a member of the Oxfordshire and Buckinghamshire Light Infantry. Sweetheart cushions were not unknown before…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

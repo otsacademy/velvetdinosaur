@@ -1,0 +1,387 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/news-and-events/",
+    "lastmod": "2021-09-18T16:25:22+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:37.335Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/news-and-events/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/news-and-events/",
+  "title": "News and events – IDEA",
+  "metaDescription": "2022 IDEA conference: details here. Denis Goulet Memorial Prize 2022: Plans for a call for submissions for the 2022 Congress prize(s) will be presented at the congress. Please direct queries to malavisia@wcsu.edu. Dennis Goulet Memorial Prize 2018 Background: To honour the work of Denis Goulet the Board of the International Development Ethics Association offers a…",
+  "canonical": "https://developmentethics.org/news-and-events/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "News and events"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/news-and-events/#content",
+      "pathname": "/news-and-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "details here",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "pathname": "/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Denis Goulet",
+      "href": "https://en.wikipedia.org/wiki/Denis_Goulet",
+      "pathname": "/wiki/Denis_Goulet",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "annamalavisi@gmail.com",
+      "href": "mailto:annamalavisi@gmail.com",
+      "pathname": "annamalavisi@gmail.com",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/2018conference/",
+      "href": "https://developmentethics.org/2018conference/",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.okanagan.bc.ca/Page38646.aspx",
+      "href": "http://www.okanagan.bc.ca/Page38646.aspx",
+      "pathname": "/Page38646.aspx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Website",
+      "href": "https://fsm2016.org/en/",
+      "pathname": "/en/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "as of June 15",
+      "href": "https://fsm2016.org/en/groupes/international-development-ethics-association/events/",
+      "pathname": "/en/groupes/international-development-ethics-association/events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "program, with changes since June 15, is available here",
+      "href": "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+      "pathname": "/announcements/idea-at-world-social-forum-2016/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/",
+      "href": "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/",
+      "pathname": "/category/annual-conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Event Abstracts.",
+      "href": "https://dl.dropboxusercontent.com/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "pathname": "/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "NASSP posting for this event may be found here",
+      "href": "https://cuportfolio.carleton.ca/view/view.php?t=i4VjGAae5bB0RUyOpIWJ",
+      "pathname": "/view/view.php",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "href": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "pathname": "/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://blog.chemonics.com/development-ethics-hiding-in-plain-site",
+      "href": "http://blog.chemonics.com/development-ethics-hiding-in-plain-site",
+      "pathname": "/development-ethics-hiding-in-plain-site",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/news-and-events/#",
+      "pathname": "/news-and-events/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fnews-and-events%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-5B",
+      "pathname": "/P1D93l-5B",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/news-and-events/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=347&subd=developmentethics&host=developmentethics.org&ref=&rand=0.2381081289307979",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [],
+  "wordCount": 1282,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nNEWS AND EVENTS\n\n2022 IDEA conference: details here.\n\nDenis Goulet Memorial Prize 2022: Plans for a call for submissions for the 2022 Congress prize(s) will be presented at the congress. Please direct queries to malavisia@wcsu.edu.\n\nDennis Goulet Memorial Prize 2018\n\nBackground: To honour the work of Denis Goulet the Board of the International Development Ethics Association offers a prize for the best undergraduate/graduate student paper. Denis Goulet had been associated with the International Development Ethics Association ever since its inception in Costa Rica in 1987. He was an inspiration to many IDEA members, in that his writing promoted a serious concern for ethical and normative issues in development over a period when mainstream thinking had no interest in this approach.\n\nThe Denis Goulet Memorial Prize is open to any student in undergraduate and graduate programs participating in the IDEA-GRETHA conference in Bordeaux, to be held from 25-27 June, 2018. If you are participating in the conference but not actually presenting you are still eligible to submit a paper. Those in a professional position but also doing a degree at a later stage in their career, or someone already involved in a Post Doc position are not eligible.\n\nThe winners of the prize will have the official recognition by IDEA of the standing of his or her essay in the eyes of the panel of IDEA judges, and judges are committed to providing feedback to improve writing towards publication as well. Whilst we cannot guarantee that it would be accepted in an academic journal, the expectation of the judges in awarding the Prize would be that the paper would be of an acceptable standard or a strong candidate for improvement towards publication.\n\nTwo Prizes are being offered this time: one for the leading essay from a student from the (political) ‘South’ and one from a student from the ‘North’, in order to reflect significant differences of educational background and opportunity. (This should be interpreted in the spirit intended: e.g. someone from the ‘South’ educated in Northern schools and universities or ones of comparable standing should treat himself or herself as from the North.). Judges can decide to reduce the prize to one in the case where an inadequate number of submissions are received from any one category.\n\nLength, format etc.: Papers should be submitted in the form of journal articles, fully referenced according to the Harvard method, between 4000-5000 words, double spaced, with 1” plus margins in A4 or letter size paper format (but capable of being sent as an email attachment in Word).\n\nAreas relevant: Just as Denis Goulet recognised that development ethics is both about theory and practice, a paper can cover either broad ethical issues about development in general, or it can also focus on particular cases, such as particular development projects or the policies of a particular country. It is NOT necessary that the paper should focus on or even mention the works of Denis Goulet, but familiarity with his writing and approach may be an advantage.\n\nDeadline: 30th July 2018. Please submit, as electronic attachments, to Anna Malavisi (annamalavisi@gmail.com), the receiver of the entries. Each candidate should submit two files, one with the body of the text including the title with no information on it to indicate the name of the candidate, but with an indication of whether it is from the South or the North (‘S’ or ‘N’); the other with a cover page which should include student’s name, address, email, programme, institutional affiliation and also region (the South or the North (S or N).\n\n*\n\nIDEA Congress, June 25-28, 2018, Bordeaux, France\n\nSee conference page: https://developmentethics.org/2018conference/\n\n*\n\nFinding the Good Conference, Kelowna, Canada, June 8-9 2018\n\nFinding the good: Sharing international development ideas and practice in the current era, is a conference with presentation and workshop components that will take place this June at the Kelowna campus of Okanagan College in British Columbia, Canada. IDEA Board members will take roles in this event: most notably, Chloe Schwenke, Director of the Global Program on Violence, Rights, and Inclusion at the International Center for Research on Women, who will join as a keynote with David Hume, Executive Director of University of Manchester’s Global Development Institute. IDEA has endorsed this conference.\n\nConference Convener: Rosalind Warner, Okanagan College\n\nhttp://www.okanagan.bc.ca/Page38646.aspx\n\n*\n\nIDEA Conference, May 17-18, 2018, Chisinau, Moldova\n\nCall for submissions deadline March 15 2018: See conference page: https://developmentethics.org/idea-moldova-marginalized-peoples-conference/ \n\n*\n\nMay 9, 2017:\n\nUniversity of Maryland Center for International Development and Conflict Management and The International Development Ethics Association present\n\nThe Role of Philosophy in International Development\n\nTuesday, May 9th, 2017, 2:00 pm – 4:00 pm Dean’s Conference Room, 2113 Chincoteague Hall, University of Maryland\n\nJoin us for an interdisciplinary discussion with development practitioners and scholars and for an introduction to the field that has come to be known as “development ethics.”\n\nJay Drydyk, Professor of Philosophy, Carleton University: “Development Ethics Comes of Age: From Denis Goulet to the Handbook of Development Ethics”\n\nLori Keleher, Associate Professor of Philosophy, New Mexico State University: “The Contributions and Limits of Philosophy in Development”\n\nDavid A. Crocker, Senior Research Scholar, Maryland School of Public Policy, UMD: “Five Foci for the Future of Development Ethics”\n\nChloe Schwenke, Director of Violence, Rights and Inclusion, International Center for Research on Women (ICRW): “Development Ethics in Practice”\n\nStacy J. Kosko, Assistant Research Professor, CIDCM, UMD: Event Chair\n\n*\n\nDecember 19th 2016 arrest of İştar Gözaydın\nA statement by the Board and further information is posted at: https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/\n\n*\n\nIDEA at World Social Forum\nMeetings held as part of the World Social Forum / Forum Social Mondial (Montreal, 9-14 August 2016.  For WSF/FSM see: Website. A draft program for IDEA events as of June 15 is available at the World Social Forum site; the final IDEA  program, with changes since June 15, is available here.\n\n*\n\n2016 IDEA Congress, Anti–Corruption and Democratic Development, Istanbul: conference cancelled\nIDEA had planned a major even for 2016: the 11th IDEA Congress, Anti–Corruption and Democratic Development, which was scheduled for this past June. In March, the IDEA board and local organizers felt it necessary to cancel the 2016 congress date, however, due to our concern that delegates may hold some uncertainty regarding personal security regarding travel to the city.\n\nIDEA and local organizers initially maintained plans for a one-year postponement date, for June of 2017. The governing board of the International Development Ethics Association has determined that plans to re-schedule this conference be suspended in light of reports in the Turkish and international press concerning recent policies and actions pursued by the government of Turkey. These have produced conditions that have greatly reduced the prospects for productive inquiry and open academic exchange.\n\n*\n\nIDEA at North American Society for Social Philosophy\nJuly 20, 2016, in advance of the International Social Philosophy Conference (North American Society for Social Philosophy, Carleton University, Ottawa, Canada, July 21-23: http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/). IDEA board member Christine Koggel, Chair.\n\nEvent Abstracts.   NASSP posting for this event may be found here.\n\n*\n\nAcademic freedom in Turkey\nThe International Development Ethics Association is a proud signatory of the January 2016 Scholars at Risks letter to Mr. Recep Tayyip Erdoğan, President of Turkey. IDEA stands with Turkish Scholars regarding matters of academic freedom.(Read the letter: https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/ )\n\n*\n\nIDEA 2014\nMatthew Regan, who attended and presented at the IDEA 2014 conference in Costa Rica, writes of the experience at: http://blog.chemonics.com/development-ethics-hiding-in-plain-site.\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

@@ -1,0 +1,1412 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/whats-on/collaboration/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:22:09.484Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/whats-on/collaboration/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/whats-on/collaboration/",
+  "title": "Collaboration – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/whats-on/collaboration/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Collaboration"
+    },
+    {
+      "level": "h1",
+      "text": "Academic, Community, Service Charities and Museums Collaborations"
+    },
+    {
+      "level": "h3",
+      "text": "Life Lines - The Remarkable Dance Company"
+    },
+    {
+      "level": "h3",
+      "text": "Threadlines - West Ox Arts Exhibition 2026"
+    },
+    {
+      "level": "h3",
+      "text": "Iraqi Women Art and War"
+    },
+    {
+      "level": "h3",
+      "text": "Magdalen College School - Reflections"
+    },
+    {
+      "level": "h3",
+      "text": "Marlborough School - Woodstock Remembers WW1: Then and Now"
+    },
+    {
+      "level": "h3",
+      "text": "'The Indian Army in the First World War: An Oxfordshire Perspective’ (June to December 2017)"
+    },
+    {
+      "level": "h3",
+      "text": "University of Oxford Lest We Forget Initiative"
+    },
+    {
+      "level": "h3",
+      "text": "Oxfordshire Remembers 2018 War Memorials Project"
+    },
+    {
+      "level": "h4",
+      "text": "School Partnerships"
+    },
+    {
+      "level": "h4",
+      "text": "Adding to County Knowledge"
+    },
+    {
+      "level": "h4",
+      "text": "Key Stage 3 and 4 Students"
+    },
+    {
+      "level": "h4",
+      "text": "Outdoor Education Centre"
+    },
+    {
+      "level": "h1",
+      "text": "How The Museum Supports the Schools and the Oxfordshire Remembers 2018 War Memorials Project"
+    },
+    {
+      "level": "h3",
+      "text": "Exhibitions and Self-guided Visits"
+    },
+    {
+      "level": "h3",
+      "text": "Loan Boxes"
+    },
+    {
+      "level": "h4",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": "Taught Sessions"
+    },
+    {
+      "level": "h4",
+      "text": "‘Your Country Needs You!’ – Key Stage 2"
+    },
+    {
+      "level": "h4",
+      "text": ""
+    },
+    {
+      "level": "h4",
+      "text": "Sources from the Great War – Key Stage 3 and 4"
+    },
+    {
+      "level": "h4",
+      "text": "'Live On' – Remembrance sessions"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "What’s On",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "https://www.sofo.org.uk/wp-content/uploads/2026/06/Edits_Life_Lines_Promo_1-1.mp4",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2026/06/Edits_Life_Lines_Promo_1-1.mp4",
+      "pathname": "/wp-content/uploads/2026/06/Edits_Life_Lines_Promo_1-1.mp4",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Use Up/Down Arrow keys to increase or decrease volume.",
+      "href": "javascript:void(0);",
+      "pathname": "void(0);",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "South East Museum Development Museum Development",
+      "href": "https://mdse.org.uk/support/case-studies/",
+      "pathname": "/support/case-studies/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "a new trail",
+      "href": "https://www.sofo.org.uk/collection/iwaw/",
+      "pathname": "/collection/iwaw/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "MCS Reflections",
+      "href": "https://vimeo.com/303085465",
+      "pathname": "/303085465",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Magdalen College School",
+      "href": "https://vimeo.com/magdalencollegeschool",
+      "pathname": "/magdalencollegeschool",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Vimeo",
+      "href": "https://vimeo.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "MCS Reflections Full Show",
+      "href": "https://vimeo.com/306388119",
+      "pathname": "/306388119",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Magdalen College School, Oxford",
+      "href": "https://vimeo.com/magdalencollegeschool",
+      "pathname": "/magdalencollegeschool",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Vimeo",
+      "href": "https://vimeo.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "download",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Poster-4.pdf",
+      "pathname": "/wp-content/uploads/2017/06/Poster-4.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Poster-4.pdf",
+      "pathname": "/wp-content/uploads/2017/06/Poster-4.pdf",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "https://oxreach.hubbub.net/p/lestweforget/",
+      "href": "https://oxreach.hubbub.net/p/lestweforget/",
+      "pathname": "/p/lestweforget/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.facebook.com/OxfordLWF/",
+      "href": "https://www.facebook.com/OxfordLWF/",
+      "pathname": "/OxfordLWF/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://twitter.com/WW1Centenary",
+      "href": "https://twitter.com/WW1Centenary",
+      "pathname": "/WW1Centenary",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "here…",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2017/06/War-Memorial-Register.xlsx",
+      "pathname": "/wp-content/uploads/2017/06/War-Memorial-Register.xlsx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "oxonmemorialproject@sofo.org.uk",
+      "href": "mailto:oxonmemorialproject@sofo.org.uk",
+      "pathname": "oxonmemorialproject@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "matthew.smaldon@gmail.com",
+      "href": "mailto:matthew.smaldon@gmail.com",
+      "pathname": "matthew.smaldon@gmail.com",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "here",
+      "href": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+      "pathname": "/oxfordshires-war-memorials/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "here",
+      "href": "https://www.sofo.org.uk/learning/",
+      "pathname": "/learning/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.oxfordhistory.org.uk/war",
+      "href": "http://www.oxfordhistory.org.uk/war",
+      "pathname": "/war",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.nationalarchives.gov.uk/education/sessions-and-resources/?time-period=early-20th-century",
+      "href": "http://www.nationalarchives.gov.uk/education/sessions-and-resources/?time-period=early-20th-century",
+      "pathname": "/education/sessions-and-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.warmemorials.org",
+      "href": "http://www.warmemorials.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.cwgc.org",
+      "href": "http://www.cwgc.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "counties.britishlegion.org.uk/counties/oxfordshire/contact-us/branches",
+      "href": "http://counties.britishlegion.org.uk/counties/oxfordshire/contact-us/branches",
+      "pathname": "/counties/oxfordshire/contact-us/branches",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "counties.britishlegion.org.uk/counties/berkshire/contact-us/branches",
+      "href": "http://counties.britishlegion.org.uk/counties/berkshire/contact-us/branches",
+      "pathname": "/counties/berkshire/contact-us/branches",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "oxonmemorialproject@sofo.org.uk",
+      "href": "mailto:oxonmemorialproject@sofo.org.uk",
+      "pathname": "oxonmemorialproject@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.hillend-oec.co.uk",
+      "href": "http://www.hillend-oec.co.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "karen.cahill@oxfordshire.gov.uk",
+      "href": "mailto:karen.cahill@oxfordshire.gov.uk",
+      "pathname": "karen.cahill@oxfordshire.gov.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Download War Memorial Registration Sheet",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2017/06/War-Memorial-Register.xlsx",
+      "pathname": "/wp-content/uploads/2017/06/War-Memorial-Register.xlsx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "education@sofo.org.uk",
+      "href": "mailto:education@sofo.org.uk",
+      "pathname": "education@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Download the Blenheim Palace Exhibition Brochure Here....",
+      "href": "http://www.blenheimpalace.com/assets/files/images/education/downloads/Flyer%20First%20World%20War%201914%20post%20exhibition.pdf",
+      "pathname": "/assets/files/images/education/downloads/Flyer%20First%20World%20War%201914%20post%20exhibition.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/support-us/ambassadors/",
+      "pathname": "/support-us/ambassadors/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/become-a-volunteer/",
+      "pathname": "/become-a-volunteer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://cafdonate.cafonline.org/1035#/DonationDetails",
+      "pathname": "/1035",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/supporters-2/",
+      "pathname": "/supporters-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/legacy/",
+      "pathname": "/legacy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/militaryfamilytree/",
+      "pathname": "/militaryfamilytree/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/whats-on/collaboration/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/06/2141207-300x225.jpg",
+      "alt": "",
+      "width": "207",
+      "height": "155",
+      "naturalWidth": 207,
+      "naturalHeight": 155,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/06/2140872-300x225.jpg",
+      "alt": "",
+      "width": "208",
+      "height": "156",
+      "naturalWidth": 208,
+      "naturalHeight": 156,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/12/20251121_1123191-300x297.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "297",
+      "naturalWidth": 300,
+      "naturalHeight": 297,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/06/Threadlines-20180731_104547-1536x726.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1211",
+      "naturalWidth": 1280,
+      "naturalHeight": 605,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/04/P5281313-300x225.jpg",
+      "alt": "Rana Ibrahim introduces an IWAW exhibition. She has an arm raised, pointing our displays on a wall behind here. Display cabinets around her contain dresses and artwork by Iraqi women.",
+      "width": "231",
+      "height": "173",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/04/P5281337-300x225.jpg",
+      "alt": "",
+      "width": "207",
+      "height": "155",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Blewitt-MCS-ORP1-217x300.png",
+      "alt": "",
+      "width": "135",
+      "height": "187",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/aussiemcs-204x300.png",
+      "alt": "",
+      "width": "204",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/marlboroughschool.png",
+      "alt": "",
+      "width": "130",
+      "height": "130",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Photos-sm-300x113.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "113",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/07/DBkdLD0W0AU9GTR-182x300.jpg",
+      "alt": "",
+      "width": "171",
+      "height": "282",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/07/DDZ6TRrXYAAt7pm-225x300.jpg",
+      "alt": "",
+      "width": "211",
+      "height": "281",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/07/Logos-combined-768x83.png",
+      "alt": "",
+      "width": "768",
+      "height": "83",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/LestWeForgetHeader-768x245.png",
+      "alt": "",
+      "width": "768",
+      "height": "245",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/OxReachLogo-300x231.png",
+      "alt": "",
+      "width": "300",
+      "height": "231",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/LestWeForget-300x248.png",
+      "alt": "",
+      "width": "300",
+      "height": "248",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/WomenofWW1_1-768x365.png",
+      "alt": "",
+      "width": "768",
+      "height": "365",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Matchbox-note-300x207.png",
+      "alt": "",
+      "width": "300",
+      "height": "207",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Otto-matchbox-300x227.png",
+      "alt": "",
+      "width": "300",
+      "height": "227",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Poster4-207x300.png",
+      "alt": "",
+      "width": "207",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/LL-logo-300x229.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "229",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/pic-for-webpage-768x432.jpg",
+      "alt": "",
+      "width": "768",
+      "height": "432",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/WOLP-students-in-trench-2014-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/Sample-photo-loan-box-2-300x169.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "169",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/Marlborough-object-handling1-300x225.png",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Blenheim1-300x160.png",
+      "alt": "",
+      "width": "300",
+      "height": "160",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/P4130016-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/Blenheim.png",
+      "alt": "",
+      "width": "476",
+      "height": "106",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/03/Five-Acres-assembly-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/friend.jpg",
+      "alt": "",
+      "width": "580",
+      "height": "200",
+      "naturalWidth": 580,
+      "naturalHeight": 200,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/08/Ambassador-sidebar-tab2.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/volunteer.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/donate.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/supporters.jpg",
+      "alt": "",
+      "width": "580",
+      "height": "200",
+      "naturalWidth": 580,
+      "naturalHeight": 200,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/07/Legacy-Sidebar-Tab-2.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/03/Oxfordshiremilitaryfamilytreesidebar.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Play",
+      "type": "",
+      "visible": true
+    },
+    {
+      "text": "Play",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "text": "Mute",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "text": "Fullscreen",
+      "type": "button",
+      "visible": true
+    }
+  ],
+  "wordCount": 3162,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nAcademic, Community, Service Charities and Museums Collaborations\nLIFE LINES - THE REMARKABLE DANCE COMPANY\n\nSoldiers of Oxfordshire Museum invited The Mill Arts Centre’s Remarkable Dance Company to design a performance in response to the Letters from Liberation exhibition, which showcases the letters that Arthur Tyler wrote to Naomi’s surviving relatives in Houston USA, after she had approached her liberators for help.\n\nBecause of this simple act of kindness, on 15 March 1946, Naomi sailed to the US to reconnect with her family and begin a new life in Houston Texas. The performance marks the 80th anniversary of this deeply moving story, of hope following one of the darkest chapters in human history.\n\nThrough this collaboration, the museum could showcase what happens when people have the freedom to enjoy the galleries, the personal narratives and the collections how\n\never they want, and how this can open up new ways of responding to deeply moving individual stories and make new connections. The promenade performance, taking place on 15 March 2026, saw the dance company navigate their way through the museum’s gallery spaces, making use of its unique features, such as the recreated trench and Horsa glider, asintegral settings for their show.\n\nIn later life, Naomi dedicated much of her time to educating younger generations about the Holocaust through her personal story, working with the Holocaust Museum Houston. Through exhibitions and initiatives like this, the museum carries this legacy to Oxfordshire.\n\n \n\nVideo Player\n00:00\n01:32\nTHREADLINES - WEST OX ARTS EXHIBITION 2026\n\nThreadlines was created for West Ox Arts Gallery members to engage with artifacts and history at the Soldiers of Oxfordshire Museum.\n\nObjects encountered on display, from the museum stores and exhibitions, including the E.H. Shepherd display in 2025, has inspired six artists from Italy, Germany and the UK to respond in a variety of media, including fabric and thread.\n\nThe title of the exhibition, Threadlines, has a range of military associations, evoking the 'threadlines' inside the barrel of a gun, to the more literal threads and stitched items, such as uniforms and kit, stitched leather, and a Japanese soldier's flag for luck and protection.\n\nThe artists created independently, but are woven together, like the past connecting us to the present.\n\n \n\n \n\nIRAQI WOMEN ART AND WAR\n\nThe Soldiers of Oxfordshire Museum has partnered with Iraqi Women Art and War (IWAW) since 2016. IWAW is a charity founded by Director Rana Ibrahim with the aim of preserving Iraqi identity and empowering Iraqi women, immigrant women, and vulnerable women by allowing them a space to share their unique skills.\n\nThe museum hosted a preview exhibition ‘Of Ordinary Things’, an art exhibition created by Rana and the group of women as well as ran family friendly workshops and a co-curated museum trail.\n\nIn October 2021 we partnered together for Little Amal Step by Step Workshop creating a puppet for Little Amal, a 3m tall puppet of a Syrian refugee child which visited Oxford as part of its journey from Syria to the UK. The following Summer in 2022, funded by the South East Museum Development Museum Development we again worked with IWAW women and their families on a gallery trail which took objects from the museum exhibitions as a stimulus for creating a new trail made from different types of material with Arabic and English captions.\n\nThroughout 2022 the museum supported IWAW as the group delivered a pop up Iraqi café. The museum currently stores and looks after the IWAW collections.\n\nMAGDALEN COLLEGE SCHOOL - REFLECTIONS\n\nIn the centenary year of the ending of the First World War we felt that it would be a powerful initiative to involve a major school in Oxford in  something which could demonstrate how the war affected families in the County. Knowing how well Magdalen College School (MCS) are able to produce stage productions we approached them with the idea of doing something to enable people to reflect on the effects, lessons and consequences of the War. We were not disappointed. The school embraced the project.\n\nTheir sixth form researched three characters from our archives and some from their own and produced the most impressive musical. One of the individuals researched was Major Guy Blewitt, DSO MC of 2nd Battalion Oxfordshire and Buckinghamshire Light Infantry. Major Blewitt (right) wrote six detailed wartime diaries filled with photographs, maps and letters. Originally from Hampshire, his father was a retired Major-General and Blewitt himself left the battalion to become a staff officer during the war. He had previously been the focus of a display in SOFO's 2014 centenary exhibit, Oxfordshire Remembers 1914 - 18 (Part I).\n\nLieutenan\nt Charles 'Aussie' Stone (left) was another chosen as a character for the production, featured heavily in the museum's permanent Airpower display. From an Oxfordshire Family, Aussie moved to Australia in 1912 and worked as a chauffeur there. He returned to England in December 1916 after joining up in Australia and undergoing training. He would soon be transferred to the 69th Australian Squadron of the Royal Flying Corps, with further training as a pilot at Queens College, Oxford and Port Meadow Aerodrome.\n\nExceeding expectations which were high from the outset, this film is a wonderful narrative of the project but the telling issue for us and from the students was the fact that most of the characters they portrayed, who suffered the war, were of a similar age to themselves and, as you will hear, made them identify well with their characters.\n\nOur thanks to the Master and all the staff and pupils involved in the project and our Museum staff who assisted in the displays and research, for delivering such a successful outcome. It is often said, that the power of the story is not in the story itself but in the telling of it. That has now been done. Enjoy the film.\n\nMCS Reflections from Magdalen College School on Vimeo.\n\nMCS Reflections Full Show from Magdalen College School, Oxford on Vimeo.\n\nMARLBOROUGH SCHOOL - WOODSTOCK REMEMBERS WW1: THEN AND NOW\n\nThe Soldiers of Oxfordshire Museum has been pleased to support The Marlborough School’s project ‘Woodstock Remembers WW1: Then and Now’, led by students Alice Hipkiss and Isabel Wheeler, with school librarian Jo Onions. SOFO staff have advised the school on the shaping of the project and provided a venue for an exhibition of the girls’ research into the men commemorated on the Woodstock Memorial. In the months ahead the Museum expects to collaborate further.\n\nThe school recently received confirmation of HLF funding to allow the project to proceed in full. A programme of workshops and events will take place, including a Family History Session at the school. In addition, local people will be encouraged to share photographs, newspaper clippings, documents, letters and photos of keepsakes, as well as family tales. With help from professionals, the information gathered will be digitally recorded and an on-line interactive archive created where everyone can access and contribute information. The archive will also allow the public to discuss, contribute, share and research information about the First World War Home Front.\n\nThe ‘Woodstock Remembers WW1: Then and Now’ project allows Alice and Isabel to go above and beyond their original Legacy 110 work.\n\nLegacy 110 is an award-winning initiative by the UCL Institute of Education and Equity which encourages students who engage in the First World War Centenary Battlefields Tour Programme to deliver a community-based First World War project.\n\nThe aim of Legacy 110 is for every participating student to create an enduring legacy by impacting upon at least 110 people within their local community. The original aim of this was that the total number of people reached by 2019 would equal 888,246, which is equivalent to the number of British and Commonwealth soldiers who fell during the First World War.\n\nAlice and Isabel have already impacted far more than 110 people! The scheme as a whole has impacted over 15,000,000 people worldwide.\n\n'THE INDIAN ARMY IN THE FIRST WORLD WAR: AN OXFORDSHIRE PERSPECTIVE’ (JUNE TO DECEMBER 2017)\n\nThe Soldiers of Oxfordshire (SOFO) Museum and the University of Oxford’s History Faculty are delighted to have jointly received a funding grant from the Arts & Humanities Research Council (AHRC). SOFO and the University will be working in partnership on the project, ‘The Indian Army in the First World War: Oxfordshire and Buckinghamshire Perspectives’, to shed new light on the British Indian army’s role in Iraq, through a unique outreach programme and a touring exhibition.\n\nThe project will bring together people of all ages from the local Sikh, Hindu and Muslim communities of Oxfordshire, to engage\n with specialist researchers from the University. It is the first project in the UK to adopt such an intergenerational and multi-faith approach in working with the local community to learn collectively about the war and explore its history from a diverse range of cultural perspectives. The volunteers and researchers will together study SOFO’s previously unseen military heritage collections relating to the Indian Army’s activities in Mesopotamia (Iraq) in 1914-18. It is hoped that this research will reveal new insights into the wartime activities and experiences of British and Indian armed forces fighting in the Middle East; as well bringing to light a forgotten aspect of local history, about Indian military collaboration with soldiers and officers from the Oxfordshire and Buckinghamshire Light Infantry.\n\nThe findings of the project will be showcased in an engaging and exciting travelling exhibition, which will highlight the shared history of British and Indian involvement in the First World War from an Oxfordshire perspective. The exhibition will explore the experiences of Indian soldiers, British officers and Iraqi prisoners of war through a collection of photographs from SOFO’s archives that have not been publicly displayed before, together with other fascinating objects from the museum. The project is also launching an appeal for members of the public (particularly from Oxfordshire’s Asian communities) to come forward with family stories or memorabilia that can be featured in the exhibition too. In doing so, the project aims to a present a fascinating range of new and perhaps challenging narratives that will connect local Oxfordshire history with wider issues of empire and war for the first time.\n\nUNIVERSITY OF OXFORD LEST WE FORGET INITIATIVE\n\nLest We Forget” was first penned by Rudyard Kipling in a 1897 poem that has become a plea not to forget past sacrifices in acts of remembrance across the United Kingdom and the Commonwealth from the end of the Great War to today. Kipling could not have known that he and his own family would later mourn the loss of his own son who lies somewhere in the soil of a Belgium field to this day.\n\nNext year will mark the centennial anniversary of the end of the Great War. Few families in Britain were unaffected by the conflict, and in thousands of attics across the country there are photographs, diaries, letters, and mementos that tell the story of a generation at war, of the loved ones who fought in the conflict, served on the home front, lost fathers, mothers and children with many living the rests of their lives in physical and mental torment. On a daily basis these stories and objects are being lost to the nation, and the memory of the sacrifice of that generation consigned to oblivion. The men, women and children of 1914-1918 deserve better and their stories must be preserved for future generations to open a window through words and images as these shine from their souls to tell us about them as people, their fears, dreams, hopes, aspirations, sacrifice, and loss.\n\nWhen calls come for military action, remember this is the cost that always has to be paid – Lest We Forget.\n\nThe Museum is proud to support the launch of this national effort to digitally capture, safeguard, and share these important personal items and reminiscences from the men and women of 1914-1918 to create a free-to-use archive acquired through local digitisation events across village halls, community centres, schools, and libraries.\n\nIf you would like to also support this initiative please download and display a copy of the poster or visit : \n\nhttps://oxreach.hubbub.net/p/lestweforget/\n\nhttps://www.facebook.com/OxfordLWF/\n\nhttps://twitter.com/WW1Centenary\n\nOXFORDSHIRE REMEMBERS 2018 WAR MEMORIALS PROJECT\n\nIn 2018 we will commemorate the end of conflict in the First World War- described at the time as the War to end all Wars.  A group has been set up with the support of the Her Majesty’s Lord Lieutenant of Oxfordshire to help young people to understand the impact of the war.  That group is running a project to make sure that the way the war affected people is not forgotten.  Across Oxfordshire, primary schools are asked to record the details on their local war memorials so that all the names can be gathered together to give us a complete list of all the people who gave their lives in war over the past hundred years. \n\nWar memorials can be found in many places, some quite hidden away. Schools can help by downloading a spreadsheet here…  and completing as much detail as they can before returning it to oxonmemorialproject@sofo.org.uk by the end of March 2018.  Please do email us at the above EMAIL address to let us know that you are joining the project, or if you have any questions.\n\nSOFO volunteer Matthew Smaldon is also carrying out research and collaborating closely with this project. If you have images of memorials or of those named; information you'd be willing to share, or are related to the named, Matthew would be very interested to hear from you at matthew.smaldon@gmail.com.\n\nSchool Partnerships\n\nWe hope that schools can work within their local schools partnerships to make sure that no memorials are missed out.  A list of all the war memorials known about in Oxfordshire is on this website here  but there may be some which are not well known.  If you find a memorial which is not on the list, please let us know as we’d be very interested to hear about it. \n\nWhen looking at local war memorials, schools may want to do their own research about the names they find.  There are lots of resources to help do that.  You can start with this website, where learning and education are covered here.  You will see how the Soldiers of Oxfordshire Museum can arrange visits and much, much more. \n\nOther helpful websites include\n\nwww.oxfordhistory.org.uk/war\n\nwww.nationalarchives.gov.uk/education/sessions-and-resources/?time-period=early-20th-century\n\nwww.warmemorials.org\n\nwww.cwgc.org\n\nAdding to County Knowledge\n\nIf you find others, please let us know and we will add them to the list.  There are also many local history groups or local books about war memorials which will have very helpful information about individual towns or communities.  Schools may also want to contact their local branch of the Royal British Legion to ask if they can help  - details are at counties.britishlegion.org.uk/counties/oxfordshire/contact-us/branches or, for southern Oxfordshire, counties.britishlegion.org.uk/counties/berkshire/contact-us/branches\n\nKey Stage 3 and 4 Students\n\nFor Key Stage 3 and 4 students we have a separate set of ideas about how WW1 may be researched:  we will be in touch with schools about those, telling you how to join in, or you can email us at oxonmemorialproject@sofo.org.uk to get in touch. \n\nOutdoor Education Centre\n\nAt Hill End Outdoor Education Centre (www.hillend-oec.co.uk ), a living history day has been set up using original practice trenches dug by local soldiers before they went to war which were preserved in Wytham woods.   There is a fantastic opportunity to spend a day living as soldiers did and studying an actual event experienced by Oxfordshire soldiers documented in local books. Schools participating in the War Memorials Project can book a tutor-led day for £250 rather than the usual cost of £360: contact karen.cahill@oxfordshire.gov.uk for more details.\n\nDownload War Memorial Registration Sheet\nHow The Museum Supports the Schools and the Oxfordshire Remembers 2018 War Memorials Project\n\nThe Museum have a range of sessions and resources to support schools taking part in the 2018 War Memorials Project.Please contact education@sofo.org.uk   01993 810214 for further details. \n\nEspecially for this project, the Soldiers of Oxfordshire Museum offers a package of support for schools studying their War Memorials at a cost of £75.00.\n\nGeneral teachers’ notes on War Memorials\nWar Memorial study worksheet\nResearch of two names from your War Memorial.\n\nTo link with the National Curriculum, for Primary Schools this will focus on the link between the men and your community, for Secondary Schools this will focus on the link between the men and the history of the First World War.\n\n \n\n \n\nEXHIBITIONS AND SELF-GUIDED VISITS\n\nInteractive First World War trench and displays containing First World War themes on permanent display.\n\nSpecial exhibition ‘Oxfordshire Remembers 1914 – 1918 Part 2’ At the Museum November 2017 – November 2018.\n\nTargeted at schools, this exhibition focusses on the experience of   Oxfordshire soldiers and families at home 1917 and 1918, including the armistice.\n\nSelf-guided visits £2.50 per student\n\nWorksheets plus a welcome and introduction £15.00\n\n \n\nLOAN BOXES\n\nBorrow a unique collection of real and replica objects to support First World War studies. Each comes in a box with teachers’ notes. Hire fee £15.00 per week.\n\nTrench Life – day to day life a British Tommy\n\nA new kind of conflict – new technology, gas attacks and home front.\n\n \nTAUGHT SESSIONS\n‘Your Country Needs You!’ – Key Stage 2\n\nUsing locally relevant sources, handling objects, film and dressing up material, this session makes First World War themes accessible for Primary School children. These sessions are also suitable for students with special needs. The session is delivered according to your needs:\n\nFull day     £6.00 per child\n\nMorning    £4.00 per child\n\nSingle workshop     £2.75 per child\n\nMorning outreach session at your school     £120.00\n\nSingle workshop outreach session at your school     £75.00\n\nFull day combined visit with Blenheim Palace ‘WW1’ £7.90 1st Apr – 31st Dec £6.60 1st Jan – 31st Mar.\n\nDownload the Blenheim Palace Exhibition Brochure Here....\n\n \nSources from the Great War – Key Stage 3 and 4\n\nUsing locally relevant written sources, photographs and objects, this session allows students to develop their analytical and interpretive skills using historical evidence in context. The session is delivered according to your needs. Prices are per student:\n\nMorning     £4.00\n\nSingle workshop     £2.75\n\nSingle workshop outreach session at your school     £75.00\n\nFull day combined visit with Blenheim Palace ‘WW1’ £7.90 1st Apr – 31st Dec £6.60 1st Jan – 31st Mar.\n\n'Live On' – Remembrance sessions\n\nAt Primary or Secondary Schools, the Museum offers workshops and school assemblies about Remembrance.\n\nSingle workshop outreach session at your school     £75.00\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

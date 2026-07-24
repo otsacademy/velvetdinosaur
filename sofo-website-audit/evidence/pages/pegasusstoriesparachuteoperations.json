@@ -1,0 +1,947 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:10:44.539Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+  "title": "Pegasus Stories: Parachute Operations – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Pegasus Stories"
+    },
+    {
+      "level": "h1",
+      "text": "PARACHUTE OPERATIONS"
+    },
+    {
+      "level": "h1",
+      "text": "D-DAY ACCOUNT BY MAJOR R. J. N. BARTLETT, OXF. & BUCKS LT. INFTY"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month: Evacuee’s Coat (Oxfordshire’s Military Heritage in 50 Objects)"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Oxford and Bucks Light Infantry",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Pegasus Bridge Story",
+      "href": "https://www.sofo.org.uk/whats-on/thepegasusbridgestorymaf/",
+      "pathname": "/whats-on/thepegasusbridgestorymaf/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Airborne",
+      "href": "https://www.sofo.org.uk/tag/airborne/",
+      "pathname": "/tag/airborne/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "D-Day",
+      "href": "https://www.sofo.org.uk/tag/d-day/",
+      "pathname": "/tag/d-day/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "DDay",
+      "href": "https://www.sofo.org.uk/tag/dday/",
+      "pathname": "/tag/dday/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Ox & Bucks",
+      "href": "https://www.sofo.org.uk/tag/ox-bucks/",
+      "pathname": "/tag/ox-bucks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire and Buckinghamshire Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "pathname": "/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Parachute Regiment",
+      "href": "https://www.sofo.org.uk/tag/parachute-regiment/",
+      "pathname": "/tag/parachute-regiment/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Pegasus Bridge",
+      "href": "https://www.sofo.org.uk/tag/pegasus-bridge/",
+      "pathname": "/tag/pegasus-bridge/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "PegasusStories",
+      "href": "https://www.sofo.org.uk/tag/pegasusstories/",
+      "pathname": "/tag/pegasusstories/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Second World War",
+      "href": "https://www.sofo.org.uk/tag/second-world-war/",
+      "pathname": "/tag/second-world-war/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "WW2",
+      "href": "https://www.sofo.org.uk/tag/ww2/",
+      "pathname": "/tag/ww2/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: The Pegasus Bridge Story – A Thank You To All Our Supporters",
+      "href": "https://www.sofo.org.uk/the-pegasus-bridge-story-a-thank-you-to-all-our-supporters/",
+      "pathname": "/the-pegasus-bridge-story-a-thank-you-to-all-our-supporters/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Pegasus Stories: Captain Priday’s Account",
+      "href": "https://www.sofo.org.uk/pegasusstoriesbrianpriday/",
+      "pathname": "/pegasusstoriesbrianpriday/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "pathname": "/ootm-evacueecoat/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Duncan Parsons",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/#respond",
+      "pathname": "/pegasusstoriesparachuteoperations/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fpegasusstoriesparachuteoperations%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/pegasusstoriesparachuteoperations/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/Bartlett-taken-after-Arnhem-via-Pegasus-Archive.png",
+      "alt": "Major Bartlett (Credit: The Pegasus Archive)",
+      "width": "185",
+      "height": "168",
+      "naturalWidth": 185,
+      "naturalHeight": 168,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/Bartlett-taken-after-Arnhem-via-Pegasus-Archive.png",
+      "alt": "Major Bartlett (Credit: The Pegasus Archive)",
+      "width": "185",
+      "height": "168",
+      "naturalWidth": 185,
+      "naturalHeight": 168,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/Bartlett-taken-after-Arnhem-via-Pegasus-Archive.png",
+      "alt": "Major Bartlett (Credit: The Pegasus Archive)",
+      "width": "185",
+      "height": "168",
+      "naturalWidth": 185,
+      "naturalHeight": 168,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/D-Day-Map-2nd-Battalion-OBLI-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1865",
+      "naturalWidth": 1280,
+      "naturalHeight": 932,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/52ndCaptureofbridges1944.png",
+      "alt": "",
+      "width": "973",
+      "height": "716",
+      "naturalWidth": 973,
+      "naturalHeight": 716,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/01/Childs-evacuation-coat-scaled.jpg",
+      "alt": "",
+      "width": "1459",
+      "height": "2560",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/2030178-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/ede4445374058997b8f0ab3d69d767c9?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 2093,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n01\nFeb\nBYDUNCAN PARSONS// OXFORD AND BUCKS LIGHT INFANTRY\nPegasus Stories: Parachute Operations\nPegasus Stories\n\nFollowing the success of The Pegasus Bridge Story, a  Lockdown Lecture produced in co-operation between the Army Flying Museum and Soldiers of Oxfordshire Museum, we're posting a series of blogs which include accounts of the events surrounding D-Day and the capture of the bridges from individuals involved - many written in the months that followed.\n\nIn this first Pegasus Story is an account of Parachute operations in the early hours of D-Day by Major R. J. N. Bartlett, taken from the Oxfordshire & Buckinghamshire Light Infantry Journal for November 1944. As with a number of other prominent officers serving with Parachute regiments during the Second World War, such Major Digby Tatham-Warter, Major Bartlett had roots in the Ox & Bucks.\n\nAt the time he was serving with 7th Battalion (Light Infantry) Parachute Regiment, but had previously been assigned to 1st Battalion Oxfordshire and Buckinghamshire Light Infantry before the outbreak of War in 1939 and then the 2nd Battalion until 1942.\n\nHis account offers a different perspective of the events surrounding the capture of the Caen Canal and Orne bridges led by Major John Howard, including his own experiences preparing for the operation and the fighting to defend the bridges and in the days that followed.\n\nHis account ends shortly after he was ‘knocked out’, sustaining wounds that would put him in hospital until January 1945. He returned to service with the 2nd Battalion Parachute Regiment, but wouldn’t serve overseas again until joining them in Palestine the following year.\n\nMajor Bartlett in a photograph taken after Arnhem, from The Pegasus Archive\n\nPARACHUTE OPERATIONS\nD-DAY ACCOUNT BY MAJOR R. J. N. BARTLETT, OXF. & BUCKS LT. INFTY\n\nAs you probably know the Parachute Bn. is composed almost entirely of Light lnfantry men and riflemen. I was lucky enough to have three officers, six serjeants and thirty-four men of the Regiment in my company.\n\nTowards the end of May [1944] we moved to a transit camp where we were locked up and rigid security measures were taken, and during that time the Regiment was briefed for the operation from air photos, models and maps all of which were quite excellent and gave every man a very clear picture of the ground over which he was to operate. I also had an opportunity of seeing John Howard, with whose company I was to work on reaching the ground. Briefly the plan was as follows: The Parachute Brigade, with a company of Colborne's [2nd Battalion, Oxfordshire and Buckinghamshire Light Infantry, nicknamed after John Colborne, who led the 52nd at Waterloo] attached, was to secure and hold the bridges over the Caen Canal and River Orne, in order to prevent the Germans from attacking the seaborne invasion from the east flank. John Howard's company in gliders was to gate-crash the bridges and the Parachute Battalion was to drop half an hour afterwards and relieve John Howard on the bridges and occupy a bridgehead position in the village of Benouville until relieved by the seaborne forces advancing from Ouistreham. The battalion was also prepared to capture the bridges, should anything go amiss with John Howard's party.\n\nThe operation was to take place at night. On Saturday, June 3rd, we all went up to the airfield, fitted parachutes, loaded containers on to the aircraft, chattered with our respective air crews and generally found our way about the place. On Sunday the show was postponed for one day on account of weather, but we moved off early Monday morning to a rest camp just outside the aerodrome. We slept for a few hours during the afternoon and the Padre held a service at 18 hours; then we moved off to the aerodrome in lorries to draw our 'chutes. The weather was good and the \"Met\" report was \"favourable\" and everyone was in good spirits. We drew our 'chutes and had a cup of tea and then got into our lorries and were driven off to our aircraft. I have seldom heard such a noise as we drove round the aerodrome - lorries loaded with men bulging with all sorts of equipment, singing themselves hoarse and blowing all sorts of musical instruments.\n\nWe took off in ‘Stirling’ aircraft at 2315 hours and were duly dropped at 0050 hours on June 6th. John Howard's party was due to land at 0020 hours. My company was due to be first on the dropping zone and go at best speed and link up with John Howard. The flight was uneventful though there was a certain amount of light flak as we crossed the French coast and my pilot, for some reason best known to himself, had not chosen the right place and instead of finding myself on dropping zone which consisted of cornfield I was put down in very close country and landed in an apple orchard. The rest of the company got down on the correct dropping zone although slightly more scattered than was hoped and the battalion, having found the bridges had been captured intact by John Howard's company, moved straight across and took up the bridgehead positions in the village of Benouville. There was a certain amount of opposition from the ground and some casualties were sustained on dropping. One of my aircraft which consisted of one half of my company's headquarters (a duplicate having gone in another plane under Bob Keen, my second in command) I only found my servant and my signal corporal on the ground out of eighteen men. Due to the close nature of the country the others were spread out and as there were a certain number of enemy about they did not go round shouting to find out where the others were, but pushed off as quickly as they could. There was a half moon and I reckoned that two were about 3+ miles north-east of the dropping zone, so we set out to get back to the battalion. There were a number of German light flak positions in the woods near and quite a few people about on the roads, and after bumping into one or two parties, I decided it was best to work down through the woods.\n\nEventually about 1000 hrs on 'D’Day having heard all the noise of invasion at 7.30 I met a part of another Parachute Bn and found out exactly where I was. The ground in between my position and the bridges was covered by the enemy so that it was not possible to get back to the battalion straight away, but later in the afternoon when things became more fluid we tried to get through in a jeep, but were ambushed and eventually got back to where we started from. At nine o'clock in the evening the Air Landing Brigade [This would have included the rest of 2nd Battalion, Oxfordshire and Buckinghamshire Light Infantry not involved in the coup de main operation) came in in gliders which was a wonderful sight; hundreds of these gliders came in dead on time and exactly the right place, and in spite of quite heavy flak I only saw four of the tug aircraft shot down and all the gliders landed safely. As everyone seemed fairly preoccupied with the gliders I had another go at getting back to the battalion, and eventually rejoined them on the bridges at ten o'clock that evening.\n\nI found that they had had a very busy day and had suffered quite a number of casualties, all the officers in one company being killed or wounded and also the Padre was killed when the Germans overran the R.A.P. where they shot most of the stretcher bearers and wounded. The enemy were elements of a panzer division who came up in armoured carriers supported by some tanks. As our mortars and Vickers machine guns had not arrived, we could not keep them at any distance, and all fighting took place at close quarters in the village. We of course had no supporting artillery. We managed to knock out several tanks and killed a great number of Germans and altogether beat off seven attacks. The Commandos under Lovat came through our position from the sea and over the bridges at about four o'clock in the afternoon. When they came through both sides seemed to stop the battle and they were able to march through practically unhindered. Once they had passed over the bridges to carry out their particular task the battle was resumed as if almost by mutual consent of both parties. Eventually at about 1030 hours that night the seaborne troops arrived, being some hours late due to stiff opposition on the beaches. At about midnight, having handed over the bridges to the seaborne troops, we went into reserve to the village Ranville, where we got a few hours sleep and next day we took up positions in reserve by the village, which we held for several days. During this time two companies of the battalion with the help of the 13/18th Hussars, who were in Shermans, cleared some Germans out of some woods on the edge of the village and accounted for a large number of them. These Germans were part of a force which had attempted to counterattack the bridges. On June 11th we moved south a couple of miles into the village Herouvillette and took it over from the Colborne's, who had had some quite hard fighting in the village and had repelled a German counterattack with tanks. My company was the first into the village and I saw quite a number of the officers of the Regiment before they moved out and they all seemed in good spirits. We remained in this village for five days during which time we suffered a number of casualties from shelling which was heavy and regular, and also beat off an attack by part of the Recce Battalion of the 12th Panzer Division. On the 16th, we moved a couple of miles eastwards to take over a sector in the wooded country by the Boisderameut.\n\nHere life consisted chiefly of patrolling and several small attacks on a company scale in order to clear out pockets of enemy which were becoming troublesome. The weather was not up to much and life was by no means as comfortable as it had been back in the village. On the evening of the 20th during a small attack, I got knocked out, so I am afraid that is about all I can tell you of our party; but I understand that soon after I left they went back and had some rest and a decent wash, which was the first opportunity they had had since landing, and now they are fighting as infantry up on the coastal sector.\n\n Tags: Airborne, D-Day, DDay, Ox & Bucks, Oxfordshire and Buckinghamshire Light Infantry, Parachute Regiment, Pegasus Bridge, PegasusStories, Second World War, WW2\n\nPrevious:\nThe Pegasus Bridge Story – A Thank You To All Our Supporters\nNext:\nPegasus Stories: Captain Priday’s Account\nRelated posts\nOBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)\n\nEvacuee’s Coat from our Oxfordshire’s Military Heritage in 50 Objects Exhibition By Geraldine Howell Object photography by Colin Morris Philip Williams’ woollen, fully-lined children’s coat would certainly have satisfied the requirement for evacuees to take with them a warm winter coat as they moved from their homes to safer locations elsewhere, often in the countryside. This smart, yet also sensible and practical design, very much reflected the type of coat…\n\nOBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION\n\nFebruary’s Object of the Month follows a Valentine’s Day theme! Volunteer Geraldine has selected a First World War pin cushion, shaped like a heart, it has quite a story behind it! Sweetheart Pin Cushion By Geraldine Howell Object photography by Colin Morris   This sweetheart pin cushion was made during the First World War by a member of the Oxfordshire and Buckinghamshire Light Infantry. Sweetheart cushions were not unknown before…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

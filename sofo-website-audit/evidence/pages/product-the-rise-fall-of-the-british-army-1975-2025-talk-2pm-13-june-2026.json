@@ -1,0 +1,928 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:16:21.686Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+  "title": "The Rise & Fall of the British Army 1975 – 2025 | Talk | 2pm, 13 June 2026 – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "The Rise & Fall of the British Army 1975 – 2025 | Talk | 2pm, 13 June 2026"
+    },
+    {
+      "level": "h2",
+      "text": "Related products"
+    },
+    {
+      "level": "h2",
+      "text": "Meet Me at the Soldiers Museum | 2pm – 4pm | Thursday 25 June 2026"
+    },
+    {
+      "level": "h2",
+      "text": "Bubbles & Blooms In the Garden | 6.30 – 8pm | Thurs 9 July 2026 |"
+    },
+    {
+      "level": "h2",
+      "text": "Iraqi Women, Art & War Pop Up Cafe | 2pm – 5pm | Sunday 21 June 2026"
+    },
+    {
+      "level": "h2",
+      "text": "Meet Me at the Soldiers Museum | 2pm – 4pm | Thursday 16 July 2026"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Books",
+      "href": "https://www.sofo.org.uk/product-category/sofobookshop/",
+      "pathname": "/product-category/sofobookshop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Gifts",
+      "href": "https://www.sofo.org.uk/product-category/sofogiftsshop/",
+      "pathname": "/product-category/sofogiftsshop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "52nd Light Infantry",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=books&tag=52nd%20Light%20Infantry",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Battle of Britain",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=books&tag=Battle%20of%20Britain",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Churchill",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=books&tag=Churchill",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "First World War",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=books&tag=First%20World%20War",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Military History",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=books&tag=Military%20History",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category?cat=gifts&tag=",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/sofo-shop-category",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "sofo-events",
+      "href": "https://www.sofo.org.uk/product-category/sofo-events/",
+      "pathname": "/product-category/sofo-events/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Meet Me at the Soldiers Museum | 2pm – 4pm | Thursday 25 June 2026 £0.00",
+      "href": "https://www.sofo.org.uk/product/meet-me-at-the-soldiers-museum-2pm-4pm-thursday-25-june-2026/",
+      "pathname": "/product/meet-me-at-the-soldiers-museum-2pm-4pm-thursday-25-june-2026/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/?add-to-cart=17599",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bubbles & Blooms In the Garden | 6.30 – 8pm | Thurs 9 July 2026 | £35.00",
+      "href": "https://www.sofo.org.uk/product/bubbles-blooms-sofo-x-ssafa-celebratory-garden-party/",
+      "pathname": "/product/bubbles-blooms-sofo-x-ssafa-celebratory-garden-party/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/?add-to-cart=17310",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Iraqi Women, Art & War Pop Up Cafe | 2pm – 5pm | Sunday 21 June 2026 £0.00",
+      "href": "https://www.sofo.org.uk/product/iraqi-women-art-war-pop-up-cafe-2pm-5pm-sunday-21-june-2026/",
+      "pathname": "/product/iraqi-women-art-war-pop-up-cafe-2pm-5pm-sunday-21-june-2026/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/?add-to-cart=17446",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Meet Me at the Soldiers Museum | 2pm – 4pm | Thursday 16 July 2026 £0.00",
+      "href": "https://www.sofo.org.uk/product/meet-me-at-the-soldiers-museum-2pm-4pm-thursday-16-july-2026/",
+      "pathname": "/product/meet-me-at-the-soldiers-museum-2pm-4pm-thursday-16-july-2026/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Add to cart",
+      "href": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/?add-to-cart=17602",
+      "pathname": "/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/06/sofo-shop.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 420,
+      "naturalHeight": 180,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/10/Capture.png",
+      "alt": "The Rise & Fall of the British Army 1975 – 2025 | Talk | 2pm, 13 June 2026",
+      "width": null,
+      "height": null,
+      "naturalWidth": 382,
+      "naturalHeight": 551,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/05/Meet-Me-at-the-Soldiers-Museum-Mrs-Miniver-screening2026-300x300.png",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/06/SOFO-MUSEUM-PARK-STREET-WOODSTOCK-OX20-1SN-1-300x300.png",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/P5281425-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/03/Meet-Me-at-the-Museum-older-peoples-drop-in-Thursday-16-July-2-4pm.-Click-to-find-out-more-300x300.png",
+      "alt": "Meet Me at the Museum - older people's drop in Thursday 16 July, 2-4pm. Click to find out more",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://www.sofo.org.uk/product/the-rise-fall-of-the-british-army-1975-2025-talk-2pm-13-june-2026/",
+      "method": "post",
+      "text": "The Rise & Fall of the British Army 1975 - 2025 | Talk | 2pm, 13 June 2026 quantity Add to Cart",
+      "inputs": [
+        {
+          "type": "number",
+          "name": "quantity",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "The Rise & Fall of the British Army 1975 - 2025 | Talk | 2pm, 13 June 2026 quantity",
+          "id": "quantity_6a2858748a025",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Add to Cart",
+      "type": "submit",
+      "visible": true
+    },
+    {
+      "text": "Close (Esc)",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Share",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Toggle fullscreen",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Zoom in/out",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Previous (arrow left)",
+      "type": "",
+      "visible": false
+    },
+    {
+      "text": "Next (arrow right)",
+      "type": "",
+      "visible": false
+    }
+  ],
+  "wordCount": 419,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nBooks\nGifts\nThe Rise & Fall of the British Army 1975 – 2025 | Talk | 2pm, 13 June 2026\n£12.00\n\n50 available\nThe Rise & Fall of the British Army 1975 - 2025 | Talk | 2pm, 13 June 2026 quantity\nAdd to Cart\n\nSaturday afternoon talk with Brigadier (Retd) Ben Barry OBE\n\nOver the last 50 years, society, technology, the character of conflict and the British Army itself have all change greatly. From a low point in the 1970s, the Army’s war fighting capability increased during the 1980s in the face of a prospective war with the Soviet Union. It then continued to evolve through conflicts in Iraq and Afghanistan, right up to the current challenges the Army faces today.\n\nIn his book “The Rise and Fall of the British Army 1975-2025” Ben Barry draws on his own personal experience, as well as a wide range of new sources to set out a new interpretation the Army’s recent evolution that challenges previous narratives.\n\nBen Barry is Fellow for Defence and Military Analysis at the International Institute for Strategic Studies. Before this, he served in the Army, where he commanded an armoured infantry battalion and a multinational brigade on United Nations and Nato operations in Bosnia. He is the author of ‘Blood, Metal and Dust: How Victory Turned into Defeat in Afghanistan and Iraq’.\n\nYour talk ticket includes museum gallery admission on the day.\n\nDate: 13-June-2026\nTime: 14:00\n\nLocation: Soldiers of Oxfordshire Museum (The Briefing Room)\nType: digital\n\nRelated products\nMeet Me at the Soldiers Museum | 2pm – 4pm | Thursday 25 June 2026\n£0.00 Add to cart\nBubbles & Blooms In the Garden | 6.30 – 8pm | Thurs 9 July 2026 |\n£35.00 Add to cart\nIraqi Women, Art & War Pop Up Cafe | 2pm – 5pm | Sunday 21 June 2026\n£0.00 Add to cart\nMeet Me at the Soldiers Museum | 2pm – 4pm | Thursday 16 July 2026\n£0.00 Add to cart\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

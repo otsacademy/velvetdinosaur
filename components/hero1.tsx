@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- block supports arbitrary media sources */
 import type { CSSProperties, ReactNode } from "react"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 
@@ -6,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 export interface Hero1Props {
   badge?: string
@@ -132,7 +132,15 @@ export function Hero1({
 
           {imageSlot ? imageSlot : null}
           {!imageSlot && image ? (
-            <img src={image.src} alt={image.alt} className="aspect-video w-full rounded-md object-cover" />
+            <OptimizedImage
+              src={image.src}
+              alt={image.alt}
+              width={1200}
+              height={675}
+              className="aspect-video w-full rounded-md object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority
+            />
           ) : null}
         </div>
       </div>

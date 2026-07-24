@@ -1,0 +1,765 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/vevj80/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:21:18.277Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/vevj80/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/vevj80/",
+  "title": "Oxfordshire’s VE & VJ Day Stories – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/vevj80/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Oxfordshire’s VE & VJ Day Stories"
+    },
+    {
+      "level": "h1",
+      "text": "From Conflict to Peace: Celebrating VE & VJ Day"
+    },
+    {
+      "level": "h2",
+      "text": "Exhibition opens 1 April - 18 November 2025"
+    },
+    {
+      "level": "h3",
+      "text": "Do you have an Oxfordshire VE or VJ Day story to share?"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/vevj80/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/VE-NIGHT-scaled.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 2560,
+      "naturalHeight": 2011,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/03/1945-05-1BUCKS-DELFT-HOLLAND-8-5-45-e1742554131621-1024x702.jpg",
+      "alt": "1st Bucks Battalion during the liberation of Delft, Holland, 8 May 1945",
+      "width": "1024",
+      "height": "702",
+      "naturalWidth": 1024,
+      "naturalHeight": 702,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/03/1945-05-MAY-WISMAR-e1742554306204.jpg",
+      "alt": "2nd Battalion form the Guard of Honour, Wismar, 5 May 1945",
+      "width": "603",
+      "height": "444",
+      "naturalWidth": 603,
+      "naturalHeight": 444,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/11/Italian-and-German-POWs-were-a-common-sight-working-on-farms-across-Oxfordshir.-these-men-were-photographed-while-working-on-a-farm-in-Bampton-1946-1024x620.png",
+      "alt": "Italian and German POWs were a common sight working on farms across Oxfordshir. these men were photographed while working on a farm in Bampton (1946)",
+      "width": "1024",
+      "height": "620",
+      "naturalWidth": 1024,
+      "naturalHeight": 620,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://www.sofo.org.uk/vevj80/",
+      "method": "post",
+      "text": "Your Name Your Email Message Contact Us",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "your-name-213792296367334863128d4437301232",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Your Name",
+          "id": "sow-contact-form-field-your-name-213792296367334863128d4437301232",
+          "required": false
+        },
+        {
+          "type": "email",
+          "name": "your-email-213792296367334863128d4437301232",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Your Email",
+          "id": "sow-contact-form-field-your-email-213792296367334863128d4437301232",
+          "required": false
+        },
+        {
+          "type": "textarea",
+          "name": "message-213792296367334863128d4437301232",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Message",
+          "id": "sow-contact-form-field-message-213792296367334863128d4437301232",
+          "required": false
+        },
+        {
+          "type": "hidden",
+          "name": "instance_hash",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        },
+        {
+          "type": "hidden",
+          "name": "_wpnonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "_wpnonce",
+          "required": false
+        },
+        {
+          "type": "hidden",
+          "name": "_wp_http_referer",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Contact Us",
+      "type": "",
+      "visible": true
+    }
+  ],
+  "wordCount": 994,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nFrom Conflict to Peace: Celebrating VE & VJ Day\nExhibition opens 1 April - 18 November 2025\n\n1st Bucks Battalion during the liberation of Delft, Holland, 8 May 1945\n\nMarking the 80th anniversaries of Victory in Europe and Victory of Japan Day, as well as those of many other key events from the final stages of the Second World War, From Conflict to Peace: Celebrating VE and VJ Day will go on display from Tuesday, 1 April to Tuesday, 18 November 2025.\n\nThe exhibition covers celebrations across the county itself, but also the experiences of Oxfordshire people serving in the armed forces throughout 1945, and for many, beyond the end of the war.\n\nVE and VJ Day were both celebrated across the country in 1945, including many events in Oxfordshire. Women working for MI5 at Blenheim Palace recall hearing the bells of Woodstock’s St Mary Magdalene Church ringing out for the occasion. In Oxford, locals recall street celebrations, with ‘people dancing in line from St Giles to Carfax’.\n\nWith the announcement of the Japanese surrender on 15 August 1945 and the effective end of the war, a two day national holiday was announced and similar celebrations were seen across Oxfordshire, a bonfire was lit in St Clements with an effigy of Hitler, while Christ Church cathedral hosted thanksgiving services, also addressing the moral issue of the atomic bomb.\n\nFor many Oxfordshire people serving in the armed forces, including the two county regiments, The Oxfordshire & Buckinghamshire Light infantry and Oxfordshire Yeomanry, 1945 had seen a series of tough battles before hostilities would come to an end, and the prospect of many new challenges in the wake of victory in Europe and over Japan.\n\nThe Yeomanry, then serving within the Royal Artillery, would witness some of the darkest aspects of the conflict. 251 ‘Banbury’ Battery were sent to Singapore to defend the island against the Japanese, but when it fell in 1942 they became Prisoners of War. Held captive in terrible conditions and forced to work on the infamous Burma-Siam Railway, they were not freed until the Japanese surrendered, over three years later. 249 Battery had remained in the UK until October 1944, but then moved with the Allied advance from France, through Belgium and on to the Netherlands. Here, on 15 April 1945, they would be amongst the first British forces to enter Bergen-Belsen concentration camp. The ordinary soldiers were faced with terrible conditions at the camp that they were neither expecting nor prepared for. Surviving prisoners were malnourished, while thousands of unburied dead and poor sanitation had caused the spread of deadly diseases like Typhus. Despite the liberators’ best efforts, around 14,000 held at the camp would still die following liberation, as a result of the conditions they had been subjected to.\n\nThe 2nd Battalion, Oxfordshire and Buckinghamshire Light Infantry, are most famed for their role in the capture of the Caen Canal and Orne river bridges on D-Day, but also took part in Operation Varsity on 24 March 1945. This was the largest single-day airborne operation in history, with the aim of holding and crossing the Rhine further into Germany. Though ultimately successful, it took a toll on the forces involved, as gliders carrying the men into action took on anti-aircraft fire, with many breaking up before landing. Major John Tillet’s D-Company had boarded their gliders ‘140 strong’ but ‘was down to 63’ by the time they were relieved. The experience was the same across their battalion, with half the men killed or injured.\n\n2nd Battalion form the Guard of Honour, Wismar, 5 May 1945\n\nAs the end of the war in Europe approached, their Division received special orders to race to Wismar, Germany, and head off the Soviet advance and a potential invasion of Denmark. At Wismar they would form the Guard of Honour for the meeting of Field Marshal Montgomery and the Soviet Marshal Rokossovsky on 7 May 1945. With the war over, 2nd Oxf & Bucks still had challenges ahead, as they were posted to Palestine in October 1945. Just after they arrived, the terrorist offensive in opposition to British rule began with a wave of bomb attacks.\n\nThe 2nd Battalion were not the only part of the county regiment with a special role to play in the latter stages of the war, as 1st Buckinghamshire Battalion were tasked with securing military and industrial sites across Holland and Germany. Gathering vital information and infrastructure for allied intelligence, they were part of Target, or ‘T’, Force. These new units were the brainchild of James Bond creator, Ian Fleming.\n\nSerjeant Harry Carr, one of just 210 men from the 1st Bucks to have made it home after defending the retreat to Dunkirk in 1940, was part of the T-Force unit when they entered Holland, liberating the Dutch town of Delft on 8 May 1945. With food shortages in the Dutch countryside, Delft was badly affected. Carr recalled, ‘we pooled our own rations of bread, stew and flour for our Battalion cooks to supply these poor kids with one meal a day’.\n\nThe new exhibition focuses on personal accounts of the people who were there, both soldiers and civilians.\n\nItalian and German POWs were a common sight working on farms across Oxfordshire. These men were photographed while working on a farm in Bampton (1946)\n\n \n\nDO YOU HAVE AN OXFORDSHIRE VE OR VJ DAY STORY TO SHARE?\nYour Name\nYour Email\nMessage\nContact Us\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

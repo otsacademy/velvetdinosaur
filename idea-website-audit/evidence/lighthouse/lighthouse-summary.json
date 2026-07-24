@@ -1,0 +1,165 @@
+{
+  "capturedAt": "2026-05-21T14:02:08.554Z",
+  "reports": [
+    {
+      "file": "home-desktop.report.json",
+      "requestedUrl": "https://developmentethics.org/",
+      "fetchTime": "2026-05-21T13:59:38.853Z",
+      "scores": {
+        "performance": 85,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.5 s",
+        "largestContentfulPaint": "2.7 s",
+        "speedIndex": "0.9 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "0 ms"
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 1
+        }
+      ],
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,924 KiB",
+        "largestContentfulPaintElement": null
+      }
+    },
+    {
+      "file": "home-mobile.report.json",
+      "requestedUrl": "https://developmentethics.org/",
+      "fetchTime": "2026-05-21T13:59:12.923Z",
+      "scores": {
+        "performance": null,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "firstContentfulPaint": "2.0 s",
+        "largestContentfulPaint": "15.8 s",
+        "speedIndex": "8.2 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": null
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 1
+        }
+      ],
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,913 KiB",
+        "largestContentfulPaintElement": null
+      }
+    },
+    {
+      "file": "joining-idea-2-desktop.report.json",
+      "requestedUrl": "https://developmentethics.org/joining-idea-2/",
+      "fetchTime": "2026-05-21T14:00:13.370Z",
+      "scores": {
+        "performance": 85,
+        "accessibility": 93,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "firstContentfulPaint": "0.4 s",
+        "largestContentfulPaint": "2.7 s",
+        "speedIndex": "0.4 s",
+        "cumulativeLayoutShift": "0.049",
+        "totalBlockingTime": "0 ms"
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 1
+        }
+      ],
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,862 KiB",
+        "largestContentfulPaintElement": null
+      }
+    },
+    {
+      "file": "joining-idea-2-mobile.report.json",
+      "requestedUrl": "https://developmentethics.org/joining-idea-2/",
+      "fetchTime": "2026-05-21T13:59:56.922Z",
+      "scores": {
+        "performance": 65,
+        "accessibility": 94,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "firstContentfulPaint": "1.8 s",
+        "largestContentfulPaint": "15.4 s",
+        "speedIndex": "10.5 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "10 ms"
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "itemCount": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 1
+        }
+      ],
+      "diagnostics": {
+        "totalByteWeight": "Total size was 2,838 KiB",
+        "largestContentfulPaintElement": null
+      }
+    },
+    {
+      "file": "officers-board-mobile.report.json",
+      "requestedUrl": "https://developmentethics.org/officers-board/",
+      "fetchTime": "2026-05-21T14:00:44.376Z",
+      "scores": {
+        "performance": 66,
+        "accessibility": 96,
+        "best-practices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "firstContentfulPaint": "1.5 s",
+        "largestContentfulPaint": "23.4 s",
+        "speedIndex": "8.6 s",
+        "cumulativeLayoutShift": "0",
+        "totalBlockingTime": "0 ms"
+      },
+      "failedBinaryAudits": [
+        {
+          "id": "image-aspect-ratio",
+          "title": "Displays images with incorrect aspect ratio",
+          "itemCount": 4
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "itemCount": 1
+        }
+      ],
+      "diagnostics": {
+        "totalByteWeight": "Total size was 5,455 KiB",
+        "largestContentfulPaintElement": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,965 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:20:50.588Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/",
+  "title": "The Man Behind the Medals: Alfred Wilcox VC – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "The Man Behind the Medals"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month (Christmas 2025): Princess Mary Gift Tin"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "collection",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DAVID RUSHTON",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "pathname": "/author/david-rushton/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "pathname": "/category/oxford-and-bucks-light-infantry/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "VC'S",
+      "href": "https://www.sofo.org.uk/category/images-vcs/",
+      "pathname": "/category/images-vcs/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research Service",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Alfred Wilcox",
+      "href": "https://www.sofo.org.uk/tag/alfred-wilcox/",
+      "pathname": "/tag/alfred-wilcox/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "First World War",
+      "href": "https://www.sofo.org.uk/tag/first-world-war/",
+      "pathname": "/tag/first-world-war/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Great War",
+      "href": "https://www.sofo.org.uk/tag/great-war/",
+      "pathname": "/tag/great-war/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Man Behind the Medals",
+      "href": "https://www.sofo.org.uk/tag/man-behind-the-medals/",
+      "pathname": "/tag/man-behind-the-medals/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Men Behind the Medals",
+      "href": "https://www.sofo.org.uk/tag/men-behind-the-medals/",
+      "pathname": "/tag/men-behind-the-medals/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxf. & Bucks",
+      "href": "https://www.sofo.org.uk/tag/oxf-bucks/",
+      "pathname": "/tag/oxf-bucks/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxf. and Bucks LI",
+      "href": "https://www.sofo.org.uk/tag/oxf-and-bucks-li/",
+      "pathname": "/tag/oxf-and-bucks-li/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire and Buckinghamshire Light Infantry",
+      "href": "https://www.sofo.org.uk/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "pathname": "/tag/oxfordshire-and-buckinghamshire-light-infantry/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "VC",
+      "href": "https://www.sofo.org.uk/tag/vc/",
+      "pathname": "/tag/vc/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Victoria Cross",
+      "href": "https://www.sofo.org.uk/tag/victoria-cross/",
+      "pathname": "/tag/victoria-cross/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: Unveiling the New Oxfordshire Gallantry Board",
+      "href": "https://www.sofo.org.uk/unveiling-the-new-oxfordshire-gallantry-board/",
+      "pathname": "/unveiling-the-new-oxfordshire-gallantry-board/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: MBTM Blog: The Real Charles Bourne Part 1",
+      "href": "https://www.sofo.org.uk/therealcharlesbournepart1/",
+      "pathname": "/therealcharlesbournepart1/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "pathname": "/objectofthemonthchristmas2025/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "David Rushton",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "pathname": "/author/david-rushton/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/#respond",
+      "pathname": "/tmbtm-alfred-wilcox-vc/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Ftmbtm-alfred-wilcox-vc%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DAVID RUSHTON",
+      "href": "https://www.sofo.org.uk/author/david-rushton/",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "visible": true
+    },
+    {
+      "text": "OXFORD AND BUCKS LIGHT INFANTRY",
+      "href": "https://www.sofo.org.uk/category/oxford-and-bucks-light-infantry/",
+      "visible": true
+    },
+    {
+      "text": "VC'S",
+      "href": "https://www.sofo.org.uk/category/images-vcs/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/tmbtm-alfred-wilcox-vc/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/09/wilcoxvc-547x400.png",
+      "alt": "",
+      "width": "547",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/09/wilcoxvc-300x300.png",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/09/wilcoxvc-185x300.png",
+      "alt": "",
+      "width": "185",
+      "height": "300",
+      "naturalWidth": 185,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/09/OBLI5268-252x300.jpg",
+      "alt": "",
+      "width": "252",
+      "height": "300",
+      "naturalWidth": 252,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/09/Victoria_Cross-416x1024.jpg",
+      "alt": "",
+      "width": "416",
+      "height": "1024",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/2030178-1536x1152.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 1280,
+      "naturalHeight": 960,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2025/12/4300-1536x1152.jpg",
+      "alt": "",
+      "width": "2048",
+      "height": "1536",
+      "naturalWidth": 1280,
+      "naturalHeight": 960,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/3c4d6454008475408cae145f8ec264a1?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 1070,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n30\nSep\nBYDAVID RUSHTON// COLLECTION, OXFORD AND BUCKS LIGHT INFANTRY, VC'S\nThe Man Behind the Medals: Alfred Wilcox VC\nThe Man Behind the Medals \n\nIn this blog series, SOFO Museum’s Research volunteers look at the stories behind some of the medal sets in the museum’s collection, from those that can be seen on a visit in our dedicated Medals display, to some of those that are still tucked away in the archive.\n\nWhile medals will tell you a little bit about a soldier’s service, it’s only with further research that their full story can be revealed. SOFO’s Research volunteers respond to enquiries we receive through our Research Service, helping people find out more about their relatives who served in the county regiments, and raising funds to support the museum in the process. Using a combination of the museum’s records and those available elsewhere, they piece together stories like this one.\n\n \n\nAlfred Wilcox was born on the 16th December 1884 in Aston, Birmingham, the son of William & Sarah Wilcox. Alfred’s father William was a well-known jeweller, and it was a large family with 7 boys and 6 girls being born. By 1911, Alfred was living away from home in Leyton, Essex, and was working as a diamond mounter. In 1913 he married Ellen Louise Clarke in Aston, and the couple had two children – Leonard & Doris. Alfred was a keen sportsman, especially in cycle racing and in running, being a member of Birchfield Harriers.\n\nAlfred Wilcox VC\n\nAt some point before the war, Alfred Wilcox served in the 1st Volunteer Bn of the Royal Warwicks (as Pte 2147), volunteering into the Royal Bucks Hussars (Pte 205762) on 25th March 1915. He subsequently transferred into the 2/1st Bucks (Pte 285242) and joined them on the Western Front in December 1917. At this stage of the war, the 2/1st Bucks had taken part in the disastrous attack on Fromelles, and then taken part in the battle of the Ancre and Langemarck in 1917. Losses had been high, and no doubt a trained soldier such as Pte Wilcox would have been very welcome\n\n \n\nAs part of the larger re-organisation of the Army, the 2/1st Bucks were disbanded in February 1918 and some 300 men were transferred to the 2/4th Ox & Bucks LI, with Alfred Wilcox being one of them. Promotion to L/Cpl in April 1918 was quickly followed with promotion to Cpl in Sept 1918.  The 2/4th had suffered during the German offensive in April 1918, but retreated in good order, being moved to the Bethune sector to recover & re-train after this, with a draft of 431 men bringing the Bn up to strength.\n\n \n\nOn the 12th Sept 1918, the 2/1st were with 184 Bgd in 61 Div, serving near Laventie in France. Taking part in a local action, the flank platoon of A Coy were held up attacking a strongpoint known as Junction Post, with heavy machine gun fire pinning the attackers down. L/Cpl Wilcox with just 4 men rushed the nearest gun, killed the crew and disabled the gun. They were then counter-attacked, but Wilcox fought them off using captured German grenades.\n\n \n\nDespite by now only having 1 man with him, and with their rifles jammed with mud, L/Cpl Wilcox worked his way up the German trench, putting four enemy machine guns out of action by bombing them and bayoneting some of the opposition. Faced with a strong German counterattack, and with no serviceable weapons, Alfred Wilcox decided on a withdrawal and safely led his only remaining man back to the British Lines.  He was awarded the VC.\n\nAlfred Wilcox VC (right) and Edward Brooks VC (left), both awarded while serving with the Oxfordshire & Buckinghamshire Light Infantry\n\nFollowing this attack, the 2/4th followed up on the retreating Germans, reaching east of Cambrai by November 1918. On the 2nd November, there was heavy fighting with the 2/4th suffering 56 casualties – one of whom was Cpl Wilcox who was shot in the right foot. He was treated in hospital in Britain and was discharged from the Army on 2nd May 1919, with a Silver War Badge and a small pension for his wound.\n\n \n\nBy 1939, Alfred & Ellen were living in Sutton Coldfield, where Alfred worked as a transport manager, but in September 1940 he was awarded a licence to run a pub – “The Small Arms” – in Muntz St, Birmingham. He died in March 1954.\n\nAwards: Victoria Cross, British War Medal, Victory Medal, Silver War Badge\n\nVictoria Cross (VC). The VC could be awarded to all ranks of the services and civilians for gallantry in the presence of the enemy.\n\n \n\n Tags: Alfred Wilcox, First World War, Great War, Man Behind the Medals, Men Behind the Medals, Oxf. & Bucks, Oxf. and Bucks LI, Oxfordshire and Buckinghamshire Light Infantry, VC, Victoria Cross\n\nPrevious:\nUnveiling the New Oxfordshire Gallantry Board\nNext:\nMBTM Blog: The Real Charles Bourne Part 1\nRelated posts\nOBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION\n\nFebruary’s Object of the Month follows a Valentine’s Day theme! Volunteer Geraldine has selected a First World War pin cushion, shaped like a heart, it has quite a story behind it! Sweetheart Pin Cushion By Geraldine Howell Object photography by Colin Morris   This sweetheart pin cushion was made during the First World War by a member of the Oxfordshire and Buckinghamshire Light Infantry. Sweetheart cushions were not unknown before…\n\nOBJECT OF THE MONTH (CHRISTMAS 2025): PRINCESS MARY GIFT TIN\n\nDecember’s Object of the Month had to be a Christmas special! Volunteer Geraldine has selected the iconic First World War gift sent out to troops overseas, researching the boxes themselves and where the men of the Oxfordshire & Buckinghamshire Light Infantry would have been spent their Christmas in 1914. Princess Mary’s Gift Boxes By Geraldine Howell Her Royal Highness The Princess Victoria Alexandra Alice Mary was the only daughter of…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

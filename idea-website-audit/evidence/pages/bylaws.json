@@ -1,0 +1,295 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/bylaws/",
+    "lastmod": "2023-07-31T06:25:38+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:13.217Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/bylaws/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/bylaws/",
+  "title": "Bylaws – IDEA",
+  "metaDescription": "Adopted June 21, 1992 and amended 21 July, 2006 INFORMAL ADDENDA: That IDEA “interpret the word ‘meeting’ within existing by-laws to include asynchronized digital meetings within a defined time frame set by the secretary.” (26 June 2018 Business meeting minutes, motion presented and passed) Article I: Name The name of this organization shall be the…",
+  "canonical": "https://developmentethics.org/bylaws/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Bylaws"
+    },
+    {
+      "level": "h2",
+      "text": "Adopted June 21, 1992 and amended 21 July, 2006"
+    },
+    {
+      "level": "h3",
+      "text": "Article I: Name"
+    },
+    {
+      "level": "h3",
+      "text": "Article II: Purpose"
+    },
+    {
+      "level": "h3",
+      "text": "Article III: Membership"
+    },
+    {
+      "level": "h3",
+      "text": "Article IV: Officers of IDEA"
+    },
+    {
+      "level": "h3",
+      "text": "Article V: Advisory Council"
+    },
+    {
+      "level": "h3",
+      "text": "Article VI: Diversity of Representation"
+    },
+    {
+      "level": "h3",
+      "text": "Article VII: Ratification and Changes of IDEA Bylaws"
+    },
+    {
+      "level": "h3",
+      "text": "Article VIII: Dissolution of the Organization"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/bylaws/#content",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/bylaws/#",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fbylaws%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-mu",
+      "pathname": "/P1D93l-mu",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/bylaws/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=1394&subd=developmentethics&host=developmentethics.org&ref=&rand=0.4932097723204055",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [],
+  "wordCount": 1230,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nBYLAWS\nAdopted June 21, 1992 and amended 21 July, 2006\n\nINFORMAL ADDENDA:\n\nThat IDEA “interpret the word ‘meeting’ within existing by-laws to include asynchronized digital meetings within a defined time frame set by the secretary.”\n\n(26 June 2018 Business meeting minutes, motion presented and passed)\n\nArticle I: Name\n\nThe name of this organization shall be the INTERNATIONAL DEVELOPMENT ETHICS ASSOCIATION (hereafter, IDEA). \n\nArticle II: Purpose\n\nThe purpose of IDEA is to promote the understanding of ethical issues arising in connection with international development and social change, and to facilitate an international cross-disciplinary dialogue concerning alternative development models, policies, and practices. As part of this purpose IDEA encourages and promotes teaching, research and practice in development ethics. \n\nArticle III: Membership\nThe membership of IDEA for any given year is open to anyone who subscribes to the purposes of the organization and whose application for membership has been accepted. Those applying from richer countries and professionals from poorer countries are expected to pay membership dues; whilst those who are not in a position to pay dues may become ‘contributing’ members with all the same rights as dues-paying members.\nThe annual dues and their structure shall be determined by a simple majority vote of the Executive Board.\nPayment of annual dues or confirmation of contributing membership will convey the privileges of (a) attending all meetings of IDEA upon payment of meeting registration fees, and (b) voting on all issues set for vote by the general membership at business meetings of IDEA.\nArticle IV: Officers of IDEA\nThe officers of IDEA shall be selected from among members of the organization, with the selection process being initiated at the first international meeting held after the Bylaws have been adopted. Subsequent elections will occur concurrent with every international meeting.\nThe existing Executive Board, seated for any given year in which an election is to take place, shall develop a slate of nominees to be presented at the meeting at which the election is to take place. Offices will include: President, Vice President, Secretary, Treasurer, and in addition there will be eight elected Members-At-Large of the Executive Board. In addition, eight Members-At-Large of the Executive Board will be appointed by the incoming President with majority approval by the elected incoming Members-At-Large and the then elected Officers. The latter eight appointments will be made subsequent to, but within six weeks of, the election of officers. All officers elected to the Executive Board Members-At-Large, whether elected or appointed, shall serve for the period beginning with their election and closing with the subsequent election. If a vacancy on the Executive Board occurs, the vacancy will be filled by presidential appointment for the remaining portion of the term.\nA person will normally hold the presidency for one or two terms (a term being the period between two international meetings, open to and advertised to all IDEA members), and normally for not longer than five years, and would only be eligible for re-election beyond that period in the absence of another suitable candidate. The person who takes up the Vice-Presidency should normally do so in the expectation that he or she will be available to take on the presidency in the subsequent term. This does not preclude either the possibility of the Vice-President not being able subsequently to take on that role or the possibility that another candidate could be proposed.\nThe Executive Board shall have the power to create other offices which may be filled either by members of the Executive Board or by other IDEA members.\nIn the event that the Presidency should become vacant (e.g. by resignation, change of bylaws, or demise) the office will be filled by the remaining members of the Executive Board in order of precedence, which is: (1) President, (2) Vice President, (3) Secretary, (4) Treasurer, (5) elected Executive Board Members, and (6) appointed Executive Board Members, with the order of precedence being determined within the latter two categories by length of membership in IDEA, with the greatest length conveying the highest rank, the next greatest length the next highest rank, etc.\nThe President of IDEA will assume the responsibility of arranging at least one meeting every four years open to all members of IDEA.\nArticle V: Advisory Council\n\nThe President shall have an Advisory Council made up of former Presidents who consent to this and such distinguished international persons whom The President wishes to appoint. The President shall appoint this advisory Council upon consultation with the Executive Board. Whilst the President is not required to keep the distinguished international persons whom his or her predecessor(s) appointed, the expectation will be that at least most of them will be retained for the sake of continuity and continued international recognition. \n\nArticle VI: Diversity of Representation\nIn keeping with the intellectually inclusive character of IDEA, officers of the Executive Board will strive to nominate for each slate of nominations, persons for the Executive Board who belong to clearly diverse educational, institutional, national, ethnic and gender categories. Where this ideal is not realized in the slate of nominations presented at the electoral meeting, the President will endeavor to provide balance by means of appointments.\nChairs of all sessions of meetings held under the auspices of IDEA and IDEA itself will endeavor to invite inclusive primary discussion by recognizing members from differing national, ethnic, and gender categories.\nThe President shall make a reasonable effort to insure that at least three women shall serve on each successive Executive Board.\nArticle VII: Ratification and Changes of IDEA Bylaws\nThese bylaws, whether in their original form offered for ratification or modified at subsequent times, shall be deemed effective when approved (1) by a simple majority vote of Executive Board members present and voting at a duly announced meeting of the Executive Board and (2) by a 2/3 vote of IDEA members at a general meeting. (N.b. the original bylaws were approved by 2/3 vote at a duly announced business meeting of IDEA for the ratification of the bylaws on 21st June, 1992.)\nChanges in IDEA bylaws may be proposed by members of the Executive Board. Any such proposed changes must be made public to the IDEA membership through the IDEA website and email with sufficient time for comments and suggestions to be made before the meeting at which a vote is taken.\nChanges in IDEA bylaws also may be proposed by members of IDEA who are not members of the Executive Board by providing the Executive Board with a written copy of the proposed changes accompanied by a petition endorsing the proposed changes signed by at least 5 members of IDEA. Any such proposed changes must be made public to the IDEA membership through the IDEA website and email with sufficient time for comments and suggestions to be made before the meeting at which a vote is taken.\nArticle VIII: Dissolution of the Organization\n\nIn the event of the dissolution of the Association, its officers shall, after paying all the liabilities of IDEA, distribute all remaining assets to promote activities that are exclusively charitable and educational in nature. \n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

@@ -63,7 +63,7 @@ async function renderHeroImageSlot(
         <div className="absolute inset-[11%] rounded-[2rem] bg-[radial-gradient(circle_at_top,color-mix(in_oklch,var(--vd-primary)_18%,transparent),transparent_62%)] blur-3xl" />
         <div className="relative animate-vd-float [animation-delay:220ms]">
           <PixelImage
-            src="/dinosaur.webp"
+            src="/dinosaur-512.webp"
             alt="Velvet Dinosaur mascot assembling from grayscale to full color"
             grid="8x8"
             grayscaleAnimation

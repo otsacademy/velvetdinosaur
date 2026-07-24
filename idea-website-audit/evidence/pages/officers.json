@@ -1,0 +1,780 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/officers/",
+    "lastmod": "2023-07-08T20:21:37+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:44.866Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/officers/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/officers/",
+  "title": "Officers, Board & Bylaws – IDEA",
+  "metaDescription": "IDEA Officers and Board (2023) President: Lori Keleher (New Mexico State University, USA) Lori Keleher, Ph.D. is a Professor of Philosophy at New Mexico State University, USA. Her research focus is development ethics, with particular interest in agency, empowerment, and the capabilities approach. She is developing integral human development ethics. With Jay Drydyk, she is…",
+  "canonical": "https://developmentethics.org/officers/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Officers, Board & Bylaws"
+    },
+    {
+      "level": "h3",
+      "text": "IDEA Officers and Board (2023)"
+    },
+    {
+      "level": "h3",
+      "text": "President: Lori Keleher (New Mexico State University, USA)"
+    },
+    {
+      "level": "h3",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": "Vice President: Stacy Kosko (University of Maryland, USA)"
+    },
+    {
+      "level": "h3",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": "Treasurer: Matthew Regan (University of Maryland, USA)"
+    },
+    {
+      "level": "h3",
+      "text": "Secretary: Jack Simpson"
+    },
+    {
+      "level": "h3",
+      "text": "Executive Board"
+    },
+    {
+      "level": "h3",
+      "text": "Vandra Harris Agisilaou (RMIT University, Melbourne Australia)"
+    },
+    {
+      "level": "h3",
+      "text": "Steve Esquith (Michigan State University, USA)"
+    },
+    {
+      "level": "h3",
+      "text": "Oscar Garza-Vázquez (Universidad de las Américas Puebla, México)"
+    },
+    {
+      "level": "h3",
+      "text": "Christine Koggel (Carleton University, Canada)"
+    },
+    {
+      "level": "h3",
+      "text": "Laurent Parrot (Montpellier University, France)"
+    },
+    {
+      "level": "h3",
+      "text": "Eduardo Rueda (Universidad Nacional de Colombia)"
+    },
+    {
+      "level": "h3",
+      "text": "Amandine Sabourin (European Center for Development Policy)"
+    },
+    {
+      "level": "h3",
+      "text": "Chloe Schwenke (President and Founder of the Center for Values in International Development)"
+    },
+    {
+      "level": "h3",
+      "text": "Mario Solís Umaña (Universidad de Costa Rica)"
+    },
+    {
+      "level": "h3",
+      "text": "Eddy Souffrant (University of North Carolina at Charlotte, USA)"
+    },
+    {
+      "level": "h3",
+      "text": "Welore Tamboura (Institute for Technology at the University of Letters and Human Sciences of Bamako (ULSHB), Mali)"
+    },
+    {
+      "level": "h3",
+      "text": "Johannes Waldmüller (ZSI – Zentrum für Soziale Innovation GmbH)"
+    },
+    {
+      "level": "h3",
+      "text": "Diana Velasco (Universitat Politecnica de Valencia, Spain)"
+    },
+    {
+      "level": "h3",
+      "text": "Advisory Board"
+    },
+    {
+      "level": "h3",
+      "text": "Past Presidents"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a comment"
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/officers/#content",
+      "pathname": "/officers/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2014/09/dsc_7328_cropped-small.jpg",
+      "pathname": "/wp-content/uploads/2014/09/dsc_7328_cropped-small.jpg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2012/04/steve_esquith1_ks.jpg",
+      "pathname": "/wp-content/uploads/2012/04/steve_esquith1_ks.jpg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "The Ethics of Water: From Commodification to Common Ownership",
+      "href": "https://www.bloomsbury.com/ca/ethics-of-water-9781350348813/",
+      "pathname": "/ca/ethics-of-water-9781350348813/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2014/09/koggel-small.jpg",
+      "pathname": "/wp-content/uploads/2014/09/koggel-small.jpg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "https://annamalavisi.com",
+      "href": "https://annamalavisi.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/officers/p1110545/",
+      "pathname": "/officers/p1110545/",
+      "rel": "attachment wp-att-740",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2014/09/schwenke.jpg",
+      "pathname": "/wp-content/uploads/2014/09/schwenke.jpg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Alternautas",
+      "href": "https://journals.warwick.ac.uk/index.php/alternautas/indexd",
+      "pathname": "/index.php/alternautas/indexd",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2014/09/des-gasper.png",
+      "pathname": "/wp-content/uploads/2014/09/des-gasper.png",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2012/04/davidcrocker2.png",
+      "pathname": "/wp-content/uploads/2012/04/davidcrocker2.png",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2012/04/nigeldower.jpg",
+      "pathname": "/wp-content/uploads/2012/04/nigeldower.jpg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2011/07/asuncion-st-clair.jpeg",
+      "pathname": "/wp-content/uploads/2011/07/asuncion-st-clair.jpeg",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2014/09/palmer.jpeg",
+      "pathname": "/wp-content/uploads/2014/09/palmer.jpeg",
+      "rel": "attachment wp-att-325",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "National Endowment for the Humanities Institutes focused upon development ethics",
+      "href": "http://nehinstitute.philosophy.msu.edu/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Journal of Global Ethics",
+      "href": "http://www.tandfonline.com/toc/rjge20/current",
+      "pathname": "/toc/rjge20/current",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://sites.allegheny.edu/philo/faculty/eric-palmer/",
+      "href": "http://sites.allegheny.edu/philo/faculty/eric-palmer/",
+      "pathname": "/philo/faculty/eric-palmer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/officers/#",
+      "pathname": "/officers/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fofficers%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-P",
+      "pathname": "/P1D93l-P",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/officers/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/officers/#",
+      "pathname": "/officers/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/officers/#",
+      "pathname": "/officers/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/officers/#",
+      "pathname": "/officers/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/unknown.jpeg?w=127&h=159",
+      "alt": "Unknown",
+      "width": "127",
+      "height": "159",
+      "naturalWidth": 127,
+      "naturalHeight": 158,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/dsc_7328_cropped-small.jpg?w=119",
+      "alt": "DSC_7328_cropped-small",
+      "width": "119",
+      "height": "125",
+      "naturalWidth": 119,
+      "naturalHeight": 125,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2012/04/steve_esquith1_ks.jpg",
+      "alt": "steve_esquith1_ks",
+      "width": "113",
+      "height": "167",
+      "naturalWidth": 101,
+      "naturalHeight": 150,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/dsc_0210.jpg",
+      "alt": "DSC_0210",
+      "width": "161",
+      "height": "108",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/udlap_og1.jpg",
+      "alt": "UDLAP_OG1",
+      "width": "142",
+      "height": "142",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/koggel-small.jpg?w=199",
+      "alt": "Koggel-small",
+      "width": "98",
+      "height": "147",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/photo-on-10-6-17-at-11-55-am-2.jpg",
+      "alt": "Anna Malavisi",
+      "width": "178",
+      "height": "118",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2018/09/p1110545.jpg",
+      "alt": "",
+      "width": "105",
+      "height": "158",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/image0.jpeg",
+      "alt": "image0",
+      "width": "137",
+      "height": "137",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/schwenke.jpg",
+      "alt": "schwenke",
+      "width": "126",
+      "height": "126",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/mario-solis-foto.jpeg",
+      "alt": "mario-solis-foto",
+      "width": "167",
+      "height": "111",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/140.jpg",
+      "alt": "140",
+      "width": "157",
+      "height": "104",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/des-gasper.png?w=150",
+      "alt": "Des Gasper",
+      "width": "174",
+      "height": "116",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2012/04/davidcrocker2.png",
+      "alt": "davidcrocker2",
+      "width": "152",
+      "height": "178",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2012/04/nigeldower.jpg",
+      "alt": "NigelDower",
+      "width": "154",
+      "height": "203",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/01/2020-03a-drydyk.jpeg",
+      "alt": "2020 03a DRYDYK",
+      "width": "151",
+      "height": "173",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2011/07/asuncion-st-clair.jpeg",
+      "alt": "Asuncion St.Clair",
+      "width": "130",
+      "height": "173",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2014/09/palmer.jpeg?w=150",
+      "alt": "",
+      "width": "154",
+      "height": "148",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=51&subd=developmentethics&host=developmentethics.org&ref=&rand=0.7293769025403799",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/wp-comments-post.php",
+      "method": "post",
+      "text": "",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "comment_post_ID",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_post_ID"
+        },
+        {
+          "type": "hidden",
+          "name": "comment_parent",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "comment_parent"
+        },
+        {
+          "type": "hidden",
+          "name": "highlander_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "highlander_comment_nonce"
+        },
+        {
+          "type": "hidden",
+          "name": "verbum_show_subscription_modal",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "akismet_comment_nonce",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "akismet_comment_nonce"
+        },
+        {
+          "type": "textarea",
+          "name": "ak_hp_textarea",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "ak_js",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "ak_js_1"
+        }
+      ]
+    },
+    {
+      "action": "https://developmentethics.org/officers/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 3134,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nOFFICERS, BOARD & BYLAWS\n\nIDEA Officers and Board (2023)\nPresident: Lori Keleher (New Mexico State University, USA)\n\nLori Keleher, Ph.D. is a Professor of Philosophy at New Mexico State University, USA. Her research focus is development ethics, with particular interest in agency, empowerment, and the capabilities approach. She is developing integral human development ethics. With Jay Drydyk, she is the co-editor of The Routledge Handbook of Development Ethics (2019). With Stacy Kosko, she is the co-editor of Agency and Democracy in Development Ethics (Cambridge, 2019). With Des Gasper, she is the co-editor of a special issue of the Journal of Global Development on L.-J. Lebret and his work (2021). Keleher is a co-lead-editor of The Journal of Global Ethics. Keleher has served on the Executive Council and as a Fellow for the Human Development Capability Association and as a founder and co-coordinator for the Ethics and Development Thematic Group and the North American Regional Network. She served as director of policy and on the senior advisory council for the Center for Values in International Development. She has professional experience in Africa, Asia, Europe, and North and South America. \n\nVice President: Stacy Kosko (University of Maryland, USA)\n\nDr. Stacy J. Kosko is Associate Director of the Minor in International Development and Conflict Management (MIDCM) and an Assistant Research Professor in the Center for International Development and Conflict Management in the Department of Government and Politics, as well as a Distinguished Fellow with the Academy for Innovation and Entrepreneurship. Dr. Kosko completed her PhD under David A. Crocker at the University of Maryland School of Public Policy, concentrating in international development. During her time in that program, she also served as the Associate Director of the College Park Scholars Public Leadership program. Previously, she was the Deputy Director of The Advocacy Project, a Washington D.C.-based human rights organization. In addition, her educational background includes an MS in Foreign Service and international conflict management from Georgetown University, with a certificate in Refugee and Humanitarian Emergencies, and a BA in English and French and BS in Film from Syracuse University. She has consulted for the World Bank and several Roma human rights organizations in Central and Eastern Europe. Among her primary research interests are development ethics, human rights, and severely marginalized populations. In addition to serving on the Executive Board of the International Development Ethics Association since 2009, she is also a co-Coordinator of the Human Rights Thematic Group of the Human Development and Capability Association.\n\nTreasurer: Matthew Regan (University of Maryland, USA)\nSecretary: Jack Simpson\n\nJack Simpson holds a PhD in Political Science and has served on the executive of the HDCA as well as on the IDEA board.  He is a successful entrepreneur of three arts based businesses. His research is grounded in the good life in the city. \n\nExecutive Board\nVandra Harris Agisilaou (RMIT University, Melbourne Australia)\nSteve Esquith (Michigan State University, USA)\n\nStephen L. Esquith has been working on ethical problems in developing countries since 1990 when he was a senior Fulbright scholar in Poland. His research and teaching since that time has focused on democratic transitions in post-conflict situations. He is the author of Intimacy and Spectacle (Cornell, 1994), a critique of classical and modern liberal political philosophy, and The Political Responsibilities of Everyday Bystanders (Pennsylvania State University Press, 2010) on mass violence and democratic political education. He spent the academic year 2005-06 teaching and working with colleagues at the University of Bamako, Mali as a senior Fulbright scholar.  In  2006 he became Dean of the new Residential College in the Arts and Humanities. He  is currently working with colleagues in Mali on several related projects on post-conflict dialogue and reconciliation, including a new study abroad program on this topic in Mali beginning in summer 2014.\n\nCameron Fioret (Environment and Climate Change Canada)\n\nCameron Fioret is a Visiting Scholar in the University of Michigan’s Water Center in the Graham Sustainability Institute, a Virtual Visiting Research Fellow at United Nations University-CRIS, and a Policy Analyst at Environment and Climate Change Canada. He completed his PhD at the University of Guelph under the supervision of Dr. Monique Deveaux, Canada Research Chair in Ethics and Global Social Change. His research interests revolve around issues of ownership and property, commodification, and distributive justice concerning natural resources. He has published articles in Action Research, Alternate Routes, Ethics, Policy & Environment, Geoforum, and Informal Logic. His dissertation, The Ethics of Water: From Commodification to Common Ownership, will be published by Bloomsbury in Summer 2023.\n\nOscar Garza-Vázquez (Universidad de las Américas Puebla, México)\n\nOscar Garza holds a PhD in International Development from the University of Bath (UK), a Master in Research in International Development from the same institution, and a Bachelor’s degree in Economics from Universidad de las Americas Puebla (Mexico). His academic work focuses on the area of development ethics, where he does research at the interface between ethics, economics, development studies and public policy. His two main areas of research are: (1) Development, wellbeing and justice from the perspective of the capabilities approach and (2) Development and the common good. Other areas of interest include the application of the capability approach to assess poverty, inequality, and for public policy, as well as the intersection between welfare economics and theories of distributive justice. He has published and presented his research in different journals and specialized books on these topics, and he is co-editor (with Mathias Nebel, and Clemens Sedmak) of a recent book titled ‘A common good approach to development: collective dynamics of development processes’, Open Book Publishers (2022). He is also a fellow of the Human Development and Capability Association (HDCA), and of the Institute for the Promotion of the Common Good (IPBC), and a full-time professor at Universidad de las Américas Puebla (UDLAP).\n\nChristine Koggel (Carleton University, Canada)\n\nChristine M. Koggel is Professor of Philosophy at Carleton University, Ottawa, Canada and Harvey Wexler Chair in Philosophy, Bryn Mawr College, USA. Her book, Perspectives on Equality: Constructing a Relational Theory, shapes the foundation for her research interests in the areas of moral theory, practical ethics, social and political theory, and feminism. She is the editor of Moral Issues in Global Perspective; co-editor of Contemporary Moral Issues and Care Ethics: New Theories and Applications; and author of numerous journal articles and chapters in edited collections. Her current research in development ethics explores concepts and issues relevant to a global context.\n\nAnna Malavisi (Western Connecticut State University, USA)\n\nAnna Malavisi is Assistant Professor in the Department of Philosophy & Humanistic Studies at Western Connecticut State University. She has a PhD in philosophy from Michigan State University. Her dissertation, Global development and its discontents: rethinking the theory and practice, is a critical analysis of global development from an ethical and feminist epistemology perspective. Her philosophical interests include: practical and global ethics, feminist philosophy/epistemology, social and political thought, environmental philosophy and the philosophy of violence. She has a Master of Health and International Development and has worked for 16 years in Latin America in the NGO sector in areas of development practice and management. Personal website: https://annamalavisi.com\n\nLaurent Parrot (Montpellier University, France)\n\nLaurent Parrot graduated in Economics from the University of Pantheon – Sorbonne, Paris, France. He holds a B.Sc. in Economic History, an  M.A. in Business Administration, and a Ph.D. in Economic Development. He currently works at the French agricultural research and international cooperation organization (CIRAD). He operates in the French Indies, Sub-Saharan Africa and in the Indian Ocean. He is co-editor of two books in 2008 at L’Harmattan “Agricultures et development urbain en Afrique Subsaharienne” and several paper in the fields of agroecology. His current interests include development ethics through the lens of the working alliance approach\n\nEduardo Rueda (Universidad Nacional de Colombia)\nAmandine Sabourin (European Center for Development Policy)\n\nAmandine specializes in international development cooperation, including the effectiveness principles, the role of CSOs and local governments, EU policy-making and EU inter-institutional relations, currently as a policy officer with ECDPM. Before joining ECDPM, Amandine worked as a policy and advocacy officer at the Council of European Municipalities and Regions for the PLATFORMA coalition. She also worked in two French embassies, where she coordinated exchanges of public sector expertise between France and the Republic of Moldova, and France and Poland. Amandine is a graduate from Sciences Po Bordeaux and holds a PhD in EU development policy from Université des Antilles et de la Guyane. She is also a scientific collaborator at the Institute for European Studies of the Université Libre de Bruxelles.\n\nChloe Schwenke (President and Founder of the Center for Values in International Development)\n\nDr. Chloe Schwenke is the president and founder of the Center for Values in International Development. She is an international public policy advisor, development ethicist and practitioner, human rights scholar and activist, researcher, and educator. Her career has focused on LGBTQI+ issues, inclusive development, gender equality/equity, democracy strengthening, and on human rights. Her career covers project experience in over 40 countries, including more than 15 years living and working in the Global South. Prior to her current role, she served as a research director at the International Center for Research on Women, leading their research on social inclusion, gender based violence, male engagement in women’s empowerment, and child marriage. Earlier, she served as vice president for global programs at Freedom House, following her time as a political appointee at USAID under the Obama Administration, where she was Senior Advisor on democracy, human rights, and governance in sub-Saharan Africa, and on LGBTQI+ issues globally. At USAID, Chloe was the first openly transgender woman ever to serve as a senior political appointee in any of the federal foreign affairs agencies.\n\nChloe received her Ph.D. in public policy at the School of Public Policy at the University of Maryland at College Park, where she was Alumna of the Year for 2013. She earned her MA degree at Georgetown. She is currently an adjunct professor at both the University of Maryland, and at the McCourt School at Georgetown, She has written two books, as well as chapters in ten edited volumes.\n\nMario Solís Umaña (Universidad de Costa Rica)\n\nMario Solís is is a professor of Philosophy at the University of Costa Rica (UCR). He received his PhD from the University of Essex, United Kingdom. He has been a visiting researcher at Uppsala University, Sweden (2014-2015) and a Visiting Research Associate at UCL, London (2015-2016). He currently teaches moral and political philosophy at the School of Philosophy, UCR, and is director of the Graduate Program in Philosophy, UCR.  Dr. Solis’s academic interests focus on Global Justice, Human Rights, Normativity and Critical Theory in the Americas. He has recently published a book entitled Justicia Situacional: Racionalidad, Normatividad y Teoría Crítica Latinoamericanista (Situational Justice: Rationality, Normativity and Latin American Critical Theory), Editorial UCR, 2016.  He is also a member of the Research Committee of INIF (Instituto de Investigaciones Filosóficas, UCR) and a member of ALFAn (Asociación Latinoamericana de Filosofía Analítica).\n\nEddy Souffrant (University of North Carolina at Charlotte, USA)\nWelore Tamboura (Institute for Technology at the University of Letters and Human Sciences of Bamako (ULSHB), Mali)\nJohannes Waldmüller (ZSI – Zentrum für Soziale Innovation GmbH)\n\nJohannes M. Waldmüller has previously hold research professorships for International Environmental and Development Politics at Universidad de Las Américas (UDLA) and FLACSO Ecuador (2016-2021). He is currently Senior Expert for Climate Change and Socio-Environmental Transitions at the Centre for Social Innovation, Vienna (Austria), and PhD committee member at Escuela Politécnica Nacional (EPN) of Ecuador. In his research, he focuses on interdisciplinary R&I, vulnerability and development ethics around climate mitigation and adaptation. He holds a PhD in Sociology/Anthropology of Development from the Graduate Institute of International and Development Studies, Geneva, and Masters in International Studies and Intercultural Philosophy. Johannes has co-authored two books on territoriality and disaster prevention/reconstruction in the global South, as well as several journal articles and book chapters in the field of critical sustainability studies and environmental justice. He is the co-founder and editor of Alternautas .\n\nDiana Velasco (Universitat Politecnica de Valencia, Spain)\nAdvisory Board\n\nDes Gasper studied economics and international development at the universities of Cambridge and East Anglia in Britain, and worked through the 1980s in Southern Africa. He teaches public policy analysis, governance and discourse analysis at the International Institute of Social Studies in The Hague, a graduate institute of Erasmus University Rotterdam, as professor of human development, development ethics and public policy. His publications include The Ethics of Development (Edinburgh University Press, 2004; Sage India, 2005), and Development Ethics (co-editor, A.L. St. Clair; Ashgate, 2010). In recent years much of his research has been on international migration and on the ethics of climate change, using a human security framework and looking at the value-choices, explicit and hidden, that guide research studies, policy analyses and practices in these areas.\n\nJean-Luc Dubois holds a doctorate in economics from the University of Versailles St Quentin-en-Yvelines (UVSQ). He joined the French Institute of Research for Development (IRD) in the late 1993 and co-directs since 2010, the International Research Unit (IRU) ‘Resilience’, which is a joint venture between IRD and CIRES (Ivorian Center for Economic and Social Research) with some fifty researchers from the North and the South. He is in charge of the course ‘Socially sustainable development and North-South relations’ (2007-2013) for the Master on ‘Solidarity economy and market logics’ at the Catholic University of Paris. His main research topics are development economics, investigation methodology, households’ living conditions and poverty analysis, social sustainability and equity. Current projects focus on the link between vulnerability and resilience and on the relationship between human development and the ethics of solidarity economy. He contributed to the book Freedom, Responsibility and Economics of the Person.\n\nPast Presidents\n\nDr. David A. Crocker is research professor and director of the University of Maryland School of Public Policy’s international development specialization. Coming to UMD in 1993, he specializes in international development ethics, sociopolitical philosophy, transitional justice, democracy, and democratization. He has directed seven study-abroad trips to Morocco and one each to Peru and Ethiopia. After three degrees from Yale University (M.Div., MA, and Ph.D.), Dr. Crocker taught philosophy for 25 years at Colorado State University, where he established one of the world’s first courses in ethics and international development. He was a visiting professor at the University of Munich, was twice a Fulbright Scholar at the University of Costa Rica, held the UNESCO Chair in Development at the University of Valencia (Spain), and taught at the National Autonomous University of Honduras, the University of Chile, and the University of the Andes (Colombia). He has been a consultant with the Inter-American Development Bank, USAID, the World Bank, and the International Center for Transitional Justice. Dr. Crocker has given 300 invited lectures or conference papers in English or Spanish in over 25 countries. His most recent publications are Ethics of Global Development: Agency, Capability, and Deliberative Democracy, “Development and Global Ethics: Five Foci for the Future,” and “Obstáculos para la reconciliación en el Perú: un análisis ético.”  In 2010, Dr. Crocker received the Landmark Award “given for exceptional long-term achievements in support of international life at the University of Maryland.” He directs KEMS-Kids Excelling in Math and Science, an after-school enrichment program at Hyattsville (MD) Middle School.\n\nNigel Dower is Honorary Senior Lecturer in Philosophy at the University of Aberdeen. He joined IDEA in 1987, became Vice-President in 1995 and President in 2002. His research interests are focused on the ethics of development, environment, international relations, and related issues. His publications include World Poverty – Challenge and Response (Sessions 1983), World Ethics: The New Agenda (EUP 1998; 2nd edition 2007); and An Introduction to Global Citizenship (EUP 2003); Ethics of War and Peace (Polity 2009).\n\nJay Drydyk is a Canadian philosopher whose research in ethics and social/political philosophy examines development from a standpoint of public reason. With co-editor Lori Keleher he mobilized 40+ colleagues worldwide to produce the Routledge Handbook of Development Ethics in 2019. His analysis of empowerment and other values of development ethics resulted from two projects on development-induced displacement, in which he worked with colleagues in India to study ethical risks that arise when development displaces people and their communities. The results were published in Displacement by Development: Ethics, Rights and Responsibilities (Cambridge 2011), co-authored with Peter Penz and Pablo S. Bose. He has also co-edited Human Rights: India and the West (with Ashwani Peetush, Oxford 2015) and Theorizing Justice: Critical Insights and Future Directions (with Krushil Watene, Rowman Littlefield 2016). His 2021 article ‘Capability and Oppression’ calls for understanding each specific form of oppression as an agency relation in which choices by others limit the choices and capabilities of the oppressed group. His current research explores how these and other injustices can be known without reliance upon ideal theory. He is Professor of Philosophy at Carleton University (Canada), past President of the International Development Ethics Association, and Past President of the Human Development and Capability Association.\n\nAsuncion Lera St. Clair, philosopher and sociologist, is Senior Principal Scientist in the Climate change Program of DNV GL Strategic Research & innovation, Norway. She was Research Director for Climate and Development at the International Centre for Climate and Environmental Research-Oslo (CICERO) and Associated Senior Researcher at the Chr. Michelsens Institute and former professor of sociology at the University of Bergen. St. Clair is also Lead Author of the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC) and co-author chapter 1 (“Point of Departure”) of the Working Group II Report on Impacts, Adaptation and Vulnerability and member of the editorial boards of various international journals. Her research interests are focused on ethical issues related to poverty and development, with a focus on the key challenges posed by climate change.\n\nEric Palmer is Professor of Philosophy at Allegheny College. His recent research in development ethics concerns multinational corporate responsibility in developing nations, particularly in cases of resource extraction.  He also focuses upon vulnerability and finance, inquiring into for-profit credit schemes directed at the poor in less developed nations (through microfinance and electronic cash) and more developed nations (through credit cards and payday lending). He argues that corporate responsibility in each of these areas of business, when viewed through the lens of the capability approach to development, implies specific duties for multinational corporations and finance capital. He has been co-director of a series of U.S.A. National Endowment for the Humanities Institutes focused upon development ethics. He is co-editor of Journal of Global Ethics .\nPersonal website: http://sites.allegheny.edu/philo/faculty/eric-palmer/\n\nLeave a comment\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import { cn } from "@/lib/utils"
 
-type Gallery16Item = {
+export type Gallery16Item = {
   category: string
   eyebrow: string
   title: string
@@ -116,10 +116,10 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                     </button>
                   ))}
                   <div
-                    className="absolute bottom-0 h-0.5 bg-primary transition-all duration-700 ease-out"
+                    className="absolute bottom-0 left-0 h-0.5 bg-primary transition-transform duration-700 ease-out"
                     style={{
                       width: `${indicatorStyle.width}px`,
-                      left: `${indicatorStyle.left}px`,
+                      transform: `translate3d(${indicatorStyle.left}px, 0, 0)`,
                     }}
                   />
                 </div>

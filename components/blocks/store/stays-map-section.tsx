@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { ChevronRight, Pin } from 'lucide-react';
 import type { ComponentConfig } from '@measured/puck';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export type StaysMapSectionProps = {
   buttonLabel?: string;
@@ -11,10 +11,15 @@ export function StaysMapSection(props: StaysMapSectionProps) {
   return (
     <section className="relative h-[500px] w-full bg-[var(--vd-muted)] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl group">
       <div className="absolute inset-0 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000">
-        <img
+        <OptimizedImage
           src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop"
+          fill
           className="w-full h-full object-cover"
           alt="World Map"
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          imageOptions={{ width: 1600, height: 700, fit: 'cover' }}
         />
       </div>
 

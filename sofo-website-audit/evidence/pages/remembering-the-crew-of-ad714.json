@@ -1,0 +1,971 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:17:32.089Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/",
+  "title": "Remembering the crew of AD714 – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Remembering the crew of AD714"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month: Evacuee’s Coat (Oxfordshire’s Military Heritage in 50 Objects)"
+    },
+    {
+      "level": "h2",
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "collection",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "HENRY SPILBERG",
+      "href": "https://www.sofo.org.uk/author/henry-spilberg/",
+      "pathname": "/author/henry-spilberg/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "pathname": "/category/collection/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "CONFLICT AND COUNTY: SOLDIERS OF OXFORDSHIRE",
+      "href": "https://www.sofo.org.uk/category/conflict-and-county-soldiers-of-oxfordshire/",
+      "pathname": "/category/conflict-and-county-soldiers-of-oxfordshire/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "WW2",
+      "href": "https://www.sofo.org.uk/category/images-ww2/",
+      "pathname": "/category/images-ww2/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "AD714",
+      "href": "https://www.sofo.org.uk/tag/ad714/",
+      "pathname": "/tag/ad714/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Memorial",
+      "href": "https://www.sofo.org.uk/tag/memorial/",
+      "pathname": "/tag/memorial/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Northmoor",
+      "href": "https://www.sofo.org.uk/tag/northmoor/",
+      "pathname": "/tag/northmoor/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxford",
+      "href": "https://www.sofo.org.uk/tag/oxford/",
+      "pathname": "/tag/oxford/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire",
+      "href": "https://www.sofo.org.uk/tag/oxfordshire/",
+      "pathname": "/tag/oxfordshire/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "RAF",
+      "href": "https://www.sofo.org.uk/tag/raf/",
+      "pathname": "/tag/raf/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "RAF Abingdon",
+      "href": "https://www.sofo.org.uk/tag/raf-abingdon/",
+      "pathname": "/tag/raf-abingdon/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "RCAF",
+      "href": "https://www.sofo.org.uk/tag/rcaf/",
+      "pathname": "/tag/rcaf/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Remembrance",
+      "href": "https://www.sofo.org.uk/tag/remembrance/",
+      "pathname": "/tag/remembrance/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Remembrance Day",
+      "href": "https://www.sofo.org.uk/tag/remembrance-day/",
+      "pathname": "/tag/remembrance-day/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Royal Air Force",
+      "href": "https://www.sofo.org.uk/tag/royal-air-force/",
+      "pathname": "/tag/royal-air-force/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Royal Canadian Airforce",
+      "href": "https://www.sofo.org.uk/tag/royal-canadian-airforce/",
+      "pathname": "/tag/royal-canadian-airforce/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Stanton Harcourt",
+      "href": "https://www.sofo.org.uk/tag/stanton-harcourt/",
+      "pathname": "/tag/stanton-harcourt/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Witney",
+      "href": "https://www.sofo.org.uk/tag/witney/",
+      "pathname": "/tag/witney/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: Oxfordshire D-Day Stories: Abingdon’s D-Day Four – Guest Blog with Steve King",
+      "href": "https://www.sofo.org.uk/abingdonsddayfour/",
+      "pathname": "/abingdonsddayfour/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: Soldiers of Oxfordshire Museum signs the Armed Forces Covenant",
+      "href": "https://www.sofo.org.uk/soldiers-of-oxfordshire-museum-signs-the-armed-forces-covenant/",
+      "pathname": "/soldiers-of-oxfordshire-museum-signs-the-armed-forces-covenant/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "pathname": "/ootm-evacueecoat/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Henry Spilberg",
+      "href": "https://www.sofo.org.uk/author/henry-spilberg/",
+      "pathname": "/author/henry-spilberg/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/#respond",
+      "pathname": "/remembering-the-crew-of-ad714/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fremembering-the-crew-of-ad714%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "HENRY SPILBERG",
+      "href": "https://www.sofo.org.uk/author/henry-spilberg/",
+      "visible": true
+    },
+    {
+      "text": "COLLECTION",
+      "href": "https://www.sofo.org.uk/category/collection/",
+      "visible": true
+    },
+    {
+      "text": "CONFLICT AND COUNTY: SOLDIERS OF OXFORDSHIRE",
+      "href": "https://www.sofo.org.uk/category/conflict-and-county-soldiers-of-oxfordshire/",
+      "visible": true
+    },
+    {
+      "text": "WW2",
+      "href": "https://www.sofo.org.uk/category/images-ww2/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "visible": true
+    },
+    {
+      "text": "OBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/remembering-the-crew-of-ad714/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/11/Remembering-AD-1110x400.png",
+      "alt": "",
+      "width": "1110",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/11/Remembering-AD.png",
+      "alt": "",
+      "width": "1110",
+      "height": "1479",
+      "naturalWidth": 1110,
+      "naturalHeight": 1479,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/11/Remembering-AD-769x1024.png",
+      "alt": "",
+      "width": "769",
+      "height": "1024",
+      "naturalWidth": 769,
+      "naturalHeight": 1024,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/01/Childs-evacuation-coat-scaled.jpg",
+      "alt": "",
+      "width": "1459",
+      "height": "2560",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2026/02/2030178-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/d558b485a1c8ad6854a03c09d1b180c6?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 884,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n12\nNov\nBYHENRY SPILBERG// COLLECTION, CONFLICT AND COUNTY: SOLDIERS OF OXFORDSHIRE, WW2\nRemembering the crew of AD714\nRemembering the crew of AD714\n\nA little over 82 years ago, at 6 minutes past midnight on 7 November 1942, an RAF Armstrong Whitworth Whitley bomber, serial number AD714, crashed at Ferryman’s Farm, in\nthe small village of Northmoor, near Witney, following a night training exercise. Three of the five-man crew were killed and two injured. The men who died were the pilot, Sergeant Alfred Taney, navigator Sergeant Leonard Spratt and bomb-aimer, Sergeant Douglas Gordon-Kay of the Royal Canadian Air Force, from Tilbury, Ontario.\n\nThe survivors were wireless operator Sergeant R. J. Nicholas and air gunner Sergeant R. Pickett. The crew were part of No. 10 Operational Training Unit (OTU) based at RAF Abingdon and were returning to the satellite airfield at Stanton Harcourt. The circumstances of the crash are described in the Air Ministry’s accident report. At the end of a routine night flying exercise the pilot made his approach to the runway, which was marked out by flares.\n\nHowever, he did not land at first attempt but climbed to go round again. He failed to land the second time and turned once more, but this time the aircraft started to lose height rapidly over the southern boundary of the airfield until finally crashing. There was no technical failure identified, and the report suggests that the pilot might have been temporarily distracted from his instruments while finding the undercarriage control lever, and because the plane was so close to the ground once it started to dive it could not be recovered.\n\nThe report states that while visibility was not good that night, other pilots had had no trouble seeing the flare path to land. The pilot was in the final stages of training and was considered above the average.\n\nThe casualties were all taken to the Radcliffe Infirmary in Oxford; the three who died were believed to have been killed instantaneously. The accident is a reminder of the hazards of flying military aircraft even away from combat. Over 5300 RAF aircrew died in training accidents between 1939 and 1945.\n\nDouglas Gordon-Kay’s funeral took place on 11 November 1942 and he is buried in the RAF section at Brookwood Military Cemetery. The inscription on his headstone reads, ‘He gave his life so others might live. Always remembered by his loving mom’. He was 23 years old. Alfred William Taney is buried at Lawnswood Cemetery, Leeds. His inscription reads ‘Godtook him to rest through the pathway of duty’. He was 27.\n\nLeonard Frederick Keith Spratt is buried at All Saints Churchyard, Tacolneston, Norfolk. His inscription reads ‘He died that we might live’. He was 23. Two days after the crash the commanding officer of RAF Abingdon wrote to Douglas Gordon-Kay’s mother:\n\n… I want you to know that your son was progressing well with his training and was well\nspoken of and reported on by his instructors. This period of training in the Air Force, under\nwar conditions, is considered, and rightly, as active service, and it may be some little\nconsolation to you to know that operational training is in many ways as stern a task as are\nactive operations against the enemy. Your son gave his life for the Empire, and for the same\ncause of freedom as though he had lost his life in action against the enemy.\n\nThe three men who died are remembered in St Denys’ Church, Northmoor, a short distance from the site of the crash.\n\n Tags: AD714, Memorial, Northmoor, Oxford, Oxfordshire, RAF, RAF Abingdon, RCAF, Remembrance, Remembrance Day, Royal Air Force, Royal Canadian Airforce, Stanton Harcourt, Witney\n\nPrevious:\nOxfordshire D-Day Stories: Abingdon’s D-Day Four – Guest Blog with Steve King\nNext:\nSoldiers of Oxfordshire Museum signs the Armed Forces Covenant\nRelated posts\nOBJECT OF THE MONTH: EVACUEE’S COAT (OXFORDSHIRE’S MILITARY HERITAGE IN 50 OBJECTS)\n\nEvacuee’s Coat from our Oxfordshire’s Military Heritage in 50 Objects Exhibition By Geraldine Howell Object photography by Colin Morris Philip Williams’ woollen, fully-lined children’s coat would certainly have satisfied the requirement for evacuees to take with them a warm winter coat as they moved from their homes to safer locations elsewhere, often in the countryside. This smart, yet also sensible and practical design, very much reflected the type of coat…\n\nOBJECT OF THE MONTH FEBRUARY 2026: SWEETHEART PIN CUSHION\n\nFebruary’s Object of the Month follows a Valentine’s Day theme! Volunteer Geraldine has selected a First World War pin cushion, shaped like a heart, it has quite a story behind it! Sweetheart Pin Cushion By Geraldine Howell Object photography by Colin Morris   This sweetheart pin cushion was made during the First World War by a member of the Oxfordshire and Buckinghamshire Light Infantry. Sweetheart cushions were not unknown before…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

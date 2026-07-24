@@ -1,0 +1,786 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:10:18.330Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+  "title": "Oxfordshires War Memorials – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Oxfordshires War Memorials"
+    },
+    {
+      "level": "h3",
+      "text": "County War Memorials"
+    },
+    {
+      "level": "h4",
+      "text": "How was your town or village affected?"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "UK National Inventory of War Memorials",
+      "href": "http://www.ukniwm.org.uk/",
+      "pathname": "/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/soldiers/soldier/",
+      "pathname": "/soldiers/soldier/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/archive-enquiry/",
+      "pathname": "/archive-enquiry/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-regiments/",
+      "pathname": "/oxfordshires-regiments/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-vcs/",
+      "pathname": "/oxfordshires-vcs/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/ww2-bombings/",
+      "pathname": "/ww2-bombings/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+      "pathname": "/oxfordshires-war-memorials/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/oxfordshires-war-memorials/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/pic-for-webpage-1024x576.jpg",
+      "alt": "",
+      "width": "1024",
+      "height": "576",
+      "naturalWidth": 1024,
+      "naturalHeight": 576,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/soldiersearch.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/archive.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/regiments.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/vcs.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/bombings.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/memorials.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 2964,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nCOUNTY WAR MEMORIALS\nHow was your town or village affected?\n\nMemorials in towns and villages tell us what people felt at the time.\n\nThere are about 100 free-standing war memorials in the county and scores of other plaques, gates, panels and other kinds.  190 churches in the county have memorials, some have several.\n\nWhere a church and a war memorial are shown on the list below, the memorial is in addition to anything in the church. The list is incomplete - do tell us what is missing.\n\nYou can find more information on the UK National Inventory of War Memorials  .\n\nAbingdon\tWar Memorial. St. Helen’s Church. St. Nicholas Church.\nAbingdon School\tSeveral Memorials.\nAbingdon, Edward Brooks Barracks\tWar Memorial, Oxf & Bucks Light Infy, South Africa (previously in Oxford), Third Southern General Hospital Roll of Honour (202 Field Hospital HQ)\nAdderbury\tSt. Mary's Church. With Milton (Banbury).\nAdwell\tWith Stoke Talmage.\nAlbury\tSt. Helen's Church. Includes Tiddington.\nAlkerton\tWith Shennington.\nAlvescot\tWar Memorial. St. Peter's Church.\nAmbrosden\tSt. Mary’s Church.\nAppleford\tSt. Peter & St. Paul Church\nAppleton with Eaton\tWar Memorial. St. Laurence Church.\nArdington\tWar Memorial. Holy Trinity Church.\nArdley – with Fewcott\tSt. Mary's Church\nArncott\tArncott Methodist – plaque now in St. Mary’s Church, Ambrosden.\nAscott-under-Wychwood\tHoly Trinity Church gates. Recreation Ground Tablet.\nAshbury\tWar Memorial. St. Mary’s Church.\nAsthall\tFormer St. Nicholas Church (PP)\nAston\tWar Memorial. St. James Church.\nAston Rowant\tSt. Peter & St. Paul Church. Includes Kingston Blount.\nAston Tirrold\tSt. Michael’s Church. Also includes Aston Upthorpe.\nAston Upthorpe\tWar Memorial. All Saints Church.\nBaldons\tSee Marsh Baldon and Toot Baldon.\nBalscote\tSt. Mary Mary Magdalene Church\nBampton\tWar Memorial. St. Mary's Church. Town Hall.\nBanbury\tSt. Mary's Church. St. Paul’s Church (Neithrop). Methodist Church. Memorial Cross in people’s park. Banbury Post Office. Northern Aluminium Company. Banbury County School.\nBarford St. John and St. Michael\tBarford St. Michael Church.\nBaulking\tSt. Nicholas Church.\nBeckley and Stowood\tChurch of the Assumption of the Blessed Virgin Mary.\nBegbroke\tNone recorded.\nBenson\tWar Memorial. St. Helens Church.\nBenson R.A.F. (AMB)\tSeveral Memorials.\nBerinsfield\tAmerican Memorial. Warburton Memorial.\nBerrick Salome\tSt. Helen's Church.\nBesselsleigh\tSt. Lawrence's Church.\nBicester Town\tSt. Edburg's Church. United Reform Chapel. Bicester Post Office (PP).\nBix and Assendon\tSt. James Church.\nBlackbird Leys\tNone recorded.\nBlack Bourton\tWar Memorial. St. Mary the Virgin Church. R.A.F Memorial (PP).\nBlackthorn\tBlackthorn Independent Chapel - now in Ambroseden.\nBladon\tWar Memorial.\nBlenheim\tNone recorded.\nBletchingdon\tSt. Giles Church.\nBlewbury\tSt. Michaels Church.\nBloxham\tWar Memorial. St. Mary - Our Lady of Bloxham Church.\nBloxham\tEx-Servicemen’s Hall\nBloxham\tBloxham C of E Primary School - Memorial Trees.\nBloxham\tAll Saints School - several Memorials.\nBodicote\tSt. John the Baptist Church.\nBourton (Faringdon)\tSt. James Church.\nBourton (Banbury)\tSee Great Bourton.\nBotley Cemetery\tCommonwealth War Graves Commission Cemetery\nBrightwell Baldwin\tSt. Bartholomew Church\nBrightwell-cum-Sotwell\tWar Memorial. St. Agathas Church\nBritwell Salome\tNone recorded\nBrize Norton\tWar Memorial. St. Britius Church.\nBroadwell\tSt. Peter and St. Pauls Church.\nBroughton\tWith North Newington. St. Mary the Virgin Church.\nBroughton  Poggs\t(with Filkins) St. Peter's Church.\nBruern\tIncluded in Milton-under-Wychwood.\nBuckland\tWar Memorial. St. Mary the Virgin Church. Memorial Hall.\nBucknell\tSt. Peter’s Church.\nBurford\tSt. John the Baptist Church. Burford Priory (PP). War Memorial. Burford School.\nCarterton\tWar Memorial. Memorial Trees. Repatriation Memorial Garden.\nCassington\tSt. Peter’s Church. War Memorial.\nCaulcot\tSee Lower Heyford.\nCaversfield\tSt. Laurence Church.\nChadlington\tSt. Nicholas Church. Memorial Hall.\nChalgrove\tWar Memorial. St. Mary’s Church. John Hampden Monument (English Civil War).\nChalgrove Airfield\tWW2 American Memorial.\nCharlbury\tSt. Mary the Virgin Church.\nCharlton\tHoly Trinity Church.\nCharlton-on-Otmoor\tHoly Trinity Church, War Memorial, Gates, St. Mary’s Church\nCharney Bassett\tSt. Peter’s Church. War Memorial\nChastleton\tSt. Mary the Virgin Church\nCheckendon\tSt. Peter & St. Paul Church.\nChesterton\tSt. Mary the Virgin Church.\nChildrey\tSt. Mary’s Church. War Memorial.\nChilson\tSee Shorthampton.\nChilton\tAll Saints Church.\nChimney\tNone recorded.\nChinnor\tWar Memorial. St. Andrew’s Church\nChipping Norton\tWar Memorial. St. Mary the Virgin Church. Baptist Church.\n\nChipping Norton School. R.A.F. Memorial. War Memorial Hospital.\n\nChislehampton\tSt. Katherine’s Church.\nCholsey\tSt. Mary’s Church. War Memorial. Plaque in Village Pavillion.\nChurch Hanborough\tSt. Peter & St. Paul Church.\nChurchill and Sarsden\tWar Memorial. All Saints Church\nClanfield\tWar Memorial. Village Hall. St. Stephen’s Church.\nClaydon with Clattercot\tWar Memorial. St. James’ Church.\nClifton Hampden\tSt. Michael and All Angels Church. Village Hall.\nCogges\tWar Memorial. (Newland).\nCokethorpe School\tPlaque regarding Ducklington.\nColeshill\tWar Memorial. All Saints Church. Several memorials on trees in grounds of Coleshill House.\nCombe\tSt. Laurence Church. War Memorial.\nCompton Beauchamp\tSt. Swithins Church. War Memorial.\nCornbury and Wychwood\tNone recorded\nCornwell\tSt. Peter’s Church (PP).\nCote\tNone recorded.\nCothill\tSee Dry Sandford.\nCottisford\tSt. Mary the Virgin Church.\nCowlease Wood\tR.A.F. Memorial.\nCowley\tSt. James Church - former OBLI regimental chapel, regimental memorials. Cowley Memorials.\nCrawley\tWar Memorial.\nCropredy\tSt. Mary the Virgin Church.\nCrowell\tChurch of the Nativity of the Blessed Virgin Mary.\nCrowmarsh Gifford\tSt. Mary Magdelene Church. With Newnham Murren. S.O.D.C. Offices - Memorial Garden.\nCuddesdon\tAll Saints Church - with Ripon College, Cuddesdon.\nCulham\tSt. Paul’s Church.\nCumnor\tWar Memorial.\nCurbridge\tNone recorded - one being planned.\nCuxham\tHoly Rood Church. With Easington.\nDeddington\tSt. Peter & St. Paul Church, including Clifton and Hempton.\nDenchworth\tSt. James Church. The Fox Public House.\nDidcot\tWar Memorial (Garden of Remembrance). All Saints Church. St. Peter’s Church (Northbourne). Some other small memorials.\nDidcot - Vauxhall Barracks (AMB)\tMemorial Wall on site. News estate (2014) had streets named for the same men and women.\nDorchester on Thames\tWar Memorial. Dorchester Abbey.\nDrayton (Abingdon)\tSt. Peter’s Church.\nDrayton (Banbury)\tSt. Peter’s Church.\nDrayton St. Leonard\tWar Memorial.\nDry Sandford\tSt. Helen’s Church.\nDucklington\tWar Memorial\nDunsden\tWar Memorial. Includes Eye.\nDuns Tew\tSt. Mary Magdalene Church.\nEasington\tSee Cuxham.\nEast Challow\tSt. Nicholas Church.\nEast Hagbourne\tWar Memorial. St. Andrew’s Church.\nEast Hanney\tRBL Memorial Hall.\nEast Hendred\tWar Memorial. St. Augustine’s Church.\nEaton Hastings\tSt. Michael and All Angels Church.\nElsfield\tSt. Thomas of Canterbury Church.\nEmmington\tSt. Nicholas Church.\nEnstone\tSt. Kenelm’s Church.\nEpwell\tSt. Anne’s Church.\nEwelme\tSt. Mary’s Church. Wayside Shrine.\nEye & Dunsden with Binfield\tSee Dunsden.\nEynsham\tWar Memorial. St. Leonards Church. Baptist Church. Eynsham Social and Sports Club.\nFaringdon\tWar Memorial. All Saints church. Faringdon United Church.\nFawler\tSee Finstock.\nFencott\tWith Murcott - both included in Charlton-on Otmoor.\nFernham\tSt. John the Evangelist Church.\nFewcott\tWith Ardley.\nFifield\tWar Memorial. St. John the Baptist Church.\nFilkins\tSt. Peters Church. War Memorial.\nFinmere\tSt. Michaels Church.\nFinstock and Fawler\tWar Memorial.\nForest Hill with Shotover\tWar Memorial. St. Nicholas Church.\nFreeland\tSt. Mary the Virgin Church.\nFrilford\tSee Marcham.\nFringford\tSt. Michael and All Angels Church.\nFritwell\tSt. Olave’s Church.\nFulbrook\tWar Memorial. St. James the Great Church.\nFyfield\tSt. Nicholas Church.\nGarford\tSt. Luke’s Church. War Memorial.\nGarsington\tWar Memorial. St. Mary’s Church. Playing Field.\nGlympton\tSt. Mary’s Church.\nGodington\tNo memorial.\nGoosey\tAll Saints Church.\nGoring Heath\tNone recorded.\nGoring\tSt. Thomas of Canterbury Church.\nGosford\tIncluded in Kildington.\nGrafton and Radcot\tNone recorded.\nGreat Bourton\tAll Saints Church.\nGreat Coxwell\tWar Memorial. St. Giles Church.\nGreat Haseley\tWar Memorial. St. Peter’s Church.\nGreat Milton\tSt. Mary the Virgin Church.\nGreat Rollright\tSt. Andrew’s Church.\nGreat Tew\tSt. Michael & All Angels Church.\nGrove\tSt. John the Baptist Church.  Ex-Airfield site - American Memorial.\nHailey\tWar Memorial.\nHampton Poyle\tSt. Mary's Church\nHanwell\tSt. Peter’s Church.\nHardwick with Tusmore\tNo Memorial.\nHarpsden\tSt. Margaret’s Church.\nHatford\tSt. George’s Church.\nHeadington\tSt. Andrew’s Church. All Saints Church, Highfield. Lime Walk Methodist Church. Conservative Club.\nHeadington Quarry\tHoly Trinity Church.\nHenley-on-Thames Town\tTown Hall. St. Mary the Virgin Church. Leander. NatWest. Chantry House. War Memorial Hospital.\nHenton\tWar Memorial.\nHethe\tWar Memorial.\nHeythrop\tSt. Nicholas Church.\nHighmoor\tSt. Paul’s Church.\nHinton Waldrist\tSt. Margaret of Antioch Church.\nHolton\tSt. Bartholomew’s Church\nHolwell\tSt. Mary the Virgin Church.\nHook Norton\tSt. Peter’s Church. War Memorial Hall (Village Hall).\nHorley\tSt. Ethelreda’s Church.\nHornton\tSt. John the Baptist Church.\nHorspath\tSt. Giles Church. Horspath Hub (former Methodist Chapel).\nHorton-cum-Studley\tSt. Barnabas Church.\nIdbury\tSt. Nicholas Church.\nIffley\tSt. Mary the Virgin Church.\nIpsden\tSt. Mary's Church. War Memorial\nIslip\tSt. Nicholas Church. War Memorial\nKelmscott\tSt. George’s Church.\nKencot\tWar Memorial. St. Georges Church.\nKennington\tWar Memorial. Memorial Field.\nKiddington with Asterleigh\tSt. Nicholas Church.\nKidlington\tSt. Mary the Virgin Church, Thames Valley Police HQ.\nKidmore End\tSt. John the Baptist Church. Memorial Hall.\nKingham\tSt. Andrews Church. Kingham Hill School Chapel.\nKingston Bagpuize\tWar Memorial. St. John the Baptist Church\nKingston Lisle\tWar Memorial. St. John’s Church.\nKirtlington\tSt. Mary’s Church. War Memorial\nLangford\tWar Memorial. St. Matthew’s Church.\nLaunton\tWar Memorial. St. Mary’s Church.\nLeafield\tSt. Michael and All Angels Church.\nLetcombe Bassett\tSt. Michael and All Angels Church.\nLetcombe Regis\tSt. Andrew’s Church.\nLew\tHoly Trinity Church.\nLewknor\tSt. Margaret’s Church (includes Postcombe).\nLittle Coxwell\tSt. Mary’s Church.\nLittle Faringdon\tParish Church.\nLittle Milton\tSt. James Church.\nLittlemore\tSt. Mary & St. Nicholas Church. RBL Memorial.\nLittle Tew\tSt. John the Evangelist Church.\nLittle Wittenham\tWar Memorial\nLittleworth\tChurch of The Holy Ascension.\nLockinge\tAll saints Church.\nLongcot\tSt. Mary the Virgin Church.\nLong Hanborough\tSt. Peter and St. Paul Church. War Memorial.\nLong Wittenham\tWar Memorial. St. Mary the Virgin Church.\nLongworth\tSt. Mary’s Church.\nLower Heyford\tSt. Mary’s Church.\nLyford\tSt. Mary the Virgin Church.\nLyneham\tIncluded in Milton under Wychwood.\nMapledurham\tSt. Margaret’s Church.\nMarcham\tAll Saints Church. War Memorial.\nMarsh Baldon\tSt. Peter’s Church.\nMerton\tSt. Swithun’s Church.\nMiddle Aston\tSee Steeple Aston.\nMiddle Barton\tWar Memorial Hall and Playing Fields.\nMiddleton Stoney\tAll Saints Church.\nMilcombe\tSt. Laurence Church.\nMilton (Didcot)\tSt. Blaise Church.\nMilton (Banbury)\tSt. John the Evangelistl Church (with Adderbury).\nMilton-under-Wychwood\tSt. Simon and St. Jude Church.\nMinster Lovell\tWar Memorial. St. Kenelm’s Church.\nMixbury\tAll Saints Church.\nMollington\tAll Saints Church.\nMoreton\tWar Memorial.\nMoulsford\tSt. John the Baptist Church.\nMurcott\tMethodist Chapel.\nNether Worton\tSt. James Church.\nNettlebed\tSt. Bartholomew’s Church.\nNew Hinksey\tSt. John the Evangelist Church. Includes South Hinksey.\nNew Marston\tWar Memorial. Memorial Trees and Bench.\nNewington\tNone recorded.\nNewton Purcell with Shelswell\tSt. Michael’s Church.\nNoke\tSt. Giles Church.\nNorth Aston\tSt. Mary's Church.\nNorth Hinksey\tSt. Lawrence Church.\nNorth Leigh\tSt. Mary’s Church. War Memorial Hall.\nNorth Moreton\tAll Saints Church.\nNorth Stoke\tSt. Mary the Virgin Church.\nNorthmoor\tSt. Deny’s Church. Memorial Hall.\nNuffield\tHoly Trinity Church.\nNuneham Courtenay\tAll Saints Church.\nOddington\tSt. Andrew’s Church.\nOld Marston\tSt. Nicholas Church.\nOver Norton\tMemorial plaque on cottage.\nOver Worton\tWar Memorial.\nOxford City\tCity War Memorial, St. Giles.\nOxford City\tThe Tirah Memorial (OBLI), Bonn Square.\nOxford City\tOBLI War Memorial - Rose Hill/Church Cowley Road.\nOxford City\tChrist Church Cathedral - Regimental Chapel for OBLI.\nOxford City\tSt. Aldates Church.\nOxford City\tSt. Andrew’s Church, Linton Road\nOxford City\tSt. Barnabas Church. Includes St. Paul’s Church.\nOxford City\tSt. Clements Church.\nOxford City\tSt. Cross Church.\nOxford City\tSt. Ebbe’s Church.\nOxford City\tSt. Frideswide’s Church.\nOxford City\tSt.Giles Church.\nOxford City\tSt. Mary & St. John Church.\nOxford City\tSt. Mary Magdalen Church.\nOxford City\tSt. Margaret’s Church.\nOxford City\tSt. Mary the Virgin Church (The University Church).\nOxford City\tSt. Matthew’s Church, Grandpont.\nOxford City\tSt. Michael & All Angels Church, Lonsdale Road.\nOxford City\tSt. Michael at the North Gate. The City Church.\nOxford City\tSummertown War Memorial\nOxford City\tSt. Peter Le Bailey Church (now the Chapel of St. Peter’s College)\nOxford City\tSt. Philip & St. James Church - now the Oxford Centre for Mission Studies.\nOxford City\tSt. Thomas the Martyr Church.\nOxford City\tSt. Columba’s Presbyterian Church.\nOxford City\tWesley Memorial Church (includes Walton St. Chapel).\nOxford City\tOratory Church of St. Aloysius Gonzaga\nOxford City\tOxford Synagogue\nOxford City\tThe Dragon School - War Memorial Cross.\nOxford City\tSummer Fields School - several memorials.\nOxford City\tSt. Edward’s School - several memorials.\nOxford City\tMagdalen College School - several memorials.\nOxford City\tOxford Spires Academy - Southfield School Rolls of Honour.\nOxford City\tTown Hall - several memorials.\nOxford City\tOld County Hall - County Council Staff memorial.\nOxford City\tWar Memorial, Morrell’s Brewery\nOxford City\tSt. Aldates Police Station - Oxford City Police\nOxford City\tOxford Post Office Memorial.\nOxford City\tOxford University Press\nOxford City\tFormer Radcliffe Infirmary Chapel.\nOxford City\tChurchill Hospital - American Memorials.\nOxford City\tOxford Co-operative Society memorial (PP)\nOxford City\tEast Oxford Liberal Club - now the Crown House Club.\nOxford City\tHolywell Cemetery.\nOxford City\tOxford Crematorium.\nOxford University\tAll Souls College.\nOxford University\tBalliol College.\nOxford University\tBrasenose College.\nOxford University\tChrist Church College.\nOxford University\tCorpus Christi College.\nOxford University\tExeter College.\nOxford University\tHarris Manchester College.\nOxford University\tHertford College.\nOxford University\tJesus College.\nOxford University\tKeble College.\nOxford University\tMagdalen College.\nOxford University\tMansfield College.\nOxford University\tMerton College.\nOxford University\tNew College.\nOxford University\tOriel College.\nOxford University\tPembroke College.\nOxford University\tQueen’s College.\nOxford University\tRhodes House.\nOxford University\tSt. Catharine’s College.\nOxford University\tSt. Edmund Hall.\nOxford University\tSt. Hugh’s College.\nOxford University\tSt. John’s College.\nOxford University\tTrinity College.\nOxford University\tUniversity College.\nOxford University\tWadham College.\nOxford University\tWolfson College - R.A.F. Memorial.\nOxford University\tWorcester College\nPiddington\tSt. Nicholas Church.\nPishill with Stonor\tParish Church.\nPrescote\tNone recorded.\nPyrton\tSt. Mary's Church.  RAF Memorial (PP).\nPusey\tAll Saints Church.\nRadley\tSt. James the Great Church.\nRadley College\tSeveral memorials.\nRamsden\tWar Memorial. Memorial Hall. St. James Church\nRisinghurst & Sandhills\tNo Memorial.\nRollright\tSt. Andrews Church\nRotherfield Greys\tSt. Nicholas Church. War Memorial (at Greys Green)\nRotherfield Peppard\tAll Saints Church. War Memorial Hall.\nRousham\tSt. Leonard and St. James Church (PP).\nSalford\tSt. Mary’s Church.\nSandford St. Martin\tParish Church.\nSandford-on-Thames\tSt. Andrew’s Church.\nShellingford\tSt. Faith’s Church.\nShenington with Alkerton\tWar Memorial. Holy Trinity Church.\nShifford\tNone recorded.\nShillingford\tSee Warborough.\nShilton\tWar Memorial.\nShiplake\tWar Memorial. St. Peters and St. Paul Church. War Memorial Hall.\nShippon\tSt. Mary Magdalene Church.\nShipton-on-Cherwell and Thrupp\tHoly Cross Church.\nShipton-under-Wychwood\tSt. Mary the Virgin Church. War Memorial.\nShirburn\tAll Saints Church.\nShrivenham\tSt. Andrew’s Church.\nShorthampton\tAll Saints Church.\nShutford\tWar Memorial. St. Martin’s Church.\nSibford Ferris\tSee Sibford Gower. Holy Trinity Church.\nSibford Gower\tHoly Trinity Church\nSomerton\tSt. James Church.\nSouldern\tSt. Mary's Church.\nSouth Hinksey\tSee New Hinksey - St. John the Evangelist Church.\nSouth Leigh\tSt. James The Great Church.\nSouth Moreton\tSt. John the Baptist Church.\nSouthmoor\tSee Kingston Bagpuize.\nSouth Newington\tSt. Peter and Vincula Church.\nSouth Stoke\tSt. Andrews Church.\nSparsholt\tHoly Cross Church.\nSpelsbury\tAll Saints Church. War Memorial Hall.\nStadhampton\tSt. John the Baptist Church.\nStandlake\tSt. Giles Church.\nStanford-in-the-Vale\tSt. Deny’s Church.\nStanton Harcourt\tSt. Michael’s Church. Memorial and Millennium Hall.\nStanton St. John\tSt. John the Baptist Church.\nSteeple Aston\tWar Memorial. Parish Church. Memorial Rousham Hall Park.\nSteeple Barton\tSt. Mary's Church.\nSteventon\tWar Memorial. St. Michael and all Angels Church.\nStoke Lyne\tSt. Peter’s Church.\nStoke Row\tSt. John the Evangelist Church.\nStoke Talmage\tSt. Mary Magdalene Church.\nStonesfield\tWar Memorial.\nStratton Audley\tSt. Mary and St. Edburga Church.\nSunningwell\tSt. Leonard’s Church.\nSwalcliffe\tSt. Peter and St. Paul Church.\nSwerford\tWar Memorial.\nSwinbrook and Widford\tSt. Mary's Church.\nSwyncombe\tWar Memorial (Crokley Green).\nSydenham\tSt. Mary's Church.\nTackley\tSt. Nicholas Church.\nTadmarton\tSt. Nicholas Church.\nTaynton\tSt. John the Evangelist Church.\nTetsworth\tSt. Giles Church. War Memorial. Memorial Hall.\nThame Town\tSt. Mary's Church. War Memorial. Thame Museum.\nTiddington-with-Albury\tSee Albury.\nToot Baldon\tSt. Lawrence Church.\nTowersey\tWar Memorial Hall.\nTubney\tSt. Lawrence Church.\nUffington\tSt. Mary's Church.\nUpper Heyford\tSt. Mary's Church. War Memorial. F111E air crash site.\nUpton\tUpton Methodist Church. St. Mary's Church.\nWallingford\tWar Memorial. Post Office Plaque. St. Mary-Le-More Church. R.A.F. Memorial. Wallingford Cemetery.\nWantage\tWar Memorial. St. Peter & St. Paul Church. King Alfred’s School. Baptist Church.\nWarborough\tWar Memorial. St. Laurence Church (includes Shillingford).\nWardington\tSt. Mary Magdalene Church.\nWatchfield\tSt. Thomas’ Church\nWater Eaton\tNo Memorial.\nWaterperry with Thomley\tSt. Mary the Virgin Church.\nWaterstock\tSt. Leonard’s Church. War Memorial.\nWatlington\tWar Memorial. St. Leonard’s Church.\nWendlebury\tSt. Giles Church.\nWest Challow\tSt. Lawrence Church.\nWest Hagbourne\tMemorial Bus Shelter.\nWest Hanney\tSt. James The Great Church.\nWest Hendred\tHoly Trinity Church.\nWestcote Barton\tSt. Edward the Confessor Church.\nWeston-on-the-Green\tSt. Mary the Virgin Church.\nWheatfield\tSt. Andrew’s Church.\nWestwell\tWar Memorial.\nWheatley\tWar Memorial. St. Mary the Virgin Church.\nWigginton\tSt. Giles Church.\nWitney\tWar Memorial. St. Mary's Church. Methodist Church. The Leys Recreation Ground. Henry Box School. Witney Museum.\nWolvercote\tAirmen’s Memorial, Godtow Road. St. Peter’s Church. Memorial Field (Godstow Road).\nWoodcote\tWar Memorial. The Oratory School Chapel.\nWoodeaton\tHoly Rood Church.\nWoodstock\tWar Memorial. St. Mary Magdalene Church. Methodist Church. Town Hall.\nWoolstone\tAll Saints Church.\nWootton (Abingdon)\tSt. Peter’s Church.\nWootton (Woodstock)\tSt. Mary the Virgin Church. Playing Fields.\nWorton\tSee Over Worton.\nWorton (Cassington)\tNo Memorial.\nWroxton & Balscote\tAll Saints Church.\nWytham\tAll Saints Church. War Memorial.\nYarnton\tSt. Bartholomew’s Church.\nYelford\tNo Memorial.\nYoulbury\tScout War Memorial (PP)\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

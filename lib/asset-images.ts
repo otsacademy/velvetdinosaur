@@ -8,6 +8,7 @@ export type AssetImageOptions = {
 };
 
 const CF_IMAGE_RESIZE_ENABLED = process.env.NEXT_PUBLIC_CF_IMAGE_RESIZE === 'true';
+const CF_IMAGE_RESIZE_CONFIRMED = process.env.NEXT_PUBLIC_CF_IMAGE_RESIZE_CONFIRMED === 'true';
 const DEFAULT_IMAGE_QUALITY = Number(process.env.NEXT_PUBLIC_CF_IMAGE_QUALITY || '85');
 const DEFAULT_IMAGE_FORMAT = process.env.NEXT_PUBLIC_CF_IMAGE_FORMAT || 'auto';
 
@@ -76,6 +77,7 @@ function ensureProbeStarted(key: string, current: Promise<boolean> | null, probe
 function shouldUseCdn() {
   // Never emit /cdn-cgi/image URLs unless we can prove it is supported on this origin.
   if (!CF_IMAGE_RESIZE_ENABLED) return false;
+  if (!CF_IMAGE_RESIZE_CONFIRMED) return false;
   if (typeof window === 'undefined') return false;
 
   const traceOk = readSessionFlag(CF_TRACE_SESSION_KEY);
@@ -163,4 +165,3 @@ export function resolveAssetImageUrl(src: string, options?: AssetImageOptions) {
   }
   return src;
 }
-

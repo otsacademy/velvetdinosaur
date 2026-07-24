@@ -1,0 +1,911 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:03:20.676Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+  "title": "Join The Soldiers of Oxfordshire Museum Team – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Join The Soldiers of Oxfordshire Museum Team"
+    },
+    {
+      "level": "h1",
+      "text": "Join the Soldiers of Oxfordshire Museum Team"
+    },
+    {
+      "level": "h1",
+      "text": "Current Trustee Roles:"
+    },
+    {
+      "level": "h2",
+      "text": "Chair of the Trust"
+    },
+    {
+      "level": "h1",
+      "text": "Current Volunteer Roles:"
+    },
+    {
+      "level": "h1",
+      "text": "Current Staff Vacancies:"
+    },
+    {
+      "level": "h2",
+      "text": "Research Post (Summer 2026)"
+    },
+    {
+      "level": "h2",
+      "text": "Party Host and Workshop Leaders (Casual)"
+    },
+    {
+      "level": "h3",
+      "text": "Recent Posts"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Download PDF for full details and how to apply.",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2026/04/SOFO-Chair-Role-Summary-as-at-31-Mar-26.pdf",
+      "pathname": "/wp-content/uploads/2026/04/SOFO-Chair-Role-Summary-as-at-31-Mar-26.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Find",
+      "href": "https://www.sofo.org.uk/become-a-volunteer/",
+      "pathname": "/become-a-volunteer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "out more about Volunteering with us and the roles avilable",
+      "href": "https://www.sofo.org.uk/become-a-volunteer/",
+      "pathname": "/become-a-volunteer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": ">>>",
+      "href": "https://www.sofo.org.uk/become-a-volunteer/",
+      "pathname": "/become-a-volunteer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Download PDF for full details and how to apply.",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2026/05/Researcher-Post-Summer-2026-Final.pdf",
+      "pathname": "/wp-content/uploads/2026/05/Researcher-Post-Summer-2026-Final.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Download PDF for full details and how to apply.",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2022/06/Job-Spec-Party-Host-Casual-Role.pdf",
+      "pathname": "/wp-content/uploads/2022/06/Job-Spec-Party-Host-Casual-Role.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/volunteers/",
+      "pathname": "/volunteers/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/board-of-directors-2/",
+      "pathname": "/board-of-directors-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/staff/",
+      "pathname": "/staff/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+      "pathname": "/about/vacancies-jointheteam/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/patrons/",
+      "pathname": "/patrons/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Object of the Month: Evacuee’s Coat (Oxfordshire’s Military Heritage in 50 Objects)",
+      "href": "https://www.sofo.org.uk/ootm-evacueecoat/",
+      "pathname": "/ootm-evacueecoat/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Object of the Month February 2026: Sweetheart Pin Cushion",
+      "href": "https://www.sofo.org.uk/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "pathname": "/object-of-the-month-february-2026-sweetheart-pin-cushion/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Object of the Month (Christmas 2025): Princess Mary Gift Tin",
+      "href": "https://www.sofo.org.uk/objectofthemonthchristmas2025/",
+      "pathname": "/objectofthemonthchristmas2025/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Search for Avesnois Airmen",
+      "href": "https://www.sofo.org.uk/search-for-avesnois-airmen/",
+      "pathname": "/search-for-avesnois-airmen/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Object of the Month: Spitfire Rear-View Mirror, 1940",
+      "href": "https://www.sofo.org.uk/object-of-the-month-spitfire-rear-view-mirror-1940/",
+      "pathname": "/object-of-the-month-spitfire-rear-view-mirror-1940/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Back to Blog Homepage",
+      "href": "https://www.sofo.org.uk/about/vacancies-jointheteam/blog",
+      "pathname": "/about/vacancies-jointheteam/blog",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/about/vacancies-jointheteam/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/volunteersblock.jpg",
+      "alt": "",
+      "width": "870",
+      "height": "300",
+      "naturalWidth": 870,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/06/Trustee-Website-Tab.png",
+      "alt": "Click here to find our more about our Trustees",
+      "width": "909",
+      "height": "314",
+      "naturalWidth": 909,
+      "naturalHeight": 314,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/staff.jpg",
+      "alt": "",
+      "width": "580",
+      "height": "200",
+      "naturalWidth": 580,
+      "naturalHeight": 200,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/01/Join-the-Team-Sidebar-Tab.png",
+      "alt": "Click here to find our more about current staff vacancies at the museum",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/patrons.jpg",
+      "alt": "",
+      "width": "580",
+      "height": "200",
+      "naturalWidth": 580,
+      "naturalHeight": 200,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "Search for:",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "Search for:",
+          "id": "s",
+          "required": false
+        },
+        {
+          "type": "submit",
+          "name": "",
+          "placeholder": "",
+          "ariaLabel": "",
+          "label": "",
+          "id": "searchsubmit",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Search",
+      "type": "submit",
+      "visible": true
+    }
+  ],
+  "wordCount": 746,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nJoin the Soldiers of Oxfordshire Museum Team\n\n \n\nCurrent Trustee Roles:\nChair of the Trust\n\nSOFO is seeking a replacement for its current chair, on completion of his 5-year term.  The incoming Chair will be expected to lead SOFO through its next evolutionary phase, setting clear strategic objectives and guiding the collective trustee efforts in achieving them.  The focus is on developing and honing SOFO’s ‘offer’ to the public, implementing its fundraising strategy and associated revenue generation efforts, and deepening and broadening its external relationships.  Trustees have individual portfolios such as external engagement and fundraising, with the chair responsible for providing the oversight, direction and coordination of the overall trustee effort.  A summary of responsibilities includes:\n\nStrategic Leadership: to the board, the trust and museum, to ensure the museum continues to evolve and broaden its offer to the public in accordance with its charitable objectives, and is financially sustainable\nGovernance: ensuring that the board of trustees exercises governance of the trust in compliance with Charity Commission and other statutory requirements and ensuring the board composition reflects the appropriate range of experience and competence to exercise effective governance\nExternal Relations: act as the principal ambassador in the trust’s external stakeholder engagement, which covers local government, heritage and academic partners, donors and supporters and media\nEfficiency and Effectiveness: ensure the board of trustees operates efficiently and effectively, with clarity of responsibility and tasks for each trustee and clear direction and guidance to the museum director and her team\nLine Manager for the Museum Director: execute the role of line manager for the museum director, agreeing annual objectives, carrying out an annual salary review and providing direction, guidance and support as appropriate.\n\nThe role is not remunerated.\n\nDownload PDF for full details and how to apply.\n\nPlease note: the deadline for applications to this role has been extended to 28 May 2026.\n\n \n\nCurrent Volunteer Roles:\n\nFind out more about Volunteering with us and the roles avilable >>>\n\nCurrent Staff Vacancies:\nResearch Post (Summer 2026)\n\nThe Soldiers of Oxfordshire Museum has recently decided to expand its historical offer to the public, locally, nationally and internationally, in line with its mission to tell compelling stories about the soldiers of Oxfordshire and more broadly showcasing the role the military has played in our national life, seen through an Oxfordshire lens.\n\nTo achieve this the museum proposes to embark on a new enterprise aimed at offering an innovative visitor experience at the museum, working with and alongside Blenheim Palace, Woodstock.\n\nThis temporary post for a researcher will work on this project for 6 months and be based at the museum.\n\nRate of pay:\n\nNLW £12.71 P/H (6 Month / 210 Hours Temporary Freelance Contract)\n\nAgreed travel covered at .45p per mile.\n\nClosing Date: 1 July 2026\n\nDownload PDF for full details and how to apply.\n\n \n\nParty Host and Workshop Leaders (Casual)\n\nJob Specification\n\nThe Soldiers of Oxfordshire Museum offers a great children’s party package. We are looking for outgoing and fun Party Hosts with experience of leading games and crafts with primary age children to help co-ordinate the parties and ensure everyone has a great time!\nParties tend to be booked on a Saturday during the day, morning and afternoon, but occasionally they may be booked during school holiday weekdays and on occasional Sundays when we are open to the public. Party Hosts need to be available most Saturdays and as necessary in the school holidays as our parties are very popular and we have frequent bookings.\n\nRate of pay:\n\n£45 per party. Setting up, clearing away as necessary and running the 2-hour party package.\n\nDownload PDF for full details and how to apply.\n\n \n\nSearch for:\nRECENT POSTS\nObject of the Month: Evacuee’s Coat (Oxfordshire’s Military Heritage in 50 Objects)\nObject of the Month February 2026: Sweetheart Pin Cushion\nObject of the Month (Christmas 2025): Princess Mary Gift Tin\nSearch for Avesnois Airmen\nObject of the Month: Spitfire Rear-View Mirror, 1940\n\nBack to Blog Homepage\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

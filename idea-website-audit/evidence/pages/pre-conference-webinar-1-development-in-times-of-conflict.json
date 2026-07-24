@@ -1,0 +1,355 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+    "lastmod": "2021-07-08T19:14:17+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:50.897Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+  "title": "Pre-conference webinar 1: Development in times of conflict/ El desarrollo en tiempos de conflicto – IDEA",
+  "metaDescription": "Full webinar schedule Completed session. see recording (Español and English). Session 1: April 8, 2021. 9-11AM Colombia timeDevelopment in times of conflict/El desarrollo en tiempos de conflicto(web)Moderador/Moderator: Alexandra Agudelo, Universidad Autónoma LatinoAmericana (UNAULA)Discussants/Panelistas:Carolina Jímenez: Comité Directivo, Consejo Latinoamericano de Ciencias Sociales (CLACSO), and Centro de Pensamiento y Diálogo Político, ColombiaCarlos Nupia: Instituto Colombo-Alemán para la…",
+  "canonical": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Pre-conference webinar 1: Development in times of conflict/ El desarrollo en tiempos de conflicto"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/#content",
+      "pathname": "/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Full webinar schedule",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "recording (Español and English)",
+      "href": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "pathname": "/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Universidad Autónoma LatinoAmericana (UNAULA)",
+      "href": "https://www.unaula.edu.co/maestria/edh/profesores",
+      "pathname": "/maestria/edh/profesores",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Centro de Pensamiento y Diálogo Político",
+      "href": "https://developmentethics.wordpress.com/wp-admin/Comit%C3%A9%20Directivo,",
+      "pathname": "/wp-admin/Comit%C3%A9%20Directivo,",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Instituto Colombo-Alemán para la Paz (CAPAZ)",
+      "href": "https://www.instituto-capaz.org/en/carlos-m-nupia-takes-over-as-the-new-manager-of-instituto-capaz/",
+      "pathname": "/en/carlos-m-nupia-takes-over-as-the-new-manager-of-instituto-capaz/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Organizacíon social-investigacíon y Formacion para la Transformación (IFT",
+      "href": "https://www.facebook.com/corporacionIFT/about/?ref=page_internal",
+      "pathname": "/corporacionIFT/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Comisión de la verdad",
+      "href": "https://comisiondelaverdad.co/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Corporación Arco Iris",
+      "href": "https://www.arcoiris.com.co/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Norwegian Center for Conflic Resolution",
+      "href": "https://noref.no/Publications/Regions/Colombia",
+      "pathname": "/Publications/Regions/Colombia",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Peace Accord Matrix (University of Notre Dame)",
+      "href": "https://peaceaccords.nd.edu/barometer/colombia-reports",
+      "pathname": "/barometer/colombia-reports",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Peace with justice: the colombian experience with transitional Justice",
+      "href": "https://www.brookings.edu/wp-content/uploads/2019/06/FP_20190708_colombia.pdf",
+      "pathname": "/wp-content/uploads/2019/06/FP_20190708_colombia.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "recording (Español and English) may be found here",
+      "href": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "pathname": "/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/#",
+      "pathname": "/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fpre-conference-webinar-1-development-in-times-of-conflict%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-eY",
+      "pathname": "/P1D93l-eY",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=928&subd=developmentethics&host=developmentethics.org&ref=&rand=0.5472454997940986",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [],
+  "wordCount": 1810,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nPRE-CONFERENCE WEBINAR 1: DEVELOPMENT IN TIMES OF CONFLICT/ EL DESARROLLO EN TIEMPOS DE CONFLICTO\n\nFull webinar schedule\n\nCompleted session. see recording (Español and English).\n\nSession 1: April 8, 2021. 9-11AM Colombia time\nDevelopment in times of conflict/El desarrollo en tiempos de conflicto(web)\nModerador/Moderator: Alexandra Agudelo, Universidad Autónoma LatinoAmericana (UNAULA)\nDiscussants/Panelistas:\nCarolina Jímenez: Comité Directivo, Consejo Latinoamericano de Ciencias Sociales (CLACSO), and Centro de Pensamiento y Diálogo Político, Colombia\nCarlos Nupia: Instituto Colombo-Alemán para la Paz (CAPAZ)\nLubín Torres: Organizacíon social-investigacíon y Formacion para la Transformación (IFT)\n\nEnglish/ Español sigue\n\nDevelopment in times of armed conflict\n\nIs there anything more anachronistic than the so-called «locomotives of development? A true metaphor for the industrial revolution of the 19th century andnot at all appropriate for the needs of the 21st century? –Arturo Escobar\n\nThe armed conflict that Colombia has experienced for more than 50 years has deteriorated the social fabric and the democratic institutionality, deepening public distrust in the State and its agents, and obstructing the construction of a common national political project. This phenomenon, added to the precariousness, dispossession and deterritorialization associated to the dominant developmental model based on extractivism, monocultures, desacralization of all forms of life and excessive pollution, shows that, as we have known it, the promise of development does not represent anymore an unviable option for this country and, in general, for life on earth.\n\nCertainly, the common background of the armed conflict and development in Colombia has been land disputes, which, although ethically inadmissible, can be explained on the strategical geographic position of the country, its access to the Atlantic and Pacific oceans, its rich biodiversity, soil productivity, wide altitudinal ranges, water and mineral abundance, among others. These disputes have had to do with the control, tenure and use of land, in which financial and political groups in the country, often associated with international elites, have used all kinds of maneuvers (legal, political, military), mostly violent, to grab land as well as impoverish traditions and lives from peasants.  This way of ‘enrichment by dispossession’ leads to understand both processes, armed conflict and development, as a global neoliberal mechanism of both economic, social, political and vital starvation of the majority of the planet’s inhabitants, and concentration of global wealth in small financial groups.\n\nIn the specific case of Colombia, the signing of the peace agreement between the Colombian State and the FARC guerrillas has put in evidence this background of land disputes, which in turn has opened the debate on what type of economy, production, social justice, distribution of wealth and forms of defense of life should be adopted in order to overcome the long history of inequality and poverty in the Colombian society.  This is a very challenging debate on which depends either the materialization of peace or the continuity of the armed conflict.\n\nIn this regard, it should be noted that a little more than four years after the signing of the peace agreement these conflicts over land has undoubtedly increased, which far from a scenario of conflict negotiation, represents new veins for its aggravation and expansion.  Between 2020 and so far in 2021, there have been more than 110 massacres, displacements and confinements in zones where the FARC used to operate, and in where nowadays there are a plenty presence of renewed paramilitary groups that have recruited FARC’s ex-combatants. In those zones, many massive exoduses of communities have occurred often associated to hydroelectric and mining megaprojects, and monoculture plantations, as well as with the production and exportation of drugs via strategic corridors. In turn, the FARC has been reconfigured as an armed group by integrating combatants who did not sign the peace agreement and others who, disillusioned with the promise of peace, have returned to armed violence with new political horizons, alliances, funding sources and practices of death. Otherwise, guerrilla groups such as the ELN and the EPL are reemerging with force, welcoming the feelings and voices of those who did not believe in the promise of a stable and lasting peace and who have assumed the armed way as the only possibility of social struggle. Despite it is undeniable that the peace agreement opened a light of hope for the country, the extermination of former combatants and social leaders, the impunity and connivance of the State with paramilitarism and drug trafficking, and the slowness with which Development Territorial Programs (so called PDET) have been addressed by the government, do not augur a favorable horizon in the short term.\n\nTherefore, it is essential to promote spaces for dialogue and research on developmental models, post-developmental approaches, and alternatives to development duly aligned with peace building and transitional justice processes in Colombia, which are not detached from the social, economic and political challenges that Latin America and the world are currently face.\n\nAgainst this background, we propose the following guiding questions for our guests:\n\nWhich are the challenges of development in historical contexts of territorial dispute such as those experienced in Colombia? How those challenges would impact the very concept of development?\nIn what way could the idea of post-development contribute to the construction of peace alternatives in Colombia?\nHow could a country that is under the pressure of multilateral organizations and powerful countries such as the US and China formulate alternatives to development being? What is its capacity for maneuver?\nHow territorial-based communities could be involved in the process of thinking and formulating development alternatives?\nResources for the discussion\nComisión de la verdad\nCorporación Arco Iris\nNorwegian Center for Conflic Resolution\nPeace Accord Matrix (University of Notre Dame)\nPeace with justice: the colombian experience with transitional Justice\n\nDesarrollo en tiempos de conflicto\n\nAcaso ¿hay algo más anacrónico que las llamadas “locomotoras del desarrollo”, verdadera metáfora para la revolución industrial del Siglo XIX y nada apropiada para las necesidades del Siglo XXI? — Arturo Escobar\n\nEl conflicto armado que ha experimentado Colombia por más de 50 años ha deteriorado el tejido social  y la institucionalidad, profundizando la desconfianza en el Estado y las actorías políticas, obstruyendo la construcción de un proyecto político nacional común. Este fenómeno, sumado a la precarización, despojo, desterritorialización producidas por los modelo de desarrollo basados en el extractivismo, los monocultivos, la desacralización de toda forma de vida y la contaminación desmedida, demuestran que tal como la conocemos, la promesa del desarrollo fue un fracaso y una opción inviable para este país y en general para la vida en el planeta.\n\nCiertamente, el conflicto armado y los modelos de desarrollo en Colombia han tenido como sustrato disputas por la tierra, lo que siendo éticamente reprochable, es estratégicamente comprensible dada la destacada posición geográfica en que se encuentra el país, la salida al océano atlántico y al pacífico, las riqueza en materia de biodiversidad, productividad de suelos, diversidad de pisos términos, abundancia hídrica y mineral entre otras. Se trata de disputas por la soberanía, tenencia, control y usufructo de la tierra en la que grupos financieros y políticos del país, asociados con élites internacionales han empleado todo tipo de maniobras – jurídicas, políticas, militares – en su mayoría violentas, para arrebatarle a campesinas y campesinos tierras, tradiciones y vidas.  Esta forma de enriquecimiento por despojo implica comprender ambos procesos, conflicto armado y desarrollo como un mecanismo neoliberal que va más allá de las fronteras colombianas y se propaga como una forma de inanición económica, social, política y vital hacia la mayoría de los pobladores del planeta que concentra la riqueza en pequeños grupos financieros.\n\nEn el caso concreto de Colombia, la firma de los acuerdos de paz entre el Estado colombiano y la guerrilla de las FARC ha evidenciado este trasfondo de disputas, lo que sin lugar a duda, abre el debate sobre qué tipo de economía, producción, justicia social, distribución de la riqueza y formas de defensa de la vida deben adoptarse para romper las brechas históricas de desigualdad y pobreza de la sociedad colombiana.  Un debate desafiante y en el que está cifrada la esperanza de construcción de paz o el miedo a la continuidad y reactivación de otros conflictos armados en el país.\n\nAl respecto, debe señalarse que a poco más de cuatro años de la firma de los acuerdos, es indiscutible la profundización de estos conflictos por la tierra en el país, lo que lejos de un escenario negociado del conflicto, representa nuevas vetas para su agudización y expansión.  Sólo entre 2020 y lo que va de 2021 han ocurrido más de 110 masacres, desplazamientos y confinamientos en poblaciones donde actuaban las FARC y que ahora tienen una vasta presencia de grupos paramilitares renovados y con incorporación de excombatientes.  Se han producido destierros masivos de comunidades donde se encuentran comprometidos megaproyectos hidroeléctricos, de explotación minera, plantaciones de monocultivos y corredores estratégicos para la producción y exportación de drogas. Se han reconfigurado las FARC como grupo armado con combatientes que no suscribieron los acuerdos y otros que, desilusionados de la promesa de la paz han retornado en armas con nuevos horizontes políticos, alianzas, fuentes de financiación y prácticas de muerte. Grupos guerrilleros como el ELN y el EPL emergen nuevamente con fuerza acogiendo los sentires y las voces de quienes no creen la promesa de una paz estable y duradera y asumen la vía armada como única posibilidad de lucha.  Es innegable que los acuerdos abrieron una luz esperanza para el país, pero el exterminio de excombatientes, lideresas y líderes sociales, la impunidad y connivencia del Estado con el paramilitarismo y el narcotráfico, la lentitud con la que Programas de Desarrollo con Enfoque Territorial (PDET) han sido atendidos por el gobierno, no auguran un panorama favorable en el corto tiempo.\n\nPor lo anterior, es primordial promover espacios de diálogo e investigación sobre los modelos de desarrollo, enfoques del postdesarrollo, alternativas al desarrollo que coexisten con procesos de construcción de paz y justicia transicional que se adelantan en Colombia y, que no están desligados de las dinámicas sociales, económicas y políticas que enfrenta América Latina y el mundo.\n\nPara la conversación proponemos las siguientes preguntas orientadoras:\n\n¿Cuáles son los desafíos que se derivan de pensar el desarrollo en contextos históricos de disputa territorial como los que vive Colombia?\n¿En qué forma la idea del postdesarrollo podría aportar a la construcción de alternativas de paz en Colombia?\n¿Qué implica para un país como Colombia formular alternativas al desarrollo teniendo condicionantes de organizamos multilaterales, países potencia como EEUU y China? ¿Qué capacidad de maniobra tiene?\n¿Qué implica pensar un desarrollo desde abajo que retome las alternativas propuestas por comunidades, pobladores y territorios?\n\nCompleted sessions: recording (Español and English) may be found here.\\\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

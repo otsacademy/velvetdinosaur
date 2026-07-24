@@ -1,0 +1,271 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/reading-list/",
+    "lastmod": "2023-07-31T06:20:43+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:54.351Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/reading-list/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/reading-list/",
+  "title": "Reading List – IDEA",
+  "metaDescription": "General Readings in Global Development: Addendum: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. (The list below was composed in 2013 — obviously, updates are needed.) Collier, Paul. 2008. The Bottom Billion: Why the Poorest…",
+  "canonical": "https://developmentethics.org/reading-list/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Reading List"
+    },
+    {
+      "level": "h3",
+      "text": "General Readings in Global Development:"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/reading-list/#content",
+      "pathname": "/reading-list/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/reading-list/#",
+      "pathname": "/reading-list/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Freading-list%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-nL",
+      "pathname": "/P1D93l-nL",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/reading-list/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=768",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 580,
+      "naturalHeight": 231,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=1473&subd=developmentethics&host=developmentethics.org&ref=&rand=0.6931884041217162",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [],
+  "wordCount": 419,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nREADING LIST\nGeneral Readings in Global Development:\nAddendum:\n\nA comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\n(The list below was composed in 2013 — obviously, updates are needed.)\n\nCollier, Paul. 2008. The Bottom Billion: Why the Poorest Countries are Failing and What Can be Done about It. New York: Oxford University Press.\nCrocker, David. 2008. Ethics of Global Development: Agency, Capability, and Deliberative Democracy. Cambridge: Cambridge University Press.\nDower, Nigel. 2007. World Ethics: The New Agenda. Edinburgh: Edinburgh University Press.\nDower, Nigel. 2003. An Introduction to Global Citizenship. New York: Routledge.\nDrydyk, Jay., Chatterjee, Deen. 2011. “Development Ethics.” In Encyclopedia of Global Justice. New York: Springer.\nGasper, Des. 2004. The Ethics of Development. Edinburgh: Edinburgh University Press.\nGoulet, Denis. 1995.  Development Ethics: A Guide to Theory and Practice. New York: Rowman & Littlefield Publishers.\nGoulet, Denis. 1989. The Uncertain Promise: Value Conflicts in Technology Transfer. Apex Press.\nGoulet, Denis. 1985. The Cruel Choice: A New Concept in the Theory of Development. New York: Atheneum.\nLera St. Clair, Asuncion and McNeill, Desmond. 2009. Global Poverty, Ethics, and Human Rights: The Role of Multilateral Organizations, New York and London: Routledge\nMurithi, Tim. 2009. The Ethics of Peace building. Edinburgh: Edinburgh University Press. \nNussbaum, Martha. 2001. Women and Human Development: The Capabilities Approach. Cambridge: Cambridge University Press.\nPenz, Peter., Drydyk, Jay., and Bose, Pablo. 2011. Displacement by Development: Ethics, Rights, and Responsibilities. Cambridge: Cambridge University Press.\nPogge, Thomas. 2008. World, Poverty, and Human Rights. Cambridge: Polity Press.\nSachs, Jeffrey. 2006. The End of Poverty:Economic Possibilities for Our Time. New York: Penguin Books.\n Sen, Amartya. 2000. Development as Freedom. New York: Anchor.\nReadings in Development and the Environment:\nHarris, Paul. 2010. World Ethics and Climate Change:From International to Global Justice. Edinburgh: Edinburgh University Press.\nLera St. Clair, Asuncion. et al. (eds.)2010. Climate Change, Ethics, and Human Security. Cambridge: Cambridge University Press.\nShrader-Frechette, Kristin. Environmental Justice: Creating Equality, Reclaiming Democracy (Environmental Ethics & Science Policy). New York: Routledge.\nThompson, Paul. 1992. The Ethics of Aid and Trade: US Food Policy, Foreign Competition, and the Social Contract. Cambridge: Cambridge University Press.\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

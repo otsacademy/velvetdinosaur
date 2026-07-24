@@ -1,0 +1,723 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+    "lastmod": "2018-02-02T03:33:06+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:17.589Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+  "title": "December arrest by Turkish authorities of Professor İştar Gözaydın – IDEA",
+  "metaDescription": "  Istar Gozaydin was acquitted of charges of membership in a terrorist organization on 31 January 2018: she had been detained for seven days and under charges for 400 days. during these periods she was under detention for 100 days. She currently awaits return of her passport and personal property.  March 30 2017: This is what a…",
+  "canonical": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "December arrest by Turkish authorities of Professor İştar Gözaydın"
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/#content",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "closed by Turkish authorities on 23 July 2016",
+      "href": "http://newsweekme.com/a-degree-of-uncertainty/",
+      "pathname": "/a-degree-of-uncertainty/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Helsinki Citizens’ Assembly",
+      "href": "http://www.hyd.org.tr/tr/hyd-nin-hikayesi/kurucu-uyeler",
+      "pathname": "/tr/hyd-nin-hikayesi/kurucu-uyeler",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Biography from Opendemocracy.net",
+      "href": "https://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "pathname": "/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.facebook.com/istar.gozaydin?fref=ts",
+      "href": "https://www.facebook.com/istar.gozaydin?fref=ts",
+      "pathname": "/istar.gozaydin",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "href": "https://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "pathname": "/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "href": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "pathname": "/committees/academic-freedom/intervention/letters-turkey.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make",
+      "href": "https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make",
+      "pathname": "/blog/academic-freedom-turkey-theresa-may-has-choice-make",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.newswire.ca/news-releases/public-statement—the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html",
+      "href": "http://www.newswire.ca/news-releases/public-statement---the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html",
+      "pathname": "/news-releases/public-statement---the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527",
+      "href": "http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527",
+      "pathname": "/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.huffingtonpost.com/entry/58cc8fe8e4b0537abd9570d5",
+      "href": "http://www.huffingtonpost.com/entry/58cc8fe8e4b0537abd9570d5",
+      "pathname": "/entry/58cc8fe8e4b0537abd9570d5",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/",
+      "href": "http://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/",
+      "pathname": "/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.hurriyet.com.tr/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389",
+      "href": "http://www.hurriyet.com.tr/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389",
+      "pathname": "/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://bianet.org/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest",
+      "href": "https://bianet.org/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest",
+      "pathname": "/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf",
+      "href": "http://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf",
+      "pathname": "/public/IPSA-RC26_Newsletter_April_2017.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.amnesty.org/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/",
+      "href": "https://www.amnesty.org/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/",
+      "pathname": "/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.latimes.com/world/la-fg-turkey-20170718-story.html",
+      "href": "http://www.latimes.com/world/la-fg-turkey-20170718-story.html",
+      "pathname": "/world/la-fg-turkey-20170718-story.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released",
+      "href": "https://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released",
+      "pathname": "/news/jailed-turkish-academic-istar-gozaydin-released",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "izmir@icisleri.gov.tr",
+      "href": "mailto:izmir@icisleri.gov.tr",
+      "pathname": "izmir@icisleri.gov.tr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx?pageID=238&nID=94169&NewsCatID=339",
+      "href": "http://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx?pageID=238&nID=94169&NewsCatID=339",
+      "pathname": "/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/",
+      "href": "http://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/",
+      "pathname": "/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense",
+      "href": "http://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense",
+      "pathname": "/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/",
+      "href": "https://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/",
+      "pathname": "/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university",
+      "href": "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university",
+      "pathname": "/reports/2016-12-20-gediz-university",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university",
+      "href": "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university",
+      "pathname": "/reports/2016-12-09-istanbul-university",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "href": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "pathname": "/committees/academic-freedom/intervention/letters-turkey.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "href": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "pathname": "/committees/academic-freedom/intervention/letters-turkey.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "href": "http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html",
+      "pathname": "/committees/academic-freedom/intervention/letters-turkey.html",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university",
+      "href": "http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university",
+      "pathname": "/reports/2016-12-09-istanbul-university",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university",
+      "href": "http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university",
+      "pathname": "/reports/2016-12-20-gediz-university",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.facebook.com/istar.gozaydin",
+      "href": "https://www.facebook.com/istar.gozaydin",
+      "pathname": "/istar.gozaydin",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "href": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "pathname": "/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://salsa4.salsalabs.com/o/50943/p/dia/action3/common/public/index.sjs?action_KEY=19309",
+      "href": "http://salsa4.salsalabs.com/o/50943/p/dia/action3/common/public/index.sjs?action_KEY=19309",
+      "pathname": "/o/50943/p/dia/action3/common/public/index.sjs",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "acofi-gozaydin-letter",
+      "href": "https://developmentethics.org/wp-content/uploads/2016/12/acofi-gozaydin-letter.pdf",
+      "pathname": "/wp-content/uploads/2016/12/acofi-gozaydin-letter.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "epalmer@allegheny.edu",
+      "href": "mailto:epalmer@allegheny.edu",
+      "pathname": "epalmer@allegheny.edu",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://tinyurl.com/gozaydin",
+      "href": "http://tinyurl.com/gozaydin",
+      "pathname": "/gozaydin",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "www.freeistargozaydin.com",
+      "href": "http://www.freeistargozaydin.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.huffingtonpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5",
+      "href": "http://www.huffingtonpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5",
+      "pathname": "/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://www.hyd.org.tr/tr/",
+      "href": "http://www.hyd.org.tr/tr/",
+      "pathname": "/tr/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.scholarsatrisk.org/people/clare-robinson/",
+      "href": "https://www.scholarsatrisk.org/people/clare-robinson/",
+      "pathname": "/people/clare-robinson/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "fb.me/gozaydinsavasir",
+      "href": "http://fb.me/gozaydinsavasir",
+      "pathname": "/gozaydinsavasir",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.facebook.com/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609",
+      "href": "https://www.facebook.com/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609",
+      "pathname": "/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://standinggroups.ecpr.eu/religion/?p=518",
+      "href": "http://standinggroups.ecpr.eu/religion/?p=518",
+      "pathname": "/religion/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "aerdiozturk@gmail.com",
+      "href": "mailto:aerdiozturk@gmail.com",
+      "pathname": "aerdiozturk@gmail.com",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.change.org/p/free-istar-g%C3%B6zaydin",
+      "href": "https://www.change.org/p/free-istar-g%C3%B6zaydin",
+      "pathname": "/p/free-istar-g%C3%B6zaydin",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.scholarsatrisk.org/turkey-response/",
+      "href": "https://www.scholarsatrisk.org/turkey-response/",
+      "pathname": "/turkey-response/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.scholarsatrisk.org/turkey-response/",
+      "href": "https://www.scholarsatrisk.org/turkey-response/",
+      "pathname": "/turkey-response/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/#",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fdecember-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-8q",
+      "pathname": "/P1D93l-8q",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/#",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/#",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/#",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2016/12/gozaydin-free.jpg",
+      "alt": "Gozaydin free",
+      "width": null,
+      "height": null,
+      "naturalWidth": 720,
+      "naturalHeight": 540,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=522&subd=developmentethics&host=developmentethics.org&ref=&rand=0.7794889744486876",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 2584,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nDECEMBER ARREST BY TURKISH AUTHORITIES OF PROFESSOR İŞTAR GÖZAYDIN\n\n \n\nIstar Gozaydin was acquitted of charges of membership in a terrorist organization on 31 January 2018: she had been detained for seven days and under charges for 400 days. during these periods she was under detention for 100 days. She currently awaits return of her passport and personal property. \n\nMarch 30 2017:\n\nThis is what a prisoner of conscience looks like, 4 hours after release:\n\nMarch 30: About 5PM on her 100th day of incarceration \nIstar Gozaydin has been released from custody. Great news!\n\nSummary of the case to date\n\nProfessor İştar Gözaydın was Department Chair of Sociology of Gediz University until her suspension 21 July 2016. Gediz was among 15 private universities closed by Turkish authorities on 23 July 2016. Professor Gözaydın is a founder of the Turkish branch of Helsinki Citizens’ Assembly and has also consulted on behalf of EuroFEM and the European Court of Human Rights. She was detained at her home by Turkish authorities early on the morning of 20 December 2016 and transported from Istanbul to İzmir. She remained incarcerated at Izmir until March 30th. Her trial date is set for 12 September 2017. Last update September 12, 2017. Further information may be gathered from the International Development Ethics Association President Eric Palmer,  ericpalmer[zero,zero,zero,at]gmail.com.\n\nMore details below:\n\nBiographical material\nTimeline: News and status updates\nArchival material: 1. IDEA board letter to government of Turkey.\n2. IDEA Spanish-language appeal of past-President Luis Camacho, and letter from Costa Rican Philosophical Association.\n3. Press release of March 28, 2017: Professor Istar Gozaydin’s 100th day of incarceration.\n4. Petitions.\n\nBiography from Opendemocracy.net: İştar Gözaydın is a professor of law and politics who received her MCJ (Master of Comparative Jurisprudence) at New York University, School of Law (1987); and Ph.D. at Istanbul University (1992). Gözaydın is a founder member of the executive committee of the Helsinki Citizens Assembly, a human rights organization in Turkey. Professor Gözaydın was a research fellow at the University of London, Birkbeck College in 2009. Gozaydin’s publications include “Management of Religion in Turkey”: the Diyanet and Beyond” in Özgür Heval Çınar &  Mine Yıldırım  (ed.s): Freedom of Religion and Belief in Turkey, Cambridge Scholars Publishing, Newcastle upon Tyne 2014, 10-35; “Ahmet Davutoğlu: Role as an Islamic Scholar Shaping Turkey’s Foreign Policy” in Nassef Manabilang Adiong (ed.): Islam and International Relations: Diverse Perspectives, Cambridge Scholars Publishing, 2013; “Diyanet İşleri Başkanlığı,” in John L. Esposito (ed): Encyclopedia of the Islamic World, Oxford University Press,  February 2009; “The Fethullah Gülen Movement and Politics in Turkey : a chance for Democratization or a Trojan Horse?:” Democratization, vol. 16 no. 6 (December 2009), 1214-1236.\n\n \n\nTimeline: news and status updates concerning Istar Gozaydin:\n\nFor status updates: https://www.facebook.com/istar.gozaydin?fref=ts\n\nDec 20: İştar Gözaydın detained 5:30 AM and transported from Istanbul to Izmir.\n\nDecember 20: Ahmet Erdi Öztürk and İştar Gözaydın publish criticism of proposed changes to Turkish Constitution:\nhttps://www.opendemocracy.net/ahmet-erdi-ozturk-tar-g-zayd-n/turkey-s-draft-constitutional-amendments-harking-back-to-1876\n\nDecember 21: Middle East Studies Association expresses concern regarding arrest: http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html\n\nDecember 24: International Development Ethics Association expresses concern regarding arrest (see below)\n\nDecember 27: charges placed. (Charges not public record under Turkey’s state of emergency provisions)\nSpouse Iskender Savasir writes, Dec 27: “Ishtar’s morale is very good, she’s in the right place. He says thank you for the support. She’s been reading the Republic. It’s a very nice, 8-bedroom, 2-Storey Ward. She’s with 7-8 young judges and prosecutors, but she has her own room.”\n\nDecember 29: Costa Rican Philosophical Association expresses concern regarding arrest (see below).\n\nJanuary 4 2017: Turkish parliament extends state of emergency for three further months.\n\nJanuary 11:  Scholars at Risk writes, in an email circular: “On January 6, state authorities issued a decree ordering the dismissal of 631 academic personnel and 155 higher education administrative personnel, on suspicion of connection to July’s violent coup attempt. … This brings the total number of higher education personnel in the higher education sector dismissed through emergency decrees since the coup attempt to 5,583.”\n\nJanuary 27: Request denied for release on own recognizance prior to trial date.\n\nJanuary 28: An editorial letter to Times Higher Education supplement discusses the conditions of academic freedom and the Turkish national higher education system. https://www.timeshighereducation.com/blog/academic-freedom-turkey-theresa-may-has-choice-make\n\nFebruary 24: Law Society of Upper Canada “expresses grave concern about the detention of Dr. Istar Gozaydin”: http://www.newswire.ca/news-releases/public-statement—the-law-society-of-upper-canada-expresses-grave-concern-about-the-detention-of-dr-itar-gozaydn-in-turkey-614723014.html\n\nMarch 13: American Political Science Association expresses its concern regarding the detention of Prof. Gozaydin:  http://www.apsanet.org/Portals/54/goverance/2017/APSA%20Gozaydin%20Letter%20Final%20March_13_17.pdf?ver=2017-03-13-141024-527\n\nMarch 17: Dr. Karabekir Akkoyunlu writes a Huffington Post entry concerning academic freedom in Turkey that features Gozaydin:  http://www.huffingtonpost.com/entry/58cc8fe8e4b0537abd9570d5\n\nMarch 30: On her 100th day of incarceration, Istar Gozaydin has been released. Great news! — Whether charges have been dismissed… not certain: first news suggests charges pending.\nhttp://www.gazeteduvar.com.tr/gundem/2017/03/30/prof-dr-istar-gozaydina-tahliye/\nhttp://www.hurriyet.com.tr/prof-dr-istar-gozaydin-savasir-3-ay-sonra-tahliye-oldu-40412389\nhttps://bianet.org/english/human-rights/185017-prof-istar-gozaydin-released-after-94-days-of-arrest\n\nApril 30: An account of the political action in this case is published as: “Reflection on the release of a Prisoner of Conscience,” Human Rights Research Committee 26 IPSA Newsletter No.2, April 2017, 4-6. International Political Science Association. http://rc26.ipsa.org/public/IPSA-RC26_Newsletter_April_2017.pdf\n\nJune 6: “Taner Kiliç, the Chair of Amnesty International Turkey, was today detained by police along with 22 other lawyers in Izmir on suspicion of having links with the Fethullah Gülen movement…”\nhttps://www.amnesty.org/en/latest/news/2017/06/chair-of-amnesty-international-turkey-swept-up-in-post-coup-purge/\n\nJuly 18: Amnesty International Country Director for Turkey Idil Esir and nine others, including three members of Gozaydin’s civil society organization, the Helsinki Citizens’ Assembly, are incarcerated pending trial (http://www.latimes.com/world/la-fg-turkey-20170718-story.html).\n\nSeptember 12: Istar Gozaydin’s court appearance on this day yields a four month continuance.  “My dear friends, my case has been adjourned to 12 January 2018. I still have the travel ban.”\n\nJanuary 12, 2018: Court date, return to court January 31\n\nJanuary 31 2018: Istar Gozaydin was acquitted of charges of membership in a terrorist organization on 31 January 2018: she had been detained for seven days and under charges for 400 days. During these periods she was under detention for 100 days. She currently awaits return of her passport and personal property.\n\nhttps://www.timeshighereducation.com/news/jailed-turkish-academic-istar-gozaydin-released\n\n \n____________________\n\nArchival material:\n\n1. IDEA board letter to government of Turkey\n\nDecember 24 2016\n\nTo: Prime Minister Binali Yıldırım\n\nOffice of Prime Minister\n\nBasbakanlik\n\n06573 Ankara, Turkey\n\nThe governing board of the International Development Ethics Association (IDEA) notes with great concern the December 19 arrest by Turkish authorities of Professor İştar Gözaydın and other personnel of the recently shuttered Gediz University. News has reached us that Gözaydın, who was dismissed from Gediz shortly following the July 15 coup attempt, has more recently been swept up in a recent mass-arrest, with a warrant for her arrest alongside those for thirty-two others at the university.\n\nProfessor Gözaydın is a prominent Turkish intellectual, a clear and important voice who was also a key organizer for an international congress that the Association had scheduled for last summer in Istanbul. The governing board of the Association felt the need to postpone the conference in light of security issues, with hope to re-commence planning for the near future. At the time, board members also felt concern regarding freedom of academic speech in Turkey, but had hoped to convene at a later date, so as to support the Turkish community. The nation’s reputation for freedom had been greatly compromised early in 2016 through intimidation and detention of the supporters of the statement of the Turkish organization “Academics for Peace” (Barış için Akademisyenler). Following the events of July 15, our concerns regarding freedom of expression greatly increased, and the Board felt it necessary to suspend all planning in light of reports in the Turkish and international press concerning policies and actions pursued by the government of Turkey. The government’s closure of at least fifteen universities is indicative of a troubling approach, with years of precedent that have been catalogued by the Committee of Concerned Scientists. These developments have recently been followed by much worse, as detentions relating to several universities have mounted in December.\n\nWe are very much in agreement with our colleagues at Scholars at Risk, whom we here quote, as “concerned about the arbitrary suspension, arrest and detention of scholars as a part of sweeping actions taken by the State against higher education community members. While State authorities have a right to maintain order and respond to legitimate security concerns, such actions must comply with States’ human rights obligations, including those relating to freedom of association, due process, and academic freedom, which are protected by international human rights instruments including the Universal Declaration of Human Rights and the International Covenant on Civil and Political Rights, to which Turkey is a party. In addition to the harm to the immediate victims, such incidents have a chilling effect on academic freedom and undermine democratic society generally.”\n\nAcademic speech, along with free critical expression more generally, has its role in democratic and just societies; we fear that its reduction will not serve the Turkish nation or its people. Alongside our colleagues at the Middle East Studies Association, we note that “Professor Gözaydın’s reputation is built on decades of internationally recognized scholarship, advocacy for human rights and the energy she brings to her role as a public intellectual.” We are of the view that it is for her speech that she has been persecuted. We ask that you reverse the course that has been set by Professor Gözaydın’s arrest and such arrests and purges of intellectuals generally.\n\nEric Palmer, President, on behalf of the governing board\nof the International Development Ethics Association\n\nCC:\n\nErol Ayyıldız, Governor of Izmir, izmir@icisleri.gov.tr, Fax: 90 232 441 91 83\nAdministrative Aide, Ozel Kalem Mudurlugu Fax: 90 312 403 62 82\nOffice of the Prime Minister, Fax:  90 312 422 26 67\nyildirim@tbmm.gov.tr \nZeid Ra’ad Al Hussein, United Nations High Commissioner for Human Rights\n\nReferences:\n\nhttp://www.hurriyetdailynews.com/turkish-academics-investigated-on-same-charges-as-jailed-pkk-leader.aspx?pageID=238&nID=94169&NewsCatID=339\n\nhttp://concernedscientists.org/2013/08/international-human-rights-science-network-calls-for-release-of-eight-turkish-colleagues/\n\nhttp://www.economist.com/news/europe/21706536-turkeys-post-coup-crackdown-has-become-witch-hunt-conspiracy-so-immense\n\nhttps://www.turkishminute.com/2016/12/20/turkey-detains-prominent-professor-law-istar-gozaydin/\n\nhttp://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university\n\nhttp://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university\n\nhttp://mesana.org/committees/academic-freedom/intervention/letters-turkey.html\n\nhttp://mesana.org/committees/academic-freedom/intervention/letters-turkey.html\n\n2. Letter from Costa Rican Philosophical Association, 29 December 2016:\n\nURGENTE: arresto de İştar Gözaydın , organizador de congreso de la Asociación Internacional de Ética del desarrollo en Turquía.\n\nDr. Luis Camacho\n\nCofundador, Asociación Internacional de Ética del Desarrollo (International Development Ethics Association, IDEA)\n\nPresidente, Asociación Costarricense de Filosofía\n\nLa Asociación Internacional de Etica del Desarrollo (International Development Ethics Association, IDEA, fundada en Costa Rica en 1984 y de la cual soy uno de los fundadores) había planeado un evento de gran importancia para junio 2016 en Turquía : el XI Congreso de IDEA , dedicado al tema de la corrupción como obstáculo para el  desarrollo democrático. Dadas las condiciones en Turquía, en marzo de este año los organizadores locales  y  la directiva de IDEA acordaron suspenderlo y trasladarlo tentativamente a junio 2017.\n\nA raíz del golpe de Estado ocurrido en julio de este año , gran número de académicos en numerosas instituciones de enseñanza superior han sido detenidos. Ahora nos enteramos de que el 19 de diciembre la policía turca detuvo a uno de los  principales organizadores del Congreso, İştar Gözaydın, junto con otros 32 académicos de la Universidad Gediz, una de las 15 instituciones cerradas por órdenes del primer  ministro Tayyip Erdogan después del golpe de Estado.\n\nPara más información sobre este lamentable hecho se pueden visitar los siguientes sitios:   http://mesana.org/committees/academic-freedom/intervention/letters-turkey.html , http://monitoring.academicfreedom.info/reports/2016-12-09-istanbul-university , http://monitoring.academicfreedom.info/reports/2016-12-20-gediz-university , https://www.facebook.com/istar.gozaydin .\n\nLa Directiva de IDEA se encuentra en estos momentos ocupada en gestionar la liberación de los detenidos y ha enviado una carta que se puede leer en  https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/ .\n\nEl Presidente de IDEA, Dr. Eric Palmer, nos ha pedido dar a conocer la situación en los medios sociales y apoyar la carta enviada por la asociación  Scholars At Risk en relación con la violación de la libertad de cátedra en Turquía .  Dicha carta se encuentra en la siguiente dirección:  https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/\n\nTambién se encuentra información en http://salsa4.salsalabs.com/o/50943/p/dia/action3/common/public/index.sjs?action_KEY=19309 .\n\nComo Presidente de la Asociación Costarricense de Filosofía  (ACOFI) también pido  lo mismo a los miembros de nuestra Asociación.\n\nSabanilla de Montes de Oca, 29 de diciembre 2016.\n\nACOFI (Costa Rica Philosophical Association) letter to Prime Minister Erdogan of Turkey: see link: acofi-gozaydin-letter\n\n____________________\n\n3. Press release of March 28, 2017\n\nProfessor Istar Gozaydin’s 100th day of incarceration displays deteriorating conditions for freedom of speech in Turkey\n\nThursday March 30th marks the 100th day of imprisonment of Professor Istar Gozaydin, lately Chair of the Department of Sociology at Turkey’s Gediz University. Dr Gozaydin is an especially prominent observer of government policy and of the state’s religious affairs directorate (Diyanet). Her lengthy detention and the charges filed against her on March 17th reflect an extreme case in a developing pattern of infringement of freedom in Turkey.\n\nA founder of Turkey’s branch of the Helsinki Citizens’ Assembly in the 1990’s, Dr Gozaydin has long pursued research and action within the public sphere. She was suspended from her academic duties at Gediz University for re-tweeting an admonition against the death penalty several days after the coup attempt failed in Turkey on July 15-16, 2016. Just one week following the coup attempt, the university was shuttered by Turkey’s Higher Education Council. According to Clare Robinson, Advocacy Director of the Scholars at Risk Network, Gozaydin is one among 5,913 personnel recently dismissed from the higher education system by government order. Robinson further notes that “these closures and dismissals are only the beginning. Scholars at Risk has verified at least 607 detentions of, or warrants issued for, higher education personnel and at least 148 prosecutions of scholars, students, and other higher education personnel.”\n\nDr Gozaydin is charged with membership in the Gülen religious and social movement, which the government of Turkey refers to as a terrorist organization that it has taken to be the source of the 2016 coup attempt. The supposed evidence for Dr Gozaydin’s membership inclues her notes and scholarly writing. Dr Gozaydin first turned her attention to Diyanet, the state’s religious affairs directorate, in her graduate work at Instanbul University. Her first book-length scholarly study of the directorate appeared in 1993, nearly a decade before the ruling Justice and Development Party severed its alliance with that movement. In recent writing for the Huffington Post, Karabekir Akkoyunlu writes of the government’s effort to “retrospectively criminalise academic research and activities on issues that were only a couple of years ago being openly and extensively debated in the public sphere.” He cites Dr. Gozaydin’s case as a prominent example of a developing trend: “Scholars who have conducted research about the relationship between religion, business and politics in Turkey, and have established contacts with Gülen supporters and business affiliates in the process, now risk being labelled as coup supporters.”\n\nOn her 100th day of incarceration, Professor Istar Gozaydin currently awaits assignment of a trial date from within her cell in Izmir, Turkey.\n\nAuthor and contact: Eric Palmer, Professor, Allegheny College. epalmer@allegheny.edu\n\nFurther information: http://tinyurl.com/gozaydin\n\nAdvocacy site: http:// www.freeistargozaydin.com (expected to be operational by 30 March)\n\nSources:\n\nKarabekir Akkoyunlu, Centre for Southeast European Studies, University of Graz, writes for Huffington Post: http://www.huffingtonpost.com/entry/as-turkeys-academia-faces-desolation-a-call-for-solidarity_us_58cc8fe8e4b0537abd9570d5\n\nHelsinki Citizens’ Assembly (Turkey branch): http://www.hyd.org.tr/tr/\n\nClare Robinson may be reached through Scholars at Risk Network: https://www.scholarsatrisk.org/people/clare-robinson/\n\n____________________\n\n4. Petitions (for your information)\n\nA petition intended for women of Turkey as signatories: fb.me/gozaydinsavasir (instructions) and https://www.facebook.com/notes/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-i%C3%A7in-kad%C4%B1nlara-bir-%C3%A7a%C4%9Fr%C4%B1/i%C5%9Ftar-g%C3%B6zayd%C4%B1n-kimdir/1910398559242609 (petition).\n\n2.  http://standinggroups.ecpr.eu/religion/?p=518\n\nTo sign, please email name and academic affiliation to: aerdiozturk@gmail.com\n\n3. December 29 Petition to free Professor İştar Gözaydın (Turkish, English, German): https://www.change.org/p/free-istar-g%C3%B6zaydin\n\n4. Scholars at Risk: Letter of appeal on behalf of detained scholars in Turkey: https://www.scholarsatrisk.org/turkey-response/\n\n5. Other suggestions for action: https://www.scholarsatrisk.org/turkey-response/\n\n \n\n \n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

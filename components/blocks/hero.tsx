@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import { ArrowRight } from 'lucide-react';
 
 export type LinkValue = {
@@ -69,7 +69,7 @@ export function HeroBlock({
   return (
     <section className="rounded-[calc(var(--vd-radius)+8px)] border border-[var(--vd-border)] bg-[var(--vd-card)] px-10 py-16">
       <div className="mb-6 h-40 w-full overflow-hidden rounded-[calc(var(--vd-radius)+4px)] border border-[var(--vd-border)]">
-        <img
+        <OptimizedImage
           src={imageSrc}
           alt={imageAlt}
           width={1200}

@@ -1,0 +1,1006 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/pastexhibits/",
+    "lastmod": null,
+    "manual": true
+  },
+  "capturedAt": "2026-06-09T18:10:22.601Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/pastexhibits/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/pastexhibits/",
+  "title": "Past Exhibitions – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/pastexhibits/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Past Exhibitions"
+    },
+    {
+      "level": "h2",
+      "text": "Past Exhibitions"
+    },
+    {
+      "level": "h4",
+      "text": "If you missed one of the many temporary exhibitions we have developed and hosted since the museum, you can find the next best thing here - including copies of the original information panels and images."
+    },
+    {
+      "level": "h3",
+      "text": "10 Year Anniversary Showcase"
+    },
+    {
+      "level": "h3",
+      "text": "Oh What A Lovely War? Humour in Times of Conflict"
+    },
+    {
+      "level": "h3",
+      "text": "Oxfordshire Remembers 1914-18"
+    },
+    {
+      "level": "h3",
+      "text": "The Indian Army in the First World War: An Oxfordshire and Buckinghamshire Perspective"
+    },
+    {
+      "level": "h4",
+      "text": "View the Exhibition Panels Here"
+    },
+    {
+      "level": "h3",
+      "text": "Winston Churchill Oxfordshire Hussar 1901-1965"
+    },
+    {
+      "level": "h3",
+      "text": "Children and War"
+    },
+    {
+      "level": "h3",
+      "text": "The War Beyond the Western Front"
+    },
+    {
+      "level": "h4",
+      "text": "Click the images on the right to view the presentation in 2D or 3D!"
+    },
+    {
+      "level": "h4",
+      "text": ""
+    },
+    {
+      "level": "h4",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "View Exhibition Panels",
+      "href": "https://www.sofo.org.uk/pastexhibits/10thanniversary/",
+      "pathname": "/pastexhibits/10thanniversary/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "View Exhibition Panels",
+      "href": "https://www.sofo.org.uk/pastexhibits/owalwpanels/",
+      "pathname": "/pastexhibits/owalwpanels/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire Remembers Part I 1914-1916 (PDF)",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2019/06/Oxfordshire-Remembers-Part-1-1914-16-PANELS.pdf",
+      "pathname": "/wp-content/uploads/2019/06/Oxfordshire-Remembers-Part-1-1914-16-PANELS.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire Remembers Part II 1917-19 (PDF)",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2019/06/Oxfordshire-Remembers-Part-2-1917-19-PANELS.pdf",
+      "pathname": "/wp-content/uploads/2019/06/Oxfordshire-Remembers-Part-2-1917-19-PANELS.pdf",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "View the Exhibition Panels Here",
+      "href": "https://www.sofo.org.uk/?page_id=4569&preview=true",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learn More ...",
+      "href": "https://www.sofo.org.uk/educational-resources-churchill/",
+      "pathname": "/educational-resources-churchill/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/educational-resources-churchill/",
+      "pathname": "/educational-resources-churchill/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learn More ...",
+      "href": "https://www.sofo.org.uk/educational-resources-children-and-war/",
+      "pathname": "/educational-resources-children-and-war/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/educational-resources-children-and-war/",
+      "pathname": "/educational-resources-children-and-war/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The War Beyond the Western Front",
+      "href": "https://www.brookes.ac.uk/hpc/research/the-war-beyond-the-western-front/",
+      "pathname": "/hpc/research/the-war-beyond-the-western-front/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Centre for Hidden Histories",
+      "href": "http://hiddenhistorieswwi.ac.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Tudor Georgescu",
+      "href": "https://www.brookes.ac.uk/hpc/staff-and-students/academic-staff/?wid=hpc-staff&op=full&uid=p0075711",
+      "pathname": "/hpc/staff-and-students/academic-staff/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2017/06/War-Beyond-the-Western-Front-Catalogue-Full-Version.pdf",
+      "pathname": "/wp-content/uploads/2017/06/War-Beyond-the-Western-Front-Catalogue-Full-Version.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/learning/educational-resources-beyond-the-western-front/",
+      "pathname": "/learning/educational-resources-beyond-the-western-front/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/onlineexhibits/",
+      "pathname": "/onlineexhibits/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshire-d-day-stories/",
+      "pathname": "/oxfordshire-d-day-stories/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshire-people/",
+      "pathname": "/oxfordshire-people/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/pastexhibits/",
+      "pathname": "/pastexhibits/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/touring-exhibitions/",
+      "pathname": "/touring-exhibitions/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/pastexhibits/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/HLFHI_BLK.jpg",
+      "alt": "",
+      "width": "869",
+      "height": "535",
+      "naturalWidth": 869,
+      "naturalHeight": 535,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Indian-Army-Poster.png",
+      "alt": "",
+      "width": "646",
+      "height": "914",
+      "naturalWidth": 646,
+      "naturalHeight": 914,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Churchill-slides1-300x218.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "218",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/childwar_1-300x217.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "217",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/brookes-etc-300x93.png",
+      "alt": "",
+      "width": "300",
+      "height": "93",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/The-War-Beyond-the-Western-Front-Catalogue-213x300.png",
+      "alt": "",
+      "width": "213",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/06/1917-19-Italy-Janet-Witcomb-212x300.png",
+      "alt": "",
+      "width": "212",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/01/Oxfordshire-in-50-Objects-Sidebar-Tab.png",
+      "alt": "Click here for Oxfordshire's Military Heritage in 50 Objects",
+      "width": "1813",
+      "height": "625",
+      "naturalWidth": 1280,
+      "naturalHeight": 441,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Online-Exhibition-S-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Blog-Sidebar-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Your-Stories-Sidebar-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Oral-Histories-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Past-Exhibition-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 906,
+      "naturalHeight": 313,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/05/Touring-Exhibitions-Sidebar.png",
+      "alt": "Sidebar tab - click here to go to our touring exhibitions page",
+      "width": "928",
+      "height": "331",
+      "naturalWidth": 928,
+      "naturalHeight": 331,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 986,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nPast Exhibitions\nIf you missed one of the many temporary exhibitions we have developed and hosted since the museum, you can find the next best thing here - including copies of the original information panels and images.\n10 YEAR ANNIVERSARY SHOWCASE\n\nCelebrating the 10th Anniversary, this exhibition showcased some of our favourite objects and collections from the archives while telling the story of the museum from its origins.\n\nView Exhibition Panels\nOH WHAT A LOVELY WAR? HUMOUR IN TIMES OF CONFLICT\n\nOur 2019/20 exhibition which featured ways humour and entertainment have been used during times of conflict, including by soldiers and POWs of the county regiments.\n\nView Exhibition Panels\nOXFORDSHIRE REMEMBERS 1914-18\n\nExhibiting from 2014 until 2018, The Soldiers of Oxfordshire Museum’s contribution to the commemoration of the Centenary of WW1, with accompanying talks and events was Oxfordshire Remembers Part I and Part II.\n\nIn September 2016, funded by the HLF, we welcomed over 200 visitors and participants to ‘Unknown Stories of the Great War, A Day for All Ages’ where members of the public were encouraged to bring in their own items of family history from the period and hear more about their significance in recording both the military and social lives of people living through conflict.\nThe exhibition explored men and women of all classes and social backgrounds from across Oxfordshire and Buckinghamshire and how they contributed in a myriad of ways to the war effort.\nTelling some of their personal stories, through fascinating artefacts, images and films. The exhibitions covered everything from Oxfordshire’s VC winners, women and children at war, conscription, the Armistice and how life was affected after the ‘War to End all Wars’.\n\nClick on the buttons to the right to view the panels from these exhibitions.\n\nSupported by the Heritage Lottery Fund.\n\nOxfordshire Remembers Part I 1914-1916 (PDF)\nOxfordshire Remembers Part II 1917-19 (PDF)\nTHE INDIAN ARMY IN THE FIRST WORLD WAR: AN OXFORDSHIRE AND BUCKINGHAMSHIRE PERSPECTIVE\n\nThis project reflects the interest, enthusiasm and participation of volunteers who believe that there remains a story to tell about India’s participation in the Great War. The panels were researched and written by the volunteers, who also chose many of the photographs and wrote additional materials for you to take away. Across Oxfordshire and Buckinghamshire, war memorials list the names of those British soldiers who fell as part of the Indian Army in Iraq (Mesopotamia) in 1914-18. This exhibition is a reminder of their contribution and the one made by India and its people.\n\nWe hope that you find it of interest.\n\nAcknowledgements:\n\nAnthony Andrews, Dr Jeanette Atkinson, Graham Bandy, Akansha Bhattacharyya, Sumon Bhattacharyya, Prem Gill, Rupinder Gill, Gyan Gopal, Kanta Gopal, Professor Adrian Gregory, Chinta Kallie, Melissa Kozlenko, Sarah Mahi, Jahan Mahmood, Irfan  Malik, Alex Mobbs, Malkit Sami, Harbinder Singh, Anveer Sodhi, Sharon Woodward.\n\nProduced by Dr Priya Atwal and Stephen Barker\n\nView the Exhibition Panels Here\nWINSTON CHURCHILL OXFORDSHIRE HUSSAR 1901-1965\n\nThis educational resource shows why Churchill joined the Queen's Own Oxfordshire Hussars and his lifelong interest in the regiment.\n\nHis early military experiences and his enthusiasm for soldiering are well known. Less so is his time as a keen Reservist. How did this experience reflect and perhaps help to shape his attitude to his life? Learn More ...\n\nCHILDREN AND WAR\n\nWar changes lives in myriad ways and this resource will explore some of them. The resource is laid out thematically, starting with soldiers as boy musicians and those who lied about their age to serve King and Country. It looks at the young innocent victims of global warfare and considers how the disruption caused by  flight from the conflict zones shape individual lives.\n\nFor some war is exciting and the enduring appeal of toys and war games are evidence for this.  For others it represents loss and we examine how commemoration plays a major part in our lives. War also inspires great  acts of courage and children have often contributed to the war effort.\n\nPlease explore this wide-ranging subject through the lens of Oxfordshire experiences.  Learn More ... \n\n \n\nTHE WAR BEYOND THE WESTERN FRONT\n\nThe War Beyond the Western Front was a collaborative project between Oxford Brookes University and the Museum being funded by the AHRC Centre for Hidden Histories at the University of Nottingham.\n\nThe project promoted research into the history and heritage of the First World War beyond the trenches of Western Europe. That is, to explore the less well trodden theatres both geographically and by highlighting themes surrounding migration and displacement; race and ethnicity; and the experience of ‘others’ within and beyond Europe including Asia and the Commonwealth. The project was successfully lead by Tudor Georgescu PhD of Oxford Brookes University and Stephen Barker of the Museum.\n\nClick the images on the right to view the presentation in 2D or 3D!\n\nThis exhibition was funded and supported in various ways by the following organisations and individuals:\n\nHeritage Lottery Fund, Arts Humanities Research Council, Voices of War and Peace (Birmingham), University of Oxford History Faculty, The Soldiers of Oxfordshire Museum, Oxford Hindu Temple and Community Centre Project, Oxford Muslim Community Initiative, Oxford University Sikh Society, In Flanders Fields Museum (Ypres), Imperial War Museum (London), Royal Pavilion and Museums (Brighton & Hove), 1914 Sikhs, Woodward Media, Jonathan Ali, Avtar Bahra, Peter Bance, Dominiek Dendooven, Michael Dewey, Parminder Dosanjh, Phil Freizinger, Chris Hill, Paul Reed, Rahil Sheikh, Jagdip Singh Kang.\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

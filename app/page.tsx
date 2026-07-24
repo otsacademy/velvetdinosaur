@@ -1,5 +1,5 @@
-import { FullSite } from "@/components/site/full-site"
+import { HomeSite } from "@/components/home/home-site"
 
 export default function HomePage() {
-  return <FullSite />
+  return <HomeSite />
 }

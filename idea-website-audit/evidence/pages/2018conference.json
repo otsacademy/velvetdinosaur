@@ -1,0 +1,496 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/2018conference/",
+    "lastmod": "2020-01-20T00:38:51+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:48:58.701Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/2018conference/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/2018conference/",
+  "title": "IDEA-GRETHA 2018 Congress: A World United – IDEA",
+  "metaDescription": "IDEA-GRETHA 2018 Congress: A World United A World United: Allies and Ethical Action in International Ethical Development -- the eleventh IDEA Congress, jointly produced with GREThA -- took place 25-27 June 2018. FINAL version IDEA Bordeaux program See also the site for Groupe de Recherche en Économie Théorique et Appliquée (GREThA): http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea ***Historic conference information…",
+  "canonical": "https://developmentethics.org/2018conference/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "IDEA-GRETHA 2018 Congress: A World United"
+    },
+    {
+      "level": "h3",
+      "text": "IDEA-GRETHA 2018 Congress: A World United"
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/2018conference/#content",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "FINAL version IDEA Bordeaux program",
+      "href": "https://developmentethics.org/wp-content/uploads/2018/07/july-6-final-version-idea-bordeaux-program.pdf",
+      "pathname": "/wp-content/uploads/2018/07/july-6-final-version-idea-bordeaux-program.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "href": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "pathname": "/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "href": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "pathname": "/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://easychair.org/conferences/?conf=ideagretha2018",
+      "href": "https://easychair.org/conferences/?conf=ideagretha2018",
+      "pathname": "/conferences/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/2018conference/",
+      "href": "https://developmentethics.org/2018conference/",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "lkeleher@nmsu.edu",
+      "href": "mailto:lkeleher@nmsu.edu",
+      "pathname": "lkeleher@nmsu.edu",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "lkeleher@nmsu.edu",
+      "href": "mailto:lkeleher@nmsu.edu",
+      "pathname": "lkeleher@nmsu.edu",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "http://gretha.u-bordeaux.fr/en/7th-gretha-international-conference-economic-development/practical-information",
+      "href": "http://gretha.u-bordeaux.fr/en/7th-gretha-international-conference-economic-development/practical-information",
+      "pathname": "/en/7th-gretha-international-conference-economic-development/practical-information",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk",
+      "href": "https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk",
+      "pathname": "/congres/joint-conference-IDEA-GREThA-JDD/uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://developmentethics.org/joining-idea-2/",
+      "href": "https://developmentethics.org/joining-idea-2/",
+      "pathname": "/joining-idea-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "https://www.bordeaux-tourisme.com/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme",
+      "href": "https://www.bordeaux-tourisme.com/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme",
+      "pathname": "/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jballetfr@yahoo.fr",
+      "href": "mailto:jballetfr@yahoo.fr",
+      "pathname": "jballetfr@yahoo.fr",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/2018conference/#",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252F2018conference%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-9C",
+      "pathname": "/P1D93l-9C",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/2018conference/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/2018conference/#",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/2018conference/#",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/2018conference/#",
+      "pathname": "/2018conference/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2017/07/3-headers.png?w=768&h=89",
+      "alt": "3 headers",
+      "width": null,
+      "height": null,
+      "naturalWidth": 580,
+      "naturalHeight": 66,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2017/07/footer.png?w=768&h=99",
+      "alt": "Footer",
+      "width": null,
+      "height": null,
+      "naturalWidth": 580,
+      "naturalHeight": 74,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=596&subd=developmentethics&host=developmentethics.org&ref=&rand=0.023319205318934833",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/2018conference/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 1472,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nIDEA-GRETHA 2018 CONGRESS: A WORLD UNITED\nIDEA-GRETHA 2018 Congress: A World United\n\nA World United: Allies and Ethical Action in International Ethical Development — the eleventh IDEA Congress, jointly produced with GREThA — took place 25-27 June 2018.\n\nFINAL version IDEA Bordeaux program\n\nSee also the site for Groupe de Recherche en Économie Théorique et Appliquée (GREThA):\n\nhttp://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea\n\n***Historic conference information lies below***\n\nCALL FOR ABSTRACTS\nThe International Development Ethics Association, and\nGRETHA, University of Bordeaux\n\n Invite scholars, practitioners, government policy makers, and other interested parties to submit proposals for presentations at a conference with the theme\n\nA World United: Allies in Ethical Development\nBordeaux, France June 25 – 27, 2018\n\n Organized by\nInternational Development Ethics Association and\nGroupe de Recherche en Économie Théorique et Appliquée\nGRETHA UMR CNRS 5113 University of Bordeaux\nUnité Mixte Internationale Résilience (IRD), and\nwith support from FREE (Fonds pour la recherche en éthique économique)\n\nConference Theme\nThe conference theme “A World United: Allies in Development” was chosen with the hope of inspiring thoughtful conversations about the important relationships that can both frustrate and facilitate development. Although we are primarily concerned with questions of personal relationships in which individuals and groups of people ally themselves with one another to bring about ethical development, this theme is also meant to capture alliances at every level of development, including alliances between and across nation states, corporations, multinational groups, NGOs, etc. Thus, we are interested in considerations on the following dimensions of the theme as they apply to ethical development:\n\nFoundational issues of alliances: What does it mean to be allied with another? What makes for a good ally? How might we respond to harmful alliances? Does privilege itself create a particular responsibility to ally with those less privileged?\nAlliances within and across social categories and identities, including religion, gender, race, ability, economic status, caste, tribe, etc.\nAlliances within and across professional roles including aid workers and stakeholders, agricultural economists and farmers, health care providers and patients, scholars and practitioners, political leaders and citizens, corporations and consumers, shareholders and stakeholders, etc.\nAllies across borders: private citizens, refugees, immigrants, trade agreements, issues of fair trade, development aid, and international political agreements such as the Paris Accord on Climate Change, etc.\nAllies beyond humanity: allies with non-human animals, allies with the environment, etc.\n\nPresentations should examine these issues from diverse theoretical and conceptual perspectives including philosophical argument, empirical analysis, examinations of policy, and action strategies.  The conference will engage scholars and practitioners from around the world and from a wide variety of disciplines and activities (including philosophy and other humanities, social sciences, policy studies, development, social work, NGOs, local and global agencies and organizations, government officials and policy makers). IDEA particularly welcomes submissions from scholars and practitioners in the global south.\n\nIDEA’s A World United conference will be held conjointly with GREThA’s Collective Action and Development conference: The 7th Conference on Development, “Collective action and Development” of GREThA (Groupe de Recherche en Économie Théorique et Appliquée) will run in conjunction with IDEA. All participants will be welcome to attend both conference sessions. The two conferences will take place in the same venue (Pole Juridique et Judiciaire, downtown historical Bordeaux). For further details concerning Collective Action And Development, see:\n\nhttp://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea\n\nJoint conference keynote addresses:\nThe International Development Ethics Association’s Second David Crocker lecture will be delivered by Christine Koggel, Department of Philosophy, Carleton University, Canada,\nand GREThA is pleased to invite\nVijayendra Rao, Lead Economist, World Bank Development Research Group\n\nFurther plenary sessions: to be announced.\n\nConference language: English. All paper submissions and presentations should be in English.\n\nField Visit\nAn optional field visit to DARWIN is planned for June 27. DARWIN is an alternative space shared by 100 companies and 30 associations united around common goals including the reduction of their companies’ environmental footprints, creating new economic synergies and promoting urban cultures.\n\nConference Format\nPlenary and concurrent sessions with arranged panels and individual presentations composed into panels.\n\n \n\nSubmissions — closed\n\nTo commence a submission: you should create a new account at https://easychair.org/conferences/?conf=ideagretha2018\n(see first link on the page), or log into your pre-existing easychair account after pointing your brower to that link.   Unsure whether you have an easychair account? you may find out using the second link on the page.\n\nProposals submitted to easychair should include:\n\nTitle and abstract of up to 500 words, and five keywords. Please do not provide author information within the abstract (set for blind submission).\nName, affiliation (if applicable), and contact information\nA biography of under 100 words for each presenter (for the conference program)\n\nIndividual paper presentations: Proposals should include presentation title and abstract of up to 500 words, plus five keywords. Co-authored and multiple-authored papers are permitted.\n\nPractitioner presentations: Practitioners in non-governmental organizations, government agency, religious communities and other civil society groups may similarly propose presentations that need not pertain to academic research. Please specify all presenters in the proposal.\n\nYoung scholar meets senior sessions: Graduate students can present their research plans or work in progress. IDEA stalwarts will provide feedback and chair the discussion. Graduate students can also submit paper abstracts and paper proposals for regular sessions.\n\nPanel proposals: IDEA invites proposals of panels that address themes or sub-themes mentioned above. Panel proposals should include three or four paper abstracts (500 words each) plus a description of the panel theme (500 words).\n\nFor further information and conference updates see: https://developmentethics.org/2018conference/ (the page you are on currently)\n\nConference Conveners\nLori Keleher: lkeleher@nmsu.edu\nJerome Ballet: jballetfr@yahoo.fr\n\nInternational Conference Committee\nMorten Fibieger Byskov, Andrew Crabtree, Nigel Dower, Jean-Luc Dubois, Stephen Esquith, Rebecca Gutwald, Lori Keleher, Jean Marcel Koffi, Alice Kouadio, Pierre Morand, Eric Palmer, Laurent Parrot, Carlos Zorro Sánchez, and Asun St. Clair\n\nLocal Committee\nJerome Ballet, Tanguy Bernard, Eric Rougier, Julie Vissaguet\n\nQuestions? Please contact conference convenors, Lori Keleher: lkeleher@nmsu.edu\nJerome Ballet: jballetfr@yahoo.fr\n\n \n\n*** Supporting notices ***\n\nThe conference will begin early in the day June 25th and end midday June 27th.\n\nThere will be an optional field trip to Darwin June 27th following the close of the conference.  Please respond by April 1 to jballetfr@yahoo.fr if you would like to join this excursion; if you will be bringing extra guests, please indicate that.\n\nThere will be an IDEA retreat on June 28th.  See below for more information.  Spaces may still be available — please send your request for a place to jballetfr@yahoo.fr if you would like to join this excursion; if you will be bringing extra guests, please indicate that. Cost is set at 50 euros per person.\n\nInformation about possible travel arrangements and accommodation can be found here: http://gretha.u-bordeaux.fr/en/7th-gretha-international-conference-economic-development/practical-information\n\nRegistration: The fees for the IDEA – Gretha conference have been set as follows:\n\nProfessionals in High Income Country: 200 Euro before May 15th\nProfessionals in High Income Country: 250 Euro after May 15th\nStudents and Professionals in Other Countries: 100 Euro\n\nThis fee includes all coffee breaks and lunch on all three days of the conference and a social dinner on June 25th.\n\nRegistration is open at: https://congres.adera.fr/congres/joint-conference-IDEA-GREThA-JDD/uk . All conference participants must also be members in the International Development Ethics Association. Membership should be secured in advance of the conference.  You can join or renew your IDEA membership anytime here: https://developmentethics.org/joining-idea-2/.\n\nDARWIN Field Trip: There will be a 1.5 hours guided tour of DARWIN on the afternoon of June 27th. Transportation to and from the conference will be arranged. The transport will depart at 2:00 pm (after lunch) and return about 4:00 pm.\n\nConference participants and others (families, including children) are welcome to participate in this trip.  Those interested in participating in the Darwin field trip must register for the field trip by April 1 by contacting Jerome Ballet (jballetfr@yahoo.fr). The fee for field trip participation is 10 Euros per person and should be paid at the time of conference registration.\n\nDarwin is a place where many alternative projects with social and ecological aims are grouped together. It is located on the right bank of Bordeaux. There is a café and a restaurant on site. For more information see https://www.bordeaux-tourisme.com/Decouvrir-Bordeaux/Incontournables/Darwin-Ecosysteme\n\nIDEA Retreat: Following the conference there will be a day trip to Teich bird sanctuary and the beaches of Arcachon open to all participants and their families. Transportation will depart around 8:00 am and return around 7:00 pm. Spaces may still be available — please send your request for a place to jballetfr@yahoo.fr if you would like to join this excursion; if you will be bringing extra guests, please indicate that. Cost is set at 50 euros per person.\n\n \n\n \n\n \n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

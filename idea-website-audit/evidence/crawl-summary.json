@@ -1,0 +1,738 @@
+{
+  "capturedAt": "2026-05-21T13:50:08.732Z",
+  "siteOrigin": "https://developmentethics.org",
+  "robots": {
+    "disallow": [
+      "/wp-admin/",
+      "/wp-login.php",
+      "/wp-signup.php",
+      "/press-this.php",
+      "/remote-login.php",
+      "/activate/",
+      "/cgi-bin/",
+      "/mshots/v1/",
+      "/next/",
+      "/public.api/"
+    ],
+    "allow": [
+      "/wp-admin/admin-ajax.php"
+    ]
+  },
+  "sitemapUrlCount": 39,
+  "pageCount": 39,
+  "screenshotPages": [
+    "https://developmentethics.org/",
+    "https://developmentethics.org/about/",
+    "https://developmentethics.org/announcements/",
+    "https://developmentethics.org/contact/",
+    "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+    "https://developmentethics.org/joining-idea-2/",
+    "https://developmentethics.org/joining-idea/",
+    "https://developmentethics.org/member-resources/",
+    "https://developmentethics.org/news-and-events/",
+    "https://developmentethics.org/officers-board/",
+    "https://developmentethics.org/past-events/",
+    "https://developmentethics.org/reading-list/",
+    "https://developmentethics.org/related-links/"
+  ],
+  "pages": [
+    {
+      "url": "https://developmentethics.org/",
+      "lastmod": "2026-02-05T19:04:42+00:00",
+      "status": 200,
+      "title": "IDEA – International Development Ethics Association",
+      "metaDescription": "Welcome to the webpage of the International Development Ethics Association. This website provides news about recent and future discussions and research on development ethics. IDEA promotes ethical discussion of development: the nature of ethically desirable development, ethical means for achieving development, and ethical dilemmas arising in the practice of development. IDEA members include researchers and…",
+      "h1": [
+        "IDEA"
+      ],
+      "h2": [
+        "Home",
+        "Welcome to the webpage of the International Development Ethics Association. This website provides news about recent and future discussions and research on development ethics.",
+        "",
+        ""
+      ],
+      "wordCount": 199,
+      "links": 24,
+      "visibleImages": 3,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/2018conference/",
+      "lastmod": "2020-01-20T00:38:51+00:00",
+      "status": 200,
+      "title": "IDEA-GRETHA 2018 Congress: A World United – IDEA",
+      "metaDescription": "IDEA-GRETHA 2018 Congress: A World United A World United: Allies and Ethical Action in International Ethical Development -- the eleventh IDEA Congress, jointly produced with GREThA -- took place 25-27 June 2018. FINAL version IDEA Bordeaux program See also the site for Groupe de Recherche en Économie Théorique et Appliquée (GREThA): http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea ***Historic conference information…",
+      "h1": [
+        "IDEA-GRETHA 2018 Congress: A World United"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 1472,
+      "links": 39,
+      "visibleImages": 4,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/about-2/",
+      "lastmod": "2022-09-05T02:39:23+00:00",
+      "status": 200,
+      "title": "About – IDEA",
+      "metaDescription": "History of IDEA The International Development Ethics Association is a unique international, cross-cultural, and interdisciplinary group of philosophers, development and environmental theorists, and practitioners. The aim of IDEA is threefold: To apply ethical reflection to development goals and strategies and to relations between the “North” and “South”. Numerous groups are concerned with international development. Only…",
+      "h1": [
+        "About"
+      ],
+      "h2": [],
+      "wordCount": 1516,
+      "links": 46,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/about-2/history-of-idea/",
+      "lastmod": "2020-02-11T03:55:31+00:00",
+      "status": 200,
+      "title": "History of IDEA – IDEA",
+      "metaDescription": "History of IDEA The International Development Ethics Association is a unique international, cross-cultural, and interdisciplinary group of philosophers, development and environmental theorists, and practitioners. The aim of IDEA is threefold: To apply ethical reflection to development goals and strategies and to relations between the “North” and “South”. Numerous groups are concerned with international development. Only…",
+      "h1": [
+        "History of IDEA"
+      ],
+      "h2": [],
+      "wordCount": 1332,
+      "links": 41,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/about-2/what-is-development-ethics/",
+      "lastmod": "2012-12-27T22:26:01+00:00",
+      "status": 200,
+      "title": "What is Development Ethics? – IDEA",
+      "metaDescription": "International development ethics is ethical reflection on the ends and means of local, national and global development. IDEA is forging a consensus on the tasks and methods of this relatively new discipline. The following is how one IDEA member sees our interrelated concerns: Levels of Value Issues 1) The recognition of value issues as an…",
+      "h1": [
+        "What is Development Ethics?"
+      ],
+      "h2": [],
+      "wordCount": 368,
+      "links": 19,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/about/",
+      "lastmod": "2023-07-31T06:24:46+00:00",
+      "status": 200,
+      "title": "About – IDEA",
+      "metaDescription": "The History of IDEA The International Development Ethics Association is a unique international, cross-cultural, and interdisciplinary group of philosophers, development and environmental theorists, and practitioners. The aim of IDEA is threefold: To apply ethical reflection to development goals and strategies and to relations between the “North” and “South”. Numerous groups are concerned with international development.…",
+      "h1": [
+        "About"
+      ],
+      "h2": [
+        "The History of IDEA"
+      ],
+      "wordCount": 803,
+      "links": 46,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/announcements/",
+      "lastmod": "2022-07-07T15:45:16+00:00",
+      "status": 200,
+      "title": "Announcements – IDEA",
+      "metaDescription": "IDEA news and updates on IDEA conferences and events may be found at the IDEA news and events link. For the 2021/2 Congress go here. Call for Papers: Special issue of Journal of Global Ethics: Climate Justice and the Global Development Crisis  Guest Issue Co-editors: Anna Malavisi (Western Connecticut State University, USA), Tom Hilde (University…",
+      "h1": [
+        "Announcements"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 3928,
+      "links": 58,
+      "visibleImages": 4,
+      "visibleImagesMissingAlt": 3,
+      "forms": 2
+    },
+    {
+      "url": "https://developmentethics.org/announcements/declarations-2/",
+      "lastmod": "2012-12-27T17:14:52+00:00",
+      "status": 200,
+      "title": "Declarations – IDEA",
+      "metaDescription": "Mérida Declaration July 7, 1989, Mérida, Yucatan, Mexico We, the undersigned participants in the Second International Conference on Ethics and Development, make the following declaration upon finishing our deliberations. In the face of the profound inadequacies of modernization development strategies, WE PROPOSE: 1. To transform the search for and study of an alternative for social…",
+      "h1": [
+        "Declarations"
+      ],
+      "h2": [],
+      "wordCount": 293,
+      "links": 19,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+      "lastmod": "2016-07-29T14:21:47+00:00",
+      "status": 200,
+      "title": "IDEA at World Social Forum 2016 – IDEA",
+      "metaDescription": "IDEA @ World Social Forum: August 9-14, Montreal, Canada. https://fsm2016.org/ https://fsm2016.org/en/groupes/international-development-ethics-association/ This is the current presentation schedule. Updates to the program after 15 June 2016 may be found here, and will not be posted at the fsm.org site.    First Session: Ideas of justice: global and philosophical concerns, wealth, and children Gail Presbey, Nico Brando, Nathanael Ojong,…",
+      "h1": [
+        "IDEA at World Social Forum 2016"
+      ],
+      "h2": [],
+      "wordCount": 964,
+      "links": 24,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/announcements/idea-conferences/",
+      "lastmod": "2020-02-11T03:44:58+00:00",
+      "status": 200,
+      "title": "Past Conferences – IDEA",
+      "metaDescription": "→ For a more complete list and description of past conferences of IDEA, please see the History of IDEA under the About tab. IDEA-GRETHA 2018 Congress: A World United A World United: Allies and Ethical Action in International Ethical Development -- the eleventh IDEA Congress, jointly produced with GREThA -- took place 25-27 June 2018.…",
+      "h1": [
+        "Past Conferences"
+      ],
+      "h2": [
+        "→ For a more complete list and description of past conferences of IDEA, please see the History of IDEA under the About tab.",
+        "",
+        ""
+      ],
+      "wordCount": 3351,
+      "links": 40,
+      "visibleImages": 4,
+      "visibleImagesMissingAlt": 3,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/bylaws/",
+      "lastmod": "2023-07-31T06:25:38+00:00",
+      "status": 200,
+      "title": "Bylaws – IDEA",
+      "metaDescription": "Adopted June 21, 1992 and amended 21 July, 2006 INFORMAL ADDENDA: That IDEA “interpret the word ‘meeting’ within existing by-laws to include asynchronized digital meetings within a defined time frame set by the secretary.” (26 June 2018 Business meeting minutes, motion presented and passed) Article I: Name The name of this organization shall be the…",
+      "h1": [
+        "Bylaws"
+      ],
+      "h2": [
+        "Adopted June 21, 1992 and amended 21 July, 2006"
+      ],
+      "wordCount": 1230,
+      "links": 19,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/contact/",
+      "lastmod": "2023-01-11T20:55:06+00:00",
+      "status": 200,
+      "title": "Contact – IDEA",
+      "metaDescription": "Let's talk 👋 Don't hesitate to reach out with the contact information below, or send a message using the form. Get in Touch 10 Street RoadCity, 10100USA mail@example.com (555) 555 1234 Send Us a Message",
+      "h1": [
+        "Contact"
+      ],
+      "h2": [
+        "Get in Touch",
+        "Send Us a Message"
+      ],
+      "wordCount": 96,
+      "links": 22,
+      "visibleImages": 3,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "lastmod": "2018-02-02T03:33:06+00:00",
+      "status": 200,
+      "title": "December arrest by Turkish authorities of Professor İştar Gözaydın – IDEA",
+      "metaDescription": "  Istar Gozaydin was acquitted of charges of membership in a terrorist organization on 31 January 2018: she had been detained for seven days and under charges for 400 days. during these periods she was under detention for 100 days. She currently awaits return of her passport and personal property.  March 30 2017: This is what a…",
+      "h1": [
+        "December arrest by Turkish authorities of Professor İştar Gözaydın"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 2584,
+      "links": 69,
+      "visibleImages": 3,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/idea-2018-elections-june-26-7/",
+      "lastmod": "2019-11-04T00:43:08+00:00",
+      "status": 200,
+      "title": "IDEA 2018 elections, June 26-July 2 – IDEA",
+      "metaDescription": "IDEA 2018 elections -- Results (announced July 4, 2018) Nigel Dower and Sandra Boni (Elections committee) declare the following results All those who voted for office-bearing positions voted 100% for the following results: President: Eric Palmer Vice President: Lori Keleher Secretary: Anna Malavisi Treasurer: Mario Solis   Because there was a tie in the last…",
+      "h1": [
+        "IDEA 2018 elections, June 26-July 2"
+      ],
+      "h2": [],
+      "wordCount": 4735,
+      "links": 27,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "lastmod": "2018-07-06T09:45:39+00:00",
+      "status": 200,
+      "title": "IDEA-Moldova Marginalized Peoples Conference – IDEA",
+      "metaDescription": "Marginalized Peoples, Human Rights, and Development Ethics  17-18 May, 2018 Chişinău, Moldova Conference program:  ROMANA   ENGLISH  RUSSIAN ***Original conference call for papers below***               International Development Ethics Association 2018 Conference: Marginalized Peoples, Human Rights, and Development Ethics  Conference languages: Romanian, English, Russian -- simultaneous translation is anticipated. Proposals in English,…",
+      "h1": [
+        "IDEA-Moldova Marginalized Peoples Conference"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 1194,
+      "links": 28,
+      "visibleImages": 6,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/",
+      "lastmod": "2022-07-06T16:29:29+00:00",
+      "status": 200,
+      "title": "IDEA",
+      "metaDescription": "Sitio principal del Congreso: http://devethics2021.unaula.edu.co/  Las últimas actualizaciones de la conferencia se publicarán en este enlace: https://tinyurl.com/DTC-Update Cualquier información preliminar concerniente a la programación del evento, podrá ser encontrada en el siguiente link: https://tinyurl.com/DTCMarch. Serie de seminarios web previos a la conferencia. Details, English: https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/ Propuestas aceptadas para la conferencia pospuesta del 2021, fueron aceptadas para la…",
+      "h1": [],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 1694,
+      "links": 38,
+      "visibleImages": 4,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "lastmod": "2022-08-15T20:14:45+00:00",
+      "status": 200,
+      "title": "IDEA",
+      "metaDescription": "Medellin, Colombia, July 13-15, 2022 Main conference website: http://devethics2021.unaula.edu.co/ Pre-conference webinar series: details here. Detalles, Espanol: https://developmentethics.org/idea-unaula-ibague-2021-congreso-development-in-times-of-conflict-spanish-cfp/ The International Development Ethics Association (IDEA), The Universidad Autónoma LatinoAmericana (UNAULA) and The Red para la formación ética y ciudadana REDETICA, invite scholars, practitioners, policy makers, and other interested parties to submit proposals to be presented in the Conference…",
+      "h1": [],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 1723,
+      "links": 37,
+      "visibleImages": 4,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/idea-unaula-ibague-2021-congresso-development-in-times-of-conflict-cfp-portugues/",
+      "lastmod": "2021-07-02T16:52:34+00:00",
+      "status": 200,
+      "title": "IDEA-UNAULA- REDETICA 2022 Congresso: Development in times of conflict (CFP – Portugues) – IDEA",
+      "metaDescription": "A conferência, originalmente agendada para fevereiro de 2021, provisoriamente agendada para o mês de junho de 2022. Alguns eventos de pré-conferência nesse ínterim estão sendo planejados. Volte aqui ou entre em contato com os organizadores da conferência no e-mail abaixo. O prazo para a apresentação de propostas já passou, mas nossos planos são reabrir a…",
+      "h1": [
+        "IDEA-UNAULA- REDETICA 2022 Congresso: Development in times of conflict (CFP – Portugues)"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 1671,
+      "links": 38,
+      "visibleImages": 5,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/joining-idea-2/",
+      "lastmod": "2026-02-05T19:04:42+00:00",
+      "status": 200,
+      "title": "Joining IDEA – IDEA",
+      "metaDescription": "Membership is open to any individual who is in sympathy with IDEA’s approach to development issues. Benefits of membership include: One-year subscription, paper copy only, Journal of Global Ethics (saving of 66% from the regular subscription price for South and student members and 33% for others) Email subscription to IDEA Occasional Newsletters (approximately 3 per year)…",
+      "h1": [
+        "Joining IDEA"
+      ],
+      "h2": [],
+      "wordCount": 361,
+      "links": 21,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/joining-idea/",
+      "lastmod": "2023-07-31T06:18:21+00:00",
+      "status": 200,
+      "title": "Joining IDEA – IDEA",
+      "metaDescription": "Membership is open to any individual who is in sympathy with IDEA’s approach to development issues. Benefits of Membership Include: One-year subscription, paper copy only, Journal of Global Ethics (saving of 66% from the regular subscription price for South and student members and 33% for others) Email subscription to IDEA Occasional Newsletters (approximately 3 per…",
+      "h1": [
+        "Joining IDEA"
+      ],
+      "h2": [
+        "Membership is open to any individual who is in sympathy with IDEA’s approach to development issues."
+      ],
+      "wordCount": 361,
+      "links": 20,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/member-news/",
+      "lastmod": "2015-03-26T14:18:39+00:00",
+      "status": 200,
+      "title": "Member News – IDEA",
+      "metaDescription": "IDEA members, please post any news you want to share with others below.",
+      "h1": [
+        "Member News"
+      ],
+      "h2": [
+        "3 Replies to “Member News”",
+        "Why are you reporting this comment?"
+      ],
+      "wordCount": 1073,
+      "links": 28,
+      "visibleImages": 5,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/member-resources/",
+      "lastmod": "2023-07-31T06:23:53+00:00",
+      "status": 200,
+      "title": "Member Resources – IDEA",
+      "metaDescription": "Educational Resources and Materials Reading List Video Library  Audio  Syllabus Courses and Degrees Michigan State University Graduate Certificate in Development Ethics (https://www.msu.edu/~phl/EandDWebsite/index.htm) Oxford Poverty & Human Development Initiative (http://www.ophi.org.uk) UN Training in Human Development (http://hdr.undp.org/en/nhdr/training/)",
+      "h1": [
+        "Member Resources"
+      ],
+      "h2": [
+        "Educational Resources and Materials",
+        "Courses and Degrees"
+      ],
+      "wordCount": 91,
+      "links": 27,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/news-and-events/",
+      "lastmod": "2021-09-18T16:25:22+00:00",
+      "status": 200,
+      "title": "News and events – IDEA",
+      "metaDescription": "2022 IDEA conference: details here. Denis Goulet Memorial Prize 2022: Plans for a call for submissions for the 2022 Congress prize(s) will be presented at the congress. Please direct queries to malavisia@wcsu.edu. Dennis Goulet Memorial Prize 2018 Background: To honour the work of Denis Goulet the Board of the International Development Ethics Association offers a…",
+      "h1": [
+        "News and events"
+      ],
+      "h2": [],
+      "wordCount": 1282,
+      "links": 35,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/officers-board/",
+      "lastmod": "2023-08-04T17:39:44+00:00",
+      "status": 200,
+      "title": "Officers Board – IDEA",
+      "metaDescription": "Executive Board President Lori Keleher Lori Keleher, Ph.D. is a Professor of Philosophy at New Mexico State University, USA. Her research focus is development ethics, with particular interest in agency, empowerment, and the capabilities approach. She is developing integral human development ethics. With Jay Drydyk, she is the co-editor of The Routledge Handbook of Development…",
+      "h1": [
+        "Officers Board",
+        "Executive Board",
+        "Board of Directors",
+        "Advisory Board",
+        "Past Presidents"
+      ],
+      "h2": [
+        "President",
+        "Vice President",
+        "Treasurer",
+        "Secretary",
+        "",
+        ""
+      ],
+      "wordCount": 132,
+      "links": 29,
+      "visibleImages": 31,
+      "visibleImagesMissingAlt": 31,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/officers/",
+      "lastmod": "2023-07-08T20:21:37+00:00",
+      "status": 200,
+      "title": "Officers, Board & Bylaws – IDEA",
+      "metaDescription": "IDEA Officers and Board (2023) President: Lori Keleher (New Mexico State University, USA) Lori Keleher, Ph.D. is a Professor of Philosophy at New Mexico State University, USA. Her research focus is development ethics, with particular interest in agency, empowerment, and the capabilities approach. She is developing integral human development ethics. With Jay Drydyk, she is…",
+      "h1": [
+        "Officers, Board & Bylaws"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 3134,
+      "links": 38,
+      "visibleImages": 20,
+      "visibleImagesMissingAlt": 4,
+      "forms": 2
+    },
+    {
+      "url": "https://developmentethics.org/p/",
+      "lastmod": "2021-07-06T18:35:26+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar 2: Global Vaccine Justice/Justicia global en Vacunas – IDEA",
+      "metaDescription": "Full webinar schedule Registration for session 2, please go here. Para registrarse para la sesión 2, vaya aquí. English/Español sigue Session 2: Global vaccine justice  Wednesday July 7, 10:00 – 11:30 Colombia time (GMT-5) Moderator: Eduardo Rueda, Universidad Nacional de Colombia, REDETICA and Red latinoamericana y caribeña de Educación en Bioética REDLACEB. Discussants: 1.  Sridhar…",
+      "h1": [
+        "Pre-conference webinar 2: Global Vaccine Justice/Justicia global en Vacunas"
+      ],
+      "h2": [],
+      "wordCount": 1667,
+      "links": 50,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/past-events/",
+      "lastmod": "2023-07-31T06:26:16+00:00",
+      "status": 200,
+      "title": "Past Events – IDEA",
+      "metaDescription": "Conferences 2022 IDEA Conference: Development in times of conflict: Ethical pathways towards peace and justice Medellin, Colombia, July 13-15, 2022 The International Development Ethics Association (IDEA), The Universidad Autónoma LatinoAmericana (UNAULA) and The Red para la formación ética y ciudadana REDETICA, invite scholars, practitioners, policy makers, and other interested parties to submit proposals to be…",
+      "h1": [
+        "Past Events"
+      ],
+      "h2": [
+        "Conferences",
+        "Medellin, Colombia, July 13-15, 2022",
+        "IDEA-GRETHA 2018 Congress: A World United"
+      ],
+      "wordCount": 138,
+      "links": 41,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/pre-conference-discussion-series/",
+      "lastmod": "2022-08-20T18:44:27+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar discussion series / serie de seminarios virtuales – IDEA",
+      "metaDescription": "Webinar recordings (Español and English) may be found here A series of seminar discussions (webinars) was held in advance of the conference the Twelfth Congress of the International Development Ethics Association. These discussions are led by a moderator and feature discussion by invited guests. Sessions are open, and further contributions from auditors of the sessions…",
+      "h1": [
+        "Pre-conference webinar discussion series / serie de seminarios virtuales"
+      ],
+      "h2": [
+        "",
+        ""
+      ],
+      "wordCount": 548,
+      "links": 35,
+      "visibleImages": 3,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "lastmod": "2021-07-08T19:14:17+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar 1: Development in times of conflict/ El desarrollo en tiempos de conflicto – IDEA",
+      "metaDescription": "Full webinar schedule Completed session. see recording (Español and English). Session 1: April 8, 2021. 9-11AM Colombia timeDevelopment in times of conflict/El desarrollo en tiempos de conflicto(web)Moderador/Moderator: Alexandra Agudelo, Universidad Autónoma LatinoAmericana (UNAULA)Discussants/Panelistas:Carolina Jímenez: Comité Directivo, Consejo Latinoamericano de Ciencias Sociales (CLACSO), and Centro de Pensamiento y Diálogo Político, ColombiaCarlos Nupia: Instituto Colombo-Alemán para la…",
+      "h1": [
+        "Pre-conference webinar 1: Development in times of conflict/ El desarrollo en tiempos de conflicto"
+      ],
+      "h2": [],
+      "wordCount": 1810,
+      "links": 31,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/",
+      "lastmod": "2021-08-05T20:37:47+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar 3: Ética, desarrollo y paz / Ethics, development & peace in Medellín, Colombia – IDEA",
+      "metaDescription": "Full webinar schedule English/Español sigue The third of our planned sessions will focus on the recent history and current state of human and social development in Medellin, Colombia. Since the signing of the 2016 peace agreement, Colombia's second city has developed as a prosperous regional center with significant focus on development oriented toward the people.…",
+      "h1": [
+        "Pre-conference webinar 3: Ética, desarrollo y paz / Ethics, development & peace in Medellín, Colombia"
+      ],
+      "h2": [],
+      "wordCount": 422,
+      "links": 20,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+      "lastmod": "2021-09-08T03:18:45+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar 4: Desarrollo ético en tiempos de conflicto / Development ethics in times of conflict – IDEA",
+      "metaDescription": "Full webinar schedule For registration to participate in  session 4, please go here, to the eventbrite page.  A zoom link will come available closer to event time. Wednesday, September 15, 2021, 10:00am - 12:00pm, Colombia time (GMT-5) Miércoles 15 de septiembre de 2021, 10h - 12h00 (GMT-5) Moderator / Moderador: Anna Malavisi, Assistant Professor, Department…",
+      "h1": [
+        "Pre-conference webinar 4: Desarrollo ético en tiempos de conflicto / Development ethics in times of conflict"
+      ],
+      "h2": [
+        "For registration to participate in session 4, please go here, to the eventbrite page. A zoom link will come available closer to event time."
+      ],
+      "wordCount": 1046,
+      "links": 30,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+      "lastmod": "2022-07-07T20:27:05+00:00",
+      "status": 200,
+      "title": "Pre-conference webinar 5: Building the Road to Peace and Reconciliation in Mali / Construyendo el camino hacia la paz y la reconciliación en Malí/ Construire le Chemin de la paix et de la réconciliación en Mali – IDEA",
+      "metaDescription": "  Session recordings: Français, Español, English   Wednesday, November 10, 2021  10:00am - 12:00pm, Colombia time (GMT-5) / Miércoles 10 de noviembre de 2021, 10h - 12h00 (GMT-5)  À la veille de la fin de son premier mandat de cinq ans en 2018, la Commission malienne pour la Vérité, la Justice et la Réconciliation (CVJR)…",
+      "h1": [
+        "Pre-conference webinar 5: Building the Road to Peace and Reconciliation in Mali / Construyendo el camino hacia la paz y la reconciliación en Malí/ Construire le Chemin de la paix et de la réconciliación en Mali",
+        "Session recordings: Français, Español, English"
+      ],
+      "h2": [
+        ""
+      ],
+      "wordCount": 1633,
+      "links": 33,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/reading-list/",
+      "lastmod": "2023-07-31T06:20:43+00:00",
+      "status": 200,
+      "title": "Reading List – IDEA",
+      "metaDescription": "General Readings in Global Development: Addendum: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. (The list below was composed in 2013 — obviously, updates are needed.) Collier, Paul. 2008. The Bottom Billion: Why the Poorest…",
+      "h1": [
+        "Reading List"
+      ],
+      "h2": [],
+      "wordCount": 419,
+      "links": 20,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/related-links-2/",
+      "lastmod": "2022-06-27T11:05:13+00:00",
+      "status": 200,
+      "title": "Related Links – IDEA",
+      "metaDescription": "Human Development Capabilities Association http://www.capabilityapproach.com/index.php North American Society for Social Philosophy http://www.pitt.edu/~nassp/nassp.html Radical Philosophy Association http://www.radicalphilosophy.org/ International Association for Feminist Economics http://www.iaffe.org/ Society for Women in Philosophy http://www.uh.edu/~cfreelan/SWIP/",
+      "h1": [
+        "Related Links"
+      ],
+      "h2": [],
+      "wordCount": 84,
+      "links": 24,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/related-links/",
+      "lastmod": "2023-08-04T04:58:51+00:00",
+      "status": 200,
+      "title": "Related Links – IDEA",
+      "metaDescription": "Human Development Capabilities Association http://www.capabilityapproach.com/index.php North American Society for Social Philosophy http://www.pitt.edu/~nassp/nassp.html Radical Philosophy Association http://www.radicalphilosophy.org/ International Association for Feminist Economics http://www.iaffe.org/ Society for Women in Philosophy http://www.uh.edu/~cfreelan/SWIP/ Center for Values https://www.centerforvalues.international/",
+      "h1": [
+        "Related Links"
+      ],
+      "h2": [],
+      "wordCount": 88,
+      "links": 25,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/teaching-resources/",
+      "lastmod": "2012-12-27T18:53:55+00:00",
+      "status": 200,
+      "title": "Member Resources – IDEA",
+      "metaDescription": "Educational Resources: Reading List Youtube Video Library  Research Materials: Regional Development Reports  Courses and Degrees: Michigan State University Graduate Certificate in Development Ethics (https://www.msu.edu/~phl/EandDWebsite/index.htm) Oxford Poverty & Human Development Initiative (http://www.ophi.org.uk) UN Training in Human Development (http://hdr.undp.org/en/nhdr/training/)",
+      "h1": [
+        "Member Resources"
+      ],
+      "h2": [],
+      "wordCount": 93,
+      "links": 28,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 0
+    },
+    {
+      "url": "https://developmentethics.org/teaching-resources/development-ethics-reading-list/",
+      "lastmod": "2022-07-17T09:07:18+00:00",
+      "status": 200,
+      "title": "Reading List – IDEA",
+      "metaDescription": "General Readings in Global Development: Addendum: NEWLY AVAILABLE Resource: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. — (The list below was composed in 2013 -- obviously, updates are needed.) Collier, Paul. 2008. The Bottom Billion: Why the…",
+      "h1": [
+        "Reading List"
+      ],
+      "h2": [],
+      "wordCount": 3015,
+      "links": 21,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/teaching-resources/discussion-forum/",
+      "lastmod": "2012-12-27T17:16:14+00:00",
+      "status": 200,
+      "title": "Regional Development Reports – IDEA",
+      "metaDescription": "Welcome to the IDEA development ethics regional report blog. Here you'll find monthly reports detailing what's happening on the ground in specific countries and continents. Reports will be posted in Spanish or English (or both) and will hopefully provide the start of a lively discussion on development ethics.",
+      "h1": [
+        "Regional Development Reports"
+      ],
+      "h2": [],
+      "wordCount": 118,
+      "links": 19,
+      "visibleImages": 2,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    },
+    {
+      "url": "https://developmentethics.org/teaching-resources/youtube-video-library/",
+      "lastmod": "2015-03-20T16:11:28+00:00",
+      "status": 200,
+      "title": "YouTube Video Library – IDEA",
+      "metaDescription": "Please share with the webmaster any youtube videos dealing with development topics. A 2013 U.S. National Endowment for the Humanities Institute created teaching tools to aid K-12 teachers in their mission to educate students on important issues found under the heading of development ethics, including global hunger, human rights, development and education, global health, food justice…",
+      "h1": [
+        "YouTube Video Library"
+      ],
+      "h2": [
+        "6 Replies to “YouTube Video Library”",
+        "Why are you reporting this comment?"
+      ],
+      "wordCount": 172,
+      "links": 33,
+      "visibleImages": 8,
+      "visibleImagesMissingAlt": 2,
+      "forms": 1
+    }
+  ],
+  "linkChecks": {
+    "total": 62,
+    "failed": []
+  }
+}

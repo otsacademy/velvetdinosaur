@@ -1,0 +1,847 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/educationalresources/romans/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:05:17.404Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/educationalresources/romans/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/educationalresources/romans/",
+  "title": "ROMANS TO ROUNDHEADS 43 – 1649 – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/educationalresources/romans/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "ROMANS TO ROUNDHEADS 43 – 1649"
+    },
+    {
+      "level": "h1",
+      "text": "ROMANS TO ROUNDHEADS"
+    },
+    {
+      "level": "h1",
+      "text": "43 – 1649"
+    },
+    {
+      "level": "h1",
+      "text": "ROMANS"
+    },
+    {
+      "level": "h1",
+      "text": "Things to Do"
+    },
+    {
+      "level": "h1",
+      "text": "Making a Roman Mosaic"
+    },
+    {
+      "level": "h2",
+      "text": "Design Your Own Mosaic"
+    },
+    {
+      "level": "h1",
+      "text": "ROUNDHEADS"
+    },
+    {
+      "level": "h1",
+      "text": "Fun with Flags - Design Your Own!"
+    },
+    {
+      "level": "h2",
+      "text": "Designing Your Own Flag – Things to Think About"
+    },
+    {
+      "level": "h1",
+      "text": "Things to Do"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Educational Resources",
+      "href": "https://www.sofo.org.uk/educationalresources/",
+      "pathname": "/educationalresources/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Print your own worksheet to write down your answers on (Click Here - PDF)",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2021/02/SOFO-Home-School-Resources-Romans.pdf",
+      "pathname": "/wp-content/uploads/2021/02/SOFO-Home-School-Resources-Romans.pdf",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Google Maps",
+      "href": "https://www.google.com/maps/@51.8364073,-1.4259213,3a,75y,117.36h,71.03t/data=!3m8!1e1!3m6!1sAF1QipMRdQpsV-Y7pdoi-tmbUQNCglsfU9WiZRuydqu_!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMRdQpsV-Y7pdoi-tmbUQNCglsfU9WiZRuydqu_%3Dw203-h100-k-no-pi0-ya285.57816-ro0-fo100!7i9592!8i4796",
+      "pathname": "/maps/@51.8364073,-1.4259213,3a,75y,117.36h,71.03t/data=!3m8!1e1!3m6!1sAF1QipMRdQpsV-Y7pdoi-tmbUQNCglsfU9WiZRuydqu_!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMRdQpsV-Y7pdoi-tmbUQNCglsfU9WiZRuydqu_%3Dw203-h100-k-no-pi0-ya285.57816-ro0-fo100!7i9592!8i4796",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Download a Mosaic Sheet",
+      "href": "https://www.sofo.org.uk/wp-content/uploads/2021/03/SOFODesignYourMosaic.pdf",
+      "pathname": "/wp-content/uploads/2021/03/SOFODesignYourMosaic.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/educationalresources/romans/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/romansoldier-195x300.png",
+      "alt": "",
+      "width": "97",
+      "height": "150",
+      "naturalWidth": 97,
+      "naturalHeight": 149,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/romansoldier-195x300.png",
+      "alt": "",
+      "width": "97",
+      "height": "150",
+      "naturalWidth": 97,
+      "naturalHeight": 149,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/romansoldier2-161x300.png",
+      "alt": "",
+      "width": "161",
+      "height": "300",
+      "naturalWidth": 161,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/mosaic-3855009_1920-300x200.jpg",
+      "alt": "Roman Mosaic, photo by RGY23 from Pixabay",
+      "width": "300",
+      "height": "200",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/antique-403600_1920-300x200.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "200",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/roman-4248725_1920.jpg",
+      "alt": "",
+      "width": "1920",
+      "height": "1920",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/charlesflagcivilwar-300x150.gif",
+      "alt": "",
+      "width": "300",
+      "height": "150",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/nepal-flag.png",
+      "alt": "",
+      "width": "203",
+      "height": "248",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/angolaflag.png",
+      "alt": "",
+      "width": "255",
+      "height": "170",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/king-charles-i-5688920_1280.png",
+      "alt": "",
+      "width": "1030",
+      "height": "1280",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/02/Holdenbyeduex.png",
+      "alt": "",
+      "width": "701",
+      "height": "619",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/02/donate.jpg",
+      "alt": "",
+      "width": "290",
+      "height": "100",
+      "naturalWidth": 290,
+      "naturalHeight": 100,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 1472,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nROMANS TO ROUNDHEADS  \n43 – 1649\nROMANS\n\nThe Romans, from a city state in what is now Italy, arrived in Britain in the year AD43. By the end of the 2nd century most of Britain was ruled by the Romans.\n\nThe Romans had to fight to keep control and built forts and walls to guard the lands they had conquered. The most famous of these is Hadrian’s Wall, which stretches 73 miles across the north of England. The Romans built towns and villages which became places like St Albans and Colchester.\n\nEvidence of the Romans living in Oxfordshire has been discovered by archaeologists. They discovered a Roman villa at North Leigh and a fort the Romans built a fort near what is now the town of Bicester. The fort was called Alchester and was built on the crossroads of two Roman roads. One of the roads was between two important towns in Roman Britain, Cirencester and St Albans.\n\nWhen archaeologists dug up the Roman ruins at Alchester they found a gravestone of a Roman soldier, it had been smashed up to make a wall. A copy of this can be found in the garden of the museum in Woodstock.\n\nThings to Do\n\nPrint your own worksheet to write down your answers on (Click Here - PDF)\n\nHow many years ago did the Romans Arrive in Britain?\n\nHow many years did the Romans control Britain for?\n\nIn which century did the Romans leave Britain?\n\nCan you write the answers to the above in Roman numerals?\n\nCan you find North Leigh on a map? Why might the Romans build a villa here?\n\nYou can use this link to Google Maps, or challenge yourself to find it on a Road Atlas!\n\nMaking a Roman Mosaic\n\nRomans would decorate their buildings with statues, paintings and mosaics. Mosaics are pictures made up of small squares of coloured stone. \n\nThey are laid out to make patterns or pictures.\n\nDesign Your Own Mosaic\n\nYou can make your own mosaic using squares of paper.\n\nUse different coloured paper and chop them up into squares. They don’t need to be exactly the same, just roughly square and roughly the same size.\n\nDraw a frame for the mosaic, use some graph paper, or Download a Mosaic Sheet to build your Roman mosaic.\n\nPlace your squares of paper to make a picture or design.\n\nWhen you are happy with your design glue the squares on to the paper.\n\nIf you would rather draw your mosaic, you can colour in your mosaic grid instead.\n\nHelpful Hint #1: Roman Numerals\n\nRoman numerals are made up of the following symbols/letters with these values\n\nI = ONE 1 V = FIVE 5\n\nX = TEN 10 L = FIFTY 50\n\nC = ONE HUNDRED 100 D = FIVE HUNDRED 500\n\nM = ONE THOUSAND 1000\n\nThere are never more than 3 Roman numerals in a row so to write numbers like 4 or 9 a subtraction system is used.\n\nFor example:\n\n4 is written as IV 9 is written as IX 40 is written as XL\n\nThe year 1919 would be written as MCMXIX\n\nHelpful Hint #2: Years, decades and stuff\n\nA year is the time it takes for the earth to orbit the sun, it is 365 days long.\nA decade is 10 years.\nA century is 100 years.\nA millennium is 1000 years.\n\nNames of years\n\nThe name of the century is always one number before the actual number of the year. For example, the 1900s was the 20th century.\n\nThis happens because the 1st century was made up of the years 1 – 99. That meant the 100 – 199 became the 2nd century.\n\nAD or BC?\n\nBC – BC stands for ‘before Christ’, the time before Jesus Christ was born.\n\nAD – stands for ‘Anno Domini’ which is Latin for ‘in the year of the Lord’. This is the year that Jesus Christ was born.\n\nBCE – stands for Before Common Era, can be used instead of BC\n\nCE – stands for Common Era, can be used instead of AD\n\nYears in BC/BCE count backwards so 100BC comes before 10BC, it is the opposite for AD/CE which go up so 100AD comes after 10AD.\n\nROUNDHEADS\n\nAfter the Romans left there were invasions by Saxons and in the 11th century the Norman Conquest of Britain. Oxfordshire was not really troubled by war until the 17th century and the English Civil War between the King and Parliament.\n\nA civil war is a fought between 2 sides from the same country. In this case the Members of Parliament (MPs) did not like the way the King, Charles I was ruling England and Scotland. The King introduced taxes that were unfair and did not allow people to follow the Christian religion in their own ways. The war in 1642 started when the King tried to arrest 5 MPs.\n\nThe two sides became known as Roundheads and Cavaliers. The Parliament’s soldiers were called Roundheads, a name given to them by the King’s men. It was a rude name based on their short haircuts. The Cavaliers got their name from their long flowing hair, a sign of wealth and privilege. It was also meant as rude name but was taken on by the King’s men themselves.\n\nThe King used Oxford as his base from 1644 onwards. The Roundheads attacked several times and Oxford surrendered in April 1646. However, the King was not caught as he had escaped disguised as a servant. The King surrendered to the Scottish at Newark in Nottinghamshire. The Scots handed the King over to the Parliamentarians and he was imprisoned by them in different parts of the country.\n\nFirst near Holdenby in Northamptonshire, followed by…\nNewmarket in Suffolk\nOatlands near Weybridge in Surrey\nHampton Court in Surrey\nCarisbrooke Castle on the Isle of Wight\nHurst Castle in Hampshire\nWindsor Castle in Berkshire\n\nKing Charles I was found guilty of treason and was executed on 30 January 1649 at Westminster in London.\n\nFun with Flags - Design Your Own!\n\nFlags were used on the battlefield to show where your soldiers and were and where the enemy was. \n\nThis was the Royal Standard or flag of King Charles I:\n\n \n\n Each symbol on the flag stood for one part of the kingdom, 3 Lions for England, harp for Ireland and the Red Lion for Scotland.\n\nA lion is an example of how the symbols on a flag can represent things such as strength and bravery.\n\nDesigning Your Own Flag – Things to Think About\n\nShape – flags can be rectangular, square, triangular or a unique shape like the flag of Nepal. The two triangles represent the mountains of Nepal, the Himalayas.\n\nColour – strong colours work well, like red, blue, yellow. Some colours like black make people think of pirates so choose carefully. Some countries use blue to represent the sea.\n\nSymbols – animals represent things. For example, an owl may mean wisdom, as do stars, or crosses. Some countries have used symbols such as tools to suggest hard work, for example, Angola.\nThe cog is for workers, the machete for farmers.\n\nThings to Do\n\nUsing a road atlas of Great Britain complete the following tasks.\n\n1. Find all the places that King Charles was kept prisoner. Write down the Grid Square reference for each place.\n\n    Look below for Helpful Hint # 3 where we have used Holdenby as an example for you to follow.\n\nNewmarket in Suffolk\nOatlands near Weybridge in Surrey\nHampton Court in Surrey \nCarisbrooke Castle on the Isle of Wight \nHurst Castle in Hampshire \nWindsor Castle in Berkshire\n\n2. Starting at Holdenby Hall in Northamptonshire write down the direction that the King travelled in between each place.\nRoad atlases will have a map of the counties of England.\n\nNewmarket in Suffolk \nOatlands near Weybridge in Surrey \nHampton Court in Surrey \nCarisbrooke Castle on the Isle of Wight\nHurst Castle in Hampshire \nWindsor Castle in Berkshire \n\nHelpful Hint #3: Map Skills\nThe best thing to use for these activities would be a road atlas of the United Kingdom.\n\nFinding the Places \n\nLet's use Holdenby as an example. Use the index to find the places and make a note of the map coordinates for Holdenby.\nRoad atlas coordinates will use letters and numbers.\n\nFor example: Holdenby House\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

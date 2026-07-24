@@ -2,7 +2,7 @@ import './globals.css';
 import './velvet-site.css';
 import './demo-polish.css';
 import { Suspense, type CSSProperties } from 'react';
-import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google';
+import { Archivo, Inter, JetBrains_Mono, Instrument_Serif, Space_Mono } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
@@ -21,12 +21,30 @@ const instrumentSerif = Instrument_Serif({
   weight: ['400'],
   style: ['normal', 'italic'],
   display: 'swap',
+  preload: false,
   variable: '--font-display',
+});
+
+// Archivo is a variable font — omitting `weight` fetches a single variable
+// file. Both home fonts are preloaded so the hero never reflows on font swap
+// (Lighthouse CLS).
+const archivo = Archivo({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-archivo',
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-space-mono',
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
+  preload: false,
   variable: '--font-mono',
 });
 
@@ -39,7 +57,9 @@ export default async function RootLayout({
 }) {
   const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
-  const fontClasses = isLhci ? '' : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`;
+  const fontClasses = isLhci
+    ? ''
+    : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${archivo.variable} ${spaceMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci

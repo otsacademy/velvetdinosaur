@@ -1,0 +1,451 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/pre-conference-discussion-series/",
+    "lastmod": "2022-08-20T18:44:27+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:50.027Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/pre-conference-discussion-series/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/pre-conference-discussion-series/",
+  "title": "Pre-conference webinar discussion series / serie de seminarios virtuales – IDEA",
+  "metaDescription": "Webinar recordings (Español and English) may be found here A series of seminar discussions (webinars) was held in advance of the conference the Twelfth Congress of the International Development Ethics Association. These discussions are led by a moderator and feature discussion by invited guests. Sessions are open, and further contributions from auditors of the sessions…",
+  "canonical": "https://developmentethics.org/pre-conference-discussion-series/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Pre-conference webinar discussion series / serie de seminarios virtuales"
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h2",
+      "text": ""
+    },
+    {
+      "level": "h3",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/#content",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "recordings (Español and English) may be found here",
+      "href": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "pathname": "/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Twelfth Congress of the International Development Ethics Association",
+      "href": "http://devethics2021.unaula.edu.co/?page_id=2",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Guadalupe Institute",
+      "href": "http://www.guadalupe-institute.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About the sixth seminar: an introduction and program schedule",
+      "href": "https://docs.google.com/document/d/e/2PACX-1vQAKCBng9m7lxmjTXyi-CVqPDJ-5rdecu0FgnVs1TbJAGtKhlq7ojmKJNLMmL4xXHsDX26vlACarCBI/pub",
+      "pathname": "/document/d/e/2PACX-1vQAKCBng9m7lxmjTXyi-CVqPDJ-5rdecu0FgnVs1TbJAGtKhlq7ojmKJNLMmL4xXHsDX26vlACarCBI/pub",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About the fifth seminar: An introduction, and guiding questions",
+      "href": "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+      "pathname": "/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Información acerca del quinto seminario/Recursos y documentación",
+      "href": "https://developmentethics.org/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+      "pathname": "/pre-conference-webinar-5-building-the-road-to-peace-and-reconciliation-in-mali-construyendo-el-camino-hacia-la-paz-y-la-reconciliacion-en-mali/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About the fourth seminar: An introduction, and guiding questions",
+      "href": "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+      "pathname": "/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Información acerca del quarto seminario/Recursos y documentación",
+      "href": "https://developmentethics.org/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+      "pathname": "/pre-conference-webinar-4-desarrollo-etico-en-tiempos-de-conflicto-development-ethics-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "More about the third seminar/ Mas información acerca del tercero seminario",
+      "href": "https://developmentethics.org/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/?frame-nonce=e88d490011",
+      "pathname": "/pre-conference-webinar-3-etica-desarrollo-y-paz-ethics-development-peace-in-medellin-colombia/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About the second seminar: An introduction, and guiding questions. Información acerca del secundo seminario/Recursos y documentación",
+      "href": "https://developmentethics.org/p/",
+      "pathname": "/p/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About the first seminar: An introduction, and guiding questions. Información acerca del primer seminario/Recursons y documentación",
+      "href": "https://developmentethics.org/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "pathname": "/pre-conference-webinar-1-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "recordings (Español and English) may be found here",
+      "href": "https://www.youtube.com/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "pathname": "/channel/UCMD_cS52qvfvC8icf5Zqwfg",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Guadalupe Institute",
+      "href": "http://www.guadalupe-institute.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/#",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fpre-conference-discussion-series%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-e0",
+      "pathname": "/P1D93l-e0",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/pre-conference-discussion-series/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/#",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/#",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/pre-conference-discussion-series/#",
+      "pathname": "/pre-conference-discussion-series/",
+      "rel": "",
+      "target": "_blank",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2021/07/guadalupe-institute-nov-2020-image.png?w=134&h=134",
+      "alt": "Guadalupe institute Nov 2020 image",
+      "width": "134",
+      "height": "134",
+      "naturalWidth": 134,
+      "naturalHeight": 134,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=1024",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=868&subd=developmentethics&host=developmentethics.org&ref=&rand=0.7425941907421671",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://developmentethics.org/pre-conference-discussion-series/",
+      "method": "get",
+      "text": "Write a Comment... Email Name Website",
+      "inputs": [
+        {
+          "type": "textarea",
+          "name": "comment",
+          "placeholder": "Write a Comment...",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-comment-field"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-email-field"
+        },
+        {
+          "type": "text",
+          "name": "author",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-author-field"
+        },
+        {
+          "type": "text",
+          "name": "url",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-url-field"
+        },
+        {
+          "type": "submit",
+          "name": "submit",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "jp-carousel-comment-form-button-submit"
+        }
+      ]
+    }
+  ],
+  "wordCount": 548,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nPRE-CONFERENCE WEBINAR DISCUSSION SERIES / SERIE DE SEMINARIOS VIRTUALES\n\nWebinar recordings (Español and English) may be found here\n\nA series of seminar discussions (webinars) was held in advance of the conference the Twelfth Congress of the International Development Ethics Association. These discussions are led by a moderator and feature discussion by invited guests. Sessions are open, and further contributions from auditors of the sessions are also anticipated. Sessions are to be spaced at approximately 2 month intervals.These discussions prepare the ground for the conference “Development in times of conflict: ethical pathways towards peace and justice.” Events are presented by Red para la formación ética y ciudadana (REDETICA), the Universidad Autónoma LatinoAmericana (UNAULA) and the International Development Ethics Association (IDEA). Our thanks go to The Guadalupe Institute and to UNAULA for financial support of these sessions.\n\nEn el marco previo del Duodécimo Congreso de la Asociación Internacional de Ética del Desarrollo “El desarrollo en tiempos de conflicto: vías éticas hacia la paz y la justicia”, que se realizará en 2022, llevaremos a cabo una serie de seminarios virtuales durante el 2021. Estos seminarios estarán guiados por una persona que moderará la discusión de tres invitadas o invitados que contribuirán al debate sobre los temas centrales que se abordarán en el Congreso en 2022. Estas sesiones serán abiertas y se realizarán aproximadamente cada dos meses. En la organización de estos seminarios virtuales participan la Red para la formación ética y ciudadana (REDETICA), la Universidad Autónoma Latinoamericana (UNAULA), la Universidad de Ibagué (UnIbagué) y la Asociación Internacional de Ética del Desarrollo (IDEA).\n\nSession 6 (English language only): Lebret and the Projects of Économie Humaine, Integral Human Development, and Development Ethics (Tuesday, July 12, 2022)\n\nAbout the sixth seminar: an introduction and program schedule\n\n \n\nSession 5: Building the Road to Peace and Reconciliation in Mali / Construyendo el camino hacia la paz y la reconciliación en Malí/ Construire le Chemin del la paix et de la réconciliación en Mali (Wednesday, November 10, 2021)\n\nAbout the fifth seminar: An introduction, and guiding questions\nInformación acerca del quinto seminario/Recursos y documentación\n\n \n\nSession 4: Development Ethics and the International Development Ethics Association (IDEA) / Etica del desarollo y Asociación Internacional de Etica del Desarollo (IDEA) (Wednesday, September 15, 2021)\n\nAbout the fourth seminar: An introduction, and guiding questions\nInformación acerca del quarto seminario/Recursos y documentación\n\n \n\nSession 3: Ethics, development & peace in Medellín, Colombia / Ética, desarrollo y paz en Medellín, Colombia\n\nMore about the third seminar/ Mas información acerca del tercero seminario\n\n \n\nSession 2:  Global Vaccine Justice / Justicia global en vacunas (Wednesday July 7, 2021)\n\nAbout the second seminar: An introduction, and guiding questions.\nInformación acerca del secundo seminario/Recursos y documentación\n\n \n\nSession 1: Development in times of conflict / El desarrollo en tiempos de conflicto(April 8, 2021)\n\nAbout the first seminar: An introduction, and guiding questions.\nInformación acerca del primer seminario/Recursons y documentación\n\n \n\nWebinar recordings (Español and English) may be found here.\n\nPre-conference events supported by the Guadalupe Institute.\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

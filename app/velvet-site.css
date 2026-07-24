@@ -483,3 +483,64 @@
     transition: none !important;
   }
 }
+
+/* Home (Home.dc design) scope: force the brand primary back to dino blue even
+   when a tweakcn theme payload overrides --primary inline at the root, and
+   keep headings in the home sans instead of the global serif h1 rule. */
+.vd-home {
+  --primary: var(--vd-dino-blue);
+  --ring: var(--vd-dino-blue);
+  --vd-primary: var(--vd-dino-blue);
+  --vd-ring: var(--vd-dino-blue);
+  --vd-primary-hover: var(--vd-dino-blue-hover);
+}
+
+.vd-home h1,
+.vd-home h2,
+.vd-home h3 {
+  font-family: inherit;
+}
+
+/* Home (Home.dc design) entrance animations.
+   Base styles are the final resting state, so reduced-motion users and
+   no-animation environments always see the finished layout. */
+.vd-sweep {
+  width: calc(100% - 4px);
+}
+
+@keyframes vd-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* Transform-only variant for the hero h1: the LCP element must paint at full
+   opacity immediately or Lighthouse records LCP at the end of the fade. */
+@keyframes vd-rise-slide-in {
+  from {
+    transform: translateY(18px);
+  }
+}
+
+@keyframes vd-sweep-in {
+  from {
+    width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vd-rise {
+    animation: vd-rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: var(--vd-rise-delay, 0ms);
+  }
+
+  .vd-rise-slide {
+    animation: vd-rise-slide-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: var(--vd-rise-delay, 0ms);
+  }
+
+  .vd-sweep {
+    animation: vd-sweep-in 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 700ms both;
+  }
+}

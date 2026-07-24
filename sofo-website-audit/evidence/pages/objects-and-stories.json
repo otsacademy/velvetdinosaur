@@ -1,0 +1,961 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/objects-and-stories/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:09:03.806Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/objects-and-stories/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/objects-and-stories/",
+  "title": "Objects and Stories – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/objects-and-stories/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Objects and Stories"
+    },
+    {
+      "level": "h3",
+      "text": "Objects and Stories"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-missing-officer/",
+      "pathname": "/objects-and-stories-the-missing-officer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More .....",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-missing-officer/",
+      "pathname": "/objects-and-stories-the-missing-officer/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-boy-buglers/",
+      "pathname": "/objects-and-stories-the-boy-buglers/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More ...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-boy-buglers/",
+      "pathname": "/objects-and-stories-the-boy-buglers/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More ...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-waterloo-crucifix/",
+      "pathname": "/objects-and-stories-the-waterloo-crucifix/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-german-helmet/",
+      "pathname": "/objects-and-stories-the-german-helmet/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-little-gas-bell-with-a-big-story/",
+      "pathname": "/objects-and-stories-little-gas-bell-with-a-big-story/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-green-dragoons-snuff-box/",
+      "pathname": "/objects-and-stories-the-green-dragoons-snuff-box/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-kashmir-inkwell/",
+      "pathname": "/objects-and-stories-the-kashmir-inkwell/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-the-toy-tank/",
+      "pathname": "/objects-and-stories-the-toy-tank/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Read More ...",
+      "href": "https://www.sofo.org.uk/objects-and-stories-hitler-youth-armband/",
+      "pathname": "/objects-and-stories-hitler-youth-armband/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/onlineexhibits/",
+      "pathname": "/onlineexhibits/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshire-d-day-stories/",
+      "pathname": "/oxfordshire-d-day-stories/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/oxfordshire-people/",
+      "pathname": "/oxfordshire-people/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/pastexhibits/",
+      "pathname": "/pastexhibits/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/touring-exhibitions/",
+      "pathname": "/touring-exhibitions/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/objects-and-stories/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/Missing_Officer_Leaving-the-trenches_Cropped-300x217.png",
+      "alt": "",
+      "width": "300",
+      "height": "217",
+      "naturalWidth": 300,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/Bugle-Silver-Bugle-300x193.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "193",
+      "naturalWidth": 300,
+      "naturalHeight": 193,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/Crucifix-134x300.jpg",
+      "alt": "",
+      "width": "134",
+      "height": "300",
+      "naturalWidth": 134,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/German-Helmet-M35-Stahlhelm-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 300,
+      "naturalHeight": 225,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/Gas-Bell-183x300.jpg",
+      "alt": "",
+      "width": "183",
+      "height": "300",
+      "naturalWidth": 183,
+      "naturalHeight": 300,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/04/IMG_3383-300x269.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "269",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Inkwell-279x300.png",
+      "alt": "",
+      "width": "279",
+      "height": "300",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Model_Tank.jpg",
+      "alt": "",
+      "width": "640",
+      "height": "388",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Regimental-Pin-Cushion-OBLI-7530-300x225.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "225",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/05/Object_Month_Book_Clip-300x274.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "274",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/07/OBLI7321-300x210.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "210",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/01/Oxfordshire-in-50-Objects-Sidebar-Tab.png",
+      "alt": "Click here for Oxfordshire's Military Heritage in 50 Objects",
+      "width": "1813",
+      "height": "625",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Online-Exhibition-S-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Blog-Sidebar-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Your-Stories-Sidebar-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Oral-Histories-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2018/12/Past-Exhibition-Tab.png",
+      "alt": "",
+      "width": "906",
+      "height": "313",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2023/05/Touring-Exhibitions-Sidebar.png",
+      "alt": "Sidebar tab - click here to go to our touring exhibitions page",
+      "width": "928",
+      "height": "331",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 1543,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\nOBJECTS AND STORIES\n\nOne of the greatest joys when visiting a museum is to discover and then open a window into the lives of people through objects that have been used to help weave compelling and many times poignant stories.\n\nThe Missing Officer\n\nIn 2013, a local farmer was digging in his private garden in the village of Henin-sur-Cojeul in Northern France when he discovered the remains of a body. Once the local gendarmerie had officially declared the find could not be of any criminal interest it became a case of trying to identify a missing soldier. In due course it was established that the remains were from an officer of the Oxfordshire & Buckinghamshire Light Infantry based on the discovery of artefacts including a button, whistle, pocket watch and fragments of uniform. This is a story about the search to try and identify the missing officer which continues to this day.\n\nRead More .....\n\nThe Boy Buglers\n\nA poignant story of the Evetts brothers who had served together as Boy Buglers in the Oxfordshire and Buckinghamshire Light Infantry in the years leading up to the Great War. Young Levi Evetts was born at High Wycombe in 1897 joining the Regiment as a Boy in November 1911 at the age of 14. His younger brother James followed a year later with both serving as buglers in the 2nd Battalion at Aldershot before the Great War. When he reached 19 years in 1916, Levi joined his comrades in the trenches and was killed almost immediately after his arrival during an attack in Northern France.\n\nRead More ...\n\nThe Waterloo Crucifix\n\nReputedly to have been picked up from the field of Waterloo after the battle by an officer in the SCOTS GREYS and then given to a brother officer who had recently joined the Regiment but had not participated in the battle. Inscribed with S Hubert OPN which translates Saint Hubertus Ora pro nobis or ‘Pray for us’.\n\nRead More ...\n\n \n\n \n\nM35 German Stahlhelm\n\nThe M35 German Stahlhelm  helmet was found on the Normandy battlefield in the American sector. The likelihood  that the soldier wearing the helmet would have survived the injuries sustained from the projectile, most probably a bullet, entering the forehead would have been slight. The helmet  is used as a metaphor to address the transitory relationship between the target and the sniper so elegantly expressed by Keith Douglas in his poem 'How to Kill' (1943). Douglas was killed shortly after joining the battle for Normandy.\n\nRead More... \n\nA Small Bell With a Big Story\n\nA small and unassuming bell can be found at the Museum. \n\nLikely to have been requisitioned from a Church, the  bell had been used by German sentries to warn of the imminent arrival of poison gas, that most appalling and indiscriminate of weapons used in the Great War. After its capture by men of Oxfordshire and Buckinghamshire during the Battle of Arras in April 1917 and until the Armistice, the little bell continued to have the same important function, only this time being rung to warn men from the two counties to protect themselves.\n\nFor its final job, the little bell was saved by the Reverend Edward Montmerency Guilford M.C., Chaplain to the 2nd Battalion, The Oxfordshire and Buckinghamshire Light Infantry, who used it for a  very much more peaceful purpose when calling the men to church parades and evening services.  Before his death in 1971, the old Padre generously presented the bell to the Regiment where it has quietly sat in retirement these many years.\n\nRead More...\n\nThe Green Dragoon's Snuff Box\n\nThe movie moguls of Hollywood have long taken complex historical events and converted them into simplistic but entertaining films. One common element is to identify a black-hearted villain acting as the nemesis to the film’s hero who after many trials and tribulations eventually overcomes evil with good. The hugely successful film The Patriot (2000) starring Mel Gibson as the hero is no exception to this well established formula. The villain was a Colonel Tavington who thinly based on the life of a real British officer of the period, Banastre Tarleton, who was a much more interesting and an equally controversial character.  The elegant snuff box once owned by Banastre Tarleton was loaned to the Museum by a benefactor who wished to remain anonymous so the story could be told.\n\nRead More...\n\n \n\nThe Kasmir Gate Inkwell\n\nAn inkwell found in the guardroom of the Kashmir Gate during the assault on Delhi\nby  Captain T.A. Julian, 52nd Regiment of Foot on the morning of the 14th September 1857.\n\nThis is a story about the rush to the walls of Delhi, preceded by 200 men of the 52nd Foot  and 750 loyal Sepoys waiting for the Kashmir Gate to be blown up to go in with the bayonet. It tells of the bravery Bugler Robert Hawthorne of the 52nd awarded the Victoria Cross  for conspicuous gallantry for his role in the blowing up of the gate in broad daylight preparatory to the assault by  coolly sounding the advance under intense enemy  fire.\n\nRead More...\n\n \n\nThe Model Tank\n\nWhen Corisande, Lady Rodney went to France in 1914, she was struck by the sad condition of the British Soldier, who had no place to go for recreation or to convalesce from the results of wounds aside from various local cafes and estaminets. She suggested the Young Men’s Christian Association (YMCA) consider building recreation huts in rear areas manned by a Women’s Auxiliary. Between the end of December that year and June 1920, 1,870 women volunteered for service entirely at their own expense and under strict war time rules to make a home for the men. Many of the women had lost fathers, husbands and brothers so shut up their houses leaving friends, relations and children in order to show their gratitude to the soldiers by offering them familiar surroundings and welcome in a country that for most was alien.\n\nTwenty five year old Miss Rachel Sprot from Scotland and her younger sister volunteered in rotation to work in the YMCA recreation hut in Rouen between 1915 and 1917. It was whilst Miss Sprot was working in the canteen that she was given the model tank, made from materials found in the trenches, by a grateful soldier returning to the front. She gave the model to her son, Johnny, who has kept it safe all of these years.\n\nRead More...\n\nRegimental Sweetheart Pin Cushion, Oxfordshire and Buckinghamshire Light Infantry, First World War\n\nThese pin cushions were commonly made by convalescing and disabled soldiers to be sent home to wives, sweethearts and mothers, as a token of affection across the miles.\n\nSome cushions were decorated from commercially available kits, while others were made from scratch using cloth from feed sacks, stuffing, pins, felt, and cigarette cards. \n\nThis Sweetheart Cushion was made by a soldier from the Oxfordshire and Buckinghamshire Light Infantry, serving in World War 1. The Regiment was formed by the amalgamation of the 43rd and 52nd Regiments of Foot (Light Infantry). The historic battles in which they took part are listed on the cushion.\n\n(Notes about Sweetheart Cushions researched and written by:\n\n Nicole Nielsen-Pike and Libby Davidson, Year 10, The Marlborough School, Woodstock.)\n\nDrawing sent to 2nd Lieutenant Guy Blewit by his wife Audrey after the birth of their daughter Anne.\n\nThe letter containing this picture was written by ‘Johnnie’, Blewit’s brother and was received on the 17th of April 1918, having been sent three days before on the 14th from Cranford Hall in Kettering.\n\n2nd Lieutenant Guy Blewit served in the First World War in 1914. He was wounded multiple times but survived the war, after which he served in the Essex Home Guard until it disbanded and he passed away in 1969.  \n\nThe Soldiers of Oxfordshire Museum holds many diaries and caricatures that were created by 2nd Lieutenant Blewit during his military career (he later became Lieutenant Colonel on the 8th of February 1922). These diaries highlight the day to day life of military service and offer candid hand drawn pictures and other accounts which are invaluable to our archives.\n\nHitler Youth Armband\n\nThe Hitler Youth (Hitlerjugend) was established in Nazi Germany that physically trained youth and indoctrinated them with the party ideology to the point of fanaticism. Movements for youngsters were part of German culture with the Hitler Youth being created in the 1920's. By 1933 its membership stood at 100,000. After Hitler came to power, all other youth movements were abolished and as a result the Hitler Youth grew quickly. In 1936, the figure stood at 4 million members when became all but compulsory to join or face trial with the possibility of execution.\n\nRead More ...\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

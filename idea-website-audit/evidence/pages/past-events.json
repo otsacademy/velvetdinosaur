@@ -1,0 +1,447 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/past-events/",
+    "lastmod": "2023-07-31T06:26:16+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:46.596Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/past-events/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/past-events/",
+  "title": "Past Events – IDEA",
+  "metaDescription": "Conferences 2022 IDEA Conference: Development in times of conflict: Ethical pathways towards peace and justice Medellin, Colombia, July 13-15, 2022 The International Development Ethics Association (IDEA), The Universidad Autónoma LatinoAmericana (UNAULA) and The Red para la formación ética y ciudadana REDETICA, invite scholars, practitioners, policy makers, and other interested parties to submit proposals to be…",
+  "canonical": "https://developmentethics.org/past-events/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Past Events"
+    },
+    {
+      "level": "h2",
+      "text": "Conferences"
+    },
+    {
+      "level": "h2",
+      "text": "Medellin, Colombia, July 13-15, 2022"
+    },
+    {
+      "level": "h2",
+      "text": "IDEA-GRETHA 2018 Congress: A World United"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/past-events/#content",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Development in times of conflict: Ethical pathways towards peace and justice",
+      "href": "https://sites.google.com/d/1uwuUVIW5Ig84D4v-u_gqDx579JOQiypO/p/1hJVQhIQ0Hehc1NTufGbyWPfUcgD0D4uU/edit",
+      "pathname": "/d/1uwuUVIW5Ig84D4v-u_gqDx579JOQiypO/p/1hJVQhIQ0Hehc1NTufGbyWPfUcgD0D4uU/edit",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/news-and-events/#Goulet",
+      "pathname": "/news-and-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "pathname": "/idea-unaula-ibague-2021-congress-development-in-times-of-conflict/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://medellin.travel/en/",
+      "pathname": "/en/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://medellin.travel/en/destinations/santa-fe-de-antioquia",
+      "pathname": "/en/destinations/santa-fe-de-antioquia",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://travelgrafia.co/en/blog/guatape-piedra-del-penol/",
+      "pathname": "/en/blog/guatape-piedra-del-penol/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/joining-idea-2/",
+      "pathname": "/joining-idea-2/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://en.wikipedia.org/wiki/Denis_Goulet",
+      "pathname": "/wiki/Denis_Goulet",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://en.wikipedia.org/wiki/Denis_Goulet",
+      "pathname": "/wiki/Denis_Goulet",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/wp-content/uploads/2018/07/july-6-final-version-idea-bordeaux-program.pdf",
+      "pathname": "/wp-content/uploads/2018/07/july-6-final-version-idea-bordeaux-program.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "http://gretha.u-bordeaux.fr/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "pathname": "/fr/colloques/7%C3%A8mes-journ%C3%A9es-du-d%C3%A9veloppement-gretha-idea",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "http://www.okanagan.bc.ca/Page38646.aspx",
+      "pathname": "/Page38646.aspx",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/idea-moldova-marginalized-peoples-conference/",
+      "pathname": "/idea-moldova-marginalized-peoples-conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "pathname": "/december-19-arrest-by-turkish-authorities-of-professor-istar-gozaydin/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://fsm2016.org/en/",
+      "pathname": "/en/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://fsm2016.org/en/groupes/international-development-ethics-association/events/",
+      "pathname": "/en/groupes/international-development-ethics-association/events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.org/announcements/idea-at-world-social-forum-2016/",
+      "pathname": "/announcements/idea-at-world-social-forum-2016/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "http://www.northamericansocietyforsocialphilosophy.org/category/annual-conference/",
+      "pathname": "/category/annual-conference/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://dl.dropboxusercontent.com/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "pathname": "/u/36043317/IDEA/IDEAmini-conferenceProgram%20NASSP.pdf",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://cuportfolio.carleton.ca/view/view.php?t=i4VjGAae5bB0RUyOpIWJ",
+      "pathname": "/view/view.php",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.scholarsatrisk.org/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "pathname": "/2016/01/global-higher-ed-networks-stand-with-turkeys-scholars/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "http://blog.chemonics.com/development-ethics-hiding-in-plain-site",
+      "pathname": "/development-ethics-hiding-in-plain-site",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/past-events/#",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fpast-events%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-mQ",
+      "pathname": "/P1D93l-mQ",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/past-events/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=768",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 580,
+      "naturalHeight": 231,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=1416&subd=developmentethics&host=developmentethics.org&ref=&rand=0.7270739839817522",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [],
+  "wordCount": 138,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nPAST EVENTS\nConferences\n2022 IDEA Conference: Development in times of conflict: Ethical pathways towards peace and justice\nDennis Goulet Memorial Prize 2018 \nIDEA Congress, June 25-28, 2018, Bordeaux, France \nFinding the Good Conference, Kelowna, Canada, June 8-9 2018 \nIDEA Conference, May 17-18, 2018, Chisinau, Moldova \nMay 9, 2017\nDecember 19th 2016 arrest of İştar Gözaydın \nIDEA at World Social Forum \n2016 IDEA Congress, Anti–Corruption and Democratic Development, Istanbul: Conference Cancelled\nIDEA at North American Society for Social Philosophy\nAcademic freedom in Turkey \nIDEA 2014 \n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

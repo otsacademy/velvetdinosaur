@@ -1,0 +1,964 @@
+{
+  "sitemap": {
+    "loc": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+    "lastmod": null
+  },
+  "capturedAt": "2026-06-09T18:03:09.435Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+  "title": "A look at our upcoming exhibition, Children and Military Lives – Soldiers of Oxfordshire Museum",
+  "metaDescription": "",
+  "canonical": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "Children and Military Lives - Stories of Adventure, Family and Exile"
+    },
+    {
+      "level": "h2",
+      "text": "Exhibition - 2 June to 24 November 2022"
+    },
+    {
+      "level": "h4",
+      "text": "Related posts"
+    },
+    {
+      "level": "h2",
+      "text": "Oxfordshire D-Day Stories: Lt. Colonel John Granville"
+    },
+    {
+      "level": "h2",
+      "text": "10 Years of SOFO: Join us for our Armed Forces Day Garden Party!"
+    },
+    {
+      "level": "h4",
+      "text": "About The Author"
+    },
+    {
+      "level": "h3",
+      "text": "Leave a Reply Cancel reply"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "pathname": "/about",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "frontofhouse@sofo.org.uk",
+      "href": "mailto:frontofhouse@sofo.org.uk",
+      "pathname": "frontofhouse@sofo.org.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/soldiersofoxfordshiremuseum/",
+      "pathname": "/soldiersofoxfordshiremuseum/",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/SoldiersOfOxfordshire",
+      "pathname": "/SoldiersOfOxfordshire",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/SOFOtrust",
+      "pathname": "/SOFOtrust",
+      "rel": "",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "pathname": "/whats-on/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "pathname": "/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "pathname": "/collection/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "pathname": "/become-a-friend/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "pathname": "/visit-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "pathname": "/shop/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "pathname": "/cart/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "pathname": "/my-account/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "pathname": "/collection/oxon50objects/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "pathname": "/research/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "pathname": "/learning-at-sofo/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "pathname": "/onlinetalks/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "pathname": "/blog/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "pathname": "/support-us/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "pathname": "/room-hire/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "pathname": "/sofo-galleries/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "galleries",
+      "href": "https://www.sofo.org.uk/category/galleries/",
+      "pathname": "/category/galleries/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "GALLERIES",
+      "href": "https://www.sofo.org.uk/category/galleries/",
+      "pathname": "/category/galleries/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "WHATSON",
+      "href": "https://www.sofo.org.uk/category/whats-on/",
+      "pathname": "/category/whats-on/",
+      "rel": "category tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Little Troopers",
+      "href": "lhttps://www.littletroopers.net/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Brian McCarty’s War Toys",
+      "href": "https://wartoys.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Little Troopers",
+      "href": "https://www.littletroopers.net/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Brian McCarty",
+      "href": "https://brianmccarty.com/",
+      "pathname": "/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": true
+    },
+    {
+      "text": "Armed Forces Day",
+      "href": "https://www.sofo.org.uk/tag/armed-forces-day/",
+      "pathname": "/tag/armed-forces-day/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Charity",
+      "href": "https://www.sofo.org.uk/tag/charity/",
+      "pathname": "/tag/charity/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "exhibition",
+      "href": "https://www.sofo.org.uk/tag/exhibition/",
+      "pathname": "/tag/exhibition/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Galleries",
+      "href": "https://www.sofo.org.uk/tag/galleries/",
+      "pathname": "/tag/galleries/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Gallery",
+      "href": "https://www.sofo.org.uk/tag/gallery/",
+      "pathname": "/tag/gallery/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Little Troopers",
+      "href": "https://www.sofo.org.uk/tag/little-troopers/",
+      "pathname": "/tag/little-troopers/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Refugee Week",
+      "href": "https://www.sofo.org.uk/tag/refugee-week/",
+      "pathname": "/tag/refugee-week/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "War Toys",
+      "href": "https://www.sofo.org.uk/tag/war-toys/",
+      "pathname": "/tag/war-toys/",
+      "rel": "tag",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Previous: Featured: The Great War POW Album and Pilot’s Log Book of Lt. Frederick Matthews",
+      "href": "https://www.sofo.org.uk/featured-the-great-war-pow-album-and-pilots-log-book-of-lt-frederick-matthews/",
+      "pathname": "/featured-the-great-war-pow-album-and-pilots-log-book-of-lt-frederick-matthews/",
+      "rel": "prev",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Next: The Oxfordshire military connection to a Suffolk tragedy, 1914",
+      "href": "https://www.sofo.org.uk/the-oxfordshire-military-connection-to-a-suffolk-tragedy-1914/",
+      "pathname": "/the-oxfordshire-military-connection-to-a-suffolk-tragedy-1914/",
+      "rel": "next",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "OXFORDSHIRE D-DAY STORIES: LT. COLONEL JOHN GRANVILLE",
+      "href": "https://www.sofo.org.uk/ddaystories-johngranville/",
+      "pathname": "/ddaystories-johngranville/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "10 YEARS OF SOFO: JOIN US FOR OUR ARMED FORCES DAY GARDEN PARTY!",
+      "href": "https://www.sofo.org.uk/10-years-of-sofo-join-us-for-our-armed-forces-day-garden-party/",
+      "pathname": "/10-years-of-sofo-join-us-for-our-armed-forces-day-garden-party/",
+      "rel": "bookmark",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Duncan Parsons",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "pathname": "/author/duncan/",
+      "rel": "author",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "",
+      "href": "",
+      "pathname": "",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Cancel reply",
+      "href": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/#respond",
+      "pathname": "/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "logged in",
+      "href": "https://www.sofo.org.uk/wp-login.php?redirect_to=https%3A%2F%2Fwww.sofo.org.uk%2Fa-look-at-our-upcoming-exhibition-children-and-military-lives%2F",
+      "pathname": "/wp-login.php",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.sofo.org.uk/website-privacy-policy/",
+      "pathname": "/website-privacy-policy/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Terms and conditions",
+      "href": "https://www.sofo.org.uk/website-terms-and-conditions-of-use/",
+      "pathname": "/website-terms-and-conditions-of-use/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Cart",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://sofo.org.uk/about",
+      "visible": true
+    },
+    {
+      "text": "Become a Friend",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "https://www.sofo.org.uk/",
+      "visible": true
+    },
+    {
+      "text": "Events",
+      "href": "https://www.sofo.org.uk/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "Exhibitions",
+      "href": "https://www.sofo.org.uk/galleries/",
+      "visible": true
+    },
+    {
+      "text": "Collections",
+      "href": "https://www.sofo.org.uk/collection/",
+      "visible": true
+    },
+    {
+      "text": "Friends’ Membership",
+      "href": "https://www.sofo.org.uk/become-a-friend/",
+      "visible": true
+    },
+    {
+      "text": "Visit",
+      "href": "https://www.sofo.org.uk/visit-us/",
+      "visible": true
+    },
+    {
+      "text": "Shop",
+      "href": "https://www.sofo.org.uk/shop/",
+      "visible": true
+    },
+    {
+      "text": "Basket",
+      "href": "https://www.sofo.org.uk/cart/",
+      "visible": true
+    },
+    {
+      "text": "My Account",
+      "href": "https://www.sofo.org.uk/my-account/",
+      "visible": true
+    },
+    {
+      "text": "Oxfordshire’s Military Heritage in 50 Objects",
+      "href": "https://www.sofo.org.uk/collection/oxon50objects/",
+      "visible": true
+    },
+    {
+      "text": "Research",
+      "href": "https://www.sofo.org.uk/research/",
+      "visible": true
+    },
+    {
+      "text": "Learning",
+      "href": "https://www.sofo.org.uk/learning-at-sofo/",
+      "visible": true
+    },
+    {
+      "text": "Online Talks",
+      "href": "https://www.sofo.org.uk/onlinetalks/",
+      "visible": true
+    },
+    {
+      "text": "Blog",
+      "href": "https://www.sofo.org.uk/blog/",
+      "visible": true
+    },
+    {
+      "text": "Support Us",
+      "href": "https://www.sofo.org.uk/support-us/",
+      "visible": true
+    },
+    {
+      "text": "Room Hire",
+      "href": "https://www.sofo.org.uk/room-hire/",
+      "visible": true
+    },
+    {
+      "text": "Image Services",
+      "href": "https://www.sofo.org.uk/sofo-galleries/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.sofo.org.uk/about/",
+      "visible": true
+    },
+    {
+      "text": "DUNCAN PARSONS",
+      "href": "https://www.sofo.org.uk/author/duncan/",
+      "visible": true
+    },
+    {
+      "text": "GALLERIES",
+      "href": "https://www.sofo.org.uk/category/galleries/",
+      "visible": true
+    },
+    {
+      "text": "WHATSON",
+      "href": "https://www.sofo.org.uk/category/whats-on/",
+      "visible": true
+    },
+    {
+      "text": "OXFORDSHIRE D-DAY STORIES: LT. COLONEL JOHN GRANVILLE",
+      "href": "https://www.sofo.org.uk/ddaystories-johngranville/",
+      "visible": true
+    },
+    {
+      "text": "10 YEARS OF SOFO: JOIN US FOR OUR ARMED FORCES DAY GARDEN PARTY!",
+      "href": "https://www.sofo.org.uk/10-years-of-sofo-join-us-for-our-armed-forces-day-garden-party/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.sofo.org.uk/a-look-at-our-upcoming-exhibition-children-and-military-lives/",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2020/02/cropped-SOFO-LOGO-TR-pos.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 3780,
+      "naturalHeight": 1542,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/instagram_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/facebook_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/twitter_sofo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 177,
+      "naturalHeight": 175,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2017/01/museum.jpg",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 1000,
+      "naturalHeight": 581,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/05/Children-and-Military-Lives-Little-Troopers-Returning-Soldier-with-daughter-2019-Millie-Seveney-Liddell-1600x400.jpg",
+      "alt": "",
+      "width": "1600",
+      "height": "400",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/05/Children-and-Military-Lives-Little-Troopers-Returning-Soldier-with-daughter-2019-Millie-Seveney-Liddell-300x300.jpg",
+      "alt": "",
+      "width": "300",
+      "height": "300",
+      "naturalWidth": 300,
+      "naturalHeight": 300,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/05/Children-and-Military-Lives-Little-Troopers-Returning-Soldier-with-daughter-2019-Millie-Seveney-Liddell-1024x655.jpg",
+      "alt": "",
+      "width": "1024",
+      "height": "655",
+      "naturalWidth": 1024,
+      "naturalHeight": 655,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/05/Children-and-Military-Lives-Germany-1962-1024x798.png",
+      "alt": "",
+      "width": "1024",
+      "height": "798",
+      "naturalWidth": 1024,
+      "naturalHeight": 798,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2022/05/War-Toys-Homecoming-Mosul-Iraq-2018-Husseins-drawing-alongside-Brians-photo-interpretation-e1651764812280.jpg",
+      "alt": "",
+      "width": "715",
+      "height": "475",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/06/P5210123-scaled.jpg",
+      "alt": "",
+      "width": "2560",
+      "height": "1920",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2024/05/winstan-garden-small.jpg",
+      "alt": "",
+      "width": "1869",
+      "height": "1869",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": true
+    },
+    {
+      "src": "https://secure.gravatar.com/avatar/ede4445374058997b8f0ab3d69d767c9?s=100&d=retro&r=g",
+      "alt": "",
+      "width": "100",
+      "height": "100",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/acreditatedMuseum.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 228,
+      "naturalHeight": 217,
+      "visible": true
+    },
+    {
+      "src": "https://www.sofo.org.uk/wp-content/uploads/2021/05/sofoLogo.png",
+      "alt": null,
+      "width": null,
+      "height": null,
+      "naturalWidth": 218,
+      "naturalHeight": 217,
+      "visible": true
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.sofo.org.uk/",
+      "method": "get",
+      "text": "",
+      "inputs": [
+        {
+          "type": "text",
+          "name": "s",
+          "placeholder": "Search... then hit enter",
+          "ariaLabel": "",
+          "label": "",
+          "id": "",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "buttons": [],
+  "wordCount": 899,
+  "bodyText": "Home\nVisit Us\nExhibitions\nEvents\nOnline Talks\nOxfordshire’s Military Heritage in 50 Objects\nCollections\nBlog\nResearch\nLearning\nShop\nCart\nMy Account\nAbout\nBecome a Friend\nSupport Us\nRoom Hire\n\n01993 810 210\n\nfrontofhouse@sofo.org.uk\n\n  \nHome\nEvents\nExhibitions\nCollections\nFriends’ Membership\nVisit\nShop\nBasket\nMy Account\nOxfordshire’s Military Heritage in 50 Objects\nResearch\nLearning\nOnline Talks\nBlog\nSupport Us\nRoom Hire\nImage Services\nAbout\n05\nMay\nBYDUNCAN PARSONS// GALLERIES, WHATSON\nA look at our upcoming exhibition, Children and Military Lives\nChildren and Military Lives - Stories of Adventure, Family and Exile\nExhibition - 2 June to 24 November 2022\n\nThe new exhibition will tell the stories of today’s service children (children of serving British Armed Forces personnel) and their experiences of living life in the military community, as well as stories of children who become victims of war, experiencing the effects of military conflict - from Second World War evacuees to today’s refugees and asylum seekers.\n\nWith a focus on Oxfordshire people, our visitors can see and hear what living through conflict is like first hand, from recordings of evacuation memories to present day accounts from children who arrive in the county and experience a new culture here, processing their life experiences through art and personal stories.\n\nTo bring this exhibition to visitors, we've partnered with two charities, Little Troopers and Brian McCarty’s War Toys.\n\nIf you're not familiar with them already, Little Troopers support all children who have parents serving in the British Armed Forces, and will give visitors the opportunity to discover the stories and experiences of military children who have grown-up in the Armed Forces community. Visit the exhibition and explore how they cope with having their parents deployed overseas to different parts of the world; how they move house and school regularly, building friendships for what can be short periods of time and read and listen to their own reflections on what it's like to have military parents as these young people start to consider their own adult lives.\n\nLouise Fetigan, founder of Little Troopers, says:\n\n\"There are more than 100,000 children today who have parents serving in the British Armed Forces so it's really important that we represent these children and give them the opportunity to tell their story and to share their unique experiences. Military life is full of challenge, change and adventure and this exhibit offers visitors a special insight into our Armed Forces community as seen through the eyes of military children.\"\n\nWe've also been collecting accounts from children of the 1950s to 2000s, whose parents were part of the British forces. Frequently these children experienced traveling across the globe following in their fathers’ footsteps; often giving them unique life experiences they never forgot.\n\nGermany, 1962\n\nThe third distinct segment of this exhibition will be provided by War Toys, a US nonprofit organization founded in 2019. We'll be exhibiting part of their photo series by Brian McCarty about children’s experiences of war, expressed through unique, art-therapy-based collaborations in the field.  The unique photo series War Toys vividly brings to life the effects of war on children living in conflict zones around the world. Acting as their own art directors, children often living in refugee camps are given the opportunity to depict real scenes from their experiences using toys and the local terrain. The resulting images are impactful and thought provoking; giving us an insight into a world which is far removed from our experiences of watching news programmes covering the camps in war zones.\n\nBrian McCarty/War Toys - Homecoming Old City of Mosul, Iraq 2018\n\nFinally, with the exhibition opening just in time for  Queen’s Platinum Jubilee, we'll have a special display to highlight the Queen’s own ‘military childhood’ and her Second World War service in the ATS, as well as a timeline of the nation’s toys and books. We have gathered toys from the 1940s to the present day as we take a look at our enduring relationship with toys that depict war, from tin soldiers of yesterday to remote control drones of today.\n\n Tags: Armed Forces Day, Charity, exhibition, Galleries, Gallery, Little Troopers, Refugee Week, War Toys\n\nPrevious:\nFeatured: The Great War POW Album and Pilot’s Log Book of Lt. Frederick Matthews\nNext:\nThe Oxfordshire military connection to a Suffolk tragedy, 1914\nRelated posts\nOXFORDSHIRE D-DAY STORIES: LT. COLONEL JOHN GRANVILLE\n\nJohnny Granville joined the 2nd Battalion of the Regiment as a Second Lieutenant in August 1936, when the Battalion was in India. He quickly made his mark as an instructor and as a polo player in the regimental team, as well as a fine shot. Posted home early in 1940 he was appointed Adjutant of 7th. Battalion of the Regiment as it was formed in Aldershot. As the Battalion expanded…\n\n10 YEARS OF SOFO: JOIN US FOR OUR ARMED FORCES DAY GARDEN PARTY!\n\nArmed Forces Day Garden Party Saturday 22 June 2024 12pm – 8.30pm Join us to mark Armed Forces Day and celebrate 10 years of Soldiers of Oxfordshire Museum! On Saturday 22 June we’ll be holding a Garden Party in the beautiful gardens of The Oxfordshire Museum, just outside our front door! Our museum galleries, including our recently updated permanent galleries and our trio of brand new temporary exhibitions, Oxfordshire to…\n\nSoldiers of Oxfordshire Museum\nPark Street.\nWoodstock\nOxfordshire OX20 1SN\n\nPhone and Email:\nGeneral Enquiries & Event Tickets: 01993 810 211\nfrontofhouse@sofo.org.uk\n\nPrivacy Policy\nTerms and conditions",
+  "footerText": ""
+}

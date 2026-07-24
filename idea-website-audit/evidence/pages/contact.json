@@ -1,0 +1,387 @@
+{
+  "sitemap": {
+    "loc": "https://developmentethics.org/contact/",
+    "lastmod": "2023-01-11T20:55:06+00:00",
+    "priority": "0.6",
+    "changefreq": "weekly"
+  },
+  "capturedAt": "2026-05-21T13:49:14.098Z",
+  "fetch": {
+    "status": 200,
+    "ok": true,
+    "finalUrl": "https://developmentethics.org/contact/",
+    "contentType": "text/html; charset=UTF-8",
+    "xRobotsTag": ""
+  },
+  "url": "https://developmentethics.org/contact/",
+  "title": "Contact – IDEA",
+  "metaDescription": "Let's talk 👋 Don't hesitate to reach out with the contact information below, or send a message using the form. Get in Touch 10 Street RoadCity, 10100USA mail@example.com (555) 555 1234 Send Us a Message",
+  "canonical": "https://developmentethics.org/contact/",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Contact"
+    },
+    {
+      "level": "h2",
+      "text": "Get in Touch"
+    },
+    {
+      "level": "h2",
+      "text": "Send Us a Message"
+    }
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "https://developmentethics.org/contact/#content",
+      "pathname": "/contact/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "home",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "pathname": "/about/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "pathname": "/officers-board/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "pathname": "/bylaws/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "pathname": "/past-events/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "pathname": "/member-resources/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "pathname": "/joining-idea/",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "mail@example.com",
+      "href": "mailto:mail@example.com",
+      "pathname": "mail@example.com",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "(555) 555 1234",
+      "href": "tel:5555551234",
+      "pathname": "5555551234",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "← Back",
+      "href": "https://developmentethics.org/contact/",
+      "pathname": "/contact/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "The Routledge Handbook of Development Ethics",
+      "href": "https://www.taylorfrancis.com/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "pathname": "/books/oa-edit/10.4324/9781315626796/routledge-handbook-development-ethics-jay-drydyk-lori-keleher",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "jh10j3s@leeds.ac.uk",
+      "href": "mailto:jh10j3s@leeds.ac.uk",
+      "pathname": "jh10j3s@leeds.ac.uk",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png",
+      "pathname": "/2023/07/idea-blue-1.png",
+      "rel": "",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Create a website or blog at WordPress.com",
+      "href": "https://wordpress.com/?ref=footer_custom_svg",
+      "pathname": "/",
+      "rel": "nofollow",
+      "target": "",
+      "visible": true
+    },
+    {
+      "text": "Privacy",
+      "href": "https://developmentethics.org/contact/#",
+      "pathname": "/contact/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Sign up",
+      "href": "https://wordpress.com/start/",
+      "pathname": "/start/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fdevelopmentethics.org%252Fcontact%252F",
+      "pathname": "/log-in",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Copy shortlink",
+      "href": "https://wp.me/P1D93l-kr",
+      "pathname": "/P1D93l-kr",
+      "rel": "",
+      "target": "",
+      "visible": false
+    },
+    {
+      "text": "Report this content",
+      "href": "https://wordpress.com/abuse/?report_url=https://developmentethics.org/contact/",
+      "pathname": "/abuse/",
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "visible": false
+    },
+    {
+      "text": "Manage subscriptions",
+      "href": "https://subscribe.wordpress.com/",
+      "pathname": "/",
+      "rel": "",
+      "target": "",
+      "visible": false
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "IDEA",
+      "href": "https://developmentethics.org/",
+      "visible": true
+    },
+    {
+      "text": "About",
+      "href": "https://developmentethics.org/about/",
+      "visible": true
+    },
+    {
+      "text": "Officers Board",
+      "href": "https://developmentethics.org/officers-board/",
+      "visible": true
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://developmentethics.org/bylaws/",
+      "visible": true
+    },
+    {
+      "text": "Past Events",
+      "href": "https://developmentethics.org/past-events/",
+      "visible": true
+    },
+    {
+      "text": "Member Resources",
+      "href": "https://developmentethics.org/member-resources/",
+      "visible": true
+    },
+    {
+      "text": "Joining IDEA",
+      "href": "https://developmentethics.org/joining-idea/",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/04/cropped-green-and-yellow-colorful-blocks-conference-event-website-1.png",
+      "alt": "",
+      "width": "2000",
+      "height": "1443",
+      "naturalWidth": 2000,
+      "naturalHeight": 1200,
+      "visible": true
+    },
+    {
+      "src": "https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f44b.svg",
+      "alt": "👋",
+      "width": null,
+      "height": null,
+      "naturalWidth": 150,
+      "naturalHeight": 150,
+      "visible": true
+    },
+    {
+      "src": "https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2728.svg",
+      "alt": "✨",
+      "width": null,
+      "height": null,
+      "naturalWidth": 150,
+      "naturalHeight": 150,
+      "visible": false
+    },
+    {
+      "src": "https://developmentethics.files.wordpress.com/2023/07/idea-blue-1.png?w=768",
+      "alt": "",
+      "width": "1024",
+      "height": "409",
+      "naturalWidth": 580,
+      "naturalHeight": 231,
+      "visible": true
+    },
+    {
+      "src": "https://developmentethics.org/wp-content/uploads/2023/07/cropped-img_2208.png?w=50",
+      "alt": "",
+      "width": "50",
+      "height": "50",
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "visible": false
+    },
+    {
+      "src": "https://pixel.wp.com/g.gif?blog=24105931&v=wpcom&tz=0&user_id=0&post=1267&subd=developmentethics&host=developmentethics.org&ref=&rand=0.9396189542950997",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "naturalWidth": 6,
+      "naturalHeight": 5,
+      "visible": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "ref: <Node>",
+      "method": "post",
+      "text": "Name(required) Email(required) Website Message(required) Submit",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "jetpack_contact_form_jwt",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "text",
+          "name": "g1267-name",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "g1267-name"
+        },
+        {
+          "type": "email",
+          "name": "g1267-email",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "g1267-email"
+        },
+        {
+          "type": "text",
+          "name": "g1267-website",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "g1267-website"
+        },
+        {
+          "type": "textarea",
+          "name": "g1267-message",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "contact-form-comment-g1267-message"
+        },
+        {
+          "type": "hidden",
+          "name": "contact-form-id",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "action",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "contact-form-hash",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "textarea",
+          "name": "ak_hp_textarea",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": ""
+        },
+        {
+          "type": "hidden",
+          "name": "ak_js",
+          "placeholder": "",
+          "ariaLabel": "",
+          "id": "ak_js_1"
+        }
+      ]
+    }
+  ],
+  "wordCount": 96,
+  "bodyText": "Skip to content\n\nIDEA\n\nInternational Development Ethics Association\n\nAbout\nOfficers Board\nBylaws\nPast Events\n \nMember Resources\nJoining IDEA\nCONTACT\n\nLet’s talk  Don’t hesitate to reach out with the contact information below, or send a message using the form.\n\nGet in Touch\n10 Street Road\nCity, 10100\nUSA\nmail@example.com\n(555) 555 1234\nSend Us a Message\nName(required)\nEmail(required)\nWebsite\nMessage(required)\n\nSubmit\n\nFree Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018.\n\nContact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk",
+  "footerText": "Free Download: A comprehensive introduction to development ethics is now available online at no cost: Jay Drydyk & Lori Keleher, eds. The Routledge Handbook of Development Ethics. Routledge Press, 2018. Contact: IDEA Secretary Jack Simpson, jh10j3s@leeds.ac.uk"
+}

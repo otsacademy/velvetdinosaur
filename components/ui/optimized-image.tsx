@@ -1,15 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
+import type React from 'react';
 import Image from 'next/image';
 import { resolveAssetImageUrl, type AssetImageOptions } from '@/lib/uploads';
+
+const configuredR2Host = (() => {
+  const base = process.env.NEXT_PUBLIC_R2_PUBLIC_BASE;
+  if (!base) return null;
+  try {
+    return new URL(base).hostname;
+  } catch {
+    return null;
+  }
+})();
+
+const OPTIMIZABLE_REMOTE_HOSTS = new Set([
+  ...(configuredR2Host ? [configuredR2Host] : []),
+  'images.unsplash.com',
+  'img.youtube.com',
+  'i.ytimg.com',
+  'yt3.ggpht.com',
+  'lh3.googleusercontent.com'
+]);
 
 type BaseProps = {
   src?: string | null;
   alt: string;
   className?: string;
+  style?: React.CSSProperties;
   sizes?: string;
   preload?: boolean;
   priority?: boolean;
   quality?: number;
+  loading?: 'eager' | 'lazy';
+  decoding?: 'async' | 'sync' | 'auto';
+  fetchPriority?: 'high' | 'low' | 'auto';
+  referrerPolicy?: React.HTMLAttributeReferrerPolicy;
+  onError?: React.ReactEventHandler<HTMLImageElement>;
   /** Resize hint passed to resolveAssetImageUrl (and used for fixed-size rendering). */
   imageOptions?: AssetImageOptions;
 };
@@ -27,9 +53,11 @@ function isOptimizable(src: string) {
   // SVGs are vector — next/image gives no benefit and would need dangerouslyAllowSVG.
   if (/\.svg(\?|$)/i.test(src)) return false;
   if (src.startsWith('http://') || src.startsWith('https://')) {
-    // Only same-allowlisted hosts are safe; be conservative and let <img> handle
-    // arbitrary external URLs. Relative (/api/assets/file, /assets/...) are fine.
-    return false;
+    try {
+      return OPTIMIZABLE_REMOTE_HOSTS.has(new URL(src).hostname);
+    } catch {
+      return false;
+    }
   }
   return true;
 }
@@ -43,7 +71,22 @@ function isOptimizable(src: string) {
  * object-cover layouts — or `width`/`height` for fixed-size images (avatars, logos).
  */
 export function OptimizedImage(props: OptimizedImageProps) {
-  const { src, alt, className, sizes, preload, priority, quality, imageOptions } = props;
+  const {
+    src,
+    alt,
+    className,
+    style,
+    sizes,
+    preload,
+    priority,
+    quality,
+    loading,
+    decoding,
+    fetchPriority,
+    referrerPolicy,
+    onError,
+    imageOptions
+  } = props;
   const safeSrc = src || '';
   const resolved = resolveAssetImageUrl(safeSrc, imageOptions);
   const shouldPreload = preload ?? priority ?? false;
@@ -57,9 +100,12 @@ export function OptimizedImage(props: OptimizedImageProps) {
         src={resolved || undefined}
         alt={alt}
         className={className}
-        loading={shouldPreload ? 'eager' : 'lazy'}
-        fetchPriority={shouldPreload ? 'high' : undefined}
-        decoding="async"
+        style={style}
+        loading={loading ?? (shouldPreload ? 'eager' : 'lazy')}
+        fetchPriority={fetchPriority ?? (shouldPreload ? 'high' : undefined)}
+        decoding={decoding ?? 'async'}
+        referrerPolicy={referrerPolicy}
+        onError={onError}
         {...dimProps}
       />
     );
@@ -72,9 +118,15 @@ export function OptimizedImage(props: OptimizedImageProps) {
         alt={alt}
         fill
         className={className}
+        style={style}
         sizes={sizes || '100vw'}
         preload={shouldPreload || undefined}
         quality={quality}
+        loading={shouldPreload ? undefined : loading}
+        decoding={decoding}
+        fetchPriority={fetchPriority}
+        referrerPolicy={referrerPolicy}
+        onError={onError}
       />
     );
   }
@@ -86,9 +138,15 @@ export function OptimizedImage(props: OptimizedImageProps) {
       width={props.width}
       height={props.height}
       className={className}
+      style={style}
       sizes={sizes}
       preload={shouldPreload || undefined}
       quality={quality}
+      loading={shouldPreload ? undefined : loading}
+      decoding={decoding}
+      fetchPriority={fetchPriority}
+      referrerPolicy={referrerPolicy}
+      onError={onError}
     />
   );
 }
