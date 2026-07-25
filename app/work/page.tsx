@@ -32,7 +32,7 @@ export default function WorkIndexPage() {
             Real projects, real outcomes.
           </h1>
           <p className="m-0 max-w-[560px] text-pretty text-base leading-relaxed text-muted-foreground">
-            Charities, professional services, travel, and product platforms — each built for
+            Charities, community organisations, travel, and product platforms — each built for
             speed, clarity, and content the client controls.
           </p>
         </div>

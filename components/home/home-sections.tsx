@@ -74,7 +74,7 @@ export function MadeThings() {
         />
         <div className="grid gap-4 md:grid-cols-[1.5fr_1fr]">
           <Link
-            href="/work"
+            href="/work/academics-stand-against-poverty"
             className={`flex min-h-[240px] flex-col justify-between gap-6 rounded-lg bg-[color-mix(in_oklch,var(--vd-primary)_38%,var(--vd-surface-strong))] p-9 text-white transition-[transform,box-shadow] duration-300 ease-[var(--vd-hover-ease)] hover:-translate-y-1 hover:text-white hover:shadow-[var(--vd-shadow-xl)]`}
           >
             <div className={`${HOME_MONO} text-[10px] text-white/70`}>Charity · live project</div>
