@@ -1,25 +1,33 @@
-import { Suspense } from 'react';
-import { redirect } from 'next/navigation';
-import { connection } from 'next/server';
-import { PublishedDoc } from '@/lib/puck-render';
-import { adminHomePath, isAdminOnly } from '@/lib/site-config';
+import type { Metadata } from "next"
+
+import { AboutHero, GoogleReviews, HowIWork } from "@/components/home/about-content"
+import { DesignShell } from "@/components/home/design-shell"
+import { CtaStrip } from "@/components/home/home-social"
+import { siteName } from "@/lib/site-metadata"
+
+const aboutDescription =
+  "Ian Wickens runs Velvet Dinosaur, a founder-led studio in Minster Lovell building bespoke websites and apps — NHS-grade rigour, direct collaboration, and full ownership."
+
+export const metadata: Metadata = {
+  title: "About",
+  description: aboutDescription,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    url: "/about",
+    siteName,
+    title: `About | ${siteName}`,
+    description: aboutDescription,
+  },
+}
 
 export default function AboutPage() {
   return (
-    <Suspense fallback={null}>
-      <AboutPageContent />
-    </Suspense>
-  );
-}
-
-async function AboutPageContent() {
-  // CMS pages are backed by Mongo. When build-time DB access is unavailable (or undesirable),
-  // we must opt out of prerendering so published content is always resolved at request time.
-  await connection();
-  if (isAdminOnly()) redirect(adminHomePath);
-  return (
-    <main>
-      <PublishedDoc slug="about" />
-    </main>
-  );
+    <DesignShell active="about">
+      <AboutHero />
+      <HowIWork />
+      <GoogleReviews />
+      <CtaStrip title="Want to work together?" />
+    </DesignShell>
+  )
 }

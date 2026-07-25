@@ -1,6 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 
+import { FounderAvatar } from "./founder-avatar"
 import {
   HOME_BTN_PRIMARY,
   HOME_CARD,
@@ -17,7 +17,7 @@ export function Testimonial() {
         title="Kind words from clients"
         aside={
           <Link
-            href="/reviews"
+            href="/about"
             className="text-[13px] font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
           >
             All reviews →
@@ -49,18 +49,10 @@ export function Testimonial() {
 
 export function CtaBanner() {
   return (
-    <section id="about" className={`${HOME_CONTAINER} scroll-mt-24 mt-12 pb-16 md:pb-[72px]`}>
+    <section className={`${HOME_CONTAINER} mt-12 pb-16 md:pb-[72px]`}>
       <div className="flex flex-wrap items-center justify-between gap-8 rounded-[10px] bg-[linear-gradient(135deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-primary)_28%,var(--vd-surface-strong)))] p-8 text-[var(--vd-surface-strong-fg)] md:px-14 md:py-12">
         <div className="flex flex-wrap items-center gap-6">
-          <div className="flex h-[60px] w-[60px] flex-none items-center justify-center overflow-hidden rounded-full border-2 border-white/25 bg-white/10">
-            <Image
-              src="/dinosaur-512.webp"
-              alt="The Velvet Dinosaur mascot"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain"
-            />
-          </div>
+          <FounderAvatar size={60} tone="dark" />
           <div>
             <div className="text-xl font-bold tracking-[-0.01em]">
               Hi, I&apos;m Ian — you&apos;ll work directly with me.
@@ -71,7 +63,29 @@ export function CtaBanner() {
           </div>
         </div>
         <Link
-          href="/#contact"
+          href="/contact"
+          className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
+        >
+          Tell me about your project
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+// Dark gradient CTA strip used on the Work and About pages.
+export function CtaStrip({ kicker, title }: { kicker?: string; title: string }) {
+  return (
+    <section className={`${HOME_CONTAINER} pb-16 md:pb-[72px]`}>
+      <div className="flex flex-wrap items-center justify-between gap-8 rounded-[10px] bg-[linear-gradient(135deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-primary)_28%,var(--vd-surface-strong)))] px-8 py-9 text-[var(--vd-surface-strong-fg)] md:px-14 md:py-11">
+        <div>
+          {kicker ? (
+            <div className={`${HOME_MONO} mb-2.5 text-[10px] text-white/60`}>{kicker}</div>
+          ) : null}
+          <div className="text-[22px] font-bold tracking-[-0.02em]">{title}</div>
+        </div>
+        <Link
+          href="/contact"
           className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
         >
           Tell me about your project

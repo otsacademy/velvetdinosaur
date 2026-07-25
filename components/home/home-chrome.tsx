@@ -1,15 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { cn } from "@/lib/utils"
 import { HOME_BTN_PRIMARY, HOME_CONTAINER } from "./home-shared"
 
-const NAV_LINKS = [
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
-] as const
+export type NavKey = "work" | "about" | "contact"
 
-export function HomeHeader() {
+const NAV_LINKS: Array<{ key: NavKey; label: string; href: string }> = [
+  { key: "work", label: "Work", href: "/work" },
+  { key: "about", label: "About", href: "/about" },
+  { key: "contact", label: "Contact", href: "/contact" },
+]
+
+export function HomeHeader({ active }: { active?: NavKey }) {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className={`${HOME_CONTAINER} flex items-center justify-between py-4`}>
@@ -26,15 +29,21 @@ export function HomeHeader() {
         <nav aria-label="Main" className="hidden items-center gap-6 text-[13px] font-medium md:flex">
           {NAV_LINKS.map((link) => (
             <Link
-              key={link.label}
+              key={link.key}
               href={link.href}
-              className="text-muted-foreground transition-colors hover:text-primary"
+              aria-current={active === link.key ? "page" : undefined}
+              className={cn(
+                "transition-colors",
+                active === link.key
+                  ? "border-b-2 border-primary pb-0.5 text-primary"
+                  : "text-muted-foreground hover:text-primary",
+              )}
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <Link href="/#contact" className={`${HOME_BTN_PRIMARY} px-5 py-2.5 text-[13px]`}>
+        <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-5 py-2.5 text-[13px]`}>
           Start your project
         </Link>
       </div>
@@ -63,7 +72,7 @@ export function HomeFooter() {
         <nav aria-label="Footer" className="flex flex-wrap gap-5 text-[12.5px] font-medium">
           {NAV_LINKS.map((link) => (
             <Link
-              key={link.label}
+              key={link.key}
               href={link.href}
               className="text-muted-foreground transition-colors hover:text-primary"
             >

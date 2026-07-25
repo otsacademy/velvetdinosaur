@@ -134,7 +134,7 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
           </p>
           <div {...riseProps(animate, 450)}>
             <div className="flex flex-wrap gap-3">
-              <Link href="/#contact" className={`${HOME_BTN_PRIMARY} px-7 py-3.5 text-sm`}>
+              <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-7 py-3.5 text-sm`}>
                 Start your project
               </Link>
               <Link href="/work" className={`${HOME_BTN_OUTLINE} px-7 py-3.5 text-sm`}>
