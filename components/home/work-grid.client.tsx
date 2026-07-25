@@ -26,9 +26,10 @@ type Project = {
   caseStudyHref?: string
 }
 
-// Real portfolio. The first four are full case studies carried over from the
-// previous site (screenshots in /public/portfolio, articles at /work/[slug]);
-// the rest are real engagements evidenced by the Google reviews on /about.
+// Real portfolio only. The first four are full case studies with live
+// snapshots in /public/portfolio (refresh via scripts/snapshot-portfolio-sites.ts
+// + bun run portfolio:images) and articles at /work/[slug]; the remaining two
+// are real engagements evidenced by the Google reviews on /about.
 const PROJECTS: Project[] = [
   {
     cat: "Charity",
@@ -101,26 +102,6 @@ const PROJECTS: Project[] = [
     meta: "Fix + stabilise · same week",
     live: true,
     banner: { kind: "gradient", gradient: "linear-gradient(135deg,#9a3412,#ea7c3c)", mark: "JASAP" },
-  },
-  {
-    cat: "Travel",
-    tag: "Conference",
-    title: "ITB Berlin presentation site",
-    blurb:
-      "A conference presentation website delivered at speed — swift, responsive, and detail-focused for an international travel audience.",
-    meta: "Conference site · rapid delivery",
-    live: false,
-    banner: { kind: "gradient", gradient: "linear-gradient(135deg,#0e7490,#22b8cf)", mark: "ITB" },
-  },
-  {
-    cat: "Product",
-    tag: "Product",
-    title: "Sauro CMS",
-    blurb:
-      "The calm, private content manager included with every build — pages, news, media, and reviews managed in minutes without a developer.",
-    meta: "Product · included in every build",
-    live: true,
-    banner: { kind: "gradient", gradient: "linear-gradient(135deg,#005eb8,#4a8be8)", mark: "SAURO" },
   },
 ]
 

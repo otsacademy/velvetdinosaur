@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 
+import Link from "next/link"
+
 import { DesignShell } from "@/components/home/design-shell"
 import { HOME_CONTAINER, HOME_MONO } from "@/components/home/home-shared"
 import { CtaStrip } from "@/components/home/home-social"
@@ -40,6 +42,27 @@ export default function WorkIndexPage() {
 
       <div className={`${HOME_CONTAINER} pb-6 pt-10`}>
         <WorkGrid />
+      </div>
+
+      <div className={`${HOME_CONTAINER} pb-6 pt-2`}>
+        <div className="flex flex-wrap items-center justify-between gap-5 rounded-lg border border-primary/20 bg-primary/10 px-7 py-6">
+          <div>
+            <div className={`${HOME_MONO} mb-1.5 text-[10px] text-primary`}>
+              Powered by Sauro CMS
+            </div>
+            <div className="max-w-[640px] text-sm font-medium leading-relaxed text-foreground">
+              Every project above except Scholardemia runs on Sauro — the private content
+              manager included with every build, so clients update pages, news, media, and
+              reviews themselves.
+            </div>
+          </div>
+          <Link
+            href="/#services"
+            className="whitespace-nowrap text-[12.5px] font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+          >
+            More about Sauro →
+          </Link>
+        </div>
       </div>
 
       <div className="pt-6">
