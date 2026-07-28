@@ -1,0 +1,20 @@
+[Unit]
+Description=Velvet Dinosaur production web service
+After=network.target
+
+[Service]
+Type=simple
+User=ianw
+Group=developers
+WorkingDirectory=/srv/apps/velvetdinosaur
+EnvironmentFile=/srv/apps/velvetdinosaur/.env.production
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Environment=NODE_ENV=production
+Environment=PORT=3018
+ExecStart=/usr/bin/env bash -lc 'exec bun run start -- --port ${PORT:-3018}'
+Restart=always
+RestartSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

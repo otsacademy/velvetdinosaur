@@ -27,3 +27,10 @@ sudo nginx -t
 
 Grafana data and configuration are retained on the host for rollback even when
 the `grafana-server` service is disabled.
+
+## Production runtime
+
+`systemd/vd-velvetdinosaur-blue.service` retains the established service name
+and port for compatibility, but runs directly from the canonical
+`/srv/apps/velvetdinosaur` main checkout. The legacy green slot remains
+disabled; releases no longer switch between copied slot directories.
