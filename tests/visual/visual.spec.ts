@@ -4,7 +4,8 @@ const routes = [
   { name: 'home', path: '/' },
   { name: 'about', path: '/about' },
   { name: 'work', path: '/work' },
-  { name: 'contact', path: '/contact' }
+  { name: 'contact', path: '/contact' },
+  { name: 'audit', path: '/audit' }
 ];
 
 async function stabilize(page: Page) {

@@ -5,25 +5,28 @@ import { useState, type FormEvent } from "react"
 import { trackAnalyticsEvent } from "@/lib/analytics/client"
 import { HOME_BTN_PRIMARY, HOME_FIELD, HOME_FIELD_LABEL } from "./home-shared"
 
-const FORM_ID = "velvet_contact_page"
-
-const FIELD_CLASSES = HOME_FIELD
-
-const LABEL_CLASSES = HOME_FIELD_LABEL
+const FORM_ID = "velvet_audit_page"
 
 type Status = { type: "idle" | "loading" | "sent" | "error"; message?: string }
 
-export function EnquiryForm() {
+function normalizeWebsite(value: string) {
+  const trimmed = value.trim()
+  if (!trimmed) return ""
+  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`
+}
+
+export function AuditRequestForm() {
   const [name, setName] = useState("")
-  const [org, setOrg] = useState("")
+  const [website, setWebsite] = useState("")
   const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+  const [note, setNote] = useState("")
   const [status, setStatus] = useState<Status>({ type: "idle" })
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (!email.trim() || !message.trim()) {
-      setStatus({ type: "error", message: "Please add your email and message." })
+    const site = normalizeWebsite(website)
+    if (!email.trim() || !site) {
+      setStatus({ type: "error", message: "Please add your website address and email." })
       return
     }
     setStatus({ type: "loading" })
@@ -39,15 +42,15 @@ export function EnquiryForm() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           name: name.trim() || undefined,
-          topic: org.trim() || undefined,
+          topic: site.slice(0, 120),
           email: email.trim(),
           formId: FORM_ID,
-          message: message.trim(),
+          message: note.trim() || `Free audit request for ${site}`,
         }),
       })
       if (!res.ok) {
         const payload = await res.json().catch(() => ({}))
-        throw new Error(payload?.error || "Unable to send your enquiry right now.")
+        throw new Error(payload?.error || "Unable to send your request right now.")
       }
       setStatus({ type: "sent" })
       void trackAnalyticsEvent({
@@ -60,7 +63,7 @@ export function EnquiryForm() {
     } catch (error) {
       setStatus({
         type: "error",
-        message: error instanceof Error ? error.message : "Unable to send your enquiry right now.",
+        message: error instanceof Error ? error.message : "Unable to send your request right now.",
       })
     }
   }
@@ -68,7 +71,7 @@ export function EnquiryForm() {
   if (status.type === "sent") {
     return (
       <div className="rounded-lg border border-[color-mix(in_srgb,var(--vd-score-perfect)_45%,var(--vd-border))] bg-[color-mix(in_srgb,var(--vd-score-perfect)_12%,var(--vd-bg))] p-5 text-sm font-semibold text-foreground">
-        Thanks — your enquiry is on its way. Ian will reply within one business day.
+        Thanks — your audit request is in. Ian will email your video within two business days.
       </div>
     )
   }
@@ -77,12 +80,12 @@ export function EnquiryForm() {
     <form className="flex flex-col gap-4" onSubmit={handleSubmit} data-analytics-form={FORM_ID}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="enquiry-name" className={LABEL_CLASSES}>
+          <label htmlFor="audit-name" className={HOME_FIELD_LABEL}>
             Your name
           </label>
           <input
-            id="enquiry-name"
-            className={FIELD_CLASSES}
+            id="audit-name"
+            className={HOME_FIELD}
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Alex Morgan"
@@ -91,48 +94,49 @@ export function EnquiryForm() {
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="enquiry-org" className={LABEL_CLASSES}>
-            Organisation
+          <label htmlFor="audit-email" className={HOME_FIELD_LABEL}>
+            Email address
           </label>
           <input
-            id="enquiry-org"
-            className={FIELD_CLASSES}
-            value={org}
-            onChange={(e) => setOrg(e.target.value)}
-            placeholder="Optional"
-            autoComplete="organization"
+            id="audit-email"
+            className={HOME_FIELD}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.org"
+            type="email"
+            required
+            autoComplete="email"
             disabled={status.type === "loading"}
           />
         </div>
       </div>
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="enquiry-email" className={LABEL_CLASSES}>
-          Email address
+        <label htmlFor="audit-website" className={HOME_FIELD_LABEL}>
+          Your website address
         </label>
         <input
-          id="enquiry-email"
-          className={FIELD_CLASSES}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.org"
-          type="email"
+          id="audit-website"
+          className={HOME_FIELD}
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          placeholder="yourbusiness.co.uk"
           required
-          autoComplete="email"
+          inputMode="url"
+          autoComplete="url"
           disabled={status.type === "loading"}
         />
       </div>
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="enquiry-message" className={LABEL_CLASSES}>
-          Your message
+        <label htmlFor="audit-note" className={HOME_FIELD_LABEL}>
+          Anything you already suspect is wrong? (optional)
         </label>
         <textarea
-          id="enquiry-message"
-          className={`${FIELD_CLASSES} resize-y`}
-          rows={5}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Tell me about your goals, audience, and what needs fixing."
-          required
+          id="audit-note"
+          className={`${HOME_FIELD} resize-y`}
+          rows={3}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="e.g. Hardly any enquiries come through the site, and it feels slow on phones."
           disabled={status.type === "loading"}
         />
       </div>
@@ -141,7 +145,7 @@ export function EnquiryForm() {
         className={`${HOME_BTN_PRIMARY} w-fit cursor-pointer border-none px-7 py-3.5 text-sm disabled:opacity-60`}
         disabled={status.type === "loading"}
       >
-        {status.type === "loading" ? "Sending…" : "Send project enquiry"}
+        {status.type === "loading" ? "Sending…" : "Request my free audit"}
       </button>
       {status.type === "error" ? (
         <p className="m-0 text-[13px] font-semibold text-destructive">{status.message}</p>

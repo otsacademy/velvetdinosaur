@@ -16,6 +16,11 @@ export const HOME_BTN_PRIMARY =
 export const HOME_BTN_OUTLINE =
   "inline-flex items-center justify-center rounded-md border-[1.5px] border-border bg-background font-semibold text-foreground transition-colors duration-300 hover:border-primary hover:text-primary"
 
+export const HOME_FIELD =
+  "w-full rounded-md border-[1.5px] border-input bg-background px-3.5 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
+
+export const HOME_FIELD_LABEL = "text-[12.5px] font-semibold text-muted-foreground"
+
 export const SCORE_LABELS = ["Performance", "Accessibility", "Best practices", "SEO"] as const
 
 export function ScoreCells({ value }: { value: number }) {
