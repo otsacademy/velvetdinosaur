@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
+import { resolveSafeAuthDestination } from '@/lib/auth-redirect';
 
 type AuthFormProps = {
   mode: 'sign-in' | 'sign-up';
@@ -18,7 +19,10 @@ export function AuthForm({ mode, inviteToken, inviteEmail }: AuthFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const adminOnly = process.env.NEXT_PUBLIC_ADMIN_ONLY === 'true';
-  const next = searchParams.get('next') || (adminOnly ? '/admin' : '/edit');
+  const next = resolveSafeAuthDestination(
+    searchParams.get('next'),
+    adminOnly ? '/admin' : '/edit'
+  );
 
   const [email, setEmail] = useState(inviteEmail || '');
   const [password, setPassword] = useState('');

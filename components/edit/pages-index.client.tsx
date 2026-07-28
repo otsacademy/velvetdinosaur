@@ -21,6 +21,7 @@ type PagesIndexProps = {
   workArticles: WorkArticleRow[];
   mode?: 'live' | 'demo';
   demoVariant?: DemoRouteVariant;
+  platformAdmin?: boolean;
 };
 
 function parseTime(value?: string | null) {
@@ -40,7 +41,8 @@ export function PagesIndex({
   pages,
   workArticles,
   mode = 'live',
-  demoVariant = 'host'
+  demoVariant = 'host',
+  platformAdmin = false
 }: PagesIndexProps) {
   const router = useRouter();
   const isDemo = mode === 'demo';
@@ -208,6 +210,7 @@ export function PagesIndex({
             hasContractsPage={hasContractsPage}
             mode={mode}
             demoVariant={demoVariant}
+            platformAdmin={platformAdmin}
             onDemoAction={showDemoAction}
             onNewPage={() => {
               if (isDemo) {

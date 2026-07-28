@@ -12,6 +12,7 @@ import {
   PanelTop,
   Plus,
   Search,
+  Settings2,
   Store
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -53,6 +54,7 @@ type EditIndexHeaderBarProps = {
   onDemoAction?: (label: string) => void;
   onNewPage: () => void;
   onNewWorkArticle: () => void;
+  platformAdmin?: boolean;
 };
 
 export function EditIndexHeaderBar({
@@ -69,7 +71,8 @@ export function EditIndexHeaderBar({
   demoVariant = 'host',
   onDemoAction,
   onNewPage,
-  onNewWorkArticle
+  onNewWorkArticle,
+  platformAdmin = false
 }: EditIndexHeaderBarProps) {
   const isDemo = mode === 'demo';
   const themeEditorHref = isDemo ? getDemoRoutePath('/theme-editor', demoVariant) : '/admin/theme';
@@ -87,6 +90,14 @@ export function EditIndexHeaderBar({
           </Badge>
         </div>
         <div className="flex flex-wrap items-center gap-2">
+          {!isDemo && platformAdmin ? (
+            <Button variant="outline" size="sm" asChild data-testid="edit-index-admin">
+              <Link href="/admin">
+                <Settings2 className="h-4 w-4" />
+                Admin
+              </Link>
+            </Button>
+          ) : null}
           <Button
             variant="outline"
             size="sm"

@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
+import { isInstallerAdmin } from '@/lib/admin';
 import { listPages } from '@/lib/pages';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { PagesIndex } from '@/components/edit/pages-index.client';
@@ -30,6 +31,9 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
 
   const pages = (await listPages()).filter((page) => !isSiteChromeSlug(page.slug));
   const workArticles = await getWorkArticlesForEdit();
+  const sessionEmail =
+    (session as { user?: { email?: string | null } } | null)?.user?.email || null;
+  const platformAdmin = isInstallerAdmin(sessionEmail);
   const serialPages = pages.map((page) => ({
     ...page,
     draftUpdatedAt: page.draftUpdatedAt ? page.draftUpdatedAt.toISOString() : null,
@@ -37,7 +41,13 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
     updatedAt: page.updatedAt ? page.updatedAt.toISOString() : null
   }));
 
-  return <PagesIndex pages={serialPages} workArticles={workArticles} />;
+  return (
+    <PagesIndex
+      pages={serialPages}
+      workArticles={workArticles}
+      platformAdmin={platformAdmin}
+    />
+  );
 }
 
 export default function EditIndexPage(props: EditIndexProps) {

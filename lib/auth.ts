@@ -47,7 +47,6 @@ function getTrustedOrigins() {
   const domainHost = toDomainHost(process.env.DOMAIN);
   if (domainHost && !domainHost.includes('localhost')) {
     origins.add(`https://${domainHost}`);
-    origins.add(`https://designer.${domainHost}`);
   }
 
   origins.add('http://localhost:3000');
@@ -128,9 +127,27 @@ export function getAuth() {
     baseURL: process.env.BETTERAUTH_URL || process.env.PUBLIC_BASE_URL,
     trustedOrigins: getTrustedOrigins(),
     database: mongodbAdapter(cachedClient.db()),
+    rateLimit: {
+      enabled: process.env.NODE_ENV === 'production',
+      storage: 'database',
+      window: 60,
+      max: 100,
+      customRules: {
+        '/sign-in/email': {
+          window: 60,
+          max: 5
+        }
+      }
+    },
     advanced: {
+      useSecureCookies: process.env.NODE_ENV === 'production',
+      cookiePrefix: 'vd-auth-v2',
+      defaultCookieAttributes: {
+        sameSite: 'lax',
+        path: '/'
+      },
       crossSubDomainCookies: {
-        enabled: true
+        enabled: false
       }
     },
     emailAndPassword: {

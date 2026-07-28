@@ -1,0 +1,39 @@
+groups:
+  - name: velvetdinosaur-web
+    interval: 1m
+    rules:
+      - alert: VelvetDinosaurWebsiteDown
+        expr: probe_success{job="blackbox-http"} < 1
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Website is down ({{ $labels.instance }})"
+          description: "The HTTP probe for {{ $labels.instance }} has failed for more than 2 minutes."
+
+      - alert: VelvetDinosaurSslCertificateExpiring
+        expr: ((probe_ssl_earliest_cert_expiry{job="blackbox-http"} - time()) / 86400) < 14
+        for: 6h
+        labels:
+          severity: warning
+        annotations:
+          summary: "SSL certificate expires in less than 14 days ({{ $labels.instance }})"
+          description: "The earliest certificate presented by {{ $labels.instance }} expires in {{ $value | humanize }} days."
+
+      - alert: VelvetDinosaurWebsiteHighLatency
+        expr: avg_over_time(probe_duration_seconds{job="blackbox-http"}[5m]) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Website latency is high ({{ $labels.instance }})"
+          description: "Average HTTP probe latency for {{ $labels.instance }} has exceeded 2 seconds for 5 minutes."
+
+      - alert: VelvetDinosaurWebsiteP95HighLatency
+        expr: quantile_over_time(0.95, probe_duration_seconds{job="blackbox-http"}[5m]) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Website p95 latency is high ({{ $labels.instance }})"
+          description: "The p95 HTTP probe latency for {{ $labels.instance }} has exceeded 2 seconds for 5 minutes."
