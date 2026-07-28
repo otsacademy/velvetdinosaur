@@ -14,15 +14,13 @@ export default async function ObservabilityDashboardPage({ params }: Params) {
   }
 
   return (
-    <main className="space-y-8 p-6">
-      <DashboardView
-        dashboard={{
-          slug: dashboard.slug,
-          title: dashboard.title,
-          description: dashboard.description,
-          tags: dashboard.tags
-        }}
-      />
-    </main>
+    <DashboardView
+      dashboard={{
+        slug: dashboard.slug,
+        title: dashboard.title,
+        description: dashboard.description,
+        tags: dashboard.tags
+      }}
+    />
   );
 }

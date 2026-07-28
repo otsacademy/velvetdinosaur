@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, PencilLine } from 'lucide-react';
+import { AdminPageShell } from '@/components/admin/admin-page-shell';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -96,52 +97,64 @@ export function DashboardView({ dashboard }: Props) {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-2">
-          <Button asChild variant="outline" size="sm">
-            <Link href="/admin/observability">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to dashboards
-            </Link>
-          </Button>
-          <div>
-            <h1 className="text-3xl font-heading font-bold text-foreground">
-              {dashboard.title}
-            </h1>
-            <p className="mt-1 text-sm text-muted-foreground">{dashboard.description}</p>
+    <AdminPageShell
+      header={
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <h1 className="text-3xl font-black tracking-tight text-[var(--vd-fg)]">
+                {dashboard.title}
+              </h1>
+              <p className="mt-1 text-sm text-[var(--vd-muted-fg)]">{dashboard.description}</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/admin/observability">
+                  <ArrowLeft className="h-4 w-4" />
+                  Dashboards
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/edit">
+                  <PencilLine className="h-4 w-4" />
+                  Editor
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-2">
+              {dashboard.tags.map((tag) => (
+                <Badge key={tag} variant="secondary">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2" aria-label="Dashboard time range">
+              {RANGE_OPTIONS.map((option) => (
+                <Button
+                  key={option}
+                  variant={range === option ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleRangeChange(option)}
+                  aria-pressed={range === option}
+                >
+                  {option}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {RANGE_OPTIONS.map((option) => (
-            <Button
-              key={option}
-              variant={range === option ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => handleRangeChange(option)}
-            >
-              {option}
-            </Button>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        {dashboard.tags.map((tag) => (
-          <Badge key={tag} variant="secondary">
-            {tag}
-          </Badge>
-        ))}
-      </div>
-
+      }
+    >
       {loading ? (
-        <div className="rounded-lg border border-border bg-card p-6 text-sm text-muted-foreground">
+        <div className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)] p-6 text-sm text-[var(--vd-muted-fg)]">
           Loading dashboard data…
         </div>
       ) : null}
 
       {error ? (
-        <div className="rounded-lg border border-destructive/30 bg-destructive/10 p-6 text-sm text-destructive">
+        <div className="rounded-[var(--vd-radius)] border border-destructive/30 bg-destructive/10 p-6 text-sm text-destructive">
           {error}
         </div>
       ) : null}
@@ -150,10 +163,13 @@ export function DashboardView({ dashboard }: Props) {
         <>
           <div className="grid gap-4 md:grid-cols-3">
             {data.stats.map((stat) => (
-              <Card key={stat.id} className="bg-card border-border">
-                <CardContent className="p-4">
-                  <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
-                  <p className="mt-2 text-2xl font-semibold text-foreground">
+              <Card
+                key={stat.id}
+                className="rounded-[var(--vd-radius)] border-[var(--vd-border)] bg-[var(--vd-card)] p-0 shadow-none"
+              >
+                <CardContent className="mt-0 p-5">
+                  <p className="text-xs font-medium text-[var(--vd-muted-fg)]">{stat.label}</p>
+                  <p className="mt-2 text-2xl font-semibold text-[var(--vd-fg)]">
                     {formatMetricValue(stat.value, stat.unit)}
                   </p>
                   {stat.error ? (
@@ -164,7 +180,7 @@ export function DashboardView({ dashboard }: Props) {
             ))}
           </div>
 
-          <div className="grid gap-4 xl:grid-cols-2">
+          <div className="grid min-w-0 gap-4 xl:grid-cols-2">
             {data.charts.map((chart) => (
               <AreaChartCard
                 key={chart.id}
@@ -178,6 +194,6 @@ export function DashboardView({ dashboard }: Props) {
           </div>
         </>
       ) : null}
-    </div>
+    </AdminPageShell>
   );
 }

@@ -62,11 +62,11 @@ export function AreaChartCard({ title, unit, series, rangeSeconds, error }: Prop
   };
 
   return (
-    <Card className="bg-card border-border">
+    <Card className="min-w-0 rounded-[var(--vd-radius)] border-[var(--vd-border)] bg-[var(--vd-card)] shadow-none">
       <CardHeader>
         <CardTitle className="text-base">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="min-w-0 space-y-3">
         {error ? (
           <p className="rounded-md border border-destructive/30 bg-destructive/10 p-2 text-xs text-destructive">
             {error}
@@ -75,7 +75,7 @@ export function AreaChartCard({ title, unit, series, rangeSeconds, error }: Prop
         {mergedData.length === 0 ? (
           <div className="text-xs text-muted-foreground">No data available.</div>
         ) : (
-          <ChartContainer config={config} className="h-[220px] w-full">
+          <ChartContainer config={config} className="h-[220px] min-w-0 w-full">
             <AreaChart data={mergedData}>
               <CartesianGrid vertical={false} />
               <XAxis dataKey="ts" tickLine={false} axisLine={false} tickFormatter={formatTick} />
