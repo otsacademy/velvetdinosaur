@@ -121,7 +121,7 @@ export function getAuth() {
     cachedClient = new MongoClient(mongoUri);
   }
 
-  cachedAuth = betterAuth({
+  const auth = betterAuth({
     appName: 'Velvet Dinosaur',
     secret,
     baseURL: process.env.BETTERAUTH_URL || process.env.PUBLIC_BASE_URL,
@@ -183,15 +183,18 @@ export function getAuth() {
   });
 
   if (EDITOR_SMOKE_TOKEN) {
-    const originalGetSession = cachedAuth.api.getSession.bind(cachedAuth.api);
-    cachedAuth.api.getSession = (async (options: Parameters<typeof originalGetSession>[0]) => {
+    const originalGetSession = auth.api.getSession.bind(auth.api);
+    auth.api.getSession = (async (options: Parameters<typeof originalGetSession>[0]) => {
       const smokeSession = resolveSmokeSession(options?.headers);
       if (smokeSession) {
         return smokeSession as Awaited<ReturnType<typeof originalGetSession>>;
       }
       return originalGetSession(options);
-    }) as typeof cachedAuth.api.getSession;
+    }) as typeof auth.api.getSession;
   }
 
+  // better-auth 1.6 infers Auth<exact options>; widen to the cache's
+  // Auth<BetterAuthOptions> so consumers keep the pre-1.6 surface.
+  cachedAuth = auth as unknown as ReturnType<typeof betterAuth>;
   return cachedAuth;
 }
