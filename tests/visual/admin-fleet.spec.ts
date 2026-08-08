@@ -1,5 +1,30 @@
 import { expect, test, type Page } from '@playwright/test';
 
+/**
+ * The DB-less test runtime makes the /admin PPR resume mismatch its build-time
+ * prerender (built with .env.production), so React re-renders the tree
+ * client-side shortly after load, replacing DOM nodes and wiping interaction
+ * state (details[open], focus, pending navigations). Pre-existing platform
+ * condition — re-verify at the Next 16.2.11 upgrade. Until then, wait for the
+ * tree to hold identity across consecutive polls before interacting.
+ */
+async function settleAfterHydration(page: Page) {
+  await page.waitForFunction(
+    () => {
+      const w = window as unknown as { __vdStableMain?: { el: Element | null; count: number } };
+      const current = document.querySelector('main');
+      if (!w.__vdStableMain || w.__vdStableMain.el !== current) {
+        w.__vdStableMain = { el: current, count: 0 };
+        return false;
+      }
+      w.__vdStableMain.count += 1;
+      return w.__vdStableMain.count >= 5;
+    },
+    undefined,
+    { polling: 100, timeout: 15_000 }
+  );
+}
+
 async function stabilize(page: Page) {
   await page.addStyleTag({
     content: `
@@ -42,6 +67,7 @@ test.describe('protected administration', () => {
     }));
     expect(viewportFit.scrollWidth).toBeLessThanOrEqual(viewportFit.clientWidth);
 
+    await settleAfterHydration(page);
     await page.keyboard.press('Tab');
     await expect(page.getByRole('link', { name: 'Skip to admin content' })).toBeFocused();
     await page.keyboard.press('Enter');
@@ -49,8 +75,10 @@ test.describe('protected administration', () => {
 
     const firstSubject = page.locator('details').first();
     await expect(firstSubject).not.toHaveAttribute('open', '');
-    await firstSubject.locator('summary').click();
-    await expect(firstSubject).toHaveAttribute('open', '');
+    await expect(async () => {
+      await firstSubject.locator('summary').click();
+      await expect(firstSubject).toHaveAttribute('open', '', { timeout: 1000 });
+    }).toPass({ timeout: 10_000 });
     await expect(firstSubject.getByRole('columnheader', { name: 'Field' })).toBeVisible();
 
     const html = await page.content();
@@ -68,8 +96,11 @@ test.describe('protected administration', () => {
     await expect(page.getByText('vd-orphan-worker.service').first()).toBeVisible();
     await expect(page.getByText('No repositories match this view.')).toBeVisible();
     await expect(page.getByRole('columnheader', { name: 'Field' })).toBeVisible();
-    await page.getByRole('link', { name: 'Clear' }).click();
-    await expect(page).toHaveURL(/\/admin\/fleet$/);
+    await settleAfterHydration(page);
+    await expect(async () => {
+      await page.getByRole('link', { name: 'Clear' }).click();
+      await expect(page).toHaveURL(/\/admin\/fleet$/, { timeout: 2000 });
+    }).toPass({ timeout: 10_000 });
     await expect(page.getByText('No repositories match this view.')).toHaveCount(0);
 
     const repositoriesJump = page
