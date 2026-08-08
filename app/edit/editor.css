@@ -203,3 +203,15 @@
 .news-editor-save-pulse {
   animation: news-editor-save-pulse 700ms ease-out;
 }
+
+/* Field vocabulary labels: long friendly labels wrap whole-word onto extra
+   lines instead of truncating or pushing the help icon out of the panel. */
+[class*='_Input-label_'] {
+  white-space: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+  min-width: 0;
+}
+[class*='_Input-labelIcon_'] {
+  flex-shrink: 0;
+}

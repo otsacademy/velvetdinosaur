@@ -9,6 +9,8 @@ import { checkboxField } from '@/components/puck/fields/checkbox-field';
 import { imageListField } from '@/components/puck/fields/image-list-field';
 import { linkPickerField } from '@/components/puck/fields/link-picker-field';
 import { stringListField } from '@/components/puck/fields/string-list-field';
+import { fieldHelpIcon } from '@/components/puck/fields/field-help';
+import { humanizeFieldKey, lookupFieldVocab } from '@/puck/field-vocabulary';
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return Boolean(value && typeof value === 'object' && !Array.isArray(value));
@@ -39,7 +41,28 @@ function shouldUseLinkPicker(propName: string) {
   return name === 'href' || name.endsWith('href') || name === 'url' || name.endsWith('url');
 }
 
+/**
+ * Apply the shared field vocabulary: dictionary label supersedes block-declared
+ * labels for consistency across sites; block labels survive only for keys with
+ * no dictionary entry, ahead of the humanized fallback. Help text renders as a
+ * tooltip via the field's labelIcon slot.
+ */
+function withVocabLabel(propName: string, field: Field): Field {
+  if (!field || typeof field !== 'object') return field;
+  const entry = lookupFieldVocab(propName);
+  const label = entry?.label || field.label || humanizeFieldKey(propName);
+  const next = { ...field, label } as Field;
+  if (entry?.help && !(field as { labelIcon?: unknown }).labelIcon) {
+    (next as { labelIcon?: unknown }).labelIcon = fieldHelpIcon(entry.help);
+  }
+  return next;
+}
+
 function transformField(propName: string, field: Field): Field {
+  return withVocabLabel(propName, transformFieldWidget(propName, field));
+}
+
+function transformFieldWidget(propName: string, field: Field): Field {
   if (!field || typeof field !== 'object') return field;
 
   const fieldType = (field as { type?: string }).type;
