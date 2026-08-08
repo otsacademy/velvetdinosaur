@@ -5,8 +5,12 @@ monitoring consolidation completed in July 2026.
 
 ## Public control surfaces
 
-- `/edit` is the only staff entry point.
-- `/admin` opens the protected observability area.
+- `/edit` is the staff content entry point.
+- `/admin` opens the protected operations hub.
+- `/admin/fleet` is the native, read-only fleet status view. Next.js fetches its
+  data server-side from the loopback-only fleet producer; browsers never reach
+  port `4173`.
+- `/admin/observability` opens the protected Prometheus dashboard index.
 - `/admin/alertmanager/` exposes Alertmanager behind the same BetterAuth admin gate.
 - `designer.velvetdinosaur.com` redirects to the matching `/edit` or `/admin` route.
 - `manage.velvetdinosaur.com` redirects to `/admin/observability` or
@@ -27,6 +31,14 @@ sudo nginx -t
 
 Grafana data and configuration are retained on the host for rollback even when
 the `grafana-server` service is disabled.
+
+The previous nginx `/admin/fleet/` proxy and HTTP Basic challenge are rollback
+artifacts only. They must not be installed while the native Next.js route owns
+that path. Keep the htpasswd file during the initial rollback window, then
+retire it in a separate reviewed cleanup.
+
+See [the admin fleet runbook](../docs/operations/admin-fleet.md) for validation,
+cutover, and rollback commands.
 
 ## Production runtime
 
