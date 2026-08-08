@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 
 import { cn } from "@/lib/utils"
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"

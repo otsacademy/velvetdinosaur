@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 
 import { EditableText } from "@/components/content/editable"
 import { contentKey } from "@/components/content/content-keys"

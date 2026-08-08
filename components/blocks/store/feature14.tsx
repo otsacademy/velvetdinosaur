@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { Feature14, type Feature14Item } from "@/components/feature14";
 import { assetUrl } from "@/lib/assets";

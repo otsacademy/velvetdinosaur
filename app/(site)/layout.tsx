@@ -1,4 +1,4 @@
-import { Render } from '@measured/puck/rsc';
+import { Render } from '@puckeditor/core/rsc';
 import { Suspense } from 'react';
 import { connection } from 'next/server';
 import { getPublishedSiteChrome } from '@/lib/site-chrome';

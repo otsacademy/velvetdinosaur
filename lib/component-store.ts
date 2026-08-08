@@ -412,7 +412,7 @@ async function writeInstalledBlocks(installed: InstalledBlock[]) {
 }
 
 function renderIndexSource(installed: InstalledBlock[]) {
-  const imports: string[] = ["import type { ComponentConfig } from '@measured/puck';", "import { createElement } from 'react';"];
+  const imports: string[] = ["import type { ComponentConfig } from '@puckeditor/core';", "import { createElement } from 'react';"];
   const entries: string[] = [];
 
   installed.forEach((block, idx) => {

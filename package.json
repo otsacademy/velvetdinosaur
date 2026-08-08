@@ -48,7 +48,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@emoji-mart/data": "1.2.1",
     "@hookform/resolvers": "^5.2.2",
-    "@measured/puck": "0.20.2",
+    "@puckeditor/core": "0.22.3",
     "@platejs/ai": "52.1.0",
     "@platejs/autoformat": "52.0.11",
     "@platejs/basic-nodes": "52.0.11",

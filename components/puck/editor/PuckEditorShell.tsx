@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Puck, createUsePuck } from '@measured/puck';
+import { Puck, createUsePuck } from '@puckeditor/core';
 import { LayoutGrid, ListTree, Palette, Send, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MenuDock, MenuDockItem } from '@/components/ui/menu-dock';

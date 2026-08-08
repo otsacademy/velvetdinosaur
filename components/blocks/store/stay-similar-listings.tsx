@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { getSimilarStays } from '@/lib/content/stays';
 import { Home, MapPin } from 'lucide-react';
 import { OptimizedImage } from '@/components/ui/optimized-image';

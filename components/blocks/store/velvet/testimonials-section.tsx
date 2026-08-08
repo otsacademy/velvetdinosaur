@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { Star } from "lucide-react"
 
 import { EditableText } from "@/components/content/editable"

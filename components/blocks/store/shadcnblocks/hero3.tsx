@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 
 import { Hero3, type Hero3Props } from "@/components/hero3"
 import { siteContent } from "@/scripts/_reference/velvet/content"

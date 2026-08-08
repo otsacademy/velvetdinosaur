@@ -1,4 +1,4 @@
-import { Render } from '@measured/puck/rsc';
+import { Render } from '@puckeditor/core/rsc';
 import { getPublishedPageData } from '@/lib/pages';
 import { config } from '@/puck/registry';
 

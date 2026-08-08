@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 
 // This file is overwritten by the component-store installer (see `lib/component-store.ts`).
 // It only contains blocks installed from the shared component-store. Curated/local blocks

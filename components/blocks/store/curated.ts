@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 
 import { advocatesCharitiesConfig } from './advocates-charities';
 import { advocatesDirectoryConfig } from './advocates-directory';
@@ -84,7 +84,9 @@ import { testimonialsSectionConfig } from './velvet/testimonials-section';
 import { trustStripSectionConfig } from './velvet/trust-strip-section';
 import { workTogetherFaqConfig } from './velvet/work-together-faq';
 
-export const storeBlocksCurated: Record<string, ComponentConfig<any>> = {
+// @puckeditor/core 0.22 makes ComponentConfig invariant over its props, so
+// this heterogeneous record needs a cast rather than an annotation.
+export const storeBlocksCurated = {
   StayMetaBadges: stayMetaBadgesConfig,
   StayGalleryHero: stayGalleryHeroConfig,
   StayDetailBody: stayDetailBodyConfig,
@@ -168,5 +170,6 @@ export const storeBlocksCurated: Record<string, ComponentConfig<any>> = {
   ShadcnblocksAboutApproach: shadcnblocksAboutApproachConfig,
   ShadcnblocksFaq12: shadcnblocksFaq12Config,
   ShadcnblocksContact6: shadcnblocksContact6Config
-};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+} as unknown as Record<string, ComponentConfig<any>>;
 

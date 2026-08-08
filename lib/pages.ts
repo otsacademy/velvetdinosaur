@@ -1,7 +1,7 @@
 import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/pages.ts');
 
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 import { cacheLife, cacheTag, unstable_noStore } from 'next/cache';
 import { connectDB } from '@/lib/db';
 import { Page } from '@/models/Page';

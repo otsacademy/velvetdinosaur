@@ -1,6 +1,6 @@
 'use client';
 
-import type { CustomFieldRender } from '@measured/puck';
+import type { CustomFieldRender } from '@puckeditor/core';
 import { Textarea } from '@/components/ui/textarea';
 
 type Options = {

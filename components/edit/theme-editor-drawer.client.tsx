@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useMemo, useState, useSyncExternalStore } from 'react';
-import { Render, type Data } from '@measured/puck';
+import { Render, type Data } from '@puckeditor/core';
 import { toast } from 'sonner';
 import { ThemeEditorView } from '@/components/admin/theme/theme-editor-view.client';
 import { editorConfig } from '@/puck/editor-config';

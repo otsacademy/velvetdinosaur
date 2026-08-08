@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { MoonStar, Sparkles } from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"

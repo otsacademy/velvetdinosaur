@@ -288,7 +288,7 @@ function buildView(): DashboardView {
           label: '@puckeditor/core (declared)',
           badgeClass: successorPuck ? 'verified' : 'unknown',
           explanation: successorPuck
-            ? 'Successor Puck package declared — migration applied on this repository.'
+            ? 'Successor Puck package declared - migration applied on this repository.'
             : 'Successor Puck package not yet declared on this repository.',
           evidenceRef: `file://${entry.path}/package.json`
         })

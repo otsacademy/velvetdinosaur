@@ -1,6 +1,6 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 import { assertServerOnly } from '@/lib/_server/guard';
 import { getPublishedPageData } from '@/lib/pages';
 

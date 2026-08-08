@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { BadgeCheck, ChevronRight, Clock, MessageSquareCode } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 
 import { EditableImage, EditableText } from "@/components/content/editable"
 import { contentKey } from "@/components/content/content-keys"

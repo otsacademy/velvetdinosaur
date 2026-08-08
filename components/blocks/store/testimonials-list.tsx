@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { Leaf, Star } from 'lucide-react';
 import { listReviews } from '@/lib/content/reviews';
 import type { Review } from '@/lib/content/types';

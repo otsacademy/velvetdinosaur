@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useMemo, useState } from "react"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { Check, MessageCircle, Phone, Shield, Timer, Video, Zap } from "lucide-react"
 
 import { EditableText } from "@/components/content/editable"

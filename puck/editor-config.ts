@@ -1,6 +1,6 @@
 'use client';
 
-import type { Config, Field } from '@measured/puck';
+import type { Config, Field } from '@puckeditor/core';
 import { config as baseConfig } from '@/puck/registry.client';
 import { PuckImageBlock } from '@/components/puck/blocks/puck-image-block.client';
 import { ImageUploadField } from '@/components/puck/fields/image-upload-field';

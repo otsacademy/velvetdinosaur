@@ -1,7 +1,7 @@
 'use client';
 
 import { type ChangeEvent, useRef, useState } from 'react';
-import { createUsePuck } from '@measured/puck';
+import { createUsePuck } from '@puckeditor/core';
 import { toast } from 'sonner';
 import { ImageBlock, type ImageBlockProps } from '@/components/blocks/image-block';
 import { Button } from '@/components/ui/button';

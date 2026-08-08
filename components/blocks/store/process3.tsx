@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { Process3, type ProcessStep } from "@/components/process3";
 import { siteContent } from "@/scripts/_reference/velvet/content";

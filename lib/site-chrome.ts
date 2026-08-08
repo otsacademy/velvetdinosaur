@@ -1,4 +1,4 @@
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 import { getDraftPageData, getPublishedPageData } from '@/lib/pages';
 import { SITE_FOOTER_SLUG, SITE_HEADER_SLUG } from '@/lib/site-chrome-slugs';
 

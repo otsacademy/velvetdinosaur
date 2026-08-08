@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { Check, Server, Unlock } from "lucide-react"
 
 import { EditableText } from "@/components/content/editable"

@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { Button } from "@/components/ui/button"

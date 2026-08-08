@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, MapPin, Sparkles } from 'lucide-react';
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { listAdvocates } from '@/lib/content/advocates';
 import type { Advocate } from '@/lib/content/types';
 import { cn } from '@/lib/utils';

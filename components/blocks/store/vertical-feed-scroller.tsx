@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { listVideos } from '@/lib/content/videos';
 import type { VideoAsset } from '@/lib/content/types';
 import { VerticalFeedScrollerView } from './vertical-feed-scroller.client';

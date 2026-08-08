@@ -1,6 +1,6 @@
 import { headers } from 'next/headers'
 import { redirect, notFound } from 'next/navigation'
-import { Render } from '@measured/puck/rsc'
+import { Render } from '@puckeditor/core/rsc'
 
 import { config } from '@/puck/registry'
 import { getAuth } from '@/lib/auth'

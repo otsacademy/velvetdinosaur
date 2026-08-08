@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Quote } from 'lucide-react';
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 

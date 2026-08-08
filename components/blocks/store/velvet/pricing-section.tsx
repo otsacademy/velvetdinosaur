@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { Check, Lock, Server, Shield, Sparkles } from "lucide-react"
 
 import { EditableText } from "@/components/content/editable"

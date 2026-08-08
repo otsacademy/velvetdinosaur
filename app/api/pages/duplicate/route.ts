@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 import { revalidateTagSafe as revalidateTag } from '@/lib/cache-revalidate';
 import { getAuth } from '@/lib/auth';
 import { isAdminOnly } from '@/lib/site-config';

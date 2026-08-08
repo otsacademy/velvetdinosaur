@@ -1,6 +1,6 @@
 'use client';
 
-import type { CustomFieldRender } from '@measured/puck';
+import type { CustomFieldRender } from '@puckeditor/core';
 
 export function checkboxField() {
   const render: CustomFieldRender<boolean> = ({ field, id, name, value, onChange, readOnly }) => {

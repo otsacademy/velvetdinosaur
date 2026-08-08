@@ -1,6 +1,6 @@
 "use client"
 
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { HelpCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"

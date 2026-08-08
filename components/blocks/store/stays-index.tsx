@@ -1,5 +1,5 @@
 import { Heart, Home, MapPin } from 'lucide-react';
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { listStays } from '@/lib/content/stays';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 

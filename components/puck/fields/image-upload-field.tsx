@@ -2,7 +2,7 @@
 'use client';
 
 import { type ChangeEvent, useRef, useState } from 'react';
-import type { CustomField } from '@measured/puck';
+import type { CustomField } from '@puckeditor/core';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

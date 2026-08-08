@@ -1,9 +1,9 @@
 'use client';
 
-import '@measured/puck/no-external.css';
+import '@puckeditor/core/no-external.css';
 
 import Image from 'next/image';
-import { Puck, type Data } from '@measured/puck';
+import { Puck, type Data } from '@puckeditor/core';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';

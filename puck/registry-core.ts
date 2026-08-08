@@ -1,4 +1,4 @@
-import type { Config, Field, PuckComponent } from '@measured/puck';
+import type { Config, Field, PuckComponent } from '@puckeditor/core';
 import { createElement, type CSSProperties, type ReactNode } from 'react';
 import { HeroBlock, type HeroBlockProps } from '@/components/blocks/hero';
 import { FeatureGridBlock, type FeatureGridBlockProps } from '@/components/blocks/feature-grid';

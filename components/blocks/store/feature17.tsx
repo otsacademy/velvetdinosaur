@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { Feature17, type FeatureIconName } from "@/components/feature17";
 import { siteContent } from "@/scripts/_reference/velvet/content";

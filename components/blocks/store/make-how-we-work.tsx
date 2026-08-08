@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import type { ElementType } from "react"
 import { Code2, PenTool, Rocket, Search } from "lucide-react"
 

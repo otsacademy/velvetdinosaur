@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { CaseStudies3, type CaseStudyCard } from "@/components/case-studies3";
 import { siteContent } from "@/scripts/_reference/velvet/content";

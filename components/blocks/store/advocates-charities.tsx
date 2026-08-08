@@ -1,4 +1,4 @@
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { ExternalLink } from 'lucide-react';
 import { listAdvocates } from '@/lib/content/advocates';
 import type { Advocate } from '@/lib/content/types';

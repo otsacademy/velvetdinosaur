@@ -1,4 +1,4 @@
-import type { Data } from "@measured/puck"
+import type { Data } from "@puckeditor/core"
 
 function makeId(suffix: string) {
   return `vd_demo_editor_${suffix}`

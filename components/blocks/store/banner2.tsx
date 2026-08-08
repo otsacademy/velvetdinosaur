@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { Banner2 } from "@/components/banner2";
 import { siteContent } from "@/scripts/_reference/velvet/content";

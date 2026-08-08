@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 
 const EditorClient = dynamic(
   () => import('./editor-client').then((mod) => mod.EditorClient),

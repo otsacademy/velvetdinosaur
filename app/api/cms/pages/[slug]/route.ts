@@ -1,7 +1,7 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse, type NextRequest } from 'next/server';
 import { z } from 'zod';
-import type { Data } from '@measured/puck';
+import type { Data } from '@puckeditor/core';
 import { revalidateTagSafe as revalidateTag } from '@/lib/cache-revalidate';
 import { getAuth } from '@/lib/auth';
 import { getPageRecordFresh, saveDraftPageData } from '@/lib/pages';

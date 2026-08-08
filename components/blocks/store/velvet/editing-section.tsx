@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { Check, Shield } from "lucide-react"
 
 import { EditableText } from "@/components/content/editable"

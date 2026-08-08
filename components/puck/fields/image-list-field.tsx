@@ -1,6 +1,6 @@
 'use client';
 
-import type { CustomFieldRender } from '@measured/puck';
+import type { CustomFieldRender } from '@puckeditor/core';
 import { useMemo } from 'react';
 import { AssetPickerField } from '@/components/puck/fields/asset-picker-field';
 import { Button } from '@/components/ui/button';

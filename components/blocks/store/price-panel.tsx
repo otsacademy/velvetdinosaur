@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { getStayBySlug } from '@/lib/content/stays';
 import type { CTA } from '@/lib/content/types';
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 
 type Stat = { label: string; value: string };
 

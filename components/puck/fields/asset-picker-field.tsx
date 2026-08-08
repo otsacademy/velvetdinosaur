@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import type { CustomFieldRender } from '@measured/puck';
+import type { CustomFieldRender } from '@puckeditor/core';
 import { Image as ImageIcon, Loader2, UploadIcon, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {

@@ -1,4 +1,4 @@
-import type { ComponentConfig } from "@measured/puck";
+import type { ComponentConfig } from "@puckeditor/core";
 
 import { Navbar1 } from "@/components/navbar1";
 import { siteContent } from "@/scripts/_reference/velvet/content";

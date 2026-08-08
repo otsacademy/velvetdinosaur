@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import { ArrowRight, ExternalLink } from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"

@@ -1,6 +1,6 @@
 'use client';
 
-import { Render, type Data } from '@measured/puck';
+import { Render, type Data } from '@puckeditor/core';
 import { toast } from 'sonner';
 import type { ThemeStatePayload } from 'tweakcn-ui';
 import { ThemeEditorView } from '@/components/admin/theme/theme-editor-view.client';

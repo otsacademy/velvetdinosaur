@@ -1,7 +1,7 @@
 "use client"
 
 import { Fragment, useEffect, useMemo, useState } from "react"
-import type { ComponentConfig } from "@measured/puck"
+import type { ComponentConfig } from "@puckeditor/core"
 import {
   Bell,
   Book,

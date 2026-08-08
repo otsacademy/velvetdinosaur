@@ -1,6 +1,6 @@
 "use client";
 
-import type { Config, ComponentConfig } from '@measured/puck';
+import type { Config, ComponentConfig } from '@puckeditor/core';
 import { createElement } from 'react';
 import { storeBlocksClient } from '@/components/blocks/store/client';
 import { StoreBlockPreview } from '@/components/puck/store-block-preview';

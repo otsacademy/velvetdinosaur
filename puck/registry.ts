@@ -1,4 +1,4 @@
-import type { Config } from '@measured/puck';
+import type { Config } from '@puckeditor/core';
 import { storeBlocks } from '@/components/blocks/store';
 import { coreComponents, withLayout } from '@/puck/registry-core';
 

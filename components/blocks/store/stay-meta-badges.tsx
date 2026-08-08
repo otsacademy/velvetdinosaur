@@ -1,5 +1,5 @@
 import { getStayBySlug } from '@/lib/content/stays';
-import type { ComponentConfig } from '@measured/puck';
+import type { ComponentConfig } from '@puckeditor/core';
 import { Bath, Bed, Home, MapPin, Users } from 'lucide-react';
 
 export type StayMetaBadgesProps = {
