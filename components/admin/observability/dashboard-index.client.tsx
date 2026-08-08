@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, BellRing, Search, X } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
+import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -64,21 +65,8 @@ export function DashboardIndex({ dashboards, tagGroups }: Props) {
                 Showing {filtered.length} of {dashboards.length} dashboards
               </Badge>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <Button asChild variant="outline" size="sm">
-                <Link href="/edit">
-                  <ArrowLeft className="h-4 w-4" />
-                  Editor
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="sm">
-                <Link href="/admin/alertmanager">
-                  <BellRing className="h-4 w-4" />
-                  Active alerts
-                </Link>
-              </Button>
-            </div>
           </div>
+          <AdminRouteNav current="observability" />
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="relative w-full sm:max-w-xs">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--vd-muted-fg)]" />

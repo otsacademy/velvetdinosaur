@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
-import { ArrowLeft, PencilLine } from 'lucide-react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
+import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -107,21 +106,8 @@ export function DashboardView({ dashboard }: Props) {
               </h1>
               <p className="mt-1 text-sm text-[var(--vd-muted-fg)]">{dashboard.description}</p>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <Button asChild variant="outline" size="sm">
-                <Link href="/admin/observability">
-                  <ArrowLeft className="h-4 w-4" />
-                  Dashboards
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="sm">
-                <Link href="/edit">
-                  <PencilLine className="h-4 w-4" />
-                  Editor
-                </Link>
-              </Button>
-            </div>
           </div>
+          <AdminRouteNav current="observability" />
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap gap-2">
               {dashboard.tags.map((tag) => (
