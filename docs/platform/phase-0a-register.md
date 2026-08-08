@@ -1,6 +1,6 @@
 # Phase 0a remediation register
 
-Status: draft worklist derived from fleet-upgrade-plan rev 3 §Phase 0a, grounded in a
+Status: W1 EXECUTED for the deployed VD family (2026-08-08 evening); remaining tail below. Originally: draft worklist derived from fleet-upgrade-plan rev 3 §Phase 0a, grounded in a
 source-tree scan of the host on 2026-08-08. Runtime attestation (W0) still pending —
 source scan is necessary but not sufficient per plan conclusion 13.
 
@@ -80,3 +80,24 @@ exceptions reported as unresolved risk, not green.
   (single env for build+run) unaffected. Bisected: predates 2026-08-08 work.
   Re-verify after Next 16.2.11; if fixed, drop the settle/retry shims in
   `tests/visual/admin-fleet.spec.ts`.
+
+
+## W1 execution record (2026-08-08 evening)
+
+Deployed on next 16.2.12 + better-auth 1.6.26: **template** (shadow git), **asap**,
+**velvetdinosaur**, **pyanal**, **ra**, **thebrave**. Checkout reconciliation (W2)
+completed the same evening: ops-path-cleanup finished and merged on pyanal/ra/thebrave;
+codex branches folded into develop/main; editor vocabulary now live fleet-wide.
+
+Migration facts for the remaining tail (vd-email-studio, vd-social-api, booking-api,
+theme-editor, scholardemia-next):
+- better-auth 1.6 makes Auth<> exact-generic: widen at the cache assignment
+  (`auth as unknown as ReturnType<typeof betterAuth>`).
+- emailOTP gained a 'change-email' type: widen mailer unions.
+- **next 16.2 caps proxied request bodies at 10MB (silent truncation)** — set
+  `experimental.proxyClientMaxBodySize: '64mb'` (match nginx) or uploads break;
+  this bit a real ASAP editor before it was caught.
+- Clear .next*/types caches after the bump (stale PrefetchForTypeCheckInternal).
+- ontourism.academy retired (archived, not deleted); otsjournal.org serves via the
+  Scholardemia engine — do not park the domain.
+- pyanal blue slot moved to port 3009 (3007 belongs to vd-email-studio).
