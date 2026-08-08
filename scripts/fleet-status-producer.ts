@@ -259,6 +259,42 @@ function buildView(): DashboardView {
       })
     ];
 
+    // Puck migration telemetry: report the deprecated package and its successor
+    // side by side so /admin/fleet shows the 0.20.2 -> @puckeditor/core drift
+    // per site as the migration rolls out.
+    const legacyPuck = declaredDep(entry.path, '@measured/puck');
+    const successorPuck = declaredDep(entry.path, '@puckeditor/core');
+    if (legacyPuck || successorPuck) {
+      fields.push(
+        fact({
+          key: `repository.${entry.repoId}.measured-puck.declared`,
+          category: 'dependency',
+          packageName: '@measured/puck',
+          layer: 'source-declared',
+          value: legacyPuck ?? 'absent',
+          label: '@measured/puck (declared)',
+          badgeClass: legacyPuck ? 'stale' : 'remediated',
+          explanation: legacyPuck
+            ? 'Deprecated Puck package still declared; migration target is @puckeditor/core.'
+            : 'Deprecated Puck package no longer declared.',
+          evidenceRef: `file://${entry.path}/package.json`
+        }),
+        fact({
+          key: `repository.${entry.repoId}.puckeditor-core.declared`,
+          category: 'dependency',
+          packageName: '@puckeditor/core',
+          layer: 'source-declared',
+          value: successorPuck ?? 'absent',
+          label: '@puckeditor/core (declared)',
+          badgeClass: successorPuck ? 'verified' : 'unknown',
+          explanation: successorPuck
+            ? 'Successor Puck package declared — migration applied on this repository.'
+            : 'Successor Puck package not yet declared on this repository.',
+          evidenceRef: `file://${entry.path}/package.json`
+        })
+      );
+    }
+
     const findings: string[] = [];
     if (worktree === 'dirty') findings.push('WORKTREE_DIRTY');
     repositories.push({ repoId: entry.repoId, fields, findings, blockers: [] });
