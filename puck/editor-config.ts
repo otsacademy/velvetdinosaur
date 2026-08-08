@@ -3,7 +3,6 @@
 import type { Config, Field } from '@puckeditor/core';
 import { config as baseConfig } from '@/puck/registry.client';
 import { PuckImageBlock } from '@/components/puck/blocks/puck-image-block.client';
-import { ImageUploadField } from '@/components/puck/fields/image-upload-field';
 import { assetPickerField } from '@/components/puck/fields/asset-picker-field';
 import { checkboxField } from '@/components/puck/fields/checkbox-field';
 import { imageListField } from '@/components/puck/fields/image-list-field';
@@ -154,14 +153,6 @@ if (transformedComponents?.Image && typeof transformedComponents.Image === 'obje
     render?: unknown;
   };
   imageComponent.render = PuckImageBlock as unknown as typeof imageComponent.render;
-  const imageFields = imageComponent.fields;
-  if (imageFields && 'src' in imageFields) {
-    imageFields.src = {
-      type: 'custom',
-      label: 'Image',
-      render: ImageUploadField
-    } as Field;
-  }
 }
 
 export const editorConfig: Config = {
