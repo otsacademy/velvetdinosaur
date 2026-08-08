@@ -101,3 +101,25 @@ theme-editor, scholardemia-next):
 - ontourism.academy retired (archived, not deleted); otsjournal.org serves via the
   Scholardemia engine — do not park the domain.
 - pyanal blue slot moved to port 3009 (3007 belongs to vd-email-studio).
+
+
+## W1 tail + attestation record (2026-08-08 night)
+
+Patched, restarted, probed healthy: **vd-email-studio** (16.2.12 + BA 1.6.26),
+**vd-social-api** (16.2.12; better-auth REMOVED — zero imports),
+**booking-api** (16.2.12 + BA 1.6.26; git recovery baseline created — was non-git),
+**theme-editor** (16.2.12; pre-change tar in backups). Runtime attestation:
+9 processes on next 16.2.12.
+
+Registry backup sprawl pruned 92 → 10 (retention: newest 10).
+
+**Open exceptions (W5):**
+1. `vd-scholmock.service` — next 16.0.10 at /srv/apps/scholmock/current. Different
+   deploy system (current-tree artifact); needs Scholardemia-adapter decision.
+2. `vd-space-scholardemia.service` — next 16.2.6, **running from a DELETED
+   directory** — do NOT restart until its deploy tree is re-established; a restart
+   will fail to start. Needs owner attention first.
+3. Theme-editor JWT rotation (W4 §3.4) still pending — ordered runbook
+   (consumers → rotate → verify); registry.json remains group-readable until then.
+4. scholardemia main app: better-auth already 1.6.23 (OK); its next version needs
+   the W0 runtime inventory to attest (monorepo, no top-level next).
