@@ -103,6 +103,10 @@ const nextConfig = {
     return config;
   },
   experimental: {
+    // next 16.2 truncates request bodies at 10MB when a proxy/middleware is
+    // configured; align with nginx client_max_body_size so media uploads
+    // are not cut off.
+    proxyClientMaxBodySize: '64mb',
     serverActions: {
       bodySizeLimit: '2mb'
     }
