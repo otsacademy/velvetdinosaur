@@ -14,6 +14,14 @@ import { readFileSync, existsSync, readlinkSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { join } from 'node:path';
 import { dashboardViewSchema, type DashboardView } from '@/lib/fleet/schema';
+import {
+  compareSite,
+  hasSauroScopes,
+  loadParityManifest,
+  scanTree,
+  summarizeCounts,
+  type ParityManifest
+} from '@/lib/sauro-parity';
 
 type CatalogEntry = {
   repoId: string;
@@ -183,6 +191,19 @@ function buildView(): DashboardView {
   const deployments: DashboardView['report']['deployments'] = [];
   const blockers: DashboardView['report']['blockers'] = [];
 
+  // Sauro UI parity telemetry (docs/platform/sauro-cms-ui-parity-plan.md, Wave 0):
+  // hash-compare each Sauro site's admin/editor scopes against the reference
+  // implementation so /admin/fleet shows UI drift alongside dependency drift.
+  let parityManifest: ParityManifest | null = null;
+  let parityReference: Map<string, string> | null = null;
+  try {
+    parityManifest = loadParityManifest(join(process.cwd(), 'docs/platform/sauro-core-manifest.json'));
+    parityReference = scanTree(parityManifest.reference.path, parityManifest.scopes);
+  } catch {
+    parityManifest = null;
+    parityReference = null;
+  }
+
   for (const entry of CATALOG) {
     const isGit = existsSync(join(entry.path, '.git'));
     const branch = isGit ? sh('git', ['branch', '--show-current'], entry.path) : null;
@@ -291,6 +312,28 @@ function buildView(): DashboardView {
             ? 'Successor Puck package declared - migration applied on this repository.'
             : 'Successor Puck package not yet declared on this repository.',
           evidenceRef: `file://${entry.path}/package.json`
+        })
+      );
+    }
+
+    const isParitySite = parityManifest?.sites.some((site) => site.name === entry.repoId) ?? false;
+    if (parityManifest && parityReference && isParitySite && hasSauroScopes(entry.path, parityManifest)) {
+      const parity = compareSite(parityManifest, entry.repoId, entry.path, parityReference);
+      const { value, inParity } = summarizeCounts(parity.counts);
+      const isReference = entry.path === parityManifest.reference.path;
+      fields.push(
+        fact({
+          key: `repository.${entry.repoId}.sauro-ui-parity`,
+          category: 'template',
+          value: isReference ? `reference (${parity.counts.identical} core files)` : value,
+          label: 'Sauro UI parity',
+          badgeClass: isReference || inParity ? 'verified' : 'stale',
+          explanation: isReference
+            ? 'This checkout is the parity reference implementation.'
+            : inParity
+              ? 'Sauro core UI matches the reference implementation byte-for-byte.'
+              : 'Sauro core UI drifts from the reference implementation; see bun run sauro:parity for detail.',
+          evidenceRef: `file://${process.cwd()}/docs/platform/sauro-core-manifest.json`
         })
       );
     }
