@@ -3,23 +3,32 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { Data } from '@puckeditor/core';
+import { EditorLoadingScreen } from '@/components/edit/editor-loading-screen';
 
 const EditorClient = dynamic(
   () => import('./editor-client').then((mod) => mod.EditorClient),
   {
     ssr: false,
-    loading: () => (
-      <div className="p-6 text-sm text-[var(--vd-muted-fg)]">Loading editor...</div>
-    )
+    loading: () => <EditorLoadingScreen />
   }
 );
 
 type EditorShellProps = {
   initialData?: Data;
   initialSlug?: string;
+  isAdmin?: boolean;
+  activeProfile?: {
+    primaryChapterSlug: string;
+    chapterSlugs: string[];
+  } | null;
 };
 
-export function EditorShell({ initialData, initialSlug }: EditorShellProps) {
+export function EditorShell({
+  initialData,
+  initialSlug,
+  isAdmin = false,
+  activeProfile = null
+}: EditorShellProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -28,10 +37,15 @@ export function EditorShell({ initialData, initialSlug }: EditorShellProps) {
   }, []);
 
   if (!mounted) {
-    return (
-      <div className="p-6 text-sm text-[var(--vd-muted-fg)]">Loading editor...</div>
-    );
+    return <EditorLoadingScreen />;
   }
 
-  return <EditorClient initialData={initialData} initialSlug={initialSlug} />;
+  return (
+    <EditorClient
+      initialData={initialData}
+      initialSlug={initialSlug}
+      isAdmin={isAdmin}
+      activeProfile={activeProfile}
+    />
+  );
 }

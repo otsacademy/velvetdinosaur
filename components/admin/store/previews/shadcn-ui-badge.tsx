@@ -22,7 +22,7 @@ function safeParseJson(input?: string) {
 }
 
 export default function ShadcnBadge({ label = "Badge", className = "", propsJson = "" }: PrimitiveProps) {
-  const resolved = (Registry as Record<string, unknown>)["Badge"] || (Registry as Record<string, unknown>).default || Object.values(Registry as Record<string, unknown>).find((value) => typeof value === "function");
+  const resolved = (Registry as Record<string, unknown>)["Badge"] || Object.values(Registry as Record<string, unknown>).find((value) => typeof value === "function");
   if (!resolved || typeof resolved !== "function") {
     return <div className="rounded-md border border-[var(--vd-border)] bg-white p-3 text-sm text-[var(--vd-muted-fg)]">Component export not found.</div>;
   }

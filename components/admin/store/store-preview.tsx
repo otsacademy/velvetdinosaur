@@ -3,10 +3,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { SauroCmsBadge } from '@/components/admin/sauro-cms-badge';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { previewRegistry } from '@/components/admin/store/preview-registry';
+import { areStorePreviewsEnabled, getPreviewRegistry } from '@/components/admin/store/preview-registry';
 import type { StoreItem } from './store-types';
 
 type InstalledBlock = {
@@ -45,11 +46,12 @@ function toPascalCase(value: string) {
 type PreviewComponent = React.ComponentType<Record<string, unknown>>;
 
 async function resolvePreviewComponent(item: StoreItem): Promise<PreviewComponent> {
-  if (Object.keys(previewRegistry).length === 0) {
-    throw new Error('Store previews are disabled for this build.');
-  }
+  const previewRegistry = await getPreviewRegistry();
   const entry = previewRegistry[item.id];
   if (!entry) {
+    if (!areStorePreviewsEnabled()) {
+      throw new Error('Store previews are disabled for this build.');
+    }
     throw new Error('Preview is only available for shadcn items right now.');
   }
 
@@ -273,12 +275,15 @@ export function StorePreview({ id }: { id: string }) {
     <section className="container space-y-6 py-12">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="space-y-2">
-          <Badge className="border-transparent bg-[var(--vd-primary)]/10 text-[var(--vd-primary)]">
-            Store preview
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge className="border-transparent bg-[var(--vd-primary)]/10 text-[var(--vd-primary)]">
+              Store preview
+            </Badge>
+            <SauroCmsBadge compact />
+          </div>
           <h1 className="text-3xl font-semibold">{item?.name || 'Loading preview…'}</h1>
           <p className="text-sm text-[var(--vd-muted-fg)]">
-            {item?.description || 'Previewing a Puck-ready component.'}
+            {item?.description || 'Previewing a Sauro CMS-ready component.'}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -286,7 +291,7 @@ export function StorePreview({ id }: { id: string }) {
             <Link href="/admin/store">Back to store</Link>
           </Button>
           <Button onClick={handleUse} disabled={installing || (!installed && !canInstall)}>
-            {installing ? 'Installing…' : installed ? 'Open in Puck' : 'Install & open Puck'}
+            {installing ? 'Installing…' : installed ? 'Open in Sauro CMS' : 'Install & open Sauro CMS'}
           </Button>
         </div>
       </div>

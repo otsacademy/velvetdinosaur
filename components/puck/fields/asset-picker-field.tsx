@@ -3,58 +3,54 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import type { CustomFieldRender } from '@puckeditor/core';
-import { Image as ImageIcon, Loader2, UploadIcon, X } from 'lucide-react';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { isBlobMediaReference, isInlineImageDataUrl } from '@/lib/inline-media';
+import { buildAssetUrlWithFocal, createAssetFolder, listAssetFolders, updateAssetMetadata, uploadFile as uploadAssetFile, type AssetFolderItem } from '@/lib/uploads';
+import { AssetLibraryPanel } from './asset-picker-field/asset-library-panel';
+import { AssetUploadControls } from './asset-picker-field/asset-upload-controls';
+import { SelectedAssetSummary } from './asset-picker-field/selected-asset-summary';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle
-} from '@/components/ui/dialog';
-import { Dropzone, DropzoneContent, DropzoneEmptyState } from '@/components/ui/dropzone';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import {
-  buildAssetUrl,
-  createAssetFolder,
-  listAssets,
-  listAssetFolders,
-  resolveAssetImageUrl,
-  updateAssetMetadata,
-  uploadFile as uploadAssetFile,
-  type AssetFolderItem
-} from '@/lib/uploads';
-import { AssetLibraryPanel, type AssetPickerListItem, resolveFolderParam } from './asset-picker-field/asset-library-panel';
+  FOLDER_ALL,
+  FOLDER_ROOT,
+  getSelectedAssetLabel,
+  readImageDimensions,
+  resolveFolderParam,
+  type AssetPickerListItem
+} from './asset-picker-field/shared';
 
-const FOLDER_ALL = '__all__';
-const FOLDER_ROOT = '__root__';
-
-async function readImageDimensions(file: File): Promise<{ width?: number; height?: number }> {
-  if (!file.type.startsWith('image/')) return {};
-  try {
-    const bitmap = await createImageBitmap(file);
-    return { width: bitmap.width, height: bitmap.height };
-  } catch {
-    return {};
-  }
+function appendLiveCaptureQuery(url: URL) {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('capture') !== '1' || params.get('live') !== '1') return url;
+  const video = params.get('video');
+  if (!video) return url;
+  url.searchParams.set('capture', '1');
+  url.searchParams.set('live', '1');
+  url.searchParams.set('video', video);
+  return url;
 }
 
-export function AssetPickerField({
-  value,
-  onChange,
-  accept = 'image/*'
-}: {
+export function AssetPickerField({ value, onChange, accept = 'image/*', compact = false, defaultUploadFolder = FOLDER_ROOT, showUrlInput = true, showAdvancedOptions = true, showSelectedAssetMeta = true, simple = false, autoUploadOnDrop = false, autoSelectSingleUpload = true, testIdBase }: {
   value: string;
   onChange: (value: string) => void;
   accept?: string;
+  compact?: boolean;
+  defaultUploadFolder?: string;
+  showUrlInput?: boolean;
+  showAdvancedOptions?: boolean;
+  showSelectedAssetMeta?: boolean;
+  simple?: boolean;
+  autoUploadOnDrop?: boolean;
+  autoSelectSingleUpload?: boolean;
+  testIdBase?: string;
 }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [libraryOpen, setLibraryOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [folderFilter, setFolderFilter] = useState<string>(FOLDER_ALL);
-  const [uploadFolder, setUploadFolder] = useState<string>(FOLDER_ROOT);
+  const [uploadFolder, setUploadFolder] = useState<string>(() => defaultUploadFolder.trim() || FOLDER_ROOT);
   const [folders, setFolders] = useState<AssetFolderItem[]>([]);
   const [foldersLoading, setFoldersLoading] = useState(false);
   const [showCreateFolder, setShowCreateFolder] = useState(false);
@@ -75,13 +71,29 @@ export function AssetPickerField({
   const [draftAlt, setDraftAlt] = useState('');
   const [draftFolder, setDraftFolder] = useState<string>(FOLDER_ROOT);
   const [savingKey, setSavingKey] = useState<string | null>(null);
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const canPreviewImage = accept.startsWith('image/');
+  const useCompactLayout = compact || simple;
 
   const mimePrefix = useMemo(() => {
     if (accept.startsWith('image/')) return 'image/';
     if (accept.startsWith('application/')) return 'application/';
     return '';
   }, [accept]);
+
+  const selectedAssetLabel = useMemo(() => getSelectedAssetLabel(value), [value]);
+
+  const commitValue = (nextValue: string) => {
+    if (isBlobMediaReference(nextValue)) {
+      toast.error('Blob preview URLs cannot be saved. Upload the file to the media library first.');
+      return;
+    }
+    if (isInlineImageDataUrl(nextValue)) {
+      toast.error('Inline image data URLs cannot be saved. Upload the image to the media library first.');
+      return;
+    }
+    onChange(nextValue);
+  };
 
   const loadFolders = async () => {
     setFoldersLoading(true);
@@ -98,14 +110,19 @@ export function AssetPickerField({
   const loadLibrary = async (options?: { reset?: boolean }) => {
     const reset = Boolean(options?.reset);
     const nextCursor = reset ? null : cursor;
+    const url = new URL('/api/assets/list', window.location.origin);
+    appendLiveCaptureQuery(url);
+    if (query) url.searchParams.set('q', query);
+    if (mimePrefix) url.searchParams.set('mimePrefix', mimePrefix);
     const folderValue = resolveFolderParam(folderFilter);
-    const data = await listAssets({
-      q: query,
-      mimePrefix,
-      folder: typeof folderValue === 'string' ? folderValue : null,
-      limit: 24,
-      cursor: nextCursor
-    });
+    if (typeof folderValue === 'string') url.searchParams.set('folder', folderValue);
+    url.searchParams.set('limit', '24');
+    if (nextCursor) url.searchParams.set('cursor', nextCursor);
+    const res = await fetch(url.toString(), { credentials: 'include', cache: 'no-store' });
+    const data = await res.json().catch(() => null);
+    if (!res.ok) {
+      throw new Error(data?.error || 'Failed to load assets');
+    }
     setItems((prev) => (reset ? data.items || [] : [...prev, ...(data.items || [])]));
     setCursor(data.nextCursor || null);
   };
@@ -179,8 +196,14 @@ export function AssetPickerField({
     return uploaded;
   };
 
-  const runQueuedUpload = async () => {
-    const files = queuedFiles || [];
+  const runQueuedUpload = async (
+    providedFiles?: File[],
+    options?: {
+      autoSelectSingleUpload?: boolean;
+      notifyMultipleNoSelection?: boolean;
+    }
+  ) => {
+    const files = providedFiles || queuedFiles || [];
     if (files.length === 0) {
       setError('Choose files to upload');
       return;
@@ -200,8 +223,12 @@ export function AssetPickerField({
         lastUploadedUrl = uploaded.url;
       }
 
-      if (files.length === 1 && lastUploadedUrl) {
-        onChange(lastUploadedUrl);
+      const shouldAutoSelectSingle = options?.autoSelectSingleUpload ?? true;
+      if (files.length === 1 && lastUploadedUrl && shouldAutoSelectSingle) {
+        commitValue(lastUploadedUrl);
+      }
+      if (files.length > 1 && options?.notifyMultipleNoSelection) {
+        toast.message(`${files.length} images uploaded to the library. Pick one to use for this field.`);
       }
 
       setQueuedFiles(null);
@@ -221,13 +248,33 @@ export function AssetPickerField({
     }
   };
 
+  const handleUploadDrop = (
+    acceptedFiles: File[],
+    options?: {
+      autoUpload?: boolean;
+      autoSelectSingleUpload?: boolean;
+      notifyMultipleNoSelection?: boolean;
+    }
+  ) => {
+    setQueuedFiles(acceptedFiles);
+    if (acceptedFiles.length === 1 && !uploadName.trim()) {
+      setUploadName(acceptedFiles[0].name.replace(/\.[^/.]+$/, ''));
+    }
+    if (options?.autoUpload && acceptedFiles.length > 0) {
+      void runQueuedUpload(acceptedFiles, {
+        autoSelectSingleUpload: options.autoSelectSingleUpload,
+        notifyMultipleNoSelection: options.notifyMultipleNoSelection
+      });
+    }
+  };
+
   const pasteSvg = async () => {
     const svg = window.prompt('Paste SVG code');
     if (!svg) return;
     const blob = new Blob([svg], { type: 'image/svg+xml' });
     const file = new File([blob], `svg-${Date.now()}.svg`, { type: 'image/svg+xml' });
     setQueuedFiles([file]);
-    await runQueuedUpload();
+    await runQueuedUpload([file]);
   };
 
   const startEditing = (item: AssetPickerListItem) => {
@@ -307,156 +354,58 @@ export function AssetPickerField({
 
   return (
     <div className="space-y-2">
-      <Dropzone
-        src={queuedFiles ?? undefined}
-        onDrop={(acceptedFiles) => {
-          setQueuedFiles(acceptedFiles);
-          if (acceptedFiles.length === 1 && !uploadName.trim()) {
-            setUploadName(acceptedFiles[0].name.replace(/\.[^/.]+$/, ''));
-          }
-        }}
-        accept={accept.startsWith('image/') ? { 'image/*': [] } : undefined}
-        maxFiles={20}
-        maxSize={10 * 1024 * 1024}
-        disabled={busy}
-        className="rounded-lg border-dashed bg-white/50 text-[var(--vd-muted-fg)]"
-      >
-        <DropzoneContent>
-          <div className="flex flex-col items-center justify-center gap-2">
-            <div className="flex size-8 items-center justify-center rounded-md bg-muted text-muted-foreground">
-              <UploadIcon size={16} />
-            </div>
-            <p className="w-full truncate text-wrap text-center font-medium text-sm">
-              {queuedFiles?.length
-                ? `${queuedFiles.length} file${queuedFiles.length === 1 ? '' : 's'} selected`
-                : 'Upload files'}
-            </p>
-            <p className="w-full truncate text-wrap text-center text-muted-foreground text-xs">
-              Drag and drop or click to replace
-            </p>
-          </div>
-        </DropzoneContent>
-        <DropzoneEmptyState />
-      </Dropzone>
-      <div className="flex items-center gap-2">
-        <Input
-          placeholder="Paste a URL, upload, or pick from library"
-          value={value || ''}
-          onChange={(e) => onChange(e.target.value)}
-        />
-        <Button
-          variant="outline"
-          onClick={() => onChange('')}
-          disabled={busy || !value}
-        >
-          Clear
-        </Button>
-      </div>
+      <AssetUploadControls
+        accept={accept}
+        busy={busy}
+        queuedFiles={queuedFiles}
+        onDrop={(acceptedFiles) =>
+          handleUploadDrop(acceptedFiles, {
+            autoUpload: simple || autoUploadOnDrop,
+            autoSelectSingleUpload,
+            notifyMultipleNoSelection: autoUploadOnDrop
+          })
+        }
+        onUpload={() => void runQueuedUpload()}
+        onClearSelection={() => setQueuedFiles(null)}
+        onPasteSvg={() => void pasteSvg()}
+        uploadProgress={uploadProgress}
+        uploadBatch={uploadBatch}
+        uploadName={uploadName}
+        setUploadName={setUploadName}
+        uploadCaption={uploadCaption}
+        setUploadCaption={setUploadCaption}
+        uploadAlt={uploadAlt}
+        setUploadAlt={setUploadAlt}
+        uploadFolder={uploadFolder}
+        setUploadFolder={setUploadFolder}
+        folders={folders}
+        value={value || ''}
+        onValueChange={commitValue}
+        showUrlInput={showUrlInput}
+        showAdvancedOptions={showAdvancedOptions}
+        useCompactLayout={useCompactLayout}
+        advancedOpen={advancedOpen}
+        onAdvancedOpenChange={setAdvancedOpen}
+        testIdBase={testIdBase}
+      />
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div>
         <Button
-          variant="outline"
-          onClick={() => void runQueuedUpload()}
-          disabled={busy || !(queuedFiles && queuedFiles.length > 0)}
-        >
-          {busy ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Uploading…
-            </>
-          ) : (
-            'Upload'
-          )}
-        </Button>
-        <Button
+          type="button"
           variant="outline"
           onClick={() => setLibraryOpen(true)}
           disabled={busy}
+          data-testid={testIdBase ? `puck-asset-browse-${testIdBase}` : undefined}
         >
           Browse
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => setQueuedFiles(null)}
-          disabled={busy || !(queuedFiles && queuedFiles.length > 0)}
-        >
-          <X className="mr-2 h-4 w-4" />
-          Clear selection
-        </Button>
-        <Button variant="outline" onClick={() => void pasteSvg()} disabled={busy}>
-          Paste SVG
         </Button>
       </div>
 
       {error ? <p className="text-xs text-rose-600">{error}</p> : null}
-      {uploadBatch ? (
-        <p className="text-xs text-[var(--vd-muted-fg)]">
-          Uploading {uploadBatch.current} of {uploadBatch.total}
-          {typeof uploadProgress === 'number' ? ` (${Math.round(uploadProgress)}%)` : ''}
-        </p>
-      ) : null}
 
-      {value && canPreviewImage ? (
-        <div className="flex items-center gap-3 rounded-lg border border-[var(--vd-border)] bg-white/70 p-2">
-          <div className="h-16 w-16 overflow-hidden rounded-md bg-[var(--vd-muted)]/50">
-            <img
-              src={resolveAssetImageUrl(value, { width: 160, height: 160, fit: 'cover' })}
-              alt="Selected asset"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div className="min-w-0 text-[11px] text-[var(--vd-muted-fg)]">
-            <p className="text-xs font-medium text-[var(--vd-fg)]">Selected asset</p>
-            <p className="truncate">{value}</p>
-          </div>
-        </div>
+      {value && canPreviewImage && showSelectedAssetMeta ? (
+        <SelectedAssetSummary value={value} label={selectedAssetLabel} />
       ) : null}
-
-      <div className="grid gap-2 sm:grid-cols-2">
-        <Input
-          placeholder="File name (for library)"
-          value={uploadName}
-          onChange={(e) => setUploadName(e.target.value)}
-          disabled={busy}
-        />
-        <Input
-          placeholder="Caption (optional)"
-          value={uploadCaption}
-          onChange={(e) => setUploadCaption(e.target.value)}
-          disabled={busy}
-        />
-      </div>
-      <Input
-        placeholder="Alt text (recommended)"
-        value={uploadAlt}
-        onChange={(e) => setUploadAlt(e.target.value)}
-        disabled={busy}
-      />
-      <div className="grid gap-2 sm:grid-cols-2">
-        <div className="space-y-1">
-          <p className="text-[11px] font-medium text-[var(--vd-muted-fg)]">Upload folder</p>
-          <Select value={uploadFolder} onValueChange={setUploadFolder} disabled={busy}>
-            <SelectTrigger>
-              <SelectValue placeholder="Upload to folder" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={FOLDER_ROOT}>Root</SelectItem>
-              {folders.map((folder) => (
-                <SelectItem key={folder.path} value={folder.path}>
-                  {folder.label ? `${folder.label} (${folder.path})` : folder.path}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="text-xs text-[var(--vd-muted-fg)] flex items-end">
-          Uploads are stored in R2. Folder assignment is for organization and search.
-        </div>
-      </div>
-      <p className="text-xs text-[var(--vd-muted-fg)]">
-        Names and captions are optional. They improve media library search and display only.
-      </p>
 
       <Dialog open={libraryOpen} onOpenChange={setLibraryOpen}>
         <DialogContent className="h-[85vh] max-w-[min(1100px,95vw)] overflow-hidden p-0">
@@ -475,6 +424,7 @@ export function AssetPickerField({
               cursor={cursor}
               query={query}
               setQuery={setQuery}
+              testIdBase={testIdBase}
               folderFilter={folderFilter}
               setFolderFilter={setFolderFilter}
               folders={folders}
@@ -488,6 +438,31 @@ export function AssetPickerField({
               setNewFolderPath={setNewFolderPath}
               newFolderLabel={newFolderLabel}
               setNewFolderLabel={setNewFolderLabel}
+              uploadControls={
+                <AssetUploadControls
+                  accept={accept}
+                  busy={busy}
+                  queuedFiles={queuedFiles}
+                  onDrop={(acceptedFiles) => handleUploadDrop(acceptedFiles)}
+                  onUpload={() => void runQueuedUpload()}
+                  onClearSelection={() => setQueuedFiles(null)}
+                  onPasteSvg={() => void pasteSvg()}
+                  uploadProgress={uploadProgress}
+                  uploadBatch={uploadBatch}
+                  uploadName={uploadName}
+                  setUploadName={setUploadName}
+                  uploadCaption={uploadCaption}
+                  setUploadCaption={setUploadCaption}
+                  uploadAlt={uploadAlt}
+                  setUploadAlt={setUploadAlt}
+                  uploadFolder={uploadFolder}
+                  setUploadFolder={setUploadFolder}
+                  folders={folders}
+                  showUrlInput={false}
+                  useCompactLayout={false}
+                  variant="library"
+                />
+              }
               onCreateFolder={() => void handleCreateFolder()}
               onRefresh={() => void refreshLibrary()}
               onLoadMore={() => {
@@ -497,8 +472,8 @@ export function AssetPickerField({
                   .catch((e) => setError(e instanceof Error ? e.message : 'Failed to load assets'))
                   .finally(() => setBusy(false));
               }}
-              onUse={(key) => {
-                onChange(buildAssetUrl(key));
+              onUse={(item) => {
+                commitValue(buildAssetUrlWithFocal(item.key, item.focalX, item.focalY));
                 setLibraryOpen(false);
               }}
               editingKey={editingKey}
@@ -522,11 +497,38 @@ export function AssetPickerField({
   );
 }
 
-export function assetPickerField(options?: { accept?: string }) {
+export function assetPickerField(options?: {
+  accept?: string;
+  autoUploadOnDrop?: boolean;
+  autoSelectSingleUpload?: boolean;
+}) {
   const accept = options?.accept;
-  const render: CustomFieldRender<string> = ({ value, onChange: fieldOnChange }) => (
-    <AssetPickerField value={value || ''} onChange={fieldOnChange} accept={accept} />
-  );
+  const autoUploadOnDrop = options?.autoUploadOnDrop;
+  const autoSelectSingleUpload = options?.autoSelectSingleUpload;
+  const render: CustomFieldRender<string> = ({ value, onChange: fieldOnChange, name, id }) => {
+    const base = String(name || id || '').trim();
+    const safe = base ? base.replace(/[^a-zA-Z0-9]+/g, '-').replace(/(^-+|-+$)/g, '') : '';
+    return (
+      <AssetPickerField
+        value={value || ''}
+        onChange={(nextValue) => {
+          if (isBlobMediaReference(nextValue)) {
+            toast.error('Blob preview URLs cannot be saved. Upload the file to the media library first.');
+            return;
+          }
+          if (isInlineImageDataUrl(nextValue)) {
+            toast.error('Inline image data URLs cannot be saved. Upload the image to the media library first.');
+            return;
+          }
+          fieldOnChange(nextValue);
+        }}
+        accept={accept}
+        autoUploadOnDrop={autoUploadOnDrop}
+        autoSelectSingleUpload={autoSelectSingleUpload}
+        testIdBase={safe || undefined}
+      />
+    );
+  };
   return {
     type: 'custom' as const,
     render

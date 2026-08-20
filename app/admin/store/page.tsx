@@ -34,7 +34,7 @@ export default async function StorePage() {
         <div>
           <h2 className="text-2xl font-semibold">Component Store</h2>
           <p className="mt-2 text-sm text-[var(--vd-muted-fg)]">
-            Install Puck-ready blocks from the central component/block store service.
+            Install Sauro CMS-ready blocks from the central component/block store service.
           </p>
           {storeSiteUrl ? (
             <p className="mt-2 text-sm text-[var(--vd-muted-fg)]">
@@ -51,7 +51,7 @@ export default async function StorePage() {
             </p>
           ) : (
             <p className="mt-2 text-sm text-[var(--vd-muted-fg)]">
-              Set <code>VD_STORE_SITE_URL</code> (or <code>VD_STORE_API_URL</code>) to enable central previews.
+              Configure the central store endpoint in environment settings to enable shared previews.
             </p>
           )}
         </div>

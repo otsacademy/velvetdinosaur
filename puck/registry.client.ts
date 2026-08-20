@@ -3,6 +3,7 @@
 import type { Config, ComponentConfig } from '@puckeditor/core';
 import { createElement } from 'react';
 import { storeBlocksClient } from '@/components/blocks/store/client';
+import { storeBlockNames as installedStoreBlockNames } from '@/components/blocks/store/block-names';
 import { StoreBlockPreview } from '@/components/puck/store-block-preview';
 import { coreComponents, withLayout } from '@/puck/registry-core';
 import storeBlockSchemas from '@/puck/store-block-schemas.json';
@@ -52,7 +53,10 @@ function previewConfig(
   };
 }
 
-const storeBlockNames = Object.keys(schemaMap);
+// Every installed store block gets at least a placeholder config so pages
+// built from store blocks stay editable even before a client preview or
+// schema exists for them.
+const storeBlockNames = Array.from(new Set([...installedStoreBlockNames, ...Object.keys(schemaMap)]));
 
 const storePlaceholders = Object.fromEntries(
   storeBlockNames.map((name) => [name, placeholderConfig(name, schemaMap[name])])

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
+import { EditorLoadingScreen } from '@/components/edit/editor-loading-screen';
 
 type EditorHydrationGateProps = {
   children: ReactNode;
@@ -16,11 +17,7 @@ export function EditorHydrationGate({ children }: EditorHydrationGateProps) {
   }, []);
 
   if (!mounted) {
-    return (
-      <div className="p-6 text-sm text-[var(--vd-muted-fg)]">
-        Loading editor...
-      </div>
-    );
+    return <EditorLoadingScreen />;
   }
 
   return <>{children}</>;

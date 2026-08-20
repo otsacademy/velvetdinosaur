@@ -6,22 +6,36 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { slugToPathname } from '@/lib/site-pages';
 
 type PageListItem = {
   slug: string;
-  title?: string;
+  path?: string | null;
+  title?: string | null;
 };
 
 async function fetchPages() {
   const res = await fetch('/api/pages/list');
   const data = await res.json().catch(() => null);
   if (!res.ok) throw new Error(data?.error || 'Failed to load pages');
-  return (data?.pages || []) as PageListItem[];
+  const rawPages: unknown[] = Array.isArray(data?.pages) ? data.pages : [];
+  return rawPages
+    .map((item: unknown): PageListItem | null => {
+      if (!item || typeof item !== 'object') return null;
+      const record = item as Record<string, unknown>;
+      const slug = typeof record.slug === 'string' ? record.slug.trim() : '';
+      if (!slug) return null;
+      const title = typeof record.title === 'string' ? record.title : null;
+      return { slug, title };
+    })
+    .filter((item: PageListItem | null): item is PageListItem => item !== null);
 }
 
-function hrefForSlug(slug: string) {
-  if (slug === 'home') return '/';
-  return `/${slug}`;
+function hrefForPage(page: { slug: string; path?: string | null }) {
+  if (page.path) return `/${page.path}`;
+  const mapped = slugToPathname(page.slug);
+  if (mapped) return mapped;
+  return page.slug === 'home' ? '/' : `/${page.slug}`;
 }
 
 export function LinkPickerField({
@@ -53,8 +67,8 @@ export function LinkPickerField({
     const q = query.trim().toLowerCase();
     if (!q) return pages;
     return pages.filter((page) => {
-      const slug = page.slug.toLowerCase();
-      const title = (page.title || '').toLowerCase();
+      const slug = typeof page.slug === 'string' ? page.slug.toLowerCase() : '';
+      const title = typeof page.title === 'string' ? page.title.toLowerCase() : '';
       return slug.includes(q) || title.includes(q);
     });
   }, [pages, query]);
@@ -113,7 +127,8 @@ export function LinkPickerField({
             ) : (
               <div className="grid gap-2 sm:grid-cols-2">
                 {filtered.map((page) => {
-                  const href = hrefForSlug(page.slug);
+                  const href = hrefForPage(page);
+                  const label = typeof page.title === 'string' && page.title.trim() ? page.title : page.slug;
                   return (
                     <button
                       key={page.slug}
@@ -125,7 +140,7 @@ export function LinkPickerField({
                         setQuery('');
                       }}
                     >
-                      <div className="font-medium">{page.title || page.slug}</div>
+                      <div className="font-medium">{label}</div>
                       <div className="mt-1 text-xs text-[var(--vd-muted-fg)]">{href}</div>
                     </button>
                   );

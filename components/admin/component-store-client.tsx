@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
+import { ExternalLink, LayoutTemplate } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -43,6 +45,7 @@ export function ComponentStoreClient() {
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
   const [rebuild, setRebuild] = useState<boolean>(false);
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   useEffect(() => {
     fetch('/api/components/list')
@@ -107,17 +110,15 @@ export function ComponentStoreClient() {
       <Card>
         <CardHeader>
           <CardTitle>Store status</CardTitle>
-          <CardDescription>Path: {payload.storePath}</CardDescription>
+          <CardDescription>Install controls and synchronization status.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-2 text-sm text-[var(--vd-muted-fg)]">
           <p>Store version: {payload.store.version || 'unversioned'}</p>
           <p>
             Installs: {payload.writeEnabled ? 'enabled' : 'disabled'}
-            {!payload.writeEnabled && ' (set VD_COMPONENT_STORE_WRITE=true)'}
           </p>
           <p>
-            Admin access: {payload.adminAllowed ? 'allowed' : 'blocked'}
-            {!payload.adminAllowed && ' (set VD_COMPONENT_STORE_ADMINS=email@example.com)'}
+            Access level: {payload.adminAllowed ? 'admin-enabled' : 'restricted'}
           </p>
           <label className="flex items-center gap-2">
             <input
@@ -130,6 +131,20 @@ export function ComponentStoreClient() {
           </label>
           {payload.installBlockedReason ? <p>{payload.installBlockedReason}</p> : null}
           {message ? <p className="text-sm text-[var(--vd-fg)]">{message}</p> : null}
+          <Button type="button" variant="ghost" size="sm" className="px-0" onClick={() => setShowAdvanced((prev) => !prev)}>
+            {showAdvanced ? 'Hide advanced details' : 'Show advanced details'}
+          </Button>
+          {showAdvanced ? (
+            <div className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-muted)]/25 p-3 text-xs">
+              <p>Store path: {payload.storePath}</p>
+              <p className="mt-1">
+                Install writes: {payload.writeEnabled ? 'enabled' : 'disabled (configure in environment)'}
+              </p>
+              <p className="mt-1">
+                Admin allowlist: {payload.adminAllowed ? 'configured' : 'not configured'}
+              </p>
+            </div>
+          ) : null}
         </CardContent>
       </Card>
 
@@ -146,8 +161,19 @@ export function ComponentStoreClient() {
         <div className="grid gap-4 md:grid-cols-2">
           {payload.store.blocks.map((block) => {
             const installed = installedMap.get(block.id);
+            const previewHref = `/admin/store/preview?id=${encodeURIComponent(block.id)}`;
             return (
               <Card key={block.id}>
+                <div className="border-b border-[var(--vd-border)] bg-[var(--vd-muted)]/20 p-3">
+                  <div className="overflow-hidden rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-white">
+                    <iframe
+                      title={`${block.name} preview`}
+                      src={previewHref}
+                      loading="lazy"
+                      className="h-36 w-full"
+                    />
+                  </div>
+                </div>
                 <CardHeader>
                   <CardTitle>{block.name}</CardTitle>
                   <CardDescription>
@@ -165,12 +191,21 @@ export function ComponentStoreClient() {
                   ) : (
                     <p className="text-[var(--vd-muted-fg)]">Not installed</p>
                   )}
-                  <Button
-                    disabled={!canInstall || Boolean(installed) || loadingId === block.id}
-                    onClick={() => handleInstall(block.id)}
-                  >
-                    {loadingId === block.id ? 'Installing…' : installed ? 'Installed' : 'Install'}
-                  </Button>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      disabled={!canInstall || Boolean(installed) || loadingId === block.id}
+                      onClick={() => handleInstall(block.id)}
+                    >
+                      {loadingId === block.id ? 'Installing…' : installed ? 'Installed' : 'Install'}
+                    </Button>
+                    <Button variant="outline" asChild>
+                      <Link href={previewHref} target="_blank" rel="noreferrer">
+                        <LayoutTemplate className="h-4 w-4" />
+                        Preview
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             );

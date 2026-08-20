@@ -63,11 +63,11 @@ export function BlocksList({
             <div className="flex items-start justify-between gap-3">
               <CardTitle>{collection.name}</CardTitle>
               <Badge className="border-transparent bg-[var(--vd-primary)]/10 text-[var(--vd-primary)]">
-                Puck-ready
+                Sauro CMS-ready
               </Badge>
             </div>
             <p className="text-sm text-[var(--vd-muted-fg)]">
-              {collection.description || 'Puck-ready shadcn block.'}
+              {collection.description || 'Sauro CMS-ready shadcn block.'}
             </p>
           </CardHeader>
           <CardContent>
@@ -99,7 +99,7 @@ export function BlocksList({
               disabled={(!installed && !canInstall) || isInstalling}
               onClick={() => onUse?.(collection)}
             >
-              {isInstalling ? 'Installing…' : installed ? 'Open in Puck' : 'Install & open Puck'}
+              {isInstalling ? 'Installing…' : installed ? 'Open in Sauro CMS' : 'Install & open Sauro CMS'}
             </Button>
           </CardFooter>
         </Card>

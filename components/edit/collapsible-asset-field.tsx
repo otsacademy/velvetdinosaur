@@ -96,6 +96,7 @@ export function CollapsibleAssetField({
             setExpanded(!nextValue)
           }}
           accept="image/*"
+          compact
         />
       )}
     </div>

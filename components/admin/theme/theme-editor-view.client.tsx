@@ -8,6 +8,14 @@ import { ThemeControlPanel, useEditorStore } from 'tweakcn-ui/client';
 import { toast } from 'sonner';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  BODY_FONT_OPTIONS,
+  DEFAULT_BRAND_COLOR,
+  HEADING_FONT_OPTIONS,
+  ThemeBrandSettingsPanel,
+  colorToHex,
+  normalizeBrandHexColor
+} from '@/components/admin/theme/theme-brand-settings-panel';
 import { THEME_PRESETS } from '@/components/admin/theme/theme-presets';
 import { normalizeThemePayloadToOklch, normalizeThemeStylesToOklch } from '@/lib/theme-normalize';
 import {
@@ -24,24 +32,10 @@ type PageOption = {
   title?: string | null;
 };
 
-type ThemeActionResult = {
-  payload?: ThemeStatePayload | null;
-  checkpoint?: boolean;
-};
-
-type ThemeSaveHandler = (payload: ThemeStatePayload) => Promise<ThemeActionResult | void>;
-type ThemeResetHandler = () => Promise<ThemeActionResult | void>;
-
 type ThemeEditorViewProps = {
   pages: PageOption[];
   selectedSlug: string;
   onPageChange?: (slug: string) => void;
-  mode?: 'live' | 'demo';
-  initialPayload?: ThemeStatePayload | null;
-  onSaveDraft?: ThemeSaveHandler;
-  onPublish?: ThemeSaveHandler;
-  onReset?: ThemeResetHandler;
-  importSuccessMessage?: string;
   children: React.ReactNode;
 };
 
@@ -124,18 +118,7 @@ function mergePresetStyles(
   };
 }
 
-export function ThemeEditorView({
-  pages,
-  selectedSlug,
-  onPageChange,
-  mode = 'live',
-  initialPayload,
-  onSaveDraft,
-  onPublish,
-  onReset,
-  importSuccessMessage,
-  children
-}: ThemeEditorViewProps) {
+export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }: ThemeEditorViewProps) {
   const router = useRouter();
   const themeState = useEditorStore((state) => state.themeState);
   const setThemeState = useEditorStore((state) => state.setThemeState);
@@ -146,6 +129,8 @@ export function ThemeEditorView({
   const [publishing, setPublishing] = useState(false);
   const [resetting, setResetting] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [showAdvancedTheming, setShowAdvancedTheming] = useState(false);
+  const [brandColor, setBrandColor] = useState(DEFAULT_BRAND_COLOR);
   const themePromise = useMemo(() => Promise.resolve(null), []);
   const [selectedPreset, setSelectedPreset] = useState('');
   const importInputRef = useRef<HTMLInputElement>(null);
@@ -173,19 +158,18 @@ export function ThemeEditorView({
     [saveThemeCheckpoint, setThemeState]
   );
 
+  const updateStyles = useCallback(
+    (mutate: (styles: ThemeStatePayload['styles']) => ThemeStatePayload['styles']) => {
+      const prev = useEditorStore.getState().themeState;
+      const nextStyles = normalizeThemeStylesToOklch(mutate(prev.styles));
+      setThemeState({ ...prev, styles: nextStyles });
+    },
+    [setThemeState]
+  );
+
   useEffect(() => {
     let active = true;
     setLoading(true);
-    if (mode === 'demo') {
-      if (initialPayload) {
-        applyPayload(initialPayload);
-      }
-      setLoading(false);
-      return () => {
-        active = false;
-      };
-    }
-
     requestJson('/api/theme/draft')
       .then((payload) => {
         if (!active) return;
@@ -206,7 +190,7 @@ export function ThemeEditorView({
     return () => {
       active = false;
     };
-  }, [applyPayload, initialPayload, mode]);
+  }, [applyPayload]);
 
   useEffect(() => {
     const nextPreset = typeof themeState.preset === 'string' ? themeState.preset : '';
@@ -214,6 +198,12 @@ export function ThemeEditorView({
       setSelectedPreset(nextPreset);
     }
   }, [selectedPreset, themeState.preset]);
+
+  useEffect(() => {
+    const mode = themeState.currentMode === 'dark' ? 'dark' : 'light';
+    const primary = themeState.styles?.[mode]?.primary;
+    setBrandColor(colorToHex(typeof primary === 'string' ? primary : undefined));
+  }, [themeState.currentMode, themeState.styles]);
 
   const handlePageChange = (value: string) => {
     if (onPageChange) {
@@ -246,27 +236,61 @@ export function ThemeEditorView({
     setThemeState({ ...prev, currentMode: nextMode });
   };
 
+  const rawHeadingFontValue = (themeState.styles?.light?.['font-serif'] as string | undefined) || '';
+  const headingFontValue = HEADING_FONT_OPTIONS.some((font) => font.value === rawHeadingFontValue)
+    ? rawHeadingFontValue
+    : HEADING_FONT_OPTIONS[0].value;
+  const rawBodyFontValue = (themeState.styles?.light?.['font-sans'] as string | undefined) || '';
+  const bodyFontValue = BODY_FONT_OPTIONS.some((font) => font.value === rawBodyFontValue)
+    ? rawBodyFontValue
+    : BODY_FONT_OPTIONS[0].value;
+
+  const handleBrandColorChange = (value: string) => {
+    const normalized = normalizeBrandHexColor(value);
+    setBrandColor(normalized);
+    updateStyles((styles) => ({
+      light: {
+        ...(styles?.light || {}),
+        primary: normalized,
+        accent: normalized,
+        ring: normalized,
+        'sidebar-primary': normalized
+      },
+      dark: {
+        ...(styles?.dark || {}),
+        primary: normalized,
+        accent: normalized,
+        ring: normalized,
+        'sidebar-primary': normalized
+      }
+    }));
+  };
+
+  const handleHeadingFontChange = (value: string) => {
+    updateStyles((styles) => ({
+      light: { ...(styles?.light || {}), 'font-serif': value },
+      dark: { ...(styles?.dark || {}), 'font-serif': value }
+    }));
+  };
+
+  const handleBodyFontChange = (value: string) => {
+    updateStyles((styles) => ({
+      light: { ...(styles?.light || {}), 'font-sans': value },
+      dark: { ...(styles?.dark || {}), 'font-sans': value }
+    }));
+  };
+
   const handleSave = async () => {
     setSaving(true);
     try {
       const rawPayload = buildPayload(themeState as ThemeState);
       const payload = normalizeThemePayloadToOklch(rawPayload, { strict: true }) as ThemeStatePayload;
-      if (onSaveDraft) {
-        const result = await onSaveDraft(payload);
-        if (result?.payload) {
-          applyPayload(result.payload);
-        }
-        if (result?.checkpoint) {
-          saveThemeCheckpoint();
-        }
-      } else {
-        await requestJson('/api/theme/draft', {
-          method: 'POST',
-          body: JSON.stringify({ payload })
-        });
-        saveThemeCheckpoint();
-        toast.success('Theme draft saved');
-      }
+      await requestJson('/api/theme/draft', {
+        method: 'POST',
+        body: JSON.stringify({ payload })
+      });
+      saveThemeCheckpoint();
+      toast.success('Theme draft saved');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to save theme draft';
       toast.error(message);
@@ -278,23 +302,11 @@ export function ThemeEditorView({
   const handlePublish = async () => {
     setPublishing(true);
     try {
-      if (onPublish) {
-        const rawPayload = buildPayload(themeState as ThemeState);
-        const payload = normalizeThemePayloadToOklch(rawPayload, { strict: true }) as ThemeStatePayload;
-        const result = await onPublish(payload);
-        if (result?.payload) {
-          applyPayload(result.payload);
-        }
-        if (result?.checkpoint) {
-          saveThemeCheckpoint();
-        }
-      } else {
-        const response = await requestJson('/api/theme/publish', { method: 'POST' });
-        if (response?.payload) {
-          applyPayload(response.payload as ThemeStatePayload);
-        }
-        toast.success('Theme published');
+      const response = await requestJson('/api/theme/publish', { method: 'POST' });
+      if (response?.payload) {
+        applyPayload(response.payload as ThemeStatePayload);
       }
+      toast.success('Theme published');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to publish theme';
       toast.error(message);
@@ -306,21 +318,11 @@ export function ThemeEditorView({
   const handleReset = async () => {
     setResetting(true);
     try {
-      if (onReset) {
-        const result = await onReset();
-        if (result?.payload) {
-          applyPayload(result.payload);
-        }
-        if (result?.checkpoint) {
-          saveThemeCheckpoint();
-        }
-      } else {
-        const response = await requestJson('/api/theme/reset', { method: 'POST' });
-        if (response?.payload) {
-          applyPayload(response.payload as ThemeStatePayload);
-        }
-        toast.success('Theme reset to default');
+      const response = await requestJson('/api/theme/reset', { method: 'POST' });
+      if (response?.payload) {
+        applyPayload(response.payload as ThemeStatePayload);
       }
+      toast.success('Theme reset to default');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to reset theme';
       toast.error(message);
@@ -349,7 +351,7 @@ export function ThemeEditorView({
       }
       const normalized = normalizeThemePayloadToOklch(parsed as ThemeStatePayload, { strict: true });
       applyPayload(normalized as ThemeStatePayload);
-      toast.success(importSuccessMessage || 'Theme imported. Save draft to keep changes.');
+      toast.success('Theme imported. Save draft to keep changes.');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to import theme';
       toast.error(message);
@@ -507,33 +509,57 @@ export function ThemeEditorView({
       <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
         <aside className="flex h-[48vh] min-h-0 flex-col border-b border-[var(--vd-border)] lg:h-auto lg:w-[380px] lg:border-b-0 lg:border-r">
           <div className="flex-1 overflow-y-auto">
-            <details className="border-b border-[var(--vd-border)] p-4 text-xs text-[var(--vd-muted-fg)]">
-              <summary className="cursor-pointer font-medium text-[var(--vd-fg)]">
-                App token mapping
-              </summary>
-              <p className="mt-2">
-                Theme controls map to the app tokens below. Use these names when styling blocks.
-              </p>
-              <div className="mt-3 grid gap-1">
-                {TOKEN_MAP.map((item) => (
-                  <div key={item.key} className="flex items-center justify-between gap-3">
-                    <span className="font-mono">{item.key}</span>
-                    <span className="font-mono text-[var(--vd-fg)]">{item.token}</span>
+            <div className="p-4">
+              <ThemeBrandSettingsPanel
+                brandColor={brandColor}
+                headingFontValue={headingFontValue}
+                bodyFontValue={bodyFontValue}
+                modeLabel={modeLabel}
+                currentMode={themeState.currentMode}
+                showAdvancedTheming={showAdvancedTheming}
+                onBrandColorChange={handleBrandColorChange}
+                onHeadingFontChange={handleHeadingFontChange}
+                onBodyFontChange={handleBodyFontChange}
+                onToggleMode={handleModeToggle}
+                onToggleAdvanced={() => setShowAdvancedTheming((current) => !current)}
+              />
+            </div>
+            {showAdvancedTheming ? (
+              <>
+                <details className="border-y border-[var(--vd-border)] p-4 text-xs text-[var(--vd-muted-fg)]">
+                  <summary className="cursor-pointer font-medium text-[var(--vd-fg)]">
+                    App token mapping
+                  </summary>
+                  <p className="mt-2">
+                    Theme controls map to the app tokens below. Use these names when styling blocks.
+                  </p>
+                  <div className="mt-3 grid gap-1">
+                    {TOKEN_MAP.map((item) => (
+                      <div key={item.key} className="flex items-center justify-between gap-3">
+                        <span className="font-mono">{item.key}</span>
+                        <span className="font-mono text-[var(--vd-fg)]">{item.token}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </details>
+                <ThemeControlPanel
+                  styles={themeState.styles}
+                  currentMode={themeState.currentMode}
+                  onChange={(styles) => {
+                    const prev = useEditorStore.getState().themeState;
+                    const normalized = normalizeThemeStylesToOklch(styles);
+                    setThemeState({ ...prev, styles: normalized });
+                  }}
+                  themePromise={themePromise}
+                  saveLoadButtons={null}
+                />
+              </>
+            ) : (
+              <div className="px-4 pb-4 text-xs text-[var(--vd-muted-fg)]">
+                Advanced token-by-token controls are hidden by default. Use{' '}
+                <span className="font-medium text-[var(--vd-fg)]">Advanced theming</span> when you need full tweakcn editing.
               </div>
-            </details>
-            <ThemeControlPanel
-              styles={themeState.styles}
-              currentMode={themeState.currentMode}
-              onChange={(styles) => {
-                const prev = useEditorStore.getState().themeState;
-                const normalized = normalizeThemeStylesToOklch(styles);
-                setThemeState({ ...prev, styles: normalized });
-              }}
-              themePromise={themePromise}
-              saveLoadButtons={null}
-            />
+            )}
           </div>
         </aside>
         <section className="min-h-0 flex-1 overflow-hidden">

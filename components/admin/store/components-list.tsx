@@ -56,7 +56,7 @@ export function ComponentsList({
               </Badge>
             </div>
             <p className="text-sm text-[var(--vd-muted-fg)]">
-              {item.description || 'Puck-ready shadcn primitive.'}
+              {item.description || 'Sauro CMS-ready shadcn primitive.'}
             </p>
           </CardHeader>
           <CardContent className="mt-auto">
@@ -72,7 +72,7 @@ export function ComponentsList({
                 </Badge>
               ) : null}
               <Badge className="border-transparent bg-[var(--vd-accent)]/60 text-[var(--vd-accent-fg)]">
-                Puck wrapper
+                Sauro CMS wrapper
               </Badge>
               {installed ? (
                 <Badge className="border-transparent bg-emerald-100 text-emerald-900">
@@ -93,7 +93,7 @@ export function ComponentsList({
               disabled={(!installed && !canInstall) || isInstalling}
               onClick={() => onUse?.(item)}
             >
-              {isInstalling ? 'Installing…' : installed ? 'Open in Puck' : 'Use in Puck'}
+              {isInstalling ? 'Installing…' : installed ? 'Open in Sauro CMS' : 'Use in Sauro CMS'}
             </Button>
           </CardFooter>
         </Card>

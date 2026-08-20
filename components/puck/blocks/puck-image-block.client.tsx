@@ -85,7 +85,10 @@ export function PuckImageBlock({ id, editMode, puck, ...imageProps }: PuckImageB
 
   if (!imageProps.src) {
     return (
-      <Card className="border-dashed border-[var(--vd-border)] bg-[var(--vd-muted)]">
+      <Card
+        className="border-dashed border-[var(--vd-border)] bg-[var(--vd-muted)]"
+        data-puck-image-block-id={id}
+      >
         <div className="flex flex-col items-center gap-3 px-6 py-10 text-center text-sm text-[var(--vd-muted-fg)]">
           <div>Upload an image to get started.</div>
           <Button size="sm" onClick={openFilePicker} disabled={!canEdit || isUploading}>
@@ -111,7 +114,11 @@ export function PuckImageBlock({ id, editMode, puck, ...imageProps }: PuckImageB
   }
 
   return (
-    <div className={cn('group relative')} onDoubleClick={(event) => openFilePicker(event)}>
+    <div
+      className={cn('group relative')}
+      data-puck-image-block-id={id}
+      onDoubleClick={(event) => openFilePicker(event)}
+    >
       <ImageBlock {...imageProps} />
       {canEdit ? (
         <div className="pointer-events-none absolute inset-0 flex items-start justify-end p-3">

@@ -1,132 +1,136 @@
 'use client';
 
 import * as React from 'react';
-import { Puck, createUsePuck } from '@puckeditor/core';
-import { LayoutGrid, ListTree, Palette, Send, SlidersHorizontal } from 'lucide-react';
+import { PUCK_PATTERNS } from '@/lib/puck/patterns';
+import Link from 'next/link';
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ChevronRight,
+  LayoutGrid,
+  ListTree,
+  Lock,
+  LockOpen,
+  Palette,
+  Send,
+  Settings,
+  SlidersHorizontal
+} from 'lucide-react';
+import { SessionControls } from '@/components/auth/session-controls.client';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/dialog';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from '@/components/ui/breadcrumb';
 import { MenuDock, MenuDockItem } from '@/components/ui/menu-dock';
+import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { DemoHelpTooltip } from '@/components/demo/demo-help-tooltip';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { PatternLibrary } from '@/components/puck/editor/pattern-library.client';
+import { EditorGettingStarted } from '@/components/puck/editor/editor-getting-started';
+import { createUsePuck, Puck } from '@puckeditor/core';
+import {
+  getSelectedKey,
+  PinIcon,
+  PinOffIcon,
+  PropertiesPanel
+} from '@/components/puck/editor/puck-editor-shell-utils';
 
-type EditorPanel = 'components' | 'outline' | 'properties' | 'theme' | null;
+type EditorPanel = 'components' | 'outline' | 'properties' | 'settings' | 'theme' | null;
+type PatternPayloadLike = (typeof PUCK_PATTERNS)[number];
 
 const usePuckStore = createUsePuck();
-
-type PinIconProps = {
-  className?: string;
-};
-
-function getSelectedKey(selectedItem: unknown): string | null {
-  if (!selectedItem) return null;
-  if (typeof selectedItem === 'string') return selectedItem;
-  if (typeof selectedItem === 'object' && 'id' in selectedItem) {
-    const id = (selectedItem as { id?: unknown }).id;
-    if (typeof id === 'string' && id.trim()) return id;
-  }
-  return null;
-}
-
-function PinIcon({ className }: PinIconProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M12 17v5" />
-      <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z" />
-    </svg>
-  );
-}
-
-function PinOffIcon({ className }: PinIconProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M12 17v5" />
-      <path d="M15 9.34V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H7.89" />
-      <path d="m2 2 20 20" />
-      <path d="M9 9v1.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h11" />
-    </svg>
-  );
-}
-
-function PropertiesPanel() {
-  const selectedItem = usePuckStore((state) => state.selectedItem);
-
-  if (!selectedItem) {
-    return (
-      <div className="flex h-full items-center justify-center px-6 text-sm text-[var(--vd-muted-fg)]">
-        Select a block to edit its settings.
-      </div>
-    );
-  }
-
-  return <Puck.Fields />;
-}
 
 export type PuckEditorShellProps = {
   children: React.ReactNode;
   title: string;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
   statusLabel?: string;
-  headerActionAfterSave?: React.ReactNode;
   onPublish: () => void;
   onSaveDraft: () => void;
   onResetDraft?: () => void;
   onOpenTheme?: () => void;
   themePanel?: React.ReactNode;
+  settingsPanel?: React.ReactNode;
   onClose: () => void;
+  closeLabel?: string;
   saveDisabled?: boolean;
   publishDisabled?: boolean;
+  publishLabel?: string;
+  publishingLabel?: string;
   resetDisabled?: boolean;
   isSaving?: boolean;
   isPublishing?: boolean;
+  isGlobal?: boolean;
+  isGlobalEditingLocked?: boolean;
+  onUnlockGlobal?: () => void;
+  onLockGlobal?: () => void;
+  legacyTemplateTypes?: string[];
+  onConvertLegacyTemplate?: () => void;
+  isConvertingLegacyTemplate?: boolean;
+  onInsertPattern: (pattern: PatternPayloadLike) => void;
 };
 
 export function PuckEditorShell({
   children,
   title,
+  breadcrumbs,
   statusLabel,
-  headerActionAfterSave,
   onPublish,
   onSaveDraft,
   onResetDraft,
   onOpenTheme,
   themePanel,
+  settingsPanel,
   onClose,
+  closeLabel = 'Back to dashboard',
   saveDisabled,
   publishDisabled,
+  publishLabel,
+  publishingLabel,
   resetDisabled,
   isSaving,
-  isPublishing
+  isPublishing,
+  isGlobal,
+  isGlobalEditingLocked,
+  onUnlockGlobal,
+  onLockGlobal,
+  legacyTemplateTypes,
+  onConvertLegacyTemplate,
+  isConvertingLegacyTemplate,
+  onInsertPattern
 }: PuckEditorShellProps) {
   const selectedItem = usePuckStore((state) => state.selectedItem);
   const [activePanel, setActivePanel] = React.useState<EditorPanel>(null);
   const [leftPinned, setLeftPinned] = React.useState(false);
   const [propertiesPinned, setPropertiesPinned] = React.useState(false);
   const [leftPanelTab, setLeftPanelTab] = React.useState<'components' | 'outline'>('components');
-  const selectedKey = React.useMemo(() => getSelectedKey(selectedItem), [selectedItem]);
+  const [isUnlockDialogOpen, setIsUnlockDialogOpen] = React.useState(false);
+
+  const selectedKey = React.useMemo(() => {
+    const key = getSelectedKey(selectedItem);
+    if (!selectedItem) return null;
+    if (key) return key;
+    try {
+      return JSON.stringify(selectedItem);
+    } catch {
+      return '__selected__';
+    }
+  }, [selectedItem]);
   const lastSelectedKeyRef = React.useRef<string | null>(null);
   const leftPanelOpen = leftPinned || activePanel === 'components' || activePanel === 'outline';
   const leftPanelValue =
@@ -137,6 +141,32 @@ export function PuckEditorShell({
         : leftPanelTab;
   const propertiesOpen = propertiesPinned || activePanel === 'properties';
   const hasThemePanel = Boolean(themePanel);
+  const hasSettingsPanel = Boolean(settingsPanel);
+  const isGlobalRouteLocked = Boolean(isGlobal && isGlobalEditingLocked);
+  const isGlobalHeader = Boolean(isGlobal && title.toLowerCase().includes('header'));
+  const unlockLabel = isGlobalHeader ? 'Edit navigation' : 'Unlock global editing';
+  const lockLabel = isGlobalHeader ? 'Lock global editing' : 'Lock global editing';
+  const globalLockedHeading = isGlobalHeader ? 'Navigation editing is locked.' : 'Global content is locked.';
+  const globalLockedDescription = isGlobalHeader
+    ? "This navigation appears on every page. Click 'Edit navigation' to make changes."
+    : 'This is global content. Changes apply to all pages.';
+  const showHeaderDraftCallout = Boolean(
+    isGlobalHeader && statusLabel && statusLabel.toLowerCase() === 'draft only'
+  );
+  const hasLegacyTemplateCallout = Boolean(!isGlobal && (legacyTemplateTypes?.length || 0) > 0);
+  const legacyTemplateSummary = (legacyTemplateTypes || []).join(', ');
+  const showLegacyConvertButton = hasLegacyTemplateCallout && typeof onConvertLegacyTemplate === 'function';
+  const calloutCount = Number(showHeaderDraftCallout) + Number(hasLegacyTemplateCallout);
+  const contentTopPaddingClass = calloutCount === 0 ? 'pt-14' : calloutCount === 1 ? 'pt-24' : 'pt-32';
+  const sheetPositionClass =
+    calloutCount === 0
+      ? 'top-14 h-[calc(100dvh-3.5rem)]'
+      : calloutCount === 1
+        ? 'top-22 h-[calc(100dvh-5.5rem)]'
+        : 'top-30 h-[calc(100dvh-7.5rem)]';
+  const rightPanelSheetClass =
+    `${sheetPositionClass} w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] gap-0 overflow-hidden p-0 sm:w-[28rem] sm:max-w-md`;
+
   const leftPinLabel = leftPinned ? 'Unpin components panel' : 'Pin components panel';
   const propertiesPinLabel = propertiesPinned
     ? 'Unpin properties panel'
@@ -149,6 +179,14 @@ export function PuckEditorShell({
     setActivePanel((current) => (current === panel ? null : panel));
   };
 
+  const handleInsertPattern = React.useCallback(
+    (pattern: PatternPayloadLike) => {
+      if (isGlobalRouteLocked) return;
+      onInsertPattern(pattern);
+    },
+    [isGlobalRouteLocked, onInsertPattern]
+  );
+
   React.useEffect(() => {
     if (!selectedKey) {
       lastSelectedKeyRef.current = null;
@@ -157,19 +195,58 @@ export function PuckEditorShell({
     if (selectedKey === lastSelectedKeyRef.current) return;
     lastSelectedKeyRef.current = selectedKey;
     if (propertiesPinned) return;
-    if (activePanel === 'theme') return;
+    if (activePanel === 'settings' || activePanel === 'theme') return;
     setActivePanel('properties');
   }, [selectedKey, propertiesPinned, activePanel]);
 
-  const saveLabel = isSaving ? 'Saving...' : 'Save draft';
-  const publishLabel = isPublishing ? 'Publishing...' : 'Publish';
+  const saveLabel = isSaving ? 'Saving...' : 'Save';
+  const publishButtonLabel = isPublishing
+    ? publishingLabel || 'Publishing...'
+    : publishLabel || 'Publish';
 
   return (
     <div className="relative min-h-screen bg-[var(--vd-bg)]">
       <div className="fixed inset-x-0 top-0 z-40 border-b border-[var(--vd-border)] bg-[var(--vd-bg)] backdrop-blur">
-        <div className="flex h-12 items-center justify-between gap-4 px-4 sm:px-6">
+        <div className="flex h-14 items-center justify-between gap-4 px-4 sm:px-6">
           <div className="flex min-w-0 items-center gap-3">
-            <span className="truncate text-sm font-semibold text-[var(--vd-fg)]">{title}</span>
+            <div className="min-w-0">
+              {breadcrumbs?.length ? (
+                <Breadcrumb className="mb-0.5 hidden md:block">
+                  <BreadcrumbList className="text-[11px] text-[var(--vd-muted-fg)]">
+                    {breadcrumbs.map((item, index) => {
+                      const isLast = index === breadcrumbs.length - 1;
+                      return (
+                        <React.Fragment key={`${item.label}-${index}`}>
+                          <BreadcrumbItem>
+                            {isLast || !item.href ? (
+                              <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                            ) : (
+                              <BreadcrumbLink asChild>
+                                <Link href={item.href}>{item.label}</Link>
+                              </BreadcrumbLink>
+                            )}
+                          </BreadcrumbItem>
+                          {!isLast ? (
+                            <BreadcrumbSeparator>
+                              <ChevronRight className="h-3 w-3" />
+                            </BreadcrumbSeparator>
+                          ) : null}
+                        </React.Fragment>
+                      );
+                    })}
+                  </BreadcrumbList>
+                </Breadcrumb>
+              ) : null}
+              <span className="truncate text-sm font-semibold text-[var(--vd-fg)]">{title}</span>
+            </div>
+            {isGlobal ? (
+              <span
+                className="inline-flex items-center gap-1 rounded-full border border-[var(--vd-border)] bg-[var(--vd-muted)] px-2 py-0.5 text-[11px] text-[var(--vd-muted-fg)]"
+              >
+                {isGlobalRouteLocked ? <Lock className="h-3 w-3" /> : <LockOpen className="h-3 w-3" />}
+                Global
+              </span>
+            ) : null}
             {statusLabel ? (
               <span className="rounded-full bg-[var(--vd-muted)] px-2 py-0.5 text-[11px] text-[var(--vd-muted-fg)]">
                 {statusLabel}
@@ -177,48 +254,125 @@ export function PuckEditorShell({
             ) : null}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <DemoHelpTooltip content="Save the current page state inside this demo workspace. The draft stays local and disappears when you leave or refresh.">
+            {isGlobal ? (
               <Button
                 variant="outline"
                 size="sm"
-                onClick={onSaveDraft}
-                disabled={saveDisabled || isPublishing || isSaving}
+                onClick={() => {
+                  if (isGlobalRouteLocked) {
+                    setIsUnlockDialogOpen(true);
+                  } else {
+                    onLockGlobal?.();
+                  }
+                }}
               >
-                {saveLabel}
+                {isGlobalRouteLocked ? <Lock className="h-4 w-4" /> : <LockOpen className="h-4 w-4" />}
+                <span className="ml-2">
+                  {isGlobalRouteLocked ? unlockLabel : lockLabel}
+                </span>
               </Button>
-            </DemoHelpTooltip>
-            {headerActionAfterSave}
-            {onResetDraft ? (
-              <DemoHelpTooltip content="Put the page back to the seeded demo version so you can start the walkthrough again from a clean slate.">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={onResetDraft}
-                  disabled={resetDisabled || isPublishing || isSaving}
-                >
-                  Reset draft
-                </Button>
-              </DemoHelpTooltip>
             ) : null}
-            <DemoHelpTooltip content="Run the same publish action clients use, but keep the result inside this sandbox instead of updating a live site.">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={onSaveDraft}
+              disabled={saveDisabled || isPublishing || isSaving}
+            >
+              {saveLabel}
+            </Button>
+            {onResetDraft ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onResetDraft}
+                disabled={resetDisabled || isPublishing || isSaving}
+              >
+                Reset draft
+              </Button>
+            ) : null}
+            <Button size="sm" onClick={onPublish} disabled={publishDisabled || isPublishing}>
+              {publishButtonLabel}
+            </Button>
+            <EditorGettingStarted />
+            <Button variant="ghost" size="sm" onClick={onClose}>
+              <ArrowLeft className="h-4 w-4" />
+              {closeLabel}
+            </Button>
+            <SessionControls variant="inline" showAccountLink={false} className="hidden lg:flex" />
+          </div>
+        </div>
+        {showHeaderDraftCallout ? (
+          <div className="border-t border-[var(--vd-border)] bg-[var(--vd-muted)]/70">
+            <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2 sm:px-6">
+              <p className="text-xs text-[var(--vd-muted-fg)]">
+                Header changes are draft-only right now. Publish to make navigation updates live.
+              </p>
               <Button
                 size="sm"
                 onClick={onPublish}
                 disabled={publishDisabled || isPublishing}
               >
-                {publishLabel}
+                {isPublishing ? 'Publishing...' : 'Publish navigation'}
               </Button>
-            </DemoHelpTooltip>
-            <DemoHelpTooltip content="Leave the page editor and return to the demo site. Any unsaved demo changes are discarded.">
-              <Button variant="ghost" size="sm" onClick={onClose}>
-                Close
-              </Button>
-            </DemoHelpTooltip>
+            </div>
           </div>
-        </div>
+        ) : null}
+        {hasLegacyTemplateCallout ? (
+          <div className="border-t border-[var(--vd-border)] bg-[var(--vd-muted)]/70">
+            <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2 sm:px-6">
+              <p className="inline-flex items-center gap-2 text-xs text-[var(--vd-muted-fg)]">
+                <AlertTriangle className="h-3.5 w-3.5 text-[var(--vd-fg)]" />
+                Legacy page template detected ({legacyTemplateSummary}). Convert to blocks to unlock section editing.
+              </p>
+              {showLegacyConvertButton ? (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={onConvertLegacyTemplate}
+                  disabled={Boolean(isConvertingLegacyTemplate) || isSaving || isPublishing}
+                >
+                  {isConvertingLegacyTemplate ? 'Converting...' : 'Convert to blocks'}
+                </Button>
+              ) : (
+                <span className="text-xs text-[var(--vd-muted-fg)]">No conversion template is available yet.</span>
+              )}
+            </div>
+          </div>
+        ) : null}
       </div>
 
-      <div className="relative pb-24 pt-14">{children}</div>
+      <div className={`relative pb-24 ${contentTopPaddingClass}`}>
+        <div
+          className={`relative overflow-x-hidden overflow-y-auto ${
+            isGlobal ? 'ring-1 ring-[var(--vd-border)] ring-offset-2 ring-offset-[var(--vd-bg)]' : ''
+          }`}
+        >
+          {children}
+          {isGlobalRouteLocked ? (
+            <div className="absolute inset-0 z-40 flex items-center justify-center bg-[var(--vd-bg)]/70 p-6 text-center">
+              <div className="max-w-sm rounded-lg border border-[var(--vd-border)] bg-[var(--vd-muted)] p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[var(--vd-fg)]">{globalLockedHeading}</div>
+                <p className="mt-2 text-sm text-[var(--vd-muted-fg)]">
+                  {globalLockedDescription}
+                </p>
+                <div className="mt-4">
+                  <Button size="sm" onClick={() => setIsUnlockDialogOpen(true)}>
+                    {unlockLabel}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ) : null}
+          {isGlobal ? (
+            <div className="pointer-events-none absolute left-3 top-3 z-20 rounded-full border border-[var(--vd-border)] bg-[var(--vd-bg)] px-3 py-1 text-[11px] text-[var(--vd-muted-fg)]">
+              <Badge variant="outline" className="h-auto border-0 px-0 py-0">
+                <Lock className="mr-1 h-3 w-3" />
+                Global
+              </Badge>
+            </div>
+          ) : null}
+        </div>
+      </div>
 
       <div className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4">
         <MenuDock
@@ -228,53 +382,50 @@ export function PuckEditorShell({
           animated
           aria-label="Editor navigation"
         >
-          <DemoHelpTooltip content="Browse the reusable blocks you can drag onto the page.">
-            <MenuDockItem
-              icon={<LayoutGrid className="h-5 w-5" />}
-              label="Components"
-              active={activePanel === 'components' || (leftPinned && leftPanelTab === 'components')}
-              onClick={() => handlePanelToggle('components')}
-            />
-          </DemoHelpTooltip>
-          <DemoHelpTooltip content="See the structure of the current page and jump straight to a section.">
-            <MenuDockItem
-              icon={<ListTree className="h-5 w-5" />}
-              label="Outline"
-              active={activePanel === 'outline' || (leftPinned && leftPanelTab === 'outline')}
-              onClick={() => handlePanelToggle('outline')}
-            />
-          </DemoHelpTooltip>
-          <DemoHelpTooltip content="Edit settings for the currently selected block, including copy, images, and layout options.">
-            <MenuDockItem
-              icon={<SlidersHorizontal className="h-5 w-5" />}
-              label="Properties"
-              active={activePanel === 'properties' || propertiesPinned}
-              onClick={() => handlePanelToggle('properties')}
-            />
-          </DemoHelpTooltip>
-          <DemoHelpTooltip content="Open the page-level design controls and adjust colours, spacing, and visual tokens.">
-            <MenuDockItem
-              icon={<Palette className="h-5 w-5" />}
-              label="Theme"
-              active={activePanel === 'theme'}
-              onClick={() => {
-                if (hasThemePanel) {
-                  handlePanelToggle('theme');
-                } else {
-                  onOpenTheme?.();
-                }
-              }}
-              disabled={!hasThemePanel && !onOpenTheme}
-            />
-          </DemoHelpTooltip>
-          <DemoHelpTooltip content="Trigger the demo publish flow from the dock without changing the seeded site content.">
-            <MenuDockItem
-              icon={<Send className="h-5 w-5" />}
-              label="Publish"
-              onClick={onPublish}
-              disabled={publishDisabled || isPublishing}
-            />
-          </DemoHelpTooltip>
+          <MenuDockItem
+            icon={<LayoutGrid className="h-5 w-5" />}
+            label="Components"
+            active={activePanel === 'components' || (leftPinned && leftPanelTab === 'components')}
+            onClick={() => handlePanelToggle('components')}
+          />
+          <MenuDockItem
+            icon={<ListTree className="h-5 w-5" />}
+            label="Outline"
+            active={activePanel === 'outline' || (leftPinned && leftPanelTab === 'outline')}
+            onClick={() => handlePanelToggle('outline')}
+          />
+          <MenuDockItem
+            icon={<SlidersHorizontal className="h-5 w-5" />}
+            label="Properties"
+            active={activePanel === 'properties' || propertiesPinned}
+            onClick={() => handlePanelToggle('properties')}
+          />
+          <MenuDockItem
+            icon={<Settings className="h-5 w-5" />}
+            label="Settings"
+            active={activePanel === 'settings'}
+            onClick={() => handlePanelToggle('settings')}
+            disabled={!hasSettingsPanel}
+          />
+          <MenuDockItem
+            icon={<Palette className="h-5 w-5" />}
+            label="Theme"
+            active={activePanel === 'theme'}
+            onClick={() => {
+              if (hasThemePanel) {
+                handlePanelToggle('theme');
+              } else {
+                onOpenTheme?.();
+              }
+            }}
+            disabled={!hasThemePanel && !onOpenTheme}
+          />
+          <MenuDockItem
+            icon={<Send className="h-5 w-5" />}
+            label="Publish"
+            onClick={onPublish}
+            disabled={publishDisabled || isPublishing}
+          />
         </MenuDock>
       </div>
 
@@ -288,32 +439,32 @@ export function PuckEditorShell({
           }
         }}
       >
-      <SheetContent
-        side="left"
-        className="top-12 h-[calc(100dvh-3rem)] gap-0 p-0 sm:max-w-sm"
-        overlay={false}
-        onInteractOutside={(event) => {
-          if (leftPinned) event.preventDefault();
-        }}
-        onEscapeKeyDown={(event) => {
-          if (leftPinned) event.preventDefault();
-        }}
-      >
-        <SheetHeader className="sr-only">
-          <SheetTitle>Components</SheetTitle>
-          <SheetDescription>Browse components and outline items for this page.</SheetDescription>
-        </SheetHeader>
-        <Tabs
-          value={leftPanelValue}
-          onValueChange={(value) => {
-            setLeftPanelTab(value as 'components' | 'outline');
-            setActivePanel(value as EditorPanel);
+        <SheetContent
+          side="left"
+          className={`${sheetPositionClass} gap-0 p-0 sm:max-w-sm`}
+          overlay={false}
+          onInteractOutside={(event) => {
+            if (leftPinned) event.preventDefault();
           }}
-          className="flex h-full flex-col"
+          onEscapeKeyDown={(event) => {
+            if (leftPinned) event.preventDefault();
+          }}
         >
-          <div className="border-b border-[var(--vd-border)] px-4 py-3">
-            <div className="flex items-center justify-between gap-2">
-              <TabsList variant="underline" className="w-full justify-start">
+          <SheetHeader className="sr-only">
+            <SheetTitle>Components</SheetTitle>
+            <SheetDescription>Browse components and outline items for this page.</SheetDescription>
+          </SheetHeader>
+          <Tabs
+            value={leftPanelValue}
+            onValueChange={(value) => {
+              setLeftPanelTab(value as 'components' | 'outline');
+              setActivePanel(value as EditorPanel);
+            }}
+            className="flex h-full flex-col"
+          >
+            <div className="border-b border-[var(--vd-border)] px-4 py-3">
+              <div className="flex items-center justify-between gap-2">
+                <TabsList variant="underline" className="w-full justify-start">
                   <TabsTrigger value="components" variant="underline">
                     Components
                   </TabsTrigger>
@@ -331,11 +482,7 @@ export function PuckEditorShell({
                       aria-pressed={leftPinned}
                       onClick={() => setLeftPinned((current) => !current)}
                     >
-                      {leftPinned ? (
-                        <PinOffIcon className="h-4 w-4" />
-                      ) : (
-                        <PinIcon className="h-4 w-4" />
-                      )}
+                      {leftPinned ? <PinOffIcon className="h-4 w-4" /> : <PinIcon className="h-4 w-4" />}
                       <span className="sr-only">{leftPinLabel}</span>
                     </Button>
                   </TooltipTrigger>
@@ -344,6 +491,14 @@ export function PuckEditorShell({
               </div>
             </div>
             <TabsContent value="components" className="mt-0 flex-1 overflow-y-auto p-4">
+              <PatternLibrary
+                patterns={PUCK_PATTERNS}
+                disabled={Boolean(isGlobalRouteLocked)}
+                onInsert={handleInsertPattern}
+                onRequestUnlock={() => setIsUnlockDialogOpen(true)}
+                showGlobalLock={isGlobalRouteLocked}
+              />
+              {isGlobalRouteLocked ? <Separator className="my-3" /> : null}
               <Puck.Components />
             </TabsContent>
             <TabsContent value="outline" className="mt-0 flex-1 overflow-y-auto p-4">
@@ -365,7 +520,7 @@ export function PuckEditorShell({
       >
         <SheetContent
           side="right"
-          className="top-12 h-[calc(100dvh-3rem)] gap-0 p-0 sm:max-w-sm"
+          className={rightPanelSheetClass}
           overlay={false}
           onInteractOutside={(event) => {
             if (propertiesPinned) event.preventDefault();
@@ -378,9 +533,7 @@ export function PuckEditorShell({
             <SheetHeader className="border-b border-[var(--vd-border)] px-4 py-3">
               <div className="flex items-center gap-2">
                 <SheetTitle className="text-sm">Properties</SheetTitle>
-                <SheetDescription className="sr-only">
-                  Edit the settings for the selected component.
-                </SheetDescription>
+                <SheetDescription className="sr-only">Edit the settings for the selected component.</SheetDescription>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -403,9 +556,37 @@ export function PuckEditorShell({
                 </Tooltip>
               </div>
             </SheetHeader>
-            <div className="flex-1 overflow-y-auto p-4">
-              <PropertiesPanel />
+            <div className="flex-1 overflow-y-auto">
+              <PropertiesPanel
+                isGlobalRouteLocked={isGlobalRouteLocked}
+                selectedItem={selectedItem}
+                onUnlockGlobal={() => {
+                  setIsUnlockDialogOpen(true);
+                }}
+              />
             </div>
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      <Sheet
+        open={activePanel === 'settings'}
+        modal={false}
+        onOpenChange={(open) => {
+          if (!open) setActivePanel(null);
+        }}
+      >
+        <SheetContent
+          side="right"
+          className={rightPanelSheetClass}
+          overlay={false}
+        >
+          <div className="flex h-full flex-col">
+            <SheetHeader className="border-b border-[var(--vd-border)] px-4 py-3">
+              <SheetTitle className="text-sm">Settings</SheetTitle>
+              <SheetDescription className="sr-only">Edit page-level settings.</SheetDescription>
+            </SheetHeader>
+            <div className="flex-1 overflow-y-auto">{settingsPanel}</div>
           </div>
         </SheetContent>
       </Sheet>
@@ -418,7 +599,7 @@ export function PuckEditorShell({
       >
         <SheetContent
           side="right"
-          className="top-12 h-[calc(100dvh-3rem)] w-[100vw] max-w-[100vw] gap-0 p-0 sm:max-w-none"
+          className={`${sheetPositionClass} w-[100vw] max-w-[100vw] gap-0 p-0 sm:max-w-none`}
         >
           <SheetHeader className="sr-only">
             <SheetTitle>Theme</SheetTitle>
@@ -427,6 +608,32 @@ export function PuckEditorShell({
           {themePanel}
         </SheetContent>
       </Sheet>
+
+      <Dialog open={isUnlockDialogOpen} onOpenChange={setIsUnlockDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Unlock global editing?</DialogTitle>
+            <DialogDescription>
+              {isGlobalHeader
+                ? "This navigation appears on every page. Click 'Edit navigation' to make changes."
+                : 'This is global content. Changes apply to all pages. Unlock to continue editing.'}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsUnlockDialogOpen(false)}>
+              Cancel
+            </Button>
+            <Button
+              onClick={() => {
+                setIsUnlockDialogOpen(false);
+                onUnlockGlobal?.();
+              }}
+            >
+              {unlockLabel}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

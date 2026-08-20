@@ -7,18 +7,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 
+import { liveHref } from '@/components/edit/pages-index-utils';
+
 type PageRow = {
   slug: string;
+  path?: string | null;
   title?: string;
   updatedAt?: string;
   publishedAt?: string;
   draftUpdatedAt?: string;
 };
 
-function liveHref(slug: string) {
-  if (slug === 'home') return '/';
-  return `/${slug}`;
-}
+
 
 export function PagesManager() {
   const [pages, setPages] = useState<PageRow[] | null>(null);
@@ -118,8 +118,9 @@ export function PagesManager() {
       ) : (
         <div className="grid gap-3 md:grid-cols-2">
           {pages.map((page) => {
-            const live = liveHref(page.slug);
-            const editHref = `/edit/${encodeURIComponent(page.slug)}`;
+            const live = liveHref(page);
+            const editHref =
+              page.slug === 'home' ? '/edit?slug=home' : `/edit/${encodeURIComponent(page.slug)}`;
             const previewHref = `/preview/${encodeURIComponent(page.slug)}`;
             const isPublished = Boolean(page.publishedAt);
             return (

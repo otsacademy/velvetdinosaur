@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { SauroCmsBadge } from '@/components/admin/sauro-cms-badge';
 import { BlocksList } from './blocks-list';
 import { ComponentsList } from './components-list';
 import type { StoreItem } from './store-types';
@@ -187,13 +188,13 @@ export function StoreBrowser() {
               <Badge className="border-transparent bg-[var(--vd-primary)] text-[var(--vd-primary-fg)]">
                 Admin Store
               </Badge>
-              <Badge>Puck-compatible</Badge>
+              <SauroCmsBadge compact />
               <Badge>shadcn/ui</Badge>
             </div>
             <div className="space-y-3">
               <h1 className="text-4xl font-semibold md:text-5xl">Component Storefront</h1>
               <p className="max-w-2xl text-base text-[var(--vd-muted-fg)] md:text-lg">
-                Browse Puck-ready shadcn primitives and block collections. Every entry is wrapped for
+                Browse Sauro CMS-ready shadcn primitives and block collections. Every entry is wrapped for
                 editor safety and ready to drop into pages.
               </p>
             </div>
@@ -209,7 +210,7 @@ export function StoreBrowser() {
                 Clear search
               </Button>
               <Button asChild>
-                <Link href="/edit">Open Puck Editor</Link>
+                <Link href="/edit">Open Sauro CMS</Link>
               </Button>
             </div>
             <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--vd-muted-fg)]">
@@ -237,7 +238,7 @@ export function StoreBrowser() {
               <Card className="bg-white/70">
                 <CardHeader>
                   <CardTitle>{componentCount} components</CardTitle>
-                  <CardDescription>Primitives wrapped for Puck.</CardDescription>
+                  <CardDescription>Primitives wrapped for Sauro CMS.</CardDescription>
                 </CardHeader>
               </Card>
               <Card className="bg-white/70">
@@ -294,7 +295,7 @@ export function StoreBrowser() {
         <div className="space-y-2">
           <h2 className="text-3xl font-semibold">Blocks</h2>
           <p className="text-sm text-[var(--vd-muted-fg)]">
-            Every shadcn/ui block is available here with Puck-ready schemas and safe defaults.
+            Every shadcn/ui block is available here with Sauro CMS-ready schemas and safe defaults.
           </p>
         </div>
         {loading ? (
@@ -328,7 +329,7 @@ export function StoreBrowser() {
             <CardTitle>Need something custom?</CardTitle>
             <CardDescription>
               Build a new block, register it in the component store, and it will appear here with
-              the same Puck-safe wrappers.
+              the same Sauro CMS-safe wrappers.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-3 md:flex-row">

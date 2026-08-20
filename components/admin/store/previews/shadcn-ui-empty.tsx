@@ -22,7 +22,7 @@ function safeParseJson(input?: string) {
 }
 
 export default function ShadcnEmpty({ label = "Empty", className = "", propsJson = "" }: PrimitiveProps) {
-  const resolved = (Registry as Record<string, unknown>)["Empty"] || (Registry as Record<string, unknown>).default || Object.values(Registry as Record<string, unknown>).find((value) => typeof value === "function");
+  const resolved = (Registry as Record<string, unknown>)["Empty"] || Object.values(Registry as Record<string, unknown>).find((value) => typeof value === "function");
   if (!resolved || typeof resolved !== "function") {
     return <div className="rounded-md border border-[var(--vd-border)] bg-white p-3 text-sm text-[var(--vd-muted-fg)]">Component export not found.</div>;
   }

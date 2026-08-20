@@ -1,10 +1,7 @@
+import { slugifySegment } from '@/lib/page-paths';
+
 export function slugify(value: string) {
-  return value
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9-]+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+  return slugifySegment(value);
 }
 
 export function cleanText(value: string) {

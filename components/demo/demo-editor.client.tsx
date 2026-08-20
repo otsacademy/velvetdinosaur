@@ -93,7 +93,9 @@ export function DemoEditorClient({
   const canvasHeightClassName = 'h-[calc(100dvh-9.5rem)] min-h-[32rem]';
   const canvasPaddingClassName = 'px-6 py-6';
   const canvasClassName = `mx-auto w-full max-w-6xl ${canvasPaddingClassName} ${canvasHeightClassName}`;
-  const brandLink = (
+  // Reinstated during demo reconciliation: the shell no longer offers a
+  // header slot for this.
+  const _brandLink = (
     <>
       <Button
         asChild
@@ -120,7 +122,7 @@ export function DemoEditorClient({
       <PuckEditorShell
         title={title}
         statusLabel="Demo workspace"
-        headerActionAfterSave={brandLink}
+        onInsertPattern={() => toast.info('Pattern inserts are unavailable in this demonstration.')}
         onSaveDraft={handleSave}
         onResetDraft={handleReset}
         onPublish={handlePublish}
