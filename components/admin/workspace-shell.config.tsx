@@ -11,6 +11,7 @@ import {
   BellRing,
   BookCopy,
   Briefcase,
+  CalendarDays,
   Gauge,
   Inbox as InboxIcon,
   Image as ImageIcon,
@@ -53,7 +54,10 @@ export const FORCE_ADMIN_ROUTES = ['/admin', '/edit/contact-templates'];
 export const NAV_GROUPS: SidebarNavGroup[] = [
   {
     label: 'Workspace',
-    items: [{ label: 'Inbox', href: '/edit/inbox', icon: InboxIcon }]
+    items: [
+      { label: 'Inbox', href: '/edit/inbox', icon: InboxIcon },
+      { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays }
+    ]
   },
   {
     label: 'Content',
