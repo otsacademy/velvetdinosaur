@@ -15,6 +15,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { slugify } from '@/components/edit/dialog-utils';
+import { editHref, normalizePath, pageHref } from '@/lib/page-paths';
 
 type DialogProps = {
   open: boolean;
@@ -23,26 +24,28 @@ type DialogProps = {
 
 type DuplicateSource = {
   slug: string;
+  path?: string | null;
   title?: string | null;
 };
 
 type DeleteTarget = {
   slug: string;
+  path?: string | null;
   title?: string | null;
 };
 
 export function NewPageDialog({ open, onOpenChange }: DialogProps) {
   const router = useRouter();
   const [title, setTitle] = useState('');
-  const [slug, setSlug] = useState('');
-  const [slugTouched, setSlugTouched] = useState(false);
+  const [location, setLocation] = useState('');
+  const [locationTouched, setLocationTouched] = useState(false);
   const [creating, setCreating] = useState(false);
   const [message, setMessage] = useState('');
 
   const resetState = () => {
     setTitle('');
-    setSlug('');
-    setSlugTouched(false);
+    setLocation('');
+    setLocationTouched(false);
     setCreating(false);
     setMessage('');
   };
@@ -56,9 +59,9 @@ export function NewPageDialog({ open, onOpenChange }: DialogProps) {
 
   const handleCreate = async (event: FormEvent) => {
     event.preventDefault();
-    const normalizedSlug = slugify(slug);
-    if (!normalizedSlug) {
-      setMessage('Slug is required.');
+    const normalizedPath = normalizePath(location || title);
+    if (!normalizedPath) {
+      setMessage('Location is required.');
       return;
     }
     setCreating(true);
@@ -67,7 +70,7 @@ export function NewPageDialog({ open, onOpenChange }: DialogProps) {
       const res = await fetch('/api/pages/create', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ slug: normalizedSlug, title: title.trim() })
+        body: JSON.stringify({ path: normalizedPath, title: title.trim() })
       });
       const data = await res.json().catch(() => null);
       if (!res.ok) {
@@ -76,7 +79,7 @@ export function NewPageDialog({ open, onOpenChange }: DialogProps) {
         return;
       }
       onOpenChange(false);
-      router.push(`/edit/${encodeURIComponent(data.slug || normalizedSlug)}`);
+      router.push(editHref(data.slug));
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Create failed');
       setCreating(false);
@@ -89,7 +92,7 @@ export function NewPageDialog({ open, onOpenChange }: DialogProps) {
         <form onSubmit={handleCreate} className="space-y-4">
           <DialogHeader>
             <DialogTitle>Create new page</DialogTitle>
-            <DialogDescription>Add a title and slug to create a new draft page.</DialogDescription>
+            <DialogDescription>Add a title and location to create a new draft page.</DialogDescription>
           </DialogHeader>
           <div className="space-y-2">
             <Label htmlFor="page-title">Page title</Label>
@@ -99,26 +102,26 @@ export function NewPageDialog({ open, onOpenChange }: DialogProps) {
               onChange={(event) => {
                 const nextTitle = event.target.value;
                 setTitle(nextTitle);
-                if (!slugTouched) {
-                  setSlug(slugify(nextTitle));
+                if (!locationTouched) {
+                  setLocation(slugify(nextTitle));
                 }
               }}
               placeholder="Story, About, etc."
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="page-slug">Slug</Label>
+            <Label htmlFor="page-location">Location</Label>
             <Input
-              id="page-slug"
-              value={slug}
+              id="page-location"
+              value={location}
               onChange={(event) => {
-                setSlugTouched(true);
-                setSlug(event.target.value);
+                setLocationTouched(true);
+                setLocation(event.target.value);
               }}
-              placeholder="about"
+              placeholder="about or our-work/awards"
             />
             <p className="text-xs text-[var(--vd-muted-fg)]">
-              Used in the URL: /{slugify(slug || title) || 'your-slug'}
+              Used in the URL: /{normalizePath(location || title) || 'your-page'}
             </p>
           </div>
           {message ? <p className="text-xs text-[var(--vd-muted-fg)]">{message}</p> : null}
@@ -143,13 +146,13 @@ export function DuplicatePageDialog({
 }: DialogProps & { source: DuplicateSource | null }) {
   const router = useRouter();
   const [title, setTitle] = useState('');
-  const [slug, setSlug] = useState('');
+  const [location, setLocation] = useState('');
   const [duplicating, setDuplicating] = useState(false);
   const [message, setMessage] = useState('');
 
   const resetState = () => {
     setTitle('');
-    setSlug('');
+    setLocation('');
     setDuplicating(false);
     setMessage('');
   };
@@ -158,7 +161,7 @@ export function DuplicatePageDialog({
     if (!nextSource) return;
     const baseTitle = nextSource.title || nextSource.slug;
     setTitle(baseTitle);
-    setSlug(`${nextSource.slug}-copy`);
+    setLocation(`${nextSource.path || nextSource.slug}-copy`);
   };
 
   const handleOpenChange = (nextOpen: boolean) => {
@@ -174,9 +177,9 @@ export function DuplicatePageDialog({
   const handleDuplicate = async (event: FormEvent) => {
     event.preventDefault();
     if (!source) return;
-    const normalizedSlug = slugify(slug);
-    if (!normalizedSlug) {
-      setMessage('Slug is required.');
+    const normalizedPath = normalizePath(location || title);
+    if (!normalizedPath) {
+      setMessage('Location is required.');
       return;
     }
     setDuplicating(true);
@@ -187,7 +190,7 @@ export function DuplicatePageDialog({
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           sourceSlug: source.slug,
-          slug: normalizedSlug,
+          path: normalizedPath,
           title: title.trim()
         })
       });
@@ -198,7 +201,7 @@ export function DuplicatePageDialog({
         return;
       }
       onOpenChange(false);
-      router.push(`/edit/${encodeURIComponent(data.slug || normalizedSlug)}`);
+      router.push(editHref(data.slug));
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Duplicate failed');
       setDuplicating(false);
@@ -212,7 +215,7 @@ export function DuplicatePageDialog({
           <DialogHeader>
             <DialogTitle>Duplicate page</DialogTitle>
             <DialogDescription>
-              Create a copy of {source?.slug || 'this page'} with a new slug and title.
+              Create a copy of {source ? pageHref(source) : 'this page'} at a new location.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-2">
@@ -225,17 +228,17 @@ export function DuplicatePageDialog({
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="duplicate-slug">Slug</Label>
+            <Label htmlFor="duplicate-location">Location</Label>
             <Input
-              id="duplicate-slug"
-              value={slug}
+              id="duplicate-location"
+              value={location}
               onChange={(event) => {
-                setSlug(event.target.value);
+                setLocation(event.target.value);
               }}
               placeholder="your-page-copy"
             />
             <p className="text-xs text-[var(--vd-muted-fg)]">
-              Used in the URL: /{slugify(slug || title) || 'your-slug'}
+              Used in the URL: /{normalizePath(location || title) || 'your-page'}
             </p>
           </div>
           {message ? <p className="text-xs text-[var(--vd-muted-fg)]">{message}</p> : null}
@@ -300,7 +303,7 @@ export function DeletePageDialog({
         <DialogHeader>
           <DialogTitle>Delete page</DialogTitle>
           <DialogDescription>
-            This will permanently delete {target?.slug ? `/${target.slug}` : 'this page'} and all its content. This cannot be undone.
+            This will permanently delete {target ? pageHref(target) : 'this page'} and all its content. This cannot be undone.
           </DialogDescription>
         </DialogHeader>
         {message ? <p className="text-xs text-[var(--vd-muted-fg)]">{message}</p> : null}

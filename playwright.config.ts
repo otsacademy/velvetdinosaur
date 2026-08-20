@@ -33,7 +33,7 @@ export default defineConfig({
     },
     {
       command:
-        `MONGODB_URI= VD_EDITOR_SMOKE_TOKEN=${smokeToken} ` +
+        `MONGODB_URI= VD_EDITOR_SMOKE_TOKEN=${smokeToken} VD_ALLOW_EDITOR_SMOKE_IN_PRODUCTION=true ` +
         `VD_INSTALLER_ADMINS=editor-smoke@local ` +
         `VD_FLEET_STATUS_URL=http://127.0.0.1:${fleetFixturePort}/admin/fleet/api/status ` +
         `VD_DISABLE_ANALYTICS=true bun run start -- -p ${resolvedPort}`,

@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
 import { revalidateTagSafe as revalidateTag } from '@/lib/cache-revalidate';
 import { getAuth } from '@/lib/auth';
+import { logAudit } from '@/lib/audit';
 import { connectDB } from '@/lib/db';
 import { Page } from '@/models/Page';
+import { PageRedirect } from '@/models/PageRedirect';
 import { isAdminOnly } from '@/lib/site-config';
 import { pageTags } from '@/lib/cache-tags';
+import { sitePageHref } from '@/lib/page-locations';
+import { removeLinksToPage } from '@/lib/page-link-rewrite';
 
 type PageSnapshot = {
   _id: unknown;
@@ -12,63 +16,6 @@ type PageSnapshot = {
   publishedData?: unknown;
   data?: unknown;
 };
-
-function isObject(value: unknown): value is Record<string, unknown> {
-  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
-}
-
-function shouldRemoveLinkItem(item: unknown, slug: string) {
-  if (!isObject(item)) return false;
-  const href = typeof item.href === 'string' ? item.href.trim() : null;
-  const url = typeof item.url === 'string' ? item.url.trim() : null;
-  const pageSlug = typeof item.pageSlug === 'string' ? item.pageSlug.trim() : null;
-  const itemSlug = typeof item.slug === 'string' ? item.slug.trim() : null;
-  const livePath = slug === 'home' ? '/' : `/${slug}`;
-
-  if (href && (href === livePath || href === `/${slug}` || href === slug)) return true;
-  if (url && (url === livePath || url === `/${slug}` || url === slug)) return true;
-  if (pageSlug && pageSlug === slug) return true;
-  if (itemSlug && itemSlug === slug) return true;
-  return false;
-}
-
-function cleanupValue(value: unknown, slug: string): { value: unknown; changed: boolean } {
-  if (Array.isArray(value)) {
-    let changed = false;
-    const next = value
-      .map((item) => {
-        const result = cleanupValue(item, slug);
-        if (result.changed) changed = true;
-        return result.value;
-      })
-      .filter((item) => {
-        if (shouldRemoveLinkItem(item, slug)) {
-          changed = true;
-          return false;
-        }
-        return true;
-      });
-    return { value: next, changed };
-  }
-
-  if (isObject(value)) {
-    let changed = false;
-    const next: Record<string, unknown> = {};
-    for (const [key, val] of Object.entries(value)) {
-      const result = cleanupValue(val, slug);
-      if (result.changed) changed = true;
-      next[key] = result.value;
-    }
-    return { value: next, changed };
-  }
-
-  return { value, changed: false };
-}
-
-function cleanupPageData(data: unknown, slug: string) {
-  if (!data) return { value: data, changed: false };
-  return cleanupValue(data, slug);
-}
 
 export async function POST(request: Request) {
   if (isAdminOnly()) {
@@ -79,6 +26,7 @@ export async function POST(request: Request) {
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
+  const userId = (session as { user?: { id?: string } } | null)?.user?.id || null;
 
   const body = await request.json().catch(() => ({}));
   const slug = body?.slug as string | undefined;
@@ -94,16 +42,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Database unavailable' }, { status: 500 });
   }
 
+  const doc = (await Page.findOne({ slug }).select({ slug: 1, path: 1 }).lean()) as {
+    slug: string;
+    path?: string;
+  } | null;
+
   await Page.deleteOne({ slug });
+
+  const target = { slug, href: sitePageHref(doc ?? { slug }) };
+  const cleanup = (data: unknown) =>
+    data ? removeLinksToPage(data, target) : { value: data, changed: false };
 
   const pages = await Page.find({ slug: { $ne: slug } })
     .select({ draftData: 1, publishedData: 1, data: 1 })
     .lean<PageSnapshot[]>();
 
   const updates = pages.map(async (page) => {
-    const draft = cleanupPageData(page.draftData, slug);
-    const published = cleanupPageData(page.publishedData, slug);
-    const legacy = cleanupPageData(page.data, slug);
+    const draft = cleanup(page.draftData);
+    const published = cleanup(page.publishedData);
+    const legacy = cleanup(page.data);
 
     if (!draft.changed && !published.changed && !legacy.changed) return;
 
@@ -113,7 +70,8 @@ export async function POST(request: Request) {
         $set: {
           ...(draft.changed ? { draftData: draft.value } : {}),
           ...(published.changed ? { publishedData: published.value } : {}),
-          ...(legacy.changed ? { data: legacy.value } : {})
+          ...(legacy.changed ? { data: legacy.value } : {}),
+          ...(userId ? { updatedByUserId: userId } : {})
         }
       }
     );
@@ -121,12 +79,23 @@ export async function POST(request: Request) {
 
   await Promise.all(updates);
 
+  // Drop redirects pointing at the deleted page and any record occupying its URL.
+  const effectivePath = doc?.path ?? slug;
+  await PageRedirect.deleteMany({ $or: [{ toSlug: slug }, { fromPath: effectivePath }] });
+
+  await logAudit({
+    action: 'page.delete',
+    actorUserId: userId,
+    metadata: { slug }
+  });
+
   revalidateTag(pageTags.content);
   revalidateTag(pageTags.published(slug));
   revalidateTag(pageTags.draft(slug));
   revalidateTag(pageTags.record(slug));
   revalidateTag(pageTags.list());
   revalidateTag(pageTags.list(true));
+  revalidateTag(pageTags.redirects);
 
   return NextResponse.json({ ok: true });
 }

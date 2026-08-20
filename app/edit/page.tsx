@@ -49,10 +49,7 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
 
   return (
     <PagesIndex
-      pages={serialPages}
-      workArticles={workArticles}
-      newsArticles={newsArticles}
-      events={events}
+      data={{ pages: serialPages, workArticles, newsArticles, events }}
       platformAdmin={platformAdmin}
     />
   );

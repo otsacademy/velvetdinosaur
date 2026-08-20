@@ -1,262 +1,114 @@
-import Link from 'next/link';
-import {
-  FileSignature,
-  Home,
-  Image as ImageIcon,
-  LayoutGrid,
-  List,
-  Mail,
-  MoreHorizontal,
-  Palette,
-  PanelBottom,
-  PanelTop,
-  Plus,
-  Search,
-  Settings2,
-  Store
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import type { ComponentType, ReactNode } from 'react';
+import { LayoutGrid, List, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import type { SortKey, ViewMode } from '@/components/edit/pages-index-types';
-import { getDemoRoutePath, type DemoRouteVariant } from '@/lib/demo-site';
-import { cn } from '@/lib/utils';
+import type { ViewMode } from '@/components/edit/pages-index-types';
+import type { TabSortOption } from '@/components/edit/edit-index/registry';
 
-const sortOptions: Array<{ value: SortKey; label: string }> = [
-  { value: 'slug-asc', label: 'Slug (A-Z)' },
-  { value: 'draft-desc', label: 'Draft updated' },
-  { value: 'published-desc', label: 'Published date' },
-  { value: 'updated-desc', label: 'Recently updated' }
-];
+type HeaderTab = { key: string; label: string; count: number };
 
 type EditIndexHeaderBarProps = {
+  heading: { title: string; subtitle: string };
+  tabs: HeaderTab[];
+  activeTab: string;
+  onTabChange: (key: string) => void;
   query: string;
   onQueryChange: (value: string) => void;
-  sortKey: SortKey;
-  onSortChange: (value: SortKey) => void;
+  searchPlaceholder: string;
+  sortOptions: TabSortOption[];
+  sortValue: string;
+  onSortChange: (value: string) => void;
+  sortPlaceholder: string;
+  sortMenuOpen: boolean;
+  onSortMenuOpenChange: (open: boolean) => void;
+  HeaderFilter?: ComponentType<{ value: string; onChange: (value: string) => void }>;
+  extraFilter: string;
+  onExtraFilterChange: (value: string) => void;
   viewMode: ViewMode;
   onViewModeChange: (value: ViewMode) => void;
-  filteredCount: number;
-  totalCount: number;
-  hasContractsPage?: boolean;
-  mode?: 'live' | 'demo';
-  demoVariant?: DemoRouteVariant;
-  onDemoAction?: (label: string) => void;
-  onNewPage: () => void;
-  onNewWorkArticle: () => void;
-  platformAdmin?: boolean;
+  actions: ReactNode;
 };
 
 export function EditIndexHeaderBar({
+  heading,
+  tabs,
+  activeTab,
+  onTabChange,
   query,
   onQueryChange,
-  sortKey,
+  searchPlaceholder,
+  sortOptions,
+  sortValue,
   onSortChange,
+  sortPlaceholder,
+  sortMenuOpen,
+  onSortMenuOpenChange,
+  HeaderFilter,
+  extraFilter,
+  onExtraFilterChange,
   viewMode,
   onViewModeChange,
-  filteredCount,
-  totalCount,
-  hasContractsPage = false,
-  mode = 'live',
-  demoVariant = 'host',
-  onDemoAction,
-  onNewPage,
-  onNewWorkArticle,
-  platformAdmin = false
+  actions
 }: EditIndexHeaderBarProps) {
-  const isDemo = mode === 'demo';
-  const themeEditorHref = isDemo ? getDemoRoutePath('/theme-editor', demoVariant) : '/admin/theme';
-  const inboxHref = isDemo ? getDemoRoutePath('/inbox', demoVariant) : null;
-
   return (
-    <div data-testid="edit-index-header" className={cn('flex flex-col gap-4', isDemo && 'vd-demo-toolbar')}>
+    <div data-testid="edit-index-header" className="flex flex-col gap-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex flex-wrap items-center gap-3">
-          <h1 className={cn('text-3xl font-black tracking-tight text-[var(--vd-fg)]', isDemo && 'vd-demo-content-title')}>
-            Content
-          </h1>
-          <Badge className={cn('text-[11px]', isDemo && 'vd-demo-meta-badge')}>
-            Showing {filteredCount} of {totalCount} items
-          </Badge>
+        <div className="space-y-1">
+          <h1 className="text-3xl font-black tracking-tight text-[var(--vd-fg)]">{heading.title}</h1>
+          <p className="text-sm text-[var(--vd-muted-fg)]">{heading.subtitle}</p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {!isDemo && platformAdmin ? (
-            <Button variant="outline" size="sm" asChild data-testid="edit-index-admin">
-              <Link href="/admin">
-                <Settings2 className="h-4 w-4" />
-                Admin
-              </Link>
-            </Button>
-          ) : null}
-          <Button
-            variant="outline"
-            size="sm"
-            asChild
-            data-testid="edit-index-theme-editor"
-            className={cn(isDemo && 'vd-demo-toolbar-button vd-demo-toolbar-button-subtle')}
-          >
-            <Link href={themeEditorHref}>
-              <Palette className="h-4 w-4" />
-              Theme editor
-            </Link>
-          </Button>
-          {inboxHref ? (
-            <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className={cn(isDemo && 'vd-demo-toolbar-button vd-demo-toolbar-button-subtle')}
-            >
-              <Link href={inboxHref}>
-                <Mail className="h-4 w-4" />
-                Inbox demo
-              </Link>
-            </Button>
-          ) : null}
-          <Button
-            size="sm"
-            onClick={onNewPage}
-            data-testid="edit-index-new-page"
-            className={cn(isDemo && 'vd-demo-toolbar-button vd-demo-toolbar-button-primary')}
-          >
-            <Plus className="h-4 w-4" />
-            New page
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={onNewWorkArticle}
-            data-testid="edit-index-new-work"
-            className={cn(isDemo && 'vd-demo-toolbar-button vd-demo-toolbar-button-subtle')}
-          >
-            <Plus className="h-4 w-4" />
-            New work
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                size="sm"
-                className={cn(isDemo && 'vd-demo-toolbar-button vd-demo-toolbar-button-subtle')}
-              >
-                <MoreHorizontal className="h-4 w-4" />
-                More
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {isDemo ? (
-                <>
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Contact templates')}>
-                    <Mail className="h-4 w-4" />
-                    Contact templates
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Store')}>
-                    <Store className="h-4 w-4" />
-                    Store
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Edit home')}>
-                    <Home className="h-4 w-4" />
-                    Edit home
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Media library')}>
-                    <ImageIcon className="h-4 w-4" />
-                    Media library
-                  </DropdownMenuItem>
-                  {hasContractsPage ? (
-                    <DropdownMenuItem onSelect={() => onDemoAction?.('Contracts')}>
-                      <FileSignature className="h-4 w-4" />
-                      Contracts
-                    </DropdownMenuItem>
-                  ) : null}
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Edit header')}>
-                    <PanelTop className="h-4 w-4" />
-                    Edit header
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => onDemoAction?.('Edit footer')}>
-                    <PanelBottom className="h-4 w-4" />
-                    Edit footer
-                  </DropdownMenuItem>
-                </>
-              ) : (
-                <>
-                  <DropdownMenuItem asChild>
-                    <Link href="/edit/contact-templates">
-                      <Mail className="h-4 w-4" />
-                      Contact templates
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link href="/admin/store">
-                      <Store className="h-4 w-4" />
-                      Store
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/edit/home">
-                      <Home className="h-4 w-4" />
-                      Edit home
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/edit/media">
-                      <ImageIcon className="h-4 w-4" />
-                      Media library
-                    </Link>
-                  </DropdownMenuItem>
-                  {hasContractsPage ? (
-                    <DropdownMenuItem asChild>
-                      <Link href="/edit/contracts">
-                        <FileSignature className="h-4 w-4" />
-                        Contracts
-                      </Link>
-                    </DropdownMenuItem>
-                  ) : null}
-                  <DropdownMenuItem asChild>
-                    <Link href="/edit/global-header">
-                      <PanelTop className="h-4 w-4" />
-                      Edit header
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/edit/global-footer">
-                      <PanelBottom className="h-4 w-4" />
-                      Edit footer
-                    </Link>
-                  </DropdownMenuItem>
-                </>
-              )}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        <div className="flex flex-wrap items-center gap-2">{actions}</div>
       </div>
+
+      <Tabs value={activeTab} onValueChange={onTabChange}>
+        <TabsList className="h-auto w-full justify-start gap-2 rounded-none bg-transparent p-0">
+          {tabs.map((tab) => (
+            <TabsTrigger
+              key={tab.key}
+              value={tab.key}
+              className="h-10 rounded-none border-b-2 border-b-transparent px-3 text-sm font-semibold text-[var(--vd-muted-fg)] transition-[background-color,border-color,color] hover:border-b-[var(--vd-ring)]/65 hover:bg-[var(--vd-ring)]/8 hover:text-[var(--vd-fg)] data-[state=active]:border-b-[var(--vd-ring)] data-[state=active]:bg-transparent data-[state=active]:text-[var(--vd-fg)]"
+            >
+              {tab.label}
+              <span className="ml-1.5 rounded-full border border-[var(--vd-border)] bg-[var(--vd-bg)] px-2 py-0.5 text-[11px] font-semibold">
+                {tab.count}
+              </span>
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
 
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center">
-          <div className="relative w-full sm:max-w-xs">
+          <div className="relative w-full sm:max-w-md">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--vd-muted-fg)]" />
             <Input
               value={query}
               onChange={(event) => onQueryChange(event.target.value)}
-              placeholder="Search pages or work"
-              className={cn('pl-9', isDemo && 'vd-demo-filter-input')}
+              placeholder={searchPlaceholder}
+              className="pl-9 focus-visible:ring-[var(--vd-ring)]/60"
             />
           </div>
-          <div className="w-full sm:w-52">
-            <Select value={sortKey} onValueChange={(value) => onSortChange(value as SortKey)}>
-              <SelectTrigger className={cn(isDemo && 'vd-demo-select-trigger')}>
-                <SelectValue placeholder="Sort" />
+
+          {HeaderFilter ? (
+            <div className="w-full sm:w-56">
+              <HeaderFilter value={extraFilter} onChange={onExtraFilterChange} />
+            </div>
+          ) : null}
+
+          <div className="w-full sm:w-56">
+            <Select
+              value={sortValue}
+              onValueChange={onSortChange}
+              open={sortMenuOpen}
+              onOpenChange={onSortMenuOpenChange}
+            >
+              <SelectTrigger className="hover:border-[var(--vd-ring)]/70 hover:ring-2 hover:ring-[var(--vd-ring)]/15">
+                <span className="inline-flex items-center gap-2">
+                  <span aria-hidden className="text-[var(--vd-ring)]">⇅</span>
+                  <SelectValue placeholder={sortPlaceholder} />
+                </span>
               </SelectTrigger>
               <SelectContent>
                 {sortOptions.map((option) => (
@@ -268,15 +120,12 @@ export function EditIndexHeaderBar({
             </Select>
           </div>
         </div>
+
         <Tabs value={viewMode} onValueChange={(value) => onViewModeChange(value as ViewMode)}>
-          <TabsList className={cn('h-9 bg-[var(--vd-muted)]/60', isDemo && 'vd-demo-view-tabs')}>
+          <TabsList className="h-9 bg-[var(--vd-muted)]/60">
             <Tooltip>
               <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="list"
-                  className={cn('h-8 w-9 px-0', isDemo && 'vd-demo-view-tab')}
-                  aria-label="List view"
-                >
+                <TabsTrigger value="list" className="h-8 w-9 px-0" aria-label="List view">
                   <List className="h-4 w-4" />
                   <span className="sr-only">List view</span>
                 </TabsTrigger>
@@ -285,11 +134,7 @@ export function EditIndexHeaderBar({
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="grid"
-                  className={cn('h-8 w-9 px-0', isDemo && 'vd-demo-view-tab')}
-                  aria-label="Grid view"
-                >
+                <TabsTrigger value="grid" className="h-8 w-9 px-0" aria-label="Grid view">
                   <LayoutGrid className="h-4 w-4" />
                   <span className="sr-only">Grid view</span>
                 </TabsTrigger>

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { PageRow } from '@/components/edit/pages-index-types';
+import { PreviewViewportShell } from './preview-viewport-shell.client';
 
 type PreviewMode = 'draft' | 'live';
 
@@ -49,9 +50,18 @@ export function EditIndexPreviewSheet({
         </SheetHeader>
         <div className="flex flex-col gap-3 px-4">
           <Tabs value={previewMode} onValueChange={(value) => onPreviewModeChange(value as PreviewMode)}>
-            <TabsList>
-              <TabsTrigger value="draft">Draft</TabsTrigger>
-              <TabsTrigger value="live" disabled={!activePage?.publishedAt}>
+            <TabsList className="h-auto w-fit justify-start gap-2 rounded-none bg-transparent p-0">
+              <TabsTrigger
+                value="draft"
+                className="rounded-none border-b-2 border-b-transparent px-2 py-1.5 data-[state=active]:border-b-[var(--vd-ring)] data-[state=active]:bg-transparent"
+              >
+                Draft
+              </TabsTrigger>
+              <TabsTrigger
+                value="live"
+                disabled={!activePage?.publishedAt}
+                className="rounded-none border-b-2 border-b-transparent px-2 py-1.5 data-[state=active]:border-b-[var(--vd-ring)] data-[state=active]:bg-transparent"
+              >
                 Live
               </TabsTrigger>
             </TabsList>
@@ -84,21 +94,23 @@ export function EditIndexPreviewSheet({
           </div>
         </div>
         <div className="flex-1 px-4 pb-4">
-          <div className="flex h-full min-h-[320px] flex-col overflow-hidden rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-muted)]">
+          <PreviewViewportShell showControls label="Preview size">
             {previewSlug && open ? (
-              <iframe
-                key={iframeKey}
-                title={`Preview ${previewSlug}`}
-                src={iframeSrc}
-                loading="lazy"
-                className="h-full w-full bg-[var(--vd-bg)]"
-              />
+              <div className="h-[calc(100vh-340px)] min-h-[320px] rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-muted)]">
+                <iframe
+                  key={iframeKey}
+                  title={`Preview ${previewSlug}`}
+                  src={iframeSrc}
+                  loading="lazy"
+                  className="h-full w-full bg-[var(--vd-bg)]"
+                />
+              </div>
             ) : (
               <div className="flex flex-1 items-center justify-center text-sm text-[var(--vd-muted-fg)]">
                 Select a page to load a preview.
               </div>
             )}
-          </div>
+          </PreviewViewportShell>
         </div>
       </SheetContent>
     </Sheet>

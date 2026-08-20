@@ -7,5 +7,5 @@ type DemoContentWorkspaceProps = {
 };
 
 export function DemoContentWorkspace({ variant }: DemoContentWorkspaceProps) {
-  return <PagesIndex pages={demoContentPages} workArticles={demoContentWorkArticles} mode="demo" demoVariant={variant} />;
+  return <PagesIndex data={{ pages: demoContentPages, workArticles: demoContentWorkArticles }} mode="demo" demoVariant={variant} />;
 }
