@@ -553,8 +553,10 @@ export function WorkArticleEditorPotion({
         mediaQuery={mediaQuery}
         onMediaQueryChange={setMediaQuery}
         mediaLoading={mediaLoading}
+        mediaBusy={mediaBusy}
         mediaList={mediaList}
         onRefreshMedia={() => void loadWorkMedia()}
+        onUploadMedia={() => fileInputRef.current?.click()}
         onSelectMediaItem={handleSelectMediaItem}
         formatAssetLabel={inferAssetLabel}
       />

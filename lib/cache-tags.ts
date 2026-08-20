@@ -2,6 +2,7 @@ const normalizeSlug = (slug: string) => slug.trim().toLowerCase();
 
 export const pageTags = {
   content: 'pages:content',
+  redirects: 'pages:redirects',
   list: (includeEmpty?: boolean) => (includeEmpty ? 'pages:list:all' : 'pages:list'),
   published: (slug: string) => `page:published:${normalizeSlug(slug)}`,
   draft: (slug: string) => `page:draft:${normalizeSlug(slug)}`,
@@ -14,6 +15,13 @@ export const themeTags = {
   default: 'theme:default'
 };
 
+export const newsTags = {
+  content: 'news:content',
+  list: 'news:list',
+  cards: 'news:cards',
+  article: (slug: string) => `news:article:${normalizeSlug(slug)}`
+};
+
 // Backwards compatible cache tag map used by some older sites.
 // Prefer `pageTags` / `themeTags` for new code.
 export const cacheTags = {
@@ -21,6 +29,9 @@ export const cacheTags = {
   pagePublished: pageTags.published,
   pageDraft: pageTags.draft,
   pageRecord: pageTags.record,
+  newsContent: newsTags.content,
+  newsList: newsTags.list,
+  newsArticle: newsTags.article,
   theme: themeTags.current,
   themeDraft: themeTags.draft,
   themeDefault: themeTags.default,

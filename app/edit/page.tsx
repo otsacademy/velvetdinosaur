@@ -7,6 +7,8 @@ import { listPages } from '@/lib/pages';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { PagesIndex } from '@/components/edit/pages-index.client';
 import { getWorkArticlesForEdit } from '@/lib/work-articles.server';
+import { getNewsArticlesForEdit } from '@/lib/news-articles.server';
+import { getEventsForEdit } from '@/lib/events.server';
 
 type EditIndexProps = {
   searchParams?: Promise<{ slug?: string }> | { slug?: string };
@@ -30,7 +32,11 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
   }
 
   const pages = (await listPages()).filter((page) => !isSiteChromeSlug(page.slug));
-  const workArticles = await getWorkArticlesForEdit();
+  const [workArticles, newsArticles, events] = await Promise.all([
+    getWorkArticlesForEdit(),
+    getNewsArticlesForEdit(),
+    getEventsForEdit()
+  ]);
   const sessionEmail =
     (session as { user?: { email?: string | null } } | null)?.user?.email || null;
   const platformAdmin = isInstallerAdmin(sessionEmail);
@@ -45,6 +51,8 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
     <PagesIndex
       pages={serialPages}
       workArticles={workArticles}
+      newsArticles={newsArticles}
+      events={events}
       platformAdmin={platformAdmin}
     />
   );

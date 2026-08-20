@@ -36,8 +36,9 @@ export function parseFocalFromUrl(url?: string): FocalPoint {
       ? url
       : `http://localhost${url.startsWith('/') ? '' : '/'}${url}`;
     const parsed = new URL(normalized);
-    const focalX = clamp01(parsed.searchParams.get('focalX') ?? undefined);
-    const focalY = clamp01(parsed.searchParams.get('focalY') ?? undefined);
+    const hashParams = parsed.hash ? new URLSearchParams(parsed.hash.replace(/^#/, '')) : null;
+    const focalX = clamp01(parsed.searchParams.get('focalX') ?? hashParams?.get('focalX') ?? undefined);
+    const focalY = clamp01(parsed.searchParams.get('focalY') ?? hashParams?.get('focalY') ?? undefined);
     return { focalX, focalY };
   } catch {
     return {};

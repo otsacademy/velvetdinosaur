@@ -1,3 +1,5 @@
+import { cleanString } from '@/lib/string-sanitizer'
+
 const DEFAULT_AUTHOR_NAME = 'ASAP Staff'
 const DEFAULT_AUTHOR_IMAGE = '/images/asap-logo-trimmed.webp'
 
@@ -26,16 +28,40 @@ function isPlaceholderImage(value: string) {
   )
 }
 
+function decodeImageReference(value: string) {
+  try {
+    return decodeURIComponent(value)
+  } catch {
+    return value
+  }
+}
+
+function isDefaultAuthorLogoImage(value: string) {
+  const normalized = decodeImageReference(value).trim().toLowerCase()
+  if (!normalized) return false
+  if (normalized === DEFAULT_AUTHOR_IMAGE) return true
+  if (normalized === '/images/asap-logo.png' || normalized === '/images/asap-logo-wide.webp') return true
+
+  try {
+    const parsed = new URL(normalized, 'http://localhost')
+    const assetKey = parsed.searchParams.get('key')
+    const comparable = decodeImageReference(assetKey || parsed.pathname).toLowerCase()
+    return comparable.includes('asap') && comparable.includes('logo')
+  } catch {
+    return normalized.includes('asap') && normalized.includes('logo')
+  }
+}
+
 export function normalizeArticleAuthorName(value?: string | null) {
-  const raw = typeof value === 'string' ? normalizeWhitespace(value) : ''
+  const raw = normalizeWhitespace(cleanString(value))
   if (!raw) return DEFAULT_AUTHOR_NAME
   if (GENERIC_AUTHOR_NAMES.has(raw.toLowerCase())) return DEFAULT_AUTHOR_NAME
   return raw
 }
 
 export function normalizeArticleAuthorImage(value?: string | null) {
-  const raw = typeof value === 'string' ? value.trim() : ''
-  if (!raw || isPlaceholderImage(raw)) return DEFAULT_AUTHOR_IMAGE
+  const raw = cleanString(value)
+  if (!raw || isPlaceholderImage(raw) || isDefaultAuthorLogoImage(raw)) return DEFAULT_AUTHOR_IMAGE
   return raw
 }
 

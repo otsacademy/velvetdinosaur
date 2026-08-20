@@ -56,8 +56,8 @@ const HELP_STEPS: Array<{
   },
   {
     id: 'publish',
-    title: 'Save draft vs publish',
-    description: 'Save keeps changes in draft. Publish (or submit for approval) moves the article forward.',
+    title: 'Save vs publish',
+    description: 'Save stores the current article state. Publish or submit for approval moves it forward.',
     icon: Send,
   },
 ]

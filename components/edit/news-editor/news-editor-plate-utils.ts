@@ -60,6 +60,31 @@ function asLikelyImageUrl(value: unknown) {
   return ''
 }
 
+function createPlateNodeId() {
+  try {
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+      return crypto.randomUUID()
+    }
+  } catch {
+    // Fall back to a lightweight random id when Web Crypto is unavailable.
+  }
+
+  return `news-media-${Math.random().toString(36).slice(2, 10)}`
+}
+
+function normalizeCaption(value: unknown) {
+  if (typeof value === 'string') {
+    const trimmed = value.trim()
+    return trimmed ? [{ text: trimmed }] : undefined
+  }
+
+  if (Array.isArray(value)) {
+    return value as Array<PlateElementNode | PlateTextNode>
+  }
+
+  return undefined
+}
+
 function normalizeImageNode(node: PlateLegacyNode): PlateElementNode {
   const normalizedNode: PlateLegacyNode = {
     ...node,
@@ -86,8 +111,15 @@ function normalizeImageNode(node: PlateLegacyNode): PlateElementNode {
     }
 
     normalizedNode.type = 'img'
+    normalizedNode.id = typeof normalizedNode.id === 'string' && normalizedNode.id.trim() ? normalizedNode.id : createPlateNodeId()
     if (url) {
       normalizedNode.url = url
+    }
+    const normalizedCaption = normalizeCaption(normalizedNode.caption)
+    if (normalizedCaption) {
+      normalizedNode.caption = normalizedCaption
+    } else {
+      delete normalizedNode.caption
     }
     normalizedNode.children = asPlateChildren(normalizedNode.children)
     if (normalizedNode.children.length === 0) {
@@ -181,6 +213,7 @@ export function normalizeInitialNewsHeroImage(value?: string | null) {
 function buildHeroImageNode(article: Article, heroImage: string): PlateElementNode {
   const alt = article.title || 'Article image'
   const imageNode: PlateLegacyNode = {
+    id: createPlateNodeId(),
     type: 'img',
     url: heroImage,
     alt,
@@ -188,7 +221,7 @@ function buildHeroImageNode(article: Article, heroImage: string): PlateElementNo
   }
 
   if (article.imageCaption) {
-    imageNode.caption = article.imageCaption
+    imageNode.caption = [{ text: article.imageCaption }]
   }
 
   return normalizeImageNode(imageNode)

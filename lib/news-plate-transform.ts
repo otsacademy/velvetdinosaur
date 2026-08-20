@@ -1,4 +1,5 @@
 import type { ArticleSection } from '@/lib/articles'
+import { stripImagePresentationUrl } from '@/lib/media/image-presentation'
 
 type PlateNode = {
   type?: string
@@ -71,6 +72,61 @@ const INLINE_BODY_STARTERS = new Set([
 
 function asArray(value: unknown): PlateNode[] {
   return Array.isArray(value) ? (value as PlateNode[]) : []
+}
+
+function sanitizePlateNodes(value: unknown, options?: { fallback?: PlateNode[] }) {
+  if (!Array.isArray(value)) {
+    return options?.fallback ? [...options.fallback] : []
+  }
+
+  const sanitized = value
+    .map((node) => sanitizePlateNode(node))
+    .filter((node): node is PlateNode => Boolean(node))
+
+  if (sanitized.length > 0) {
+    return sanitized
+  }
+
+  return options?.fallback ? [...options.fallback] : []
+}
+
+function sanitizeCaptionValue(value: unknown) {
+  if (typeof value === 'string') {
+    const trimmed = value.trim()
+    return trimmed ? [{ text: trimmed }] : undefined
+  }
+
+  const sanitized = sanitizePlateNodes(value)
+  return sanitized.length > 0 ? sanitized : undefined
+}
+
+function sanitizePlateNode(value: unknown): PlateNode | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+
+  const node = { ...(value as PlateNode) }
+  const hasText = typeof node.text === 'string'
+  const hasType = typeof node.type === 'string'
+
+  if ('caption' in node) {
+    const caption = sanitizeCaptionValue(node.caption)
+    if (caption) {
+      node.caption = caption
+    } else {
+      delete node.caption
+    }
+  }
+
+  if (Array.isArray(node.children)) {
+    node.children = sanitizePlateNodes(node.children, {
+      fallback: hasText ? undefined : [{ text: '' }],
+    })
+  } else if (hasType && !hasText) {
+    node.children = [{ text: '' }]
+  } else {
+    delete node.children
+  }
+
+  return node
 }
 
 function normalizeNodeType(node: PlateNode) {
@@ -407,6 +463,44 @@ export function extractHeroImageFromPlate(raw: unknown): string | null {
   return getFirstMediaFromNodes(value) || null
 }
 
+function normalizeImageUrlForHeroCompare(value: unknown): string {
+  if (typeof value !== 'string') return ''
+  let url = stripImagePresentationUrl(value.trim())
+  if (!url) return ''
+  url = url.replace(/^https?:\/\/[^/]+/i, '')
+  try {
+    url = decodeURIComponent(url)
+  } catch {
+    // Keep the encoded form when the URL is malformed.
+  }
+  return url
+}
+
+export function plateNodeMatchesHeroImage(node: unknown, heroImage: string): boolean {
+  const hero = normalizeImageUrlForHeroCompare(heroImage)
+  if (!hero || !node || typeof node !== 'object' || Array.isArray(node)) return false
+
+  const candidate = node as PlateNode
+  const type = normalizeNodeType(candidate)
+  if (type !== 'img' && type !== 'image') return false
+
+  for (const key of IMAGE_URL_KEYS) {
+    const matched = normalizeImageUrlForHeroCompare(candidate[key])
+    if (matched && matched === hero) return true
+  }
+  return false
+}
+
+// The editor injects the hero image as the first body block for in-place editing.
+// Strip that copy back out so the hero is not rendered twice (layout hero + body).
+// Non-array content (legacy shapes) passes through unchanged.
+export function stripLeadingHeroImageNode<T>(raw: T, heroImage: string): T {
+  if (!Array.isArray(raw) || raw.length === 0) return raw
+  if (!normalizeImageUrlForHeroCompare(heroImage)) return raw
+  if (!plateNodeMatchesHeroImage(raw[0], heroImage)) return raw
+  return raw.slice(1) as T
+}
+
 function hasRenderableContent(section: ArticleSection) {
   return (
     section.paragraphs.length > 0 ||
@@ -419,7 +513,7 @@ function hasRenderableContent(section: ArticleSection) {
 
 export function normalizePlateValue(raw: unknown) {
   if (Array.isArray(raw) && raw.length > 0) {
-    return raw as PlateNode[]
+    return sanitizePlateNodes(raw, { fallback: DEFAULT_VALUE })
   }
 
   if (raw && typeof raw === 'object') {
@@ -428,7 +522,7 @@ export function normalizePlateValue(raw: unknown) {
 
     for (const envelope of envelopes) {
       if (Array.isArray(envelope) && envelope.length > 0) {
-        return envelope as PlateNode[]
+        return sanitizePlateNodes(envelope, { fallback: DEFAULT_VALUE })
       }
     }
   }

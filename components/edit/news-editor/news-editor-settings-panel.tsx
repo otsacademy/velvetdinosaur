@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element -- editor crop preview uses direct media URLs */
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { CollapsibleAssetField } from '@/components/edit/collapsible-asset-field'
+import { FocalPointPicker } from '@/components/edit/media-library/focal-point-picker.client'
 import { NewsEditorReadinessCard } from '@/components/edit/news-editor/news-editor-readiness-card'
 import { slugifyArticleTitle } from '@/lib/news-slug'
 import { cn } from '@/lib/utils'
@@ -16,7 +18,16 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Slider } from '@/components/ui/slider'
 import { Textarea } from '@/components/ui/textarea'
+import { focalToObjectPosition } from '@/lib/media/focal-point'
+import {
+  buildImagePresentationUrl,
+  DEFAULT_IMAGE_ZOOM,
+  parseImagePresentationFromUrl,
+  stripImagePresentationUrl,
+} from '@/lib/media/image-presentation'
+import { resolveAssetImageUrl } from '@/lib/uploads'
 import { DEFAULT_TAGS } from './news-editor-plate-utils'
 
 type SeoProviderInfo = {
@@ -211,12 +222,40 @@ export function NewsEditorSettingsPanel({
   const articleTooShort = wordCount > 0 && wordCount < 800
 
   const normalizedTags = useMemo(() => normalizeTags(tags), [tags])
+  const heroPresentation = useMemo(() => parseImagePresentationFromUrl(heroImage), [heroImage])
+  const heroObjectPosition = useMemo(() => focalToObjectPosition(heroPresentation), [heroPresentation])
+  const heroPreviewSrc = useMemo(() => {
+    const normalized = stripImagePresentationUrl(heroImage)
+    return normalized ? resolveAssetImageUrl(normalized) : ''
+  }, [heroImage])
   const missingTags = normalizedTags.length === 0
   const [tagInputValue, setTagInputValue] = useState('')
   const tagSuggestions = useMemo(() => {
     const defaults = [...DEFAULT_TAGS, tag]
     return normalizeTags(defaults).filter((option) => !normalizedTags.some((existing) => existing.toLowerCase() === option.toLowerCase()))
   }, [normalizedTags, tag])
+  const updateHeroPresentation = useCallback(
+    (next: { focalX?: number; focalY?: number; zoom?: number }) => {
+      if (!heroImage.trim()) return
+      onHeroImageChange(
+        buildImagePresentationUrl(heroImage, {
+          ...heroPresentation,
+          ...next,
+        }),
+      )
+    },
+    [heroImage, heroPresentation, onHeroImageChange],
+  )
+  const resetHeroPresentation = useCallback(() => {
+    if (!heroImage.trim()) return
+    onHeroImageChange(
+      buildImagePresentationUrl(heroImage, {
+        focalX: 0.5,
+        focalY: 0.5,
+        zoom: DEFAULT_IMAGE_ZOOM,
+      }),
+    )
+  }, [heroImage, onHeroImageChange])
 
   const requiredFieldItems = useMemo<RequiredFieldItem[]>(() => {
     return [
@@ -337,7 +376,10 @@ export function NewsEditorSettingsPanel({
       </CardHeader>
 
       <CardContent className="min-h-0 flex-1 p-0">
-        <ScrollArea className="h-full px-4 pb-6 pt-2">
+        <ScrollArea
+          className="h-full px-4 pb-6 pt-2"
+          viewportClassName="[&>div]:!block"
+        >
           <Accordion
             type="multiple"
             value={openSections}
@@ -509,6 +551,57 @@ export function NewsEditorSettingsPanel({
               <AccordionContent className="space-y-4">
                 <CollapsibleAssetField label="Hero image" value={heroImage} onChange={onHeroImageChange} />
 
+                {heroPreviewSrc ? (
+                  <div className="space-y-3 rounded-lg border border-border/60 bg-muted/15 p-3">
+                    <div className="space-y-2">
+                      <div className="relative aspect-video overflow-hidden rounded-lg border border-border bg-muted/30">
+                        <img
+                          src={heroPreviewSrc}
+                          alt="Hero crop preview"
+                          className="h-full w-full object-cover"
+                          style={{
+                            objectPosition: heroObjectPosition,
+                            transform: `scale(${heroPresentation.zoom})`,
+                            transformOrigin: heroObjectPosition,
+                          }}
+                        />
+                      </div>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <span>Hero crop preview</span>
+                        <span>{Math.round(heroPresentation.zoom * 100)}%</span>
+                      </div>
+                    </div>
+
+                    <FocalPointPicker
+                      imageUrl={heroPreviewSrc}
+                      focalX={heroPresentation.focalX}
+                      focalY={heroPresentation.focalY}
+                      onChange={({ focalX, focalY }) => updateHeroPresentation({ focalX, focalY })}
+                      onReset={resetHeroPresentation}
+                    />
+
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <Label className="text-xs uppercase tracking-[0.08em] text-muted-foreground">Zoom</Label>
+                        <span className="text-xs text-muted-foreground">{Math.round(heroPresentation.zoom * 100)}%</span>
+                      </div>
+                      <Slider
+                        value={[heroPresentation.zoom]}
+                        min={1}
+                        max={2}
+                        step={0.01}
+                        onValueChange={(value) => updateHeroPresentation({ zoom: value[0] })}
+                      />
+                    </div>
+
+                    <div className="flex justify-end">
+                      <Button type="button" variant="ghost" size="sm" onClick={resetHeroPresentation}>
+                        Reset crop
+                      </Button>
+                    </div>
+                  </div>
+                ) : null}
+
                 <div className="space-y-2">
                   <Label htmlFor="article-image-caption">Image caption</Label>
                   <Input
@@ -528,7 +621,7 @@ export function NewsEditorSettingsPanel({
                     id="article-author"
                     value={authorName}
                     onChange={(event) => onAuthorNameChange(event.target.value)}
-                    placeholder="Author name"
+                    placeholder="Editorial team"
                     readOnly={authorLocked}
                     disabled={authorLocked}
                   />

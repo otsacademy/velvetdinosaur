@@ -79,15 +79,15 @@ export interface Article {
   tag: string;
   tags?: string[];
   title: string;
-  subtitle?: string;
   desc: string;
-  website?: string;
-  outcome?: string;
   date: string;
   readTime?: string;
   imageCaption?: string;
   heroImage?: ArticleHeroImage;
   pageSpeedSnapshot?: ArticlePageSpeedSnapshot;
+  subtitle?: string;
+  website?: string;
+  outcome?: string;
   author: { img: string; name: string };
   authorUserId?: string | null;
   primaryChapterSlug?: string;
@@ -122,6 +122,35 @@ export interface Article {
   seoNeedsReview?: boolean;
   editorSettings?: NewsEditorDocumentSettings;
 }
+
+export type PublicNewsCard = Pick<
+  Article,
+  | 'slug'
+  | 'img'
+  | 'tag'
+  | 'tags'
+  | 'title'
+  | 'desc'
+  | 'date'
+  | 'readTime'
+  | 'imageCaption'
+  | 'author'
+  | 'authorUserId'
+  | 'primaryChapterSlug'
+  | 'primaryChapterName'
+  | 'chapterSlugs'
+  | 'chapterSnapshot'
+  | 'authorProfile'
+  | 'authorSnapshot'
+  | 'status'
+  | 'publishAt'
+  | 'openGraphTitle'
+  | 'openGraphDescription'
+  | 'openGraphImage'
+  | 'twitterTitle'
+  | 'twitterDescription'
+  | 'twitterImage'
+>;
 
 export const ALL_ARTICLES: Article[] = [
   {

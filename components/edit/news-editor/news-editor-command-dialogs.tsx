@@ -26,6 +26,8 @@ export type MediaAssetItem = {
   size?: number
   width?: number
   height?: number
+  focalX?: number
+  focalY?: number
   createdAt?: string
 }
 
@@ -40,8 +42,10 @@ type NewsEditorCommandDialogsProps = {
   mediaQuery: string
   onMediaQueryChange: (value: string) => void
   mediaLoading: boolean
+  mediaBusy: boolean
   mediaList: MediaAssetItem[]
   onRefreshMedia: () => void
+  onUploadMedia: () => void
   onSelectMediaItem: (item: MediaAssetItem) => void
   formatAssetLabel: (item: MediaAssetItem) => string
 }
@@ -57,8 +61,10 @@ export function NewsEditorCommandDialogs({
   mediaQuery,
   onMediaQueryChange,
   mediaLoading,
+  mediaBusy,
   mediaList,
   onRefreshMedia,
+  onUploadMedia,
   onSelectMediaItem,
   formatAssetLabel,
 }: NewsEditorCommandDialogsProps) {
@@ -94,20 +100,14 @@ export function NewsEditorCommandDialogs({
             <CommandList className="max-h-[380px]">
               <CommandEmpty>No commands found.</CommandEmpty>
               <CommandGroup heading="Media">
-                <CommandItem onSelect={() => onRunSlashCommand('upload-image')}>
-                  <ImageIcon className="h-4 w-4" /> Upload image to R2 (`{mediaFolder}`)
-                </CommandItem>
-                <CommandItem onSelect={() => onRunSlashCommand('pick-image')}>
-                  <ImageIcon className="h-4 w-4" /> Insert image from media gallery (`{mediaFolder}`)
+                <CommandItem onSelect={() => onRunSlashCommand('insert-image')}>
+                  <ImageIcon className="h-4 w-4" /> Add image from news media
                 </CommandItem>
                 <CommandItem onSelect={() => onRunSlashCommand('insert-video')}>
                   <Video className="h-4 w-4" /> Embed video URL (YouTube/Vimeo)
                 </CommandItem>
-                <CommandItem onSelect={() => onRunSlashCommand('upload-file')}>
-                  <Paperclip className="h-4 w-4" /> Upload attachment to R2 (`{mediaFolder}`)
-                </CommandItem>
-                <CommandItem onSelect={() => onRunSlashCommand('pick-file')}>
-                  <FileText className="h-4 w-4" /> Insert attachment from media gallery (`{mediaFolder}`)
+                <CommandItem onSelect={() => onRunSlashCommand('insert-file')}>
+                  <Paperclip className="h-4 w-4" /> Add attachment from news media
                 </CommandItem>
               </CommandGroup>
               <CommandSeparator />
@@ -169,11 +169,9 @@ export function NewsEditorCommandDialogs({
       <Dialog open={mediaPickerOpen} onOpenChange={onMediaPickerOpenChange}>
         <DialogContent className="max-w-3xl">
           <DialogHeader>
-            <DialogTitle>
-              {mediaPickerMode === 'image' ? `Insert image from ${mediaFolder} folder` : `Insert file from ${mediaFolder} folder`}
-            </DialogTitle>
+            <DialogTitle>{mediaPickerMode === 'image' ? 'Add image to article' : 'Add attachment to article'}</DialogTitle>
             <DialogDescription>
-              Assets shown here are from Cloudflare R2 folder <code>{mediaFolder}</code>.
+              Browse existing assets or upload a new one to Cloudflare R2 folder <code>{mediaFolder}</code>.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
@@ -189,7 +187,7 @@ export function NewsEditorCommandDialogs({
                   <Loader2 className="h-4 w-4 animate-spin" /> Loading assets...
                 </div>
               ) : mediaList.length === 0 ? (
-                <p className="px-2 py-3 text-sm text-muted-foreground">No matching assets in the {mediaFolder} folder.</p>
+                <p className="px-2 py-3 text-sm text-muted-foreground">No matching assets in the news folder.</p>
               ) : (
                 mediaList.map((item) => {
                   const label = formatAssetLabel(item)
@@ -213,14 +211,28 @@ export function NewsEditorCommandDialogs({
             </div>
 
             <div className="flex items-center justify-between">
-              <button
-                type="button"
-                className="inline-flex h-9 items-center rounded-md border border-border/60 px-3 text-sm hover:bg-muted"
-                onClick={onRefreshMedia}
-                disabled={mediaLoading}
-              >
-                Refresh
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  className="inline-flex h-9 items-center rounded-md border border-border/60 px-3 text-sm hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60"
+                  onClick={onUploadMedia}
+                  disabled={mediaBusy}
+                >
+                  {mediaBusy
+                    ? 'Uploading…'
+                    : mediaPickerMode === 'image'
+                      ? 'Upload image'
+                      : 'Upload attachment'}
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex h-9 items-center rounded-md border border-border/60 px-3 text-sm hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60"
+                  onClick={onRefreshMedia}
+                  disabled={mediaLoading || mediaBusy}
+                >
+                  Refresh
+                </button>
+              </div>
               <button
                 type="button"
                 className="inline-flex h-9 items-center rounded-md px-3 text-sm text-muted-foreground hover:bg-muted"

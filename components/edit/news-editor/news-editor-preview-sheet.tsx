@@ -42,7 +42,7 @@ export function NewsEditorPreviewSheet({
         <SheetHeader>
           <SheetTitle>{slug ? `Previewing /news/${slug}` : 'Preview'}</SheetTitle>
           <SheetDescription>
-            Draft preview shows the latest saved draft. Save to include unsaved edits.
+            Preview shows the latest saved version. Save to include unsaved edits.
           </SheetDescription>
         </SheetHeader>
 

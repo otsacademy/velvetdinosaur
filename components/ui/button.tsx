@@ -8,6 +8,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
+        destructive:
+          'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
         default: 'bg-[hsl(204,88%,40%)] text-white hover:bg-[hsl(204,88%,36%)]',
         secondary: 'bg-[var(--vd-secondary)] text-[var(--vd-secondary-fg)] hover:opacity-90',
         outline: 'border border-[var(--vd-border)] bg-transparent hover:bg-[var(--vd-muted)]',

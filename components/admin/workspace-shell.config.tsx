@@ -12,6 +12,7 @@ import {
   BookCopy,
   Briefcase,
   CalendarDays,
+  MailCheck,
   Send,
   Gauge,
   Inbox as InboxIcon,
@@ -58,7 +59,8 @@ export const NAV_GROUPS: SidebarNavGroup[] = [
     items: [
       { label: 'Inbox', href: '/edit/inbox', icon: InboxIcon },
       { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays },
-      { label: 'Newsletter', href: '/edit/newsletter', icon: Send, adminOnly: true }
+      { label: 'Newsletter', href: '/edit/newsletter', icon: Send, adminOnly: true },
+      { label: 'Event Outreach', href: '/edit/event-registrations', icon: MailCheck, adminOnly: true }
     ]
   },
   {

@@ -355,8 +355,6 @@ export function DemoNewsEditorClient({
     await runNewsSlashCommand({
       command,
       editor,
-      imageInputRef,
-      fileInputRef,
       openMediaPicker,
       insertVideoUrl: () => {
         const url = window.prompt('Paste a video URL', 'https://')?.trim();
@@ -564,7 +562,7 @@ export function DemoNewsEditorClient({
 
       <NewsEditorRightRail activePanel={rightRailPanel} onTogglePanel={(panel) => setRightRailPanel((current) => current === panel ? null : panel)} onOpenVersionHistory={() => setHistoryOpen(true)} historyItemCount={historyItems.length} saveStateLabel={saveStateMeta.label} settingsOpen={showSettings} className={cn(showSettings && 'xl:hidden')} />
       <NewsEditorPreviewSheet open={previewOpen} onOpenChange={setPreviewOpen} slug={previewSlug || null} previewMode={previewMode} onPreviewModeChange={setPreviewMode} canViewLive={hasLiveVersion} refreshToken={previewRefreshToken} onRefresh={() => setPreviewRefreshToken((current) => current + 1)} />
-      <NewsEditorCommandDialogs slashOpen={slashOpen} onSlashOpenChange={setSlashOpen} onRunSlashCommand={(command) => void runSlashCommand(command)} mediaPickerOpen={mediaPickerOpen} onMediaPickerOpenChange={setMediaPickerOpen} mediaPickerMode={mediaPickerMode} mediaFolder={NEWS_MEDIA_FOLDER} mediaQuery={mediaQuery} onMediaQueryChange={setMediaQuery} mediaLoading={mediaLoading} mediaList={mediaList} onRefreshMedia={() => void loadMedia()} onSelectMediaItem={onSelectMediaItem} formatAssetLabel={(item) => item.name || item.caption || item.key} />
+      <NewsEditorCommandDialogs slashOpen={slashOpen} onSlashOpenChange={setSlashOpen} onRunSlashCommand={(command) => void runSlashCommand(command)} mediaPickerOpen={mediaPickerOpen} onMediaPickerOpenChange={setMediaPickerOpen} mediaPickerMode={mediaPickerMode} mediaFolder={NEWS_MEDIA_FOLDER} mediaQuery={mediaQuery} onMediaQueryChange={setMediaQuery} mediaLoading={mediaLoading} mediaBusy={mediaBusy} mediaList={mediaList} onRefreshMedia={() => void loadMedia()} onUploadMedia={() => imageInputRef.current?.click()} onSelectMediaItem={onSelectMediaItem} formatAssetLabel={(item) => item.name || item.caption || item.key} />
 
       <DemoNewsEditorDialogs
         scheduleDialogOpen={scheduleDialogOpen}

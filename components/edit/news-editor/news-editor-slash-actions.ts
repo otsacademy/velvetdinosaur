@@ -1,6 +1,5 @@
 'use client'
 
-import type { RefObject } from 'react'
 import { insertCallout } from '@platejs/callout'
 import { insertCodeBlock } from '@platejs/code-block'
 import { insertDate } from '@platejs/date'
@@ -16,8 +15,6 @@ import type { MediaPickerMode } from '@/components/edit/news-editor/news-editor-
 type RunNewsSlashCommandArgs = {
   command: string
   editor: PlateEditor
-  imageInputRef: RefObject<HTMLInputElement | null>
-  fileInputRef: RefObject<HTMLInputElement | null>
   openMediaPicker: (mode: MediaPickerMode) => Promise<void>
   insertVideoUrl: () => void
   insertCommentBlock: () => void
@@ -26,8 +23,6 @@ type RunNewsSlashCommandArgs = {
 export async function runNewsSlashCommand({
   command,
   editor,
-  imageInputRef,
-  fileInputRef,
   openMediaPicker,
   insertVideoUrl,
   insertCommentBlock,
@@ -35,19 +30,11 @@ export async function runNewsSlashCommand({
   const focusEditor = () => editor.tf.focus()
 
   switch (command) {
-    case 'upload-image': {
-      imageInputRef.current?.click()
-      return
-    }
-    case 'pick-image': {
+    case 'insert-image': {
       await openMediaPicker('image')
       return
     }
-    case 'upload-file': {
-      fileInputRef.current?.click()
-      return
-    }
-    case 'pick-file': {
+    case 'insert-file': {
       await openMediaPicker('file')
       return
     }
