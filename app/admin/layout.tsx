@@ -5,6 +5,7 @@ import { ThemeRootClient } from '@/components/theme/theme-root-client';
 import { DisableThemeTypography } from '@/components/theme/disable-typography';
 import { Toaster } from '@/components/ui/sonner';
 import { ChunkReloadGuard } from '@/components/edit/chunk-reload-guard.client';
+import { AdminWorkspaceShell } from '@/components/admin/admin-workspace-shell.client';
 import { getThemePayload } from '@/lib/theme';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -23,7 +24,7 @@ async function AdminLayoutContent({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeRootClient initialPayload={payload} storageKey={storageKey}>
-      {children}
+      <AdminWorkspaceShell>{children}</AdminWorkspaceShell>
       <ChunkReloadGuard />
       <DisableThemeTypography />
       <Toaster />

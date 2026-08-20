@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
-import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -107,7 +106,6 @@ export function DashboardView({ dashboard }: Props) {
               <p className="mt-1 text-sm text-[var(--vd-muted-fg)]">{dashboard.description}</p>
             </div>
           </div>
-          <AdminRouteNav current="observability" />
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap gap-2">
               {dashboard.tags.map((tag) => (

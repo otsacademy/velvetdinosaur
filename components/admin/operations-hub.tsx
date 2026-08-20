@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ArrowUpRight, BellRing, Gauge, PencilLine, Radar } from 'lucide-react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
-import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { Badge } from '@/components/ui/badge';
 
 const destinations = [
@@ -46,7 +45,6 @@ export function OperationsHub() {
               Operational status, monitoring, alerts, and content tools in one protected workspace.
             </p>
           </div>
-          <AdminRouteNav current="admin" />
         </div>
       }
     >

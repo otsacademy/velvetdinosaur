@@ -39,11 +39,17 @@ async function stabilize(page: Page) {
 }
 
 test.describe('protected administration', () => {
-  test('admin hub links to the native fleet surface', async ({ page }) => {
+  test('admin hub links to the native fleet surface', async ({ page }, testInfo) => {
     await page.goto('/admin', { waitUntil: 'domcontentloaded' });
     await expect(page.getByRole('heading', { name: 'Administration', level: 1 })).toBeVisible();
     await expect(page.getByRole('link', { name: /Fleet status/ })).toHaveAttribute('href', '/admin/fleet');
-    await expect(page.getByRole('navigation', { name: 'Administration' })).toBeVisible();
+    // Admin navigation now lives in the shared workspace shell: a labeled
+    // sidebar on desktop, behind the menu trigger on mobile.
+    if (testInfo.project.name === 'mobile') {
+      await expect(page.getByRole('button', { name: 'Open admin navigation' })).toBeVisible();
+    } else {
+      await expect(page.getByRole('navigation', { name: 'Admin navigation' }).first()).toBeVisible();
+    }
   });
 
   test('fleet is read-only, complete, filterable, and server proxied', async ({ page }) => {
@@ -68,10 +74,12 @@ test.describe('protected administration', () => {
     expect(viewportFit.scrollWidth).toBeLessThanOrEqual(viewportFit.clientWidth);
 
     await settleAfterHydration(page);
+    // First Tab lands on the workspace shell's skip link, which jumps past the
+    // sidebar to the content region.
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'Skip to admin content' })).toBeFocused();
+    await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
     await page.keyboard.press('Enter');
-    await expect(page.locator('#admin-main-content')).toBeFocused();
+    await expect(page.locator('#workspace-content')).toBeFocused();
 
     const firstSubject = page.locator('details').first();
     await expect(firstSubject).not.toHaveAttribute('open', '');

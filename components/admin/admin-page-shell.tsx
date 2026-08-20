@@ -15,9 +15,9 @@ export function AdminPageShell({ header, children }: AdminPageShellProps) {
         Skip to admin content
       </a>
       <div className="sticky top-0 z-30 border-b border-[var(--vd-border)] bg-[var(--vd-bg)]/95 backdrop-blur">
-        <div className="container py-5">{header}</div>
+        <div className="mx-auto w-full max-w-[1280px] px-4 py-5 sm:px-6">{header}</div>
       </div>
-      <div id="admin-main-content" className="container space-y-8 py-8" tabIndex={-1}>
+      <div id="admin-main-content" className="mx-auto w-full max-w-[1280px] space-y-8 px-4 py-8 sm:px-6" tabIndex={-1}>
         {children}
       </div>
     </main>

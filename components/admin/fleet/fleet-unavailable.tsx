@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { RefreshCw, ShieldAlert } from 'lucide-react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
-import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { Button } from '@/components/ui/button';
 import type { FleetStatusErrorCode } from '@/lib/fleet/client';
 
@@ -24,7 +23,6 @@ export function FleetUnavailable({ code }: { code: FleetStatusErrorCode }) {
             <h1 className="text-3xl font-black tracking-tight text-[var(--vd-fg)]">Fleet status</h1>
             <p className="mt-1 text-sm text-[var(--vd-muted-fg)]">The protected status view is temporarily unavailable.</p>
           </div>
-          <AdminRouteNav current="fleet" />
         </div>
       }
     >

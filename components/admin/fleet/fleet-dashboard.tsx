@@ -9,7 +9,6 @@ import {
   Unplug
 } from 'lucide-react';
 import { AdminPageShell } from '@/components/admin/admin-page-shell';
-import { AdminRouteNav } from '@/components/admin/admin-route-nav';
 import { FleetFieldsTable } from '@/components/admin/fleet/fleet-fields-table';
 import {
   BlockersTable,
@@ -177,7 +176,6 @@ export function FleetDashboard({ view, query }: FleetDashboardProps) {
               </Link>
             </Button>
           </div>
-          <AdminRouteNav current="fleet" />
         </div>
       }
     >

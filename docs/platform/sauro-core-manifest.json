@@ -42,6 +42,7 @@
   },
   "rules": [
     { "pattern": "components/admin/suaro-cms-badge.tsx", "role": "legacy", "note": "misspelled predecessor of core sauro-cms-badge.tsx (ra, pyanal, thebrave lineage)" },
+    { "pattern": "components/admin/workspace-shell.config.tsx", "role": "site-owned", "owners": ["asap", "velvetdinosaur", "ra", "pyanal", "thebrave", "ots-sauro-poc", "template"], "note": "per-site brand/nav config consumed by the core workspace shell (extracted 2026-08-20)" },
 
     { "pattern": "app/admin/fleet/**", "role": "site-owned", "owners": ["velvetdinosaur"], "note": "fleet dashboard routes" },
     { "pattern": "components/admin/fleet/**", "role": "site-owned", "owners": ["velvetdinosaur"] },
