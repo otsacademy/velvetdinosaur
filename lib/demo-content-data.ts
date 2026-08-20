@@ -1,4 +1,5 @@
-import type { PageRow, WorkArticleRow } from '@/components/edit/pages-index-types';
+import type { PageRow } from '@/components/edit/pages-index-types';
+import type { WorkArticleRow } from '@/components/edit/work-content-types';
 
 export const demoContentPages: PageRow[] = [
   {

@@ -5,7 +5,7 @@ import { Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { EditIndexPagination } from '@/components/edit/edit-index-pagination';
 import { EditIndexWorkTable } from '@/components/edit/edit-index-work-table';
-import type { WorkArticleRow } from '@/components/edit/pages-index-types';
+import type { WorkArticleRow } from '@/components/edit/work-content-types';
 import {
   EDIT_INDEX_ITEMS_PER_PAGE,
   type ContentTabDescriptor,

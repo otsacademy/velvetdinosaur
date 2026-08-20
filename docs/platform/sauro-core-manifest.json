@@ -118,6 +118,42 @@
       "note": "VD work (case studies) tab registration"
     },
     {
+      "pattern": "components/edit/work-content-types.ts",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ],
+      "note": "VD work-tab row types"
+    },
+    {
+      "pattern": "app/admin/page.tsx",
+      "role": "site-owned",
+      "owners": [
+        "asap",
+        "velvetdinosaur",
+        "ra",
+        "pyanal",
+        "thebrave",
+        "ots-sauro-poc",
+        "template"
+      ],
+      "note": "each site's admin landing (VD: operations hub; ASAP: redirect to /edit)"
+    },
+    {
+      "pattern": "components/admin/theme/theme-presets.json",
+      "role": "site-owned",
+      "owners": [
+        "asap",
+        "velvetdinosaur",
+        "ra",
+        "pyanal",
+        "thebrave",
+        "ots-sauro-poc",
+        "template"
+      ],
+      "note": "shared preset library plus per-site brand presets"
+    },
+    {
       "pattern": "app/admin/fleet/**",
       "role": "site-owned",
       "owners": [

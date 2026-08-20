@@ -44,18 +44,3 @@ export type EventSortKey = 'updated-desc' | 'start-asc' | 'title-asc' | 'status-
 export type ViewMode = 'grid' | 'list';
 
 export type ContentTab = 'pages' | 'news' | 'events';
-
-// Site-owned content-type rows kept alongside the core types until the
-// content-registry refactor moves them into site config.
-export type WorkArticleRow = {
-  slug: string;
-  title: string;
-  tag: string;
-  authorName: string;
-  status: 'draft' | 'scheduled' | 'published';
-  date: string;
-  updatedAt?: string | null;
-  pendingPublishRequestedAt?: string | null;
-};
-
-export type SectionKey = 'stays' | 'pages' | 'text' | 'work' | 'news' | 'events';

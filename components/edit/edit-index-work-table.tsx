@@ -24,7 +24,8 @@ import {
   TableRow,
 } from '@/registry/new-york-v4/ui/table'
 import { cn } from '@/lib/utils'
-import type { ViewMode, WorkArticleRow } from '@/components/edit/pages-index-types'
+import type { ViewMode } from '@/components/edit/pages-index-types'
+import type { WorkArticleRow } from '@/components/edit/work-content-types'
 
 type EditIndexWorkTableProps = {
   articles: WorkArticleRow[]
