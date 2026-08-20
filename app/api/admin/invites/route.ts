@@ -56,7 +56,7 @@ export async function POST(request: Request) {
   const role = (body?.role as 'user' | 'admin' | undefined) || 'user';
   const sendEmail = body?.sendEmail !== false;
   const greeting =
-    typeof body?.greeting === 'string' && body.greeting.trim() ? body.greeting.trim() : 'Hello';
+    typeof body?.greeting === 'string' && body.greeting.trim() ? body.greeting.trim() : undefined;
 
   if (!email) {
     return NextResponse.json({ error: 'Email is required' }, { status: 400 });
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
         email,
         inviteUrl,
         siteName: process.env.NEXT_PUBLIC_SITE_NAME || process.env.SITE_NAME,
-        greeting
+        firstName: greeting
       });
       emailSent = true;
     } catch (error) {

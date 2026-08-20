@@ -12,6 +12,7 @@ import {
   BookCopy,
   Briefcase,
   CalendarDays,
+  Send,
   Gauge,
   Inbox as InboxIcon,
   Image as ImageIcon,
@@ -49,14 +50,15 @@ export const LIVE_SITE_HREF = '/';
 /** Where the sidebar brand mark links to. */
 export const BRAND_HOME_HREF = '/edit';
 /** Routes that imply admin-level nav visibility even before the profile loads. */
-export const FORCE_ADMIN_ROUTES = ['/admin', '/edit/contact-templates'];
+export const FORCE_ADMIN_ROUTES = ['/admin', '/edit/newsletter', '/edit/contact-templates'];
 
 export const NAV_GROUPS: SidebarNavGroup[] = [
   {
     label: 'Workspace',
     items: [
       { label: 'Inbox', href: '/edit/inbox', icon: InboxIcon },
-      { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays }
+      { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays },
+      { label: 'Newsletter', href: '/edit/newsletter', icon: Send, adminOnly: true }
     ]
   },
   {

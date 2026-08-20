@@ -133,9 +133,7 @@ export function EmailSignature({ siteName }: EmailSignatureProps) {
     <Text style={styles.signature}>
       Best,
       <br />
-      <strong>The ASAP Global Team</strong>
-      <br />
-      {siteName}
+      <strong>The {siteName} team</strong>
     </Text>
   );
 }

@@ -1,3 +1,6 @@
+import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { render } from '@react-email/render';
+
 type ContactTemplateValues = {
   name?: string | null;
   email: string;
@@ -23,19 +26,24 @@ function normalizeValue(value?: string | null) {
 }
 
 export async function defaultContactEmailTemplates() {
-  const { renderToStaticMarkup } = await import('react-dom/server');
   const { ContactEnquiryEmail } = await import('@/components/email/contact-enquiry-email');
-  const html = renderToStaticMarkup(
+  const appName = resolveSiteName();
+  const appUrl = resolveDefaultAppUrl();
+  const logoUrl = resolveLogoUrl(undefined, appUrl);
+  const html = await render(
     ContactEnquiryEmail({
       name: '{{name}}',
       email: '{{email}}',
       topic: '{{topic}}',
       message: '{{message}}',
-      sentAt: '{{sentAt}}'
+      sentAt: '{{sentAt}}',
+      appName,
+      appUrl,
+      logoUrl
     })
   );
   const text = [
-    'New contact enquiry',
+    'You have received a new contact enquiry from the Academics Stand Against Poverty website.',
     '',
     'Name: {{name}}',
     'Email: {{email}}',
@@ -44,7 +52,9 @@ export async function defaultContactEmailTemplates() {
     'Message:',
     '{{message}}',
     '',
-    'Received: {{sentAt}}'
+    'Received: {{sentAt}}',
+    '',
+    'Reply directly to this email to respond to the sender.'
   ].join('\n');
   return { html, text };
 }
