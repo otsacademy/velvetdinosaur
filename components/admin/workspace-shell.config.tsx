@@ -13,6 +13,7 @@ import {
   Briefcase,
   CalendarDays,
   MailCheck,
+  MessageSquare,
   Send,
   Gauge,
   Inbox as InboxIcon,
@@ -21,7 +22,10 @@ import {
   LayoutGrid,
   Palette,
   Radar,
-  Store
+  Store,
+  UserCog,
+  Users,
+  Workflow
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -89,7 +93,19 @@ export const NAV_GROUPS: SidebarNavGroup[] = [
   },
   {
     label: 'Admin',
-    items: [{ label: 'Email Templates', href: '/edit/contact-templates', icon: BookCopy, adminOnly: true }]
+    items: [
+      {
+        label: 'Reviews',
+        href: '/edit/reviews',
+        icon: MessageSquare,
+        pathPrefixes: ['/admin/review-links'],
+        adminOnly: true
+      },
+      { label: 'Invite Reviewers', href: '/admin/review-links', icon: Users, adminOnly: true, requiresReviewModeAccess: true },
+      { label: 'Users & Invitations', href: '/admin/users', icon: UserCog, adminOnly: true },
+      { label: 'Approvals', href: '/admin/approvals', icon: Workflow, adminOnly: true },
+      { label: 'Email Templates', href: '/edit/contact-templates', icon: BookCopy, adminOnly: true }
+    ]
   }
 ];
 

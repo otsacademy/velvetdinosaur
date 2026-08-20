@@ -13,12 +13,33 @@ import { storeBlocks } from '@/components/blocks/store';
 
 type PageDoc = {
   slug: string;
+  path?: string;
   title?: string;
   data?: unknown;
   draftData?: unknown;
   publishedData?: unknown;
   draftUpdatedAt?: Date;
   publishedAt?: Date;
+  primaryChapterSlug?: string | null;
+  chapterSlugs?: string[] | null;
+  createdByUserId?: string | null;
+  updatedByUserId?: string | null;
+  pendingPublishRequest?: {
+    requestId?: string | null;
+    baseRevision?: number | null;
+    requestedAt?: Date | null;
+    requestedByUserId?: string | null;
+    requestedByEmail?: string | null;
+    requestedByName?: string | null;
+  } | null;
+  revision?: number;
+  lastRejection?: {
+    reason?: string | null;
+    rejectedAt?: Date | null;
+    rejectedByUserId?: string | null;
+    rejectedByEmail?: string | null;
+    rejectedByName?: string | null;
+  } | null;
   status?: string;
   updatedAt?: Date;
 };
@@ -255,7 +276,29 @@ export async function saveDraftPageData(slug: string, draftData: unknown) {
   return Page.create({ slug, draftData, draftUpdatedAt: new Date(), status: 'draft' });
 }
 
-export async function publishDraftPageData(slug: string) {
+function normalizePageRevision(value: unknown) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 1 ? value : 1;
+}
+
+function assertPublishRequestFresh(
+  existing: Pick<PageDoc, 'pendingPublishRequest' | 'revision'>,
+  options?: { expectedRequestId?: string | null; expectedBaseRevision?: number | null }
+) {
+  if (!options?.expectedRequestId) return;
+  if (
+    existing.pendingPublishRequest?.requestId !== options.expectedRequestId ||
+    normalizePageRevision(existing.pendingPublishRequest?.baseRevision) !==
+      normalizePageRevision(options.expectedBaseRevision)
+  ) {
+    throw new Error('Page approval request is stale');
+  }
+}
+
+export async function publishDraftPageData(
+  slug: string,
+  actorUserId?: string | null,
+  options?: { expectedRequestId?: string | null; expectedBaseRevision?: number | null }
+) {
   const conn = await connectDB();
   if (!conn) {
     if (smokePages) {
@@ -263,6 +306,7 @@ export async function publishDraftPageData(slug: string) {
       if (!existing) {
         throw new Error('Page not found');
       }
+      assertPublishRequestFresh(existing, options);
       const fallback = existing.draftData ?? existing.publishedData ?? existing.data;
       if (!fallback) {
         throw new Error('No draft to publish');
@@ -273,6 +317,10 @@ export async function publishDraftPageData(slug: string) {
         publishedData: fallback,
         publishedAt: now,
         updatedAt: now,
+        revision: normalizePageRevision(existing.revision) + 1,
+        updatedByUserId: actorUserId ?? existing.updatedByUserId ?? null,
+        pendingPublishRequest: null,
+        lastRejection: null,
         status: 'published'
       };
       smokePages.set(slug, next);
@@ -284,6 +332,7 @@ export async function publishDraftPageData(slug: string) {
   if (!existing) {
     throw new Error('Page not found');
   }
+  assertPublishRequestFresh(existing, options);
   if (!existing.draftData) {
     // Backward-compatible: allow publishing legacy `data` or already-published pages.
     const fallback = existing.publishedData ?? existing.data;
@@ -296,6 +345,15 @@ export async function publishDraftPageData(slug: string) {
   }
   existing.publishedAt = new Date();
   existing.status = 'published';
+  existing.revision = normalizePageRevision(existing.revision) + 1;
+  existing.pendingPublishRequest = null;
+  existing.lastRejection = null;
+  if (actorUserId) {
+    existing.updatedByUserId = actorUserId;
+    if (!existing.createdByUserId) {
+      existing.createdByUserId = actorUserId;
+    }
+  }
   await existing.save();
   return existing;
 }

@@ -2,13 +2,12 @@ import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { getUserRole, roleIsAdmin } from '@/lib/roles';
+import { canManageReviewMode } from '@/lib/review/review-mode-access';
 
 /**
  * Minimal account profile endpoint backing the admin workspace shell
  * (admin-workspace-shell.client.tsx fetches it to decide nav visibility).
- * The full profile workspace arrives with the users/accounts adoption wave;
- * until then this site has no review-mode machinery, so canManageReviewMode
- * is always false.
+ * The full profile workspace arrives with the accounts adoption wave.
  */
 export async function GET(request: Request) {
   unstable_noStore();
@@ -27,6 +26,6 @@ export async function GET(request: Request) {
     displayName: user.name ?? null,
     email: user.email ?? null,
     isAdmin: roleIsAdmin(role),
-    canManageReviewMode: false
+    canManageReviewMode: canManageReviewMode(user.email ?? null, request.url)
   });
 }

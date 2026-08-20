@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: request.headers });
   const userId = (session as { user?: { id?: string } } | null)?.user?.id || null;
-  if (!session || !(await requireAdmin(userId))) {
+  if (!session || !(await requireAdmin(userId, session?.user?.email ?? null))) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
