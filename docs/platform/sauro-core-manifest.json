@@ -91,6 +91,11 @@
       "note": "per-site brand/nav config consumed by the core workspace shell (extracted 2026-08-20)"
     },
     {
+      "pattern": "components/edit/pages-index-metadata.site.ts",
+      "role": "site-owned",
+      "note": "per-site slug decoration map + prefix hook for the core pages index"
+    },
+    {
       "pattern": "components/edit/edit-index.config.tsx",
       "role": "site-owned",
       "owners": [

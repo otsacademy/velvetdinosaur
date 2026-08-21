@@ -182,7 +182,7 @@ export function EditIndexTable({
                   </Badge>
                 </TableCell>
                 <TableCell className="py-4 align-top">
-                  <p className="text-xs text-[var(--vd-muted-fg)]">{lastUpdated || 'Not updated yet'}</p>
+                  <p className="text-xs text-[var(--vd-muted-fg)]">{lastUpdated || '\u2014'}</p>
                 </TableCell>
                 <TableCell className="py-4 align-top">
                   <div className="flex items-center justify-end gap-2">
