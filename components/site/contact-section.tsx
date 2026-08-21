@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What happens after the first year?",
     answer:
-      "Performance and security maintenance is £250/year after Year 1. Domain renewal is separate and procured at cost price. You can keep ongoing support if you want it, or run the site independently with full access and handover documentation.",
+      "Nothing changes and nothing surprises you: it stays £100 a month, and after your first 12 months you're free to leave at any time with 30 days' notice. Hosting, security, updates, email, and content changes are all still included — there are no year-two fees to discover.",
   },
   {
     question: "Can I move my site elsewhere later?",

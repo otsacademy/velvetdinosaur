@@ -17,7 +17,7 @@ const HERO_BADGES = [
   "One friendly human, start to finish",
 ] as const
 
-const HERO_META = ["From £3,500, fixed before we start", "2–6 week delivery", "Oxfordshire, UK"] as const
+const HERO_META = ["£100 a month, everything included", "Built free before you decide", "Oxfordshire, UK"] as const
 
 function riseProps(animate: boolean, delayMs: number) {
   return {
