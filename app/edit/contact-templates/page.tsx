@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { AccessNotice } from '@/components/admin/access-notice';
 import Link from 'next/link';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -24,7 +25,7 @@ async function ContactTemplatesContent() {
   }
   const user = (session as { user?: { id?: string; email?: string } } | null)?.user;
   if (!(await requireAdmin(user?.id || null, user?.email || null))) {
-    redirect('/edit');
+    return <AccessNotice workspace="Email Templates" />;
   }
 
   const templates = await getSystemEmailTemplateEditorState();

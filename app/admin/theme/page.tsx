@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { AccessNotice } from '@/components/admin/access-notice';
 import { redirect } from 'next/navigation';
 import { Render } from '@puckeditor/core/rsc';
 import { getAuth } from '@/lib/auth';
@@ -20,14 +21,7 @@ export default async function ThemePage({
   const userId = (session as { user?: { id?: string } } | null)?.user?.id || null;
   const role = await getUserRole(userId);
   if (role !== 'admin' && role !== 'user') {
-    return (
-      <main className="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-4 px-6 py-10">
-        <h1 className="text-xl font-semibold">Theme Editor</h1>
-        <p className="text-sm text-[var(--vd-muted-fg)]">
-          Your account does not have access to the Theme Editor.
-        </p>
-      </main>
-    );
+    return <AccessNotice workspace="the Theme Editor" />;
   }
 
   const resolvedSearchParams = searchParams ? await searchParams : undefined;

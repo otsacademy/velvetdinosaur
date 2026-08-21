@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { AccessNotice } from '@/components/admin/access-notice';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
 import { requireAdmin } from '@/lib/roles';
@@ -15,7 +16,7 @@ export default async function ApprovalsPage() {
   }
 
   if (!(await requireAdmin(userId, user?.email || null))) {
-    redirect('/edit');
+    return <AccessNotice workspace="Publish Approvals" />;
   }
 
   return (

@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { AccessNotice } from '@/components/admin/access-notice';
 import { redirect } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
 import { AdminWorkspaceShell } from '@/components/admin/admin-workspace-shell.client';
@@ -20,7 +21,7 @@ export default async function EditEventRegistrationsPage() {
   }
 
   if (!(await requireAdmin(userId, userEmail))) {
-    redirect('/edit');
+    return <AccessNotice workspace="Event Outreach" />;
   }
 
   return (

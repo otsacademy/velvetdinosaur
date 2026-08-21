@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { AccessNotice } from '@/components/admin/access-notice';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { getAuth } from '@/lib/auth';
@@ -42,7 +43,7 @@ export default async function ReviewLinksPage() {
     redirect('/sign-in?next=/admin/review-links');
   }
   if (!(await requireAdmin(userId, user?.email || null))) {
-    redirect('/edit');
+    return <AccessNotice workspace="Review Links" />;
   }
   if (!canManageReviewMode(user?.email || null)) {
     redirect('/edit');
