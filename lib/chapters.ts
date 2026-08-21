@@ -51,7 +51,7 @@ export function normalizeChapterSlugs(values: unknown, primaryChapterSlug?: unkn
   return normalized
 }
 
-export function getChapterName(slug: string) {
+export function getChapterName(slug?: string | null) {
   const normalized = normalizeChapterSlug(slug)
   return normalized ? titleCase(normalized) : ''
 }

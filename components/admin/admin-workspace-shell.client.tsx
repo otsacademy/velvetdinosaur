@@ -3,7 +3,7 @@
 import { Fragment, Suspense, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronRight, ExternalLink, LifeBuoy, Menu } from 'lucide-react';
+import { ChevronRight, ExternalLink, Menu } from 'lucide-react';
 import { SessionControls } from '@/components/auth/session-controls.client';
 import { SauroCmsBadge } from '@/components/admin/sauro-cms-badge';
 import { AdminReviewModeSwitch } from '@/components/review/admin-review-mode-switch.client';
@@ -382,17 +382,10 @@ export function AdminWorkspaceShell({ children }: { children: React.ReactNode })
                 <BreadcrumbBar pathname={pathname} currentEditTab={currentEditTab} navGroups={navGroups} />
               </div>
               <div className="hidden md:flex md:items-center md:gap-2">
-                {canSeeAdminNav ? (
-                  <Button variant="ghost" size="sm" asChild className="h-8 rounded-full px-2.5">
-                    <Link href="/edit/support" prefetch={false}>
-                      <SauroCmsBadge compact />
-                      <LifeBuoy className="h-3.5 w-3.5 opacity-80" />
-                      <span className="text-xs">Customer Portal</span>
-                    </Link>
-                  </Button>
-                ) : (
-                  <SauroCmsBadge />
-                )}
+                {/* The badge is product identity, not navigation — the support
+                    workspace is reachable from the sidebar for those with
+                    access, so the header shows the same chrome to everyone. */}
+                <SauroCmsBadge />
               </div>
               <div className="hidden items-center gap-2 lg:flex">
                 <Button variant="outline" size="sm" asChild>
