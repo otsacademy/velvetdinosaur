@@ -67,6 +67,8 @@ export type PuckEditorShellProps = {
   themePanel?: React.ReactNode;
   settingsPanel?: React.ReactNode;
   onClose: () => void;
+  /** Optional site extras rendered at the end of the header action row. */
+  headerExtra?: React.ReactNode;
   closeLabel?: string;
   saveDisabled?: boolean;
   publishDisabled?: boolean;
@@ -97,6 +99,7 @@ export function PuckEditorShell({
   themePanel,
   settingsPanel,
   onClose,
+  headerExtra,
   closeLabel = 'Back to dashboard',
   saveDisabled,
   publishDisabled,
@@ -298,6 +301,7 @@ export function PuckEditorShell({
               <ArrowLeft className="h-4 w-4" />
               {closeLabel}
             </Button>
+            {headerExtra}
             <SessionControls variant="inline" showAccountLink={false} className="hidden lg:flex" />
           </div>
         </div>

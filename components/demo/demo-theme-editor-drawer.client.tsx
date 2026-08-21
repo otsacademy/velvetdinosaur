@@ -25,12 +25,21 @@ export function DemoThemeEditorDrawer({
   const pages = [{ slug: initialSlug, title: formatPageLabel(initialSlug) }];
 
   return (
-    // Demo reconciliation TODO: the converged ThemeEditorView handles
-    // save/publish/reset internally, so the demo interception props are gone;
-    // restore demo behaviour via a core demo-mode seam before deploy.
     <ThemeEditorView
       pages={pages}
       selectedSlug={initialSlug}
+      actions={{
+        saveDraft: async () => {
+          toast.info('This is a live demonstration, so theme changes are not saved.');
+        },
+        publish: async () => {
+          toast.info('Publishing is unavailable in this demonstration.');
+        },
+        reset: async () => {
+          toast.success('The demonstration theme has been reset.');
+          return { payload: initialPayload ?? null };
+        }
+      }}
     >
       <main className="mx-auto w-full max-w-[1500px] space-y-16 px-8 py-12">
         <Render config={editorConfig} data={previewData} />

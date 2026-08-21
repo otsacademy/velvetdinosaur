@@ -32,11 +32,20 @@ type PageOption = {
   title?: string | null;
 };
 
+export type ThemeEditorActions = {
+  /** Overrides take full responsibility for UX (toasts) when provided. */
+  saveDraft?: () => Promise<void>;
+  publish?: () => Promise<{ payload?: ThemeStatePayload | null } | void>;
+  reset?: () => Promise<{ payload?: ThemeStatePayload | null } | void>;
+};
+
 type ThemeEditorViewProps = {
   pages: PageOption[];
   selectedSlug: string;
   onPageChange?: (slug: string) => void;
   children: React.ReactNode;
+  /** Demo-capable sites intercept persistence here; unset = live API calls. */
+  actions?: ThemeEditorActions;
 };
 
 type ThemeState = {
@@ -118,7 +127,7 @@ function mergePresetStyles(
   };
 }
 
-export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }: ThemeEditorViewProps) {
+export function ThemeEditorView({ pages, selectedSlug, onPageChange, children, actions }: ThemeEditorViewProps) {
   const router = useRouter();
   const themeState = useEditorStore((state) => state.themeState);
   const setThemeState = useEditorStore((state) => state.setThemeState);
@@ -283,6 +292,11 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   const handleSave = async () => {
     setSaving(true);
     try {
+      if (actions?.saveDraft) {
+        await actions.saveDraft();
+        saveThemeCheckpoint();
+        return;
+      }
       const rawPayload = buildPayload(themeState as ThemeState);
       const payload = normalizeThemePayloadToOklch(rawPayload, { strict: true }) as ThemeStatePayload;
       await requestJson('/api/theme/draft', {
@@ -302,6 +316,11 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   const handlePublish = async () => {
     setPublishing(true);
     try {
+      if (actions?.publish) {
+        const result = await actions.publish();
+        if (result?.payload) applyPayload(result.payload as ThemeStatePayload);
+        return;
+      }
       const response = await requestJson('/api/theme/publish', { method: 'POST' });
       if (response?.payload) {
         applyPayload(response.payload as ThemeStatePayload);
@@ -318,6 +337,11 @@ export function ThemeEditorView({ pages, selectedSlug, onPageChange, children }:
   const handleReset = async () => {
     setResetting(true);
     try {
+      if (actions?.reset) {
+        const result = await actions.reset();
+        if (result?.payload) applyPayload(result.payload as ThemeStatePayload);
+        return;
+      }
       const response = await requestJson('/api/theme/reset', { method: 'POST' });
       if (response?.payload) {
         applyPayload(response.payload as ThemeStatePayload);
