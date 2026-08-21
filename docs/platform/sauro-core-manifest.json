@@ -79,16 +79,7 @@
     {
       "pattern": "components/admin/workspace-shell.config.tsx",
       "role": "site-owned",
-      "owners": [
-        "asap",
-        "velvetdinosaur",
-        "ra",
-        "pyanal",
-        "thebrave",
-        "ots-sauro-poc",
-        "template"
-      ],
-      "note": "per-site brand/nav config consumed by the core workspace shell (extracted 2026-08-20)"
+      "note": "per-site brand/nav config consumed by the core workspace shell (extracted 2026-08-20). Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "components/edit/pages-index-metadata.site.ts",
@@ -98,16 +89,7 @@
     {
       "pattern": "components/edit/edit-index.config.tsx",
       "role": "site-owned",
-      "owners": [
-        "asap",
-        "velvetdinosaur",
-        "ra",
-        "pyanal",
-        "thebrave",
-        "ots-sauro-poc",
-        "template"
-      ],
-      "note": "per-site content-tab registrations consumed by the core edit-index engine (extracted 2026-08-20)"
+      "note": "per-site content-tab registrations consumed by the core edit-index engine (extracted 2026-08-20). Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "components/edit/edit-index/work-tab.tsx",
@@ -128,30 +110,12 @@
     {
       "pattern": "app/admin/page.tsx",
       "role": "site-owned",
-      "owners": [
-        "asap",
-        "velvetdinosaur",
-        "ra",
-        "pyanal",
-        "thebrave",
-        "ots-sauro-poc",
-        "template"
-      ],
-      "note": "each site's admin landing (VD: operations hub; ASAP: redirect to /edit)"
+      "note": "each site's admin landing (VD: operations hub; ASAP: redirect to /edit). Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "components/admin/theme/theme-presets.json",
       "role": "site-owned",
-      "owners": [
-        "asap",
-        "velvetdinosaur",
-        "ra",
-        "pyanal",
-        "thebrave",
-        "ots-sauro-poc",
-        "template"
-      ],
-      "note": "shared preset library plus per-site brand presets"
+      "note": "shared preset library plus per-site brand presets. Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "app/admin/fleet/**",
@@ -482,20 +446,12 @@
     {
       "pattern": "components/puck/previews/store-preview-renders.ts",
       "role": "site-owned",
-      "owners": [
-        "template"
-      ],
-      "note": "site map of store-block preview renders; lives beside the aliased index so builds never rewrite it"
+      "note": "site map of store-block preview renders; lives beside the aliased index so builds never rewrite it. Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "components/puck/previews/index.ts",
       "role": "site-owned",
-      "owners": [
-        "thebrave",
-        "pyanal",
-        "template"
-      ],
-      "note": "per-site preview registry over the core previews framework; template ships the starter copy"
+      "note": "per-site preview registry over the core previews framework; template ships the starter copy. Universal seam: every site (including freshly stamped ones) owns its copy."
     },
     {
       "pattern": "components/puck/previews/*-previews.tsx",
