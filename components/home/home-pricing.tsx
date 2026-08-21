@@ -2,11 +2,11 @@ import { HOME_CARD, HOME_CONTAINER, HOME_MONO, SectionHeading } from "./home-sha
 
 const INCLUDED = [
   "Custom design & build",
-  "SEO-ready page structure",
-  "Sauro CMS included",
-  "Performance optimisation",
-  "SSL, backups & DNS setup",
-  "Launch support & handover",
+  "Hosting, SSL & daily backups",
+  "Sauro CMS — edit it yourself",
+  "Software updates & maintenance",
+  "Email for your domain",
+  "Small content changes done for you",
 ] as const
 
 export function HomePricing() {
@@ -17,26 +17,27 @@ export function HomePricing() {
         <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
           <div className={`${HOME_CARD} p-8 md:p-10`}>
             <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-              <div className="text-lg font-bold">All-inclusive launch package</div>
+              <div className="text-lg font-bold">Your website, built before you pay</div>
               <span
                 className={`${HOME_MONO} rounded-[3px] bg-primary/10 px-2 py-1 text-[10px] text-primary`}
               >
-                Most popular
+                See it first — free
               </span>
             </div>
             <div className="mb-[18px] mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="text-4xl font-extrabold tracking-[-0.03em] md:text-[52px]">
-                from £3,500
+                £100/month
               </span>
               <span className="text-[13px] text-muted-foreground">
-                fixed before we start · most professional websites
+                everything included · no setup fee · 12-month minimum, then monthly
               </span>
             </div>
             <p className="mb-6 mt-0 text-pretty text-sm leading-relaxed text-muted-foreground">
-              Custom design and build, SEO-ready structure, performance optimisation, contact
-              forms, Sauro CMS, SSL, daily backups, and launch support. Scope agreed and price
-              fixed before development starts — advanced features quoted separately, up front. A
-              reduced rate is available for charities and academic projects.
+              We build your new website first and send you a private preview — with your own
+              login, so you can try editing it yourself. Take ten days. If you don&rsquo;t love
+              it, we shake hands and walk away; the preview costs nothing. If you do, one flat
+              monthly price covers absolutely everything, under a plain-English agreement you
+              read before you sign.
             </p>
             <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
               {INCLUDED.map((item) => (
@@ -53,29 +54,33 @@ export function HomePricing() {
             </ul>
           </div>
           <div className="flex flex-col gap-4">
-            <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-muted-foreground`}>
-                What agencies charge
-              </div>
-              <div className="text-[26px] font-extrabold tracking-tight">£10k–£15k</div>
-              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                Typical agency quote for a comparable founder-led build.
-              </div>
-            </div>
-            <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-muted-foreground`}>
-                After the first year
-              </div>
-              <div className="text-[26px] font-extrabold tracking-tight">£250/year</div>
-              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                Performance and security maintenance — or run it independently. No lock-in.
-              </div>
-            </div>
             <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
-              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-primary`}>It’s yours</div>
+              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-primary`}>
+                Our portability promise
+              </div>
               <div className="text-sm font-medium leading-relaxed text-foreground">
-                Your domain, your content, your site. Everything set up in your name — move it
-                whenever you choose.
+                You own your content and your domain. After the first year you can leave any
+                time — and if you ever move on, we&rsquo;ll actively help you pack up and
+                migrate. Clients stay because they want to.
+              </div>
+            </div>
+            <div className={`${HOME_CARD} p-7`}>
+              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-muted-foreground`}>
+                What this replaces
+              </div>
+              <div className="text-[26px] font-extrabold tracking-tight">£3,500+ up front</div>
+              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
+                A typical project build, before hosting and maintenance. Agencies quote
+                £10k–£15k for comparable work.
+              </div>
+            </div>
+            <div className={`${HOME_CARD} p-7`}>
+              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-muted-foreground`}>
+                Bigger projects
+              </div>
+              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
+                Bespoke builds, web apps, and larger organisations are quoted individually —
+                fixed before we start, with a reduced rate for charities and academic projects.
               </div>
             </div>
           </div>
