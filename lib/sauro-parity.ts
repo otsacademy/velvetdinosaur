@@ -201,12 +201,23 @@ export function discoverInstalledSites(
 ): ParitySite[] {
   const opsRoot = opts?.opsRoot ?? '/srv/apps/.ops/sites';
   const appsRoot = opts?.appsRoot ?? '/srv/apps';
-  let slugs: string[] = [];
+  const slugSet = new Set<string>();
   try {
-    slugs = readdirSync(opsRoot);
+    for (const slug of readdirSync(opsRoot)) slugSet.add(slug);
   } catch {
-    return manifest.sites;
+    // Registry dir may not exist on dev machines.
   }
+  // Newer installs register in the platform registry instead of .ops/sites.
+  try {
+    const registry = JSON.parse(readFileSync('/var/lib/vd-platform/registry.json', 'utf8')) as {
+      sites?: Record<string, unknown>;
+    };
+    for (const slug of Object.keys(registry.sites ?? {})) slugSet.add(slug);
+  } catch {
+    // No platform registry; directory scan above still applies.
+  }
+  const slugs = [...slugSet];
+  if (!slugs.length) return manifest.sites;
   const known = new Set(manifest.sites.map((site) => site.name));
   const discovered: ParitySite[] = [];
   for (const slug of slugs.sort()) {
