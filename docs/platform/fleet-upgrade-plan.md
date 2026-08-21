@@ -68,7 +68,7 @@ The Phase 0 recommendation is a dedicated Git-backed platform-control checkout, 
 | `velvetdinosaur` | `main`-only; manual/in-place release override | Enroll with its own adapter; never assume blue/green |
 | `asap` | `develop` source; Plate editorial divergence; checkout dirty at audit | Enroll after cataloging divergence; prepare in an isolated worktree |
 | `ra` | Feature checkout with `develop`/`main`; checkout dirty at audit | Enroll after release adapter verification |
-| `pyanal` / `designer` | Registry lists **both** as separate sites with distinct ports and domains; nginx serves only `designer.velvetdinosaur.com`; systemd runs only `vd-pyanal-green.service`; one repository exists | Disabled until registry entries are reconciled with running deployments — this may be a phantom registry entry to delete, not a naming choice |
+| `pyanal` / `designer` | **RESOLVED 2026-08-21: pyanal retired.** It was the old central support hub + analytics sink behind `designer.velvetdinosaur.com` (dead since the 2026-07-28 nginx consolidation; superseded by the VD fleet dashboard). DB + checkout archived in `/opt/vdplatform/backups/pyanal-retirement-20260821`; both subdomains now redirect to velvetdinosaur.com; stale env references scrubbed fleet-wide. The separate `vd_designer` name was thebrave's misnamed database, unrelated. |
 | `thebrave` | Feature checkout; `develop` is checked out in `/srv/apps/thebrave-release` | Enroll by Git repository identity, not directory suffix |
 | `ots-sauro-poc` | `main`-only; dirty; copied ASAP metadata and quality target paths | Disabled until metadata, gates, and release adapter are corrected |
 | `scholardemia` | Separate monorepo and worktree flow; PostgreSQL is authoritative; no root fleet-compatible scripts | Separate cohort; disabled until a dedicated adapter exists |
@@ -464,7 +464,7 @@ Runs in parallel with Phase 0 and must not wait on catalog creation or the fleet
 - Select or create the Git-backed platform-control repository that produces `/opt/vdplatform`.
 - Record the deployed runtime's source commit and define a reproducible build/install path.
 - Create and schema-validate separate repository and deployment catalogs.
-- Resolve `pyanal` versus `designer`.
+- ~~Resolve `pyanal` versus `designer`.~~ Resolved 2026-08-21: pyanal retired (see table above); `vd_designer` is thebrave's database name, slated for rename in Phase 0 identity work.
 - Correct `ots-sauro-poc` site metadata, quality paths, and branch/release contract.
 - Decide whether Scholardemia is excluded or receives a dedicated monorepo adapter.
 - Inventory all repository Git identities, source branches, quality manifests, deployments, runtime mappings, and release adapters.

@@ -32,7 +32,6 @@ type CatalogEntry = {
 const CATALOG: CatalogEntry[] = [
   { repoId: 'asap', path: '/srv/apps/asap', units: ['vd-asap-blue.service', 'vd-asap-green.service'] },
   { repoId: 'velvetdinosaur', path: '/srv/apps/velvetdinosaur', units: ['vd-velvetdinosaur-blue.service'] },
-  { repoId: 'pyanal', path: '/srv/apps/pyanal', units: ['vd-pyanal-blue.service', 'vd-pyanal-green.service'] },
   { repoId: 'ra', path: '/srv/apps/ra', units: ['vd-ra-blue.service', 'vd-ra-green.service'] },
   { repoId: 'thebrave', path: '/srv/apps/thebrave-release', units: ['vd-thebrave-blue.service', 'vd-thebrave-green.service'] },
   { repoId: 'vd-email-studio', path: '/srv/apps/vd-email-studio', units: ['vd-email-studio.service'] },
