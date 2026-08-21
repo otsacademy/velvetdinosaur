@@ -36,6 +36,71 @@ type EditIndexTableProps = {
   onDelete: (page: PageRow) => void;
 };
 
+
+type PageActionsMenuProps = {
+  page: PageRow;
+  metadataTitle: string;
+  editHref: string;
+  liveUrl: string;
+  canMove: boolean;
+  canDelete: boolean;
+  onDuplicate: (page: PageRow) => void;
+  onMove: (page: PageRow) => void;
+  onDelete: (page: PageRow) => void;
+};
+
+function PageActionsMenu({
+  page,
+  metadataTitle,
+  editHref,
+  liveUrl,
+  canMove,
+  canDelete,
+  onDuplicate,
+  onMove,
+  onDelete
+}: PageActionsMenuProps) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
+          <MoreHorizontal className="h-4 w-4" />
+          <span className="sr-only">Actions for {metadataTitle}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem asChild>
+          <Link href={editHref}>Edit page</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => onDuplicate(page)}>
+          <Copy className="h-4 w-4" />
+          Duplicate
+        </DropdownMenuItem>
+        {canMove ? (
+          <DropdownMenuItem onSelect={() => onMove(page)}>
+            <FolderInput className="h-4 w-4" />
+            Move / URL
+          </DropdownMenuItem>
+        ) : null}
+        <DropdownMenuItem asChild>
+          <Link href={liveUrl} target="_blank" rel="noreferrer">
+            View live
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem
+          disabled={!canDelete}
+          onSelect={() => onDelete(page)}
+          className={cn(!canDelete ? 'text-[var(--vd-muted-fg)]' : 'text-rose-600')}
+        >
+          <Trash2 className="h-4 w-4" />
+          {canDelete ? 'Delete' : 'Home cannot be deleted'}
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
 export function EditIndexTable({
   pages,
   sortKey,
@@ -71,7 +136,67 @@ export function EditIndexTable({
       className="overflow-hidden rounded-[var(--vd-radius)] bg-[var(--vd-card)] shadow-sm"
       data-testid="edit-index-pages-table"
     >
-      <Table className="text-sm text-[var(--vd-fg)]">
+      {/* Below md the table collapses into cards; a four-column grid in
+          390px slivers is unreadable. */}
+      <ul className="divide-y divide-[var(--vd-border)]/35 md:hidden">
+        {pages.map((page) => {
+          const editHref =
+            page.slug === 'home' ? '/edit?slug=home' : `/edit/${encodeURIComponent(page.slug)}`;
+          const live = liveHref(page);
+          const canMove = canMovePage(page);
+          const hasPublished = Boolean(page.publishedAt);
+          const pendingPublish = Boolean(page.pendingPublishRequestedAt);
+          const canDelete = page.slug !== 'home';
+          const metadata = getPageMetadata(page);
+          const lastUpdated = getPageLastUpdatedLabel(page);
+          const Icon = metadata.icon;
+          return (
+            <li key={page.slug} className="flex items-start justify-between gap-3 px-4 py-3.5">
+              <div className="min-w-0 space-y-1">
+                <Link href={editHref} className="text-sm font-semibold text-[var(--vd-fg)] hover:underline">
+                  <span className="inline-flex items-center gap-2">
+                    <Icon className="h-4 w-4 shrink-0 text-[var(--vd-muted-fg)]" aria-hidden="true" />
+                    <span className="truncate">{metadata.title}</span>
+                  </span>
+                </Link>
+                <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--vd-muted-fg)]">
+                  <Badge
+                    className={cn(
+                      'px-2 py-0',
+                      pendingPublish
+                        ? 'border-transparent bg-amber-100 text-amber-900'
+                        : hasPublished
+                        ? 'border-transparent bg-[var(--vd-accent)] text-[var(--vd-accent-fg)]'
+                        : 'bg-[var(--vd-muted)] text-[var(--vd-muted-fg)]'
+                    )}
+                  >
+                    {pendingPublish ? 'Needs approval' : hasPublished ? 'Live' : 'Draft'}
+                  </Badge>
+                  <span className="truncate">{metadata.path}</span>
+                  {lastUpdated ? <span>{lastUpdated}</span> : null}
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-1">
+                <Button size="sm" asChild>
+                  <Link href={editHref}>Edit</Link>
+                </Button>
+                <PageActionsMenu
+                  page={page}
+                  metadataTitle={metadata.title}
+                  editHref={editHref}
+                  liveUrl={live}
+                  canMove={canMove}
+                  canDelete={canDelete}
+                  onDuplicate={onDuplicate}
+                  onMove={onMove}
+                  onDelete={onDelete}
+                />
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <Table className="hidden text-sm text-[var(--vd-fg)] md:table">
         <TableHeader>
           <TableRow>
             <TableHead className="w-[55%] text-xs uppercase tracking-wider text-[var(--vd-muted-fg)]">
@@ -198,43 +323,17 @@ export function EditIndexTable({
                       <Eye className="h-4 w-4" />
                       Preview
                     </Button>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
-                          <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Page actions</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem asChild>
-                          <Link href={editHref}>Edit page</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onSelect={() => onDuplicate(page)}>
-                          <Copy className="h-4 w-4" />
-                          Duplicate
-                        </DropdownMenuItem>
-                        {canMove ? (
-                          <DropdownMenuItem onSelect={() => onMove(page)}>
-                            <FolderInput className="h-4 w-4" />
-                            Move / URL
-                          </DropdownMenuItem>
-                        ) : null}
-                        <DropdownMenuItem asChild>
-                          <Link href={live} target="_blank" rel="noreferrer">
-                            View live
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem
-                          disabled={!canDelete}
-                          onSelect={() => onDelete(page)}
-                          className={cn(!canDelete ? 'text-[var(--vd-muted-fg)]' : 'text-rose-600')}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                          {canDelete ? 'Delete' : 'Home cannot be deleted'}
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                    <PageActionsMenu
+                      page={page}
+                      metadataTitle={metadata.title}
+                      editHref={editHref}
+                      liveUrl={live}
+                      canMove={canMove}
+                      canDelete={canDelete}
+                      onDuplicate={onDuplicate}
+                      onMove={onMove}
+                      onDelete={onDelete}
+                    />
                   </div>
                 </TableCell>
               </TableRow>

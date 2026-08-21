@@ -1,9 +1,9 @@
-import type { ASAPEvent } from '@/lib/events'
+import type { SiteEvent } from '@/lib/events'
 
 const PROVIDER_DESCRIPTION_LIMIT = 1200
 
 type CalendarEventInput = Pick<
-  ASAPEvent,
+  SiteEvent,
   'slug' | 'title' | 'startDateTime' | 'endDateTime' | 'description' | 'fullDescription' | 'venue' | 'location' | 'ticketUrl'
 > & {
   eventUrl?: string

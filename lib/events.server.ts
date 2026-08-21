@@ -3,7 +3,7 @@ import { getChapterName, normalizeChapterSlug, normalizeChapterSlugs } from '@/l
 import { connectDB } from '@/lib/db'
 import { toIdString } from '@/lib/event-registration/shared'
 import {
-  type ASAPEvent,
+  type SiteEvent,
   deriveEventDateParts,
   normalizeEventCategory,
   normalizeEventLocationType,
@@ -131,7 +131,7 @@ function resolveChapterFields(row: DatabaseEvent, useSnapshot: boolean) {
   }
 }
 
-function mapDbEventToEvent(row: DatabaseEvent, options?: { usePublishedSnapshot?: boolean }): ASAPEvent {
+function mapDbEventToEvent(row: DatabaseEvent, options?: { usePublishedSnapshot?: boolean }): SiteEvent {
   const usePublishedSnapshot = options?.usePublishedSnapshot === true
   const normalizedSlug = normalizeEventSlug(row.slug)
   const locationType = normalizeEventLocationType(clean(row.locationType))

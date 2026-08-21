@@ -10,10 +10,10 @@ import {
   eventRegistrationHref,
   eventRegistrationLabel,
   hasEventRegistration,
-  type ASAPEvent
+  type SiteEvent
 } from '@/lib/events'
 
-export function EventHoverCard({ eventItem }: { eventItem: ASAPEvent }) {
+export function EventHoverCard({ eventItem }: { eventItem: SiteEvent }) {
   const parsedDate = (() => {
     const primary = parseISO(eventItem.date || eventItem.startDateTime)
     if (!Number.isNaN(primary.getTime())) return primary

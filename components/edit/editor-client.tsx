@@ -12,7 +12,7 @@ import { defaultData } from '@/puck/defaults';
 import { sanitizeData } from '@/puck/validate';
 import { type PatternPayload } from '@/lib/puck/patterns';
 import { listLegacyPageComponents } from '@/lib/puck/legacy-page-components';
-import { ASAP_LEGACY_TYPES } from '@/lib/puck/legacy-types';
+import { LEGACY_PAGE_TYPES } from '@/lib/puck/legacy-types';
 import { PageEditorChapterSection } from '@/components/edit/page-editor-chapter-section';
 import { buildId } from '@/components/puck/editor/puck-editor-shell-utils';
 import { PuckEditorShell } from '@/components/puck/editor/PuckEditorShell';
@@ -90,7 +90,7 @@ function hasPendingPublishRequest(payload: unknown) {
 }
 
 const GLOBAL_EDITING_UNLOCKED_STORAGE_KEY_PREFIX = 'vd:asap-editor:global-editing:unlocked';
-const CONVERTIBLE_LEGACY_COMPONENTS = new Set(ASAP_LEGACY_TYPES);
+const CONVERTIBLE_LEGACY_COMPONENTS = new Set(LEGACY_PAGE_TYPES);
 
 function globalEditingStorageKey(slug: string) {
   return `${GLOBAL_EDITING_UNLOCKED_STORAGE_KEY_PREFIX}:${slug}`;

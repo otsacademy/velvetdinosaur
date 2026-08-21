@@ -316,7 +316,9 @@ export function AdminWorkspaceShell({ children }: { children: React.ReactNode })
                   <AdminReviewModeSwitch variant="sidebar" className="lg:hidden" />
                 </Suspense>
               ) : null}
-              <SessionControls variant="sidebar" showIdentity={false} showAccountLink={false} />
+              {/* Sign out lives in the header on desktop; repeating it here
+                  read as two different session controls. The mobile drawer
+                  keeps its own copy because the header collapses there. */}
             </div>
           </div>
         </aside>

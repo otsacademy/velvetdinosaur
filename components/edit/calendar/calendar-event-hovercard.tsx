@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { addMinutes, format } from 'date-fns';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { parseDateKey, toMinutes, type CalendarEvent } from '@/components/edit/calendar-workspace.shared';
-import type { ASAPEvent } from '@/lib/events';
+import type { SiteEvent } from '@/lib/events';
 import { EventHoverCard } from '@/components/events/event-hover-card';
 
 function findFirstUrl(notes: string) {
@@ -22,7 +22,7 @@ function toTimeLabel(date: Date) {
     .toLowerCase();
 }
 
-function toPreviewEvent(event: CalendarEvent): ASAPEvent {
+function toPreviewEvent(event: CalendarEvent): SiteEvent {
   const day = parseDateKey(event.dateKey);
   const startMinutes = toMinutes(event.time) ?? 9 * 60;
   const startDate = new Date(day);

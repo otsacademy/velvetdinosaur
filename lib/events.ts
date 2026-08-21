@@ -13,7 +13,7 @@ export type EventStatus = (typeof EVENT_STATUSES)[number]
 export type EventRegistrationMode = (typeof EVENT_REGISTRATION_MODES)[number]
 export type EventRegistrationWindowStatus = 'not-applicable' | 'opens-later' | 'open' | 'closed'
 
-export interface ASAPEvent {
+export interface SiteEvent {
   id?: string
   slug: string
   title: string
@@ -167,18 +167,18 @@ export function deriveEventDateParts(startDateTime: DateInput, endDateTime: Date
   }
 }
 
-export function isEventPast(event: Pick<ASAPEvent, 'endDateTime'>, now = new Date()) {
+export function isEventPast(event: Pick<SiteEvent, 'endDateTime'>, now = new Date()) {
   const endDate = toDate(event.endDateTime)
   if (!endDate) return false
   return endDate.getTime() < now.getTime()
 }
 
-export function isEventUpcoming(event: Pick<ASAPEvent, 'endDateTime'>, now = new Date()) {
+export function isEventUpcoming(event: Pick<SiteEvent, 'endDateTime'>, now = new Date()) {
   return !isEventPast(event, now)
 }
 
 export function getEventRegistrationWindow(
-  event: Pick<ASAPEvent, 'registrationMode' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
+  event: Pick<SiteEvent, 'registrationMode' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
   now = new Date(),
 ) {
   const opensAt = toDate(event.registrationOpensAt)
@@ -221,7 +221,7 @@ export function getEventRegistrationWindow(
 }
 
 export function isEventRegistrationOpen(
-  event: Pick<ASAPEvent, 'registrationMode' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
+  event: Pick<SiteEvent, 'registrationMode' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
   now = new Date(),
 ) {
   return getEventRegistrationWindow(event, now).status === 'open'
@@ -232,23 +232,23 @@ export function isEventCategory(value: string): value is EventCategory {
 }
 
 export function hasEventRegistration(
-  event: Pick<ASAPEvent, 'registrationMode' | 'ticketUrl' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
+  event: Pick<SiteEvent, 'registrationMode' | 'ticketUrl' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
 ) {
   return isEventRegistrationOpen(event) || (event.registrationMode === 'external' && Boolean(event.ticketUrl))
 }
 
-export function eventRegistrationHref(event: Pick<ASAPEvent, 'slug' | 'registrationMode' | 'ticketUrl'>) {
+export function eventRegistrationHref(event: Pick<SiteEvent, 'slug' | 'registrationMode' | 'ticketUrl'>) {
   if (event.registrationMode === 'external' && event.ticketUrl) return event.ticketUrl
   if (event.registrationMode === 'local') return `/events/${event.slug}#register`
   return `/events/${event.slug}`
 }
 
 export function eventRegistrationLabel(
-  event: Pick<ASAPEvent, 'registrationMode' | 'ticketUrl' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
+  event: Pick<SiteEvent, 'registrationMode' | 'ticketUrl' | 'registrationOpensAt' | 'registrationClosesAt' | 'endDateTime'>,
 ) {
   return hasEventRegistration(event) ? 'Register' : 'Details'
 }
 
-export function eventRegistrationExternal(event: Pick<ASAPEvent, 'registrationMode' | 'ticketUrl'>) {
+export function eventRegistrationExternal(event: Pick<SiteEvent, 'registrationMode' | 'ticketUrl'>) {
   return event.registrationMode === 'external' && Boolean(event.ticketUrl)
 }

@@ -54,7 +54,7 @@ export function CalendarSidebar({
 
       <Card className="p-0">
         <CardHeader className="p-4 pb-2">
-          <CardTitle className="text-base">My calendars</CardTitle>
+          <CardTitle className="text-base">Calendars</CardTitle>
         </CardHeader>
         <CardContent className="mt-0 space-y-2 p-4 pt-0">
           {ownedCalendars.map((calendar) => (

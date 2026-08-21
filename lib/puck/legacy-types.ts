@@ -1,4 +1,4 @@
-export const ASAP_LEGACY_TYPES = [
+export const LEGACY_PAGE_TYPES = [
   'AsapAboutPage',
   'AsapAdvisoryBoardPage',
   'AsapBoardPage',
@@ -16,4 +16,4 @@ export const ASAP_LEGACY_TYPES = [
   'AsapTeamPage'
 ] as const;
 
-export type AsapLegacyType = (typeof ASAP_LEGACY_TYPES)[number];
+export type AsapLegacyType = (typeof LEGACY_PAGE_TYPES)[number];

@@ -1,7 +1,7 @@
 import type { Data } from '@puckeditor/core';
-import { ASAP_LEGACY_TYPES } from '@/lib/puck/legacy-types';
+import { LEGACY_PAGE_TYPES } from '@/lib/puck/legacy-types';
 
-export const LEGACY_PAGE_COMPONENTS = ASAP_LEGACY_TYPES;
+export const LEGACY_PAGE_COMPONENTS = LEGACY_PAGE_TYPES;
 
 export type LegacyPageComponent = (typeof LEGACY_PAGE_COMPONENTS)[number];
 

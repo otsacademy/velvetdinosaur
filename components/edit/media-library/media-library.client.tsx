@@ -1133,17 +1133,17 @@ export function MediaLibraryClient() {
                 onChange={(e) => setQuery(e.target.value)}
               />
               <Select value={filter} onValueChange={(value) => setFilter(value as MimeFilter)}>
-                <SelectTrigger className="w-[140px]">
+                <SelectTrigger className="w-[140px]" aria-label="Filter by file type">
                   <SelectValue placeholder="Type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All</SelectItem>
+                  <SelectItem value="all">All types</SelectItem>
                   <SelectItem value="image">Images</SelectItem>
                   <SelectItem value="document">Documents</SelectItem>
                 </SelectContent>
               </Select>
               <Select value={tagFilter} onValueChange={setTagFilter} disabled={tagsLoading}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px]" aria-label="Filter by tag">
                   <SelectValue placeholder="Tag" />
                 </SelectTrigger>
                 <SelectContent>
@@ -1156,7 +1156,7 @@ export function MediaLibraryClient() {
                 </SelectContent>
               </Select>
               <Select value={metadataFilter} onValueChange={(value) => setMetadataFilter(value as MetadataFilter)}>
-                <SelectTrigger className="w-[200px]">
+                <SelectTrigger className="w-[200px]" aria-label="Filter by metadata completeness">
                   <SelectValue placeholder="Metadata" />
                 </SelectTrigger>
                 <SelectContent>

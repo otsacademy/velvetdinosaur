@@ -16,7 +16,7 @@ import { Accordion } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import {
-  type ASAPEvent,
+  type SiteEvent,
   type EventLocationType,
   type EventRegistrationMode,
   type EventStatus,
@@ -25,7 +25,7 @@ import { slugifyArticleTitle } from '@/lib/news-slug'
 
 type EventEditorProps = {
   returnPath?: string
-  initialEvent?: ASAPEvent | null
+  initialEvent?: SiteEvent | null
   isDuplicate?: boolean
   activeProfile?: {
     primaryChapterSlug?: string
