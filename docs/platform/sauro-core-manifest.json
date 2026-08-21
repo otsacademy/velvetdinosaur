@@ -31,11 +31,6 @@
       "branch": "develop"
     },
     {
-      "name": "pyanal",
-      "path": "/srv/apps/pyanal",
-      "branch": "develop"
-    },
-    {
       "name": "thebrave",
       "path": "/srv/apps/thebrave",
       "branch": "develop",
