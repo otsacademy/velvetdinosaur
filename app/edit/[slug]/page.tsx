@@ -6,7 +6,7 @@ import { EditorShell } from '@/components/edit/editor-shell';
 import { getDraftPageData } from '@/lib/pages';
 
 type EditPageProps = {
-  params: { slug?: string } | Promise<{ slug?: string }>;
+  params: Promise<{ slug?: string }>;
 };
 
 async function EditPageContent({ params }: EditPageProps) {
@@ -15,7 +15,7 @@ async function EditPageContent({ params }: EditPageProps) {
   const session = await auth.api.getSession({ headers: requestHeaders });
   const smokeToken = process.env.VD_EDITOR_SMOKE_TOKEN;
   const isSmoke = Boolean(smokeToken && requestHeaders.get('x-vd-editor-smoke') === smokeToken);
-  const resolvedParams = await Promise.resolve(params);
+  const resolvedParams = await params;
   const slug = resolvedParams?.slug ? String(resolvedParams.slug) : 'home';
   if (!session && !isSmoke) {
     redirect(`/sign-in?next=/edit/${encodeURIComponent(slug)}`);
