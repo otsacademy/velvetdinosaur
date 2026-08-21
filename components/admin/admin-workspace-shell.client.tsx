@@ -152,6 +152,10 @@ function SidebarNav({
   navGroups: SidebarNavGroup[];
   onNavigate?: () => void;
 }) {
+  // Only the most specific match lights up — several items can prefix-match
+  // one pathname (e.g. an '/admin' overview item on any /admin/* page) and
+  // highlighting them all reads as two current pages.
+  const bestMatch = findBestMatch(pathname, currentEditTab, navGroups);
   return (
     <nav aria-label="Admin navigation" className="space-y-6 px-3 py-4">
       {navGroups.map((group) => (
@@ -161,7 +165,7 @@ function SidebarNav({
           </p>
           <div className="space-y-1">
             {group.items.map((item) => {
-              const active = isActiveItem(pathname, currentEditTab, item);
+              const active = bestMatch ? bestMatch.href === item.href : isActiveItem(pathname, currentEditTab, item);
               const Icon = item.icon;
               return (
                 <Link

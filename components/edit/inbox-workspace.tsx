@@ -1,5 +1,6 @@
 'use client';
 
+import { WorkspaceErrorBanner } from '@/components/edit/workspace-error-banner';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Inbox, MailPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -400,11 +401,7 @@ export function InboxWorkspace() {
         icon={Inbox}
       />
 
-      {errorMessage ? (
-        <p className="rounded-[var(--vd-radius)] border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
-          {errorMessage}
-        </p>
-      ) : null}
+      {errorMessage ? <WorkspaceErrorBanner message={errorMessage} /> : null}
 
       <div className="grid min-h-[72vh] overflow-hidden rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-card)] shadow-[0_1px_3px_rgba(0,0,0,0.06)] lg:grid-cols-[230px_340px_minmax(0,1fr)]">
         <InboxSidebar

@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { WorkspaceErrorBanner } from '@/components/edit/workspace-error-banner';
 import { CalendarDays } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -485,15 +486,12 @@ export function CalendarWorkspace() {
         icon={CalendarDays}
       />
 
-      {errorMessage ? (
-        <p className="rounded-[var(--vd-radius)] border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
-          {errorMessage}
-        </p>
-      ) : null}
+      {errorMessage ? <WorkspaceErrorBanner message={errorMessage} /> : null}
 
       <div className="grid min-h-[72vh] gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
         <CalendarSidebar
           selectedDate={selectedDate}
+          weekStartsOn={settings.weekStartsOn === 'Sunday' ? 0 : 1}
           onSelectDate={setSelectedDate}
           calendars={calendars}
           onToggleCalendar={toggleCalendar}

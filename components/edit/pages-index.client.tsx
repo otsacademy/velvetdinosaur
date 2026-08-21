@@ -125,7 +125,10 @@ export function PagesIndex({
               tabs={tabs.map((tab) => ({
                 key: tab.key,
                 label: tab.label,
-                count: ((data[tab.dataKey] as unknown[]) ?? []).length
+                // Count what the tab actually lists (its own filter with no
+                // query), not raw records — raw counts include chrome entries
+                // the list hides and the two numbers visibly disagree.
+                count: tab.filterAndSort((data[tab.dataKey] as unknown[]) ?? [], '', tab.defaultSort, '').length
               }))}
               activeTab={activeTab.key}
               onTabChange={handleTabChange}

@@ -21,6 +21,7 @@ type CalendarSidebarProps = {
   onToggleCalendar: (id: string) => void;
   onAddCalendar: () => void;
   onShareCalendar: (calendar: CalendarRecord) => void;
+  weekStartsOn?: 0 | 1;
 };
 
 export function CalendarSidebar({
@@ -29,7 +30,8 @@ export function CalendarSidebar({
   calendars,
   onToggleCalendar,
   onAddCalendar,
-  onShareCalendar
+  onShareCalendar,
+  weekStartsOn = 1
 }: CalendarSidebarProps) {
   const ownedCalendars = calendars.filter((calendar) => calendar.owned);
   const sharedCalendars = calendars.filter((calendar) => !calendar.owned);
@@ -40,6 +42,7 @@ export function CalendarSidebar({
         <CardContent className="p-4">
           <Calendar
             mode="single"
+            weekStartsOn={weekStartsOn}
             selected={selectedDate}
             onSelect={(date) => {
               if (date) onSelectDate(date);
