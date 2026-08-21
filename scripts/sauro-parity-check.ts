@@ -15,6 +15,7 @@
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
 import {
+  discoverInstalledSites,
   compareSite,
   emptyCounts,
   loadParityManifest,
@@ -32,7 +33,7 @@ const listSite = listIdx >= 0 ? args[listIdx + 1] : null;
 const manifest = loadParityManifest(join(process.cwd(), 'docs/platform/sauro-core-manifest.json'));
 const reference = scanTree(manifest.reference.path, manifest.scopes);
 
-const reports: SiteParity[] = manifest.sites.map((site) =>
+const reports: SiteParity[] = discoverInstalledSites(manifest).map((site) =>
   existsSync(site.path)
     ? compareSite(manifest, site.name, site.path, reference)
     : { site: site.name, offline: true, counts: emptyCounts(), files: [], workspaces: {} }

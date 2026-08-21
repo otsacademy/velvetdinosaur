@@ -187,3 +187,33 @@ export function summarizeCounts(counts: ParityCounts): { value: string; inParity
       (counts['extra-core'] ? ` · unclassified ${counts['extra-core']}` : '');
   return { value, inParity };
 }
+
+/**
+ * Union of the manifest's declared sites and Sauro sites discovered from the
+ * installer's registry (/srv/apps/.ops/sites). A directory counts as a Sauro
+ * site when its checkout carries the site-owned workspace-shell seam every
+ * core site has — that keeps unrelated products (e.g. scholardemia) off the
+ * board. Manifest entries win on name collisions, so overrides stay possible.
+ */
+export function discoverInstalledSites(
+  manifest: ParityManifest,
+  opts?: { opsRoot?: string; appsRoot?: string }
+): ParitySite[] {
+  const opsRoot = opts?.opsRoot ?? '/srv/apps/.ops/sites';
+  const appsRoot = opts?.appsRoot ?? '/srv/apps';
+  let slugs: string[] = [];
+  try {
+    slugs = readdirSync(opsRoot);
+  } catch {
+    return manifest.sites;
+  }
+  const known = new Set(manifest.sites.map((site) => site.name));
+  const discovered: ParitySite[] = [];
+  for (const slug of slugs.sort()) {
+    if (known.has(slug)) continue;
+    const path = join(appsRoot, slug);
+    if (!existsSync(join(path, 'components/admin/workspace-shell.config.tsx'))) continue;
+    discovered.push({ name: slug, path, branch: null, note: 'auto-discovered from installed sites' });
+  }
+  return [...manifest.sites, ...discovered];
+}

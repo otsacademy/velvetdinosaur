@@ -15,6 +15,7 @@ import { createServer } from 'node:http';
 import { join } from 'node:path';
 import { dashboardViewSchema, type DashboardView } from '@/lib/fleet/schema';
 import {
+  discoverInstalledSites,
   compareSite,
   hasSauroScopes,
   loadParityManifest,
@@ -39,6 +40,23 @@ const CATALOG: CatalogEntry[] = [
   { repoId: 'booking-api', path: '/srv/apps/booking-api', units: ['vd-booking-api.service'] },
   { repoId: 'theme-editor', path: '/opt/vdplatform/theme-editor', units: ['vd-theme-editor.service'] }
 ];
+
+/**
+ * Sauro sites discovered from the installer registry join the static catalog
+ * automatically, so a freshly stamped site appears on the board without a
+ * hand edit. Static entries win on repoId collisions.
+ */
+function discoverSiteCatalogEntries(manifest: ParityManifest | null): CatalogEntry[] {
+  if (!manifest) return [];
+  const known = new Set(CATALOG.map((entry) => entry.repoId));
+  return discoverInstalledSites(manifest)
+    .filter((site) => !known.has(site.name) && existsSync(site.path))
+    .map((site) => ({
+      repoId: site.name,
+      path: site.path,
+      units: [`vd-${site.name}-blue.service`, `vd-${site.name}-green.service`]
+    }));
+}
 
 /** Units that run on this host by design but are not fleet deployments. */
 const EXCLUDED_UNIT_CLASSIFICATION: Record<string, 'excluded' | 'source-less' | 'unmanaged'> = {
@@ -203,7 +221,8 @@ function buildView(): DashboardView {
     parityReference = null;
   }
 
-  for (const entry of CATALOG) {
+  const catalogEntries = [...CATALOG, ...discoverSiteCatalogEntries(parityManifest)];
+  for (const entry of catalogEntries) {
     const isGit = existsSync(join(entry.path, '.git'));
     const branch = isGit ? sh('git', ['branch', '--show-current'], entry.path) : null;
     const commit = isGit ? sh('git', ['rev-parse', '--short', 'HEAD'], entry.path) : null;
@@ -315,7 +334,7 @@ function buildView(): DashboardView {
       );
     }
 
-    const isParitySite = parityManifest?.sites.some((site) => site.name === entry.repoId) ?? false;
+    const isParitySite = parityManifest ? discoverInstalledSites(parityManifest).some((site) => site.name === entry.repoId) : false;
     if (parityManifest && parityReference && isParitySite && hasSauroScopes(entry.path, parityManifest)) {
       const parity = compareSite(parityManifest, entry.repoId, entry.path, parityReference);
       const { value, inParity } = summarizeCounts(parity.counts);
