@@ -480,6 +480,14 @@
       "role": "core"
     },
     {
+      "pattern": "components/puck/previews/store-preview-renders.ts",
+      "role": "site-owned",
+      "owners": [
+        "template"
+      ],
+      "note": "site map of store-block preview renders; lives beside the aliased index so builds never rewrite it"
+    },
+    {
       "pattern": "components/puck/previews/index.ts",
       "role": "site-owned",
       "owners": [
