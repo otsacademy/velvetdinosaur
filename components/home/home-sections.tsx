@@ -10,19 +10,19 @@ import {
 
 const BUILD_CARDS = [
   {
-    kicker: "Marketing sites & more",
-    title: "Websites",
-    body: "High-performance marketing sites, portfolios, editorial platforms, and landing pages — engineered for conversion and search from day one.",
+    kicker: "Designed, built & managed",
+    title: "Your website",
+    body: "A fast, modern website shaped around your business — designed, built, hosted, and maintained for you, all included in one monthly price.",
   },
   {
-    kicker: "iOS & Android",
-    title: "Mobile apps",
-    body: "Bespoke iOS and Android apps — from customer-facing products to internal tools that streamline how your organisation runs.",
+    kicker: "Included with every site",
+    title: "Bookings & enquiries",
+    body: "Bookings, contact forms, and a central enquiry inbox — built into your site and managed from the same admin area, at no extra cost.",
   },
   {
-    kicker: "Included with every build",
+    kicker: "Included with every site",
     title: "Sauro CMS",
-    body: "Every build includes your own private CMS — update pages, news, and media yourself in minutes, no developer required.",
+    body: "Every site includes your own private CMS — update pages, news, and media yourself in minutes, no developer required.",
   },
 ] as const
 
@@ -32,10 +32,10 @@ export function WhatIBuild() {
       <div className={`${HOME_CONTAINER} pt-16 md:pt-[72px]`}>
         <SectionHeading
           index="01"
-          title="What I build"
+          title="What you get"
           aside={
             <span className="text-[13px] text-muted-foreground">
-              No packages off a shelf — everything shaped around your goals.
+              One monthly price — everything shaped around your business.
             </span>
           }
         />

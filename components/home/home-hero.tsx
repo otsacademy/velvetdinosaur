@@ -17,7 +17,7 @@ const HERO_BADGES = [
   "One friendly human, start to finish",
 ] as const
 
-const HERO_META = ["£100 a month, everything included", "Built free before you decide", "Oxfordshire, UK"] as const
+const HERO_META = ["£99 a month, everything included", "Built free before you decide", "Oxfordshire, UK"] as const
 
 function riseProps(animate: boolean, delayMs: number) {
   return {
@@ -128,14 +128,15 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
             {...riseProps(animate, 340)}
             className="m-0 max-w-[480px] text-pretty text-[16.5px] leading-relaxed text-muted-foreground"
           >
-            No jargon, no agency runaround — you work directly with me, Ian. I design and build
-            bespoke websites and apps for charities, healthcare, and small businesses: quick to
-            load, easy to update, and made to turn visitors into clients.
+            No jargon, no agency runaround — you work directly with me, Ian. I build your new
+            website first and show it to you before you pay a penny: a fully managed website for
+            your business that&apos;s quick to load, easy to update yourself, and made to turn
+            visitors into clients.
           </p>
           <div {...riseProps(animate, 450)}>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-7 py-3.5 text-sm`}>
-                Start your project
+                Start your free preview
               </Link>
               <Link href="/work" className={`${HOME_BTN_OUTLINE} px-7 py-3.5 text-sm`}>
                 See the work

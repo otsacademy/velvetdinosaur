@@ -26,18 +26,18 @@ export function HomePricing() {
             </div>
             <div className="mb-[18px] mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="text-4xl font-extrabold tracking-[-0.03em] md:text-[52px]">
-                £100/month
+                £99/month
               </span>
               <span className="text-[13px] text-muted-foreground">
                 everything included · no setup fee · 12-month minimum, then monthly
               </span>
             </div>
             <p className="mb-6 mt-0 text-pretty text-sm leading-relaxed text-muted-foreground">
-              We build your new website first and send you a private preview — with your own
-              login, so you can try editing it yourself. Take ten days. If you don&rsquo;t love
-              it, we shake hands and walk away; the preview costs nothing. If you do, one flat
-              monthly price covers absolutely everything, under a plain-English agreement you
-              read before you sign.
+              We build your new website first and send you a private sign-up link — you set
+              your own password and can try editing everything yourself. Take fourteen days.
+              If you don&rsquo;t love it, we shake hands and walk away; the preview is simply
+              deleted and costs nothing. If you do, one flat monthly price covers absolutely
+              everything, under a plain-English agreement you read before you sign.
             </p>
             <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
               {INCLUDED.map((item) => (
@@ -70,17 +70,8 @@ export function HomePricing() {
               </div>
               <div className="text-[26px] font-extrabold tracking-tight">£3,500+ up front</div>
               <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                A typical project build, before hosting and maintenance. Agencies quote
+                A typical agency build, before hosting and maintenance. Agencies quote
                 £10k–£15k for comparable work.
-              </div>
-            </div>
-            <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-2.5 text-[10px] text-muted-foreground`}>
-                Bigger projects
-              </div>
-              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                Bespoke builds, web apps, and larger organisations are quoted individually —
-                fixed before we start, with a reduced rate for charities and academic projects.
               </div>
             </div>
           </div>

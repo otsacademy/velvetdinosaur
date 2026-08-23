@@ -1,38 +1,38 @@
-import { Briefcase, Clock, Code, Globe, Search, Smartphone, Star } from "lucide-react"
+import { Briefcase, CalendarClock, Clock, Globe, LayoutDashboard, Search, Star } from "lucide-react"
 
 const whyHireMe = [
   {
     icon: Briefcase,
     title: "Founder-led delivery",
-    description: "You work directly with me from discovery to launch. No account managers, no hand-offs, and no agency runaround.",
+    description: "You work directly with me from first conversation to launch and beyond. No account managers, no hand-offs, and no agency runaround.",
   },
   {
     icon: Search,
     title: "Rigorous problem-solving",
-    description: "Drawing on my background in NHS clinical governance and medical devices, I treat complex digital builds with absolute care, security, and precision.",
+    description: "Drawing on my background in NHS clinical governance and medical devices, I treat your website with absolute care, security, and precision.",
   },
   {
     icon: Clock,
-    title: "Predictable timelines",
-    description: "Rapid 4 to 6-week turnarounds for brochure websites, and clear, structured milestones for complex mobile and web apps.",
+    title: "Quick to launch",
+    description: "Your preview is built before you pay anything, refined together in the first week, and live on your domain within days of subscribing.",
   },
 ]
 
 const projectTypes = [
   {
     icon: Globe,
-    title: "Websites",
-    description: "High-performance marketing sites, portfolios, editorial platforms, and landing pages designed to convert cleanly.",
+    title: "Your website",
+    description: "A fast, modern website shaped around your business — designed, built, hosted, and maintained for you, all included.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile apps",
-    description: "Bespoke React Native builds for teams who need seamless iOS and Android applications without the headache of managing two codebases.",
+    icon: CalendarClock,
+    title: "Bookings & enquiries",
+    description: "Bookings, contact forms, and a central enquiry inbox — built into your site and managed from the same admin area.",
   },
   {
-    icon: Code,
-    title: "Web apps",
-    description: "Custom products, member areas, secure admin tools, dashboards, and scalable product MVPs tailored to your workflow.",
+    icon: LayoutDashboard,
+    title: "Sauro CMS",
+    description: "Your own private admin area — update pages, prices, opening hours, news, and media yourself in minutes, no developer required.",
   },
 ]
 
@@ -43,15 +43,14 @@ export function ServicesSection() {
       className="border-t border-[color-mix(in_oklch,var(--vd-fg)_5%,transparent)] pt-14 pb-12"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="vd-as-title mb-4">Custom digital products, shaped around your goals.</h2>
+        <h2 className="vd-as-title mb-4">Everything your business website needs, for £99 a month.</h2>
 
         <div className="mb-10 grid gap-10 lg:grid-cols-[1fr_280px] lg:items-start">
           <div className="max-w-[42rem]">
             <p className="text-[0.9375rem] leading-[1.8] text-[var(--vd-copy)]">
-              Whether you arrive with a clear brief, an ageing platform, or a knotty internal problem that needs
-              untangling, I build solutions mapped exactly to how your organisation works. No recycled packages.
-              No forced templates. Just bespoke architecture, clean code, and digital products that stay
-              maintainable long after launch.
+              Your new website is designed and built before you pay a penny — you try it free for 14 days, then
+              decide. Once you subscribe, hosting, security, updates, bookings, enquiry tools, and small content
+              changes are all included in one flat monthly price, with your content and domain always yours.
             </p>
           </div>
           <div className="flex items-start gap-3 pt-2 lg:pt-2">
@@ -92,10 +91,10 @@ export function ServicesSection() {
             </div>
           </div>
 
-          {/* Column 2: Project types */}
+          {/* Column 2: What's included */}
           <div>
             <h3 className="mb-6 text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-foreground/70">
-              Project types
+              What&apos;s included
             </h3>
             <div className="space-y-7">
               {projectTypes.map((item) => {

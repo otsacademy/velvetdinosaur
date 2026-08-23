@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { DemoBookingsWorkspace } from '@/components/demo/travel/demo-bookings-workspace';
+import { DemoBookingsWorkspace } from '@/components/demo/bookings/demo-bookings-workspace.client';
 import { DemoWorkspaceShell } from '@/components/demo/demo-workspace-shell.client';
 
 type DemoBookingsProps = {

@@ -12,6 +12,7 @@ import { backgroundReelsConfig } from './background-reels';
 import { backgroundServicesGridConfig } from './background-services-grid';
 import { banner2Config } from './banner2';
 import { blogListCompact01Config } from './blog-list-compact-01';
+import { bookingWidgetConfig } from './booking-widget';
 import { caseStudies3Config } from './case-studies3';
 import { contact2Config } from './contact2';
 import { content1Config } from './content1';
@@ -87,6 +88,7 @@ import { workTogetherFaqConfig } from './velvet/work-together-faq';
 // @puckeditor/core 0.22 makes ComponentConfig invariant over its props, so
 // this heterogeneous record needs a cast rather than an annotation.
 export const storeBlocksCurated = {
+  BookingWidget: bookingWidgetConfig,
   StayMetaBadges: stayMetaBadgesConfig,
   StayGalleryHero: stayGalleryHeroConfig,
   StayDetailBody: stayDetailBodyConfig,

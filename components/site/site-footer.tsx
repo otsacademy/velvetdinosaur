@@ -12,13 +12,13 @@ export function SiteFooter() {
           <div className="space-y-2">
             <p className="text-sm font-semibold text-foreground">Velvet Dinosaur</p>
             <p className="max-w-md text-sm text-foreground/80">
-              Founder-led bespoke websites and apps that are fast, well built, and easy to own long term.
+              Founder-led managed websites that are fast, well built, and easy to own long term — £99 a month, everything included.
             </p>
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
             >
-              Talk through a project
+              Talk through your website
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

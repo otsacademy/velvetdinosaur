@@ -1,0 +1,176 @@
+/* Service agreement document styling (screen + print). */
+
+.vd-agreement {
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
+
+.vd-agreement-doc {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--vd-bg, var(--background));
+  border: 1px solid var(--vd-border, var(--border));
+  border-radius: 12px;
+  padding: 48px 44px;
+}
+
+.vd-agreement-head {
+  margin-bottom: 24px;
+}
+
+.vd-agreement-head img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.vd-agreement-head h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.vd-agreement-meta {
+  color: var(--vd-muted-fg, var(--muted-foreground));
+  font-size: 13.5px;
+  margin: 0 0 4px;
+}
+
+.vd-agreement-keybox {
+  background: color-mix(in oklch, var(--vd-primary) 7%, var(--vd-bg));
+  border: 1px solid color-mix(in oklch, var(--vd-primary) 22%, var(--vd-border));
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin: 20px 0 8px;
+  padding: 14px 18px;
+}
+
+.vd-agreement-keybox strong {
+  color: var(--vd-primary);
+}
+
+.vd-agreement-section {
+  border-top: 1px solid var(--vd-border, var(--border));
+  margin-top: 28px;
+  padding-top: 22px;
+}
+
+.vd-agreement-section h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.vd-agreement-num {
+  color: var(--vd-primary);
+  font-variant-numeric: tabular-nums;
+  margin-right: 8px;
+}
+
+.vd-agreement-section p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+
+.vd-agreement-section ul {
+  font-size: 14.5px;
+  line-height: 1.65;
+  list-style: disc;
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.vd-agreement-section li {
+  margin-bottom: 6px;
+}
+
+.vd-agreement-small {
+  color: var(--vd-muted-fg, var(--muted-foreground));
+  font-size: 13px;
+}
+
+.vd-agreement-sig {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 32px;
+}
+
+.vd-agreement-sigline {
+  border-top: 1px solid var(--vd-fg, var(--foreground));
+  color: var(--vd-muted-fg, var(--muted-foreground));
+  font-size: 13px;
+  padding-top: 8px;
+}
+
+.vd-agreement-foot {
+  color: var(--vd-muted-fg, var(--muted-foreground));
+  font-size: 12.5px;
+  margin-top: 32px;
+}
+
+.vd-agreement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.vd-agreement-download {
+  background: var(--vd-primary);
+  border-radius: 8px;
+  color: var(--vd-primary-fg, #fff);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  text-decoration: none;
+}
+
+.vd-agreement-actions-note {
+  color: var(--vd-muted-fg, var(--muted-foreground));
+  font-size: 11px;
+}
+
+@media (max-width: 560px) {
+  .vd-agreement-doc {
+    padding: 28px 20px;
+  }
+  .vd-agreement-sig {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  /* Hide site chrome and the download bar — the document only. Note the
+     document's own <header>/<footer> live inside <article>, so only hide the
+     shell's direct children. */
+  .vd-home > header,
+  .vd-home > footer,
+  .vd-agreement-actions {
+    display: none !important;
+  }
+
+  .vd-agreement {
+    padding: 0;
+  }
+
+  .vd-agreement-doc {
+    border: none;
+    border-radius: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  .vd-agreement-section {
+    break-inside: avoid-page;
+  }
+
+  @page {
+    margin: 18mm 16mm;
+  }
+}

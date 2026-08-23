@@ -11,6 +11,7 @@ import {
   BellRing,
   BookCopy,
   Briefcase,
+  CalendarClock,
   CalendarDays,
   MailCheck,
   MessageSquare,
@@ -63,6 +64,7 @@ export const NAV_GROUPS: SidebarNavGroup[] = [
     items: [
       { label: 'Inbox', href: '/edit/inbox', icon: InboxIcon },
       { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays },
+      { label: 'Bookings', href: '/edit/bookings', icon: CalendarClock, adminOnly: true },
       { label: 'Newsletter', href: '/edit/newsletter', icon: Send, adminOnly: true },
       { label: 'Event Outreach', href: '/edit/event-registrations', icon: MailCheck, adminOnly: true }
     ]

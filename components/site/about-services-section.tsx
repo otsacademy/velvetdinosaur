@@ -7,7 +7,7 @@ import { r2PublicUrl } from "@/lib/public-assets"
 import { googleReviews } from "./google-reviews-section"
 
 const bioParagraphs = [
-  "Based in Oxfordshire, I build bespoke websites and apps for organisations seeking something different.",
+  "Based in Oxfordshire, I build managed websites for organisations seeking something different — designed and built first, before you pay anything.",
   "For most of my professional career, I have worked in the NHS across specialist medical devices, clinical research, and corporate governance. This unique medical background enables me to bring precision, clear communication, and a problem-solving mindset to complex digital projects; these values are consistently embedded in my work.",
   "In addition, I have spent most of my adult life building sites independently: rebuilding charity platforms, coding conference websites, and understanding web technologies at a fundamental level. This hands-on experience fuels my passion and means my clients benefit from both technical depth and genuine curiosity.",
   "Velvet Dinosaur was inspired by my 3-year-old daughter, who is obsessed with blue and dinosaurs.",

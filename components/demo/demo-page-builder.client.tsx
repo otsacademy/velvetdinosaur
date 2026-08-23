@@ -40,7 +40,7 @@ const initialPages = {
       id: "services",
       title: "Services grid",
       style: "feature",
-      summary: "Outline the bespoke build, migrations, and SEO support.",
+      summary: "Outline the managed website, bookings, and CMS tools.",
       accent: false
     },
     {
@@ -49,7 +49,7 @@ const initialPages = {
       style: "cta",
       summary: "Close with a direct founder contact block.",
       accent: true,
-      callToAction: "Start your project"
+      callToAction: "Start your free preview"
     }
   ]
 } satisfies Record<string, BuilderSection[]>

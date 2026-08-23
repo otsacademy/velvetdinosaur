@@ -2,34 +2,34 @@ import { HOME_CARD, HOME_MONO } from "./home-shared"
 
 export const CONTACT_FAQS = [
   {
-    question: "What's included in the base package?",
+    question: "What's included in the £99 a month?",
     answer:
-      "Custom design and build, SEO-ready page structure, performance optimisation, contact forms, launch support, SSL, daily backups, support portal access, and handover guidance. Scope is agreed before development starts; advanced features are quoted separately before build begins.",
+      "Everything your website needs: the design and build of your site, hosting, SSL, daily backups, security and software updates, your own CMS admin area, contact forms and enquiry inbox, email for your domain, and small content changes done for you. There is no setup fee and nothing extra to pay.",
+  },
+  {
+    question: "How does the free preview work?",
+    answer:
+      "I build a working version of your new website first, then send you a private sign-up link. You set your own password and can try everything — edit text, swap photos, test the forms, view it on your phone. You have 14 days. If you're not interested, the preview is simply deleted and it costs you nothing.",
+  },
+  {
+    question: "What happens after I subscribe?",
+    answer:
+      "We spend up to seven days refining the site together — by email, chat, video call, or in person where practical — then it launches on your domain. Your first 30 days are covered by my money-back guarantee: if it isn't right for your business, tell me and I'll refund everything you've paid.",
   },
   {
     question: "Do I own my website and domain?",
     answer:
-      "Yes. You retain ownership of your domain, content, and website assets. Accounts and access are set up in your name, not locked in a closed platform, so you can manage or move your site whenever you choose.",
+      "Your domain, content, photographs, and business data are always yours, and you can export your data at any time. Your site runs on my Sauro platform, which I keep updated and improving for you — but what's yours stays yours.",
   },
   {
     question: "What happens after the first year?",
     answer:
-      "Nothing changes and nothing surprises you: it stays £100 a month, and after your first 12 months you're free to leave at any time with 30 days' notice. Hosting, security, updates, email, and content changes are all still included — there are no year-two fees to discover.",
+      "Nothing changes and nothing surprises you: it stays £99 a month on a rolling basis with 30 days' notice. Or renew for another 12 months and I'll refresh your design completely free — your content, bookings, and settings stay exactly as they are.",
   },
   {
     question: "Can I move my site elsewhere later?",
     answer:
       "Yes. There is no lock-in. If you decide to migrate, I provide practical support, technical handover details, and a clear transition plan to keep downtime and risk low.",
-  },
-  {
-    question: "How quickly can we start?",
-    answer:
-      "Most projects can start within one to two weeks, depending on scope and content readiness. A standard build is usually delivered in about 4–6 weeks, with clear milestones from discovery through launch.",
-  },
-  {
-    question: "Can you improve an existing site?",
-    answer:
-      "Yes. I regularly improve existing websites — redesigns, speed fixes, technical SEO, and migrations away from older platforms. Work can be phased so you do not need a full rebuild on day one.",
   },
 ] as const
 

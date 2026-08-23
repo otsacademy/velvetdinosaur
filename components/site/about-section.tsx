@@ -57,9 +57,9 @@ export function AboutSection() {
               </div>
             </div>
             <p className="pt-1 text-foreground">
-              I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building bespoke
-              websites and apps for businesses, charities, and organisations that want something carefully made and
-              properly theirs.
+              I am Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a founder-led studio building managed
+              websites for businesses, charities, and organisations that want something carefully made and properly
+              theirs — built first, before they pay a penny.
             </p>
           </div>
 
@@ -78,8 +78,8 @@ export function AboutSection() {
             practical problem solving, and a preference for making things properly rather than dressing them up.
           </p>
           <p>
-            You work directly with me from first conversation to launch. No templates. No page builders. No platform
-            lock-in. Just well-built websites and apps, with full ownership when the work is done.
+            You work directly with me from first conversation to launch. No jargon. No agency runaround. No lock-in.
+            Just a well-built website, managed for you month to month, with your content and domain always yours.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export function AboutSection() {
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Highlight icon={Briefcase} label="Background" value="NHS work and years of independent web building" />
-          <Highlight icon={Code2} label="Builds" value="Bespoke websites, apps, and tailored CMS tools" />
+          <Highlight icon={Code2} label="Builds" value="Managed websites with CMS, bookings, and enquiry tools" />
           <Highlight icon={Handshake} label="Approach" value="Founder-led, direct, and technically rigorous" />
         </div>
       </div>

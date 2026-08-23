@@ -6,7 +6,7 @@ import { HOME_CARD, HOME_CONTAINER, HOME_MONO, SectionHeading } from "./home-sha
 const BIO_PARAGRAPHS = [
   "Most of my professional career has been in the NHS — medical equipment, clinical research, and governance. That background taught me how to work through complex problems, communicate clearly, and treat important work with care.",
   "Alongside that, I spent years designing and building websites independently: rebuilding my own charity website several times, creating conference sites, and following self-directed projects wherever they led. Velvet Dinosaur grew out of that path.",
-  "You work directly with me from first conversation to launch. No templates. No page builders. No platform lock-in. Just well-built websites and apps, with full ownership when the work is done.",
+  "You work directly with me from first conversation to launch. No jargon. No agency runaround. No lock-in. Just a well-built website, managed for you month to month, with your content and domain always yours.",
 ] as const
 
 const HOW_I_WORK = [
@@ -17,13 +17,13 @@ const HOW_I_WORK = [
   },
   {
     kicker: "Builds",
-    title: "Bespoke, not boxed",
-    body: "Websites, apps, and tailored CMS tools built around your goals — never templates or page builders.",
+    title: "Built for you first",
+    body: "Your new website is designed and built before you pay anything — try it free for 14 days, then decide.",
   },
   {
     kicker: "Approach",
     title: "Direct and transparent",
-    body: "One person, first call to launch. Clear scope, fixed pricing, and full ownership handed over at the end.",
+    body: "One person, first call to launch and beyond. One flat monthly price, and your content and domain always yours.",
   },
 ] as const
 
@@ -76,8 +76,9 @@ export function AboutHero() {
           <div className="flex max-w-[600px] flex-col gap-4 text-[15.5px] leading-[1.7] text-muted-foreground">
             <p className="m-0 text-foreground">
               I&apos;m Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a
-              founder-led studio building bespoke websites and apps for businesses, charities,
-              and organisations that want something carefully made and properly theirs.
+              founder-led studio building managed websites for businesses, charities, and
+              organisations that want something carefully made and properly theirs — built
+              first, before they pay a penny.
             </p>
             {BIO_PARAGRAPHS.map((paragraph) => (
               <p key={paragraph.slice(0, 24)} className="m-0">

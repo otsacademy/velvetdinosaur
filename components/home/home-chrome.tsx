@@ -44,7 +44,7 @@ export function HomeHeader({ active }: { active?: NavKey }) {
           ))}
         </nav>
         <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-5 py-2.5 text-[13px]`}>
-          Start your project
+          Start your free preview
         </Link>
       </div>
     </header>

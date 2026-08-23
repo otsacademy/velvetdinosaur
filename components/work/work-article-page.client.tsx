@@ -216,7 +216,7 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
             <ul className="my-5 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                Bespoke websites and CMS tools
+                Managed websites with CMS tools
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
@@ -231,7 +231,7 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
               <Link href="/#contact">
                 <Button className="w-full gap-2">
                   <MessageSquare className="h-4 w-4" />
-                  Start a project
+                  Start your free preview
                 </Button>
               </Link>
               {article.website ? (
