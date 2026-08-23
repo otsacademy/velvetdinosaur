@@ -695,3 +695,16 @@ The system is ready when:
 12. Which shared-package distribution channel will be available during local, offline-capable releases?
 13. May one repository intentionally feed multiple deployments, and what independent release/resource locks are required when it does?
 14. What backup, retention, and tamper-evidence policy applies to rollout state, approvals, logs, and visual evidence?
+
+## 12. Booking engine supersession (2026-08-23)
+
+The in-repo booking engine delivered in the velvetdinosaur template (models `Booking*`, `lib/booking/`, `app/api/bookings/**`, `app/api/admin/bookings/**`, the `/edit/bookings` workspace, and the `BookingWidget` Puck block) is the platform's booking capability going forward and **supersedes the legacy `/srv/apps/booking-api` service** (`vd-booking-api.service`).
+
+Disposition for the legacy service:
+
+1. It remains in Phase 0a scope until retired — no further feature work, and it must not be integrated with the new engine.
+2. Retirement candidate once its consumers are confirmed: identify any site still calling its public API (it has a public nginx route), migrate them to the in-repo engine, then stop and disable `vd-booking-api.service` and remove the nginx route.
+3. If its data holds live bookings for any site, export before decommission; otherwise decommission with the service.
+4. Until retirement is executed, the urgent source-recovery/security-remediation row in the running-workload overlay (section: Phase 0a) still applies.
+
+Related lifecycle note: customer-site booking data lives in each site's own MongoDB database, so it is purged when the site is decommissioned. Demo teardown is handled by `/opt/vdplatform/scripts/retire-demo.sh <slug> --yes` (delivered 2026-08-23: stops slots, removes nginx vhost + DNS record, drops the site's Mongo database, deletes site files). **Remaining gap:** retirement is still manual — a daily sweep that retires unclaimed demos after 14 days (the advertised auto-delete) still needs a scheduler (systemd timer) and an age signal (e.g. demo creation marker). Until that lands, the "deleted after 14 days" promise must be run by hand.

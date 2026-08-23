@@ -55,6 +55,7 @@
     "inbox": "components/edit/inbox",
     "calendar": "components/edit/calendar",
     "newsletter": "components/edit/newsletter",
+ "bookings": "components/edit/bookings-workspace.tsx",
     "support": "components/edit/support",
     "event-editor": "components/edit/event-editor",
     "event-registration": "components/edit/event-registration",
@@ -376,11 +377,8 @@
     },
     {
       "pattern": "components/edit/booking-api-*",
-      "role": "site-owned",
-      "owners": [
-        "thebrave"
-      ],
-      "note": "booking-api manager tabs"
+      "role": "core",
+      "note": "booking engine workspace tabs (Catalog/Pipeline/Availability, overview cards, settings dialog) — template capability delivered 2026-08-23; supersedes the reservation for thebrave and the legacy booking-api service"
     },
     {
       "pattern": "components/edit/capture/**",
