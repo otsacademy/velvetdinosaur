@@ -1,157 +1,211 @@
-/* Service agreement document styling (screen + print). */
+/* Service agreement — site-native layout (screen) + clean document (print). */
 
 .vd-agreement {
-  padding-top: 56px;
+  padding-top: 48px;
   padding-bottom: 72px;
 }
 
-.vd-agreement-doc {
-  max-width: 760px;
-  margin: 0 auto;
-  background: var(--vd-bg, var(--background));
-  border: 1px solid var(--vd-border, var(--border));
-  border-radius: 12px;
-  padding: 48px 44px;
+.vd-agreement-head {
+  margin-bottom: 28px;
 }
 
-.vd-agreement-head {
-  margin-bottom: 24px;
+.vd-agreement-kicker {
+  margin-bottom: 14px;
+  font-size: 11px;
+  color: var(--vd-primary);
 }
 
 .vd-agreement-head img {
-  height: 40px;
+  height: 34px;
   width: auto;
-  margin-bottom: 20px;
 }
 
-.vd-agreement-head h1 {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0 0 8px;
+/* "Short version" callout — same treatment as the pricing portability card. */
+.vd-agreement-short {
+  border: 1px solid color-mix(in oklch, var(--vd-primary) 20%, var(--vd-border));
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--vd-primary) 10%, var(--vd-bg));
+  padding: 24px 28px;
+  margin-bottom: 40px;
 }
 
-.vd-agreement-meta {
-  color: var(--vd-muted-fg, var(--muted-foreground));
-  font-size: 13.5px;
-  margin: 0 0 4px;
+.vd-agreement-body {
+  display: grid;
+  gap: 40px;
+}
+
+@media (min-width: 1024px) {
+  .vd-agreement-body {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 56px;
+  }
+}
+
+.vd-agreement-toc {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .vd-agreement-toc {
+    display: block;
+    position: sticky;
+    top: 96px;
+    align-self: start;
+  }
+}
+
+.vd-agreement-toc-link {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--vd-muted-fg);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.vd-agreement-toc-link:hover {
+  color: var(--vd-primary);
+}
+
+.vd-agreement-toc-num {
+  font-size: 10px;
+  color: var(--vd-primary);
+  min-width: 18px;
+}
+
+.vd-agreement-section {
+  border-top: 1px solid var(--vd-border);
+  padding-top: 22px;
+  margin-top: 28px;
+  scroll-margin-top: 96px;
+}
+
+.vd-agreement-section:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.vd-agreement-section h2 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+.vd-agreement-num {
+  color: var(--vd-primary);
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.vd-agreement-h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 16px 0 8px;
+}
+
+.vd-agreement-section p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin: 0 0 14px;
+  max-width: 68ch;
+}
+
+.vd-agreement-section ul,
+.vd-agreement-section ol {
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  padding-left: 22px;
+  max-width: 68ch;
+}
+
+.vd-agreement-section ul {
+  list-style: disc;
+}
+
+.vd-agreement-section ol {
+  list-style: decimal;
+}
+
+.vd-agreement-section li {
+  margin-bottom: 5px;
 }
 
 .vd-agreement-keybox {
-  background: color-mix(in oklch, var(--vd-primary) 7%, var(--vd-bg));
-  border: 1px solid color-mix(in oklch, var(--vd-primary) 22%, var(--vd-border));
+  border: 1px solid color-mix(in oklch, var(--vd-primary) 20%, var(--vd-border));
   border-radius: 8px;
+  background: color-mix(in oklch, var(--vd-primary) 7%, var(--vd-bg));
   font-size: 14.5px;
-  line-height: 1.65;
-  margin: 20px 0 8px;
-  padding: 14px 18px;
+  line-height: 1.7;
+  margin: 4px 0 16px;
+  padding: 16px 20px;
+  max-width: 68ch;
 }
 
 .vd-agreement-keybox strong {
   color: var(--vd-primary);
 }
 
-.vd-agreement-section {
-  border-top: 1px solid var(--vd-border, var(--border));
-  margin-top: 28px;
-  padding-top: 22px;
-}
-
-.vd-agreement-section h2 {
-  font-size: 17px;
-  font-weight: 700;
-  margin: 0 0 10px;
-}
-
-.vd-agreement-num {
-  color: var(--vd-primary);
-  font-variant-numeric: tabular-nums;
-  margin-right: 8px;
-}
-
-.vd-agreement-section p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  margin: 0 0 12px;
-}
-
-.vd-agreement-section ul {
-  font-size: 14.5px;
-  line-height: 1.65;
-  list-style: disc;
-  margin: 0 0 12px;
-  padding-left: 22px;
-}
-
-.vd-agreement-section li {
-  margin-bottom: 6px;
-}
-
 .vd-agreement-small {
-  color: var(--vd-muted-fg, var(--muted-foreground));
-  font-size: 13px;
+  color: var(--vd-muted-fg);
+  font-size: 13px !important;
+}
+
+.vd-agreement-order {
+  max-width: 640px;
+  padding: 8px 0;
+}
+
+.vd-agreement-order-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 20px;
+  font-size: 14px;
+}
+
+.vd-agreement-order-row + .vd-agreement-order-row {
+  border-top: 1px solid color-mix(in oklch, var(--vd-border) 60%, transparent);
+}
+
+.vd-agreement-order-label {
+  color: var(--vd-muted-fg);
+}
+
+.vd-agreement-order-value {
+  font-weight: 600;
+  text-align: right;
 }
 
 .vd-agreement-sig {
   display: grid;
   gap: 28px;
   grid-template-columns: 1fr 1fr;
-  margin-top: 32px;
+  margin-top: 36px;
+  max-width: 640px;
 }
 
 .vd-agreement-sigline {
-  border-top: 1px solid var(--vd-fg, var(--foreground));
-  color: var(--vd-muted-fg, var(--muted-foreground));
+  border-top: 1px solid var(--vd-fg);
+  color: var(--vd-muted-fg);
   font-size: 13px;
   padding-top: 8px;
 }
 
-.vd-agreement-foot {
-  color: var(--vd-muted-fg, var(--muted-foreground));
-  font-size: 12.5px;
-  margin-top: 32px;
-}
-
-.vd-agreement-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.vd-agreement-download {
-  background: var(--vd-primary);
-  border-radius: 8px;
-  color: var(--vd-primary-fg, #fff);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 12px 22px;
-  text-decoration: none;
-}
-
-.vd-agreement-actions-note {
-  color: var(--vd-muted-fg, var(--muted-foreground));
-  font-size: 11px;
-}
-
 @media (max-width: 560px) {
-  .vd-agreement-doc {
-    padding: 28px 20px;
-  }
   .vd-agreement-sig {
     grid-template-columns: 1fr;
   }
 }
 
 @media print {
-  /* Hide site chrome and the download bar — the document only. Note the
-     document's own <header>/<footer> live inside <article>, so only hide the
-     shell's direct children. */
+  /* Document only: hide site chrome, the TOC and the download button. */
   .vd-home > header,
   .vd-home > footer,
-  .vd-agreement-actions {
+  .vd-agreement-toc {
     display: none !important;
   }
 
@@ -159,11 +213,13 @@
     padding: 0;
   }
 
-  .vd-agreement-doc {
-    border: none;
-    border-radius: 0;
-    max-width: none;
-    padding: 0;
+  .vd-agreement-body {
+    display: block;
+  }
+
+  .vd-agreement-short {
+    background: none;
+    border: 1px solid #ccc;
   }
 
   .vd-agreement-section {
