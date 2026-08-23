@@ -100,7 +100,7 @@ test('media library loads', async ({ page }) => {
   page.on('pageerror', (error) => pageErrors.push(error.message));
 
   await page.goto('/edit/media', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByText('Media Library')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Media Library' })).toBeVisible();
   await expect(page.getByText('No uploads found.')).toBeVisible();
 
   expect(pageErrors).toEqual([]);
