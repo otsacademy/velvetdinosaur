@@ -13,6 +13,7 @@ export type AgreementSection = {
   id: string
   num: string
   title: string
+  note?: string
   blocks: AgreementBlock[]
 }
 
@@ -29,7 +30,8 @@ export const SHORT_VERSION = [
 
 export const AGREEMENT_SECTIONS: AgreementSection[] = [
   {
-    id: "service",
+    id: "the-service",
+    note: "£99 a month covers the design, the CMS, hosting, support and a standard domain. Nothing to pay up front.",
     num: "1",
     title: "The service",
     blocks: [
@@ -54,7 +56,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "demonstration",
+    id: "free-demonstration",
+    note: "A real, working demo — free, private, 14 days, no obligation. Don't put live customer data in it.",
     num: "2",
     title: "Your free 14-day demonstration",
     blocks: [
@@ -86,7 +89,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "refinement",
+    id: "refinement-period",
+    note: "Seven days to tune the site you were shown — not a licence for a different project.",
     num: "4",
     title: "Your seven-day refinement period",
     blocks: [
@@ -106,7 +110,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "guarantee",
+    id: "money-back-guarantee",
+    note: "First 30 days as a paying subscriber: say the word and we refund every standard payment. No reason needed.",
     num: "5",
     title: "Our 30-day money-back guarantee",
     blocks: [
@@ -137,7 +142,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "after-first-year",
+    id: "after-12-months",
+    note: "Two doors at month 12: roll monthly with 30 days' notice, or re-sign and get a free design refresh.",
     num: "7",
     title: "After the first 12 months",
     blocks: [
@@ -163,6 +169,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "changes-after-launch",
+    note: "Day-to-day edits are included. Anything chargeable is quoted and agreed first — never a surprise.",
     num: "8",
     title: "Website changes after launch",
     blocks: [
@@ -181,7 +188,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "bookings",
+    id: "bookings-and-enquiries",
+    note: "We provide the booking machinery; the booking itself is between you and your customer.",
     num: "9",
     title: "Bookings, enquiries and business tools",
     blocks: [
@@ -199,7 +207,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "payments",
+    id: "payments-and-ecommerce",
+    note: "Card payments run through your provider. We take no percentage of your sales.",
     num: "10",
     title: "Payments and ecommerce",
     blocks: [
@@ -218,7 +227,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "external-services",
+    id: "social-and-external",
     num: "11",
     title: "Social media and external services",
     blocks: [
@@ -228,7 +237,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "domains",
+    id: "domain-names",
+    note: "The domain is yours. We pay standard registration while you subscribe, and hand it over on request.",
     num: "12",
     title: "Domain names",
     blocks: [
@@ -239,6 +249,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "your-content",
+    note: "Yours stays yours. We only get permission to use it to run the site.",
     num: "13",
     title: "Your content",
     blocks: [
@@ -256,7 +267,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "technology",
+    id: "our-technology",
+    note: "Sauro and the platform stay ours. Your subscription is a right to use them, not to own them.",
     num: "14",
     title: "Velvet Dinosaur technology",
     blocks: [
@@ -266,6 +278,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "leaving",
+    note: "No hostages. Domain released, content and data exported, export available for 30 days.",
     num: "15",
     title: "Leaving Velvet Dinosaur",
     blocks: [
@@ -285,6 +298,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "personal-data",
+    note: "Your account data: we're the controller. Your customers' data: you're the controller, we're the processor.",
     num: "16",
     title: "Personal data",
     blocks: [
@@ -305,7 +319,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "security",
+    id: "security-and-backups",
     num: "17",
     title: "Security and backups",
     blocks: [
@@ -333,7 +347,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "paying",
+    id: "paying-us",
+    note: "A failed card doesn't delete your website. We contact you and retry first.",
     num: "20",
     title: "Paying us",
     blocks: [
@@ -343,6 +358,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "price-changes",
+    note: "Price is fixed for the first 12 months, and any later change needs 60 days' written notice.",
     num: "21",
     title: "Price changes",
     blocks: [
@@ -351,7 +367,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "ending",
+    id: "ending-the-agreement",
     num: "22",
     title: "Ending the agreement",
     blocks: [
@@ -365,7 +381,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "responsibility",
+    id: "our-responsibility",
+    note: "Liability is normally capped at the fees you paid in the relevant 12 months. Rights that can't be excluded aren't.",
     num: "23",
     title: "Our responsibility to you",
     blocks: [
@@ -374,7 +391,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     ],
   },
   {
-    id: "force-majeure",
+    id: "events-outside-control",
     num: "24",
     title: "Events outside either party's control",
     blocks: [
@@ -383,6 +400,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "changes-to-agreement",
+    note: "Terms can change, but not retrospectively — and not to remove something already promised for your current term.",
     num: "25",
     title: "Changes to this agreement",
     blocks: [
@@ -400,6 +418,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
   {
     id: "general",
+    note: "If your order and this agreement disagree, the order wins.",
     num: "27",
     title: "General",
     blocks: [
@@ -416,4 +435,64 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
       { type: "p", text: "This agreement is governed by the laws of **England and Wales**. The courts of England and Wales will have jurisdiction over disputes arising from it. Before starting court proceedings, both parties agree to make reasonable efforts to resolve the dispute directly." },
     ],
   },
+]
+
+export const AGREEMENT_VERSION_SHORT = "v3.2"
+
+export type KeyTile = {
+  value: string
+  label: string
+  href: string
+  ref: string
+  accent?: boolean
+}
+
+// "Key terms at a glance" tiles on the cover (design handoff).
+export const KEY_TILES: KeyTile[] = [
+  { value: "£99", label: "per month, no setup fee", href: "#paying-us", ref: "§20", accent: true },
+  { value: "14", label: "days of free demonstration", href: "#free-demonstration", ref: "§2", accent: true },
+  { value: "30", label: "days money-back guarantee", href: "#money-back-guarantee", ref: "§5", accent: true },
+  { value: "12", label: "months initial term", href: "#initial-term", ref: "§6" },
+  { value: "30", label: "days' notice to cancel after", href: "#after-12-months", ref: "§7" },
+  { value: "60", label: "days' notice of any price change", href: "#price-changes", ref: "§21" },
+]
+
+export const ORDER_FIELDS: [string, string][] = [
+  ["Customer / business", "[Business name]"],
+  ["Contact", "[Name]"],
+  ["Address", "[Address]"],
+  ["Email", "[Email]"],
+  ["Website / domain", "[Domain]"],
+  ["Monthly subscription", "£99"],
+  ["Initial term", "12 months"],
+  ["Subscription start date", "[Date]"],
+  ["Money-back guarantee expires", "[Date]"],
+  ["Included functionality", "[Website / CMS / bookings / forms / inbox / social / etc.]"],
+  ["Any separately agreed additions", "[Details]"],
+]
+
+export const ACCEPTANCE_BLOCKS: AgreementBlock[] = [
+  { type: "p", text: "The agreement can be accepted electronically as part of the Velvet Dinosaur signup process." },
+  { type: "p", text: "By selecting “Subscribe”, signing an order or otherwise expressly accepting these terms, the customer confirms that they have authority to enter into the agreement on behalf of the named business." },
+]
+
+export const ORDER_SECTION: AgreementSection = {
+  id: "the-order",
+  num: "29",
+  title: "The order",
+  note: "Your order is the specific half of this contract. These are the fields it should record.",
+  blocks: [{ type: "p", text: "The customer order should record at least:" }],
+}
+
+export const ACCEPTANCE_SECTION: AgreementSection = {
+  id: "acceptance",
+  num: "30",
+  title: "Acceptance",
+  blocks: ACCEPTANCE_BLOCKS,
+}
+
+export const ALL_CLAUSES: AgreementSection[] = [
+  ...AGREEMENT_SECTIONS,
+  ORDER_SECTION,
+  ACCEPTANCE_SECTION,
 ]

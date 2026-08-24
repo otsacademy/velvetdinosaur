@@ -12,9 +12,10 @@ export const REGISTERED_OFFICE =
   '16 Holloway Lane, Minster Lovell, Witney, Oxfordshire OX29 0AU, UK';
 
 /** One-line trading-name statement used in the site footer and emails. */
+// NOTE: written as a single template literal — the previous `+`-concatenated
+// form was miscompiled (the middle clause vanished from the bundle).
 export const TRADING_NAME_STATEMENT =
-  `${TRADING_NAME} is a trading name of ${REGISTERED_NAME}, registered in England and Wales. ` +
-  `Company number ${COMPANY_NUMBER}. Registered office: ${REGISTERED_OFFICE}.`;
+  `${TRADING_NAME} is a trading name of ${REGISTERED_NAME}, registered in England and Wales. Company number ${COMPANY_NUMBER}. Registered office: ${REGISTERED_OFFICE}.`;
 
 /** Formal parties clause opener for contracts. */
 export const CONTRACTING_PARTY =
@@ -22,5 +23,4 @@ export const CONTRACTING_PARTY =
 
 /** One-line registered-details block for contract footers and formal documents. */
 export const REGISTERED_DETAILS_LINE =
-  `${CONTRACTING_PARTY} · Registered in England and Wales · ` +
-  `Company number ${COMPANY_NUMBER} · Registered office: ${REGISTERED_OFFICE}`;
+  `${CONTRACTING_PARTY} · Registered in England and Wales · Company number ${COMPANY_NUMBER} · Registered office: ${REGISTERED_OFFICE}`;

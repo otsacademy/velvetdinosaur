@@ -1,0 +1,171 @@
+/* Agreement document — design-handoff port ("PDF design and usability update").
+   Palette is the handoff's, expressed as OKLCH tokens; accent is the VD blue,
+   accent-soft is the handoff's neutral hover grey (kept identical on purpose). */
+
+.vd-doc {
+  --ink: oklch(0% 0 0);
+  --ink-2: oklch(26.9% 0 0);
+  --ink-3: oklch(49.1% 0 0);
+  --paper: oklch(100% 0 0);
+  --desk: oklch(100% 0 0);
+  --chrome: oklch(100% 0 0);
+  --tint: oklch(96.8% 0 0);
+  --rule: oklch(89.1% 0 0);
+  --rule-2: oklch(79.6% 0 0);
+  --accent: var(--vd-primary);
+  --good: var(--ink);
+  --accent-soft: color-mix(in oklch, var(--ink) 8%, var(--paper));
+  --gutter: 1.95in;
+  --gpad: 2.2in;
+
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--font-dm-sans, "DM Sans", system-ui, -apple-system, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.vd-doc a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklch, var(--accent) 35%, transparent);
+}
+.vd-doc a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+/* the site's global display-serif h1 must not leak into the document */
+.vd-doc h1 {
+  font-family: inherit;
+}
+/* nav + contents entries are plain document links, not accent links */
+.vd-doc [data-nav],
+.vd-doc [data-jump] {
+  color: var(--ink-2);
+  border-bottom: none;
+}
+.vd-doc [data-jump]:hover {
+  color: var(--ink);
+}
+.vd-doc ::selection {
+  background: color-mix(in oklch, var(--accent) 22%, transparent);
+}
+
+/* search highlights (CSS Custom Highlight API) */
+::highlight(vd-find) {
+  background: oklch(90.1% 0.16 95);
+  color: oklch(21.5% 0.02 260);
+}
+::highlight(vd-cur) {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* view-state machinery (search filter + per-clause collapse) */
+.vd-doc [data-vd-hidden] {
+  display: none !important;
+}
+.vd-doc [data-vd-collapsed] [data-body] {
+  display: none;
+}
+.vd-doc [data-when-closed] {
+  display: none;
+}
+.vd-doc [data-vd-collapsed] [data-when-closed] {
+  display: inline;
+}
+.vd-doc [data-vd-collapsed] [data-when-open] {
+  display: none;
+}
+
+/* the handoff's hover grey — nav active + palette selection */
+.vd-doc [data-nav]:hover,
+.vd-doc [data-nav][data-active="1"] {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+.vd-doc [data-nav][data-active="1"] [data-navnum] {
+  color: var(--accent);
+}
+.vd-doc [data-row]:hover,
+.vd-doc [data-row][data-sel="1"] {
+  background: var(--accent-soft);
+}
+
+.vd-doc [data-list] > li::marker {
+  color: var(--accent);
+}
+
+@keyframes vdFlash {
+  from {
+    background: color-mix(in oklch, var(--accent) 22%, transparent);
+  }
+  to {
+    background: transparent;
+  }
+}
+.vd-doc [data-flash] {
+  animation: vdFlash 1.8s ease-out;
+}
+
+/* clause gutter: big mono number + margin note floating left of the body
+   (stacked above the title on small screens) */
+.vd-clause {
+  clear: left;
+}
+@media (min-width: 1024px) {
+  .vd-clause {
+    padding-left: var(--gpad);
+  }
+  .vd-clause-gutter {
+    float: left;
+    width: var(--gutter);
+    margin-left: calc(-1 * var(--gpad));
+    text-align: right;
+  }
+}
+
+/* running header/footer only appear on paper */
+.vd-doc-print-only {
+  display: none;
+}
+
+@media print {
+  .vd-doc [data-chrome] {
+    display: none !important;
+  }
+  .vd-doc-main {
+    margin-left: 0 !important;
+  }
+  .vd-doc [data-noprint] {
+    display: none !important;
+  }
+  .vd-doc [data-vd-hidden] {
+    display: revert !important;
+  }
+  .vd-doc [data-vd-collapsed] [data-body] {
+    display: block !important;
+  }
+  .vd-doc-print-only {
+    display: revert-layer;
+  }
+  .vd-doc [data-tiles-grid] {
+    break-inside: avoid;
+  }
+  .vd-doc [data-tile],
+  .vd-doc [data-tick],
+  .vd-doc [data-note],
+  .vd-doc [data-sig],
+  .vd-doc [data-order] tr {
+    break-inside: avoid;
+  }
+  .vd-clause {
+    padding-left: var(--gpad);
+  }
+  .vd-clause-gutter {
+    float: left;
+    width: var(--gutter);
+    margin-left: calc(-1 * var(--gpad));
+    text-align: right;
+  }
+}
