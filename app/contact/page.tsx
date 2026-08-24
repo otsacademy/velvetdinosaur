@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { DesignShell } from "@/components/home/design-shell"
 import { EnquiryForm } from "@/components/home/enquiry-form.client"
 import { FaqAccordion } from "@/components/home/faq-accordion"
-import { HOME_CARD, HOME_CONTAINER, HOME_MONO, SectionHeading } from "@/components/home/home-shared"
+import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "@/components/home/home-shared"
 import { siteName } from "@/lib/site-metadata"
 
 const contactDescription =
@@ -34,7 +34,7 @@ export default function ContactPage() {
     <DesignShell active="contact">
       <section className="border-b border-border bg-background">
         <div className={`${HOME_CONTAINER} py-12 md:pb-12 md:pt-16`}>
-          <div className={`${HOME_MONO} mb-4 text-[11px] text-primary`}>Say hello</div>
+          <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>Say hello</div>
           <h1 className="m-0 mb-3.5 text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
             Tell me about your project.
           </h1>
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
         <div className="flex flex-col gap-4">
           <div className={`${HOME_CARD} p-7`}>
-            <div className={`${HOME_MONO} mb-4 text-[10px] text-muted-foreground`}>
+            <div className={`${HOME_KICKER} mb-4 text-[11px] text-muted-foreground`}>
               Prefer to talk?
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -79,7 +79,7 @@ export default function ContactPage() {
           </div>
 
           <div className={`${HOME_CARD} p-7`}>
-            <div className={`${HOME_MONO} mb-3 text-[10px] text-muted-foreground`}>
+            <div className={`${HOME_KICKER} mb-3 text-[11px] text-muted-foreground`}>
               Where I’m based
             </div>
             <div className="text-sm font-semibold">16 Holloway Lane, Minster Lovell, Witney</div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
-            <div className={`${HOME_MONO} mb-3 text-[10px] text-primary`}>Quick replies</div>
+            <div className={`${HOME_KICKER} mb-3 text-[11px] text-primary`}>Quick replies</div>
             <div className="text-sm font-medium leading-relaxed text-foreground">
               Enquiries answered within one business day — most projects can start within one to
               two weeks.

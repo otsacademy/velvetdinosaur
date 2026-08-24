@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
-import { HOME_CARD, HOME_MONO } from "./home-shared"
+import { HOME_CARD, HOME_KICKER } from "./home-shared"
 
 const CATEGORIES = ["All", "Charity", "Travel", "Product", "Community"] as const
 
@@ -125,7 +125,7 @@ function ProjectBanner({ banner, tag }: { banner: Banner; tag: string }) {
         </span>
       )}
       <span
-        className={`${HOME_MONO} absolute left-3.5 top-3.5 rounded-[3px] bg-white/[.92] px-2 py-1 text-[10px] text-[#0f1c2e]`}
+        className={`${HOME_KICKER} absolute left-3.5 top-3.5 rounded-[3px] bg-white/[.92] px-2 py-1 text-[11px] text-[#0f1c2e]`}
       >
         {tag}
       </span>
@@ -137,18 +137,18 @@ function ProjectCardBody({ project }: { project: Project }) {
   return (
     <div className="flex flex-1 flex-col gap-2.5 px-7 pb-7 pt-6">
       <div className="text-lg font-bold tracking-[-0.01em]">{project.title}</div>
-      <div className="flex-1 text-[13.5px] leading-relaxed text-muted-foreground">
+      <div className="flex-1 text-[14px] leading-relaxed text-muted-foreground">
         {project.blurb}
       </div>
       <div className="flex flex-wrap items-center gap-3.5 pt-1.5">
         {project.live ? (
           <span
-            className={`${HOME_MONO} rounded-[3px] bg-[color-mix(in_srgb,var(--vd-score-perfect)_14%,var(--vd-bg))] px-2 py-1 text-[10px] text-[color-mix(in_srgb,var(--vd-score-perfect)_60%,var(--vd-fg))]`}
+            className={`${HOME_KICKER} rounded-[3px] bg-[color-mix(in_srgb,var(--vd-score-perfect)_14%,var(--vd-bg))] px-2 py-1 text-[11px] text-[color-mix(in_srgb,var(--vd-score-perfect)_60%,var(--vd-fg))]`}
           >
             ● Live
           </span>
         ) : null}
-        <span className={`${HOME_MONO} text-[10px] text-muted-foreground`}>{project.meta}</span>
+        <span className={`${HOME_KICKER} text-[11px] text-muted-foreground`}>{project.meta}</span>
         {project.caseStudyHref ? (
           <span className="ms-auto text-[12.5px] font-semibold text-primary">
             Read case study →

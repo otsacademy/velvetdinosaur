@@ -2,7 +2,10 @@ import type { ReactNode } from "react"
 
 export const HOME_CONTAINER = "mx-auto w-full max-w-6xl px-6 md:px-10"
 
-export const HOME_MONO = "[font-family:var(--font-space-mono,var(--vd-font-mono))]"
+// Small section labels ("kickers"). Inter small-caps style — professional and
+// legible at small sizes, replacing the old sci-fi mono treatment.
+export const HOME_KICKER =
+  "[font-family:var(--font-inter,var(--vd-font-sans))] font-medium uppercase tracking-[0.12em]"
 
 export const HOME_CARD =
   "rounded-lg border border-border bg-background shadow-[var(--vd-shadow-xs)]"
@@ -28,8 +31,10 @@ export function ScoreCells({ value }: { value: number }) {
     <>
       {SCORE_LABELS.map((label) => (
         <div key={label} className="bg-muted px-6 py-6 md:px-8">
-          <div className={`${HOME_MONO} text-2xl font-bold text-primary`}>{value}</div>
-          <div className="mt-1 text-[12.5px] text-muted-foreground">
+          <div className={`${HOME_KICKER} text-2xl font-bold normal-case tracking-tight text-primary`}>
+            {value}
+          </div>
+          <div className="mt-1 text-[13px] text-muted-foreground">
             {label} — Google Lighthouse
           </div>
         </div>
@@ -49,7 +54,7 @@ export function SectionHeading({
 }) {
   return (
     <div className="mb-7 flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
-      <span className={`${HOME_MONO} text-xs text-primary`}>{index}</span>
+      <span className={`${HOME_KICKER} text-[11px] text-primary`}>{index}</span>
       <h2 className="text-2xl font-bold tracking-tight md:text-[26px]">{title}</h2>
       {aside ? <div className="ms-auto">{aside}</div> : null}
     </div>

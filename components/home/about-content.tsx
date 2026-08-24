@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 import { FounderAvatar } from "./founder-avatar"
-import { HOME_CARD, HOME_CONTAINER, HOME_MONO, SectionHeading } from "./home-shared"
+import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "./home-shared"
 
 const BIO_PARAGRAPHS = [
   "Most of my professional career has been in the NHS — medical equipment, clinical research, and governance. That background taught me how to work through complex problems, communicate clearly, and treat important work with care.",
@@ -69,7 +69,7 @@ export function AboutHero() {
         className={`${HOME_CONTAINER} grid items-start gap-10 py-12 md:pb-14 md:pt-16 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14`}
       >
         <div>
-          <div className={`${HOME_MONO} mb-4 text-[11px] text-primary`}>About me</div>
+          <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>About me</div>
           <h1 className="m-0 mb-5 text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
             Websites made by a person, not a platform.
           </h1>
@@ -107,7 +107,7 @@ export function AboutHero() {
               className="animate-vd-float h-auto w-[130px] drop-shadow-[0_10px_16px_color-mix(in_srgb,var(--vd-primary)_18%,transparent)]"
             />
             <div
-              className={`${HOME_MONO} pointer-events-none absolute bottom-3 left-3 rounded-[3px] border border-primary/20 bg-background px-1.5 py-1 text-[9.5px] text-muted-foreground`}
+              className={`${HOME_KICKER} pointer-events-none absolute bottom-3 left-3 rounded-[3px] border border-primary/20 bg-background px-1.5 py-1 text-[11px] text-muted-foreground`}
             >
               Named by my 3-year-old daughter
             </div>
@@ -125,9 +125,9 @@ export function HowIWork() {
       <div className="grid gap-4 md:grid-cols-3">
         {HOW_I_WORK.map((card) => (
           <div key={card.title} className={`${HOME_CARD} flex flex-col gap-3 p-7`}>
-            <div className={`${HOME_MONO} text-[10px] text-muted-foreground`}>{card.kicker}</div>
+            <div className={`${HOME_KICKER} text-[11px] text-muted-foreground`}>{card.kicker}</div>
             <div className="text-base font-bold">{card.title}</div>
-            <div className="text-[13.5px] leading-relaxed text-muted-foreground">{card.body}</div>
+            <div className="text-[14px] leading-relaxed text-muted-foreground">{card.body}</div>
           </div>
         ))}
       </div>
@@ -142,7 +142,7 @@ export function GoogleReviews() {
         index="02"
         title="Google reviews"
         aside={
-          <span className={`${HOME_MONO} text-[11px] text-muted-foreground`}>
+          <span className={`${HOME_KICKER} text-[11px] text-muted-foreground`}>
             5.0 ★ · independent reviews
           </span>
         }
@@ -160,14 +160,14 @@ export function GoogleReviews() {
                   <div className="mt-0.5 text-xs text-muted-foreground">{review.company}</div>
                 ) : null}
               </div>
-              <span className={`${HOME_MONO} whitespace-nowrap text-[10px] text-muted-foreground`}>
+              <span className={`${HOME_KICKER} whitespace-nowrap text-[11px] text-muted-foreground`}>
                 {review.date}
               </span>
             </div>
             <div aria-label="5 out of 5 stars" className="text-[13px] tracking-[2px] text-amber-500">
               ★★★★★
             </div>
-            <div className="text-[13.5px] leading-[1.65] text-muted-foreground">{review.quote}</div>
+            <div className="text-[14px] leading-[1.65] text-muted-foreground">{review.quote}</div>
             <a
               href={review.sourceUrl}
               target="_blank"

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 
 import { DesignShell } from "@/components/home/design-shell"
-import { HOME_BTN_PRIMARY, HOME_CARD, HOME_CONTAINER, HOME_MONO } from "@/components/home/home-shared"
+import { HOME_BTN_PRIMARY, HOME_CARD, HOME_CONTAINER, HOME_KICKER } from "@/components/home/home-shared"
 import { siteName } from "@/lib/site-metadata"
 import {
   AGREEMENT_SECTIONS,
@@ -106,7 +106,7 @@ export default function AgreementPage() {
       <div className="vd-agreement-print">
         <div className={`${HOME_CONTAINER} vd-agreement`}>
           <header className="vd-agreement-head">
-            <div className={`${HOME_MONO} vd-agreement-kicker`}>The small print, in plain English</div>
+            <div className={`${HOME_KICKER} vd-agreement-kicker`}>The small print, in plain English</div>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-4">
               <Image src="/logo.webp" alt="Velvet Dinosaur" width={150} height={40} priority />
               <h1 className="m-0 text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
@@ -123,13 +123,13 @@ export default function AgreementPage() {
           </header>
 
           <div className="vd-agreement-short">
-            <div className={`${HOME_MONO} mb-3 text-[10px] text-primary`}>The short version</div>
+            <div className={`${HOME_KICKER} mb-3 text-[11px] text-primary`}>The short version</div>
             <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
               {SHORT_VERSION.map((line) => (
                 <li key={line} className="flex items-baseline gap-2.5 text-[13.5px] leading-relaxed">
                   <span
                     aria-hidden
-                    className="inline-flex h-[17px] w-[17px] flex-none translate-y-0.5 items-center justify-center rounded-full bg-primary/10 text-[10.5px] font-bold text-primary"
+                    className="inline-flex h-[17px] w-[17px] flex-none translate-y-0.5 items-center justify-center rounded-full bg-primary/10 text-[11px] font-bold text-primary"
                   >
                     ✓
                   </span>
@@ -143,25 +143,25 @@ export default function AgreementPage() {
 
           <div className="vd-agreement-body">
             <nav aria-label="Agreement contents" className="vd-agreement-toc">
-              <div className={`${HOME_MONO} mb-3 text-[10px] text-muted-foreground`}>Contents</div>
+              <div className={`${HOME_KICKER} mb-3 text-[11px] text-muted-foreground`}>Contents</div>
               <ol className="m-0 flex list-none flex-col gap-1.5 p-0">
                 {AGREEMENT_SECTIONS.map((section) => (
                   <li key={section.id}>
                     <a href={`#${section.id}`} className="vd-agreement-toc-link">
-                      <span className={`${HOME_MONO} vd-agreement-toc-num`}>{section.num}</span>
+                      <span className={`${HOME_KICKER} vd-agreement-toc-num`}>{section.num}</span>
                       {section.title}
                     </a>
                   </li>
                 ))}
                 <li>
                   <a href="#order" className="vd-agreement-toc-link">
-                    <span className={`${HOME_MONO} vd-agreement-toc-num`}>29</span>
+                    <span className={`${HOME_KICKER} vd-agreement-toc-num`}>29</span>
                     The order
                   </a>
                 </li>
                 <li>
                   <a href="#acceptance" className="vd-agreement-toc-link">
-                    <span className={`${HOME_MONO} vd-agreement-toc-num`}>30</span>
+                    <span className={`${HOME_KICKER} vd-agreement-toc-num`}>30</span>
                     Acceptance
                   </a>
                 </li>
@@ -178,7 +178,7 @@ export default function AgreementPage() {
               {AGREEMENT_SECTIONS.map((section) => (
                 <section key={section.id} id={section.id} className="vd-agreement-section">
                   <h2>
-                    <span className={`${HOME_MONO} vd-agreement-num`}>{section.num}</span>
+                    <span className={`${HOME_KICKER} vd-agreement-num`}>{section.num}</span>
                     {section.title}
                   </h2>
                   {section.blocks.map((block, index) => (
@@ -189,7 +189,7 @@ export default function AgreementPage() {
 
               <section id="order" className="vd-agreement-section">
                 <h2>
-                  <span className={`${HOME_MONO} vd-agreement-num`}>29</span>
+                  <span className={`${HOME_KICKER} vd-agreement-num`}>29</span>
                   The order
                 </h2>
                 <p>The customer order should record at least:</p>
@@ -205,7 +205,7 @@ export default function AgreementPage() {
 
               <section id="acceptance" className="vd-agreement-section">
                 <h2>
-                  <span className={`${HOME_MONO} vd-agreement-num`}>30</span>
+                  <span className={`${HOME_KICKER} vd-agreement-num`}>30</span>
                   Acceptance
                 </h2>
                 <p>

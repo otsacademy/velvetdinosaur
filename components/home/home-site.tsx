@@ -3,7 +3,7 @@ import { type ReactNode } from "react"
 import { DesignShell } from "./design-shell"
 import { HomeHero } from "./home-hero"
 import { HomePricing } from "./home-pricing"
-import { MadeThings, WhatIBuild } from "./home-sections"
+import { MadeThings, ManagedValue, PromiseStatement, WhatIBuild } from "./home-sections"
 import { ScoreCells } from "./home-shared"
 import { CtaBanner, Testimonial } from "./home-social"
 
@@ -34,6 +34,7 @@ async function RevealSections({ isLhci }: { isLhci: boolean }) {
   const sections: Array<[string, ReactNode]> = [
     ["what-i-build", <WhatIBuild key="what-i-build" />],
     ["made-things", <MadeThings key="made-things" />],
+    ["managed", <ManagedValue key="managed" />],
     ["pricing", <HomePricing key="pricing" />],
     ["testimonial", <Testimonial key="testimonial" />],
     ["cta", <CtaBanner key="cta" />],
@@ -59,6 +60,7 @@ export async function HomeSite() {
     <DesignShell>
       <HomeHero animate={!isLhci} interactive3d={!isLhci} />
       <ScoresBand isLhci={isLhci} />
+      <PromiseStatement />
       <RevealSections isLhci={isLhci} />
     </DesignShell>
   )

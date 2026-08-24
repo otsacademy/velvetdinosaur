@@ -1,4 +1,4 @@
-import { HOME_CARD, HOME_MONO } from "./home-shared"
+import { HOME_CARD, HOME_KICKER } from "./home-shared"
 
 export const CONTACT_FAQS = [
   {
@@ -41,12 +41,12 @@ export function FaqAccordion() {
         <details key={faq.question} className={`${HOME_CARD} group overflow-hidden`}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3.5 px-5.5 py-4.5 text-[14.5px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
             {faq.question}
-            <span aria-hidden className={`${HOME_MONO} text-sm text-primary`}>
+            <span aria-hidden className={`${HOME_KICKER} text-sm text-primary`}>
               <span className="group-open:hidden">+</span>
               <span className="hidden group-open:inline">−</span>
             </span>
           </summary>
-          <div className="px-5.5 pb-5 text-[13.5px] leading-relaxed text-muted-foreground">
+          <div className="px-5.5 pb-5 text-[14px] leading-relaxed text-muted-foreground">
             {faq.answer}
           </div>
         </details>

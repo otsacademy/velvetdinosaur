@@ -8,7 +8,7 @@ import {
   HOME_BTN_OUTLINE,
   HOME_BTN_PRIMARY,
   HOME_CONTAINER,
-  HOME_MONO,
+  HOME_KICKER,
 } from "./home-shared"
 
 const HERO_BADGES = [
@@ -60,24 +60,24 @@ function DinoPanel({ animate, interactive }: { animate: boolean; interactive: bo
         />
       )}
       <div
-        className={`${HOME_MONO} pointer-events-none absolute left-3.5 top-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[10px] text-primary`}
+        className={`${HOME_KICKER} pointer-events-none absolute left-3.5 top-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[11px] text-primary`}
       >
         {panelLabel}
       </div>
       <span
         aria-hidden
-        className={`${HOME_MONO} pointer-events-none absolute right-3.5 top-2.5 text-xs text-primary/40`}
+        className={`${HOME_KICKER} pointer-events-none absolute right-3.5 top-2.5 text-xs text-primary/40`}
       >
         +
       </span>
       <span
         aria-hidden
-        className={`${HOME_MONO} pointer-events-none absolute bottom-2.5 left-3.5 text-xs text-primary/40`}
+        className={`${HOME_KICKER} pointer-events-none absolute bottom-2.5 left-3.5 text-xs text-primary/40`}
       >
         +
       </span>
       <div
-        className={`${HOME_MONO} pointer-events-none absolute bottom-3.5 right-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[10px] text-muted-foreground`}
+        className={`${HOME_KICKER} pointer-events-none absolute bottom-3.5 right-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[11px] text-muted-foreground`}
       >
         Named by my 3-year-old
       </div>
@@ -145,7 +145,7 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
           </div>
           <div
             {...riseProps(animate, 560)}
-            className={`${HOME_MONO} flex flex-wrap items-center gap-x-2.5 gap-y-1 pt-1 text-xs text-muted-foreground`}
+            className={`${HOME_KICKER} flex flex-wrap items-center gap-x-2.5 gap-y-1 pt-1 text-xs text-muted-foreground`}
           >
             {HERO_META.map((item, index) => (
               <span key={item} className="flex items-center gap-x-2.5">

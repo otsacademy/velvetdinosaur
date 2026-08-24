@@ -2,7 +2,7 @@ import './globals.css';
 import './velvet-site.css';
 import './demo-polish.css';
 import { Suspense, type CSSProperties } from 'react';
-import { Archivo, Inter, JetBrains_Mono, Instrument_Serif, Space_Mono } from 'next/font/google';
+import { Archivo, Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
@@ -34,13 +34,6 @@ const archivo = Archivo({
   variable: '--font-archivo',
 });
 
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  display: 'swap',
-  variable: '--font-space-mono',
-});
-
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
@@ -59,7 +52,7 @@ export default async function RootLayout({
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
   const fontClasses = isLhci
     ? ''
-    : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${archivo.variable} ${spaceMono.variable}`;
+    : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${archivo.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci

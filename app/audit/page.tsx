@@ -8,7 +8,7 @@ import {
   HOME_BTN_PRIMARY,
   HOME_CARD,
   HOME_CONTAINER,
-  HOME_MONO,
+  HOME_KICKER,
   ScoreCells,
   SectionHeading,
 } from "@/components/home/home-shared"
@@ -71,7 +71,7 @@ export default function AuditPage() {
     <DesignShell>
       <section className="border-b border-border bg-background">
         <div className={`${HOME_CONTAINER} py-12 md:pb-14 md:pt-16`}>
-          <div className={`${HOME_MONO} mb-4 text-[11px] text-primary`}>
+          <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>
             Free website audit
           </div>
           <h1 className="m-0 mb-3.5 max-w-[640px] text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
@@ -124,7 +124,7 @@ export default function AuditPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {HOW_IT_WORKS.map((item) => (
             <div key={item.step} className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-3 text-xs text-primary`}>{item.step}</div>
+              <div className={`${HOME_KICKER} mb-3 text-xs text-primary`}>{item.step}</div>
               <div className="mb-2 text-[15px] font-bold">{item.title}</div>
               <p className="m-0 text-[13.5px] leading-relaxed text-muted-foreground">
                 {item.body}
@@ -147,7 +147,7 @@ export default function AuditPage() {
 
           <div className="flex flex-col gap-4">
             <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
-              <div className={`${HOME_MONO} mb-3 text-[10px] text-primary`}>Why is it free?</div>
+              <div className={`${HOME_KICKER} mb-3 text-[11px] text-primary`}>Why is it free?</div>
               <p className="m-0 text-sm font-medium leading-relaxed text-foreground">
                 It&apos;s how I meet new clients. Some people take the fix list and sort it
                 themselves — that&apos;s fine. Enough people ask me to do the work that the
@@ -156,7 +156,7 @@ export default function AuditPage() {
             </div>
 
             <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-4 text-[10px] text-muted-foreground`}>
+              <div className={`${HOME_KICKER} mb-4 text-[11px] text-muted-foreground`}>
                 Good to know
               </div>
               <ul className="m-0 flex list-none flex-col gap-3 p-0 text-[13.5px] leading-relaxed text-muted-foreground">
@@ -176,7 +176,7 @@ export default function AuditPage() {
             </div>
 
             <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_MONO} mb-3 text-[10px] text-muted-foreground`}>
+              <div className={`${HOME_KICKER} mb-3 text-[11px] text-muted-foreground`}>
                 Prefer to talk it through?
               </div>
               <a
