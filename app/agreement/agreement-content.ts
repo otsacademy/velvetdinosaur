@@ -16,7 +16,7 @@ export type AgreementSection = {
   blocks: AgreementBlock[]
 }
 
-export const AGREEMENT_VERSION = "Version 3.1 — August 2026"
+export const AGREEMENT_VERSION = "Version 3.2 — August 2026"
 
 export const SHORT_VERSION = [
   "We build a working demonstration of your new website **before you pay us**.",

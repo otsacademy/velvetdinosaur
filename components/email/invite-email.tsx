@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- Email HTML must use plain img tags. */
 import type { CSSProperties } from 'react';
 
+import { TRADING_NAME_STATEMENT } from '@/lib/legal-identity';
+
 export type InviteEmailProps = {
   firstName?: string;
   email: string;
@@ -129,6 +131,7 @@ export function InviteEmail({
                         </a>
                       </em>
                     </p>
+                    <p style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</p>
                   </td>
                 </tr>
               </table>
@@ -245,5 +248,11 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: '18px',
     color: '#6b7280',
     marginTop: '12px'
+  },
+  footerLegal: {
+    fontSize: '11px',
+    lineHeight: '16px',
+    color: '#9ca3af',
+    marginTop: '6px'
   }
 };

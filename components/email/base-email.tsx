@@ -13,6 +13,8 @@ import {
 } from '@react-email/components';
 import type { CSSProperties, ReactNode } from 'react';
 
+import { TRADING_NAME_STATEMENT } from '@/lib/legal-identity';
+
 type BaseEmailLayoutProps = {
   previewText: string;
   heading: string;
@@ -87,6 +89,7 @@ export function BaseEmailLayout({
                 ) : null}
               </em>
             </Text>
+            <Text style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</Text>
           </Section>
         </Container>
       </Body>
@@ -226,6 +229,12 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: '18px',
     color: '#6b7280',
     marginTop: '12px'
+  },
+  footerLegal: {
+    fontSize: '11px',
+    lineHeight: '16px',
+    color: '#9ca3af',
+    marginTop: '6px'
   }
 };
 

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { TRADING_NAME_STATEMENT } from "@/lib/legal-identity"
 import { cn } from "@/lib/utils"
 import { HOME_BTN_PRIMARY, HOME_CONTAINER } from "./home-shared"
 
@@ -57,17 +58,22 @@ export function HomeFooter() {
       <div
         className={`${HOME_CONTAINER} flex flex-wrap items-center justify-between gap-3.5 py-7`}
       >
-        <div className="flex items-center gap-2">
-          <Image
-            src="/logo.webp"
-            alt=""
-            width={18}
-            height={18}
-            className="h-[18px] w-[18px] object-contain"
-          />
-          <span className="text-[12.5px] text-muted-foreground">
-            © 2026 Velvet Dinosaur · Minster Lovell, Oxfordshire
-          </span>
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/logo.webp"
+              alt=""
+              width={18}
+              height={18}
+              className="h-[18px] w-[18px] object-contain"
+            />
+            <span className="text-[12.5px] text-muted-foreground">
+              © 2026 Velvet Dinosaur · Minster Lovell, Oxfordshire
+            </span>
+          </div>
+          <p className="m-0 max-w-[520px] text-[11px] leading-relaxed text-muted-foreground">
+            {TRADING_NAME_STATEMENT}
+          </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-5 text-[12.5px] font-medium">
           {NAV_LINKS.map((link) => (

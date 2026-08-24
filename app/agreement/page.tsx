@@ -3,6 +3,7 @@ import Image from "next/image"
 
 import { DesignShell } from "@/components/home/design-shell"
 import { HOME_BTN_PRIMARY, HOME_CARD, HOME_CONTAINER, HOME_KICKER } from "@/components/home/home-shared"
+import { CONTRACTING_PARTY, REGISTERED_DETAILS_LINE } from "@/lib/legal-identity"
 import { siteName } from "@/lib/site-metadata"
 import {
   AGREEMENT_SECTIONS,
@@ -114,8 +115,9 @@ export default function AgreementPage() {
               </h1>
             </div>
             <p className="m-0 mt-4 max-w-[640px] text-[15.5px] leading-[1.7] text-muted-foreground">
-              Between <strong className="text-foreground">Velvet Dinosaur</strong> (&ldquo;we&rdquo;,
-              &ldquo;us&rdquo;, &ldquo;our&rdquo;) and the business or organisation named in the order
+              Between <strong className="text-foreground">{CONTRACTING_PARTY}</strong>{" "}
+              (&ldquo;Velvet Dinosaur&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or
+              &ldquo;our&rdquo;) and the business or organisation named in the order
               (&ldquo;Customer&rdquo;, &ldquo;you&rdquo;, &ldquo;your&rdquo;). Your order, together
               with this agreement, forms the contract between us. {AGREEMENT_VERSION}. Governed by
               the law of England and Wales.
@@ -219,8 +221,7 @@ export default function AgreementPage() {
                   <div className="vd-agreement-sigline">For the customer — name, signature, date</div>
                 </div>
                 <p className="vd-agreement-small mt-8">
-                  Velvet Dinosaur · 16 Holloway Lane, Minster Lovell, Witney OX29 0AU ·
-                  hello@velvetdinosaur.com
+                  {REGISTERED_DETAILS_LINE} · hello@velvetdinosaur.com
                 </p>
               </section>
             </article>
