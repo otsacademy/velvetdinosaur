@@ -128,10 +128,10 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
             {...riseProps(animate, 340)}
             className="m-0 max-w-[480px] text-pretty text-[16.5px] leading-relaxed text-muted-foreground"
           >
-            No jargon, no agency runaround — you work directly with me, Ian. I build your new
-            website first and show it to you before you pay a penny: a fully managed website for
-            your business that&apos;s quick to load, easy to update yourself, and made to turn
-            visitors into clients.
+            No jargon and no agency runaround. You work directly with me. I&apos;m Ian. I will
+            build your new website and show it to you before you pay a single penny. You get a
+            fully managed site that loads fast and turns visitors into clients. It is also
+            incredibly easy to update yourself.
           </p>
           <div {...riseProps(animate, 450)}>
             <div className="flex flex-wrap gap-3">
@@ -145,7 +145,7 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
           </div>
           <div
             {...riseProps(animate, 560)}
-            className={`${HOME_KICKER} flex flex-wrap items-center gap-x-2.5 gap-y-1 pt-1 text-xs text-muted-foreground`}
+            className="vd-hero-meta flex items-center gap-x-2 whitespace-nowrap pt-1 text-[11px] font-medium text-muted-foreground lg:text-xs"
           >
             {HERO_META.map((item, index) => (
               <span key={item} className="flex items-center gap-x-2.5">

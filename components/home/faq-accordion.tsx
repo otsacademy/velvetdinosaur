@@ -2,34 +2,34 @@ import { HOME_CARD, HOME_KICKER } from "./home-shared"
 
 export const CONTACT_FAQS = [
   {
-    question: "What's included in the £99 a month?",
+    question: "What is included in the £99 a month?",
     answer:
-      "Everything your website needs: the design and build of your site, hosting, SSL, daily backups, security and software updates, your own CMS admin area, contact forms and enquiry inbox, email for your domain, and small content changes done for you. There is no setup fee and nothing extra to pay.",
+      "Your monthly fee covers absolutely everything. I design and build your site. I also handle the secure hosting and daily backups. You get a private admin area to easily update the site yourself. The package includes built-in contact forms and a custom email address. I even take care of small content changes for you. There are no setup fees and nothing extra to pay.",
   },
   {
     question: "How does the free preview work?",
     answer:
-      "I build a working version of your new website first, then send you a private sign-up link. You set your own password and can try everything — edit text, swap photos, test the forms, view it on your phone. You have 14 days. If you're not interested, the preview is simply deleted and it costs you nothing.",
+      "I build a working version of your website first. I then send you a private link to try it out. You set your own password and can edit the text or swap photos. You get fourteen full days to test it. The preview is simply deleted if you are not interested. It costs you absolutely nothing.",
   },
   {
     question: "What happens after I subscribe?",
     answer:
-      "We spend up to seven days refining the site together — by email, chat, video call, or in person where practical — then it launches on your domain. Your first 30 days are covered by my money-back guarantee: if it isn't right for your business, tell me and I'll refund everything you've paid.",
+      "We spend up to seven days refining the site together. We can do this by email or video call or in person where practical. The site then launches on your own domain name. Your first thirty days are covered by a full money back guarantee. I will refund everything you paid if the site is not right for your business.",
   },
   {
     question: "Do I own my website and domain?",
     answer:
-      "Your domain, content, photographs, and business data are always yours, and you can export your data at any time. Your site runs on my Sauro platform, which I keep updated and improving for you — but what's yours stays yours.",
+      "You always own your domain name and your content. Your business data and photographs belong to you. You can export your data at any time. The site runs on my custom Sauro platform. I constantly update and improve the platform for you but your content remains entirely yours.",
   },
   {
     question: "What happens after the first year?",
     answer:
-      "Nothing changes and nothing surprises you: it stays £99 a month on a rolling basis with 30 days' notice. Or renew for another 12 months and I'll refresh your design completely free — your content, bookings, and settings stay exactly as they are.",
+      "Nothing changes and there are no surprises. The price stays at £99 a month on a rolling basis. You only need to give thirty days of notice to cancel. I will even refresh your design completely free if you renew for another twelve months. All your content and settings stay exactly as they are.",
   },
   {
     question: "Can I move my site elsewhere later?",
     answer:
-      "Yes. There is no lock-in. If you decide to migrate, I provide practical support, technical handover details, and a clear transition plan to keep downtime and risk low.",
+      "Yes. There is absolutely no lock in. I provide practical support and technical handover details if you ever decide to migrate. I create a clear transition plan to keep your downtime low and your business safe.",
   },
 ] as const
 

@@ -4,9 +4,9 @@ import { FounderAvatar } from "./founder-avatar"
 import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "./home-shared"
 
 const BIO_PARAGRAPHS = [
-  "Most of my professional career has been in the NHS — medical equipment, clinical research, and governance. That background taught me how to work through complex problems, communicate clearly, and treat important work with care.",
-  "Alongside that, I spent years designing and building websites independently: rebuilding my own charity website several times, creating conference sites, and following self-directed projects wherever they led. Velvet Dinosaur grew out of that path.",
-  "You work directly with me from first conversation to launch. No jargon. No agency runaround. No lock-in. Just a well-built website, managed for you month to month, with your content and domain always yours.",
+  "I spent most of my professional life working in the NHS. My time handling clinical research and governance taught me how to tackle complex problems with real care.",
+  "Alongside my NHS career I spent years building websites independently. I built charity platforms and followed self directed design projects wherever they led. Velvet Dinosaur naturally grew from that experience.",
+  "When we partner together you deal exclusively with me. We skip the confusing jargon and the usual agency runaround. You just get a beautifully built website managed month to month. Best of all your content and your domain remain entirely yours.",
 ] as const
 
 const HOW_I_WORK = [
@@ -75,10 +75,9 @@ export function AboutHero() {
           </h1>
           <div className="flex max-w-[600px] flex-col gap-4 text-[15.5px] leading-[1.7] text-muted-foreground">
             <p className="m-0 text-foreground">
-              I&apos;m Ian Wickens. I live in Minster Lovell and run Velvet Dinosaur, a
-              founder-led studio building managed websites for businesses, charities, and
-              organisations that want something carefully made and properly theirs — built
-              first, before they pay a penny.
+              Hello. I am Ian Wickens and I run Velvet Dinosaur from my home in Minster
+              Lovell. I build managed websites for organisations looking for something
+              carefully crafted. I actually build your site before you pay anything at all.
             </p>
             {BIO_PARAGRAPHS.map((paragraph) => (
               <p key={paragraph.slice(0, 24)} className="m-0">

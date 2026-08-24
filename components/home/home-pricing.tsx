@@ -29,15 +29,16 @@ export function HomePricing() {
                 £99/month
               </span>
               <span className="text-[13px] text-muted-foreground">
-                everything included · no setup fee · 12-month minimum, then monthly
+                Everything included. No setup fee. 12 month minimum contract paid monthly.
               </span>
             </div>
             <p className="mb-6 mt-0 text-pretty text-sm leading-relaxed text-muted-foreground">
-              We build your new website first and send you a private sign-up link — you set
-              your own password and can try editing everything yourself. Take fourteen days.
-              If you don&rsquo;t love it, we shake hands and walk away; the preview is simply
-              deleted and costs nothing. If you do, one flat monthly price covers absolutely
-              everything, under a plain-English agreement you read before you sign.
+              I build your new website first and send you a private link. You set your own
+              password and try editing everything yourself. You get fourteen days to test it
+              out. We shake hands and walk away if you decide it is not a good fit. The preview
+              simply gets deleted and costs you absolutely nothing. If you love it you pay one
+              flat monthly price that covers everything. Everything is laid out in a plain
+              English agreement for you to read before you sign.
             </p>
             <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
               {INCLUDED.map((item) => (
@@ -59,9 +60,10 @@ export function HomePricing() {
                 Our portability promise
               </div>
               <div className="text-sm font-medium leading-relaxed text-foreground">
-                You own your content and your domain. After the first year you can leave any
-                time — and if you ever move on, we&rsquo;ll actively help you pack up and
-                migrate. Clients stay because they want to.
+                You retain full ownership of your domain and your content from day one. You
+                are completely free to leave at any point after your first year. I will even
+                help you pack up and move your site if you decide to go elsewhere. I want my
+                clients to stay simply because they are happy with the service.
               </div>
             </div>
             <div className={`${HOME_CARD} p-7`}>

@@ -12,17 +12,17 @@ const BUILD_CARDS = [
   {
     kicker: "Designed, built & managed",
     title: "Your website",
-    body: "A fast, modern website shaped around your business — designed, built, hosted, and maintained for you, all included in one monthly price.",
+    body: "Get a fast and modern website shaped specifically around your business. I handle the design and the build. I also take care of the hosting and ongoing maintenance. Everything is included in one simple monthly price.",
   },
   {
     kicker: "Included with every site",
     title: "Bookings & enquiries",
-    body: "Bookings, contact forms, and a central enquiry inbox — built into your site and managed from the same admin area, at no extra cost.",
+    body: "Your new site includes a booking system, contact forms and a variety of business oriented features. All your messages go straight to a central inbox. You manage everything from a single admin area without paying a penny extra.",
   },
   {
     kicker: "Included with every site",
     title: "Sauro CMS",
-    body: "Every site includes your own private CMS — update pages, news, and media yourself in minutes, no developer required.",
+    body: "You get complete control over your content with a private admin area built into every site. It takes just minutes to update text or upload new images. You can do it all yourself without ever waiting on a web developer.",
   },
 ] as const
 
@@ -35,7 +35,7 @@ export function WhatIBuild() {
           title="What you get"
           aside={
             <span className="text-[13px] text-muted-foreground">
-              One monthly price — everything shaped around your business.
+              One monthly price. Everything shaped around your business.
             </span>
           }
         />
@@ -170,11 +170,12 @@ export function ManagedValue() {
         </div>
         <div className="mt-8 rounded-lg border border-primary/20 bg-primary/10 p-7 md:p-8">
           <div className={`${HOME_KICKER} mb-2.5 text-[11px] text-primary`}>
-            That is what your monthly payment covers
+            This is what your monthly payment covers
           </div>
           <p className="m-0 max-w-[720px] text-[15px] font-medium leading-relaxed text-foreground">
-            Not merely an attractive collection of pages, but a fast, secure and actively managed
-            website that you can develop yourself — backed by a real person when you need help.
+            You get much more than just a pretty design. You receive a fast and secure website
+            that I actively manage for you. You have the freedom to easily grow the site
+            yourself. You also get direct support from a real person whenever you need help.
           </p>
         </div>
       </div>
