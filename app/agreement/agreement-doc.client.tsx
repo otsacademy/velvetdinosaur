@@ -37,6 +37,11 @@ const CLAUSES: ClauseIndex[] = ALL_CLAUSES.map((section: AgreementSection) => ({
   text: `${section.title} ${blocksToText(section.blocks)}`,
 }))
 
+/** Live height of the sticky site header, so scroll targets clear it. */
+function headerHeight(): number {
+  return document.querySelector("header")?.getBoundingClientRect().height ?? 0
+}
+
 function snippet(c: ClauseIndex, q: string): string {
   if (!q) return `${c.text.slice(0, 74)}…`
   const i = c.text.toLowerCase().indexOf(q)
@@ -57,6 +62,7 @@ export function AgreementDoc() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [flashId, setFlashId] = useState<string | null>(null)
   const [activeId, setActiveId] = useState<string | null>(null)
+  const [footerInView, setFooterInView] = useState(false)
 
   const barRef = useRef<HTMLDivElement | null>(null)
   const docRef = useRef<HTMLDivElement | null>(null)
@@ -70,7 +76,7 @@ export function AgreementDoc() {
   const scrollToId = useCallback((id: string) => {
     const el = document.getElementById(id)
     if (!el) return
-    const y = el.getBoundingClientRect().top + window.scrollY - 46
+    const y = el.getBoundingClientRect().top + window.scrollY - headerHeight() - 20
     window.scrollTo({ top: Math.max(0, y), behavior: "smooth" })
   }, [])
 
@@ -169,10 +175,13 @@ export function AgreementDoc() {
       const bar = barRef.current
       const h = document.documentElement.scrollHeight - window.innerHeight
       if (bar) bar.style.width = `${h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0}%`
+      // the floating back-to-top button would otherwise cover the footer links
+      const footer = document.querySelector("[data-site-footer]")
+      setFooterInView(footer ? footer.getBoundingClientRect().top < window.innerHeight : false)
       let active: string | null = null
       for (const clause of CLAUSES) {
         const el = document.getElementById(clause.id)
-        if (el && el.getBoundingClientRect().top < 140) active = clause.id
+        if (el && el.getBoundingClientRect().top < headerHeight() + 70) active = clause.id
       }
       if (active !== activeRef.current) {
         activeRef.current = active
@@ -303,7 +312,7 @@ export function AgreementDoc() {
       {/* fixed sidebar */}
       <aside
         data-chrome
-        className="z-40 flex flex-col border-b border-(--rule) bg-(--chrome) lg:fixed lg:top-0 lg:bottom-0 lg:left-0 lg:w-[298px] lg:border-r lg:border-b-0"
+        className="z-40 flex flex-col border-b border-(--rule) bg-(--chrome) lg:fixed lg:top-(--vd-header-h) lg:bottom-0 lg:left-0 lg:w-[298px] lg:border-r lg:border-b-0"
       >
         <SidebarBrand />
         <div className="grid gap-2.5 border-b border-(--rule) px-5 pt-4 pb-3.5">
@@ -380,14 +389,15 @@ export function AgreementDoc() {
       </aside>
 
       {/* reading progress */}
-      <div data-chrome className="fixed top-0 right-0 left-0 z-[45] h-[3px] bg-(--rule) lg:left-[298px]">
+      <div data-chrome className="fixed top-(--vd-header-h) right-0 left-0 z-[45] h-[3px] bg-(--rule) lg:left-[298px]">
         <div ref={barRef} className="h-full w-0 bg-(--accent)" />
       </div>
 
-      {/* back to top */}
+      {/* back to top — hidden once the site footer is on screen */}
       <button
         type="button"
         data-chrome
+        hidden={footerInView}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
         className={`${MONO} fixed right-[26px] bottom-[26px] z-[45] h-[42px] w-[42px] cursor-pointer rounded-full border border-(--rule-2) bg-(--paper) text-[14px] leading-none text-(--ink-2) shadow-[0_2px_10px_rgba(0,0,0,.08)] hover:border-(--accent) hover:text-(--accent)`}

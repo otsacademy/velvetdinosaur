@@ -17,6 +17,9 @@
   --accent-soft: color-mix(in oklch, var(--ink) 8%, var(--paper));
   --gutter: 1.95in;
   --gpad: 2.2in;
+  /* height of the sticky site header — the fixed sidebar, the progress bar
+     and every scroll target start below it */
+  --vd-header-h: 74px;
 
   background: var(--desk);
   color: var(--ink);
@@ -131,6 +134,11 @@
 }
 
 @media print {
+  /* the site header/footer are navigation, not part of the contract */
+  .vd-agreement-shell > header,
+  .vd-agreement-shell [data-site-footer] {
+    display: none !important;
+  }
   .vd-doc [data-chrome] {
     display: none !important;
   }
