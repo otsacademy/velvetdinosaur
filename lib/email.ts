@@ -59,7 +59,7 @@ type WelcomeConfirmationPayload = {
 
 const POSTMARK_API = 'https://api.postmarkapp.com/email';
 const DEFAULT_INVITE_FROM_NAME = 'Admin Team';
-const DEFAULT_WELCOME_FROM_NAME = 'The ASAP Global Team';
+const welcomeFromName = () => `The ${resolveSiteName()} team`;
 const DEFAULT_INVITE_PERMISSIONS: Record<'user' | 'admin', string[]> = {
   user: [
     'Share Research: Create and edit pages to make cutting-edge evidence accessible to the public.',
@@ -232,14 +232,14 @@ export async function sendVerificationEmail(payload: VerificationPayload) {
   const textBody = [
     greeting,
     '',
-    'To complete your setup and access the Academics Stand Against Poverty platform, please verify your email address by clicking the link below:',
+    `To complete your setup and access the ${siteName} platform, please verify your email address by clicking the link below:`,
     '',
     payload.url,
     '',
     'If you did not request this, you can safely ignore this email.',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
 
@@ -258,7 +258,7 @@ export async function sendVerificationEmail(payload: VerificationPayload) {
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_WELCOME_FROM_NAME
+    fromName: welcomeFromName()
   });
 }
 
@@ -282,14 +282,14 @@ export async function sendResetPasswordEmail(payload: ResetPayload) {
   const textBody = [
     greeting,
     '',
-    'We received a request to reset the password for your Academics Stand Against Poverty account. You can securely reset your password using the link below:',
+    `We received a request to reset the password for your ${siteName} account. You can securely reset your password using the link below:`,
     '',
     payload.url,
     '',
     "If you didn't request this change, you can safely ignore this email and your existing password will remain unchanged.",
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
 
@@ -308,7 +308,7 @@ export async function sendResetPasswordEmail(payload: ResetPayload) {
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_WELCOME_FROM_NAME
+    fromName: welcomeFromName()
   });
 }
 
@@ -325,7 +325,7 @@ export async function sendEmailOtpCode(payload: EmailOtpPayload) {
         : payload.type === 'change-email'
           ? 'confirm your new email address'
           : 'sign in';
-  const subject = `Your ASAP security code`;
+  const subject = `Your ${resolveSiteName()} security code`;
   const htmlBody = await render(
     OtpCodeEmail({
       subject,
@@ -352,7 +352,7 @@ export async function sendEmailOtpCode(payload: EmailOtpPayload) {
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_WELCOME_FROM_NAME
+    fromName: welcomeFromName()
   });
 }
 
@@ -422,7 +422,7 @@ export async function sendWelcomeConfirmationEmail(payload: WelcomeConfirmationP
   const logoUrl = resolveLogoUrl(payload.logoUrl, appUrl);
   const firstName = inferFirstNameFromNameOrEmail(payload.user.name, recipientEmail);
   const roleName = normalizeNonEmpty(payload.roleName) || 'User';
-  const subject = `Your ASAP website account is ready, ${firstName}`;
+  const subject = `Your ${siteName} website account is ready, ${firstName}`;
   const htmlBody = await render(
     WelcomeConfirmationEmail({
       subject,
@@ -455,7 +455,7 @@ export async function sendWelcomeConfirmationEmail(payload: WelcomeConfirmationP
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_WELCOME_FROM_NAME
+    fromName: welcomeFromName()
   });
 }
 
@@ -470,7 +470,7 @@ export async function sendContactEmail(payload: ContactEmailPayload) {
   const { defaultContactEmailTemplates, renderContactTemplate } = await import(
     '@/lib/contact-email-templates'
   );
-  const subject = process.env.CONTACT_FORM_SUBJECT || 'New contact enquiry via ASAP';
+  const subject = process.env.CONTACT_FORM_SUBJECT || `New contact enquiry via ${resolveSiteName()}`;
   const sentAt = new Date().toISOString();
 
   const defaults = await defaultContactEmailTemplates();
@@ -545,7 +545,7 @@ export async function sendWaitlistSignupNotificationEmail(payload: WaitlistNotif
     })
   );
   const textBody = [
-    'A new user has joined the waitlist for the Academics Stand Against Poverty platform.',
+    `A new user has joined the waitlist for the ${resolveSiteName()} platform.`,
     '',
     `Email: ${payload.email}`,
     `Source: ${source}`,
