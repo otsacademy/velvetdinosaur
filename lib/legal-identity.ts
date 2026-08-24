@@ -8,7 +8,8 @@
 export const TRADING_NAME = 'Velvet Dinosaur';
 export const REGISTERED_NAME = 'Velvet Dinosaur Web Design Ltd';
 export const COMPANY_NUMBER = '[NUMBER]';
-export const REGISTERED_OFFICE = '[ADDRESS]';
+export const REGISTERED_OFFICE =
+  '16 Holloway Lane, Minster Lovell, Witney, Oxfordshire OX29 0AU, UK';
 
 /** One-line trading-name statement used in the site footer and emails. */
 export const TRADING_NAME_STATEMENT =
