@@ -66,7 +66,7 @@ export function CtaBanner() {
           href="/contact"
           className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
         >
-          Tell me about your project
+          Start your free preview
         </Link>
       </div>
     </section>
@@ -88,7 +88,7 @@ export function CtaStrip({ kicker, title }: { kicker?: string; title: string }) 
           href="/contact"
           className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
         >
-          Tell me about your project
+          Start your free preview
         </Link>
       </div>
     </section>

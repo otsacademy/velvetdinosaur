@@ -1,13 +1,25 @@
 import { z } from 'zod';
 import { createAnalyticsLead, forwardAnalyticsEvent } from '@/lib/analytics';
 import { sendContactEmail } from '@/lib/email';
+import { composeProjectMessage, featureLabel } from '@/lib/enquiry-options';
+
+const projectSchema = z.object({
+  business: z.string().trim().min(1).max(160),
+  businessType: z.string().trim().max(160).optional().nullable(),
+  websiteStatus: z.string().trim().max(40).optional().nullable(),
+  websiteUrl: z.string().trim().max(300).optional().nullable(),
+  phone: z.string().trim().max(60).optional().nullable(),
+  features: z.array(z.string().trim().max(60)).max(30).optional().nullable()
+});
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(120).optional().nullable(),
   topic: z.string().trim().min(1).max(120).optional().nullable(),
   email: z.string().trim().email(),
   message: z.string().trim().min(3).max(4000),
-  formId: z.string().trim().min(1).max(120).optional().nullable()
+  formId: z.string().trim().min(1).max(120).optional().nullable(),
+  enquiryType: z.enum(['project', 'question']).optional().nullable(),
+  project: projectSchema.optional().nullable()
 });
 
 function parseBody(request: Request) {
@@ -29,28 +41,41 @@ export async function POST(request: Request) {
   }
 
   const payload = result.data;
+  const project = payload.enquiryType === 'project' ? payload.project ?? null : null;
+  const message = project ? composeProjectMessage(project, payload.message) : payload.message;
+  // `topic` is the at-a-glance line in the notification and the lead record.
+  const topic = project
+    ? `Free preview — ${project.business}`
+    : payload.topic || (payload.enquiryType === 'question' ? 'Question' : null);
+
   await sendContactEmail({
     name: payload.name || null,
-    topic: payload.topic || null,
+    topic,
     email: payload.email,
-    message: payload.message
+    message
   });
 
   await Promise.allSettled([
     createAnalyticsLead(request, {
       leadType: 'contact_form',
-      leadName: 'contact_enquiry',
+      leadName: project ? 'free_preview_request' : 'contact_enquiry',
       sourceRoute: '/api/contact',
       status: 'new',
       contact: {
         name: payload.name || undefined,
         email: payload.email
       },
-      topic: payload.topic || undefined,
-      messagePreview: payload.message.slice(0, 280),
+      topic: topic || undefined,
+      messagePreview: message.slice(0, 280),
       metadata: {
         formId: payload.formId || 'contact_form',
-        delivery: 'contact_route'
+        delivery: 'contact_route',
+        enquiryType: payload.enquiryType || 'question',
+        business: project?.business || null,
+        businessType: project?.businessType || null,
+        websiteStatus: project?.websiteStatus || null,
+        websiteUrl: project?.websiteUrl || null,
+        features: project?.features?.map(featureLabel).join('; ') || null
       }
     }),
     forwardAnalyticsEvent(request, {
@@ -58,9 +83,10 @@ export async function POST(request: Request) {
       eventName: 'form_submit_success',
       eventCategory: 'form',
       formId: payload.formId || 'contact_form',
-      conversionName: 'contact_submit_success',
+      conversionName: project ? 'free_preview_request' : 'contact_submit_success',
       metadata: {
-        topic: payload.topic || null
+        topic: topic || null,
+        enquiryType: payload.enquiryType || 'question'
       }
     })
   ]);

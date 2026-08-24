@@ -7,7 +7,7 @@ import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "@/compon
 import { siteName } from "@/lib/site-metadata"
 
 const contactDescription =
-  "Tell Velvet Dinosaur about your project. You'll hear back directly from Ian within one business day."
+  "Start your free Velvet Dinosaur preview, or just ask a question. Either way you'll hear back directly from Ian within one business day."
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -36,20 +36,23 @@ export default function ContactPage() {
         <div className={`${HOME_CONTAINER} py-12 md:pb-12 md:pt-16`}>
           <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>Say hello</div>
           <h1 className="m-0 mb-3.5 text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
-            Tell me about your project.
+            Start your free preview.
           </h1>
           <p className="m-0 max-w-[540px] text-pretty text-base leading-relaxed text-muted-foreground">
-            Share your goals, current pain points, and timeline. You&apos;ll hear back directly
-            from Ian within one business day.
+            Tell me a little about your business and I&apos;ll build your new website first —
+            you see the finished thing before you pay a penny. Just have a question instead?
+            That&apos;s the second option below. Either way you&apos;ll hear back directly from
+            Ian within one business day.
           </p>
         </div>
       </section>
 
       <div className={`${HOME_CONTAINER} grid items-start gap-8 pb-6 pt-12 lg:grid-cols-[1.2fr_1fr]`}>
         <div id="form" className={`${HOME_CARD} scroll-mt-24 p-8 md:p-10`}>
-          <div className="mb-1.5 text-lg font-bold">Project enquiry</div>
+          <div className="mb-1.5 text-lg font-bold">Your free preview</div>
           <div className="mb-6 text-[13px] text-muted-foreground">
-            You&apos;ll hear directly from Ian with clear next steps.
+            No payment details, no obligation — you&apos;ll hear directly from Ian with clear
+            next steps.
           </div>
           <EnquiryForm />
         </div>
@@ -72,7 +75,7 @@ export default function ContactPage() {
               >
                 <span className="text-[13.5px] font-bold">💬 WhatsApp</span>
                 <span className="text-[12.5px] text-muted-foreground">
-                  Message about your project
+                  Message about your website
                 </span>
               </a>
             </div>
@@ -99,7 +102,7 @@ export default function ContactPage() {
           <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
             <div className={`${HOME_KICKER} mb-3 text-[11px] text-primary`}>Quick replies</div>
             <div className="text-sm font-medium leading-relaxed text-foreground">
-              Enquiries answered within one business day — most projects can start within one to
+              Enquiries answered within one business day — most previews are ready within one to
               two weeks.
             </div>
           </div>
