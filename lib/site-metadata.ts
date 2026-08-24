@@ -4,9 +4,9 @@ import { mainHeroCopy, socialPreviewAlt } from '@/lib/site-copy';
 export const siteName = 'Velvet Dinosaur';
 export const siteTitle = `${mainHeroCopy.heading} | ${siteName}`;
 export const siteDescription = mainHeroCopy.description;
-export const socialTitle = `${siteName} | Founder-led bespoke websites and apps`;
+export const socialTitle = `${siteName} | Your new website, built before you pay a penny — £99/month`;
 export const socialDescription =
-  'Founder-led bespoke websites, web apps, and mobile apps built for conversion, search visibility, and long-term maintainability.';
+  'Managed websites designed and built before you pay anything — £99 a month, everything included, from a founder-led studio in Oxfordshire.';
 
 const fallbackSiteUrl = 'http://localhost:3000';
 
