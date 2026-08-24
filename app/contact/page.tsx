@@ -4,6 +4,12 @@ import { DesignShell } from "@/components/home/design-shell"
 import { EnquiryForm } from "@/components/home/enquiry-form.client"
 import { FaqAccordion } from "@/components/home/faq-accordion"
 import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "@/components/home/home-shared"
+import {
+  ADDRESS_LINE_1,
+  ADDRESS_LINE_2,
+  MAPS_HREF,
+  MAP_EMBED_SRC,
+} from "@/lib/contact-details"
 import { siteName } from "@/lib/site-metadata"
 
 const contactDescription =
@@ -21,13 +27,6 @@ export const metadata: Metadata = {
     description: contactDescription,
   },
 }
-
-const WHATSAPP_HREF =
-  "https://wa.me/447438460437?text=Hi%20Ian%2C%20I'd%20like%20to%20discuss%20a%20website%20project."
-const MAPS_HREF = "https://maps.app.goo.gl/qXGMvoF1E36RWeDS9"
-
-const TALK_CARD_CLASSES =
-  "flex flex-col gap-1 rounded-md border-[1.5px] border-input px-4 py-3.5 text-foreground transition-[transform,border-color] duration-300 ease-[var(--vd-hover-ease)] hover:-translate-y-[3px] hover:border-primary hover:text-foreground"
 
 export default function ContactPage() {
   return (
@@ -47,7 +46,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className={`${HOME_CONTAINER} grid items-start gap-8 pb-6 pt-12 lg:grid-cols-[1.2fr_1fr]`}>
+      <div className={`${HOME_CONTAINER} grid items-start gap-8 pb-16 pt-12 md:pb-[72px] lg:grid-cols-[1.2fr_1fr]`}>
         <div id="form" className={`${HOME_CARD} scroll-mt-24 p-8 md:p-10`}>
           <div className="mb-1.5 text-lg font-bold">Your free preview</div>
           <div className="mb-6 text-[13px] text-muted-foreground">
@@ -58,45 +57,32 @@ export default function ContactPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className={`${HOME_CARD} p-7`}>
-            <div className={`${HOME_KICKER} mb-4 text-[11px] text-muted-foreground`}>
-              Prefer to talk?
+          <div className={`${HOME_CARD} overflow-hidden`}>
+            <div className="p-7 pb-4">
+              <div className={`${HOME_KICKER} mb-3 text-[11px] text-muted-foreground`}>
+                Where I’m based
+              </div>
+              <div className="text-sm font-semibold">{ADDRESS_LINE_1}</div>
+              <div className="mt-1 text-[12.5px] text-muted-foreground">{ADDRESS_LINE_2}</div>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <a href="tel:+447438460437" className={TALK_CARD_CLASSES}>
-                <span className="text-[13.5px] font-bold">📞 Call Ian</span>
-                <span className="text-[12.5px] text-muted-foreground">+44 7438 460437</span>
-              </a>
+            <iframe
+              data-map
+              src={MAP_EMBED_SRC}
+              title="Map showing Velvet Dinosaur in Minster Lovell, Oxfordshire"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block h-[220px] w-full border-0 border-t border-border"
+            />
+            <div className="px-7 py-4">
               <a
-                href={WHATSAPP_HREF}
+                href={MAPS_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={TALK_CARD_CLASSES}
+                className="text-[12.5px] font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
               >
-                <span className="text-[13.5px] font-bold">💬 WhatsApp</span>
-                <span className="text-[12.5px] text-muted-foreground">
-                  Message about your website
-                </span>
+                Open in Google Maps →
               </a>
             </div>
-          </div>
-
-          <div className={`${HOME_CARD} p-7`}>
-            <div className={`${HOME_KICKER} mb-3 text-[11px] text-muted-foreground`}>
-              Where I’m based
-            </div>
-            <div className="text-sm font-semibold">16 Holloway Lane, Minster Lovell, Witney</div>
-            <div className="mt-1 text-[12.5px] text-muted-foreground">
-              Oxfordshire, United Kingdom
-            </div>
-            <a
-              href={MAPS_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-[12.5px] font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
-            >
-              Open in Google Maps →
-            </a>
           </div>
 
           <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
@@ -106,12 +92,12 @@ export default function ContactPage() {
               two weeks.
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className={`${HOME_CONTAINER} pb-16 pt-12 md:pb-[72px]`}>
-        <SectionHeading index="FAQ" title="Questions people usually ask" />
-        <FaqAccordion />
+          <div>
+            <SectionHeading index="FAQ" title="Questions people usually ask" />
+            <FaqAccordion />
+          </div>
+        </div>
       </div>
     </DesignShell>
   )

@@ -4,8 +4,10 @@ import { useEffect, useState, type FormEvent } from "react"
 
 import { trackAnalyticsEvent } from "@/lib/analytics/client"
 import {
+  CONTACT_METHODS,
   PROJECT_FEATURES,
   WEBSITE_STATUSES,
+  methodNeedsPhone,
   statusHasExistingSite,
   type EnquiryType,
 } from "@/lib/enquiry-options"
@@ -21,6 +23,7 @@ type Status = { type: "idle" | "loading" | "sent" | "error"; message?: string }
 const EMPTY = {
   name: "",
   email: "",
+  contactMethod: "email",
   phone: "",
   business: "",
   businessType: "",
@@ -78,6 +81,10 @@ export function EnquiryForm() {
       setStatus({ type: "error", message: "Please add your business or organisation name." })
       return
     }
+    if (methodNeedsPhone(form.contactMethod) && !form.phone.trim()) {
+      setStatus({ type: "error", message: "Please add a phone number so I can reach you." })
+      return
+    }
     if (!isProject && !message) {
       setStatus({ type: "error", message: "Please add your question." })
       return
@@ -100,6 +107,8 @@ export function EnquiryForm() {
           enquiryType: mode,
           name: form.name.trim() || undefined,
           email,
+          contactMethod: form.contactMethod,
+          phone: form.phone.trim() || undefined,
           message: message || "(no additional notes)",
           project: isProject
             ? {
@@ -109,7 +118,6 @@ export function EnquiryForm() {
                 websiteUrl: statusHasExistingSite(form.websiteStatus)
                   ? form.websiteUrl.trim() || undefined
                   : undefined,
-                phone: form.phone.trim() || undefined,
                 features,
               }
             : undefined,
@@ -295,20 +303,41 @@ export function EnquiryForm() {
             </div>
           </fieldset>
 
-          <Field id="enquiry-phone" label="Phone number (optional)">
+        </>
+      ) : null}
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field id="enquiry-method" label="How should I get in touch?">
+          <select
+            id="enquiry-method"
+            className={FIELD}
+            value={form.contactMethod}
+            onChange={(e) => set("contactMethod")(e.target.value)}
+            disabled={busy}
+          >
+            {CONTACT_METHODS.map((method) => (
+              <option key={method.id} value={method.id}>
+                {method.label}
+              </option>
+            ))}
+          </select>
+        </Field>
+        {methodNeedsPhone(form.contactMethod) ? (
+          <Field id="enquiry-phone" label="Phone number">
             <input
               id="enquiry-phone"
               className={FIELD}
               value={form.phone}
               onChange={(e) => set("phone")(e.target.value)}
-              placeholder="If you'd rather talk it through"
+              placeholder="07000 000000"
               type="tel"
               autoComplete="tel"
+              required
               disabled={busy}
             />
           </Field>
-        </>
-      ) : null}
+        ) : null}
+      </div>
 
       <Field
         id="enquiry-message"

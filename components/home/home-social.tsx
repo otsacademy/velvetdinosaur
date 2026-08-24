@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/contact-details"
 import { FounderAvatar } from "./founder-avatar"
 import {
   HOME_BTN_PRIMARY,
@@ -47,6 +48,23 @@ export function Testimonial() {
   )
 }
 
+const TALK_LINK =
+  "inline-flex items-center gap-1.5 text-white/75 underline-offset-4 transition-colors hover:text-white hover:underline"
+
+/** Call / WhatsApp shortcuts, so they live on every page rather than just one card. */
+function TalkDirect() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[13px] font-medium">
+      <a href={PHONE_HREF} className={TALK_LINK}>
+        <span aria-hidden>📞</span> {PHONE_DISPLAY}
+      </a>
+      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className={TALK_LINK}>
+        <span aria-hidden>💬</span> WhatsApp
+      </a>
+    </div>
+  )
+}
+
 export function CtaBanner() {
   return (
     <section className={`${HOME_CONTAINER} mt-12 pb-16 md:pb-[72px]`}>
@@ -59,6 +77,9 @@ export function CtaBanner() {
             </div>
             <div className="mt-1.5 text-[14px] text-white/70">
               First conversation to launch. You&apos;ll hear back within one business day.
+            </div>
+            <div className="mt-3">
+              <TalkDirect />
             </div>
           </div>
         </div>
@@ -83,6 +104,9 @@ export function CtaStrip({ kicker, title }: { kicker?: string; title: string }) 
             <div className={`${HOME_KICKER} mb-2.5 text-[11px] text-white/60`}>{kicker}</div>
           ) : null}
           <div className="text-[22px] font-bold tracking-[-0.02em]">{title}</div>
+          <div className="mt-3">
+            <TalkDirect />
+          </div>
         </div>
         <Link
           href="/contact"

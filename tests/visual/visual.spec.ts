@@ -29,7 +29,11 @@ test.describe('visual baselines', () => {
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(route.path, { waitUntil: 'networkidle' });
       await stabilize(page);
-      await expect(page).toHaveScreenshot(`${route.name}.png`, { fullPage: true });
+      // The embedded map renders live tiles; mask it so it cannot flake the gate.
+      await expect(page).toHaveScreenshot(`${route.name}.png`, {
+        fullPage: true,
+        mask: [page.locator('[data-map]')]
+      });
     });
   }
 });

@@ -1,14 +1,17 @@
 import { z } from 'zod';
 import { createAnalyticsLead, forwardAnalyticsEvent } from '@/lib/analytics';
 import { sendContactEmail } from '@/lib/email';
-import { composeProjectMessage, featureLabel } from '@/lib/enquiry-options';
+import {
+  composeProjectMessage,
+  composeQuestionMessage,
+  featureLabel
+} from '@/lib/enquiry-options';
 
 const projectSchema = z.object({
   business: z.string().trim().min(1).max(160),
   businessType: z.string().trim().max(160).optional().nullable(),
   websiteStatus: z.string().trim().max(40).optional().nullable(),
   websiteUrl: z.string().trim().max(300).optional().nullable(),
-  phone: z.string().trim().max(60).optional().nullable(),
   features: z.array(z.string().trim().max(60)).max(30).optional().nullable()
 });
 
@@ -19,6 +22,8 @@ const contactSchema = z.object({
   message: z.string().trim().min(3).max(4000),
   formId: z.string().trim().min(1).max(120).optional().nullable(),
   enquiryType: z.enum(['project', 'question']).optional().nullable(),
+  contactMethod: z.string().trim().max(40).optional().nullable(),
+  phone: z.string().trim().max(60).optional().nullable(),
   project: projectSchema.optional().nullable()
 });
 
@@ -42,7 +47,12 @@ export async function POST(request: Request) {
 
   const payload = result.data;
   const project = payload.enquiryType === 'project' ? payload.project ?? null : null;
-  const message = project ? composeProjectMessage(project, payload.message) : payload.message;
+  const message = project
+    ? composeProjectMessage(
+        { ...project, contactMethod: payload.contactMethod, phone: payload.phone },
+        payload.message
+      )
+    : composeQuestionMessage(payload.contactMethod, payload.phone, payload.message);
   // `topic` is the at-a-glance line in the notification and the lead record.
   const topic = project
     ? `Free preview — ${project.business}`
@@ -75,6 +85,8 @@ export async function POST(request: Request) {
         businessType: project?.businessType || null,
         websiteStatus: project?.websiteStatus || null,
         websiteUrl: project?.websiteUrl || null,
+        contactMethod: payload.contactMethod || null,
+        phone: payload.phone || null,
         features: project?.features?.map(featureLabel).join('; ') || null
       }
     }),
