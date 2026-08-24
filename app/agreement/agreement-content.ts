@@ -16,13 +16,13 @@ export type AgreementSection = {
   blocks: AgreementBlock[]
 }
 
-export const AGREEMENT_VERSION = "Version 3.0 — August 2026"
+export const AGREEMENT_VERSION = "Version 3.1 — August 2026"
 
 export const SHORT_VERSION = [
   "We build a working demonstration of your new website **before you pay us**.",
   "You can try the website and administration system free for **14 days**.",
   "If you decide to proceed, the service costs **£99 per month**, payable monthly, with no setup or website-build fee.",
-  "The initial agreement lasts **12 months**, then becomes a rolling monthly service — unless you renew for another fixed term and receive a complimentary design refresh.",
+  "The initial agreement lasts **12 months** — leaving early means the remaining months stay payable, just like a broadband contract. It then becomes a rolling monthly service with **30 days' notice**, unless you renew for another fixed term and receive a complimentary design refresh.",
   "Your first 30 days are covered by our **30-day money-back guarantee**.",
   "Your domain, business content and business data remain yours. The Velvet Dinosaur software and Sauro platform remain ours.",
 ] as const
@@ -39,14 +39,14 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
         items: [
           "a professionally designed responsive website;",
           "Velvet Dinosaur's Sauro content management system;",
-          "website hosting, SSL certificate, routine backups and monitoring;",
-          "security and software maintenance;",
+          "website hosting, SSL certificate, **daily backups** and monitoring;",
+          "security and software maintenance, including security updates and repairs;",
           "reasonable technical support;",
           "standard contact and enquiry forms, and a central website enquiry inbox;",
-          "social-media links and standard integrations;",
+          "social-media integration — including your Instagram and Facebook posts and images presented as part of your website — and display of your Google reviews;",
           "news, pages, images and other content-management facilities;",
           "a standard business domain where required, plus domain configuration;",
-          "and, where appropriate for your business, standard Velvet Dinosaur booking functionality.",
+          "and, where appropriate for your business, the Velvet Dinosaur booking system — the same booking system we use for Velvet Dinosaur itself — including integration with Google Calendar.",
         ],
       },
       { type: "p", text: "Other standard platform functionality may be made available as the service develops. The precise features enabled for your website will be shown in your demonstration or order." },
@@ -132,7 +132,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
           "or the law gives you another right to terminate.",
         ],
       },
-      { type: "p", text: "We are not interested in keeping customers through unnecessary contractual obstacles and will always try to resolve problems reasonably." },
+      { type: "p", text: "If you ask to cancel before the end of the initial term, the monthly payments for the remaining months of the term remain payable — in the same way as a broadband or mobile-phone contract. There is no notice period that ends the agreement early: it runs to the end of the 12 months. The remaining payments can either continue monthly as normal or, if we both agree, be settled as a single payment." },
+      { type: "p", text: "We are not interested in keeping customers through unnecessary contractual obstacles. If your circumstances genuinely change, talk to us — we will always try to reach a fair arrangement, and any variation must be agreed in writing." },
     ],
   },
   {
@@ -145,6 +146,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
       { type: "p", text: "Your service becomes a rolling monthly subscription. You may then cancel at any time by giving us **30 days' notice**." },
       { type: "h3", text: "Refresh & Renew" },
       { type: "p", text: "You may enter another 12-month agreement and receive a **complimentary website design refresh** — a new visual treatment of your existing website using your existing content, functionality and business information. It may include new layouts, typography, imagery treatment, styling and presentation. Your CMS information, enquiries, customer information, booking configuration and other business data remain available." },
+      { type: "p", text: "If new standard platform features have become part of the Velvet Dinosaur service since your original build — for example new booking, social-media or review features — you may also ask for these to be added to your website when you renew, at no extra charge." },
       { type: "p", text: "The complimentary refresh does not automatically include:" },
       {
         type: "list",
@@ -307,7 +309,8 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     num: "17",
     title: "Security and backups",
     blocks: [
-      { type: "p", text: "We will take reasonable technical and organisational measures to protect the website and the information we process. These may include encrypted connections, access controls, software updates, backups, infrastructure monitoring, and appropriate security practices." },
+      { type: "p", text: "We will take reasonable technical and organisational measures to protect the website and the information we process. These include encrypted connections, access controls, software updates, **daily backups**, infrastructure monitoring, and appropriate security practices." },
+      { type: "p", text: "If a security vulnerability is discovered in the platform, repairing it is treated as a priority and security repairs are included within your subscription. Where a security issue affects your own data, we will tell you without undue delay." },
       { type: "p", text: "No online service can guarantee absolute security or uninterrupted availability. You are responsible for protecting your CMS credentials, using suitable passwords, not sharing administrative access unnecessarily, and telling us promptly if you believe your account has been compromised." },
     ],
   },
@@ -355,7 +358,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
       { type: "h3", text: "During your first 30 days" },
       { type: "p", text: "You may use the money-back guarantee in section 5." },
       { type: "h3", text: "During the remainder of the initial term" },
-      { type: "p", text: "The agreement continues until the end of the initial 12 months unless another termination right applies." },
+      { type: "p", text: "The agreement continues until the end of the initial 12 months unless another termination right applies. As described in section 6, you may ask to end the service early, but the monthly payments for the remaining months of the term remain payable unless we agree a different arrangement with you in writing." },
       { type: "h3", text: "After the initial term" },
       { type: "p", text: "Either party may terminate the rolling service by giving **30 days' written notice**." },
       { type: "p", text: "We may suspend or terminate the service sooner where reasonably necessary because of unlawful use, deliberate misuse, serious security threats, persistent non-payment, fraud, abuse of our staff, or another fundamental breach of this agreement. Where practical, we will contact you and give you an opportunity to resolve the issue first." },
