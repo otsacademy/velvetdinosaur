@@ -9,6 +9,9 @@ import {
   ADDRESS_LINE_2,
   MAPS_HREF,
   MAP_EMBED_SRC,
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  WHATSAPP_HREF,
 } from "@/lib/contact-details"
 import { siteName } from "@/lib/site-metadata"
 
@@ -90,6 +93,23 @@ export default function ContactPage() {
             <div className="text-sm font-medium leading-relaxed text-foreground">
               Enquiries answered within one business day — most previews are ready within one to
               two weeks.
+            </div>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-primary/20 pt-3.5 text-[13px] font-semibold">
+              <span className="text-muted-foreground">Rather talk?</span>
+              <a
+                href={PHONE_HREF}
+                className="text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+              >
+                <span aria-hidden>📞</span> {PHONE_DISPLAY}
+              </a>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+              >
+                <span aria-hidden>💬</span> WhatsApp
+              </a>
             </div>
           </div>
 

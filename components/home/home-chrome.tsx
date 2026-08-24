@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/contact-details"
 import { TRADING_NAME_STATEMENT } from "@/lib/legal-identity"
 import { cn } from "@/lib/utils"
 import { HOME_BTN_PRIMARY, HOME_CONTAINER } from "./home-shared"
@@ -75,7 +76,25 @@ export function HomeFooter() {
             {TRADING_NAME_STATEMENT}
           </p>
         </div>
-        <nav aria-label="Footer" className="flex flex-wrap gap-5 text-[12.5px] font-medium">
+        <div className="flex flex-col items-start gap-2.5 md:items-end">
+          {/* Direct lines to Ian, on every page rather than one contact card. */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12.5px] font-semibold">
+            <a
+              href={PHONE_HREF}
+              className="text-foreground transition-colors hover:text-primary"
+            >
+              <span aria-hidden>📞</span> {PHONE_DISPLAY}
+            </a>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground transition-colors hover:text-primary"
+            >
+              <span aria-hidden>💬</span> WhatsApp
+            </a>
+          </div>
+          <nav aria-label="Footer" className="flex flex-wrap gap-5 text-[12.5px] font-medium">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.key}
@@ -91,7 +110,8 @@ export function HomeFooter() {
           <Link href="/terms" className="text-muted-foreground transition-colors hover:text-primary">
             Terms
           </Link>
-        </nav>
+          </nav>
+        </div>
       </div>
     </footer>
   )
