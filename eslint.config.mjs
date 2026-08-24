@@ -30,6 +30,7 @@ const config = [
       '**/coverage/**',
       '**/.turbo/**',
       '**/.eslintcache',
+      'docs/mocks/**',
       'registry/examples/**',
       'registry/ui/block-discussion.tsx',
       'registry/ui/block-draggable.tsx',
