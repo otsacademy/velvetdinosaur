@@ -31,6 +31,7 @@ export const RESERVED_FIRST_SEGMENTS: ReadonlySet<string> = new Set([
   ...ROBOTS_DISALLOW_SEGMENTS,
   'install',
   'contact',
+  'business-reviews',
   'legal',
   'stays',
   ...SITE_CHROME_SLUGS
@@ -101,7 +102,9 @@ export function slugFromPath(path: string) {
 }
 
 export function editHref(slug: string) {
-  return `/edit/${encodeURIComponent(slug)}`;
+  // Keep page editing under a dedicated namespace. A stored page slug can
+  // legitimately match a static editor route (for example `reviews`).
+  return `/edit/pages/${encodeURIComponent(slug)}`;
 }
 
 export function previewHref(slug: string) {

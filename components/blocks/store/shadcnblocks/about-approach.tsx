@@ -4,7 +4,7 @@ import type { ComponentConfig } from "@puckeditor/core"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { Button } from "@/components/ui/button"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 
 type ApproachStep = {
   title: string
@@ -53,13 +53,12 @@ export function ShadcnblocksAboutApproach(props: ShadcnblocksAboutApproachProps)
               </div>
             </div>
             <div className="relative min-h-[20rem] overflow-hidden rounded-3xl border bg-muted">
-              <OptimizedImage
+              <EditableImage
                 src={props.imageSrc}
                 alt={props.imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                imageOptions={{ width: 900, height: 700, fit: "cover" }}
+                sourcePath="imageSrc"
                 className="object-cover"
+                optimized={{ fill: true, sizes: "(max-width: 1024px) 100vw, 45vw", imageOptions: { width: 900, height: 700, fit: "cover" } }}
               />
             </div>
           </div>

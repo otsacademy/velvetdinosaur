@@ -21,6 +21,7 @@ import { cn } from '@/lib/utils';
 import type { PageRow, SortKey } from '@/components/edit/pages-index-types';
 import { canMovePage, getPageLastUpdatedLabel, liveHref } from '@/components/edit/pages-index-utils';
 import { getPageMetadata } from '@/components/edit/pages-index-metadata';
+import { editHref as pageEditHref } from '@/lib/page-paths';
 
 type PageSortColumn = 'name' | 'status' | 'updated';
 
@@ -140,8 +141,7 @@ export function EditIndexTable({
           390px slivers is unreadable. */}
       <ul className="divide-y divide-[var(--vd-border)]/35 md:hidden">
         {pages.map((page) => {
-          const editHref =
-            page.slug === 'home' ? '/edit?slug=home' : `/edit/${encodeURIComponent(page.slug)}`;
+          const editHref = pageEditHref(page.slug);
           const live = liveHref(page);
           const canMove = canMovePage(page);
           const hasPublished = Boolean(page.publishedAt);
@@ -248,8 +248,7 @@ export function EditIndexTable({
         </TableHeader>
         <TableBody>
           {pages.map((page) => {
-            const editHref =
-              page.slug === 'home' ? '/edit?slug=home' : `/edit/${encodeURIComponent(page.slug)}`;
+            const editHref = pageEditHref(page.slug);
             const live = liveHref(page);
             const canMove = canMovePage(page);
             const hasPublished = Boolean(page.publishedAt);

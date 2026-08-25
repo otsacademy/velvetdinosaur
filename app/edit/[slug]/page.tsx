@@ -8,8 +8,11 @@ import { EditorLoadingScreen } from '@/components/edit/editor-loading-screen';
 import { requireAdmin } from '@/lib/roles';
 import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { getDraftPageData } from '@/lib/pages';
+import { getDraftSiteChrome } from '@/lib/site-chrome';
+import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { isEditorSmokeRequest } from '@/lib/security/editor-smoke';
 import { ensureUserProfileForSessionUser, readSessionUser } from '@/lib/user-profile';
+import { editHref } from '@/lib/page-paths';
 
 type EditPageProps = {
   params: Promise<{ slug?: string }>;
@@ -24,17 +27,6 @@ async function EditPageContent({ params }: EditPageProps) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug ? String(resolvedParams.slug) : 'home';
 
-  // Legacy direct URLs should route to their dedicated workspaces immediately.
-  if (slug === 'home') {
-    redirect('/edit?slug=home');
-  }
-  if (slug === 'news') {
-    redirect('/edit?tab=news');
-  }
-  if (slug === 'events') {
-    redirect('/edit?tab=events');
-  }
-
   const auth = getAuth();
   const requestHeaders = await headers();
   const isSmoke = isEditorSmokeRequest(requestHeaders);
@@ -44,14 +36,18 @@ async function EditPageContent({ params }: EditPageProps) {
   const profile = await ensureUserProfileForSessionUser(sessionUser);
 
   if (!session && !isSmoke) {
-    redirect(`/sign-in?next=/edit/${encodeURIComponent(slug)}`);
+    redirect(`/sign-in?next=${encodeURIComponent(editHref(slug))}`);
   }
 
-  const initialData = await getDraftPageData(slug);
+  const [initialData, initialChrome] = await Promise.all([
+    getDraftPageData(slug),
+    isSiteChromeSlug(slug) ? Promise.resolve(null) : getDraftSiteChrome()
+  ]);
   return (
     <EditorShell
       initialData={initialData}
       initialSlug={slug}
+      initialChrome={initialChrome}
       isAdmin={canPublishDirectly}
       activeProfile={
         profile

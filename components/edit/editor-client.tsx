@@ -2,7 +2,7 @@
 
 import '@puckeditor/core/no-external.css';
 
-import { Puck, type Data } from '@puckeditor/core';
+import { Puck, Render, type Data } from '@puckeditor/core';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { toast } from 'sonner';
@@ -18,12 +18,16 @@ import { buildId } from '@/components/puck/editor/puck-editor-shell-utils';
 import { PuckEditorShell } from '@/components/puck/editor/PuckEditorShell';
 import { EditorFieldLabel } from '@/components/puck/editor/editor-field-label';
 import { CanvasImageDropZone } from '@/components/puck/editor/canvas-image-drop-zone.client';
+import { InlineTouchEditingSupport } from '@/components/puck/editor/inline-touch-editing-support.client';
 import { ThemeEditorDrawer } from '@/components/edit/theme-editor-drawer.client';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
+import { SiteDesignFrame } from '@/components/site/site-design-frame';
+import type { SiteChrome } from '@/lib/site-chrome';
 
 type EditorClientProps = {
   initialData?: Data;
   initialSlug?: string;
+  initialChrome?: SiteChrome | null;
   isAdmin?: boolean;
   activeProfile?: {
     primaryChapterSlug: string;
@@ -121,6 +125,7 @@ function persistGlobalEditingLockState(slug: string, locked: boolean) {
 export function EditorClient({
   initialData,
   initialSlug,
+  initialChrome = null,
   isAdmin = false,
   activeProfile = null
 }: EditorClientProps) {
@@ -146,8 +151,25 @@ export function EditorClient({
     normalizeChapterSlugs(activeProfile?.chapterSlugs, activeProfile?.primaryChapterSlug)
   );
   const isGlobal = isSiteChromeSlug(slug);
-  const puckOverrides = useMemo(() => ({ fieldLabel: EditorFieldLabel }), []);
-  const puckIframe = useMemo(() => ({ enabled: false }), []);
+  const PreviewFrame = useCallback(
+    ({ children }: { children: React.ReactNode }) => (
+      <SiteDesignFrame>
+        <InlineTouchEditingSupport />
+        {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.header} /> : null}
+        {children}
+        {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.footer} /> : null}
+      </SiteDesignFrame>
+    ),
+    [initialChrome, isGlobal]
+  );
+  const puckOverrides = useMemo(
+    () => ({ fieldLabel: EditorFieldLabel, iframe: PreviewFrame }),
+    [PreviewFrame]
+  );
+  const puckIframe = useMemo(
+    () => ({ enabled: true, syncHostStyles: true, waitForStyles: true }),
+    []
+  );
   const legacyTemplateTypes = useMemo(() => listLegacyPageComponents(data), [data]);
   const canConvertLegacyTemplate = useMemo(
     () => legacyTemplateTypes.some((type) => CONVERTIBLE_LEGACY_COMPONENTS.has(type)),
@@ -358,9 +380,7 @@ export function EditorClient({
     router.push('/edit');
   };
 
-  const canvasHeightClassName = 'h-[calc(100dvh-9.5rem)] min-h-[32rem]';
-  const canvasPaddingClassName = 'px-6 py-6';
-  const canvasClassName = `mx-auto w-full max-w-6xl ${canvasPaddingClassName} ${canvasHeightClassName}`;
+  const canvasClassName = 'h-[calc(100dvh-9.5rem)] min-h-[32rem] w-full';
 
   // Puck merges each new global permissions object over the previous one
   // ({...existing, ...next}), so passing `undefined` after a locked object

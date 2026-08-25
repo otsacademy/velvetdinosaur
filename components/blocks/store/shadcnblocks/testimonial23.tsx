@@ -5,11 +5,11 @@ import { BadgeCheck, ChevronRight, Clock, MessageSquareCode } from "lucide-react
 import { useEffect, useMemo, useState } from "react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { Avatar } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 
 type TestimonialItem = {
   id: string
@@ -37,10 +37,12 @@ function TestimonialCard({
   testimonial,
   socialIconSrc,
   socialIconAlt,
+  sourcePath,
 }: {
   testimonial: TestimonialItem
   socialIconSrc: string
   socialIconAlt: string
+  sourcePath: string
 }) {
   const isVerified = testimonial.verified !== "false"
 
@@ -48,7 +50,12 @@ function TestimonialCard({
     <Card className="relative mb-5 break-inside-avoid rounded-xl p-5 shadow-sm">
       <div className="flex items-center gap-4">
         <Avatar className="h-10 w-10 rounded-full ring-1 ring-muted">
-          <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+          <EditableImage
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            sourcePath={`${sourcePath}.avatar`}
+            className="h-full w-full object-cover"
+          />
         </Avatar>
         <div>
           <div className="flex items-center gap-2">
@@ -59,12 +66,12 @@ function TestimonialCard({
         </div>
         <div className="ml-auto">
           {socialIconSrc ? (
-            <OptimizedImage
+            <EditableImage
               src={socialIconSrc}
               alt={socialIconAlt}
-              width={16}
-              height={16}
+              sourcePath="socialIconSrc"
               className="h-4 w-4"
+              optimized={{ width: 16, height: 16 }}
             />
           ) : null}
         </div>
@@ -154,6 +161,7 @@ export function ShadcnblocksTestimonial23(props: ShadcnblocksTestimonial23Props)
                   testimonial={testimonial}
                   socialIconSrc={props.socialIconSrc}
                   socialIconAlt={props.socialIconAlt}
+                  sourcePath={`testimonials[${(props.testimonials || []).findIndex((item) => item.id === testimonial.id)}]`}
                 />
               ))}
             </div>

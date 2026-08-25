@@ -1,5 +1,5 @@
 import type { ComponentConfig } from '@puckeditor/core';
-import { OptimizedImage } from '@/components/ui/optimized-image';
+import { EditableImage } from '@/components/puck/blocks/editable-image.client';
 
 export type BackgroundManifestoProps = {
   imageUrl?: string;
@@ -24,13 +24,12 @@ export function BackgroundManifesto(props: BackgroundManifestoProps) {
       <div className="relative">
         {props.imageUrl ? (
           <div className="relative w-full aspect-[16/10]">
-            <OptimizedImage
+            <EditableImage
               src={props.imageUrl}
               alt={props.imageAlt || ''}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              imageOptions={{ width: 1200, height: 750, fit: 'cover' }}
+              sourcePath="imageUrl"
               className="rounded-[3rem] object-cover"
+              optimized={{ fill: true, sizes: '(max-width: 1024px) 100vw, 50vw', imageOptions: { width: 1200, height: 750, fit: 'cover' } }}
             />
           </div>
         ) : null}

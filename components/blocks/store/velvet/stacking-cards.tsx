@@ -510,6 +510,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                         magazineLabel={props.portfolioMagazineLabel}
                         stackAriaLabel={props.portfolioStackAriaLabel}
                         magazineAriaLabel={props.portfolioMagazineAriaLabel}
+                        sourcePath={`cards[${index}].images`}
                       />
                     </div>
                   ) : null}

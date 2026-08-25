@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type React from 'react';
+import * as React from 'react';
 import Image from 'next/image';
 import { resolveAssetImageUrl, type AssetImageOptions } from '@/lib/uploads';
 
@@ -36,6 +36,13 @@ type BaseProps = {
   fetchPriority?: 'high' | 'low' | 'auto';
   referrerPolicy?: React.HTMLAttributeReferrerPolicy;
   onError?: React.ReactEventHandler<HTMLImageElement>;
+  onClick?: React.MouseEventHandler<HTMLImageElement>;
+  onPointerDownCapture?: React.PointerEventHandler<HTMLImageElement>;
+  onKeyDown?: React.KeyboardEventHandler<HTMLImageElement>;
+  tabIndex?: number;
+  role?: React.AriaRole;
+  'aria-label'?: string;
+  'data-puck-overlay-portal'?: boolean;
   /** Resize hint passed to resolveAssetImageUrl (and used for fixed-size rendering). */
   imageOptions?: AssetImageOptions;
 };
@@ -70,7 +77,7 @@ function isOptimizable(src: string) {
  * Use `fill` for images that fill a positioned (relative) parent — the common case for
  * object-cover layouts — or `width`/`height` for fixed-size images (avatars, logos).
  */
-export function OptimizedImage(props: OptimizedImageProps) {
+export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageProps>(function OptimizedImage(props, ref) {
   const {
     src,
     alt,
@@ -85,6 +92,13 @@ export function OptimizedImage(props: OptimizedImageProps) {
     fetchPriority,
     referrerPolicy,
     onError,
+    onClick,
+    onPointerDownCapture,
+    onKeyDown,
+    tabIndex,
+    role,
+    'aria-label': ariaLabel,
+    'data-puck-overlay-portal': puckOverlayPortal,
     imageOptions
   } = props;
   const safeSrc = src || '';
@@ -97,6 +111,7 @@ export function OptimizedImage(props: OptimizedImageProps) {
       : { width: props.width, height: props.height };
     return (
       <img
+        ref={ref}
         src={resolved || undefined}
         alt={alt}
         className={className}
@@ -106,6 +121,13 @@ export function OptimizedImage(props: OptimizedImageProps) {
         decoding={decoding ?? 'async'}
         referrerPolicy={referrerPolicy}
         onError={onError}
+        onClick={onClick}
+        onPointerDownCapture={onPointerDownCapture}
+        onKeyDown={onKeyDown}
+        tabIndex={tabIndex}
+        role={role}
+        aria-label={ariaLabel}
+        data-puck-overlay-portal={puckOverlayPortal}
         {...dimProps}
       />
     );
@@ -114,6 +136,7 @@ export function OptimizedImage(props: OptimizedImageProps) {
   if (props.fill) {
     return (
       <Image
+        ref={ref}
         src={resolved}
         alt={alt}
         fill
@@ -127,12 +150,20 @@ export function OptimizedImage(props: OptimizedImageProps) {
         fetchPriority={fetchPriority}
         referrerPolicy={referrerPolicy}
         onError={onError}
+        onClick={onClick}
+        onPointerDownCapture={onPointerDownCapture}
+        onKeyDown={onKeyDown}
+        tabIndex={tabIndex}
+        role={role}
+        aria-label={ariaLabel}
+        data-puck-overlay-portal={puckOverlayPortal}
       />
     );
   }
 
   return (
     <Image
+      ref={ref}
       src={resolved}
       alt={alt}
       width={props.width}
@@ -147,6 +178,13 @@ export function OptimizedImage(props: OptimizedImageProps) {
       fetchPriority={fetchPriority}
       referrerPolicy={referrerPolicy}
       onError={onError}
+      onClick={onClick}
+      onPointerDownCapture={onPointerDownCapture}
+      onKeyDown={onKeyDown}
+      tabIndex={tabIndex}
+      role={role}
+      aria-label={ariaLabel}
+      data-puck-overlay-portal={puckOverlayPortal}
     />
   );
-}
+});

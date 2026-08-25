@@ -6,7 +6,7 @@ import { MoonStar, Sparkles } from "lucide-react"
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 import { r2PublicUrl } from "@/lib/public-assets"
 
 export type ShadcnblocksHero107Props = {
@@ -67,14 +67,12 @@ export function ShadcnblocksHero107(props: ShadcnblocksHero107Props) {
               <div className="relative mx-auto w-full max-w-full lg:mx-0">
                 <div className="w-full overflow-hidden rounded-3xl">
                   <AspectRatio ratio={1}>
-                    <OptimizedImage
+                    <EditableImage
                       src={props.imageSrc}
                       alt={props.imageAlt}
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 31rem"
-                      imageOptions={{ width: 800, height: 800, fit: "cover" }}
+                      sourcePath="imageSrc"
                       className="size-full object-cover"
+                      optimized={{ fill: true, priority: true, sizes: "(max-width: 1024px) 100vw, 31rem", imageOptions: { width: 800, height: 800, fit: "cover" } }}
                     />
                   </AspectRatio>
                 </div>

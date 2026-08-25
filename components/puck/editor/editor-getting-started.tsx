@@ -24,8 +24,8 @@ const HELP_STEPS: Array<{
 }> = [
   {
     id: 'select',
-    title: 'Select a section, then edit',
-    description: 'Click any section on the page, then use Properties to update heading, text, and links.',
+    title: 'Edit directly on the page',
+    description: 'Click visible text and type. Click an image to replace, crop, align, or resize it.',
     icon: MousePointerClick
   },
   {

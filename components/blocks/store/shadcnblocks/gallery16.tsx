@@ -14,7 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 import { cn } from "@/lib/utils"
 
 export type Gallery16Item = {
@@ -190,13 +190,12 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
                     </div>
                     <div className="group rounded-xl border border-border p-2 md:min-h-0">
                       <div className="relative aspect-[16/10] overflow-hidden rounded-xl md:h-full md:min-h-[280px]">
-                        <OptimizedImage
+                        <EditableImage
                           src={item.image}
                           alt={item.imageAlt}
-                          fill
+                          sourcePath={`items[${idx}].image`}
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 767px) 82vw, (max-width: 1023px) 42vw, 430px"
-                          imageOptions={{ width: 864, height: 540, fit: "cover" }}
+                          optimized={{ fill: true, sizes: "(max-width: 767px) 82vw, (max-width: 1023px) 42vw, 430px", imageOptions: { width: 864, height: 540, fit: "cover" } }}
                         />
                       </div>
                     </div>

@@ -40,6 +40,53 @@ function shouldUseLinkPicker(propName: string) {
   return name === 'href' || name.endsWith('href') || name === 'url' || name.endsWith('url');
 }
 
+function shouldUseInlineEditing(propName: string, field: Field) {
+  const contentEditable = (field as { contentEditable?: boolean }).contentEditable;
+  if (contentEditable === false) return false;
+  if (contentEditable === true) return field.type === 'text' || field.type === 'textarea';
+  const name = propName.toLowerCase();
+  if (
+    name === 'id' ||
+    name.endsWith('id') ||
+    name === 'slug' ||
+    name.endsWith('slug') ||
+    name === 'src' ||
+    name.endsWith('src') ||
+    name === 'alt' ||
+    name.endsWith('alt') ||
+    name === 'href' ||
+    name.endsWith('href') ||
+    name === 'url' ||
+    name.endsWith('url') ||
+    name.includes('classname') ||
+    name.includes('wrapperclass') ||
+    name.includes('target') ||
+    name === 'rel' ||
+    name.includes('variant') ||
+    name.includes('tone') ||
+    name.includes('ratio') ||
+    name.includes('position') ||
+    name.includes('objectfit') ||
+    name.includes('icon') ||
+    name.includes('color') ||
+    name.includes('email') ||
+    name.includes('file') ||
+    name.includes('html') ||
+    name.includes('script') ||
+    name.includes('json') ||
+    name.includes('css') ||
+    name.includes('embed') ||
+    name.includes('schema') ||
+    name.includes('template') ||
+    name.includes('config') ||
+    name.includes('query') ||
+    name.includes('code')
+  ) {
+    return false;
+  }
+  return field.type === 'text' || field.type === 'textarea';
+}
+
 /**
  * Apply the shared field vocabulary: dictionary label supersedes block-declared
  * labels for consistency across sites; block labels survive only for keys with
@@ -65,6 +112,14 @@ function transformFieldWidget(propName: string, field: Field): Field {
   if (!field || typeof field !== 'object') return field;
 
   const fieldType = (field as { type?: string }).type;
+  const assetKind = (field as Field & { assetKind?: 'image' | 'file' }).assetKind;
+  if (fieldType === 'text' && assetKind) {
+    return {
+      ...field,
+      ...assetPickerField({ accept: assetKind === 'image' ? 'image/*' : '*/*' }),
+      contentEditable: false
+    } as Field;
+  }
   if (fieldType === 'checkbox') {
     return {
       ...field,
@@ -75,21 +130,24 @@ function transformFieldWidget(propName: string, field: Field): Field {
   if (field.type === 'text' && shouldUseAssetPicker(propName)) {
     return {
       ...field,
-      ...assetPickerField({ accept: 'image/*' })
+      ...assetPickerField({ accept: 'image/*' }),
+      contentEditable: false
     } as Field;
   }
 
   if (field.type === 'text' && shouldUseFilePicker(propName)) {
     return {
       ...field,
-      ...assetPickerField({ accept: '*/*' })
+      ...assetPickerField({ accept: '*/*' }),
+      contentEditable: false
     } as Field;
   }
 
   if (field.type === 'text' && shouldUseLinkPicker(propName)) {
     return {
       ...field,
-      ...linkPickerField()
+      ...linkPickerField(),
+      contentEditable: false
     } as Field;
   }
 
@@ -123,6 +181,10 @@ function transformFieldWidget(propName: string, field: Field): Field {
       }
       return { ...(field as Field), objectFields: nextObjectFields } as Field;
     }
+  }
+
+  if (field.type === 'text' || field.type === 'textarea') {
+    return { ...field, contentEditable: shouldUseInlineEditing(propName, field) } as Field;
   }
 
   return field;

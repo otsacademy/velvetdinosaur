@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils';
 import type { PageRow, ViewMode } from '@/components/edit/pages-index-types';
 import { canMovePage, getPageLastUpdatedLabel, liveHref } from '@/components/edit/pages-index-utils';
 import { getPageMetadata } from '@/components/edit/pages-index-metadata';
+import { editHref as pageEditHref } from '@/lib/page-paths';
 
 type EditIndexItemProps = {
   page: PageRow;
@@ -34,8 +35,7 @@ export function EditIndexItem({
   onMove,
   onDelete
 }: EditIndexItemProps) {
-  const editHref =
-    page.slug === 'home' ? '/edit?slug=home' : `/edit/${encodeURIComponent(page.slug)}`;
+  const editHref = pageEditHref(page.slug);
   const live = liveHref(page);
   const canMove = canMovePage(page);
   const hasPublished = Boolean(page.publishedAt);

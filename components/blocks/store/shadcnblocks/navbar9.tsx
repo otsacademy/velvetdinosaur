@@ -17,7 +17,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 import {
   Accordion,
   AccordionContent,
@@ -377,13 +377,12 @@ export function ShadcnblocksNavbar9(props: ShadcnblocksNavbar9Props) {
                 href={logo.url}
                 className="flex max-h-8 items-center gap-2 text-lg font-semibold tracking-tighter"
               >
-                <OptimizedImage
+                <EditableImage
                   src={logo.src}
                   alt={logo.alt}
-                  width={40}
-                  height={40}
-                  imageOptions={{ width: 40, height: 40 }}
+                  sourcePath="logo.src"
                   className="inline-block size-8"
+                  optimized={{ width: 40, height: 40, imageOptions: { width: 40, height: 40 } }}
                 />
                 <span className="hidden text-foreground md:inline-block">
                   {logo.title}

@@ -9,6 +9,7 @@ import { PagesIndex } from '@/components/edit/pages-index.client';
 import { getWorkArticlesForEdit } from '@/lib/work-articles.server';
 import { getNewsArticlesForEdit } from '@/lib/news-articles.server';
 import { getEventsForEdit } from '@/lib/events.server';
+import { editHref } from '@/lib/page-paths';
 
 type EditIndexProps = {
   searchParams?: Promise<{ slug?: string }> | { slug?: string };
@@ -28,7 +29,7 @@ async function EditIndexContent({ searchParams }: EditIndexProps) {
   const querySlug =
     typeof resolvedSearchParams?.slug === 'string' ? resolvedSearchParams.slug : '';
   if (querySlug) {
-    redirect(`/edit/${encodeURIComponent(querySlug)}`);
+    redirect(editHref(querySlug));
   }
 
   const pages = (await listPages()).filter((page) => !isSiteChromeSlug(page.slug));

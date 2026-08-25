@@ -6,6 +6,10 @@ import { TextBlock, type TextBlockProps } from '@/components/blocks/text-block';
 import { ImageBlock, type ImageBlockProps } from '@/components/blocks/image-block';
 import { CTAStrip, type CTAStripProps } from '@/components/blocks/cta-strip';
 import { AttachmentBlock, type AttachmentBlockProps } from '@/components/blocks/attachment';
+import {
+  ImageEditProvider,
+  type CanvasImageSettings
+} from '@/components/puck/blocks/editable-image.client';
 
 type LayoutProps = {
   paddingTop?: number;
@@ -161,7 +165,21 @@ export function withLayout<T>(component: T): T {
 
   const nextRender = (props: Record<string, unknown>) => {
     const { layout, ...rest } = props || {};
-    return applyLayout(render(rest), layout as LayoutProps | undefined);
+    const puck = rest.puck as { isEditing?: boolean } | undefined;
+    const componentId = typeof rest.id === 'string' ? rest.id : undefined;
+    const edits =
+      rest.__vdImageEdits && typeof rest.__vdImageEdits === 'object'
+        ? (rest.__vdImageEdits as Record<string, CanvasImageSettings>)
+        : {};
+    const content = render(rest);
+    const rendered = puck?.isEditing || Object.keys(edits).length
+      ? createElement(
+          ImageEditProvider,
+          { componentId, editing: Boolean(puck?.isEditing), edits },
+          content
+        )
+      : content;
+    return applyLayout(rendered, layout as LayoutProps | undefined);
   };
 
   return {
@@ -192,7 +210,7 @@ const renderTextBlock: PuckComponent<TextBlockProps> = (props) =>
   TextBlock({ heading: props.heading, body: props.body });
 
 const renderImageBlock: PuckComponent<ImageBlockProps> = (props) =>
-  ImageBlock({
+  createElement(ImageBlock, {
     src: props.src,
     alt: props.alt,
     caption: props.caption,

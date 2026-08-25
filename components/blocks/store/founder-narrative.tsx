@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Quote } from 'lucide-react';
 import type { ComponentConfig } from '@puckeditor/core';
 import { Button } from '@/components/ui/button';
-import { OptimizedImage } from '@/components/ui/optimized-image';
+import { EditableImage } from '@/components/puck/blocks/editable-image.client';
 
 export type FounderNarrativeProps = {
   headline?: string;
@@ -71,13 +71,12 @@ export function FounderNarrative(props: FounderNarrativeProps) {
 
       {props.image ? (
         <div className="relative h-64 w-full rounded-[2.5rem] overflow-hidden border border-[var(--vd-border)] shadow-lg">
-          <OptimizedImage
+          <EditableImage
             src={props.image}
             alt={props.name || 'Founder portrait'}
-            fill
-            sizes="(max-width: 896px) 100vw, 896px"
-            imageOptions={{ width: 1200, height: 512, fit: 'cover' }}
+            sourcePath="image"
             className="object-cover"
+            optimized={{ fill: true, sizes: '(max-width: 896px) 100vw, 896px', imageOptions: { width: 1200, height: 512, fit: 'cover' } }}
           />
         </div>
       ) : null}

@@ -81,7 +81,6 @@ export async function PUT(
     const sanitized = sanitizeMaybe(payload.data);
     const page = await saveDraftPageData(slug, sanitized);
     const published = page?.publishedData ?? page?.data ?? null;
-    revalidateTag(pageTags.content);
     revalidateTag(pageTags.draft(slug));
     revalidateTag(pageTags.record(slug));
     revalidateTag(pageTags.list());

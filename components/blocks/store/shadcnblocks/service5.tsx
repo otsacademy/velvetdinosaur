@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 
 import { ShadcnblocksContainer } from "@/components/blocks/store/shadcnblocks/shared"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 import { cn } from "@/lib/utils"
 
 const ICONS = {
@@ -92,13 +92,12 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
                     {HeaderIcon ? (
                       <HeaderIcon className="h-12 w-12 text-primary" />
                     ) : (
-                      <OptimizedImage
+                      <EditableImage
                         src={props.headerIconSrc}
                         alt={props.headerIconAlt}
-                        width={48}
-                        height={48}
-                        imageOptions={{ width: 48, height: 48 }}
+                        sourcePath="headerIconSrc"
                         className="h-12 w-auto dark:invert"
+                        optimized={{ width: 48, height: 48, imageOptions: { width: 48, height: 48 } }}
                       />
                     )}
                   </div>
@@ -175,13 +174,12 @@ export function ShadcnblocksService5(props: ShadcnblocksService5Props) {
                             return <StatIcon className="h-5 w-5 text-primary" />
                           })()
                         ) : stat.iconSrc ? (
-                          <OptimizedImage
+                          <EditableImage
                             src={stat.iconSrc}
                             alt={stat.iconAlt || stat.title}
-                            width={24}
-                            height={24}
-                            imageOptions={{ width: 24, height: 24 }}
+                            sourcePath={`stats[${index}].iconSrc`}
                             className="h-6 w-6 object-contain"
+                            optimized={{ width: 24, height: 24, imageOptions: { width: 24, height: 24 } }}
                           />
                         ) : null}
                       </div>

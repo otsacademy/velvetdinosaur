@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { uploadFile } from '@/lib/uploads';
-import { cn } from '@/lib/utils';
 
 type PuckImageBlockProps = ImageBlockProps & {
   id: string;
@@ -113,39 +112,5 @@ export function PuckImageBlock({ id, editMode, puck, ...imageProps }: PuckImageB
     );
   }
 
-  return (
-    <div
-      className={cn('group relative')}
-      data-puck-image-block-id={id}
-      onDoubleClick={(event) => openFilePicker(event)}
-    >
-      <ImageBlock {...imageProps} />
-      {canEdit ? (
-        <div className="pointer-events-none absolute inset-0 flex items-start justify-end p-3">
-          <Button
-            size="sm"
-            variant="outline"
-            className="pointer-events-auto shadow-sm"
-            onClick={openFilePicker}
-            disabled={isUploading}
-          >
-            {isUploading ? 'Uploading...' : 'Replace image'}
-          </Button>
-        </div>
-      ) : null}
-      {isUploading ? (
-        <div className="absolute inset-x-3 bottom-3 rounded-md bg-[var(--vd-bg)] p-2">
-          <Progress value={progress} />
-        </div>
-      ) : null}
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={handleFileChange}
-        disabled={!canEdit || isUploading}
-      />
-    </div>
-  );
+  return <ImageBlock {...imageProps} />;
 }

@@ -1,9 +1,10 @@
 import type { ComponentConfig } from "@puckeditor/core"
+import type { ReactNode } from "react"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 import { r2PublicUrl } from "@/lib/public-assets"
 
 export type MakeHeroProps = {
@@ -21,8 +22,9 @@ export type MakeHeroProps = {
 
 const HIGHLIGHT_WORDS = ["convert", "edit"]
 
-function renderHeadline(text: string) {
+function renderHeadline(text: unknown): ReactNode {
   if (!text) return null
+  if (typeof text !== "string") return text as ReactNode
   const pattern = new RegExp(`(${HIGHLIGHT_WORDS.join("|")})`, "gi")
   const parts = text.split(pattern)
   return parts.map((part, index) => {
@@ -113,14 +115,12 @@ export function MakeHero({
           <div className="relative w-full lg:h-[600px]">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-muted/40 shadow-2xl lg:h-full lg:aspect-auto">
               {imageSrc ? (
-                <OptimizedImage
+                <EditableImage
                   src={imageSrc}
                   alt={imageAlt || "Hero image"}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  imageOptions={{ width: 1200, height: 900, fit: "cover" }}
+                  sourcePath="imageSrc"
                   className="object-cover"
+                  optimized={{ fill: true, priority: true, sizes: "(max-width: 1024px) 100vw, 50vw", imageOptions: { width: 1200, height: 900, fit: "cover" } }}
                 />
               ) : null}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />

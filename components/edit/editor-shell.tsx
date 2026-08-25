@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { Data } from '@puckeditor/core';
 import { EditorLoadingScreen } from '@/components/edit/editor-loading-screen';
+import type { SiteChrome } from '@/lib/site-chrome';
 
 const EditorClient = dynamic(
   () => import('./editor-client').then((mod) => mod.EditorClient),
@@ -16,6 +17,7 @@ const EditorClient = dynamic(
 type EditorShellProps = {
   initialData?: Data;
   initialSlug?: string;
+  initialChrome?: SiteChrome | null;
   isAdmin?: boolean;
   activeProfile?: {
     primaryChapterSlug: string;
@@ -26,6 +28,7 @@ type EditorShellProps = {
 export function EditorShell({
   initialData,
   initialSlug,
+  initialChrome = null,
   isAdmin = false,
   activeProfile = null
 }: EditorShellProps) {
@@ -44,6 +47,7 @@ export function EditorShell({
     <EditorClient
       initialData={initialData}
       initialSlug={initialSlug}
+      initialChrome={initialChrome}
       isAdmin={isAdmin}
       activeProfile={activeProfile}
     />

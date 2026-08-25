@@ -1,5 +1,7 @@
+'use client';
+
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { OptimizedImage } from '@/components/ui/optimized-image';
+import { EditableImage, useImageEditSettings } from '@/components/puck/blocks/editable-image.client';
 
 export type ImageBlockProps = {
   src?: string;
@@ -16,18 +18,36 @@ export function ImageBlock({
   loading = 'lazy',
   fetchPriority
 }: ImageBlockProps) {
+  const settings = useImageEditSettings('src');
+  const width = typeof settings.width === 'number' ? Math.min(100, Math.max(20, settings.width)) : 100;
+  const align = settings.align || 'center';
+  const cardStyle = settings.width
+    ? {
+        width: `${width}%`,
+        marginLeft: align === 'right' || align === 'center' ? 'auto' : 0,
+        marginRight: align === 'left' || align === 'center' ? 'auto' : 0
+      }
+    : undefined;
+  const ratio = settings.aspectRatio && settings.aspectRatio !== 'original'
+    ? settings.aspectRatio.replace('/', ' / ')
+    : '3 / 2';
+
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden" style={cardStyle}>
       <CardContent className="p-0">
-        <div className="relative aspect-[3/2] w-full overflow-hidden bg-[var(--vd-muted)]">
-          <OptimizedImage
+        <div className="relative w-full overflow-hidden bg-[var(--vd-muted)]" style={{ aspectRatio: ratio }}>
+          <EditableImage
             src={src}
             alt={alt}
-            fill
+            sourcePath="src"
+            applyLayout={false}
             className="h-full w-full object-cover"
-            sizes="(max-width: 768px) 100vw, 1200px"
-            priority={loading === 'eager' || fetchPriority === 'high'}
-            imageOptions={{ width: 1200, height: 800, fit: 'cover' }}
+            optimized={{
+              fill: true,
+              sizes: '(max-width: 768px) 100vw, 1200px',
+              priority: loading === 'eager' || fetchPriority === 'high',
+              imageOptions: { width: 1200, height: 800, fit: 'cover' }
+            }}
           />
         </div>
       </CardContent>

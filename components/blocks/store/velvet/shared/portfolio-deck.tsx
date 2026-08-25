@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import type { KeyboardEvent } from "react"
 import { cn } from "@/lib/utils"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 
 const deckTransforms = [
   "rotate-[0deg] translate-y-[0px] scale-[1]",
@@ -23,6 +23,7 @@ type PortfolioDeckProps = {
   magazineLabel?: string
   stackAriaLabel?: string
   magazineAriaLabel?: string
+  sourcePath?: string
 }
 
 function formatLabel(template: string | undefined, title: string) {
@@ -38,6 +39,7 @@ export function PortfolioDeck({
   magazineLabel,
   stackAriaLabel,
   magazineAriaLabel,
+  sourcePath,
 }: PortfolioDeckProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isFlipping, setIsFlipping] = useState(false)
@@ -113,13 +115,12 @@ export function PortfolioDeck({
             <div className="absolute left-1/2 top-0 h-full w-[46%] -translate-x-[104%] rounded-2xl border border-border/60 bg-background/60 shadow-sm transition-transform duration-300 motion-reduce:transition-none md:-translate-x-[106%]">
               {leftImage ? (
                 <div className="relative h-full w-full">
-                  <OptimizedImage
+                  <EditableImage
                     src={leftImage}
                     alt={`${title} magazine preview left`}
-                    fill
-                    sizes="(max-width: 768px) 46vw, 600px"
-                    imageOptions={{ width: 1400, height: 900, fit: "cover" }}
+                    sourcePath={sourcePath ? `${sourcePath}[${images.indexOf(leftImage)}].value` : undefined}
                     className="rounded-2xl object-cover"
+                    optimized={{ fill: true, sizes: "(max-width: 768px) 46vw, 600px", imageOptions: { width: 1400, height: 900, fit: "cover" } }}
                   />
                 </div>
               ) : null}
@@ -127,13 +128,12 @@ export function PortfolioDeck({
             <div className="absolute left-1/2 top-0 h-full w-[46%] translate-x-[4%] rounded-2xl border border-border/60 bg-background/60 shadow-sm transition-transform duration-300 motion-reduce:transition-none md:translate-x-[6%]">
               {rightImage ? (
                 <div className="relative h-full w-full">
-                  <OptimizedImage
+                  <EditableImage
                     src={rightImage}
                     alt={`${title} magazine preview right`}
-                    fill
-                    sizes="(max-width: 768px) 46vw, 600px"
-                    imageOptions={{ width: 1400, height: 900, fit: "cover" }}
+                    sourcePath={sourcePath ? `${sourcePath}[${images.indexOf(rightImage)}].value` : undefined}
                     className="rounded-2xl object-cover"
+                    optimized={{ fill: true, sizes: "(max-width: 768px) 46vw, 600px", imageOptions: { width: 1400, height: 900, fit: "cover" } }}
                   />
                 </div>
               ) : null}
@@ -169,13 +169,12 @@ export function PortfolioDeck({
           style={{ zIndex: displayImages.length - index, opacity: deckOpacities[index] ?? 1 }}
         >
           <div className="relative h-full w-full">
-            <OptimizedImage
+            <EditableImage
               src={src}
               alt={`${title} preview ${index + 1}`}
-              fill
-              sizes="(max-width: 640px) 90vw, 34rem"
-              imageOptions={{ width: 1200, height: 1600, fit: "cover" }}
+              sourcePath={sourcePath ? `${sourcePath}[${images.indexOf(src)}].value` : undefined}
               className="object-cover"
+              optimized={{ fill: true, sizes: "(max-width: 640px) 90vw, 34rem", imageOptions: { width: 1200, height: 1600, fit: "cover" } }}
             />
           </div>
         </span>

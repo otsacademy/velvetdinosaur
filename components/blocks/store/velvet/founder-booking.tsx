@@ -17,7 +17,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Section } from "@/components/ui/section"
 import { useContactForm } from "@/components/blocks/store/velvet/shared/use-contact-form"
-import { OptimizedImage } from "@/components/ui/optimized-image"
+import { EditableImage } from "@/components/puck/blocks/editable-image.client"
 
 type StringItem = string | { value?: string }
 
@@ -112,21 +112,19 @@ export function FounderBooking(props: FounderBookingProps) {
             <div className="space-y-3">
               <div className="overflow-hidden rounded-2xl bg-background shadow-sm ring-1 ring-border/60">
                 <div className="relative aspect-square w-full">
-                  <OptimizedImage
+                  <EditableImage
                     src={profileLight}
                     alt={props.profileImageAlt}
-                    fill
-                    sizes="240px"
-                    imageOptions={{ width: 800, height: 800, fit: "cover" }}
+                    sourcePath="profileImageLight"
                     className="object-cover dark:hidden"
+                    optimized={{ fill: true, sizes: "240px", imageOptions: { width: 800, height: 800, fit: "cover" } }}
                   />
-                  <OptimizedImage
+                  <EditableImage
                     src={profileDark}
                     alt={props.profileImageAlt}
-                    fill
-                    sizes="240px"
-                    imageOptions={{ width: 800, height: 800, fit: "cover" }}
+                    sourcePath={props.profileImageDark ? "profileImageDark" : "profileImageLight"}
                     className="hidden object-cover dark:block"
+                    optimized={{ fill: true, sizes: "240px", imageOptions: { width: 800, height: 800, fit: "cover" } }}
                   />
                 </div>
               </div>
