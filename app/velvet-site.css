@@ -1,4 +1,40 @@
 @layer utilities {
+  /* Journey timeline rail reveal (timeline13): fills top-to-bottom on small
+     screens, left-to-right once the rail turns horizontal at lg. */
+  @keyframes vd-timeline-reveal-y {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes vd-timeline-reveal-x {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .vd-timeline-reveal {
+    animation: vd-timeline-reveal-y 5s linear both;
+  }
+
+  @media (min-width: 1024px) {
+    .vd-timeline-reveal {
+      animation-name: vd-timeline-reveal-x;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vd-timeline-reveal {
+      animation: none;
+    }
+  }
+
   .font-display {
     font-family: var(--vd-font-display);
   }

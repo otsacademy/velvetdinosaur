@@ -2,6 +2,7 @@ import { type ReactNode } from "react"
 
 import { DesignShell } from "./design-shell"
 import { HomeHero } from "./home-hero"
+import { HomeJourney } from "./home-journey"
 import { HomePricing } from "./home-pricing"
 import { MadeThings, ManagedValue, PromiseStatement, WhatIBuild } from "./home-sections"
 import { ScoreCells } from "./home-shared"
@@ -35,6 +36,7 @@ async function RevealSections({ isLhci }: { isLhci: boolean }) {
     ["what-i-build", <WhatIBuild key="what-i-build" />],
     ["made-things", <MadeThings key="made-things" />],
     ["managed", <ManagedValue key="managed" />],
+    ["journey", <HomeJourney key="journey" />],
     ["pricing", <HomePricing key="pricing" />],
     ["testimonial", <Testimonial key="testimonial" />],
     ["cta", <CtaBanner key="cta" />],

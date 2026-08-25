@@ -14,7 +14,7 @@ export function Testimonial() {
   return (
     <section className={`${HOME_CONTAINER} pt-16 md:pt-[72px]`}>
       <SectionHeading
-        index="05"
+        index="06"
         title="Kind words from clients"
         aside={
           <Link

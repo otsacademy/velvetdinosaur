@@ -15,7 +15,7 @@ export function HomePricing() {
   return (
     <section id="pricing" className="scroll-mt-24">
       <div className={`${HOME_CONTAINER} pt-16 md:pt-[72px]`}>
-        <SectionHeading index="04" title="One honest price" />
+        <SectionHeading index="05" title="One honest price" />
         <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
           <div className={`${HOME_CARD} p-8 md:p-10`}>
             <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
