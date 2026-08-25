@@ -71,8 +71,10 @@ test('editor loads, asset picker opens, and draft persists', async ({ page }, te
 
   await urlInput.fill(TEST_URL);
   await expect(urlInput).toHaveValue(TEST_URL);
-  // The converged editor renders the canvas inline (iframe disabled).
-  await expect(page.getByRole('link', { name: /Download file/i })).toHaveAttribute('href', TEST_URL);
+  // The editable canvas is isolated in the live site preview frame.
+  await expect(
+    page.frameLocator('iframe').first().getByRole('link', { name: /Download file/i })
+  ).toHaveAttribute('href', TEST_URL);
 
   // Properties panel may be pinned open; closing is not required for correctness.
   // Ensure it doesn't block draft persistence.
