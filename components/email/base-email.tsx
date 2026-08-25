@@ -89,7 +89,9 @@ export function BaseEmailLayout({
                 ) : null}
               </em>
             </Text>
-            <Text style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</Text>
+            {TRADING_NAME_STATEMENT ? (
+              <Text style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</Text>
+            ) : null}
           </Section>
         </Container>
       </Body>

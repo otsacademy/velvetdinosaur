@@ -1,7 +1,10 @@
 import { Fragment, type ReactNode } from "react"
 
+import Link from "next/link"
+
 import { DesignShell } from "@/components/home/design-shell"
-import { HOME_CONTAINER, HOME_KICKER } from "@/components/home/home-shared"
+import { HOME_BTN_PRIMARY, HOME_CONTAINER, HOME_KICKER } from "@/components/home/home-shared"
+import { LEGAL_IDENTITY_PARAGRAPH } from "@/lib/legal-identity"
 import type { LegalPageContent } from "@/lib/legal-pages-content"
 
 // Renders the plain-text section bodies migrated from the CMS: blank-line
@@ -29,7 +32,7 @@ function renderBody(body: string): ReactNode {
     )
   }
 
-  for (const rawLine of body.split("\n")) {
+  for (const rawLine of body.replace("{{IDENTITY}}", LEGAL_IDENTITY_PARAGRAPH).split("\n")) {
     const line = rawLine.trim()
     if (line.startsWith("• ")) {
       listItems.push(line.slice(2).trim())
@@ -81,6 +84,14 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
               </section>
             </Fragment>
           ))}
+          {content.cta ? (
+            <Link
+              href={content.cta.href}
+              className={`${HOME_BTN_PRIMARY} w-fit px-7 py-3.5 text-sm`}
+            >
+              {content.cta.label}
+            </Link>
+          ) : null}
         </div>
       </div>
     </DesignShell>

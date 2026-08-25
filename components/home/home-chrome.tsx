@@ -46,7 +46,7 @@ export function HomeHeader({ active }: { active?: NavKey }) {
           ))}
         </nav>
         <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-5 py-2.5 text-[13px]`}>
-          Start your free preview
+          Request your free preview
         </Link>
       </div>
     </header>
@@ -72,9 +72,11 @@ export function HomeFooter() {
               © 2026 Velvet Dinosaur · Minster Lovell, Oxfordshire
             </span>
           </div>
-          <p className="m-0 max-w-[520px] text-[11px] leading-relaxed text-muted-foreground">
-            {TRADING_NAME_STATEMENT}
-          </p>
+          {TRADING_NAME_STATEMENT ? (
+            <p className="m-0 max-w-[520px] text-[11px] leading-relaxed text-muted-foreground">
+              {TRADING_NAME_STATEMENT}
+            </p>
+          ) : null}
         </div>
         <div className="flex flex-col items-start gap-2.5 md:items-end">
           {/* Direct lines to Ian, on every page rather than one contact card. */}

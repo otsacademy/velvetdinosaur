@@ -108,7 +108,7 @@ export function AboutHero() {
             <div
               className={`${HOME_KICKER} pointer-events-none absolute bottom-3 left-3 rounded-[3px] border border-primary/20 bg-background px-1.5 py-1 text-[11px] text-muted-foreground`}
             >
-              Named by my 3-year-old daughter
+              Named by my daughter when she was three
             </div>
           </div>
         </div>

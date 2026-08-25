@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useState, type FormEvent } from "react"
 
 import { trackAnalyticsEvent } from "@/lib/analytics/client"
@@ -35,7 +36,7 @@ const EMPTY = {
 const MODES: Array<{ id: EnquiryType; title: string; blurb: string }> = [
   {
     id: "project",
-    title: "Start my free preview",
+    title: "Request my free preview",
     blurb: "I'd like a website built — show me before I pay.",
   },
   {
@@ -364,13 +365,23 @@ export function EnquiryForm() {
         className={`${HOME_BTN_PRIMARY} w-fit cursor-pointer border-none px-7 py-3.5 text-sm disabled:opacity-60`}
         disabled={busy}
       >
-        {busy ? "Sending…" : isProject ? "Start my free preview" : "Send your question"}
+        {busy ? "Sending…" : isProject ? "Request my free preview" : "Send your question"}
       </button>
       {isProject ? (
         <p className="m-0 text-[12.5px] text-muted-foreground">
           No payment details needed. You see the finished website before you decide.
         </p>
       ) : null}
+      <p className="m-0 text-[12.5px] leading-relaxed text-muted-foreground">
+        We&apos;ll use these details only to respond to your enquiry.{" "}
+        <Link
+          href="/privacy"
+          className="font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+        >
+          Read our Privacy Notice
+        </Link>
+        .
+      </p>
       {status.type === "error" ? (
         <p className="m-0 text-[13px] font-semibold text-destructive">{status.message}</p>
       ) : null}

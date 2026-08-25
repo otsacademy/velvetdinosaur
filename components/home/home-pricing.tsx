@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "./home-shared"
 
 const INCLUDED = [
@@ -40,6 +42,14 @@ export function HomePricing() {
               flat monthly price that covers everything. Everything is laid out in a plain
               English agreement for you to read before you sign.
             </p>
+            <p className="mb-6 mt-[-8px] text-[13px]">
+              <Link
+                href="/agreement"
+                className="font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+              >
+                Read the full service agreement →
+              </Link>
+            </p>
             <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
               {INCLUDED.map((item) => (
                 <li key={item} className="flex items-baseline gap-2.5 text-[13px] text-foreground">
@@ -72,8 +82,8 @@ export function HomePricing() {
               </div>
               <div className="text-[26px] font-extrabold tracking-tight">£3,500+ up front</div>
               <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                A typical agency build, before hosting and maintenance. Agencies quote
-                £10k–£15k for comparable work.
+                A typical agency build, before hosting and maintenance. Comparable bespoke
+                builds can cost thousands up front.
               </div>
             </div>
           </div>

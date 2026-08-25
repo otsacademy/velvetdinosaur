@@ -1,8 +1,8 @@
 export const mainHeroCopy = {
   badge: '17 years of product and platform experience',
-  heading: 'Fast, beautiful websites and bespoke mobile apps that turn visitors into clients.',
+  heading: 'Fast, beautiful managed websites that turn visitors into clients.',
   description:
-    'Skip the agency runaround. Work directly with an experienced developer to launch custom digital products built for conversion, search visibility, and long-term maintainability.',
+    'Skip the agency runaround. Work directly with Ian to get a managed website built before you pay a penny — £99 a month, hosting, updates and support included.',
   supportingLine: ''
 };
 

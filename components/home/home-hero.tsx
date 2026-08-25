@@ -13,7 +13,7 @@ import {
 
 const HERO_BADGES = [
   "★ 5.0 on Google",
-  "100/100 PageSpeed, every build",
+  "Performance-first websites",
   "One friendly human, start to finish",
 ] as const
 
@@ -79,7 +79,7 @@ function DinoPanel({ animate, interactive }: { animate: boolean; interactive: bo
       <div
         className={`${HOME_KICKER} pointer-events-none absolute bottom-3.5 right-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[11px] text-muted-foreground`}
       >
-        Named by my 3-year-old
+        Named by my daughter, aged three
       </div>
     </div>
   )
@@ -136,13 +136,22 @@ export function HomeHero({ animate, interactive3d }: { animate: boolean; interac
           <div {...riseProps(animate, 450)}>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-7 py-3.5 text-sm`}>
-                Start your free preview
+                Request your free preview
               </Link>
               <Link href="/work" className={`${HOME_BTN_OUTLINE} px-7 py-3.5 text-sm`}>
                 See the work
               </Link>
             </div>
           </div>
+          <p
+            {...riseProps(animate, 505)}
+            className="m-0 max-w-[500px] text-[13.5px] leading-relaxed text-muted-foreground"
+          >
+            Trusted to build and maintain websites for{" "}
+            <span className="font-semibold text-foreground">Academics Stand Against Poverty</span>,{" "}
+            <span className="font-semibold text-foreground">Froxfield Parish Council</span> and{" "}
+            <span className="font-semibold text-foreground">The Brave</span>.
+          </p>
           <div
             {...riseProps(animate, 560)}
             className="vd-hero-meta flex items-center gap-x-2 whitespace-nowrap pt-1 text-[11px] font-medium text-muted-foreground lg:text-xs"

@@ -131,7 +131,9 @@ export function InviteEmail({
                         </a>
                       </em>
                     </p>
-                    <p style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</p>
+                    {TRADING_NAME_STATEMENT ? (
+                      <p style={styles.footerLegal}>{TRADING_NAME_STATEMENT}</p>
+                    ) : null}
                   </td>
                 </tr>
               </table>

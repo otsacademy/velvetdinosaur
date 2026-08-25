@@ -38,7 +38,7 @@ export default function ContactPage() {
         <div className={`${HOME_CONTAINER} py-12 md:pb-12 md:pt-16`}>
           <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>Say hello</div>
           <h1 className="m-0 mb-3.5 text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
-            Start your free preview.
+            Request your free preview.
           </h1>
           <p className="m-0 max-w-[540px] text-pretty text-base leading-relaxed text-muted-foreground">
             Tell me a little about your business and I&apos;ll build your new website first —
@@ -96,6 +96,12 @@ export default function ContactPage() {
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-primary/20 pt-3.5 text-[13px] font-semibold">
               <span className="text-muted-foreground">Rather talk?</span>
+              <a
+                href="mailto:hello@velvetdinosaur.com"
+                className="text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+              >
+                <span aria-hidden>✉️</span> hello@velvetdinosaur.com
+              </a>
               <a
                 href={PHONE_HREF}
                 className="text-primary transition-colors hover:text-[var(--vd-primary-hover)]"

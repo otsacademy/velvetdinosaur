@@ -231,7 +231,7 @@ export function WorkArticlePageClient({ article, related }: WorkArticlePageClien
               <Link href="/#contact">
                 <Button className="w-full gap-2">
                   <MessageSquare className="h-4 w-4" />
-                  Start your free preview
+                  Request your free preview
                 </Button>
               </Link>
               {article.website ? (

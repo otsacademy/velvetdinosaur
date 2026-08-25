@@ -1,7 +1,7 @@
 import Image from "next/image"
 import type { ReactNode } from "react"
 
-import { COMPANY_NUMBER, REGISTERED_OFFICE } from "@/lib/legal-identity"
+import { CONTRACTING_PARTY, REGISTERED_DETAILS_LINE } from "@/lib/legal-identity"
 import {
   ACCEPTANCE_BLOCKS,
   AGREEMENT_VERSION,
@@ -112,10 +112,9 @@ function Cover() {
       <p className="m-0 mt-5 max-w-[5.1in] text-[15.5px] leading-[1.68] tracking-[-0.002em] text-(--ink-2)">
         These terms are between you — the business or organisation named in the order
         (&ldquo;Customer&rdquo;, &ldquo;you&rdquo;, &ldquo;your&rdquo;) — and{" "}
-        <strong className="font-semibold text-(--ink)">Velvet Dinosaur Web Design Ltd</strong>,
-        trading as Velvet Dinosaur (&ldquo;Velvet Dinosaur&rdquo;, &ldquo;we&rdquo;,
-        &ldquo;us&rdquo; or &ldquo;our&rdquo;). Your order, together with this agreement, forms the
-        contract between us.
+        <strong className="font-semibold text-(--ink)">{CONTRACTING_PARTY}</strong> (&ldquo;Velvet
+        Dinosaur&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;). Your order,
+        together with this agreement, forms the contract between us.
       </p>
       <div
         className={`${MONO} m-0 mt-[26px] flex flex-wrap gap-x-[26px] gap-y-2 border-b-2 border-(--ink) pb-[26px] text-[10px] leading-[1.4] tracking-[0.06em] uppercase text-(--ink-3)`}
@@ -320,7 +319,7 @@ function SignatureColumn({ label }: { label: string }) {
 export function SignatureBlocks() {
   return (
     <div className="clear-left mt-[26px] mb-[46px] grid gap-[34px] border-t-2 border-(--ink) pt-6 sm:grid-cols-2">
-      <SignatureColumn label="For Velvet Dinosaur Web Design Ltd" />
+      <SignatureColumn label={`For ${CONTRACTING_PARTY}`} />
       <SignatureColumn label="For the customer" />
     </div>
   )
@@ -344,9 +343,7 @@ export function PrintFooter() {
     <div
       className={`vd-doc-print-only ${MONO} border-t border-(--rule) pt-2 text-[9px] leading-[1.5] tracking-[0.04em] text-(--ink-3)`}
     >
-      © 2026 Velvet Dinosaur. Velvet Dinosaur Web Design Ltd, trading as Velvet Dinosaur,
-      registered in England and Wales. Company number {COMPANY_NUMBER}. Registered office:{" "}
-      {REGISTERED_OFFICE}. ·{" "}
+      © 2026 Velvet Dinosaur. {REGISTERED_DETAILS_LINE} ·{" "}
       <a href="mailto:hello@velvetdinosaur.com">hello@velvetdinosaur.com</a>
     </div>
   )
