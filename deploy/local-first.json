@@ -7,7 +7,7 @@
   "slots": {
     "blue": {
       "path": "/srv/apps/.ops/sites/velvetdinosaur/slots/blue",
-      "port": 3018,
+      "port": 3061,
       "service": "vd-velvetdinosaur-blue"
     },
     "green": {
