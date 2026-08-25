@@ -100,7 +100,7 @@ test.describe('protected administration', () => {
     await searchbox.fill('orphan');
     await searchbox.press('Enter');
     await expect(page).toHaveURL(/\/admin\/fleet\?q=orphan$/);
-    await expect(page.getByText('Filtered by')).toBeVisible();
+    await expect(page.getByText('Filtered by').first()).toBeVisible();
     await expect(page.getByText('vd-orphan-worker.service').first()).toBeVisible();
     await expect(page.getByText('No repositories match this view.')).toBeVisible();
     await expect(page.getByRole('columnheader', { name: 'Field' })).toBeVisible();

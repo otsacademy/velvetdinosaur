@@ -4,7 +4,9 @@ import type { ReactNode } from "react"
 import { CONTRACTING_PARTY, REGISTERED_DETAILS_LINE } from "@/lib/legal-identity"
 import {
   ACCEPTANCE_BLOCKS,
+  AGREEMENT_DATE_LABEL,
   AGREEMENT_VERSION,
+  AGREEMENT_VERSION_LABEL,
   AGREEMENT_VERSION_SHORT,
   KEY_TILES,
   ORDER_FIELDS,
@@ -119,8 +121,8 @@ function Cover() {
       <div
         className={`${MONO} m-0 mt-[26px] flex flex-wrap gap-x-[26px] gap-y-2 border-b-2 border-(--ink) pb-[26px] text-[10px] leading-[1.4] tracking-[0.06em] uppercase text-(--ink-3)`}
       >
-        <span>Version 3.2</span>
-        <span>August 2026</span>
+        <span>{AGREEMENT_VERSION_LABEL}</span>
+        <span>{AGREEMENT_DATE_LABEL}</span>
         <span>Law of England &amp; Wales</span>
       </div>
 

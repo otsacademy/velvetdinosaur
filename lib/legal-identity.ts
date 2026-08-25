@@ -1,19 +1,19 @@
 // Registered company identity for Velvet Dinosaur.
 //
-// INCORPORATION SWITCH: Velvet Dinosaur Web Design Ltd is not registered yet.
-// While COMPANY_REGISTERED is false the site must not claim to be a registered
-// company, so the trading-name statement is withheld and contracts are made in
-// Ian's own name. On incorporation: set COMPANY_REGISTERED to true, fill in
-// COMPANY_NUMBER, rebuild, regenerate the agreement PDF and deploy — every
-// surface (footer, agreement, emails, privacy, terms) follows from here.
+// INCORPORATION SWITCH: Velvet Dinosaur Web Design Ltd was registered at
+// Companies House on 25 August 2026 (company number 17419510), so the site now
+// carries the full registered identity. Setting COMPANY_REGISTERED back to
+// false would withhold every registration claim and contract in Ian's own name
+// again — footer, agreement, emails, privacy, terms and JSON-LD all follow
+// from these constants.
 
 // Typed as boolean, not the literal, so call sites keep both branches.
-export const COMPANY_REGISTERED: boolean = false;
+export const COMPANY_REGISTERED: boolean = true;
 
 export const TRADING_NAME = 'Velvet Dinosaur';
 export const REGISTERED_NAME = 'Velvet Dinosaur Web Design Ltd';
 export const SOLE_TRADER_NAME = 'Ian Wickens';
-export const COMPANY_NUMBER = '[NUMBER]';
+export const COMPANY_NUMBER = '17419510';
 export const REGISTERED_OFFICE =
   '16 Holloway Lane, Minster Lovell, Witney, Oxfordshire OX29 0AU, UK';
 

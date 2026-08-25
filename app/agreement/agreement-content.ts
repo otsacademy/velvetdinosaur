@@ -17,7 +17,9 @@ export type AgreementSection = {
   blocks: AgreementBlock[]
 }
 
-export const AGREEMENT_VERSION = "Version 3.2 — August 2026"
+export const AGREEMENT_VERSION_LABEL = "Version 3.3"
+export const AGREEMENT_DATE_LABEL = "August 2026"
+export const AGREEMENT_VERSION = `${AGREEMENT_VERSION_LABEL} — ${AGREEMENT_DATE_LABEL}`
 
 export const SHORT_VERSION = [
   "We build a working demonstration of your new website **before you pay us**.",
@@ -437,7 +439,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
 ]
 
-export const AGREEMENT_VERSION_SHORT = "v3.2"
+export const AGREEMENT_VERSION_SHORT = "v3.3"
 
 export type KeyTile = {
   value: string
