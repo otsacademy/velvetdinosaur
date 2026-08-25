@@ -150,7 +150,7 @@ async function SecondarySections() {
 }
 
 export async function FullSite() {
-  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
+  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447962705433"
   const whatsappDigits = phoneNumber.replace(/\D/g, "")
   const whatsappHref = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hi Ian, I'd like to discuss a website project.")}`
   const isLhci = process.env.VD_LHCI === "true" || process.env.NEXT_PUBLIC_LHCI === "true"

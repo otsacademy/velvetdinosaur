@@ -8,7 +8,7 @@ const CONTACT_FORM_ID = "velvet_contact_section"
 const MAPS_APP_HREF = "https://maps.app.goo.gl/qXGMvoF1E36RWeDS9"
 const MAP_EMBED_SRC = "https://www.google.com/maps?q=51.7936206,-1.5530184&z=16&output=embed"
 const WHATSAPP_HREF =
-  "https://wa.me/447438460437?text=Hi%20Ian%2C%20I'd%20like%20to%20discuss%20a%20website%20project."
+  "https://wa.me/447962705433?text=Hi%20Ian%2C%20I'd%20like%20to%20discuss%20a%20website%20project."
 
 const faqs = [
   {
@@ -44,7 +44,7 @@ const faqs = [
 ]
 
 export function ContactSection() {
-  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
+  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447962705433"
   const callHref = `tel:${phoneNumber.replace(/\s+/g, "")}`
   const phoneDisplay = formatPhoneDisplay(phoneNumber)
   const mapCard = (

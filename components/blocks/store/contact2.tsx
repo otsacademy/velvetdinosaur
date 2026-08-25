@@ -54,13 +54,13 @@ export const contact2Config: ComponentConfig<Contact2BlockProps> = {
       },
       {
         label: "Phone",
-        value: "+44 7438 460437",
-        href: "tel:+447438460437",
+        value: "+44 7962 705433",
+        href: "tel:+447962705433",
       },
       {
         label: "WhatsApp",
         value: "Message on WhatsApp",
-        href: "https://wa.me/447438460437",
+        href: "https://wa.me/447962705433",
       },
     ],
     formTitle: siteContent.booking.headline,

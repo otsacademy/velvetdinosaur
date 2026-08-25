@@ -76,7 +76,7 @@ export function FounderBooking(props: FounderBookingProps) {
   const key = (path: string) => contentKey(props.id, path)
   const analyticsFormId = "founder_booking"
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/your-handle"
-  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447438460437"
+  const phoneNumber = process.env.NEXT_PUBLIC_PHONE ?? "+447962705433"
   const phoneDigits = phoneNumber.replace(/\D/g, "")
   const whatsappMessage = props.whatsappMessage || ""
   const whatsappLink = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(whatsappMessage)}`

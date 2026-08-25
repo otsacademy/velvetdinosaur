@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 }
 
 const WHATSAPP_HREF =
-  "https://wa.me/447438460437?text=Hi%20Ian%2C%20I'd%20like%20a%20free%20audit%20of%20my%20website."
+  "https://wa.me/447962705433?text=Hi%20Ian%2C%20I'd%20like%20a%20free%20audit%20of%20my%20website."
 
 const AUDIT_CONTENTS = [
   {
