@@ -10,6 +10,7 @@ const RESERVED_SITE_FIRST_SEGMENTS = new Set([
   'api',
   'assets',
   'bookings',
+  'business-reviews',
   'calendar',
   'cms',
   'components',

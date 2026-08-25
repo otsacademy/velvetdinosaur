@@ -23,6 +23,7 @@ import {
   LayoutGrid,
   Palette,
   Radar,
+  Star,
   Store,
   UserCog,
   Users,
@@ -65,6 +66,7 @@ export const NAV_GROUPS: SidebarNavGroup[] = [
       { label: 'Inbox', href: '/edit/inbox', icon: InboxIcon },
       { label: 'Calendar', href: '/edit/calendar', icon: CalendarDays },
       { label: 'Bookings', href: '/edit/bookings', icon: CalendarClock, adminOnly: true },
+      { label: 'Business Reviews', href: '/admin/business-reviews', icon: Star, adminOnly: true },
       { label: 'Newsletter', href: '/edit/newsletter', icon: Send, adminOnly: true },
       { label: 'Event Outreach', href: '/edit/event-registrations', icon: MailCheck, adminOnly: true }
     ]

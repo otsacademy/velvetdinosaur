@@ -1,12 +1,13 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "bash -lc 'bun run start -- -p 3100 & pid=$!; trap \"kill $pid\" EXIT; until curl -sf http://localhost:3100/ >/dev/null; do sleep 1; done; curl -sf http://localhost:3100/ >/dev/null; curl -sf http://localhost:3100/about >/dev/null; curl -sf http://localhost:3100/audit >/dev/null; wait $pid'",
+      "startServerCommand": "bash -lc 'bun run start -- -p 3100 & pid=$!; trap \"kill $pid\" EXIT; until curl -sf http://localhost:3100/ >/dev/null; do sleep 1; done; curl -sf http://localhost:3100/ >/dev/null; curl -sf http://localhost:3100/about >/dev/null; curl -sf http://localhost:3100/audit >/dev/null; curl -sf http://localhost:3100/business-reviews >/dev/null; wait $pid'",
       "startServerReadyPattern": "Ready in",
       "url": [
         "http://localhost:3100/",
         "http://localhost:3100/about",
-        "http://localhost:3100/audit"
+        "http://localhost:3100/audit",
+        "http://localhost:3100/business-reviews"
       ],
       "numberOfRuns": 3,
       "settings": {
