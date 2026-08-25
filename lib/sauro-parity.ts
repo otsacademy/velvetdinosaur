@@ -1,14 +1,14 @@
 /**
- * Sauro CMS UI parity engine.
+ * Sauro CMS core parity engine.
  *
- * Compares each site's Sauro UI scopes against the reference implementation
+ * Compares each site's shared Sauro runtime against the reference implementation
  * defined in docs/platform/sauro-core-manifest.json. Consumed by
  * scripts/sauro-parity-check.ts (CLI) and scripts/fleet-status-producer.ts
  * (the /admin/fleet sauro-ui-parity fact). Read-only.
  */
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative } from 'node:path';
+import { existsSync, readFileSync, readdirSync, realpathSync, statSync } from 'node:fs';
+import { join, relative, resolve } from 'node:path';
 
 export type ParityRole = 'core' | 'site-owned' | 'legacy';
 
@@ -20,6 +20,7 @@ export type ParitySite = {
   branch: string | null;
   offline?: boolean;
   template?: boolean;
+  workspace?: boolean;
   note?: string;
 };
 
@@ -47,7 +48,17 @@ export type SiteParity = {
 type CompiledRule = ParityRule & { re: RegExp };
 
 export function loadParityManifest(manifestPath: string): ParityManifest {
-  return JSON.parse(readFileSync(manifestPath, 'utf8')) as ParityManifest;
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as ParityManifest;
+  if (!manifest.reference?.site || !manifest.reference.path) {
+    throw new Error('Sauro parity manifest must declare a reference site and path');
+  }
+  if (!Array.isArray(manifest.scopes) || manifest.scopes.length === 0) {
+    throw new Error('Sauro parity manifest must declare at least one core scope');
+  }
+  if (!Array.isArray(manifest.rules) || !manifest.rules.some((rule) => rule.pattern === '**')) {
+    throw new Error('Sauro parity manifest must include a ** catch-all rule');
+  }
+  return manifest;
 }
 
 /** Supports ** (any depth) and * (within a path segment); patterns are repo-relative. */
@@ -106,15 +117,22 @@ function walk(root: string): string[] {
   return out;
 }
 
-/** Scope-relative path → sha256 for every file under the manifest scopes. */
+/** Repo-relative path → sha256 for every file or directory in the manifest scopes. */
 export function scanTree(root: string, scopes: string[]): Map<string, string> {
   const files = new Map<string, string>();
   for (const scope of scopes) {
     const base = join(root, scope);
     if (!existsSync(base)) continue;
-    for (const file of walk(base)) {
+    let candidates: string[];
+    try {
+      candidates = statSync(base).isDirectory() ? walk(base) : [base];
+    } catch {
+      continue;
+    }
+    for (const file of candidates) {
       try {
-        files.set(join(scope, relative(base, file)), createHash('sha256').update(readFileSync(file)).digest('hex'));
+        const rel = statSync(base).isDirectory() ? join(scope, relative(base, file)) : scope;
+        files.set(rel, createHash('sha256').update(readFileSync(file)).digest('hex'));
       } catch {
         // Unreadable file; skip rather than fail the whole scan.
       }
@@ -154,7 +172,8 @@ export function compareSite(
       else if (referenceFiles.get(rel) === hash) record(rel, 'identical');
       else record(rel, 'drifted');
     } else if (rule.role === 'site-owned') {
-      if (rule.owners && !rule.owners.includes(siteName)) record(rel, 'foreign', `owned by ${rule.owners.join(', ')}`);
+      const ownerName = siteName.startsWith('workspace/') ? siteName.slice('workspace/'.length) : siteName;
+      if (rule.owners && !rule.owners.includes(ownerName)) record(rel, 'foreign', `owned by ${rule.owners.join(', ')}`);
       else record(rel, 'site-owned');
     } else {
       record(rel, 'legacy', rule.note);
@@ -172,7 +191,7 @@ export function compareSite(
   return report;
 }
 
-/** True when the tree has at least one manifest scope — i.e. it carries Sauro UI at all. */
+/** True when the tree has at least one manifest scope — i.e. it carries the Sauro core at all. */
 export function hasSauroScopes(root: string, manifest: ParityManifest): boolean {
   return manifest.scopes.some((scope) => existsSync(join(root, scope)));
 }
@@ -189,18 +208,18 @@ export function summarizeCounts(counts: ParityCounts): { value: string; inParity
 }
 
 /**
- * Union of the manifest's declared sites and Sauro sites discovered from the
- * installer's registry (/srv/apps/.ops/sites). A directory counts as a Sauro
- * site when its checkout carries the site-owned workspace-shell seam every
- * core site has — that keeps unrelated products (e.g. scholardemia) off the
- * board. Manifest entries win on name collisions, so overrides stay possible.
+ * Union of the manifest's declared sites and Sauro source checkouts discovered
+ * from the installer registries and /srv/apps. Runtime blue/green slots are
+ * deliberately ignored: parity assesses their canonical source checkout.
+ * Manifest entries win on name/path collisions, so overrides stay possible.
  */
 export function discoverInstalledSites(
   manifest: ParityManifest,
-  opts?: { opsRoot?: string; appsRoot?: string }
+  opts?: { opsRoot?: string; appsRoot?: string; registryPath?: string }
 ): ParitySite[] {
   const opsRoot = opts?.opsRoot ?? '/srv/apps/.ops/sites';
   const appsRoot = opts?.appsRoot ?? '/srv/apps';
+  const registryPath = opts?.registryPath ?? '/var/lib/vd-platform/registry.json';
   const slugSet = new Set<string>();
   try {
     for (const slug of readdirSync(opsRoot)) slugSet.add(slug);
@@ -209,22 +228,86 @@ export function discoverInstalledSites(
   }
   // Newer installs register in the platform registry instead of .ops/sites.
   try {
-    const registry = JSON.parse(readFileSync('/var/lib/vd-platform/registry.json', 'utf8')) as {
+    const registry = JSON.parse(readFileSync(registryPath, 'utf8')) as {
       sites?: Record<string, unknown>;
     };
     for (const slug of Object.keys(registry.sites ?? {})) slugSet.add(slug);
   } catch {
     // No platform registry; directory scan above still applies.
   }
-  const slugs = [...slugSet];
-  if (!slugs.length) return manifest.sites;
+  try {
+    for (const entry of readdirSync(appsRoot, { withFileTypes: true })) {
+      if (!entry.isDirectory() || entry.name.startsWith('.') || /-(?:blue|green)$/.test(entry.name)) continue;
+      slugSet.add(entry.name);
+    }
+  } catch {
+    // Direct source discovery is a fallback; declared sites still apply.
+  }
+
   const known = new Set(manifest.sites.map((site) => site.name));
+  const knownPaths = new Set(manifest.sites.map((site) => canonicalPath(site.path)));
   const discovered: ParitySite[] = [];
-  for (const slug of slugs.sort()) {
+  for (const slug of [...slugSet].sort()) {
     if (known.has(slug)) continue;
     const path = join(appsRoot, slug);
-    if (!existsSync(join(path, 'components/admin/workspace-shell.config.tsx'))) continue;
+    if (knownPaths.has(canonicalPath(path)) || !isSauroCheckout(path)) continue;
     discovered.push({ name: slug, path, branch: null, note: 'auto-discovered from installed sites' });
   }
   return [...manifest.sites, ...discovered];
+}
+
+function canonicalPath(path: string) {
+  try {
+    return realpathSync(path);
+  } catch {
+    return resolve(path);
+  }
+}
+
+function isSauroCheckout(path: string) {
+  return (
+    existsSync(join(path, 'package.json')) &&
+    existsSync(join(path, 'app/edit')) &&
+    existsSync(join(path, 'components/puck')) &&
+    existsSync(join(path, 'puck'))
+  );
+}
+
+/**
+ * Complete parity inventory: installed sources plus every unstamped Sauro
+ * package under /opt/vdplatform/workspaces. Workspace names are namespaced so
+ * a package and its installed checkout can both appear in one report.
+ */
+export function discoverSauroTargets(
+  manifest: ParityManifest,
+  opts?: {
+    opsRoot?: string;
+    appsRoot?: string;
+    registryPath?: string;
+    workspacesRoot?: string;
+  }
+): ParitySite[] {
+  const installed = discoverInstalledSites(manifest, opts);
+  const workspacesRoot = opts?.workspacesRoot ?? '/opt/vdplatform/workspaces';
+  const knownPaths = new Set(installed.map((site) => canonicalPath(site.path)));
+  const workspaces: ParitySite[] = [];
+
+  try {
+    for (const entry of readdirSync(workspacesRoot, { withFileTypes: true })) {
+      if (!entry.isDirectory() || entry.name.startsWith('.')) continue;
+      const path = join(workspacesRoot, entry.name);
+      if (knownPaths.has(canonicalPath(path)) || !isSauroCheckout(path)) continue;
+      workspaces.push({
+        name: `workspace/${entry.name}`,
+        path,
+        branch: null,
+        workspace: true,
+        note: 'auto-discovered unstamped workspace package'
+      });
+    }
+  } catch {
+    // Workspaces are optional on development machines.
+  }
+
+  return [...installed, ...workspaces.sort((a, b) => a.name.localeCompare(b.name))];
 }

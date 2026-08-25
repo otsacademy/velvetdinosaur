@@ -1,10 +1,9 @@
 /**
- * Sauro CMS UI parity checker (CLI over lib/sauro-parity).
+ * Sauro CMS core parity checker (CLI over lib/sauro-parity).
  *
- * Reports, per site, how the Sauro core UI compares to the reference
- * implementation (ASAP): identical, drifted, missing, site-owned, legacy, and
- * foreign (site-owned files present on a non-owner site), plus the workspace
- * feature map. Read-only: never writes to any site checkout.
+ * Reports how every installed source and unstamped workspace package compares
+ * to the canonical platform template: identical, drifted, missing, site-owned,
+ * legacy, and foreign. Read-only: never writes to a target checkout.
  *
  * Usage:
  *   bun run sauro:parity                    # summary tables
@@ -15,7 +14,7 @@
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
 import {
-  discoverInstalledSites,
+  discoverSauroTargets,
   compareSite,
   emptyCounts,
   loadParityManifest,
@@ -31,17 +30,29 @@ const listIdx = args.indexOf('--list');
 const listSite = listIdx >= 0 ? args[listIdx + 1] : null;
 
 const manifest = loadParityManifest(join(process.cwd(), 'docs/platform/sauro-core-manifest.json'));
+if (!existsSync(manifest.reference.path)) {
+  throw new Error(`Sauro parity reference does not exist: ${manifest.reference.path}`);
+}
 const reference = scanTree(manifest.reference.path, manifest.scopes);
+if (reference.size === 0) {
+  throw new Error(`Sauro parity reference has no files in the declared scopes: ${manifest.reference.path}`);
+}
 
-const reports: SiteParity[] = discoverInstalledSites(manifest).map((site) =>
-  existsSync(site.path)
+const targets = discoverSauroTargets(manifest);
+const reports: Array<SiteParity & { path: string; kind: 'site' | 'template' | 'workspace' }> = targets.map((site) => ({
+  ...(existsSync(site.path)
     ? compareSite(manifest, site.name, site.path, reference)
-    : { site: site.name, offline: true, counts: emptyCounts(), files: [], workspaces: {} }
-);
+    : { site: site.name, offline: true, counts: emptyCounts(), files: [], workspaces: {} }),
+  path: site.path,
+  kind: site.workspace ? 'workspace' : site.template ? 'template' : 'site'
+}));
 
 if (flagJson) {
   const slim = reports.map((r) => ({
     site: r.site,
+    path: r.path,
+    kind: r.kind,
+    offline: r.offline,
     counts: r.counts,
     workspaces: r.workspaces,
     drifted: r.files.filter((f) => f.state === 'drifted').map((f) => f.rel),
@@ -52,21 +63,22 @@ if (flagJson) {
   console.log(JSON.stringify({ reference: manifest.reference, sites: slim }, null, 2));
 } else {
   const pad = (value: string | number, width: number) => String(value).padStart(width);
-  console.log(`Sauro UI parity vs reference ${manifest.reference.site} (${manifest.reference.path})`);
-  console.log(`scopes: ${manifest.scopes.join(', ')}\n`);
-  console.log(`${'site'.padEnd(16)}${pad('core=', 6)}${pad('drift', 6)}${pad('miss', 6)}${pad('owned', 7)}${pad('legacy', 8)}${pad('foreign', 9)}${pad('extra', 7)}`);
+  const siteWidth = Math.max(16, ...reports.map((report) => report.site.length + (report.site === manifest.reference.site ? 6 : 0))) + 1;
+  console.log(`Sauro core parity vs canonical ${manifest.reference.site} (${manifest.reference.path})`);
+  console.log(`coverage: ${manifest.scopes.length} shared runtime scopes\n`);
+  console.log(`${'target'.padEnd(siteWidth)}${pad('core=', 6)}${pad('drift', 6)}${pad('miss', 6)}${pad('owned', 7)}${pad('legacy', 8)}${pad('foreign', 9)}${pad('extra', 7)}`);
   for (const r of reports) {
     const c = r.counts;
     const label = r.site === manifest.reference.site ? `${r.site} (ref)` : r.site;
     console.log(
-      `${label.padEnd(16)}${pad(c.identical, 6)}${pad(c.drifted, 6)}${pad(c.missing, 6)}${pad(c['site-owned'], 7)}${pad(c.legacy, 8)}${pad(c.foreign, 9)}${pad(c['extra-core'], 7)}`
+      `${label.padEnd(siteWidth)}${pad(c.identical, 6)}${pad(c.drifted, 6)}${pad(c.missing, 6)}${pad(c['site-owned'], 7)}${pad(c.legacy, 8)}${pad(c.foreign, 9)}${pad(c['extra-core'], 7)}`
     );
   }
   const workspaceNames = Object.keys(manifest.workspaces).filter((k) => k !== 'note');
   console.log('\nWorkspace feature map (real implementations, not demos):');
-  console.log(`${'site'.padEnd(16)}${workspaceNames.map((n) => n.slice(0, 10).padEnd(11)).join('')}`);
+  console.log(`${'target'.padEnd(siteWidth)}${workspaceNames.map((n) => n.slice(0, 10).padEnd(11)).join('')}`);
   for (const r of reports) {
-    console.log(`${r.site.padEnd(16)}${workspaceNames.map((n) => (r.workspaces[n] ? 'yes' : '—').padEnd(11)).join('')}`);
+    console.log(`${r.site.padEnd(siteWidth)}${workspaceNames.map((n) => (r.workspaces[n] ? 'yes' : '—').padEnd(11)).join('')}`);
   }
   if (listSite) {
     const target = reports.find((r) => r.site === listSite);

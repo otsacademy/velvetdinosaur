@@ -208,9 +208,9 @@ function buildView(): DashboardView {
   const deployments: DashboardView['report']['deployments'] = [];
   const blockers: DashboardView['report']['blockers'] = [];
 
-  // Sauro UI parity telemetry (docs/platform/sauro-cms-ui-parity-plan.md, Wave 0):
-  // hash-compare each Sauro site's admin/editor scopes against the reference
-  // implementation so /admin/fleet shows UI drift alongside dependency drift.
+  // Sauro core parity telemetry: hash-compare every installed source's shared
+  // editor, persistence, media and support runtime against the canonical
+  // platform template so /admin/fleet shows behavioral drift too.
   let parityManifest: ParityManifest | null = null;
   let parityReference: Map<string, string> | null = null;
   try {
@@ -344,13 +344,13 @@ function buildView(): DashboardView {
           key: `repository.${entry.repoId}.sauro-ui-parity`,
           category: 'template',
           value: isReference ? `reference (${parity.counts.identical} core files)` : value,
-          label: 'Sauro UI parity',
+          label: 'Sauro core parity',
           badgeClass: isReference || inParity ? 'verified' : 'stale',
           explanation: isReference
             ? 'This checkout is the parity reference implementation.'
             : inParity
-              ? 'Sauro core UI matches the reference implementation byte-for-byte.'
-              : 'Sauro core UI drifts from the reference implementation; see bun run sauro:parity for detail.',
+              ? 'Sauro core runtime matches the canonical template byte-for-byte.'
+              : 'Sauro core runtime drifts from the canonical template; see bun run sauro:parity for detail.',
           evidenceRef: `file://${process.cwd()}/docs/platform/sauro-core-manifest.json`
         })
       );

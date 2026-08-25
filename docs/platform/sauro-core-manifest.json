@@ -1,18 +1,96 @@
 {
-  "version": 1,
-  "generated": "2026-08-20",
-  "plan": "docs/platform/sauro-cms-ui-parity-plan.md",
+  "version": 2,
+  "generated": "2026-08-25",
+  "plan": "docs/plans/sauro-cms-fleet-alignment-plan-2026-08-25.md#2-expand-parity-to-cover-behaviour-not-only-ui-files",
   "reference": {
-    "site": "asap",
-    "path": "/srv/apps/asap",
-    "branch": "develop"
+    "site": "template",
+    "path": "/opt/vdplatform/template"
   },
   "scopes": [
     "app/admin",
+    "app/edit",
+    "app/preview",
+    "app/api/cms/pages",
+    "app/api/assets",
+    "app/api/theme",
+    "app/api/admin/support",
+    "app/api/support",
+    "app/account/support",
+    "components/account/support-submit-portal.client.tsx",
     "components/admin",
     "components/edit",
     "components/puck",
-    "components/theme"
+    "components/theme",
+    "components/blocks/image-block.tsx",
+    "components/email/support-ticket-system-update-email.tsx",
+    "components/ui/loading-card.tsx",
+    "components/ui/optimized-image.tsx",
+    "components/ui/sheet.tsx",
+    "puck",
+    "lib/ai/alt-text-provider.server.ts",
+    "lib/assets/alt-text.server.ts",
+    "lib/assets/image-pipeline.server.ts",
+    "lib/assets/image-variants.ts",
+    "lib/assets/tags.ts",
+    "lib/assets/trash.server.ts",
+    "lib/assets/usage.server.ts",
+    "lib/cache-revalidate.ts",
+    "lib/cache-tags.ts",
+    "lib/authz",
+    "lib/inline-media.server.ts",
+    "lib/inline-media.ts",
+    "lib/installer-paths.ts",
+    "lib/media/focal-point.ts",
+    "lib/media/image-presentation.ts",
+    "lib/page-legacy-conversion.ts",
+    "lib/page-link-rewrite.ts",
+    "lib/page-locations.ts",
+    "lib/page-ownership.ts",
+    "lib/page-paths.ts",
+    "lib/pages-shared.ts",
+    "lib/pages.ts",
+    "lib/presign.ts",
+    "lib/puck/legacy-page-components.ts",
+    "lib/puck/legacy-types.ts",
+    "lib/puck/page-data-normalizers.ts",
+    "lib/puck/page-template-migrations.ts",
+    "lib/puck/patterns",
+    "lib/r2.ts",
+    "lib/security/asset-live-capture.ts",
+    "lib/security/editor-smoke.ts",
+    "lib/site-chrome-slugs.ts",
+    "lib/site-pages.ts",
+    "lib/support",
+    "lib/theme-css.ts",
+    "lib/theme-default.ts",
+    "lib/theme-editor-auth.ts",
+    "lib/theme-editor-cors.ts",
+    "lib/theme-editor-jwt.ts",
+    "lib/theme-editor-session.ts",
+    "lib/theme-normalize.ts",
+    "lib/theme-store.ts",
+    "lib/theme-typography.ts",
+    "lib/theme-validation.ts",
+    "lib/theme.ts",
+    "lib/uploads.ts",
+    "lib/video-live-capture/token.ts",
+    "lib/video-project/slug.ts",
+    "lib/email/email-text-builders.ts",
+    "lib/email/support-ticket-system-update-email.ts",
+    "models/Page.ts",
+    "models/PageRedirect.ts",
+    "models/Asset.ts",
+    "models/AssetFolder.ts",
+    "models/Theme.ts",
+    "models/VideoLiveCaptureToken.ts",
+    "models/SupportArticle.ts",
+    "models/SupportDoc.ts",
+    "models/SupportExternalSnapshot.ts",
+    "models/SupportTicket.ts",
+    "models/SupportTicketCounter.ts",
+    "models/SupportTicketEvent.ts",
+    "models/SupportTicketMessage.ts",
+    "models/SupportTicketRating.ts"
   ],
   "sites": [
     {
@@ -32,9 +110,9 @@
     },
     {
       "name": "thebrave",
-      "path": "/srv/apps/thebrave",
-      "branch": "develop",
-      "note": "operator checkout may sit on a feature branch; prepare against develop (thebrave-release)"
+      "path": "/srv/apps/thebrave-release",
+      "branch": "main",
+      "note": "active release source; the obsolete /srv/apps/thebrave operator checkout is intentionally not assessed"
     },
     {
       "name": "ots-sauro-poc",
@@ -377,8 +455,12 @@
     },
     {
       "pattern": "components/edit/booking-api-*",
-      "role": "core",
-      "note": "booking engine workspace tabs (Catalog/Pipeline/Availability, overview cards, settings dialog) — template capability delivered 2026-08-23; supersedes the reservation for thebrave and the legacy booking-api service"
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur",
+        "thebrave"
+      ],
+      "note": "booking-service integration is not part of the shared Sauro editing/support runtime"
     },
     {
       "pattern": "components/edit/capture/**",
@@ -549,6 +631,136 @@
       "owners": [
         "ra"
       ]
+    },
+    {
+      "pattern": "app/admin/business-reviews/**",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ],
+      "note": "Velvet Dinosaur business-review operations feature"
+    },
+    {
+      "pattern": "components/admin/business-reviews/**",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ]
+    },
+    {
+      "pattern": "app/edit/bookings/**",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ]
+    },
+    {
+      "pattern": "components/edit/bookings-workspace.tsx",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ]
+    },
+    {
+      "pattern": "app/edit/work/**",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ]
+    },
+    {
+      "pattern": "app/preview/news/**",
+      "role": "site-owned",
+      "note": "site content-type preview route; the shared generic preview remains core"
+    },
+    {
+      "pattern": "app/preview/work/**",
+      "role": "site-owned",
+      "owners": [
+        "velvetdinosaur"
+      ]
+    },
+    {
+      "pattern": "app/preview/[slug]/review-actions.ts",
+      "role": "site-owned",
+      "owners": [
+        "asap",
+        "ots-sauro-poc"
+      ]
+    },
+    {
+      "pattern": "lib/puck/legacy-inventory.ts",
+      "role": "legacy",
+      "note": "target-local migration inventory; not required by the shared runtime"
+    },
+    {
+      "pattern": "puck/editor-config.tsx",
+      "role": "legacy",
+      "note": "superseded extension variant; canonical editor config is puck/editor-config.ts"
+    },
+    {
+      "pattern": "puck/ra-components*",
+      "role": "site-owned",
+      "owners": [
+        "ra"
+      ],
+      "note": "Rising Dust component registry adapter"
+    },
+    {
+      "pattern": "puck/registry-core-base.ts",
+      "role": "site-owned",
+      "owners": [
+        "ra"
+      ]
+    },
+    {
+      "pattern": "puck/registry-core.client.ts",
+      "role": "site-owned",
+      "owners": [
+        "ra"
+      ]
+    },
+    {
+      "pattern": "puck/video-walkthrough-editor-config.ts",
+      "role": "site-owned",
+      "owners": [
+        "thebrave"
+      ]
+    },
+    {
+      "pattern": "puck/defaults.ts",
+      "role": "site-owned",
+      "note": "site-specific default page composition"
+    },
+    {
+      "pattern": "puck/defaults.test.ts",
+      "role": "site-owned",
+      "note": "test for site-specific page defaults"
+    },
+    {
+      "pattern": "puck/defaults/**",
+      "role": "site-owned",
+      "note": "site-specific default page compositions and templates"
+    },
+    {
+      "pattern": "puck/field-vocabulary.site.ts",
+      "role": "site-owned",
+      "note": "per-site field vocabulary overrides; shared vocabulary remains core"
+    },
+    {
+      "pattern": "puck/registry-public.ts",
+      "role": "site-owned",
+      "note": "site public-render design seam"
+    },
+    {
+      "pattern": "puck/registry.ts",
+      "role": "site-owned",
+      "note": "site block registry; core registry helpers remain shared"
+    },
+    {
+      "pattern": "puck/store-block-schemas.json",
+      "role": "site-owned",
+      "note": "site-specific block schemas and defaults"
     },
     {
       "pattern": "**",
