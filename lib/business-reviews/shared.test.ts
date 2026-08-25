@@ -45,7 +45,7 @@ describe('ExternalReviewBusinessInputSchema', () => {
     }).success).toBe(false);
   });
 
-  it('rejects invalid public slugs and Tripadvisor IDs', () => {
+  it('rejects invalid API slugs and Tripadvisor IDs', () => {
     expect(ExternalReviewBusinessInputSchema.safeParse({ ...validBusiness, slug: '../admin' }).success).toBe(false);
     expect(ExternalReviewBusinessInputSchema.safeParse({ ...validBusiness, tripadvisorLocationId: 'abc123' }).success).toBe(false);
   });

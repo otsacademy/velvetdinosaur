@@ -8,7 +8,6 @@ import {
 } from '@/lib/business-reviews/catalog';
 import { isTrustedMutationRequest } from '@/lib/business-reviews/security';
 import { logAudit } from '@/lib/audit';
-import { revalidatePathSafe } from '@/lib/cache-revalidate';
 
 type RouteContext = { params: Promise<{ id: string }> };
 
@@ -30,7 +29,6 @@ export async function PATCH(request: Request, context: RouteContext) {
       actorUserId: admin.id,
       metadata: { businessId: business.id, slug: business.slug, published: business.published }
     });
-    revalidatePathSafe('/business-reviews');
     return NextResponse.json({ business });
   } catch (error) {
     if (error instanceof ZodError) {
@@ -40,7 +38,7 @@ export async function PATCH(request: Request, context: RouteContext) {
       );
     }
     const message = error instanceof Error ? error.message : '';
-    if (message === 'That public URL is already in use') {
+    if (message === 'That API slug is already in use') {
       return NextResponse.json({ error: message }, { status: 409 });
     }
     console.error('[business-reviews] Could not update business', error);
@@ -65,7 +63,6 @@ export async function DELETE(request: Request, context: RouteContext) {
       actorUserId: admin.id,
       metadata: { businessId: id }
     });
-    revalidatePathSafe('/business-reviews');
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('[business-reviews] Could not delete business', error);

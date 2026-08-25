@@ -26,10 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/audit`,
       lastModified
-    },
-    {
-      url: `${baseUrl}/business-reviews`,
-      lastModified
     }
   ];
 }

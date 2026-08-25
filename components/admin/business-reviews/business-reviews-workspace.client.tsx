@@ -127,13 +127,13 @@ export function BusinessReviewsWorkspace() {
         <div className="max-w-2xl">
           <h1 className="text-2xl font-bold tracking-tight text-[var(--vd-fg)]">Business Reviews</h1>
           <p className="mt-1 text-sm leading-6 text-[var(--vd-muted-fg)]">
-            Find Google businesses, connect official Tripadvisor listings, and choose what appears on the public page.
+            Find Google businesses, connect official Tripadvisor listings, and choose what client websites can request through the API.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
           <Button asChild variant="outline">
-            <Link href="/business-reviews" target="_blank" rel="noreferrer">
-              View public page <ExternalLink className="h-4 w-4" />
+            <Link href="/api/business-reviews" target="_blank" rel="noreferrer">
+              View API response <ExternalLink className="h-4 w-4" />
             </Link>
           </Button>
           <Button onClick={openCreate}>
@@ -157,7 +157,7 @@ export function BusinessReviewsWorkspace() {
               </span>
               <h2 className="text-lg font-semibold">No review businesses yet</h2>
               <p className="mt-2 max-w-md text-sm leading-6 text-[var(--vd-muted-fg)]">
-                Add the first business, select its Google Place ID, and publish it when ready.
+                Add the first business, select its Google Place ID, and make it available to client websites when ready.
               </p>
               <Button className="mt-5" onClick={openCreate}><Plus className="h-4 w-4" /> Add business</Button>
             </div>
@@ -184,7 +184,7 @@ export function BusinessReviewsWorkspace() {
                         <TableCell><SourceBadges business={business} /></TableCell>
                         <TableCell>
                           <Badge variant={business.published ? 'default' : 'secondary'}>
-                            {business.published ? 'Published' : 'Draft'}
+                            {business.published ? 'API enabled' : 'Draft'}
                           </Badge>
                         </TableCell>
                         <TableCell className="tabular-nums">{business.sortOrder}</TableCell>
@@ -206,7 +206,7 @@ export function BusinessReviewsWorkspace() {
                     </div>
                     <div className="flex flex-wrap items-center gap-2">
                       <Badge variant={business.published ? 'default' : 'secondary'}>
-                        {business.published ? 'Published' : 'Draft'}
+                        {business.published ? 'API enabled' : 'Draft'}
                       </Badge>
                       <SourceBadges business={business} />
                     </div>
@@ -219,7 +219,7 @@ export function BusinessReviewsWorkspace() {
       </Card>
 
       <p className="max-w-3xl text-xs leading-5 text-[var(--vd-muted-fg)]">
-        Google review text is loaded only after a visitor requests it and is never stored. The default daily limit is 30 Google review requests. Tripadvisor widgets remain off unless the site is eligible under Tripadvisor’s widget terms; official listing links still work.
+        Client websites first request <code>/api/business-reviews</code>, then request Google reviews from <code>/api/business-reviews/google/[slug]</code>. Google review text is loaded live and is never stored. The default daily limit is 30 Google review requests. Tripadvisor location IDs and official listing links are included in the business API response.
       </p>
 
       <BusinessReviewFormDialog
@@ -235,7 +235,7 @@ export function BusinessReviewsWorkspace() {
           <AlertDialogHeader>
             <AlertDialogTitle>Remove {deleting?.name}?</AlertDialogTitle>
             <AlertDialogDescription>
-              This removes the business from the public page and deletes its saved provider IDs. This action cannot be undone.
+              This removes the business from the client API and deletes its saved provider IDs. This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -284,13 +284,6 @@ function BusinessActions({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => onEdit(business)}><Pencil className="h-4 w-4" /> Edit</DropdownMenuItem>
-        {business.published ? (
-          <DropdownMenuItem asChild>
-            <Link href={`/business-reviews#${business.slug}`} target="_blank" rel="noreferrer">
-              <ExternalLink className="h-4 w-4" /> View public entry
-            </Link>
-          </DropdownMenuItem>
-        ) : null}
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive focus:text-destructive" onClick={() => onDelete(business)}>
           <Trash2 className="h-4 w-4" /> Remove

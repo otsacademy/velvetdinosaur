@@ -62,7 +62,7 @@ export async function createExternalReviewBusiness(input: unknown, actorUserId: 
   if (!(await databaseAvailable())) throw new Error('Database connection unavailable');
   const payload = ExternalReviewBusinessInputSchema.parse(input);
   const existing = await ExternalReviewBusiness.exists({ slug: payload.slug });
-  if (existing) throw new Error('That public URL is already in use');
+  if (existing) throw new Error('That API slug is already in use');
   const doc = await ExternalReviewBusiness.create({
     ...payload,
     createdByUserId: actorUserId,
@@ -76,7 +76,7 @@ export async function updateExternalReviewBusiness(id: string, input: unknown, a
   if (!(await databaseAvailable())) throw new Error('Database connection unavailable');
   const payload = ExternalReviewBusinessInputSchema.parse(input);
   const conflict = await ExternalReviewBusiness.exists({ slug: payload.slug, _id: { $ne: id } });
-  if (conflict) throw new Error('That public URL is already in use');
+  if (conflict) throw new Error('That API slug is already in use');
   const doc = (await ExternalReviewBusiness.findByIdAndUpdate(
     id,
     { $set: { ...payload, updatedByUserId: actorUserId } },

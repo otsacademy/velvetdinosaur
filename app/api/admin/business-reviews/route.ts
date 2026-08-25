@@ -8,7 +8,6 @@ import {
 } from '@/lib/business-reviews/catalog';
 import { isTrustedMutationRequest } from '@/lib/business-reviews/security';
 import { logAudit } from '@/lib/audit';
-import { revalidatePathSafe } from '@/lib/cache-revalidate';
 
 export async function GET(request: Request) {
   unstable_noStore();
@@ -36,7 +35,6 @@ export async function POST(request: Request) {
       actorUserId: admin.id,
       metadata: { businessId: business.id, slug: business.slug, published: business.published }
     });
-    revalidatePathSafe('/business-reviews');
     return NextResponse.json({ business }, { status: 201 });
   } catch (error) {
     if (error instanceof ZodError) {
@@ -46,7 +44,7 @@ export async function POST(request: Request) {
       );
     }
     const message = error instanceof Error ? error.message : '';
-    if (message === 'That public URL is already in use') {
+    if (message === 'That API slug is already in use') {
       return NextResponse.json({ error: message }, { status: 409 });
     }
     console.error('[business-reviews] Could not create business', error);

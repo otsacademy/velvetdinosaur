@@ -151,7 +151,7 @@ export function BusinessReviewFormDialog({
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>
-            Add your own public business details, then connect its Google Place ID and official Tripadvisor listing.
+            Add the business details returned to client websites, then connect its Google Place ID and official Tripadvisor listing.
           </DialogDescription>
         </DialogHeader>
 
@@ -163,7 +163,7 @@ export function BusinessReviewFormDialog({
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Public business name</FormLabel>
+                    <FormLabel>Business name</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
@@ -185,7 +185,7 @@ export function BusinessReviewFormDialog({
                 name="slug"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Public URL name</FormLabel>
+                    <FormLabel>API slug</FormLabel>
                     <FormControl><Input {...field} autoCapitalize="none" spellCheck={false} /></FormControl>
                     <FormDescription>Used for the review request URL, for example “the-dino-cafe”.</FormDescription>
                     <FormMessage />
@@ -223,7 +223,7 @@ export function BusinessReviewFormDialog({
                 <FormItem>
                   <FormLabel>Short description</FormLabel>
                   <FormControl><Textarea {...field} rows={3} className="resize-y" /></FormControl>
-                  <FormDescription>Written by you and shown above the review sources.</FormDescription>
+                  <FormDescription>Returned to client websites with the review source details.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -349,8 +349,8 @@ export function BusinessReviewFormDialog({
               render={({ field }) => (
                 <FormItem className="flex items-center justify-between gap-4 rounded-lg border border-[var(--vd-border)] p-4">
                   <div className="space-y-1">
-                    <FormLabel>Published</FormLabel>
-                    <FormDescription>Show this business on the public reviews page.</FormDescription>
+                    <FormLabel>Available through API</FormLabel>
+                    <FormDescription>Allow client websites to request this business and its review sources.</FormDescription>
                   </div>
                   <FormControl>
                     <Switch checked={field.value} onCheckedChange={field.onChange} />
