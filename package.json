@@ -27,6 +27,7 @@
     "test": "bun run visual:test",
     "quality": "tsx scripts/quality.ts",
     "sauro:parity": "tsx scripts/sauro-parity-check.ts",
+    "demo:fleet": "tsx scripts/demo-fleet-inventory.ts",
     "quality:validate": "tsx scripts/quality.ts --validate",
     "visual:test": "playwright test",
     "visual:update": "playwright test --update-snapshots",

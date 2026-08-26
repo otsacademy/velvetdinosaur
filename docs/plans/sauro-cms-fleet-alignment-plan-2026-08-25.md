@@ -17,10 +17,10 @@ Status: Complete. Phases 1–9 were implemented and verified on 2026-08-26.
 - Every target's declared gates passed, including production builds, desktop/mobile visual coverage, three-run mobile/desktop Lighthouse gates where declared, and theme smoke checks. Desktop/mobile editor coverage verifies text and image editing and persistence.
 - Phase 5 was completed on 2026-08-26. Future demo creation now synchronises the canonical core before and after the site overlay, records the canonical revision, and fails before seeding, committing or deploying on drift. Normal quality and release entrypoints run the same preflight. The tested canonical revision is `67cf7df7ff99d7382ff9061f0db9b9be4cebcba3` in `/opt/vdplatform/template-history.git`.
 - Phase 6 was completed on 2026-08-26. `VD_DEMO_SITE=true` centrally enables the exact public disclaimer, full robots metadata and response headers, no-store caching, and proxy-level rejection of public side-effect mutations before their handlers execute. Authenticated editor, administration, support and media operations remain available.
-- Phases 7 and 8 were completed on 2026-08-26 for the authoritative twelve-demo fleet. Database-backed strict checks found and removed or corrected unsupported reviews, placeholder/editor copy, stale hours and prices, missing media-library assets, and unverified Bank House contact/host claims. All twelve have source-backed nine-field evidence manifests verified within the required 24-hour window. Five later demo-mode packages were audited to the same standard as additional coverage.
+- Phases 7 and 8 were completed on 2026-08-26 for every site in the authoritative demo fleet. Database-backed strict checks found and removed or corrected unsupported reviews, placeholder/editor copy, stale hours and prices, missing media-library assets, and unverified Bank House contact/host claims. All seventeen sites currently in the fleet have source-backed nine-field evidence manifests verified within the required 24-hour window.
 - Closing strict parity reports 465/465 canonical core files on all 31 detected targets across 95 shared runtime scopes, with zero drift, missing, foreign or extra-core files. The synchronisation preflight covers 467 files; two generated/reference-only paths are intentionally outside parity comparison.
-- Phase 9 was completed on 2026-08-26. All twelve authoritative demos passed their complete declared manifests, were committed, promoted to matching local `develop` and `main` revisions, deployed through blue/green release paths and verified independently at their public URLs. The five additional demo-mode packages also passed strict integrity and their complete declared quality manifests.
-- Closing live probes passed on all twelve authoritative demos: the home page returned the exact disclaimer and required no-store/noindex headers, `robots.txt` disallowed `/`, the active systemd slot was healthy, and a real `POST /api/contact` probe returned `409` with `X-VD-Demo-Blocked: true`.
+- Phase 9 was completed on 2026-08-26. All seventeen authoritative demos passed their complete declared manifests, were committed, promoted to matching local `develop` and `main` revisions, deployed through blue/green release paths and verified independently at their public URLs.
+- Closing live probes passed on all seventeen authoritative demos: the home page returned the exact disclaimer and required no-store/noindex headers, `robots.txt` disallowed `/`, the active systemd slot was healthy, and a real `POST /api/contact` probe returned `409` with `X-VD-Demo-Blocked: true`.
 
 ### Phase 9 authoritative release record
 
@@ -38,12 +38,15 @@ Status: Complete. Phases 1–9 were implemented and verified on 2026-08-26.
 | `blue-anchor` | `e9b88e50dac691cbd8a43e8ebf804e3a595e6907` | green |
 | `claire-lewis` | `cdacaf46b8eac8e57dc385125aa96778d68460b6` | green |
 | `woodstock-dental` | `d2087bce224ea345df179a493cda343642a63704` | blue |
+| `bakewell-pudding` | `5b64f433b9677d0a5a0856b6032e4025a921be84` | blue |
+| `homedene-farm` | `c03d21eebc498794fd694ad4bc358b4a83e7da49` | green |
+| `michaels-malmesbury` | `51e9f338883e042f6b1d8530da783e7198f62642` | blue |
+| `star-inn-woodstock` | `7aebeb1fbf65605e919777b633aa249be47738dc` | green |
+| `wallys-deli` | `a31c20edc91deeddbf770ed13e9bda28bfb36b99` | blue |
 
 No authoritative demo repository had a Git remote configured at closure, so the required GitHub push could not be performed. Production and both local long-lived branches nevertheless use the exact quality-tested commits above; no untested source was created during deployment.
 
-### Additional demo-mode package record
-
-All five additional packages passed strict integrity plus their full lint, typecheck, build, desktop/mobile browser, visual, three-run mobile/desktop Lighthouse and theme manifests. The Git-backed installed checkouts were committed at `5b64f43` (`bakewell-pudding`), `c03d21e` (`homedene-farm`), `51e9f33` (`michaels-malmesbury`) and `a31c20e` (`wallys-deli`). `star-inn-woodstock` and its matching workspace package have no Git metadata; their synchronized source passed the same gates, including the closing accessibility correction.
+The authoritative inventory is not a fixed hand-maintained number. `bun run demo:fleet -- --strict` discovers every installed source with `VD_DEMO_SITE=true`; the count therefore increases automatically as `new-demo.sh` stamps new demos. The stamp fails if the new slug does not appear in that runtime inventory.
 
 ## Objective
 
@@ -140,7 +143,7 @@ Apply to every detected SauroCMS checkout, not only a hand-maintained shortlist:
 
 ### Authoritative current demo fleet
 
-The directly identified set is:
+At closing verification the dynamic fleet contains:
 
 1. Eynsham Dental Care — `eynsham-dental`
 2. The White Hart, Minster Lovell — `white-hart-minster`
@@ -154,18 +157,13 @@ The directly identified set is:
 10. Blue Anchor Inn / Spingo Ales — `blue-anchor`
 11. Claire Lewis Hairdressing — `claire-lewis`
 12. Woodstock Dental — `woodstock-dental`, stamped and deployed during Phase 9
+13. The Old Original Bakewell Pudding Shop — `bakewell-pudding`
+14. Michael's Butchers, Bistro & Deli — `michaels-malmesbury`
+15. Homedene Farm Shop — `homedene-farm`
+16. The Star Inn, Woodstock — `star-inn-woodstock`
+17. Wally's Deli — `wallys-deli`
 
-The authoritative release and outreach inventory is the twelve entries above. Do not infer the demo count from `/opt/vdplatform/workspaces`, because several of these twelve predate that packaging flow.
-
-### Additional demo-mode workspaces
-
-These later packages are not substitutes for the authoritative twelve, but receive the same safety controls and audits while present:
-
-1. The Old Original Bakewell Pudding Shop — `bakewell-pudding`
-2. Michael's Butchers, Bistro & Deli — `michaels-malmesbury`
-3. Homedene Farm Shop — `homedene-farm`
-4. The Star Inn, Woodstock — `star-inn-woodstock`
-5. Wally's Deli — `wallys-deli`
+This numbered list records the closing snapshot only. Runtime membership is authoritative and is derived from `VD_DEMO_SITE=true`, not from this prose, `/opt/vdplatform/workspaces`, deployment age or outreach status. Every newly stamped demo joins the same fleet and receives the same safety, evidence, quality and release treatment.
 
 Witney Podiatry is also in Sauro scope even though its content began on the earlier custom-route pattern. Woodstock Butchers is retired and should not be redeployed, but may remain in parity inventory as an offline/retired record.
 
