@@ -2,7 +2,7 @@
 
 Date: 2026-08-25
 
-Status: Complete. Phases 1–9 were implemented and verified on 2026-08-26.
+Status: Complete. Phases 1–9 were implemented on 2026-08-26 and the full seventeen-demo fleet was polished, re-gated, released and verified again on 2026-08-27.
 
 ## Implementation progress
 
@@ -15,34 +15,36 @@ Status: Complete. Phases 1–9 were implemented and verified on 2026-08-26.
 - Phase 4 was completed on 2026-08-26. The canonical core was synchronized into all 31 detected installed, reference and unstamped-workspace targets after active-process checks. Site-owned blocks, designs, content, branding and environment files were preserved; browser-safe site registry/preview adapters now form an explicit seam around the shared client registry.
 - The synchronized core includes smoke-safe page/database access, restored optional Hero branding fields and immediate numeric image-width persistence. Site-specific legacy migrations, normalizers and page definitions remain site-owned.
 - Every target's declared gates passed, including production builds, desktop/mobile visual coverage, three-run mobile/desktop Lighthouse gates where declared, and theme smoke checks. Desktop/mobile editor coverage verifies text and image editing and persistence.
-- Phase 5 was completed on 2026-08-26. Future demo creation now synchronises the canonical core before and after the site overlay, records the canonical revision, and fails before seeding, committing or deploying on drift. Normal quality and release entrypoints run the same preflight. The tested canonical revision is `67cf7df7ff99d7382ff9061f0db9b9be4cebcba3` in `/opt/vdplatform/template-history.git`.
+- Phase 5 was completed on 2026-08-26. Future demo creation now synchronises the canonical core before and after the site overlay, records the canonical revision, and fails before seeding, committing or deploying on drift. Normal quality and release entrypoints run the same preflight. The current tested canonical revision is `35893304f997a0d318a6e3610288f6af46a37802` in `/opt/vdplatform/template-history.git`.
 - Phase 6 was completed on 2026-08-26. `VD_DEMO_SITE=true` centrally enables the exact public disclaimer, full robots metadata and response headers, no-store caching, and proxy-level rejection of public side-effect mutations before their handlers execute. Authenticated editor, administration, support and media operations remain available.
 - Phases 7 and 8 were completed on 2026-08-26 for every site in the authoritative demo fleet. Database-backed strict checks found and removed or corrected unsupported reviews, placeholder/editor copy, stale hours and prices, missing media-library assets, and unverified Bank House contact/host claims. All seventeen sites currently in the fleet have source-backed nine-field evidence manifests verified within the required 24-hour window.
 - Closing strict parity reports 465/465 canonical core files on all 31 detected targets across 95 shared runtime scopes, with zero drift, missing, foreign or extra-core files. The synchronisation preflight covers 467 files; two generated/reference-only paths are intentionally outside parity comparison.
 - Phase 9 was completed on 2026-08-26. All seventeen authoritative demos passed their complete declared manifests, were committed, promoted to matching local `develop` and `main` revisions, deployed through blue/green release paths and verified independently at their public URLs.
 - Closing live probes passed on all seventeen authoritative demos: the home page returned the exact disclaimer and required no-store/noindex headers, `robots.txt` disallowed `/`, the active systemd slot was healthy, and a real `POST /api/contact` probe returned `409` with `X-VD-Demo-Blocked: true`.
+- The 2026-08-27 follow-up added a business-branded private auth shell, back-to-preview navigation, correct password-manager autocomplete, Velvet Dinosaur support identity, authentication-route exclusions from the public demo guard, Velvet Dinosaur-branded reset email links, persistent bottom safety-banner space reservation and safe blocking for public booking/messaging hosts. Public visual tests now run against real MongoDB content while editor tests use a separate isolated smoke server, and the homepage gate fails on generic starter content.
+- Live authentication verification on 2026-08-27 confirmed that `ian.wickens@ontourism.academy` signs in to `/edit` as an administrator on all seventeen deployed domains. Sequential verification also confirmed each live homepage, auth shell, reset page, robots response and public-action block.
 
 ### Phase 9 authoritative release record
 
 | Demo | Tested and deployed commit | Active slot at closing verification |
 | --- | --- | --- |
-| `eynsham-dental` | `7659cb547483c24fdd0380f332d7928f249927dc` | blue |
-| `white-hart-minster` | `515f31dd1f741f66a8ecb93b814e71533d0344c3` | blue |
-| `bush-farm` | `bd7cc8439a9e236020750923d928e3679e58f5fc` | blue |
-| `maggies-fish` | `ff4d7155724f590eae0778dcea0567959fe71ad6` | blue |
-| `il-botanico` | `885858b85e08193a90fcd05bf4ba9f648bb72fb8` | green |
-| `bank-house` | `c97b703035783c80dfb4c2ceaee98445b6f43eb6` | blue |
-| `old-craft-barn` | `50a43bb30cdf39611a38f2204ea9f8d17a8911ce` | green |
-| `small-talk-tearooms` | `4063decb7baf75a54de7d88d5e58cf1548783e35` | blue |
-| `marthas-coffee` | `dbb1842a3c08c8a080972499960388d03c25b889` | blue |
-| `blue-anchor` | `e9b88e50dac691cbd8a43e8ebf804e3a595e6907` | green |
-| `claire-lewis` | `cdacaf46b8eac8e57dc385125aa96778d68460b6` | green |
-| `woodstock-dental` | `d2087bce224ea345df179a493cda343642a63704` | blue |
-| `bakewell-pudding` | `5b64f433b9677d0a5a0856b6032e4025a921be84` | blue |
-| `homedene-farm` | `c03d21eebc498794fd694ad4bc358b4a83e7da49` | green |
-| `michaels-malmesbury` | `51e9f338883e042f6b1d8530da783e7198f62642` | blue |
-| `star-inn-woodstock` | `7aebeb1fbf65605e919777b633aa249be47738dc` | green |
-| `wallys-deli` | `a31c20edc91deeddbf770ed13e9bda28bfb36b99` | blue |
+| `eynsham-dental` | `ad93991909912f79987871b00cd6e6f0ed769945` | green |
+| `white-hart-minster` | `a7b2c364418d01e5c0689a139265c8f912481471` | green |
+| `bush-farm` | `f0edb5d864ede925ad091c6bf45667dc04bdfe14` | green |
+| `maggies-fish` | `20a19f1f20b30841f45bafe8c32140129f7f0531` | green |
+| `il-botanico` | `3c2bd281a436bf2662843ddbe8ca3fa0f1e0dc19` | blue |
+| `bank-house` | `2ada1325c9cc30c8a69b8b532935b62b6a2b6639` | green |
+| `old-craft-barn` | `7be1b23b4fd9fcc3b9ce699d53f15d21b2bb2cf5` | blue |
+| `small-talk-tearooms` | `0ddfd6de724d11c819fff7d9198e3605dfcae676` | green |
+| `marthas-coffee` | `25ab631de323a1e671571f413b1ee534d7269688` | green |
+| `blue-anchor` | `397dc0ecf8cf2b27523e51a9a1dfd4304b323a99` | blue |
+| `claire-lewis` | `b811d92575883a0935d25fa356236a3b2930e020` | blue |
+| `woodstock-dental` | `0548c33f12a93df3e54081e77b7bbaf7ee46acdd` | green |
+| `bakewell-pudding` | `9121c56b4a1ca549e2ec659768f75f7a70a32a18` | green |
+| `homedene-farm` | `176fdd8e218cabbdc9e4ffa32df1eb83a69c23fe` | blue |
+| `michaels-malmesbury` | `71d751c68ff0aa99d9fbbff5f27b838d29967475` | green |
+| `star-inn-woodstock` | `906bf6894096418bd6541dee6ad47fddc01adf21` | blue |
+| `wallys-deli` | `239ce22c4e0a638241893db721ca767361ae467d` | green |
 
 No authoritative demo repository had a Git remote configured at closure, so the required GitHub push could not be performed. Production and both local long-lived branches nevertheless use the exact quality-tested commits above; no untested source was created during deployment.
 
