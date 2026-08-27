@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { FounderAvatar } from "./founder-avatar"
 import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "./home-shared"
 
@@ -87,28 +85,14 @@ export function AboutHero() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col items-center gap-3.5 rounded-lg border border-border bg-muted p-6">
-            <FounderAvatar size={120} tone="light" />
+        <div>
+          <div className="flex flex-col items-center gap-4 rounded-lg border border-border bg-muted p-5">
+            <FounderAvatar size={216} tone="light" shape="portrait" />
             <div className="text-center">
               <div className="text-[15px] font-bold">Ian Wickens</div>
               <div className="mt-0.5 text-[12.5px] text-muted-foreground">
                 Founder · Minster Lovell, Oxfordshire
               </div>
-            </div>
-          </div>
-          <div className="relative flex justify-center rounded-lg border border-primary/20 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--vd-primary)_7%,var(--vd-bg)),color-mix(in_srgb,var(--vd-primary)_13%,var(--vd-bg)))] p-7 pb-12">
-            <Image
-              src="/dinosaur-512.webp"
-              alt="Velvet Dinosaur mascot"
-              width={130}
-              height={130}
-              className="animate-vd-float h-auto w-[130px] drop-shadow-[0_10px_16px_color-mix(in_srgb,var(--vd-primary)_18%,transparent)]"
-            />
-            <div
-              className={`${HOME_KICKER} pointer-events-none absolute bottom-3 left-3 rounded-[3px] border border-primary/20 bg-background px-1.5 py-1 text-[11px] text-muted-foreground`}
-            >
-              Named by my daughter when she was three
             </div>
           </div>
         </div>

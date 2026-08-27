@@ -8,6 +8,8 @@ const DEFAULT_SKIP_FONTS = [
   'Space Grotesk',
   'Bebas Neue',
   'JetBrains Mono',
+  'var(--font-dm-sans)',
+  'var(--font-mono)',
   'var(--font-pt-sans)',
   'var(--font-pt-serif)',
   'var(--font-inter)'

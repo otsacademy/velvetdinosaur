@@ -1,57 +1,44 @@
-import { existsSync } from "node:fs"
-import path from "node:path"
 import Image from "next/image"
 
+import { r2PublicUrl } from "@/lib/public-assets"
 import { cn } from "@/lib/utils"
 
-const HEADSHOT_PUBLIC_PATH = "/ian-headshot.webp"
+const HEADSHOT_R2_PATH =
+  "/uploads/site-media/velvetdinosaur/ian-profile-cdcd850774449b54.webp"
 
-function hasHeadshot() {
-  return existsSync(path.join(process.cwd(), "public", HEADSHOT_PUBLIC_PATH))
-}
-
-// Renders Ian's headshot when public/ian-headshot.webp exists; until that
-// photo is provided, a brand-styled "IW" monogram stands in. Drop the photo
-// in and rebuild — no code change needed.
 export function FounderAvatar({
   size,
   tone,
+  shape = "circle",
   className,
 }: {
   size: number
   tone: "dark" | "light"
+  shape?: "circle" | "portrait"
   className?: string
 }) {
+  const height = shape === "portrait" ? Math.round(size * 1.25) : size
   const toneClasses =
     tone === "dark"
       ? "border-2 border-white/25 bg-white/10 text-white"
       : "border-[3px] border-background bg-primary/10 text-primary shadow-[var(--vd-shadow-md)]"
 
-  if (hasHeadshot()) {
-    return (
-      <Image
-        src={HEADSHOT_PUBLIC_PATH}
-        alt="Ian Wickens"
-        width={size}
-        height={size}
-        className={cn("flex-none rounded-full object-cover", toneClasses, className)}
-        style={{ width: size, height: size }}
-      />
-    )
-  }
-
   return (
-    <span
-      aria-label="Ian Wickens"
-      role="img"
+    <Image
+      src={r2PublicUrl(HEADSHOT_R2_PATH)}
+      alt="Ian Wickens"
+      width={size}
+      height={height}
+      priority={shape === "portrait"}
+      loading={shape === "portrait" ? "eager" : "lazy"}
+      fetchPriority={shape === "portrait" ? "high" : "auto"}
       className={cn(
-        "flex flex-none select-none items-center justify-center rounded-full font-bold tracking-[0.02em]",
+        "flex-none object-cover",
+        shape === "portrait" ? "rounded-[1.25rem]" : "rounded-full",
         toneClasses,
         className,
       )}
-      style={{ width: size, height: size, fontSize: Math.round(size * 0.34) }}
-    >
-      IW
-    </span>
+      style={{ width: size, height }}
+    />
   )
 }
