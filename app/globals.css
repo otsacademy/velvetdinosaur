@@ -435,3 +435,37 @@ h1,
     transition: transform 0.2s ease;
   }
 }
+
+@keyframes vd-profile-drift {
+  0% {
+    transform: scale(1.025) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.085) translate3d(-1.25%, -0.75%, 0);
+  }
+}
+
+.vd-profile-portrait {
+  animation: vd-profile-drift 13s var(--vd-hover-ease) infinite alternate;
+  will-change: transform;
+}
+
+.vd-profile-caption {
+  transition: transform 650ms var(--vd-hover-ease);
+}
+
+.vd-profile-figure:hover .vd-profile-caption {
+  transform: translate3d(0, -4px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vd-profile-portrait {
+    animation: none;
+    transform: scale(1.025);
+  }
+
+  .vd-profile-caption {
+    transition: none;
+  }
+}

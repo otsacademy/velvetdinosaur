@@ -64,7 +64,7 @@ export function AboutHero() {
   return (
     <section className="border-b border-border bg-background">
       <div
-        className={`${HOME_CONTAINER} grid items-start gap-10 py-12 md:pb-14 md:pt-16 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14`}
+        className={`${HOME_CONTAINER} grid items-start gap-10 py-12 md:pb-14 md:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(340px,380px)] lg:gap-14`}
       >
         <div>
           <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>About me</div>
@@ -85,16 +85,33 @@ export function AboutHero() {
           </div>
         </div>
 
-        <div>
-          <div className="flex flex-col items-center gap-4 rounded-lg border border-border bg-muted p-5">
-            <FounderAvatar size={216} tone="light" shape="portrait" />
-            <div className="text-center">
-              <div className="text-[15px] font-bold">Ian Wickens</div>
-              <div className="mt-0.5 text-[12.5px] text-muted-foreground">
+        <div className="mx-auto w-full max-w-[420px] lg:mx-0">
+          <figure className="vd-profile-figure group relative isolate m-0 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-foreground shadow-[0_24px_70px_-28px_color-mix(in_oklch,var(--vd-fg)_55%,transparent)] ring-1 ring-foreground/10">
+            <FounderAvatar
+              size={720}
+              tone="light"
+              shape="portrait"
+              fillContainer
+              sizes="(min-width: 1024px) 380px, (min-width: 640px) 420px, calc(100vw - 48px)"
+              className="vd-profile-portrait absolute inset-0 rounded-none border-0 bg-transparent shadow-none"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-10 bg-gradient-to-t from-foreground/95 via-foreground/12 via-45% to-transparent"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-20 rounded-[inherit] ring-1 ring-inset ring-white/20"
+            />
+            <figcaption className="vd-profile-caption absolute inset-x-0 bottom-0 z-30 px-6 pb-6 pt-20 text-white sm:px-7 sm:pb-7">
+              <div className="text-[1.35rem] font-bold leading-tight tracking-[-0.025em]">
+                Ian Wickens
+              </div>
+              <div className="mt-1.5 text-[13px] font-medium leading-snug text-white/[0.78]">
                 Founder · Minster Lovell, Oxfordshire
               </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

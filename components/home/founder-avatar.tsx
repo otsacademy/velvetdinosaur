@@ -10,11 +10,15 @@ export function FounderAvatar({
   size,
   tone,
   shape = "circle",
+  fillContainer = false,
+  sizes,
   className,
 }: {
   size: number
   tone: "dark" | "light"
   shape?: "circle" | "portrait"
+  fillContainer?: boolean
+  sizes?: string
   className?: string
 }) {
   const height = shape === "portrait" ? Math.round(size * 1.25) : size
@@ -32,13 +36,15 @@ export function FounderAvatar({
       priority={shape === "portrait"}
       loading={shape === "portrait" ? "eager" : "lazy"}
       fetchPriority={shape === "portrait" ? "high" : "auto"}
+      sizes={sizes}
       className={cn(
         "flex-none object-cover",
+        fillContainer && "h-full w-full",
         shape === "portrait" ? "rounded-[1.25rem]" : "rounded-full",
         toneClasses,
         className,
       )}
-      style={{ width: size, height }}
+      style={fillContainer ? undefined : { width: size, height }}
     />
   )
 }
