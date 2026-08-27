@@ -15,7 +15,7 @@ Status: Complete. Phases 1–9 were implemented on 2026-08-26 and the full seven
 - Phase 4 was completed on 2026-08-26. The canonical core was synchronized into all 31 detected installed, reference and unstamped-workspace targets after active-process checks. Site-owned blocks, designs, content, branding and environment files were preserved; browser-safe site registry/preview adapters now form an explicit seam around the shared client registry.
 - The synchronized core includes smoke-safe page/database access, restored optional Hero branding fields and immediate numeric image-width persistence. Site-specific legacy migrations, normalizers and page definitions remain site-owned.
 - Every target's declared gates passed, including production builds, desktop/mobile visual coverage, three-run mobile/desktop Lighthouse gates where declared, and theme smoke checks. Desktop/mobile editor coverage verifies text and image editing and persistence.
-- Phase 5 was completed on 2026-08-26. Future demo creation now synchronises the canonical core before and after the site overlay, records the canonical revision, and fails before seeding, committing or deploying on drift. Normal quality and release entrypoints run the same preflight. The current tested canonical revision is `f1d50b4c544471329ca94e5de38d7e2f67d3c70a` in `/opt/vdplatform/template-history.git`.
+- Phase 5 was completed on 2026-08-26. Future demo creation now synchronises the canonical core before and after the site overlay, records the canonical revision, and fails before seeding, committing or deploying on drift. Normal quality and release entrypoints run the same preflight. The current tested canonical revision is `b299cef3706b4e05f88133723710088ef1b4b1a9` in `/opt/vdplatform/template-history.git`.
 - Phase 6 was completed on 2026-08-26. `VD_DEMO_SITE=true` centrally enables the exact public disclaimer, full robots metadata and response headers, no-store caching, and proxy-level rejection of public side-effect mutations before their handlers execute. Authenticated editor, administration, support and media operations remain available.
 - Phases 7 and 8 were completed on 2026-08-26 for every site in the authoritative demo fleet. Database-backed strict checks found and removed or corrected unsupported reviews, placeholder/editor copy, stale hours and prices, missing media-library assets, and unverified Bank House contact/host claims. All seventeen sites currently in the fleet have source-backed nine-field evidence manifests verified within the required 24-hour window.
 - Closing strict parity reports 464/464 canonical core files on all 31 detected targets across 94 shared runtime scopes, with zero drift, missing, foreign or extra-core files. The synchronisation preflight covers 466 files; two generated/reference-only paths are intentionally outside parity comparison.
@@ -24,28 +24,32 @@ Status: Complete. Phases 1–9 were implemented on 2026-08-26 and the full seven
 - The 2026-08-27 follow-up added a business-branded private auth shell, back-to-preview navigation, correct password-manager autocomplete, Velvet Dinosaur support identity, authentication-route exclusions from the public demo guard, Velvet Dinosaur-branded reset email links, persistent bottom safety-banner space reservation and safe blocking for public booking/messaging hosts. Public visual tests now run against real MongoDB content while editor tests use a separate isolated smoke server, and the homepage gate fails on generic starter content.
 - Live authentication verification on 2026-08-27 confirmed that `ian.wickens@ontourism.academy` signs in to `/edit` as an administrator on all seventeen deployed domains. Sequential verification also confirmed each live homepage, auth shell, reset page, robots response and public-action block.
 - Final closure on 2026-08-27 synchronized the last six demo-safety files into the platform and five non-demo targets, corrected the browser contract so demo-only branding and design-frame assertions do not apply to genuine production sites, re-passed strict parity, rebuilt all seventeen demos from the exact recorded commits and repeated the live safety probes.
+- The 2026-08-27 backend follow-up corrected the shared Email Templates Server Components failure by removing the invalid React Email `children`/`dangerouslySetInnerHTML` combination. It also removed duplicate client capability probes from the shared review-mode switch; the administrator profile remains the UI gate and the review APIs continue to enforce authorization server-side.
+- New desktop/mobile regression coverage verifies that `/edit/contact-templates` renders and that review-mode controls do not request `/api/admin/review-links?mode=capability` after the profile has already resolved permission. The canonical changes were synchronized into every detected target and future syncs now stamp `sauro-core.json` automatically with the exact canonical revision.
+- All seventeen demos then passed lint, typecheck, production build, public and authenticated editor visual suites, theme smoke, and three-run mobile/desktop Lighthouse gates. Exact tested commits were promoted to matching local `develop` and `main` refs and released through blue/green deployment.
+- Closing authenticated production verification passed 17/17 domains: real email/password sign-in returned `200`, `/api/account/profile` returned the intended administrator, `/edit/contact-templates` and `/admin/store` rendered without Server Components errors, and the observed capability-request, console-error and page-error counts were all zero.
 
 ### Phase 9 authoritative release record
 
 | Demo | Tested and deployed commit | Active slot at closing verification |
 | --- | --- | --- |
-| `eynsham-dental` | `738d2724040f48c022bc6db02e32fa6ca1a835b5` | blue |
-| `white-hart-minster` | `532436bf4ad7566e85b88e39ab69cf82bbdf2818` | blue |
-| `bush-farm` | `6b3aa69f2946c361d1ac549483e7122940ee4838` | blue |
-| `maggies-fish` | `e319868418d47ae7dca02c5274d980617b8d82b6` | blue |
-| `il-botanico` | `31c7b774c6f16d272e2cc385dcd2ff05647a5b4c` | green |
-| `bank-house` | `30a132cd30f8f8937ace6c3f51078fcfd3ca01b3` | blue |
-| `old-craft-barn` | `19355a6eb3939d933300d81b6d7d25113c17fe37` | green |
-| `small-talk-tearooms` | `7a3f2754b8fd5240f9afe73ddcbf31144058ca5d` | blue |
-| `marthas-coffee` | `c29914711207e827ae05aa48556d5bf53233a8d3` | blue |
-| `blue-anchor` | `2ec898a3ecdb05b33642862d6a2d8e90fd0b6221` | green |
-| `claire-lewis` | `0df0db253f6df411c306a75eae374490600c3465` | green |
-| `woodstock-dental` | `21a940161f5bdcf1e71f58785cef77544a1f6764` | blue |
-| `bakewell-pudding` | `f4dd4a32af2a464be0c536cd508dc66d97126348` | blue |
-| `homedene-farm` | `8d574a4930e048ee238aba6fbe7a9c1ea2a867f9` | green |
-| `michaels-malmesbury` | `b98b33f11960b8e4473652c5784d52d2950887e5` | blue |
-| `star-inn-woodstock` | `033cd50d77caac14f4eb3ae2bfd01a56b736c0ab` | green |
-| `wallys-deli` | `58287d79b8f9165e9c8104846a50fe328ab70eb9` | blue |
+| `eynsham-dental` | `ea141a8e0b21151d576a6ba3b3783d595a6f9836` | green |
+| `white-hart-minster` | `a347b62ca0750d7af23e3db39ed8237814ae47a8` | blue |
+| `bush-farm` | `47791dd9ec2f11bf0e96b6ff7fd0d34d9239c84e` | green |
+| `maggies-fish` | `f39c3fb0d387884c11359ff62a43d5480a0ddb5a` | green |
+| `il-botanico` | `feb57f63f2937ba6776aef1853c1b397ffc83daf` | blue |
+| `bank-house` | `1103c5d0944ed90d501c35f896065040f355c30c` | green |
+| `old-craft-barn` | `afc1d88b124dca5c37d397ee01f8935ae7481965` | blue |
+| `small-talk-tearooms` | `f21ccbec8a02659fe34b9988102da6bd84b7323d` | green |
+| `marthas-coffee` | `32326e9c612c11e7afa9c20063cec547a7ae15fa` | green |
+| `blue-anchor` | `451f4a5aec110589909a4db229dc356d0a72919e` | blue |
+| `claire-lewis` | `bc444954981e9760043dafc8d46103f22fda5429` | blue |
+| `woodstock-dental` | `66e5cd1d3cc4375c520b3d8f58132a8d42f23983` | green |
+| `bakewell-pudding` | `bcf59d4047f3146e22b12cec887c4f0a8e45893e` | green |
+| `homedene-farm` | `bc41a7310c285d553e84196c85404e5e104d8099` | blue |
+| `michaels-malmesbury` | `f4edbfc9a9e7ef5fa0c512f056d8a9ee8896e6f7` | green |
+| `star-inn-woodstock` | `396032f610576f8de503154660cf05530c06b1bb` | blue |
+| `wallys-deli` | `2a32fe066bfe8c2050f6ec8fe7499308670ff85e` | green |
 
 No authoritative demo repository had a Git remote configured at closure, so the required GitHub push could not be performed. Production and both local long-lived branches nevertheless use the exact quality-tested commits above; no untested source was created during deployment.
 

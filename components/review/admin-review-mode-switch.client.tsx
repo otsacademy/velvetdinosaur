@@ -79,7 +79,6 @@ export function AdminReviewModeSwitch({ className, variant = 'inline' }: AdminRe
   const router = useRouter();
   const reviewToken = (searchParams.get('review') || '').trim();
   const reviewSlug = useMemo(() => pathnameToReviewSlug(pathname), [pathname]);
-  const [canManage, setCanManage] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
   const [recentShareUrl, setRecentShareUrl] = useState('');
   const [storedReviewToken, setStoredReviewTokenState] = useState('');
@@ -88,26 +87,6 @@ export function AdminReviewModeSwitch({ className, variant = 'inline' }: AdminRe
   const [sendDraftEmail, setSendDraftEmail] = useState(true);
   const [draftRecipientEmail, setDraftRecipientEmail] = useState('iwickens@gmail.com');
   const effectiveReviewToken = reviewToken || storedReviewToken;
-
-  useEffect(() => {
-    const controller = new AbortController();
-    void (async () => {
-      try {
-        const response = await fetch('/api/admin/review-links?mode=capability', {
-          cache: 'no-store',
-          credentials: 'include',
-          signal: controller.signal
-        });
-        setCanManage(response.ok);
-      } catch {
-        if (!controller.signal.aborted) {
-          setCanManage(false);
-        }
-      }
-    })();
-
-    return () => controller.abort();
-  }, []);
 
   useEffect(() => {
     if (!effectiveReviewToken) {
@@ -153,7 +132,7 @@ export function AdminReviewModeSwitch({ className, variant = 'inline' }: AdminRe
   }, [effectiveReviewToken, recentShareUrl]);
 
   const isInline = variant === 'inline';
-  const switchDisabled = busy || !canManage;
+  const switchDisabled = busy;
   const blockedPath = !reviewSlug;
   const windowLabel = formatWindowLabel(windowRange);
 
@@ -255,7 +234,7 @@ export function AdminReviewModeSwitch({ className, variant = 'inline' }: AdminRe
     }
   }
 
-  if (!canManage || blockedPath) return null;
+  if (blockedPath) return null;
 
   return (
     <div

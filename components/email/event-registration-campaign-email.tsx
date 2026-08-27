@@ -34,7 +34,9 @@ export function EventRegistrationCampaignEmail({
         <br />
         {eventLocation}
       </EmailParagraph>
-      <Section dangerouslySetInnerHTML={{ __html: htmlBody }} />
+      <Section>
+        <div dangerouslySetInnerHTML={{ __html: htmlBody }} />
+      </Section>
     </BaseEmailLayout>
   );
 }

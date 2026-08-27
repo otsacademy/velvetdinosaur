@@ -23,7 +23,9 @@ export function NewsletterCampaignEmail({
   return (
     <BaseEmailLayout previewText={preheader || subject} heading={subject} siteName={siteName} appUrl={appUrl} logoUrl={logoUrl}>
       {preheader ? <EmailSmall>{preheader}</EmailSmall> : null}
-      <Section dangerouslySetInnerHTML={{ __html: htmlBody }} />
+      <Section>
+        <div dangerouslySetInnerHTML={{ __html: htmlBody }} />
+      </Section>
       <EmailParagraph>
         You are receiving this email because you opted in to updates. Unsubscribe at any time:{' '}
         <EmailLink href={unsubscribeUrl}>Unsubscribe</EmailLink>

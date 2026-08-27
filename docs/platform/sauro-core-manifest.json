@@ -22,7 +22,11 @@
     "components/puck",
     "components/theme",
     "components/blocks/image-block.tsx",
+    "components/demo/demo-safety-banner.client.tsx",
+    "components/email/event-registration-campaign-email.tsx",
+    "components/email/newsletter-campaign-email.tsx",
     "components/email/support-ticket-system-update-email.tsx",
+    "components/review/admin-review-mode-switch.client.tsx",
     "components/ui/loading-card.tsx",
     "components/ui/optimized-image.tsx",
     "components/ui/sheet.tsx",
@@ -36,6 +40,9 @@
     "lib/assets/usage.server.ts",
     "lib/cache-revalidate.ts",
     "lib/cache-tags.ts",
+    "lib/db.ts",
+    "lib/demo-safety.ts",
+    "lib/demo-safety.test.ts",
     "lib/authz",
     "lib/inline-media.server.ts",
     "lib/inline-media.ts",
@@ -47,6 +54,7 @@
     "lib/page-locations.ts",
     "lib/page-ownership.ts",
     "lib/page-paths.ts",
+    "lib/public-site-metadata.ts",
     "lib/pages-shared.ts",
     "lib/pages.ts",
     "lib/presign.ts",
@@ -75,7 +83,6 @@
     "lib/uploads.ts",
     "lib/video-live-capture/token.ts",
     "lib/video-project/slug.ts",
-    "lib/email/email-text-builders.ts",
     "lib/email/support-ticket-system-update-email.ts",
     "models/Page.ts",
     "models/PageRedirect.ts",
@@ -90,7 +97,14 @@
     "models/SupportTicketCounter.ts",
     "models/SupportTicketEvent.ts",
     "models/SupportTicketMessage.ts",
-    "models/SupportTicketRating.ts"
+    "models/SupportTicketRating.ts",
+    "scripts/check-demo-integrity.ts",
+    "scripts/demo-evidence.ts",
+    "scripts/demo-handover.ts",
+    "scripts/sauro-core-preflight.ts",
+    "tests/visual/demo-safety.spec.ts",
+    "tests/visual/site-preview.spec.ts",
+    "tests/visual/support-navigation.spec.ts"
   ],
   "sites": [
     {
@@ -731,6 +745,31 @@
       "pattern": "puck/defaults.ts",
       "role": "site-owned",
       "note": "site-specific default page composition"
+    },
+    {
+      "pattern": "lib/site-pages.ts",
+      "role": "site-owned",
+      "note": "site-specific static page inventory and public path mapping"
+    },
+    {
+      "pattern": "lib/puck/legacy-page-components.ts",
+      "role": "site-owned",
+      "note": "site-specific detection rules for legacy full-page components"
+    },
+    {
+      "pattern": "lib/puck/legacy-types.ts",
+      "role": "site-owned",
+      "note": "site-specific legacy page type vocabulary"
+    },
+    {
+      "pattern": "lib/puck/page-template-migrations.ts",
+      "role": "site-owned",
+      "note": "site-specific conversion map from legacy page components to current blocks"
+    },
+    {
+      "pattern": "lib/puck/page-data-normalizers.ts",
+      "role": "site-owned",
+      "note": "site-specific read-time repairs for stored Puck content and legacy block shapes"
     },
     {
       "pattern": "puck/defaults.test.ts",
