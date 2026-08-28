@@ -10,6 +10,7 @@ import { dirname, join } from 'node:path';
 import { formatDigest } from './lib/demo-activity-format';
 import { collectTrafficAudit } from './lib/demo-activity-audit';
 import { collectRecipientActivity } from './lib/demo-recipient-activity';
+import { isDigestDeliveryTime } from './lib/demo-activity-schedule';
 import {
   readOrCreateRecipientSecret,
   readRecipientRegistry
@@ -522,6 +523,8 @@ async function main() {
   const initialize = process.argv.includes('--initialize');
   const dryRun = process.argv.includes('--dry-run');
   const noAdvance = process.argv.includes('--no-advance');
+  if (!initialize && !dryRun && !process.argv.includes('--ignore-notification-window') && !isDigestDeliveryTime(new Date()))
+    return console.log('Demo activity email suppressed during the 22:00-09:00 Europe/London quiet period.');
   const until = new Date(argumentValue('until') || Date.now());
   if (!Number.isFinite(until.getTime())) throw new Error('Invalid --until timestamp.');
 
