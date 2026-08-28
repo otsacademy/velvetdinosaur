@@ -146,6 +146,28 @@ describe('demo fleet activity digest', () => {
     expect(sessions[0].signedIn).toBeFalse();
   });
 
+  test('records a host-attributed successful sign-in without a referrer', () => {
+    const signIn = JSON.stringify({
+      host: site.domain,
+      ip: '203.0.113.20',
+      time: '2026-08-28T14:10:00+02:00',
+      method: 'POST',
+      uri: '/api/auth/sign-in/email',
+      status: 200,
+      referer: '',
+      userAgent: humanUa
+    });
+    const sessions = collectActivitySessions(
+      [signIn],
+      [site],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z')
+    );
+    expect(sessions).toHaveLength(1);
+    expect(sessions[0].pages).toEqual(['/sign-in']);
+    expect(sessions[0].signedIn).toBeTrue();
+  });
+
   test('formats a readable page and sign-in summary', () => {
     const sessions = collectActivitySessions(
       [line({ time: '14:01:00' })],

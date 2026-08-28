@@ -291,7 +291,9 @@ function eventFromEntry(
   // requests remain a fallback for any retained/fixture lines in that format.
   if (!directPageRequest && !successfulSignIn && !(!entry.host && analyticsRequest)) return null;
 
-  const page = directPageRequest ? entry.path : safePageFromReferer(entry.referer, site.domain);
+  const page = directPageRequest
+    ? entry.path
+    : safePageFromReferer(entry.referer, site.domain) || (successfulSignIn ? '/sign-in' : '');
   if (!page) return null;
   return {
     site,
