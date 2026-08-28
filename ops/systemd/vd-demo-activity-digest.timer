@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the Velvet Dinosaur demo activity digest every two hours
+
+[Timer]
+OnCalendar=*-*-* 00/2:00:00
+Persistent=true
+AccuracySec=1min
+Unit=vd-demo-activity-digest.service
+
+[Install]
+WantedBy=timers.target

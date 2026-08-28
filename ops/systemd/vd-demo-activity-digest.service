@@ -1,0 +1,33 @@
+[Unit]
+Description=Velvet Dinosaur demo fleet activity digest
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ianw
+Group=ianw
+SupplementaryGroups=adm
+WorkingDirectory=/srv/apps/velvetdinosaur
+ExecStart=/home/ianw/.bun/bin/bun scripts/demo-fleet-activity-digest.ts
+Environment=HOME=/home/ianw
+Environment=NODE_ENV=production
+Environment=GWS_NO_BROWSER=1
+Environment=GWS_STATE_DIR=/home/ianw/.claude/channels/gws
+Environment=VD_ACTIVITY_STATE_FILE=/var/lib/vd-demo-activity-digest/state.json
+EnvironmentFile=-/etc/velvetdinosaur/demo-activity-digest.env
+StateDirectory=vd-demo-activity-digest
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/vd-demo-activity-digest /home/ianw/.claude/channels/gws
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target
