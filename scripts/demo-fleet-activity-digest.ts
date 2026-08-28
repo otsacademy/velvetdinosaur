@@ -524,7 +524,7 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const noAdvance = process.argv.includes('--no-advance');
   if (!initialize && !dryRun && !process.argv.includes('--ignore-notification-window') && !isDigestDeliveryTime(new Date()))
-    return console.log('Demo activity email suppressed during the 22:00-09:00 Europe/London quiet period.');
+    return console.log('Demo activity email suppressed after the 22:00 final update until 09:00 Europe/London.');
   const until = new Date(argumentValue('until') || Date.now());
   if (!Number.isFinite(until.getTime())) throw new Error('Invalid --until timestamp.');
 
