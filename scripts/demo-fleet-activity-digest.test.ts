@@ -8,6 +8,7 @@ import {
   parseAccessLine,
   type DemoSite
 } from './demo-fleet-activity-digest';
+import { collectTrafficAudit } from './lib/demo-activity-audit';
 
 const site: DemoSite = {
   slug: 'blue-anchor',
@@ -81,6 +82,73 @@ describe('demo fleet activity digest', () => {
     expect(isSecurityProbePath('/rooms')).toBeFalse();
   });
 
+  test('audits excluded, automated, probe and sign-in traffic separately', () => {
+    const entries = [
+      JSON.stringify({
+        host: site.domain,
+        ip: '203.0.113.20',
+        time: '2026-08-28T14:01:00+02:00',
+        method: 'GET',
+        uri: '/',
+        status: 200,
+        referer: '',
+        userAgent: humanUa
+      }),
+      JSON.stringify({
+        host: site.domain,
+        ip: '203.0.113.21',
+        time: '2026-08-28T14:02:00+02:00',
+        method: 'GET',
+        uri: '/',
+        status: 200,
+        referer: '',
+        userAgent: 'Googlebot/2.1'
+      }),
+      JSON.stringify({
+        host: site.domain,
+        ip: '203.0.113.22',
+        time: '2026-08-28T14:03:00+02:00',
+        method: 'GET',
+        uri: '/unzipper.php',
+        status: 200,
+        referer: '',
+        userAgent: humanUa
+      }),
+      JSON.stringify({
+        host: site.domain,
+        ip: '203.0.113.23',
+        time: '2026-08-28T14:04:00+02:00',
+        method: 'POST',
+        uri: '/api/auth/sign-in/email',
+        status: 401,
+        referer: `${site.url}sign-in`,
+        userAgent: humanUa
+      })
+    ].map((value) => parseAccessLine(value)!);
+    const audit = collectTrafficAudit(
+      entries,
+      [site],
+      [],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z'),
+      {
+        ignoredIps: new Set(['203.0.113.20']),
+        isAutomatedUserAgent,
+        isLikelyPagePath,
+        isSecurityProbePath,
+        visitorFingerprint: (ip, userAgent) => `${ip}|${userAgent}`
+      }
+    );
+    expect(audit[0]).toMatchObject({
+      browserLikeSources: 2,
+      excludedSources: 2,
+      ownerOrQaSources: 1,
+      automatedAgentSources: 1,
+      securityProbeSources: 1,
+      signInAttempts: 1
+    });
+  });
+
   test('does not report an unconfirmed direct request without analytics', () => {
     const directVisit = JSON.stringify({
       host: site.domain,
@@ -99,6 +167,28 @@ describe('demo fleet activity digest', () => {
       new Date('2026-08-28T13:00:00.000Z')
     );
     expect(sessions).toHaveLength(0);
+  });
+
+  test('does not mistake Next.js prefetch requests for viewed pages', () => {
+    const analytics = line({ time: '14:10:02', referer: site.url });
+    const prefetch = JSON.stringify({
+      host: site.domain,
+      ip: '203.0.113.20',
+      time: '2026-08-28T14:10:03+02:00',
+      method: 'GET',
+      uri: '/whats-on',
+      status: 200,
+      referer: site.url,
+      userAgent: humanUa
+    });
+    const sessions = collectActivitySessions(
+      [analytics, prefetch],
+      [site],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z')
+    );
+    expect(sessions).toHaveLength(1);
+    expect(sessions[0].pages).toEqual(['/']);
   });
 
   test('drops an entire browser-looking session when it contains security probes', () => {
@@ -224,6 +314,17 @@ describe('demo fleet activity digest', () => {
     const digest = formatDigest(
       [site],
       sessions,
+      [
+        {
+          domain: site.domain,
+          browserLikeSources: 2,
+          excludedSources: 1,
+          ownerOrQaSources: 1,
+          automatedAgentSources: 3,
+          securityProbeSources: 1,
+          signInAttempts: 1
+        }
+      ],
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T13:00:00.000Z')
     );
@@ -233,11 +334,14 @@ describe('demo fleet activity digest', () => {
     expect(digest.body).toContain('Blue Anchor');
     expect(digest.body).toContain('- /ales');
     expect(digest.body).toContain('Successful backend sign-in: No');
+    expect(digest.body).toContain('Excluded/non-qualifying sources: 1');
+    expect(digest.body).toContain('Backend sign-in attempts: 1');
   });
 
   test('includes every fleet website when there is no activity', () => {
     const digest = formatDigest(
       [site],
+      [],
       [],
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T14:00:00.000Z')

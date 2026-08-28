@@ -8,6 +8,7 @@ import {
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { formatDigest } from './lib/demo-activity-format';
+import { collectTrafficAudit } from './lib/demo-activity-audit';
 
 export { formatDigest } from './lib/demo-activity-format';
 
@@ -36,7 +37,13 @@ const DEFAULT_EXCLUDED_IPS = [
   '104.197.69.115',
   '34.122.147.229',
   '205.169.39.42',
-  '35.185.77.86'
+  '35.185.77.86',
+  '31.94.0.24', // Ian mobile-network handoff observed alongside the known home IP
+  '193.138.7.199', // hosted browser execution, not prospect traffic
+  '205.188.37.12', // hosted browser execution, not prospect traffic
+  '54.167.108.102', // Amazon-hosted browser execution
+  '3.87.216.108', // Amazon-hosted browser execution
+  '100.31.86.245' // Amazon-hosted browser execution
 ];
 
 const AUTOMATION_PATTERN =
@@ -289,20 +296,16 @@ function eventFromEntry(
   const site = siteByDomain.get(entry.host) || siteByDomain.get(refererHost);
   if (!site) return null;
 
-  const directPageRequest =
-    entry.method === 'GET' && entry.status < 400 && isLikelyPagePath(entry.path);
   const analyticsRequest =
     entry.method === 'POST' &&
     (entry.path === '/api/analytics' || entry.path === '/api/vd-telemetry');
   const successfulSignIn =
     entry.method === 'POST' && entry.path.startsWith('/api/auth/sign-in/') && entry.status < 300;
-  // Analytics confirms a browser session; document requests provide its page list.
-  // Successful sign-ins remain reportable even if page-view analytics is absent.
-  if (!directPageRequest && !successfulSignIn && !analyticsRequest) return null;
+  // Next.js prefetches linked routes, so GET paths are not reliable page views.
+  // First-party analytics and successful sign-ins provide the actual page context.
+  if (!successfulSignIn && !analyticsRequest) return null;
 
-  const page = directPageRequest
-    ? entry.path
-    : safePageFromReferer(entry.referer, site.domain) || (successfulSignIn ? '/sign-in' : '');
+  const page = safePageFromReferer(entry.referer, site.domain) || (successfulSignIn ? '/sign-in' : '');
   if (!page) return null;
   return {
     site,
@@ -513,6 +516,7 @@ function argumentValue(name: string) {
 async function main() {
   const initialize = process.argv.includes('--initialize');
   const dryRun = process.argv.includes('--dry-run');
+  const noAdvance = process.argv.includes('--no-advance');
   const until = new Date(argumentValue('until') || Date.now());
   if (!Number.isFinite(until.getTime())) throw new Error('Invalid --until timestamp.');
 
@@ -531,8 +535,17 @@ async function main() {
 
   const sites = discoverDemoSites();
   if (!sites.length) throw new Error('No demo sites discovered; refusing to advance the checkpoint.');
-  const sessions = collectActivitySessions(readAccessLines(), sites, since, until);
-  const digest = formatDigest(sites, sessions, since, until);
+  const accessLines = readAccessLines();
+  const sessions = collectActivitySessions(accessLines, sites, since, until);
+  const entries = accessLines.map(parseAccessLine).filter((entry): entry is AccessEntry => Boolean(entry));
+  const trafficAudit = collectTrafficAudit(entries, sites, sessions, since, until, {
+    ignoredIps: excludedIps(),
+    isAutomatedUserAgent,
+    isLikelyPagePath,
+    isSecurityProbePath,
+    visitorFingerprint
+  });
+  const digest = formatDigest(sites, sessions, trafficAudit, since, until);
 
   if (dryRun) {
     console.log(`${digest.subject}\n\n${digest.body}`);
@@ -541,7 +554,7 @@ async function main() {
 
   const confirmation = await sendGwsEmail(digest.subject, digest.body);
   console.log(`${digest.subject}; ${confirmation.replace(/\s+/g, ' ')}`);
-  saveState(until);
+  if (!noAdvance) saveState(until);
 }
 
 if (import.meta.main) {

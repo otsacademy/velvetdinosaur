@@ -15,6 +15,16 @@ export type DigestSession = {
   platform: string;
 };
 
+export type DigestTrafficAudit = {
+  domain: string;
+  browserLikeSources: number;
+  excludedSources: number;
+  ownerOrQaSources: number;
+  automatedAgentSources: number;
+  securityProbeSources: number;
+  signInAttempts: number;
+};
+
 function formatTime(value: Date) {
   return new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Europe/Berlin',
@@ -26,6 +36,7 @@ function formatTime(value: Date) {
 export function formatDigest(
   sites: DigestSite[],
   sessions: DigestSession[],
+  trafficAudit: DigestTrafficAudit[],
   since: Date,
   until: Date
 ) {
@@ -44,10 +55,17 @@ export function formatDigest(
   sites.forEach((site, siteIndex) => {
     const siteSessions = sessions.filter((session) => session.site.domain === site.domain);
     const siteSignIns = siteSessions.filter((session) => session.signedIn).length;
+    const audit = trafficAudit.find((candidate) => candidate.domain === site.domain);
     lines.push(`${siteIndex + 1}. ${site.name}`);
     lines.push(`Website: ${site.url}`);
     lines.push(`Visitor sessions: ${siteSessions.length}`);
     lines.push(`Successful backend sign-ins: ${siteSignIns}`);
+    lines.push(`Browser-like sources observed: ${audit?.browserLikeSources || 0}`);
+    lines.push(`Excluded/non-qualifying sources: ${audit?.excludedSources || 0}`);
+    lines.push(`Known owner/QA sources: ${audit?.ownerOrQaSources || 0}`);
+    lines.push(`Explicit automated-agent sources: ${audit?.automatedAgentSources || 0}`);
+    lines.push(`Security-probe sources: ${audit?.securityProbeSources || 0}`);
+    lines.push(`Backend sign-in attempts: ${audit?.signInAttempts || 0}`);
 
     if (!siteSessions.length) {
       lines.push('Activity: No qualifying activity');
