@@ -3,6 +3,7 @@ import {
   collectActivitySessions,
   formatDigest,
   isAutomatedUserAgent,
+  isLikelyPagePath,
   parseAccessLine,
   type DemoSite
 } from './demo-fleet-activity-digest';
@@ -37,10 +38,58 @@ describe('demo fleet activity digest', () => {
     expect(parsed?.referer).toBe('https://blue-anchor.velvetdinosaur.com/ales');
   });
 
+  test('parses the dedicated host-aware activity log', () => {
+    const parsed = parseAccessLine(
+      JSON.stringify({
+        host: site.domain,
+        ip: '203.0.113.20',
+        time: '2026-08-28T14:10:00+02:00',
+        method: 'GET',
+        uri: '/whats-on',
+        status: 200,
+        referer: '-',
+        userAgent: humanUa
+      })
+    );
+    expect(parsed?.host).toBe(site.domain);
+    expect(parsed?.occurredAt.toISOString()).toBe('2026-08-28T12:10:00.000Z');
+    expect(parsed?.path).toBe('/whats-on');
+  });
+
   test('recognises automated user agents', () => {
     expect(isAutomatedUserAgent('Mozilla/5.0 HeadlessChrome/151.0')).toBeTrue();
     expect(isAutomatedUserAgent('Blackbox Exporter/0.24.0')).toBeTrue();
     expect(isAutomatedUserAgent(humanUa)).toBeFalse();
+  });
+
+  test('keeps page routes and rejects assets, APIs and crawler documents', () => {
+    expect(isLikelyPagePath('/')).toBeTrue();
+    expect(isLikelyPagePath('/fees')).toBeTrue();
+    expect(isLikelyPagePath('/_next/static/app.js')).toBeFalse();
+    expect(isLikelyPagePath('/api/analytics')).toBeFalse();
+    expect(isLikelyPagePath('/hero.webp')).toBeFalse();
+    expect(isLikelyPagePath('/robots.txt')).toBeFalse();
+  });
+
+  test('captures a direct visit even when JavaScript analytics and referrer are absent', () => {
+    const directVisit = JSON.stringify({
+      host: site.domain,
+      ip: '203.0.113.20',
+      time: '2026-08-28T14:10:00+02:00',
+      method: 'GET',
+      uri: '/visit',
+      status: 200,
+      referer: '-',
+      userAgent: humanUa
+    });
+    const sessions = collectActivitySessions(
+      [directVisit],
+      [site],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z')
+    );
+    expect(sessions).toHaveLength(1);
+    expect(sessions[0].pages).toEqual(['/visit']);
   });
 
   test('deduplicates pages, filters excluded traffic and records successful sign-in', () => {

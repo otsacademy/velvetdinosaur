@@ -9,7 +9,7 @@ import {
 import { dirname, join } from 'node:path';
 
 const APPS_ROOT = process.env.VD_APPS_ROOT || '/srv/apps';
-const ACCESS_LOG = process.env.VD_ACTIVITY_ACCESS_LOG || '/var/log/nginx/access.log';
+const ACCESS_LOG = process.env.VD_ACTIVITY_ACCESS_LOG || '/var/log/nginx/vd-demo-activity.log';
 const STATE_FILE = process.env.VD_ACTIVITY_STATE_FILE || '/var/lib/vd-demo-activity-digest/state.json';
 const GWS_BINARY =
   process.env.VD_ACTIVITY_GWS_BINARY ||
@@ -47,6 +47,7 @@ export type DemoSite = {
 };
 
 export type AccessEntry = {
+  host: string;
   ip: string;
   occurredAt: Date;
   method: string;
@@ -162,6 +163,27 @@ function parseNginxDate(value: string, offset: string) {
 }
 
 export function parseAccessLine(line: string): AccessEntry | null {
+  if (line.startsWith('{')) {
+    try {
+      const parsed = JSON.parse(line) as Record<string, unknown>;
+      const occurredAt = new Date(String(parsed.time || ''));
+      const status = Number(parsed.status);
+      if (!Number.isFinite(occurredAt.getTime()) || !Number.isFinite(status)) return null;
+      return {
+        host: String(parsed.host || '').toLowerCase(),
+        ip: String(parsed.ip || ''),
+        occurredAt,
+        method: String(parsed.method || ''),
+        path: String(parsed.uri || ''),
+        status,
+        referer: String(parsed.referer || ''),
+        userAgent: String(parsed.userAgent || '')
+      };
+    } catch {
+      return null;
+    }
+  }
+
   const match = line.match(
     /^(\S+) \S+ \S+ \[([^ ]+) ([+-]\d{4})\] "(\S+) ([^ ]+) [^"]+" (\d{3}) \S+ "([^"]*)" "([^"]*)"/
   );
@@ -170,6 +192,7 @@ export function parseAccessLine(line: string): AccessEntry | null {
   if (!occurredAt) return null;
 
   return {
+    host: '',
     ip: match[1],
     occurredAt,
     method: match[4],
@@ -223,6 +246,24 @@ function safePageFromReferer(referer: string, expectedDomain: string) {
   }
 }
 
+export function isLikelyPagePath(path: string) {
+  if (!path.startsWith('/')) return false;
+  if (
+    path.startsWith('/_next/') ||
+    path.startsWith('/api/') ||
+    path.startsWith('/.') ||
+    path === '/robots.txt' ||
+    path === '/sitemap.xml' ||
+    path === '/favicon.ico' ||
+    path === '/manifest.webmanifest'
+  ) {
+    return false;
+  }
+  return !/\.(?:avif|bmp|css|csv|gif|ico|jpe?g|js|json|map|mp3|mp4|pdf|png|svg|txt|webm|webp|woff2?|xml)$/i.test(
+    path
+  );
+}
+
 function eventFromEntry(
   entry: AccessEntry,
   siteByDomain: Map<string, DemoSite>,
@@ -231,23 +272,26 @@ function eventFromEntry(
   if (ignoredIps.has(entry.ip) || isAutomatedUserAgent(entry.userAgent)) return null;
   if (entry.status < 200 || entry.status >= 300) return null;
 
-  let refererUrl: URL;
+  let refererHost = '';
   try {
-    refererUrl = new URL(entry.referer);
-  } catch {
-    return null;
-  }
-  const site = siteByDomain.get(refererUrl.hostname.toLowerCase());
+    refererHost = new URL(entry.referer).hostname.toLowerCase();
+  } catch {}
+  const site = siteByDomain.get(entry.host) || siteByDomain.get(refererHost);
   if (!site) return null;
 
+  const directPageRequest =
+    entry.method === 'GET' && entry.status < 400 && isLikelyPagePath(entry.path);
   const analyticsRequest =
     entry.method === 'POST' &&
     (entry.path === '/api/analytics' || entry.path === '/api/vd-telemetry');
   const successfulSignIn =
     entry.method === 'POST' && entry.path.startsWith('/api/auth/sign-in/') && entry.status < 300;
-  if (!analyticsRequest && !successfulSignIn) return null;
+  // The dedicated activity log includes the requested host, so direct document
+  // requests are authoritative. The legacy combined log has no host; analytics
+  // requests remain a fallback for any retained/fixture lines in that format.
+  if (!directPageRequest && !successfulSignIn && !(!entry.host && analyticsRequest)) return null;
 
-  const page = safePageFromReferer(entry.referer, site.domain);
+  const page = directPageRequest ? entry.path : safePageFromReferer(entry.referer, site.domain);
   if (!page) return null;
   return {
     site,
