@@ -4,6 +4,7 @@ import {
   formatDigest,
   isAutomatedUserAgent,
   isLikelyPagePath,
+  isSecurityProbePath,
   parseAccessLine,
   type DemoSite
 } from './demo-fleet-activity-digest';
@@ -69,9 +70,18 @@ describe('demo fleet activity digest', () => {
     expect(isLikelyPagePath('/api/analytics')).toBeFalse();
     expect(isLikelyPagePath('/hero.webp')).toBeFalse();
     expect(isLikelyPagePath('/robots.txt')).toBeFalse();
+    expect(isLikelyPagePath('/unzipper.php')).toBeFalse();
   });
 
-  test('captures a direct visit even when JavaScript analytics and referrer are absent', () => {
+  test('recognises exploit-probe paths', () => {
+    expect(isSecurityProbePath('/unzipper.php')).toBeTrue();
+    expect(isSecurityProbePath('/panel/settings.php')).toBeTrue();
+    expect(isSecurityProbePath('/data/admin.json')).toBeTrue();
+    expect(isSecurityProbePath('/admin/store')).toBeFalse();
+    expect(isSecurityProbePath('/rooms')).toBeFalse();
+  });
+
+  test('does not report an unconfirmed direct request without analytics', () => {
     const directVisit = JSON.stringify({
       host: site.domain,
       ip: '203.0.113.20',
@@ -88,8 +98,44 @@ describe('demo fleet activity digest', () => {
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T13:00:00.000Z')
     );
-    expect(sessions).toHaveLength(1);
-    expect(sessions[0].pages).toEqual(['/visit']);
+    expect(sessions).toHaveLength(0);
+  });
+
+  test('drops an entire browser-looking session when it contains security probes', () => {
+    const scannerUa =
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115.0.0.0 Safari/537.36';
+    const scannerLine = (path: string, second: number) =>
+      JSON.stringify({
+        host: site.domain,
+        ip: '202.155.94.200',
+        time: `2026-08-28T14:11:${String(second).padStart(2, '0')}+02:00`,
+        method: 'GET',
+        uri: path,
+        status: 200,
+        referer: '',
+        userAgent: scannerUa
+      });
+    const sessions = collectActivitySessions(
+      [
+        scannerLine('/', 9),
+        scannerLine('/unzipper.php', 10),
+        scannerLine('/panel/settings.php', 11),
+        JSON.stringify({
+          host: site.domain,
+          ip: '202.155.94.200',
+          time: '2026-08-28T14:11:12+02:00',
+          method: 'POST',
+          uri: '/api/analytics',
+          status: 200,
+          referer: site.url,
+          userAgent: scannerUa
+        })
+      ],
+      [site],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z')
+    );
+    expect(sessions).toHaveLength(0);
   });
 
   test('deduplicates pages, filters excluded traffic and records successful sign-in', () => {

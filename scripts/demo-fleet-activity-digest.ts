@@ -39,6 +39,9 @@ const DEFAULT_EXCLUDED_IPS = [
 const AUTOMATION_PATTERN =
   /(?:\bbot\b|bot\/|crawler|spider|headless|lighthouse|blackbox|monitor|uptime|probe|scanner|scan\/|curl|wget|python|go-http|facebookexternalhit|meta-externalagent|petalbot|bytespider|semrush|ahrefs|mj12|dotbot|bingpreview|claude|gptbot|chatgpt|perplexity|telegrambot|whatsapp|slackbot|discordbot|applebot|google-extended|oai-searchbot|grokbot|twitterbot|linkedinbot|amazonbot|aionbot)/i;
 
+const SECURITY_PROBE_PATH_PATTERN =
+  /(?:\.php(?:\/|$)|^\/(?:\.env|\.git|cgi-bin|wp-admin|wp-content|wp-includes|xmlrpc\.php|vendor\/phpunit|server-status|actuator)(?:\/|$)|^\/data\/admin\.json$|^\/(?:adminer|phpinfo)(?:\.php)?$)/i;
+
 export type DemoSite = {
   slug: string;
   name: string;
@@ -259,9 +262,13 @@ export function isLikelyPagePath(path: string) {
   ) {
     return false;
   }
-  return !/\.(?:avif|bmp|css|csv|gif|ico|jpe?g|js|json|map|mp3|mp4|pdf|png|svg|txt|webm|webp|woff2?|xml)$/i.test(
+  return !/\.(?:avif|bmp|css|csv|gif|ico|jpe?g|js|json|map|mp3|mp4|pdf|php|png|svg|txt|webm|webp|woff2?|xml)$/i.test(
     path
   );
+}
+
+export function isSecurityProbePath(path: string) {
+  return SECURITY_PROBE_PATH_PATTERN.test(path.split(/[?#]/, 1)[0]);
 }
 
 function eventFromEntry(
@@ -286,10 +293,9 @@ function eventFromEntry(
     (entry.path === '/api/analytics' || entry.path === '/api/vd-telemetry');
   const successfulSignIn =
     entry.method === 'POST' && entry.path.startsWith('/api/auth/sign-in/') && entry.status < 300;
-  // The dedicated activity log includes the requested host, so direct document
-  // requests are authoritative. The legacy combined log has no host; analytics
-  // requests remain a fallback for any retained/fixture lines in that format.
-  if (!directPageRequest && !successfulSignIn && !(!entry.host && analyticsRequest)) return null;
+  // Analytics confirms a browser session; document requests provide its page list.
+  // Successful sign-ins remain reportable even if page-view analytics is absent.
+  if (!directPageRequest && !successfulSignIn && !analyticsRequest) return null;
 
   const page = directPageRequest
     ? entry.path
@@ -313,12 +319,35 @@ export function collectActivitySessions(
   ignoredIps = excludedIps()
 ) {
   const siteByDomain = new Map(sites.map((site) => [site.domain, site]));
-  const events = lines
+  const entries = lines
     .map(parseAccessLine)
     .filter((entry): entry is AccessEntry => Boolean(entry))
     .filter(
       (entry) => entry.occurredAt.getTime() > since.getTime() && entry.occurredAt.getTime() <= until.getTime()
-    )
+    );
+  // A scanner can impersonate Chrome and request a real page before probing
+  // exploit paths. Reject the whole source/site window, not only the bad paths.
+  const addressKey = (entry: AccessEntry) => `${entry.host}|${entry.ip}`;
+  const sourceKey = (entry: AccessEntry) => `${addressKey(entry)}|${entry.userAgent}`;
+  const probeSources = new Set(
+    entries
+      .filter((entry) => isSecurityProbePath(entry.path))
+      .map(addressKey)
+  );
+  const confirmedSources = new Set(
+    entries
+      .filter(
+        (entry) =>
+          entry.status >= 200 &&
+          entry.status < 300 &&
+          ((entry.method === 'POST' &&
+            (entry.path === '/api/analytics' || entry.path === '/api/vd-telemetry')) ||
+            (entry.method === 'POST' && entry.path.startsWith('/api/auth/sign-in/')))
+      )
+      .map(sourceKey)
+  );
+  const events = entries
+    .filter((entry) => !probeSources.has(addressKey(entry)) && confirmedSources.has(sourceKey(entry)))
     .map((entry) => eventFromEntry(entry, siteByDomain, ignoredIps))
     .filter((event): event is ActivityEvent => Boolean(event))
     .sort((left, right) => left.occurredAt.getTime() - right.occurredAt.getTime());
@@ -398,7 +427,7 @@ export function formatDigest(sessions: ActivitySession[], since: Date, until: Da
   });
 
   lines.push(
-    'Filtering: Ian, server monitoring, QA traffic, known scanners, bot user agents and duplicate requests are excluded. Pages are deduplicated within each 30-minute visitor session.'
+    'Filtering: only first-party analytics-confirmed visits and successful sign-ins are reported. Ian, server monitoring, QA traffic, exploit probes, known scanners, bot user agents and duplicate requests are excluded. Pages are deduplicated within each 30-minute visitor session.'
   );
   return { subject, body: lines.join('\n') };
 }
