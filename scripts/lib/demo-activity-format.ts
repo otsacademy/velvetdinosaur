@@ -41,13 +41,18 @@ export function formatDigest(
   until: Date
 ) {
   const signIns = sessions.filter((session) => session.signedIn).length;
-  const subject = `[Velvet Dinosaur] ${sites.length}-demo activity: ${sessions.length} visitor session${sessions.length === 1 ? '' : 's'}, ${signIns} sign-in${signIns === 1 ? '' : 's'}`;
+  const browserLikeSources = trafficAudit.reduce(
+    (total, audit) => total + audit.browserLikeSources,
+    0
+  );
+  const subject = `[Velvet Dinosaur] ${sites.length}-demo activity: ${browserLikeSources} browser-like source${browserLikeSources === 1 ? '' : 's'}, ${sessions.length} qualifying visitor session${sessions.length === 1 ? '' : 's'}, ${signIns} sign-in${signIns === 1 ? '' : 's'}`;
   const lines = [
     'Velvet Dinosaur demo fleet activity summary',
     '',
     `Period: ${formatTime(since)} to ${formatTime(until)}`,
     `Fleet websites covered: ${sites.length}`,
-    `Likely human visitor sessions: ${sessions.length}`,
+    `Browser-like sources observed: ${browserLikeSources}`,
+    `Qualifying likely-human visitor sessions: ${sessions.length}`,
     `Successful backend sign-ins: ${signIns}`,
     ''
   ];
@@ -58,7 +63,7 @@ export function formatDigest(
     const audit = trafficAudit.find((candidate) => candidate.domain === site.domain);
     lines.push(`${siteIndex + 1}. ${site.name}`);
     lines.push(`Website: ${site.url}`);
-    lines.push(`Visitor sessions: ${siteSessions.length}`);
+    lines.push(`Qualifying likely-human sessions: ${siteSessions.length}`);
     lines.push(`Successful backend sign-ins: ${siteSignIns}`);
     lines.push(`Browser-like sources observed: ${audit?.browserLikeSources || 0}`);
     lines.push(`Excluded/non-qualifying sources: ${audit?.excludedSources || 0}`);
@@ -68,7 +73,7 @@ export function formatDigest(
     lines.push(`Backend sign-in attempts: ${audit?.signInAttempts || 0}`);
 
     if (!siteSessions.length) {
-      lines.push('Activity: No qualifying activity');
+      lines.push('Activity: No qualifying likely-human activity; see observed/excluded counts above');
       lines.push('');
       return;
     }

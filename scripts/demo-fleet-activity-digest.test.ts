@@ -328,7 +328,8 @@ describe('demo fleet activity digest', () => {
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T13:00:00.000Z')
     );
-    expect(digest.subject).toContain('1 visitor session');
+    expect(digest.subject).toContain('2 browser-like sources');
+    expect(digest.subject).toContain('1 qualifying visitor session');
     expect(digest.subject).toContain('1-demo activity');
     expect(digest.body).toContain('Fleet websites covered: 1');
     expect(digest.body).toContain('Blue Anchor');
@@ -346,8 +347,9 @@ describe('demo fleet activity digest', () => {
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T14:00:00.000Z')
     );
-    expect(digest.subject).toContain('1-demo activity: 0 visitor sessions');
+    expect(digest.subject).toContain('1-demo activity: 0 browser-like sources');
+    expect(digest.subject).toContain('0 qualifying visitor sessions');
     expect(digest.body).toContain('1. Blue Anchor');
-    expect(digest.body).toContain('Activity: No qualifying activity');
+    expect(digest.body).toContain('Activity: No qualifying likely-human activity');
   });
 });
