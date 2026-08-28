@@ -7,6 +7,9 @@ import {
   writeFileSync
 } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { formatDigest } from './lib/demo-activity-format';
+
+export { formatDigest } from './lib/demo-activity-format';
 
 const APPS_ROOT = process.env.VD_APPS_ROOT || '/srv/apps';
 const ACCESS_LOG = process.env.VD_ACTIVITY_ACCESS_LOG || '/var/log/nginx/vd-demo-activity.log';
@@ -391,47 +394,6 @@ export function collectActivitySessions(
   return sessions.map(({ pageSet: _pageSet, sourceKey: _sourceKey, ...session }) => session);
 }
 
-function formatTime(value: Date) {
-  return new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Berlin',
-    dateStyle: 'medium',
-    timeStyle: 'short'
-  }).format(value);
-}
-
-export function formatDigest(sessions: ActivitySession[], since: Date, until: Date) {
-  const signIns = sessions.filter((session) => session.signedIn).length;
-  const subject = `[Velvet Dinosaur] Demo activity: ${sessions.length} visitor session${sessions.length === 1 ? '' : 's'}, ${signIns} sign-in${signIns === 1 ? '' : 's'}`;
-  const lines = [
-    'Velvet Dinosaur demo fleet activity summary',
-    '',
-    `Period: ${formatTime(since)} to ${formatTime(until)}`,
-    `Likely human visitor sessions: ${sessions.length}`,
-    `Successful backend sign-ins: ${signIns}`,
-    ''
-  ];
-
-  sessions.forEach((session, index) => {
-    lines.push(`${index + 1}. ${session.site.name}`);
-    lines.push(`Website: ${session.site.url}`);
-    lines.push(`Visit: ${formatTime(session.firstSeenAt)} to ${formatTime(session.lastSeenAt)}`);
-    lines.push(`Device: ${session.browser} on ${session.platform}`);
-    lines.push('Pages:');
-    for (const page of session.pages) lines.push(`- ${page}`);
-    lines.push(
-      session.signedIn && session.signedInAt
-        ? `Successful backend sign-in: Yes, at ${formatTime(session.signedInAt)}`
-        : 'Successful backend sign-in: No'
-    );
-    lines.push('');
-  });
-
-  lines.push(
-    'Filtering: only first-party analytics-confirmed visits and successful sign-ins are reported. Ian, server monitoring, QA traffic, exploit probes, known scanners, bot user agents and duplicate requests are excluded. Pages are deduplicated within each 30-minute visitor session.'
-  );
-  return { subject, body: lines.join('\n') };
-}
-
 function readState() {
   if (!existsSync(STATE_FILE)) return null;
   try {
@@ -570,19 +532,15 @@ async function main() {
   const sites = discoverDemoSites();
   if (!sites.length) throw new Error('No demo sites discovered; refusing to advance the checkpoint.');
   const sessions = collectActivitySessions(readAccessLines(), sites, since, until);
-  const digest = formatDigest(sessions, since, until);
+  const digest = formatDigest(sites, sessions, since, until);
 
   if (dryRun) {
     console.log(`${digest.subject}\n\n${digest.body}`);
     return;
   }
 
-  if (sessions.length) {
-    const confirmation = await sendGwsEmail(digest.subject, digest.body);
-    console.log(`${digest.subject}; ${confirmation.replace(/\s+/g, ' ')}`);
-  } else {
-    console.log(`No qualifying demo activity from ${since.toISOString()} to ${until.toISOString()}.`);
-  }
+  const confirmation = await sendGwsEmail(digest.subject, digest.body);
+  console.log(`${digest.subject}; ${confirmation.replace(/\s+/g, ' ')}`);
   saveState(until);
 }
 

@@ -222,13 +222,28 @@ describe('demo fleet activity digest', () => {
       new Date('2026-08-28T13:00:00.000Z')
     );
     const digest = formatDigest(
+      [site],
       sessions,
       new Date('2026-08-28T12:00:00.000Z'),
       new Date('2026-08-28T13:00:00.000Z')
     );
     expect(digest.subject).toContain('1 visitor session');
+    expect(digest.subject).toContain('1-demo activity');
+    expect(digest.body).toContain('Fleet websites covered: 1');
     expect(digest.body).toContain('Blue Anchor');
     expect(digest.body).toContain('- /ales');
     expect(digest.body).toContain('Successful backend sign-in: No');
+  });
+
+  test('includes every fleet website when there is no activity', () => {
+    const digest = formatDigest(
+      [site],
+      [],
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T14:00:00.000Z')
+    );
+    expect(digest.subject).toContain('1-demo activity: 0 visitor sessions');
+    expect(digest.body).toContain('1. Blue Anchor');
+    expect(digest.body).toContain('Activity: No qualifying activity');
   });
 });
