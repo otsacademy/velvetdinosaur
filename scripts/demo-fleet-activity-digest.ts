@@ -9,6 +9,11 @@ import {
 import { dirname, join } from 'node:path';
 import { formatDigest } from './lib/demo-activity-format';
 import { collectTrafficAudit } from './lib/demo-activity-audit';
+import { collectRecipientActivity } from './lib/demo-recipient-activity';
+import {
+  readOrCreateRecipientSecret,
+  readRecipientRegistry
+} from './lib/demo-recipient-links';
 
 export { formatDigest } from './lib/demo-activity-format';
 
@@ -545,7 +550,32 @@ async function main() {
     isSecurityProbePath,
     visitorFingerprint
   });
-  const digest = formatDigest(sites, sessions, trafficAudit, since, until);
+  const recipientRegistry = readRecipientRegistry();
+  const recipientSecret = readOrCreateRecipientSecret();
+  const recipientActivity = collectRecipientActivity(
+    entries,
+    sites,
+    sessions,
+    recipientRegistry.recipients,
+    recipientSecret,
+    since,
+    until,
+    {
+      ignoredIps: excludedIps(),
+      isAutomatedUserAgent,
+      isSecurityProbePath,
+      visitorFingerprint
+    }
+  );
+  const digest = formatDigest(
+    sites,
+    sessions,
+    trafficAudit,
+    recipientRegistry.recipients,
+    recipientActivity,
+    since,
+    until
+  );
 
   if (dryRun) {
     console.log(`${digest.subject}\n\n${digest.body}`);
