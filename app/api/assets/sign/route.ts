@@ -1,17 +1,14 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { getAuth } from '@/lib/auth';
+import { authorize } from '@/lib/authz';
 import { connectDB } from '@/lib/db';
 import { Asset } from '@/models/Asset';
 import { createPresignedDownload } from '@/lib/presign';
 
 export async function GET(request: Request) {
   unstable_noStore();
-  const auth = getAuth();
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+  const gate = await authorize(request, 'session');
+  if (!gate.ok) return gate.response;
 
   const url = new URL(request.url);
   const key = url.searchParams.get('key') || '';

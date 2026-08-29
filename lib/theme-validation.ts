@@ -1,5 +1,6 @@
 import type { ThemeStatePayload } from 'tweakcn-ui';
 import { parseThemePayload } from 'tweakcn-ui/server';
+import { extractTypographyOverrides, mergeTypographyTokens } from '@/lib/theme-typography';
 import { DEFAULT_THEME_PAYLOAD } from '@/lib/theme-default';
 
 export type ThemePayload = ThemeStatePayload;
@@ -64,7 +65,9 @@ export function validateTheme(payload: unknown): ThemeValidationResult {
   try {
     const candidate = coerceThemeCandidate(payload);
     const parsed = parseThemePayload(JSON.stringify(candidate));
-    return { ok: true, payload: parsed };
+    const overrides = extractTypographyOverrides(payload);
+    const nextPayload = mergeTypographyTokens(parsed, overrides);
+    return { ok: true, payload: nextPayload };
   } catch (error) {
     const zodErrors = extractZodErrors(error);
     if (zodErrors && zodErrors.length > 0) {

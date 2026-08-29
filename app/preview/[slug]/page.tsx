@@ -5,18 +5,17 @@ import { getAuth } from '@/lib/auth';
 import { config } from '@/puck/registry';
 import { getDraftPageData } from '@/lib/pages';
 import { getDraftSiteChrome } from '@/lib/site-chrome';
+import { adminHomePath, isAdminOnly } from '@/lib/site-config';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
+import { SiteDesignFrame } from '@/components/site/site-design-frame';
 
-type PreviewPageParams = { slug: string };
-
-export default async function PreviewPage({
-  params
-}: {
-  params: PreviewPageParams | Promise<PreviewPageParams>;
-}) {
+export default async function PreviewPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (isAdminOnly()) {
+    redirect(adminHomePath);
+  }
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: await headers() });
-  const resolvedParams = await Promise.resolve(params);
+  const resolvedParams = await params;
   if (!session) {
     redirect(`/sign-in?next=/preview/${encodeURIComponent(resolvedParams.slug)}`);
   }
@@ -27,19 +26,11 @@ export default async function PreviewPage({
   const isChrome = isSiteChromeSlug(slug);
   const chrome = isChrome ? null : await getDraftSiteChrome();
 
-  const content = isChrome ? (
-    <Render config={config} data={data} />
-  ) : (
-    <main className="container space-y-16 py-16">
-      <Render config={config} data={data} />
-    </main>
-  );
-
   return (
-    <>
+    <SiteDesignFrame>
       {chrome ? <Render config={config} data={chrome.header} /> : null}
-      {content}
+      <Render config={config} data={data} />
       {chrome ? <Render config={config} data={chrome.footer} /> : null}
-    </>
+    </SiteDesignFrame>
   );
 }

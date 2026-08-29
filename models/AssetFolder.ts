@@ -6,10 +6,10 @@ import { Schema, model, models } from 'mongoose';
 const AssetFolderSchema = new Schema(
   {
     path: { type: String, required: true, unique: true },
-    label: { type: String }
+    label: { type: String },
+    description: { type: String }
   },
   { timestamps: true }
 );
 
 export const AssetFolder = models.AssetFolder || model('AssetFolder', AssetFolderSchema);
-

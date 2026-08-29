@@ -11,6 +11,7 @@ const reuseExistingServer = process.env.PLAYWRIGHT_REUSE_SERVER === '1' && !proc
 
 export default defineConfig({
   testDir: 'tests/visual',
+  workers: 1,
   snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}-{projectName}{ext}',
   timeout: 60_000,
   expect: {

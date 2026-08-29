@@ -3,7 +3,7 @@
 import { Fragment, Suspense, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronRight, ExternalLink, Menu } from 'lucide-react';
+import { ChevronRight, ExternalLink, LifeBuoy, Menu } from 'lucide-react';
 import { SessionControls } from '@/components/auth/session-controls.client';
 import { SauroCmsBadge } from '@/components/admin/sauro-cms-badge';
 import { AdminReviewModeSwitch } from '@/components/review/admin-review-mode-switch.client';
@@ -36,6 +36,20 @@ type BreadcrumbItemValue = {
   label: string;
   href?: string;
 };
+
+const CORE_NAV_GROUPS: SidebarNavGroup[] = [
+  {
+    label: 'Help',
+    items: [
+      {
+        label: 'Customer Portal',
+        href: '/edit/support',
+        icon: LifeBuoy,
+        adminOnly: true
+      }
+    ]
+  }
+];
 
 function normalizeEditTab(value: string | null): ContentTab {
   if (value && CONTENT_TABS.includes(value)) return value;
@@ -243,6 +257,7 @@ function BreadcrumbBar({
 
 export function AdminWorkspaceShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || '/';
+  const isStorePreview = pathname === '/admin/store/preview';
   const currentEditTab: ContentTab =
     typeof window === 'undefined'
       ? CONTENT_TABS[0]
@@ -252,6 +267,7 @@ export function AdminWorkspaceShell({ children }: { children: React.ReactNode })
   const [canManageReviewMode, setCanManageReviewMode] = useState(false);
 
   useEffect(() => {
+    if (isStorePreview) return;
     let active = true;
     void (async () => {
       try {
@@ -269,21 +285,33 @@ export function AdminWorkspaceShell({ children }: { children: React.ReactNode })
     return () => {
       active = false;
     };
-  }, []);
+  }, [isStorePreview]);
 
   const canSeeAdminNav =
     isAdmin || FORCE_ADMIN_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
 
   const navGroups = useMemo(() => {
-    return NAV_GROUPS
-      .map((group) => ({
-        ...group,
-        items: group.items.filter(
-          (item) => (!item.adminOnly || canSeeAdminNav) && (!item.requiresReviewModeAccess || canManageReviewMode)
-        )
-      }))
-      .filter((group) => group.items.length > 0);
-  }, [canManageReviewMode, canSeeAdminNav]);
+    const siteNavGroups = NAV_GROUPS.map((group) => ({
+      ...group,
+      items: group.items.filter(
+        (item) => (!item.adminOnly || canSeeAdminNav) && (!item.requiresReviewModeAccess || canManageReviewMode)
+      )
+    }));
+    const coreNavGroups = CORE_NAV_GROUPS.map((group) => ({
+      ...group,
+      items: group.items.filter((item) => !item.adminOnly || isAdmin)
+    }));
+
+    return [...siteNavGroups, ...coreNavGroups].filter((group) => group.items.length > 0);
+  }, [canManageReviewMode, canSeeAdminNav, isAdmin]);
+
+  if (isStorePreview) {
+    return (
+      <div className="min-h-screen bg-[var(--vd-bg)] text-[var(--vd-fg)]" data-store-preview-surface>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--vd-muted)]/15 text-[var(--vd-fg)]">

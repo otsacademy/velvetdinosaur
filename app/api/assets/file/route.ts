@@ -5,6 +5,11 @@ import { Readable } from 'node:stream';
 import { connectDB } from '@/lib/db';
 import { Asset } from '@/models/Asset';
 import { getR2Client } from '@/lib/r2';
+import {
+  normalizeAssetImageIntent,
+  selectAssetVariantKey,
+  type AssetImageVariantMap
+} from '@/lib/assets/image-variants';
 
 async function headObject(bucket: string, key: string) {
   const client = getR2Client();
@@ -49,7 +54,7 @@ function inferNameFromKey(key: string) {
 function isImmutableUploadKey(key: string) {
   const filename = key.split('/').pop() || '';
   // Matches "...-<uuid>.ext" used by our upload pipeline.
-  return /-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.[a-z0-9]+$/i.test(filename);
+  return /-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?:--[a-z]+)?\.[a-z0-9]+$/i.test(filename);
 }
 
 function toWebStream(body: unknown) {
@@ -66,11 +71,13 @@ function toWebStream(body: unknown) {
 export async function GET(request: Request) {
   unstable_noStore();
   const url = new URL(request.url);
-  const key = (url.searchParams.get('key') || '')
+  let key = (url.searchParams.get('key') || '')
     .trim()
     .replace(/\\/g, '/')
     .replace(/\/{2,}/g, '/')
     .replace(/[\\/]+$/, '');
+  const requestedKey = key;
+  const intent = normalizeAssetImageIntent(url.searchParams.get('intent'));
   if (!key) {
     // Next may (incorrectly) prefetch internal URLs as RSC requests, dropping query params.
     // Returning 204 avoids noisy console errors without masking real missing-key issues.
@@ -91,10 +98,24 @@ export async function GET(request: Request) {
 
   const conn = await connectDB();
   let bucket = defaultBucket || undefined;
+  let hasAssetRecord = false;
   if (conn) {
-    const asset = (await Asset.findOne({ key }).lean().exec()) as { bucket?: string } | null;
+    const asset = (await Asset.findOne({ key })
+      .select({ bucket: 1, key: 1, fallbackKey: 1, variants: 1 })
+      .lean()
+      .exec()) as {
+      bucket?: string;
+      key?: string;
+      fallbackKey?: string;
+      variants?: AssetImageVariantMap | null;
+    } | null;
     if (asset) {
+      hasAssetRecord = true;
       bucket = asset.bucket || defaultBucket || undefined;
+      const variantKey = selectAssetVariantKey(asset, intent);
+      if (variantKey?.startsWith('uploads/')) {
+        key = variantKey;
+      }
     }
   }
 
@@ -109,18 +130,21 @@ export async function GET(request: Request) {
   }
 
   // If DB is up, backfill a minimal record so future list/search/edit works.
-  if (conn) {
+  if (conn && key === requestedKey) {
+    const setFields: Record<string, unknown> = { bucket };
+    if (typeof head.ContentType === 'string') setFields.mime = head.ContentType;
+    if (typeof head.ContentLength === 'number') setFields.size = head.ContentLength;
+    if (typeof head.ETag === 'string') setFields.etag = head.ETag;
+
+    const setOnInsertFields: Record<string, unknown> = { key };
+    const inferredFolder = inferFolderFromKey(key);
+    const inferredName = inferNameFromKey(key);
+    if (inferredFolder) setOnInsertFields.folder = inferredFolder;
+    if (inferredName) setOnInsertFields.name = inferredName;
+
     await Asset.findOneAndUpdate(
       { key },
-      {
-        key,
-        bucket,
-        folder: inferFolderFromKey(key),
-        name: inferNameFromKey(key),
-        mime: typeof head.ContentType === 'string' ? head.ContentType : undefined,
-        size: typeof head.ContentLength === 'number' ? head.ContentLength : undefined,
-        etag: typeof head.ETag === 'string' ? head.ETag : undefined
-      },
+      hasAssetRecord ? { $set: setFields } : { $set: setFields, $setOnInsert: setOnInsertFields },
       { upsert: true }
     );
   }

@@ -3,15 +3,6 @@ import fs from 'node:fs/promises';
 import type { ThemeStatePayload } from 'tweakcn-ui';
 import { REGISTRY_ROOT } from '@/lib/installer-paths';
 
-export type ThemePayload = ThemeStatePayload;
-
-type ThemePaths = {
-  baseDir: string;
-  currentPath: string;
-  defaultPath: string;
-  lastGoodPath: string;
-};
-
 // Simple cross-process lock using an atomic lockfile. Prevents concurrent writers
 // from corrupting theme artifacts. Fails closed if lock cannot be acquired.
 async function withFileLock<T>(lockPath: string, fn: () => Promise<T>) {
@@ -44,6 +35,15 @@ async function withFileLock<T>(lockPath: string, fn: () => Promise<T>) {
     } catch {}
   }
 }
+
+export type ThemePayload = ThemeStatePayload;
+
+type ThemePaths = {
+  baseDir: string;
+  currentPath: string;
+  defaultPath: string;
+  lastGoodPath: string;
+};
 
 function resolveBaseDir() {
   const canonical = process.env.CANONICAL_ORIGIN;

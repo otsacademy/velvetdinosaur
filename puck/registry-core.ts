@@ -190,18 +190,25 @@ export function withLayout<T>(component: T): T {
   } as T;
 }
 
-const renderHero: PuckComponent<HeroBlockProps> = (props) =>
+type FleetHeroProps = HeroBlockProps & {
+  accent?: string;
+  logoUrl?: string;
+  logoAlt?: string;
+};
+
+const renderHero: PuckComponent<FleetHeroProps> = (props) =>
   HeroBlock({
     eyebrow: props.eyebrow,
     title: props.title,
+    accent: props.accent,
     subtitle: props.subtitle,
+    logoUrl: props.logoUrl,
+    logoAlt: props.logoAlt,
     primaryLabel: props.primaryLabel,
     secondaryLabel: props.secondaryLabel,
     primaryLink: props.primaryLink,
-    secondaryLink: props.secondaryLink,
-    imageSrc: props.imageSrc,
-    imageAlt: props.imageAlt
-  });
+    secondaryLink: props.secondaryLink
+  } as HeroBlockProps);
 
 const renderFeatureGrid: PuckComponent<FeatureGridBlockProps> = (props) =>
   FeatureGridBlock({ heading: props.heading, items: props.items });
@@ -210,13 +217,7 @@ const renderTextBlock: PuckComponent<TextBlockProps> = (props) =>
   TextBlock({ heading: props.heading, body: props.body });
 
 const renderImageBlock: PuckComponent<ImageBlockProps> = (props) =>
-  createElement(ImageBlock, {
-    src: props.src,
-    alt: props.alt,
-    caption: props.caption,
-    loading: props.loading,
-    fetchPriority: props.fetchPriority
-  });
+  createElement(ImageBlock, { src: props.src, alt: props.alt, caption: props.caption });
 
 const renderCTAStrip: PuckComponent<CTAStripProps> = (props) =>
   CTAStrip({
@@ -234,9 +235,10 @@ export const coreComponents: Config['components'] = {
     fields: {
       eyebrow: { type: 'text', contentEditable: true },
       title: { type: 'text', contentEditable: true },
+      accent: { type: 'text', contentEditable: true },
       subtitle: { type: 'textarea', contentEditable: true },
-      imageSrc: { type: 'text' },
-      imageAlt: { type: 'text' },
+      logoUrl: { type: 'text' },
+      logoAlt: { type: 'text' },
       primaryLabel: { type: 'text', contentEditable: true },
       primaryLink: {
         type: 'object',
@@ -269,19 +271,20 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      eyebrow: 'Demonstration page',
-      title: 'A polished starting point for a fictional service business.',
+      eyebrow: 'Your Brand',
+      title: 'Design-forward websites in days, not months.',
+      accent: '',
       subtitle:
-        'Use neutral placeholder copy and imagery here, then replace it with the real brand once the project starts.',
-      imageSrc: '/assets/hero-panel.svg',
-      imageAlt: 'Abstract placeholder visual',
-      primaryLabel: 'Primary action',
+        'A modular Sauro CMS-powered system with shadcn components, Tailwind 4 tokens, and R2 storage baked in.',
+      logoUrl: '',
+      logoAlt: '',
+      primaryLabel: 'Launch now',
       primaryLink: {
         href: '',
         target: '_self',
         rel: ''
       },
-      secondaryLabel: 'Secondary action',
+      secondaryLabel: 'View blocks',
       secondaryLink: {
         href: '',
         target: '_self',
@@ -310,21 +313,21 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      heading: 'Three clear selling points',
+      heading: 'Everything you need to ship fast',
       items: [
         {
-          title: 'Clear offer',
-          description: 'Explain the core service in a way a new visitor can understand in seconds.',
+          title: 'Sauro CMS-ready blocks',
+          description: 'All blocks are shadcn-based and editor-safe.',
           icon: 'sparkles'
         },
         {
-          title: 'Distinct point of view',
-          description: 'Use this block to show what makes the business feel considered rather than interchangeable.',
+          title: 'Design tokens',
+          description: 'OKLCH tokens editable from the admin panel.',
           icon: 'layers'
         },
         {
-          title: 'Trust and clarity',
-          description: 'Turn vague promises into practical reasons someone would enquire.',
+          title: 'Secure by default',
+          description: 'BetterAuth + per-site Mongo users + R2 uploads.',
           icon: 'shield'
         }
       ]
@@ -337,8 +340,8 @@ export const coreComponents: Config['components'] = {
       body: { type: 'textarea', contentEditable: true }
     },
     defaultProps: {
-      heading: 'Use this section for the fuller explanation',
-      body: 'A short paragraph here can introduce the studio, explain the approach, or add context that would feel too heavy inside the hero.'
+      heading: 'Make it yours',
+      body: 'Swap blocks, edit copy, and publish instantly. Everything persists in MongoDB so you can version and roll back.'
     },
     render: renderTextBlock
   },
@@ -349,9 +352,9 @@ export const coreComponents: Config['components'] = {
       caption: { type: 'text', contentEditable: true }
     },
     defaultProps: {
-      src: '/assets/hero-panel.svg',
-      alt: 'Neutral placeholder visual',
-      caption: 'Replace this with your own photography, product imagery, or campaign artwork.'
+      src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Team collaborating',
+      caption: 'Drop in R2-hosted assets or external images.'
     },
     render: renderImageBlock
   },
@@ -376,9 +379,9 @@ export const coreComponents: Config['components'] = {
       }
     },
     defaultProps: {
-      title: 'Ready for the real version?',
-      subtitle: 'Swap out the placeholder copy, bring in proper imagery, and shape the page around the actual business.',
-      buttonLabel: 'Call to action',
+      title: 'Ready to ship your next site?',
+      subtitle: 'Spin up another site in minutes with the same core stack.',
+      buttonLabel: 'Create a new site',
       buttonLink: {
         href: '',
         target: '_self',

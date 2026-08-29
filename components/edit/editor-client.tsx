@@ -19,6 +19,7 @@ import { PuckEditorShell } from '@/components/puck/editor/PuckEditorShell';
 import { EditorFieldLabel } from '@/components/puck/editor/editor-field-label';
 import { CanvasImageDropZone } from '@/components/puck/editor/canvas-image-drop-zone.client';
 import { InlineTouchEditingSupport } from '@/components/puck/editor/inline-touch-editing-support.client';
+import { CanvasInteractionGuard } from '@/components/puck/editor/canvas-interaction-guard.client';
 import { ThemeEditorDrawer } from '@/components/edit/theme-editor-drawer.client';
 import { isSiteChromeSlug } from '@/lib/site-chrome-slugs';
 import { SiteDesignFrame } from '@/components/site/site-design-frame';
@@ -153,12 +154,14 @@ export function EditorClient({
   const isGlobal = isSiteChromeSlug(slug);
   const PreviewFrame = useCallback(
     ({ children }: { children: React.ReactNode }) => (
-      <SiteDesignFrame>
-        <InlineTouchEditingSupport />
-        {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.header} /> : null}
-        {children}
-        {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.footer} /> : null}
-      </SiteDesignFrame>
+      <CanvasInteractionGuard>
+        <SiteDesignFrame>
+          <InlineTouchEditingSupport />
+          {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.header} /> : null}
+          {children}
+          {!isGlobal && initialChrome ? <Render config={editorConfig} data={initialChrome.footer} /> : null}
+        </SiteDesignFrame>
+      </CanvasInteractionGuard>
     ),
     [initialChrome, isGlobal]
   );

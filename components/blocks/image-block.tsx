@@ -1,22 +1,21 @@
 'use client';
 
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { EditableImage, useImageEditSettings } from '@/components/puck/blocks/editable-image.client';
+import {
+  EditableImage,
+  useImageEditSettings
+} from '@/components/puck/blocks/editable-image.client';
 
 export type ImageBlockProps = {
   src?: string;
   alt?: string;
   caption?: string;
-  loading?: 'lazy' | 'eager';
-  fetchPriority?: 'high' | 'low' | 'auto';
 };
 
 export function ImageBlock({
-  src = '/assets/hero-panel.svg',
-  alt = 'Neutral placeholder visual',
-  caption = 'Replace this with your own photography, product imagery, or campaign artwork.',
-  loading = 'lazy',
-  fetchPriority
+  src = '/images/placeholder.svg',
+  alt = 'Placeholder image',
+  caption = 'Drop in R2-hosted assets or external images.'
 }: ImageBlockProps) {
   const settings = useImageEditSettings('src');
   const width = typeof settings.width === 'number' ? Math.min(100, Math.max(20, settings.width)) : 100;
@@ -45,7 +44,6 @@ export function ImageBlock({
             optimized={{
               fill: true,
               sizes: '(max-width: 768px) 100vw, 1200px',
-              priority: loading === 'eager' || fetchPriority === 'high',
               imageOptions: { width: 1200, height: 800, fit: 'cover' }
             }}
           />

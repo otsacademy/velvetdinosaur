@@ -105,6 +105,31 @@ test('email templates render without a Server Components failure', async ({ page
   expect(browserErrors).toEqual([]);
 });
 
+test('component store renders a real local preview without an external API key', async ({ page }) => {
+  const browserErrors: string[] = [];
+  page.on('console', (message) => {
+    if (message.type() === 'error') browserErrors.push(message.text());
+  });
+  page.on('pageerror', (error) => browserErrors.push(error.message));
+  await mockProfile(page, true);
+
+  const response = await page.goto('/admin/store/preview?id=testimonials', {
+    waitUntil: 'domcontentloaded'
+  });
+
+  expect(response?.status()).toBe(200);
+  await expect(page.getByRole('heading', { name: 'Testimonials', level: 1 })).toBeVisible({
+    timeout: 15_000
+  });
+  await expect(page.getByRole('heading', { name: 'Loved by fast-moving teams' })).toBeVisible({
+    timeout: 15_000
+  });
+  await expect(page.getByRole('navigation', { name: 'Admin navigation' })).toHaveCount(0);
+  await expect(page.getByText('Central store preview is not configured')).toHaveCount(0);
+  await expect(page.getByText('Store previews are disabled for this build.')).toHaveCount(0);
+  expect(browserErrors).toEqual([]);
+});
+
 test('review controls do not repeat the capability request already resolved by the profile', async ({ page }) => {
   let capabilityRequests = 0;
   await page.route('**/api/account/profile', async (route) => {

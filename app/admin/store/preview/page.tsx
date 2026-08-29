@@ -1,6 +1,7 @@
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getAuth } from '@/lib/auth';
+import { StorePreview } from '@/components/admin/store/store-preview';
 
 type PreviewPageProps = {
   searchParams?: Promise<{ id?: string | string[] }>;
@@ -42,12 +43,7 @@ export default async function StorePreviewPage({ searchParams }: PreviewPageProp
 
   return (
     <main className="min-h-screen bg-[var(--vd-bg)]">
-      <section className="container py-12">
-        <p className="text-sm text-[var(--vd-muted-fg)]">
-          Central store preview is not configured. Set <code>VD_STORE_SITE_URL</code> (or{' '}
-          <code>VD_STORE_API_URL</code>) to enable preview redirects.
-        </p>
-      </section>
+      <StorePreview id={id} />
     </main>
   );
 }

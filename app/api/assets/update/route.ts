@@ -2,19 +2,15 @@ import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
 import { Asset } from '@/models/Asset';
+import { clamp01 } from '@/lib/media/focal-point';
+import { normalizeAssetTags } from '@/lib/assets/tags';
+import { isEditorSmokeRequest } from '@/lib/security/editor-smoke';
 
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store',
   Pragma: 'no-cache',
   Expires: '0'
 };
-const EDITOR_SMOKE_TOKEN = process.env.VD_EDITOR_SMOKE_TOKEN;
-
-function isSmokeRequest(request: Request) {
-  if (!EDITOR_SMOKE_TOKEN) return false;
-  const token = request.headers.get('x-vd-editor-smoke');
-  return token === EDITOR_SMOKE_TOKEN;
-}
 
 function slugifySegment(value: string) {
   const trimmed = value.trim().toLowerCase();
@@ -35,12 +31,25 @@ function normalizeFolderPath(input: string) {
 export async function POST(request: Request) {
   const auth = getAuth();
   const session = await auth.api.getSession({ headers: request.headers });
-  if (!session && !isSmokeRequest(request)) {
+  const isSmoke = isEditorSmokeRequest(request.headers);
+  if (!session && !isSmoke) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: NO_STORE_HEADERS });
   }
 
   const body = (await request.json().catch(() => null)) as
-    | { key?: unknown; name?: unknown; caption?: unknown; alt?: unknown; folder?: unknown; width?: unknown; height?: unknown }
+    | {
+        key?: unknown;
+        name?: unknown;
+        caption?: unknown;
+        alt?: unknown;
+        folder?: unknown;
+        width?: unknown;
+        height?: unknown;
+        focalX?: unknown;
+        focalY?: unknown;
+        altNeedsReview?: unknown;
+        tags?: unknown;
+      }
     | null;
   const key = typeof body?.key === 'string' ? body.key.trim() : '';
   if (!key || !key.startsWith('uploads/')) {
@@ -53,11 +62,43 @@ export async function POST(request: Request) {
   const hasFolder = Object.prototype.hasOwnProperty.call(body ?? {}, 'folder');
   const hasWidth = Object.prototype.hasOwnProperty.call(body ?? {}, 'width');
   const hasHeight = Object.prototype.hasOwnProperty.call(body ?? {}, 'height');
-  if (!hasName && !hasCaption && !hasAlt && !hasFolder && !hasWidth && !hasHeight) {
+  const hasFocalX = Object.prototype.hasOwnProperty.call(body ?? {}, 'focalX');
+  const hasFocalY = Object.prototype.hasOwnProperty.call(body ?? {}, 'focalY');
+  const hasAltNeedsReview = Object.prototype.hasOwnProperty.call(body ?? {}, 'altNeedsReview');
+  const hasTags = Object.prototype.hasOwnProperty.call(body ?? {}, 'tags');
+  if (
+    !hasName &&
+    !hasCaption &&
+    !hasAlt &&
+    !hasFolder &&
+    !hasWidth &&
+    !hasHeight &&
+    !hasFocalX &&
+    !hasFocalY &&
+    !hasAltNeedsReview &&
+    !hasTags
+  ) {
     return NextResponse.json({ error: 'No updates provided' }, { status: 400, headers: NO_STORE_HEADERS });
   }
 
-  const updates: { name?: string; caption?: string; alt?: string; folder?: string; width?: number; height?: number } = {};
+  type AssetUpdates = {
+    name?: string;
+    caption?: string;
+    alt?: string;
+    altSource?: 'manual' | 'auto';
+    altGeneratedAt?: Date | null;
+    altModel?: string | null;
+    altNeedsReview?: boolean;
+    tags?: string[];
+    folder?: string;
+    width?: number;
+    height?: number;
+    focalX?: number;
+    focalY?: number;
+    focalSetAt?: Date;
+    focalSetBy?: string;
+  };
+  const updates: AssetUpdates = {};
   if (hasName) {
     const nextName = typeof body?.name === 'string' ? body.name.trim() : '';
     updates.name = nextName || undefined;
@@ -68,7 +109,11 @@ export async function POST(request: Request) {
   }
   if (hasAlt) {
     const nextAlt = typeof body?.alt === 'string' ? body.alt.trim() : '';
-    updates.alt = nextAlt || undefined;
+    updates.alt = nextAlt || '';
+    updates.altSource = 'manual';
+    updates.altNeedsReview = false;
+    updates.altGeneratedAt = null;
+    updates.altModel = null;
   }
   if (hasFolder) {
     const nextFolder = typeof body?.folder === 'string' ? normalizeFolderPath(body.folder) : '';
@@ -82,10 +127,53 @@ export async function POST(request: Request) {
     const nextHeight = typeof body?.height === 'number' && Number.isFinite(body.height) ? Math.round(body.height) : NaN;
     updates.height = Number.isFinite(nextHeight) && nextHeight > 0 ? nextHeight : undefined;
   }
+  if (hasFocalX) {
+    const parsed = clamp01((body as { focalX?: unknown }).focalX);
+    if (parsed === undefined && body && Object.prototype.hasOwnProperty.call(body, 'focalX')) {
+      return NextResponse.json({ error: 'Invalid focalX value' }, { status: 400, headers: NO_STORE_HEADERS });
+    }
+    updates.focalX = parsed;
+  }
+  if (hasFocalY) {
+    const parsed = clamp01((body as { focalY?: unknown }).focalY);
+    if (parsed === undefined && body && Object.prototype.hasOwnProperty.call(body, 'focalY')) {
+      return NextResponse.json({ error: 'Invalid focalY value' }, { status: 400, headers: NO_STORE_HEADERS });
+    }
+    updates.focalY = parsed;
+  }
+  if (hasAltNeedsReview) {
+    updates.altNeedsReview =
+      typeof body?.altNeedsReview === 'boolean' ? body.altNeedsReview : false;
+  }
+  if (hasTags) {
+    updates.tags = normalizeAssetTags((body as { tags?: unknown }).tags);
+  }
+  if (hasFocalX || hasFocalY) {
+    updates.focalSetAt = new Date();
+    const sessionUser = (session as { user?: { id?: string } } | null)?.user;
+    updates.focalSetBy = sessionUser?.id || undefined;
+  }
 
-  if (isSmokeRequest(request) && !session) {
+  if (isSmoke && !session) {
     return NextResponse.json(
-      { key, name: updates.name, caption: updates.caption, alt: updates.alt, folder: updates.folder, width: updates.width, height: updates.height },
+      {
+        key,
+        name: updates.name,
+        caption: updates.caption,
+        alt: updates.alt,
+        altSource: updates.altSource,
+        altGeneratedAt: updates.altGeneratedAt,
+        altModel: updates.altModel,
+        altNeedsReview: updates.altNeedsReview,
+        tags: updates.tags,
+        folder: updates.folder,
+        width: updates.width,
+        height: updates.height,
+        focalX: updates.focalX,
+        focalY: updates.focalY,
+        focalSetAt: updates.focalSetAt,
+        focalSetBy: updates.focalSetBy
+      },
       { headers: NO_STORE_HEADERS }
     );
   }
@@ -97,7 +185,23 @@ export async function POST(request: Request) {
 
   const updated = (await Asset.findOneAndUpdate({ key }, updates, { new: true })
     .lean()
-    .exec()) as { name?: string; caption?: string; alt?: string; folder?: string; width?: number; height?: number } | null;
+    .exec()) as {
+    name?: string;
+    caption?: string;
+    alt?: string;
+    altSource?: 'manual' | 'auto';
+    altGeneratedAt?: Date | null;
+    altModel?: string | null;
+    altNeedsReview?: boolean;
+    tags?: string[];
+    folder?: string;
+    width?: number;
+    height?: number;
+    focalX?: number;
+    focalY?: number;
+    focalSetAt?: Date;
+    focalSetBy?: string;
+  } | null;
 
   if (!updated) {
     return NextResponse.json({ error: 'Not found' }, { status: 404, headers: NO_STORE_HEADERS });
@@ -109,9 +213,18 @@ export async function POST(request: Request) {
       name: updated.name,
       caption: updated.caption,
       alt: updated.alt,
+      altSource: updated.altSource,
+      altGeneratedAt: updated.altGeneratedAt,
+      altModel: updated.altModel,
+      altNeedsReview: updated.altNeedsReview,
+      tags: updated.tags,
       folder: updated.folder,
       width: updated.width,
-      height: updated.height
+      height: updated.height,
+      focalX: updated.focalX,
+      focalY: updated.focalY,
+      focalSetAt: updated.focalSetAt,
+      focalSetBy: updated.focalSetBy
     },
     { headers: NO_STORE_HEADERS }
   );

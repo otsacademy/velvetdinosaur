@@ -54,13 +54,19 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
+function finiteNumberOr(value: unknown, fallback: number) {
+  if (value === null || value === undefined || value === '') return fallback;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
 function normalizeSettings(value: CanvasImageSettings | undefined): Required<CanvasImageSettings> {
   return {
-    width: clamp(Number(value?.width) || 100, 20, 100),
+    width: clamp(finiteNumberOr(value?.width, 100), 20, 100),
     align: value?.align || 'center',
     aspectRatio: value?.aspectRatio || 'original',
-    focalX: clamp(Number(value?.focalX) || 50, 0, 100),
-    focalY: clamp(Number(value?.focalY) || 50, 0, 100)
+    focalX: clamp(finiteNumberOr(value?.focalX, 50), 0, 100),
+    focalY: clamp(finiteNumberOr(value?.focalY, 50), 0, 100)
   };
 }
 
@@ -254,6 +260,8 @@ function CanvasEditableImage({
   const [selected, setSelected] = React.useState(false);
   const [replaceOpen, setReplaceOpen] = React.useState(false);
   const [cropOpen, setCropOpen] = React.useState(false);
+  const [draftSettings, setDraftSettings] = React.useState(settings);
+  const draftSettingsRef = React.useRef(settings);
   const [draftWidth, setDraftWidth] = React.useState(settings.width);
   const [overlay, setOverlay] = React.useState<DOMRect | null>(null);
   const altPath = inferAltPath(sourcePath);
@@ -279,7 +287,11 @@ function CanvasEditableImage({
     toolbarPortalCleanupRef.current?.();
   }, []);
 
-  React.useEffect(() => setDraftWidth(settings.width), [settings.width]);
+  React.useEffect(() => {
+    draftSettingsRef.current = settings;
+    setDraftSettings(settings);
+    setDraftWidth(settings.width);
+  }, [settings]);
 
   const refreshOverlay = React.useCallback(() => {
     if (imageRef.current) setOverlay(imageRef.current.getBoundingClientRect());
@@ -353,13 +365,17 @@ function CanvasEditableImage({
   };
 
   const updateSettings = (next: Partial<CanvasImageSettings>) => {
+    const optimisticSettings = { ...draftSettingsRef.current, ...next };
+    draftSettingsRef.current = optimisticSettings;
+    setDraftSettings(optimisticSettings);
+    if (typeof next.width === 'number') setDraftWidth(next.width);
     replaceProps((props) => {
       const currentEdits = (props.__vdImageEdits as Record<string, CanvasImageSettings>) || {};
       return {
         ...props,
         __vdImageEdits: {
           ...currentEdits,
-          [sourcePath]: { ...normalizeSettings(currentEdits[sourcePath]), ...next }
+          [sourcePath]: { ...normalizeSettings(currentEdits[sourcePath]), ...optimisticSettings }
         }
       };
     });
@@ -405,7 +421,7 @@ function CanvasEditableImage({
     handle.addEventListener('pointercancel', finish, { once: true });
   };
 
-  const currentSettings = { ...settings, width: draftWidth };
+  const currentSettings = { ...draftSettings, width: draftWidth };
   const sharedProps = {
     src: src || '',
     alt: String(alt || ''),
@@ -495,7 +511,11 @@ function CanvasEditableImage({
             min="20"
             max="100"
             value={Math.round(draftWidth)}
-            onChange={(event) => setDraftWidth(clamp(Number(event.currentTarget.value) || 20, 20, 100))}
+            onChange={(event) =>
+              updateSettings({
+                width: clamp(Number(event.currentTarget.value) || 20, 20, 100)
+              })
+            }
             onBlur={() => updateSettings({ width: Math.round(draftWidth) })}
             onKeyDown={(event) => {
               if (event.key === 'Enter') updateSettings({ width: Math.round(draftWidth) });
@@ -522,14 +542,14 @@ function CanvasEditableImage({
           <div className="mb-2 font-medium">Aspect ratio</div>
           <div className="mb-3 flex gap-1">
             {(['original', '1/1', '4/3', '16/9'] as const).map((ratio) => (
-              <button key={ratio} type="button" className={cn('rounded border px-2 py-1.5', settings.aspectRatio === ratio ? 'border-[var(--vd-primary)] bg-[var(--vd-primary)] text-[var(--vd-primary-fg)]' : 'border-[var(--vd-border)]')} onClick={() => updateSettings({ aspectRatio: ratio })}>{ratio === 'original' ? 'Original' : ratio}</button>
+              <button key={ratio} type="button" className={cn('rounded border px-2 py-1.5', currentSettings.aspectRatio === ratio ? 'border-[var(--vd-primary)] bg-[var(--vd-primary)] text-[var(--vd-primary-fg)]' : 'border-[var(--vd-border)]')} onClick={() => updateSettings({ aspectRatio: ratio })}>{ratio === 'original' ? 'Original' : ratio}</button>
             ))}
           </div>
           <label className="block">Focal point X
-            <input className="mt-1 w-full accent-[var(--vd-primary)]" type="range" min="0" max="100" value={settings.focalX} onChange={(event) => updateSettings({ focalX: Number(event.currentTarget.value) })} />
+            <input className="mt-1 w-full accent-[var(--vd-primary)]" type="range" min="0" max="100" value={currentSettings.focalX} onInput={(event) => updateSettings({ focalX: Number(event.currentTarget.value) })} />
           </label>
           <label className="mt-2 block">Focal point Y
-            <input className="mt-1 w-full accent-[var(--vd-primary)]" type="range" min="0" max="100" value={settings.focalY} onChange={(event) => updateSettings({ focalY: Number(event.currentTarget.value) })} />
+            <input className="mt-1 w-full accent-[var(--vd-primary)]" type="range" min="0" max="100" value={currentSettings.focalY} onInput={(event) => updateSettings({ focalY: Number(event.currentTarget.value) })} />
           </label>
         </div>
       ) : null}

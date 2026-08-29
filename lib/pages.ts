@@ -28,10 +28,15 @@ import { isEditorSmokeEnabled } from '@/lib/security/editor-smoke';
 import { getUserProfileByUserId } from '@/lib/user-profile';
 const disablePageCache =
   process.env.VD_DISABLE_PAGE_CACHE === 'true' || process.env.VD_DISABLE_PAGE_CACHE === '1';
-const isLhci = process.env.VD_LHCI === 'true' || process.env.NEXT_PUBLIC_LHCI === 'true';
 const isEditorSmoke = isEditorSmokeEnabled();
 type CacheLifeProfile = 'default' | 'seconds' | 'minutes' | 'hours' | 'days' | 'weeks' | 'max';
 const smokePages = getPageSmokeStore(isEditorSmoke);
+async function connectPageDB() {
+  // Smoke mode is intentionally self-contained. Do not require or touch a
+  // production MongoDB when validating an offline template/workspace.
+  if (smokePages) return null;
+  return connectDB();
+}
 function applyCacheLife(profile: CacheLifeProfile) {
   if (disablePageCache) {
     cacheLife('seconds');
@@ -80,7 +85,7 @@ function setFallbackPagePayload(
   existing.data = value;
 }
 async function getPublishedPageDataUncached(slug: string): Promise<Data> {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const page = ensureSmokePage(smokePages, slug);
@@ -101,9 +106,6 @@ async function getPublishedPageDataCached(slug: string): Promise<Data> {
   return getPublishedPageDataUncached(slug);
 }
 export async function getPublishedPageData(slug: string): Promise<Data> {
-  if (isLhci) {
-    return defaultData(slug);
-  }
   if (disablePageCache || isEditorSmoke) {
     applyNoStore();
     return getPublishedPageDataUncached(slug);
@@ -111,7 +113,7 @@ export async function getPublishedPageData(slug: string): Promise<Data> {
   return getPublishedPageDataCached(slug);
 }
 async function getDraftPageDataUncached(slug: string): Promise<Data> {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const page = ensureSmokePage(smokePages, slug);
@@ -132,9 +134,6 @@ async function getDraftPageDataCached(slug: string): Promise<Data> {
   return getDraftPageDataUncached(slug);
 }
 export async function getDraftPageData(slug: string): Promise<Data> {
-  if (isLhci) {
-    return defaultData(slug);
-  }
   if (disablePageCache || isEditorSmoke) {
     applyNoStore();
     return getDraftPageDataUncached(slug);
@@ -142,7 +141,7 @@ export async function getDraftPageData(slug: string): Promise<Data> {
   return getDraftPageDataCached(slug);
 }
 async function getPageRecordUncached(slug: string): Promise<PageDoc | null> {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       return getSmokePage(smokePages, slug);
@@ -174,7 +173,7 @@ export async function saveDraftPageData(
   actorUserId?: string | null,
   ownershipOverride?: PageOwnershipInput
 ) {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const now = new Date();
@@ -248,7 +247,7 @@ export async function requestPagePublishApproval(
   }
 ) {
   const now = new Date();
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const existing = getSmokePage(smokePages, slug);
@@ -327,7 +326,7 @@ export async function publishDraftPageData(
   actorUserId?: string | null,
   options?: { expectedRequestId?: string | null; expectedBaseRevision?: number | null }
 ) {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const existing = getSmokePage(smokePages, slug);
@@ -423,7 +422,7 @@ export async function publishDraftPageData(
   return updated;
 }
 export async function resetDraftPageData(slug: string) {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const existing = getSmokePage(smokePages, slug);
@@ -466,7 +465,7 @@ export async function resetDraftPageData(slug: string) {
   return existing;
 }
 async function listPagesUncached(options: { includeEmpty?: boolean } = {}): Promise<PageListRecord[]> {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     if (smokePages) {
       const smoke = listSmokePages(smokePages);
@@ -562,7 +561,7 @@ export async function listPages(options: { includeEmpty?: boolean } = {}): Promi
   return listPagesCached(options);
 }
 async function listPublishedPageSlugsUncached() {
-  const conn = await connectDB();
+  const conn = await connectPageDB();
   if (!conn) {
     return [];
   }

@@ -9,6 +9,7 @@ export type PreviewRegistryEntry = {
 };
 
 export const previewRegistry: Record<string, PreviewRegistryEntry> = {
+  "testimonials": { id: "testimonials", type: "block", importModule: () => import("@/components/admin/store/previews/testimonials") },
   "shadcn-block-calendar-01": { id: "shadcn-block-calendar-01", type: "block", importModule: () => import("@/components/admin/store/previews/shadcn-block-calendar-01") },
   "shadcn-block-calendar-02": { id: "shadcn-block-calendar-02", type: "block", importModule: () => import("@/components/admin/store/previews/shadcn-block-calendar-02") },
   "shadcn-block-calendar-03": { id: "shadcn-block-calendar-03", type: "block", importModule: () => import("@/components/admin/store/previews/shadcn-block-calendar-03") },

@@ -31,7 +31,6 @@ export const RESERVED_FIRST_SEGMENTS: ReadonlySet<string> = new Set([
   ...ROBOTS_DISALLOW_SEGMENTS,
   'install',
   'contact',
-  'business-reviews',
   'legal',
   'stays',
   ...SITE_CHROME_SLUGS

@@ -184,7 +184,10 @@ function transformFieldWidget(propName: string, field: Field): Field {
   }
 
   if (field.type === 'text' || field.type === 'textarea') {
-    return { ...field, contentEditable: shouldUseInlineEditing(propName, field) } as Field;
+    return {
+      ...field,
+      contentEditable: shouldUseInlineEditing(propName, field)
+    } as Field;
   }
 
   return field;

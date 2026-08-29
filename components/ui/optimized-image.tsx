@@ -3,23 +3,10 @@ import * as React from 'react';
 import Image from 'next/image';
 import { resolveAssetImageUrl, type AssetImageOptions } from '@/lib/uploads';
 
-const configuredR2Host = (() => {
-  const base = process.env.NEXT_PUBLIC_R2_PUBLIC_BASE;
-  if (!base) return null;
-  try {
-    return new URL(base).hostname;
-  } catch {
-    return null;
-  }
-})();
-
 const OPTIMIZABLE_REMOTE_HOSTS = new Set([
-  ...(configuredR2Host ? [configuredR2Host] : []),
-  'images.unsplash.com',
   'img.youtube.com',
   'i.ytimg.com',
-  'yt3.ggpht.com',
-  'lh3.googleusercontent.com'
+  'images.unsplash.com'
 ]);
 
 type BaseProps = {
@@ -28,7 +15,6 @@ type BaseProps = {
   className?: string;
   style?: React.CSSProperties;
   sizes?: string;
-  preload?: boolean;
   priority?: boolean;
   quality?: number;
   loading?: 'eager' | 'lazy';
@@ -84,7 +70,6 @@ export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageP
     className,
     style,
     sizes,
-    preload,
     priority,
     quality,
     loading,
@@ -103,7 +88,6 @@ export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageP
   } = props;
   const safeSrc = src || '';
   const resolved = resolveAssetImageUrl(safeSrc, imageOptions);
-  const shouldPreload = preload ?? priority ?? false;
 
   if (!safeSrc || !isOptimizable(resolved)) {
     const dimProps = props.fill
@@ -116,8 +100,8 @@ export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageP
         alt={alt}
         className={className}
         style={style}
-        loading={loading ?? (shouldPreload ? 'eager' : 'lazy')}
-        fetchPriority={fetchPriority ?? (shouldPreload ? 'high' : undefined)}
+        loading={loading ?? (priority ? 'eager' : 'lazy')}
+        fetchPriority={fetchPriority ?? (priority ? 'high' : undefined)}
         decoding={decoding ?? 'async'}
         referrerPolicy={referrerPolicy}
         onError={onError}
@@ -143,9 +127,9 @@ export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageP
         className={className}
         style={style}
         sizes={sizes || '100vw'}
-        preload={shouldPreload || undefined}
+        priority={priority}
         quality={quality}
-        loading={shouldPreload ? undefined : loading}
+        loading={priority ? undefined : loading}
         decoding={decoding}
         fetchPriority={fetchPriority}
         referrerPolicy={referrerPolicy}
@@ -171,9 +155,9 @@ export const OptimizedImage = React.forwardRef<HTMLImageElement, OptimizedImageP
       className={className}
       style={style}
       sizes={sizes}
-      preload={shouldPreload || undefined}
+      priority={priority}
       quality={quality}
-      loading={shouldPreload ? undefined : loading}
+      loading={priority ? undefined : loading}
       decoding={decoding}
       fetchPriority={fetchPriority}
       referrerPolicy={referrerPolicy}

@@ -1,9 +1,8 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { getAuth } from '@/lib/auth';
+import { authorize } from '@/lib/authz';
 import { getRequestOrigin, signThemeEditorJwt } from '@/lib/theme-editor-jwt';
 import { getThemeEditorOrigin } from '@/lib/theme-editor-cors';
-import { getUserRole } from '@/lib/roles';
 
 const THEME_EDITOR_COOKIE = 'vd_theme_token';
 const THEME_EDITOR_TTL_SECONDS = 60 * 10;
@@ -50,24 +49,16 @@ function resolveSameSite(themeEditorOrigin: string, siteOrigin: string) {
 
 export async function GET(request: Request) {
   unstable_noStore();
-  const auth = getAuth();
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-  const userId = (session as { user?: { id?: string } } | null)?.user?.id || null;
-  const role = await getUserRole(userId);
-  if (role !== 'admin' && role !== 'user') {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
-  }
+  const gate = await authorize(request, 'role:user');
+  if (!gate.ok) return gate.response;
+  const actor = gate.actor;
 
   const themeEditorOrigin = getThemeEditorOrigin();
   const siteOrigin = (process.env.CANONICAL_ORIGIN || getRequestOrigin(request)).replace(/\/+$/, '');
   const returnUrl = resolveReturnUrl(siteOrigin, new URL(request.url).searchParams.get('returnUrl'));
 
-  const user = (session as { user?: { id?: string; email?: string } }).user;
-  const userIdentifier = user?.id || user?.email || 'unknown';
-  const editorRole = role === 'admin' ? 'admin' : 'user';
+  const userIdentifier = actor?.userId || actor?.email || 'unknown';
+  const editorRole = actor?.role === 'admin' ? 'admin' : 'user';
 
   let token: string;
   try {

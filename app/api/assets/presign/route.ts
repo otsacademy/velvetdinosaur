@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { createPresignedUpload } from '@/lib/presign';
 import { v4 as uuidv4 } from 'uuid';
+import { clamp01 } from '@/lib/media/focal-point';
+import { normalizeAssetTags } from '@/lib/assets/tags';
+import { isImageUploadMime } from '@/lib/assets/image-variants';
 
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store',
@@ -42,12 +45,21 @@ export async function POST(request: Request) {
   const body = await request.json();
   const filename = body?.filename || 'upload';
   const contentType = body?.contentType || 'application/octet-stream';
+  if (isImageUploadMime(contentType, filename)) {
+    return NextResponse.json(
+      { error: 'Image uploads must use server-side processing.' },
+      { status: 400, headers: NO_STORE_HEADERS }
+    );
+  }
   const rawName = typeof body?.name === 'string' ? body.name.trim() : '';
   const rawCaption = typeof body?.caption === 'string' ? body.caption.trim() : '';
   const rawAlt = typeof body?.alt === 'string' ? body.alt.trim() : '';
   const rawFolder = body?.folder;
   const rawWidth = typeof body?.width === 'number' ? body.width : undefined;
   const rawHeight = typeof body?.height === 'number' ? body.height : undefined;
+  const rawTags = body?.tags;
+  const focalX = clamp01(body?.focalX);
+  const focalY = clamp01(body?.focalY);
   const name = rawName || stripExtension(filename);
   const caption = rawCaption || undefined;
   const alt = rawAlt || undefined;
@@ -55,6 +67,7 @@ export async function POST(request: Request) {
   const width = typeof rawWidth === 'number' && Number.isFinite(rawWidth) && rawWidth > 0 ? Math.round(rawWidth) : undefined;
   const height =
     typeof rawHeight === 'number' && Number.isFinite(rawHeight) && rawHeight > 0 ? Math.round(rawHeight) : undefined;
+  const tags = normalizeAssetTags(rawTags);
 
   const bucket = process.env.R2_BUCKET || process.env.R2_BUCKET_NAME;
   if (!bucket) {
@@ -80,6 +93,13 @@ export async function POST(request: Request) {
       name,
       caption,
       alt,
+      altSource: alt ? 'manual' : undefined,
+      altGeneratedAt: null,
+      altModel: null,
+      altNeedsReview: alt ? false : undefined,
+      tags,
+      focalX,
+      focalY,
       width,
       height,
       folder

@@ -2,7 +2,12 @@
 
 import { useCallback, useMemo, useState, type ChangeEvent } from 'react';
 import { toast } from 'sonner';
-import { buildAssetUrl, listAssets, uploadFile } from '@/lib/uploads';
+import { buildAssetUrl } from '@/lib/uploads';
+import {
+  listDemoEditorAssets,
+  resolveDemoEditorAssetUrl,
+  uploadDemoEditorFile,
+} from '@/lib/demo-editor-assets';
 import {
   inferAssetLabel,
   NEWS_MEDIA_FOLDER,
@@ -32,7 +37,7 @@ export function useDemoNewsMedia({ insertImageNode, insertFileLinkNode }: UseDem
   const loadMedia = useCallback(async () => {
     setMediaLoading(true);
     try {
-      const result = await listAssets({ folder: NEWS_MEDIA_FOLDER, limit: 80, sort: 'newest' });
+      const result = await listDemoEditorAssets({ folder: NEWS_MEDIA_FOLDER, limit: 80, sort: 'newest' });
       setMediaItems(result.items);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'Unable to load demo media.');
@@ -44,7 +49,7 @@ export function useDemoNewsMedia({ insertImageNode, insertFileLinkNode }: UseDem
   const uploadMedia = useCallback(async (file: File, mode: 'image' | 'file') => {
     setMediaBusy(true);
     try {
-      const uploaded = await uploadFile(file, {
+      const uploaded = await uploadDemoEditorFile(file, {
         folder: NEWS_MEDIA_FOLDER,
         name: file.name.replace(/\.[^/.]+$/, ''),
       });
@@ -72,7 +77,7 @@ export function useDemoNewsMedia({ insertImageNode, insertFileLinkNode }: UseDem
 
   const onSelectMediaItem = useCallback((item: MediaAssetItem) => {
     const label = inferAssetLabel(item);
-    const url = buildAssetUrl(item.key);
+    const url = resolveDemoEditorAssetUrl(item.key) || buildAssetUrl(item.key);
     if (mediaPickerMode === 'image') {
       insertImageNode(url, { alt: item.alt || label, caption: item.caption });
     } else {

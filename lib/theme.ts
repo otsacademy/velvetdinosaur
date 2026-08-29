@@ -1,9 +1,10 @@
 import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/theme.ts');
 
-import { connectDB } from '@/lib/db';
-import { Theme } from '@/models/Theme';
 import { cacheLife, cacheTag } from 'next/cache';
+import { connectDB } from '@/lib/db';
+import { cacheTags } from '@/lib/cache-tags';
+import { Theme } from '@/models/Theme';
 import type { ThemeStatePayload } from 'tweakcn-ui';
 import {
   readThemeCurrent,
@@ -18,7 +19,6 @@ import {
 import { validateTheme } from '@/lib/theme-validation';
 import { normalizeThemePayloadToOklch } from '@/lib/theme-normalize';
 import { DEFAULT_THEME_PAYLOAD } from '@/lib/theme-default';
-import { themeTags } from '@/lib/cache-tags';
 
 export type ThemePayload = ThemeStatePayload;
 
@@ -71,7 +71,11 @@ function pickValid(payload: unknown) {
 export async function getThemePayload(): Promise<ThemePayload | null> {
   'use cache';
   cacheLife('hours');
-  cacheTag(themeTags.current);
+  cacheTag(cacheTags.theme, cacheTags.themeDefault);
+  if (process.env.NEXT_PUBLIC_LHCI === 'true') {
+    return DEFAULT_THEME_PAYLOAD;
+  }
+
   const current = pickValid(await readThemeCurrent());
   const lastGood = pickValid(await readThemeLastGood());
   const storedDefault = pickValid(await readThemeDefault());
@@ -126,8 +130,8 @@ export async function saveThemePayload(payload: ThemePayload, note = 'manual upd
 export async function getThemeDraftPayload(): Promise<ThemePayload | null> {
   'use cache';
   cacheLife('minutes');
-  cacheTag(themeTags.draft);
-  cacheTag(themeTags.current);
+  cacheTag(cacheTags.themeDraft);
+
   const draft = pickValid(await readThemeDraft());
   if (draft) return draft;
 

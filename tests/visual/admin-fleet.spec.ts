@@ -146,11 +146,14 @@ test.describe('protected administration', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/admin/fleet', { waitUntil: 'domcontentloaded' });
     await stabilize(page);
-    await expect(page).toHaveScreenshot('fleet-light.png', { fullPage: true });
+    // The review-window chip renders a today-relative date range; mask it so
+    // baselines do not rot daily.
+    const reviewWindowChip = page.locator('button:has(.lucide-calendar-range)');
+    await expect(page).toHaveScreenshot('fleet-light.png', { fullPage: true, mask: [reviewWindowChip] });
 
     await page.evaluate(() => document.documentElement.classList.add('dark'));
     await stabilize(page);
-    await expect(page).toHaveScreenshot('fleet-dark.png', { fullPage: true });
+    await expect(page).toHaveScreenshot('fleet-dark.png', { fullPage: true, mask: [reviewWindowChip] });
 
     testInfo.annotations.push({ type: 'accessibility', description: 'Landmarks, headings, labels, table headers, text-and-icon states, keyboard details, and 44px controls are asserted by structure and review.' });
   });

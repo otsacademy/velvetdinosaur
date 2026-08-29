@@ -1,0 +1,7 @@
+@import "tailwindcss" source(none);
+
+@source "../layout.tsx";
+@source "./**/*.{js,ts,jsx,tsx,mdx}";
+@source "../../components/edit/**/*.{js,ts,jsx,tsx}";
+@source "../../components/puck/**/*.{js,ts,jsx,tsx}";
+@source "../../puck/**/*.{js,ts,jsx,tsx}";

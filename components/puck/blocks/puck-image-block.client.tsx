@@ -4,6 +4,10 @@ import { type ChangeEvent, useRef, useState } from 'react';
 import { createUsePuck } from '@puckeditor/core';
 import { toast } from 'sonner';
 import { ImageBlock, type ImageBlockProps } from '@/components/blocks/image-block';
+import {
+  ImageEditProvider,
+  type CanvasImageSettings
+} from '@/components/puck/blocks/editable-image.client';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -13,11 +17,18 @@ type PuckImageBlockProps = ImageBlockProps & {
   id: string;
   editMode?: boolean;
   puck?: { isEditing?: boolean };
+  __vdImageEdits?: Record<string, CanvasImageSettings>;
 };
 
 const usePuckStore = createUsePuck();
 
-export function PuckImageBlock({ id, editMode, puck, ...imageProps }: PuckImageBlockProps) {
+export function PuckImageBlock({
+  id,
+  editMode,
+  puck,
+  __vdImageEdits,
+  ...imageProps
+}: PuckImageBlockProps) {
   const dispatch = usePuckStore((state) => state.dispatch);
   const getSelectorForId = usePuckStore((state) => state.getSelectorForId);
   const getItemById = usePuckStore((state) => state.getItemById);
@@ -84,33 +95,39 @@ export function PuckImageBlock({ id, editMode, puck, ...imageProps }: PuckImageB
 
   if (!imageProps.src) {
     return (
-      <Card
-        className="border-dashed border-[var(--vd-border)] bg-[var(--vd-muted)]"
-        data-puck-image-block-id={id}
-      >
-        <div className="flex flex-col items-center gap-3 px-6 py-10 text-center text-sm text-[var(--vd-muted-fg)]">
-          <div>Upload an image to get started.</div>
-          <Button size="sm" onClick={openFilePicker} disabled={!canEdit || isUploading}>
-            {isUploading ? 'Uploading...' : 'Upload image'}
-          </Button>
-          {isUploading ? (
-            <div className="w-full max-w-xs space-y-1">
-              <Progress value={progress} />
-              <div className="text-xs text-[var(--vd-muted-fg)]">Uploading... {progress}%</div>
-            </div>
-          ) : null}
-        </div>
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleFileChange}
-          disabled={!canEdit || isUploading}
-        />
-      </Card>
+      <ImageEditProvider componentId={id} editing={canEdit} edits={__vdImageEdits}>
+        <Card
+          className="border-dashed border-[var(--vd-border)] bg-[var(--vd-muted)]"
+          data-puck-image-block-id={id}
+        >
+          <div className="flex flex-col items-center gap-3 px-6 py-10 text-center text-sm text-[var(--vd-muted-fg)]">
+            <div>Upload an image to get started.</div>
+            <Button size="sm" onClick={openFilePicker} disabled={!canEdit || isUploading}>
+              {isUploading ? 'Uploading...' : 'Upload image'}
+            </Button>
+            {isUploading ? (
+              <div className="w-full max-w-xs space-y-1">
+                <Progress value={progress} />
+                <div className="text-xs text-[var(--vd-muted-fg)]">Uploading... {progress}%</div>
+              </div>
+            ) : null}
+          </div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleFileChange}
+            disabled={!canEdit || isUploading}
+          />
+        </Card>
+      </ImageEditProvider>
     );
   }
 
-  return <ImageBlock {...imageProps} />;
+  return (
+    <ImageEditProvider componentId={id} editing={canEdit} edits={__vdImageEdits}>
+      <ImageBlock {...imageProps} />
+    </ImageEditProvider>
+  );
 }

@@ -44,6 +44,7 @@ import { PatternLibrary } from '@/components/puck/editor/pattern-library.client'
 import { EditorGettingStarted } from '@/components/puck/editor/editor-getting-started';
 import { createUsePuck, Puck } from '@puckeditor/core';
 import {
+  getSelectedKey,
   PinIcon,
   PinOffIcon,
   PropertiesPanel
@@ -123,6 +124,17 @@ export function PuckEditorShell({
   const [leftPanelTab, setLeftPanelTab] = React.useState<'components' | 'outline'>('components');
   const [isUnlockDialogOpen, setIsUnlockDialogOpen] = React.useState(false);
 
+  const selectedKey = React.useMemo(() => {
+    const key = getSelectedKey(selectedItem);
+    if (!selectedItem) return null;
+    if (key) return key;
+    try {
+      return JSON.stringify(selectedItem);
+    } catch {
+      return '__selected__';
+    }
+  }, [selectedItem]);
+  const lastSelectedKeyRef = React.useRef<string | null>(null);
   const leftPanelOpen = leftPinned || activePanel === 'components' || activePanel === 'outline';
   const leftPanelValue =
     activePanel === 'outline'
@@ -177,6 +189,19 @@ export function PuckEditorShell({
     },
     [isGlobalRouteLocked, onInsertPattern]
   );
+
+  React.useEffect(() => {
+    if (!selectedKey) {
+      lastSelectedKeyRef.current = null;
+      return;
+    }
+    if (selectedKey === lastSelectedKeyRef.current) return;
+    lastSelectedKeyRef.current = selectedKey;
+    if (typeof window !== 'undefined' && !window.matchMedia('(min-width: 640px)').matches) return;
+    if (propertiesPinned) return;
+    if (activePanel === 'settings' || activePanel === 'theme') return;
+    setActivePanel('properties');
+  }, [selectedKey, propertiesPinned, activePanel]);
 
   const saveLabel = isSaving ? 'Saving...' : 'Save';
   const publishButtonLabel = isPublishing
