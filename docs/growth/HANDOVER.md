@@ -69,6 +69,26 @@ folder, and a `summary.md` with social links and the verified evidence of what's
 4. **Claude stamps and releases it**, confirms demo mode and noindex, runs all manifest gates, and
    only then mints the prospect's invitation link.
 
+### Batch 3 reconciliation (30 Aug evening — audited against the Claude Design account)
+
+**In flight right now** (4 separate Claude sessions; do not touch their workspaces):
+| Site | Design project | Evidence pack |
+|---|---|---|
+| Jamesons Accountants, Witney | `52460787-3c10-42e5-8cef-d194f981efa6` | `docs/mocks/33-jamesons-witney` |
+| Sima's Beauty, Witney | `55227a47-c790-478b-bed2-c8859616dc6f` | `docs/mocks/09-simas-beauty-witney` |
+| Corn Street Dental, Witney | `30d7cc1d-b6c9-4723-a410-5e1c26adecb5` | `docs/mocks/11-corn-street-dental-witney` |
+| Hair Lounge, Chipping Norton | `8ceef699-6a71-4604-b355-a7217ab4a813` (the one WITH files — `0a8c19bd…` is an empty duplicate) | `docs/mocks/29-hairlounge-chipping-norton` |
+
+**Designed but NOT built and NOT being built — the missing two:**
+| Site | Design project | Design files | Evidence pack |
+|---|---|---|---|
+| Salutation Inn, Pembrokeshire | `4371b0c3-f5ce-4b0f-b954-21a21a404531` | `Home.dc.html` (39KB, single view) | `docs/mocks/17-salutation-inn-pembrokeshire` |
+| Cotswold Dental Wellness, Chipping Norton | `a0403021-e0d2-4a3d-be73-a79e0c79632e` | `Cotswold Dental Wellness.dc.html` (111KB, full design) | `docs/mocks/07-cotswold-dental-chipping-norton` |
+
+Dead projects to ignore: `af74a16b…` ("Website redesign request", empty), `0a8c19bd…` (Hair
+Lounge duplicate, uploads only), `125f0a2a…` (Bubbleton duplicate, uploads only),
+`483cd019…` (mislabeled Bush Farm design — Ian confirmed 29 Aug it is not to be built).
+
 **Full procedure: `docs/growth/DEMO-BUILD-PLAYBOOK.md` — read it start to finish before
 porting anything.** It encodes every gate failure from the 29 Aug builds (demos 19–21) as a
 rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipeline` memory
