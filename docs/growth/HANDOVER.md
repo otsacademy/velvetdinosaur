@@ -1,6 +1,6 @@
 # Velvet Dinosaur — session handover
 
-_Last updated: 2026-08-29_
+_Last updated: 2026-08-30_
 
 ## Where things stand
 
@@ -69,8 +69,11 @@ folder, and a `summary.md` with social links and the verified evidence of what's
 4. **Claude stamps and releases it**, confirms demo mode and noindex, runs all manifest gates, and
    only then mints the prospect's invitation link.
 
-Full mechanics, and the dozen gotchas that have bitten previous ports, are in the
-`demo-port-pipeline` memory file — read it before porting anything.
+**Full procedure: `docs/growth/DEMO-BUILD-PLAYBOOK.md` — read it start to finish before
+porting anything.** It encodes every gate failure from the 29 Aug builds (demos 19–21) as a
+rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipeline` memory
+file holds the same lessons as history. **Next batch: Ian plans 6 more sites** — inputs per
+site are his Claude Design project + the `docs/mocks/` pack + the prospect email.
 
 ### Port hardening learned on the New Inn stamp (29 Aug pm — template carries all three fixes)
 
