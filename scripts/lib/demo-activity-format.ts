@@ -32,6 +32,10 @@ export type DigestRecipient = {
   name: string;
   email: string;
   expiresAt: string;
+  lastEmailOpenedAt?: string | null;
+  lastOpenedAt?: string | null;
+  lastHighConfidenceAt?: string | null;
+  lastSignedInAt?: string | null;
 };
 
 export type DigestRecipientActivity = {
@@ -39,6 +43,7 @@ export type DigestRecipientActivity = {
   recipient: DigestRecipient;
   firstSeenAt: Date;
   lastSeenAt: Date;
+  emailOpened: boolean;
   linkOpened: boolean;
   highConfidence: boolean;
   signals: string[];
@@ -67,6 +72,7 @@ export function formatDigest(
   until: Date
 ) {
   const signIns = sessions.filter((session) => session.signedIn).length;
+  const emailOpens = recipientActivity.filter((activity) => activity.emailOpened).length;
   const trackedLinkOpens = recipientActivity.filter((activity) => activity.linkOpened).length;
   const highConfidenceVisits = recipientActivity.filter(
     (activity) => activity.highConfidence
@@ -82,6 +88,7 @@ export function formatDigest(
     `Period: ${formatTime(since)} to ${formatTime(until)}`,
     `Fleet websites covered: ${sites.length}`,
     `Recipient-specific links registered: ${recipients.length}`,
+    `Email pixel fetches (email opened at least once): ${emailOpens}`,
     `Tracked recipient link fetches: ${trackedLinkOpens}`,
     `High-confidence recipient visits: ${highConfidenceVisits}`,
     `Browser-like sources observed: ${browserLikeSources}`,
@@ -89,6 +96,43 @@ export function formatDigest(
     `Successful backend sign-ins: ${signIns}`,
     ''
   ];
+
+  if (!recipients.length && sites.length) {
+    lines.push(
+      'WARNING: recipient link registry is EMPTY - no tracked links have been minted, so',
+      'recipient click tracking is OFF for every site below. Mint links with',
+      'bun run demo:recipient-links (see docs/growth/outreach-playbook.md).',
+      ''
+    );
+  } else if (recipients.length) {
+    const everEmailOpened = recipients.filter((recipient) => recipient.lastEmailOpenedAt).length;
+    const everOpened = recipients.filter((recipient) => recipient.lastOpenedAt).length;
+    const everEngaged = recipients.filter((recipient) => recipient.lastHighConfidenceAt).length;
+    const everSignedIn = recipients.filter((recipient) => recipient.lastSignedInAt).length;
+    lines.push(
+      `Campaign status (cumulative, all ${recipients.length} tracked recipients): ${everEmailOpened} ever opened the email, ${everOpened} ever clicked, ${everEngaged} ever browsed, ${everSignedIn} ever signed in`
+    );
+    for (const recipient of [...recipients].sort((left, right) =>
+      left.siteSlug.localeCompare(right.siteSlug)
+    )) {
+      const emailOpened = recipient.lastEmailOpenedAt
+        ? `email opened ${formatTime(new Date(recipient.lastEmailOpenedAt))}; `
+        : '';
+      const clicked = recipient.lastOpenedAt
+        ? `clicked ${formatTime(new Date(recipient.lastOpenedAt))}`
+        : 'never clicked';
+      const engaged = recipient.lastHighConfidenceAt
+        ? `; browsed ${formatTime(new Date(recipient.lastHighConfidenceAt))}`
+        : '';
+      const signedIn = recipient.lastSignedInAt
+        ? `; signed in ${formatTime(new Date(recipient.lastSignedInAt))}`
+        : '';
+      lines.push(
+        `- ${recipient.siteSlug} | ${recipient.email} | ${emailOpened}${clicked}${engaged}${signedIn}`
+      );
+    }
+    lines.push('');
+  }
 
   sites.forEach((site, siteIndex) => {
     const siteSessions = sessions.filter((session) => session.site.domain === site.domain);
@@ -126,6 +170,7 @@ export function formatDigest(
           lines.push(
             `Tracked activity: ${formatTime(activity.firstSeenAt)} to ${formatTime(activity.lastSeenAt)}`
           );
+          lines.push(`Email pixel fetched: ${activity.emailOpened ? 'Yes' : 'No'}`);
           lines.push(`Tracked redirect reached: ${activity.linkOpened ? 'Yes' : 'No'}`);
           lines.push(
             `High-confidence human browsing: ${activity.highConfidence ? 'Yes' : 'No'}`

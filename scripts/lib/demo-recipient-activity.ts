@@ -10,6 +10,8 @@ import {
 
 const SIGNAL_PREFIX = '/api/analytics/demo-recipient/';
 const VISIT_PREFIX = '/visit/';
+/** Email tracking pixel, served host-independently from the hub (nginx empty_gif). */
+const OPEN_PREFIX = '/open/';
 const DELIBERATE_SIGNALS = new Set(['pointer', 'keyboard', 'scroll', 'click']);
 
 type RecipientActivityRules = {
@@ -25,6 +27,7 @@ export type RecipientActivity = {
   visitorKey: string;
   firstSeenAt: Date;
   lastSeenAt: Date;
+  emailOpened: boolean;
   linkOpened: boolean;
   highConfidence: boolean;
   signals: string[];
@@ -45,6 +48,11 @@ function decodePage(value: string) {
 }
 
 function parseTrackedEntry(entry: AccessEntry) {
+  if (entry.path.startsWith(OPEN_PREFIX)) {
+    let token = entry.path.slice(OPEN_PREFIX.length).split('/', 1)[0] || '';
+    if (token.endsWith('.gif')) token = token.slice(0, -4);
+    return token ? { token, signal: 'email-open', page: '' } : null;
+  }
   if (entry.path.startsWith(VISIT_PREFIX)) {
     const token = entry.path.slice(VISIT_PREFIX.length).split('/', 1)[0] || '';
     return token ? { token, signal: 'open', page: '' } : null;
@@ -86,21 +94,30 @@ export function collectRecipientActivity(
     RecipientActivity & { signalSet: Set<string>; pageSet: Set<string> }
   >();
 
+  const siteBySlug = new Map(sites.map((site) => [site.slug, site]));
+
   for (const entry of relevantEntries) {
     const tracked = parseTrackedEntry(entry);
     if (!tracked || entry.status < 200 || entry.status >= 400) continue;
-    const site = siteByDomain.get(entry.host);
-    if (!site) continue;
+    const isEmailOpen = tracked.signal === 'email-open';
+    const payload = verifyRecipientToken(tracked.token, secret, entry.occurredAt);
+    const recipient = payload ? recipientsById.get(payload.r) : null;
+    if (!payload || !recipient) continue;
+    // The pixel is served from the hub domain, so its site comes from the
+    // signed token; every other signal must arrive on the site's own domain.
+    const site = isEmailOpen
+      ? siteBySlug.get(payload.s)
+      : siteByDomain.get(entry.host);
+    if (!site || payload.s !== site.slug || recipient.siteSlug !== site.slug) continue;
     if (
       rules.ignoredIps.has(entry.ip) ||
-      rules.isAutomatedUserAgent(entry.userAgent) ||
+      // Gmail/Apple image proxies ARE the legitimate carriers of the open
+      // signal; the automated-agent filter only applies to on-site signals.
+      (!isEmailOpen && rules.isAutomatedUserAgent(entry.userAgent)) ||
       probeSources.has(sourceAddress(entry))
     ) {
       continue;
     }
-    const payload = verifyRecipientToken(tracked.token, secret, entry.occurredAt);
-    const recipient = payload ? recipientsById.get(payload.r) : null;
-    if (!payload || !recipient || payload.s !== site.slug || recipient.siteSlug !== site.slug) continue;
 
     const visitorKey = rules.visitorFingerprint(entry.ip, entry.userAgent);
     const key = `${site.domain}|${recipient.id}|${visitorKey}`;
@@ -112,6 +129,7 @@ export function collectRecipientActivity(
         visitorKey,
         firstSeenAt: entry.occurredAt,
         lastSeenAt: entry.occurredAt,
+        emailOpened: false,
         linkOpened: false,
         highConfidence: false,
         signals: [],
@@ -126,6 +144,7 @@ export function collectRecipientActivity(
       buckets.set(key, bucket);
     }
     bucket.lastSeenAt = entry.occurredAt;
+    if (tracked.signal === 'email-open') bucket.emailOpened = true;
     if (tracked.signal === 'open') bucket.linkOpened = true;
     if (!bucket.signalSet.has(tracked.signal)) {
       bucket.signalSet.add(tracked.signal);

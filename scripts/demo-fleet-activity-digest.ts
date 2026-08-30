@@ -11,9 +11,12 @@ import { formatDigest } from './lib/demo-activity-format';
 import { collectTrafficAudit } from './lib/demo-activity-audit';
 import { collectRecipientActivity } from './lib/demo-recipient-activity';
 import { isDigestDeliveryTime } from './lib/demo-activity-schedule';
+import { sendGwsEmail } from './lib/gws-mail';
 import {
+  applyRecipientActivity,
   readOrCreateRecipientSecret,
-  readRecipientRegistry
+  readRecipientRegistry,
+  writeRecipientRegistry
 } from './lib/demo-recipient-links';
 
 export { formatDigest } from './lib/demo-activity-format';
@@ -102,14 +105,6 @@ type MonitorState = {
   lastCheckedAt: string;
 };
 
-type JsonRpcResponse = {
-  id?: number;
-  result?: {
-    content?: Array<{ type?: string; text?: string }>;
-    isError?: boolean;
-  };
-  error?: { code?: number; message?: string };
-};
 
 function envValue(source: string, key: string) {
   const prefix = `${key}=`;
@@ -431,88 +426,6 @@ function readAccessLines() {
   return paths.flatMap((path) => readFileSync(path, 'utf8').split(/\r?\n/));
 }
 
-async function sendGwsEmail(subject: string, body: string) {
-  const process = Bun.spawn([GWS_BINARY, '--use-dot-names'], {
-    stdin: 'pipe',
-    stdout: 'pipe',
-    stderr: 'pipe',
-    env: { ...Bun.env, HOME: Bun.env.HOME || '/home/ianw' }
-  });
-  const pending = new Map<number, (response: JsonRpcResponse) => void>();
-  let sequence = 0;
-  let buffer = '';
-
-  const pump = (async () => {
-    const reader = process.stdout.getReader();
-    const decoder = new TextDecoder();
-    for (;;) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      let newline = buffer.indexOf('\n');
-      while (newline >= 0) {
-        const line = buffer.slice(0, newline).trim();
-        buffer = buffer.slice(newline + 1);
-        if (line) {
-          const response = JSON.parse(line) as JsonRpcResponse;
-          if (response.id && pending.has(response.id)) {
-            pending.get(response.id)?.(response);
-            pending.delete(response.id);
-          }
-        }
-        newline = buffer.indexOf('\n');
-      }
-    }
-  })();
-
-  function write(message: object) {
-    process.stdin.write(`${JSON.stringify(message)}\n`);
-  }
-
-  async function call(method: string, params: object) {
-    const id = ++sequence;
-    const response = await new Promise<JsonRpcResponse>((resolve, reject) => {
-      const timer = setTimeout(() => {
-        pending.delete(id);
-        reject(new Error(`GWS ${method} timed out`));
-      }, 30_000);
-      pending.set(id, (value) => {
-        clearTimeout(timer);
-        resolve(value);
-      });
-      write({ jsonrpc: '2.0', id, method, params });
-    });
-    if (response.error) throw new Error(response.error.message || `GWS ${method} failed`);
-    const text = response.result?.content?.map((item) => item.text || '').join('\n') || '';
-    if (response.result?.isError) throw new Error(text || `GWS ${method} failed`);
-    return text;
-  }
-
-  try {
-    await call('initialize', {
-      protocolVersion: '2025-06-18',
-      capabilities: {},
-      clientInfo: { name: 'vd-demo-activity-digest', version: '1.0.0' }
-    });
-    write({ jsonrpc: '2.0', method: 'notifications/initialized', params: {} });
-    const created = await call('tools/call', {
-      name: 'gws.mail.create_draft',
-      arguments: { account: GWS_ACCOUNT, to: RECIPIENT, subject, body }
-    });
-    const draftId = created.match(/Draft ID:\s*(\S+)/)?.[1];
-    if (!draftId) throw new Error(`GWS did not return a draft ID: ${created}`);
-    const sent = await call('tools/call', {
-      name: 'gws.mail.send_draft',
-      arguments: { account: GWS_ACCOUNT, draftId }
-    });
-    if (!/Email sent from/.test(sent)) throw new Error(`GWS did not confirm delivery: ${sent}`);
-    return sent;
-  } finally {
-    process.stdin.end();
-    await Promise.race([pump, Bun.sleep(1000)]).catch(() => {});
-    if (process.exitCode === null) process.kill();
-  }
-}
 
 function argumentValue(name: string) {
   const prefix = `--${name}=`;
@@ -570,11 +483,28 @@ async function main() {
       visitorFingerprint
     }
   );
+  if (!recipientRegistry.recipients.length) {
+    console.error(
+      'warning: recipient link registry is empty - recipient click tracking is OFF (mint with bun run demo:recipient-links)'
+    );
+  }
+  const merged = applyRecipientActivity(
+    recipientRegistry,
+    recipientActivity.map((activity) => ({
+      recipientId: activity.recipient.id,
+      lastSeenAt: activity.lastSeenAt,
+      emailOpened: activity.emailOpened,
+      linkOpened: activity.linkOpened,
+      highConfidence: activity.highConfidence,
+      signedIn: activity.signedIn,
+      signedInAt: activity.signedInAt
+    }))
+  );
   const digest = formatDigest(
     sites,
     sessions,
     trafficAudit,
-    recipientRegistry.recipients,
+    merged.registry.recipients,
     recipientActivity,
     since,
     until
@@ -585,8 +515,16 @@ async function main() {
     return;
   }
 
-  const confirmation = await sendGwsEmail(digest.subject, digest.body);
+  const confirmation = await sendGwsEmail({
+    subject: digest.subject,
+    body: digest.body,
+    recipient: RECIPIENT,
+    account: GWS_ACCOUNT,
+    binary: GWS_BINARY,
+    clientName: 'vd-demo-activity-digest'
+  });
   console.log(`${digest.subject}; ${confirmation.replace(/\s+/g, ' ')}`);
+  if (merged.changed) writeRecipientRegistry(merged.registry);
   if (!noAdvance) saveState(until);
 }
 

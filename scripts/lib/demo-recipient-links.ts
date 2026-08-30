@@ -23,6 +23,11 @@ export type RecipientLinkRecord = {
   email: string;
   createdAt: string;
   expiresAt: string;
+  /** Cumulative campaign state, updated by the activity digest after attribution. */
+  lastEmailOpenedAt?: string | null;
+  lastOpenedAt?: string | null;
+  lastHighConfidenceAt?: string | null;
+  lastSignedInAt?: string | null;
 };
 
 export type RecipientLinkRegistry = {
@@ -108,6 +113,70 @@ export function writeRecipientRegistry(
   const temporary = `${file}.tmp`;
   writeFileSync(temporary, `${JSON.stringify(registry, null, 2)}\n`, { mode: 0o600 });
   renameSync(temporary, file);
+}
+
+export type RecipientActivityUpdate = {
+  recipientId: string;
+  lastSeenAt: Date;
+  emailOpened: boolean;
+  linkOpened: boolean;
+  highConfidence: boolean;
+  signedIn: boolean;
+  signedInAt: Date | null;
+};
+
+function laterIso(existing: string | null | undefined, candidate: Date) {
+  const next = candidate.toISOString();
+  return existing && existing >= next ? existing : next;
+}
+
+/**
+ * Merge per-window attribution results into the registry's cumulative fields so
+ * "has this recipient ever clicked?" survives beyond one digest window. Pure:
+ * returns a new registry and whether anything changed; callers persist.
+ */
+export function applyRecipientActivity(
+  registry: RecipientLinkRegistry,
+  updates: RecipientActivityUpdate[]
+): { registry: RecipientLinkRegistry; changed: boolean } {
+  if (!updates.length) return { registry, changed: false };
+  const byRecipient = new Map<string, RecipientActivityUpdate[]>();
+  for (const update of updates) {
+    const list = byRecipient.get(update.recipientId) || [];
+    list.push(update);
+    byRecipient.set(update.recipientId, list);
+  }
+
+  let changed = false;
+  const recipients = registry.recipients.map((record) => {
+    const relevant = byRecipient.get(record.id);
+    if (!relevant) return record;
+    const next = { ...record };
+    for (const update of relevant) {
+      if (update.emailOpened) {
+        next.lastEmailOpenedAt = laterIso(next.lastEmailOpenedAt, update.lastSeenAt);
+      }
+      if (update.linkOpened) next.lastOpenedAt = laterIso(next.lastOpenedAt, update.lastSeenAt);
+      if (update.highConfidence) {
+        next.lastHighConfidenceAt = laterIso(next.lastHighConfidenceAt, update.lastSeenAt);
+      }
+      if (update.signedIn) {
+        next.lastSignedInAt = laterIso(next.lastSignedInAt, update.signedInAt || update.lastSeenAt);
+      }
+    }
+    if (
+      next.lastEmailOpenedAt !== record.lastEmailOpenedAt ||
+      next.lastOpenedAt !== record.lastOpenedAt ||
+      next.lastHighConfidenceAt !== record.lastHighConfidenceAt ||
+      next.lastSignedInAt !== record.lastSignedInAt
+    ) {
+      changed = true;
+      return next;
+    }
+    return record;
+  });
+
+  return { registry: changed ? { ...registry, recipients } : registry, changed };
 }
 
 export function readOrCreateRecipientSecret(file = DEFAULT_RECIPIENT_SECRET_FILE) {

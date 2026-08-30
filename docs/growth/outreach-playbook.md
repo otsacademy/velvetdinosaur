@@ -74,6 +74,31 @@ Never attach anything. Never mention price. The bump is two sentences:
 "Still happy to record that free audit for [domain] — takes you nothing but a
 'yes'. Shall I?"
 
+## Tracked links (always — never email a bare demo URL)
+
+Every demo email must use the prospect's **tracked link** (`https://<slug>.velvetdinosaur.com/visit/<token>`),
+never the bare domain. A click then appears in the activity digest within two hours, named to the
+prospect — click intelligence drives the 48-hour call: "clicked but didn't sign up" gets a
+different opener from "never clicked".
+
+- New demos: `new-demo.sh` prints `PROSPECT_TRACKED_LINK` at stamp; `mint-invite.sh` prints a
+  `TRACKED_INVITE` wrapper alongside the raw sign-up link. Email the tracked variants.
+- Mint or refresh by hand: `bun run demo:recipient-links -- --site=<slug> --name="<Name>" --email=<email>`
+  (registry: `/var/lib/vd-demo-activity-digest/recipients.json`).
+- Batch 1 (28 Aug) went out untracked; the follow-up pack is `docs/growth/tracked-links-2026-08-30.md`
+- **Email-open pixel (added 30 Aug):** every prospect row in the pack also has a personal
+  `https://velvetdinosaur.com/open/<token>.gif` pixel. In Gmail compose: Insert photo -> Web
+  Address (URL) -> paste it (renders as an invisible dot). The digest then shows
+  "email opened" per prospect — delivery evidence that the email reached an inbox and was
+  displayed, i.e. it did not silently die in spam. Caveats: do not reopen your own sent copy
+  (Google caches the first fetch per URL and your own view can consume it); Apple Mail
+  prefetches images, so an open proves delivery, not always a human read; a missing open
+  proves nothing (image blocking). Clicks remain the intent signal.
+  — check each link's status column before using it.
+- The digest's "Campaign status" table answers "has prospect X ever clicked?" cumulatively; a bare
+  fetch is reported as `redirect only` and only interaction + dwell counts as a human visit, so
+  email-scanner prefetches cannot masquerade as interest.
+
 ## Pipeline stages (tracker `status` column)
 
 `prospect → contacted → bumped → audit_requested → audit_sent → in_talks → won | lost | no_fit`

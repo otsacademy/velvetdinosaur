@@ -46,6 +46,34 @@ const rules = {
 };
 
 describe('demo recipient activity', () => {
+  test('attributes a hub-served email pixel fetch via the token, through proxy user agents', () => {
+    const proxyEntry: AccessEntry = {
+      host: 'velvetdinosaur.com',
+      ip: '66.102.8.20',
+      occurredAt: new Date('2026-08-28T12:00:30.000Z'),
+      method: 'GET',
+      path: `/open/${token}.gif`,
+      status: 200,
+      referer: '',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) via ggpht.com GoogleImageProxy'
+    };
+    const activity = collectRecipientActivity(
+      [proxyEntry],
+      [site],
+      [],
+      [recipient],
+      secret,
+      new Date('2026-08-28T12:00:00.000Z'),
+      new Date('2026-08-28T13:00:00.000Z'),
+      { ...rules, isAutomatedUserAgent: () => true }
+    );
+    expect(activity).toHaveLength(1);
+    expect(activity[0].site.slug).toBe(site.slug);
+    expect(activity[0].emailOpened).toBeTrue();
+    expect(activity[0].linkOpened).toBeFalse();
+    expect(activity[0].highConfidence).toBeFalse();
+  });
+
   test('does not call a redirect fetch a human visit', () => {
     const activity = collectRecipientActivity(
       [entry(`/visit/${token}`, '2026-08-28T12:01:00.000Z', 307)],

@@ -75,7 +75,8 @@ function main() {
         recipient: { name: record.name, email: record.email },
         expiresAt: record.expiresAt,
         website: trackedUrl(site.url, token),
-        invitation: inviteDestination ? trackedUrl(site.url, token, inviteDestination) : null
+        invitation: inviteDestination ? trackedUrl(site.url, token, inviteDestination) : null,
+        emailPixel: `https://velvetdinosaur.com/open/${token}.gif`
       },
       null,
       2
