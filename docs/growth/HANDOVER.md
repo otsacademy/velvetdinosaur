@@ -1,10 +1,10 @@
 # Velvet Dinosaur — session handover
 
-_Last updated: 2026-08-30_
+_Last updated: 2026-08-31_
 
 ## Where things stand
 
-**18 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
+**26 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
 fleet. The inventory is additive: every new demo must inherit the same demo-safety, authentication,
 evidence and release gates and be added here.
 
@@ -42,9 +42,14 @@ grepping vhosts under-reports.
 | The White Hart, Minster Lovell | `white-hart-minster` | Emailed 28 Aug |
 | Woodstock Dental Practice | `woodstock-dental` | Emailed 28 Aug |
 | Higher Farm B&B, Malpas | `higher-farm-malpas` | Emailed 28 Aug |
-| The New Inn Hotel, Lechlade | `new-inn-lechlade` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-30.md; prospect email info@newinnhotel.co.uk) |
-| Contour & Co, Leek | `contour-leek` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-30.md; prospect email jok1904@googlemail.com) |
-| Bubbleton Farm Shop, Tenby | `bubbleton-tenby` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-30.md; prospect email tom@bubbleton.co.uk — note the site also publishes tom@bubbleton.wales) |
+| The New Inn Hotel, Lechlade | `new-inn-lechlade` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; prospect email info@newinnhotel.co.uk) |
+| Contour & Co, Leek | `contour-leek` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; prospect email jok1904@googlemail.com) |
+| Bubbleton Farm Shop, Tenby | `bubbleton-tenby` | Stamped 29 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; prospect email tom@bubbleton.co.uk — note the site also publishes tom@bubbleton.wales) |
+| Hair Lounge, Chipping Norton | `hair-lounge-chipping-norton` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/29-hairlounge-chipping-norton; prospect email hairloungechippingnorton@yahoo.co.uk) |
+| Corn Street Dental, Witney | `corn-street-dental` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/11-corn-street-dental-witney; prospect email dentist@cornstreetdental.co.uk) |
+| Sima's Beauty, Witney | `simas-beauty-witney` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/09-simas-beauty-witney; prospect email simaflp@aol.com) |
+| Jamesons Accountants, Witney | `jamesons-witney` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/33-jamesons-witney; prospect email advice@jamesons.co.uk) |
+| Cotswold Dental Wellness, Chipping Norton | `cotswold-dental` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/07-cotswold-dental-chipping-norton; prospect email info@cotswolddentalwellness.co.uk) |
 
 ## The bench
 
@@ -71,7 +76,7 @@ folder, and a `summary.md` with social links and the verified evidence of what's
 
 ### Batch 3 reconciliation (30 Aug evening — audited against the Claude Design account)
 
-**In flight right now** (4 separate Claude sessions; do not touch their workspaces):
+**Shipped 30–31 Aug** (built in 4 parallel Claude sessions; all live and in the fleet table above):
 | Site | Design project | Evidence pack |
 |---|---|---|
 | Jamesons Accountants, Witney | `52460787-3c10-42e5-8cef-d194f981efa6` | `docs/mocks/33-jamesons-witney` |
@@ -79,11 +84,10 @@ folder, and a `summary.md` with social links and the verified evidence of what's
 | Corn Street Dental, Witney | `30d7cc1d-b6c9-4723-a410-5e1c26adecb5` | `docs/mocks/11-corn-street-dental-witney` |
 | Hair Lounge, Chipping Norton | `8ceef699-6a71-4604-b355-a7217ab4a813` (the one WITH files — `0a8c19bd…` is an empty duplicate) | `docs/mocks/29-hairlounge-chipping-norton` |
 
-**Designed but NOT built and NOT being built — the missing two:**
+**Designed but NOT built — only ONE remains** (Cotswold Dental Wellness shipped 31 Aug):
 | Site | Design project | Design files | Evidence pack |
 |---|---|---|---|
 | Salutation Inn, Pembrokeshire | `4371b0c3-f5ce-4b0f-b954-21a21a404531` | `Home.dc.html` (39KB, single view) | `docs/mocks/17-salutation-inn-pembrokeshire` |
-| Cotswold Dental Wellness, Chipping Norton | `a0403021-e0d2-4a3d-be73-a79e0c79632e` | `Cotswold Dental Wellness.dc.html` (111KB, full design) | `docs/mocks/07-cotswold-dental-chipping-norton` |
 
 Dead projects to ignore: `af74a16b…` ("Website redesign request", empty), `0a8c19bd…` (Hair
 Lounge duplicate, uploads only), `125f0a2a…` (Bubbleton duplicate, uploads only),
