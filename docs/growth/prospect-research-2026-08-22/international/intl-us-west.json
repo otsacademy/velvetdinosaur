@@ -1,0 +1,292 @@
+[
+ {
+  "name": "Joseph Fly Shoppe, LLC",
+  "trade": "fly shop / fishing outfitter",
+  "town": "Joseph",
+  "region": "Oregon",
+  "country": "USA",
+  "website": "https://www.josephflyshoppe.org/",
+  "evidence": [
+   "Their old brand domain josephflyshoppe.com now redirects (curl -sL) to artsypads.com serving an Indonesian gambling site titled 'HarapanQQ: Situs PKV Games...'",
+   "Current .org homepage is a 2.29MB Wix HTML payload (curl size_download 2292890; meta generator 'Wix.com Website Builder')",
+   "Wallowa County Chamber member page confirms shop active at 203 North Main Street, Joseph, listing the .org as its website (fetched)"
+  ],
+  "contact_email": "Josephflyshoppe@gmail.com",
+  "contact_phone": "541-432-4343",
+  "source_urls": [
+   "https://www.josephflyshoppe.org/",
+   "https://business.wallowacountychamber.com/list/member/joseph-fly-shoppe-llc-1064",
+   "https://www.josephflyshoppe.com/"
+  ],
+  "distinctive": "Chamber listing describes 'absolute dedication to the graceful art of fly angling' — a full-service destination shop on Main Street in Joseph",
+  "confidence": "high"
+ },
+ {
+  "name": "Sweetwater Fishing Expeditions, LLC",
+  "trade": "fly-fishing outfitter / wilderness pack trips",
+  "town": "Lander",
+  "region": "Wyoming",
+  "country": "USA",
+  "website": "https://www.sweetwaterfishing.com/",
+  "evidence": [
+   "Homepage has no <meta name=\"viewport\"> tag (grep of fetched HTML) — not mobile-responsive",
+   "Hand-built XHTML 1.0 Transitional page with document.write() email obfuscation (read in fetched source)",
+   "Business is active: page reads 'Now Booking for 2026!' (fetched HTML)"
+  ],
+  "contact_email": "sweetwaterflyfishing@gmail.com",
+  "contact_phone": "307-332-3986",
+  "source_urls": [
+   "https://www.sweetwaterfishing.com/"
+  ],
+  "distinctive": "Owned by George, Paula and Hank Hunker since 1977; Orvis-endorsed guided camping trips into the Wind River Range, with a dedicated golden trout page",
+  "confidence": "high"
+ },
+ {
+  "name": "Coldsmoke Automotive",
+  "trade": "auto repair garage (transmission & diesel)",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "http://www.coldsmokeauto.com/",
+  "evidence": [
+   "Site served over plain HTTP only — curl to https fails to connect (000), so browsers show 'Not secure'",
+   "WordPress site (wp-content asset refs in fetched HTML), no TLS despite © 2026 footer",
+   "Livingston Chamber automotive directory lists the shop (contact Elise Moir) confirming it is a current member (fetched)"
+  ],
+  "contact_email": "coldsmokeauto@gmail.com",
+  "contact_phone": "(406) 222-7169",
+  "source_urls": [
+   "http://www.coldsmokeauto.com/",
+   "https://livingston-chamber.com/directory/automotive/"
+  ],
+  "distinctive": "Full-service foreign & domestic shop that leads with transmission and diesel repair in its own title tag",
+  "confidence": "high"
+ },
+ {
+  "name": "Bowpicker Fish & Chips",
+  "trade": "fish & chips takeaway",
+  "town": "Astoria",
+  "region": "Oregon",
+  "country": "USA",
+  "website": "https://www.bowpicker.com/",
+  "evidence": [
+   "No <meta name=\"viewport\"> tag — grep of fetched homepage returned zero matches",
+   "2000s-era markup observed in source: XHTML 1.0 Strict doctype, nested table layout, <font size=2> tag",
+   "Opening hours are published only via an embedded Twitter timeline widget ('Our Twitter feed always has the latest hours!') seen in fetched HTML",
+   "Entire homepage is 2,968 bytes with no email anywhere"
+  ],
+  "contact_email": null,
+  "contact_phone": "503.791.2942",
+  "source_urls": [
+   "https://www.bowpicker.com/"
+  ],
+  "distinctive": "Beer-battered albacore tuna fried 'by Ron and Linda' and served from a converted gillnet boat opposite the Columbia River Maritime Museum (their own homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Elk River Repair",
+  "trade": "auto repair garage",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Livingston Chamber automotive directory's 'Website' link points only to the Facebook page — no standalone site listed (observed on fetched chamber page)",
+   "Chamber page lists contact Brian Deckard with a hotmail address, consistent with no owned web presence (fetched)"
+  ],
+  "contact_email": "ElkRiverRepair1@hotmail.com",
+  "contact_phone": "406-860-5996",
+  "source_urls": [
+   "https://livingston-chamber.com/directory/automotive/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Casitas de Gila Guesthouses & Art Gallery",
+  "trade": "guest lodge / casitas + art gallery",
+  "town": "Gila (near Silver City)",
+  "region": "New Mexico",
+  "country": "USA",
+  "website": "https://www.casitasdegila.com/",
+  "evidence": [
+   "Homepage has no <meta name=\"viewport\"> tag (grep of fetched HTML) despite © 2026 WordPress footer — dated non-responsive theme",
+   "Silver City chamber place page confirms current operation with matching phone/email (fetched)"
+  ],
+  "contact_email": "info@casitasdegila.com",
+  "contact_phone": "575-535-4455",
+  "source_urls": [
+   "https://www.casitasdegila.com/",
+   "https://silvercity.org/places/casitas-de-gila-guesthouses-art-gallery/"
+  ],
+  "distinctive": "Five adobe-style casitas on 265 acres above Bear Creek by the Gila Wilderness, with an on-site adobe gallery of owners Michael & Becky O'Connor's oil paintings and turquoise jewelry (chamber page text); hosts since 1999",
+  "confidence": "high"
+ },
+ {
+  "name": "Placerville Hardware",
+  "trade": "independent hardware store",
+  "town": "Placerville (Gold Country)",
+  "region": "California",
+  "country": "USA",
+  "website": "https://www.placervillehardwareinc.com/",
+  "evidence": [
+   "Their natural brand domain placervillehardware.com serves a GoDaddy parking shell: 114-byte JS-only redirect to /lander with parking assets (curl, source read) — blank for crawlers and type-in traffic",
+   "Replacement site exposes no email on homepage or /contact/ page — phone-only contact (both pages fetched)",
+   "El Dorado County Chamber member page confirms the store is current and points to the inc.com domain (fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "530-622-1151",
+  "source_urls": [
+   "https://www.placervillehardware.com/",
+   "https://www.placervillehardwareinc.com/",
+   "https://business.eldoradocounty.org/list/member/placerville-hardware-175"
+  ],
+  "distinctive": "Site's own meta tag and headline: 'Oldest Hardware Store West of the Mississippi', at 441 Main Street",
+  "confidence": "high"
+ },
+ {
+  "name": "Valley Bronze of Oregon",
+  "trade": "bronze foundry & gallery",
+  "town": "Joseph",
+  "region": "Oregon",
+  "country": "USA",
+  "website": "https://www.valleybronze.com/",
+  "evidence": [
+   "Built on legacy Weebly builder (weebly asset references in fetched HTML)",
+   "Unbranded page titles: homepage <title> is just 'Home', contact page just 'Contact' (observed in fetched source)",
+   "Headline rendered with deprecated <font size=\"6\"> tag: 'A PREMIER BRONZE FOUNDRY' (fetched HTML)"
+  ],
+  "contact_email": "info@valleybronze.com",
+  "contact_phone": "(541) 432-7551",
+  "source_urls": [
+   "https://www.valleybronze.com/",
+   "https://www.valleybronze.com/contact.html"
+  ],
+  "distinctive": "Family-owned foundry doing lost-wax bronze casting up to monumental public art, per its own meta description and keywords",
+  "confidence": "high"
+ },
+ {
+  "name": "Hatch Finders Fly Shop",
+  "trade": "fly shop",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "https://www.hatchfinders.com/",
+  "evidence": [
+   "Meta generator 'Wix.com Website Builder' (fetched HTML)",
+   "Stale footer: '© 2024 by Hatch Finders' observed in 2026 (fetched HTML)",
+   "Homepage HTML alone is ~985KB (curl size_download 985266) — heavy, slow-loading build"
+  ],
+  "contact_email": "flyshop@hatchfinders.com",
+  "contact_phone": "406-222-0989",
+  "source_urls": [
+   "https://www.hatchfinders.com/"
+  ],
+  "distinctive": "Positions itself on the Yellowstone River at Livingston with 'expert advice and premium flies' (own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Wild West Weaving",
+  "trade": "weaving gallery & classes",
+  "town": "Silver City",
+  "region": "New Mexico",
+  "country": "USA",
+  "website": "https://www.wildwestweaving.com/",
+  "evidence": [
+   "Square Online builder (meta generator in fetched HTML)",
+   "Template placeholder contact data left in the served page: 'hi@mystore.com' and '(555) 555-5555' appear alongside the real details (grep of fetched HTML)",
+   "Generic homepage title 'Home | Wild West Weaving' (fetched)"
+  ],
+  "contact_email": "wildwestweaving@gmail.com",
+  "contact_phone": "575-313-1032",
+  "source_urls": [
+   "https://www.wildwestweaving.com/"
+  ],
+  "distinctive": "Specializes in Chimayo, Rio Grande and Navajo handwoven blankets and rugs, natural-dyed yarn, and weaving classes (own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Whistlers Towing & Repair Inc.",
+  "trade": "towing & truck repair",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "https://www.whistlertowing.net/",
+  "evidence": [
+   "Wix builder (meta generator) with homepage HTML of 736KB (curl size_download 736439)",
+   "Generic title 'HOME | Whistler Towing'; no email and no parseable phone in homepage HTML",
+   "Livingston Chamber automotive directory lists the company at 415 Bennett Street with owner contact Ken Gray (fetched)"
+  ],
+  "contact_email": "kengray@whistlertowing.net",
+  "contact_phone": "406-224-5686",
+  "source_urls": [
+   "https://www.whistlertowing.net/",
+   "https://livingston-chamber.com/directory/automotive/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Sylvan Peak Mountain Shop",
+  "trade": "outdoor gear & clothing shop",
+  "town": "Red Lodge",
+  "region": "Montana",
+  "country": "USA",
+  "website": "https://www.sylvanpeak.com/",
+  "evidence": [
+   "Legacy Weebly builder (weebly asset reference in fetched HTML) with builder-default titles 'SYLVAN PEAK MOUNTAIN SHOP - Home'",
+   "Welcome text rendered with deprecated <font size=\"4\" color=\"#5040ae\"> tag (fetched HTML)",
+   "No email address anywhere on homepage or contact page — form and phone only (both pages fetched and grepped)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(406) 446-1770",
+  "source_urls": [
+   "https://www.sylvanpeak.com/",
+   "https://www.sylvanpeak.com/contact-us.html"
+  ],
+  "distinctive": "'29 Years of providing Red Lodge with quality outdoor gear' in the heart of the Absaroka-Beartooth Mountains (own meta description and welcome text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Peaks and Palettes Fine Art Gallery",
+  "trade": "art gallery",
+  "town": "Cle Elum (Kittitas County)",
+  "region": "Washington",
+  "country": "USA",
+  "website": "http://www.peaksandpalettes.com",
+  "evidence": [
+   "The website listed on its chamber member page serves a GoDaddy parking shell: 114-byte JS-only redirect to /lander, blank to crawlers (curl, source read)",
+   "Kittitas County Chamber member page lists the gallery as a current member with phone and the dead domain (fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "509-656-4021",
+  "source_urls": [
+   "http://www.peaksandpalettes.com",
+   "https://business.kittitascountychamber.com/list/member/peaks-and-palettes-fine-art-gallery-3697"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Romeo's Cafe",
+  "trade": "diner / pancake cafe",
+  "town": "Salida",
+  "region": "Colorado",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Restaurantji listing for Romeo's Cafe, 640 E Rainbow Blvd, shows a tel: link but no website link at all (fetched page grepped)",
+   "The address's predecessor Patio Pancake Place lost its domain: patiopancakeplace.com now 301-redirects to unrelated bigbearnaturalfoods.com (curl observed), leaving the location with no working web presence",
+   "Wayback Machine confirms patiopancakeplace.com was the diner's live site as of 2022-09 (snapshot fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(719) 207-4660",
+  "source_urls": [
+   "https://www.restaurantji.com/co/salida/romeos-pancakes-/",
+   "https://www.patiopancakeplace.com/",
+   "http://web.archive.org/web/20220929101331/http://patiopancakeplace.com/"
+  ],
+  "distinctive": "Reviewers single out the blueberry pancakes ('Highly recommend the blueberry pancakes') in the fetched listing",
+  "confidence": "medium"
+ }
+]

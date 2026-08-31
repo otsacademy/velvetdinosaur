@@ -1,0 +1,299 @@
+[
+ {
+  "name": "Erica's Seafood",
+  "trade": "seafood shack / lobster takeout",
+  "town": "Harpswell (Basin Point)",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://www.ericasseafood.com/",
+  "evidence": [
+   "curl audit of homepage: no <meta name=viewport> tag — not mobile-friendly",
+   "legacy Weebly build observed in HTML with <font> tags",
+   "meta description still announces 'last day of the season to be Monday October 14, 2024' when fetched in Aug 2026 — content ~2 years stale",
+   "TripAdvisor Certificate of Excellence 2014 badge image still embedded in page",
+   "contact email is an AOL address, decoded from Cloudflare-obfuscated data-cfemail in the fetched HTML"
+  ],
+  "contact_email": "hntandr2@aol.com",
+  "contact_phone": "(207) 833-7354",
+  "source_urls": [
+   "https://www.ericasseafood.com/",
+   "https://newenglandwithlove.com/lobster-pounds-in-maine/"
+  ],
+  "distinctive": "takeout on a working lobster wharf at Basin Point, Harpswell, 'overlooking Casco Bay' with live lobster sales (from site's own text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Chauncey Creek Lobster Pier",
+  "trade": "lobster pier / seafood shack",
+  "town": "Kittery Point",
+  "region": "Maine",
+  "country": "USA",
+  "website": "http://www.chaunceycreek.com/",
+  "evidence": [
+   "curl audit: no <meta name=viewport> tag — not mobile-friendly",
+   "https on apex domain fails to connect at all (curl exit 000); site only reliably serves at www",
+   "contact email on page is a Gmail address, observed in fetched HTML",
+   "page schema/address block confirms Kittery, ME 03905 in fetched HTML"
+  ],
+  "contact_email": "chaunceycreeklobster@gmail.com",
+  "contact_phone": "(207) 439-1030",
+  "source_urls": [
+   "http://www.chaunceycreek.com/"
+  ],
+  "distinctive": "BYOB lobster pier on tidal Chauncey Creek — 'BYOB establishment' stated in the site's own meta description",
+  "confidence": "high"
+ },
+ {
+  "name": "Robertson Pie Shop",
+  "trade": "country pie shop",
+  "town": "Robertson",
+  "region": "New South Wales (Southern Highlands)",
+  "country": "Australia",
+  "website": "http://www.robertsonpieshop.com.au/",
+  "evidence": [
+   "HTTPS is broken: curl -v shows 'SSL routines::sslv3 alert handshake failure' on both apex and www — site only loads over insecure http",
+   "single-page Weebly site with page <title> just 'Home'",
+   "visible page text literally says 'Home (New website coming soon)' — placeholder copy, observed in fetched HTML",
+   "only content is trading hours, phone and a PDF menu link (Nov 2025 menu, so business is active)",
+   "address on page: 4400 Illawarra Highway, Robertson, NSW, 2577"
+  ],
+  "contact_email": null,
+  "contact_phone": "(02) 4885 1330",
+  "source_urls": [
+   "http://www.robertsonpieshop.com.au/"
+  ],
+  "distinctive": "highway pie stop at 4400 Illawarra Highway open from 6am weekdays — hours and address from the site's own one-pager",
+  "confidence": "high"
+ },
+ {
+  "name": "Fredo Pies & Cafe",
+  "trade": "country pie shop / cafe",
+  "town": "Frederickton",
+  "region": "New South Wales (Macleay Valley)",
+  "country": "Australia",
+  "website": "https://fredopies.com.au/",
+  "evidence": [
+   "curl audit: meta generator 'Joomla! - Open Source Content Management' — legacy CMS",
+   "footer '© Copyright 2018' observed in fetched HTML — eight years stale",
+   "page <title> is just 'Home' — no business name or SEO",
+   "full contact block observed on page: 73 Macleay Street Frederickton NSW 2440"
+  ],
+  "contact_email": "info@fredopies.com.au",
+  "contact_phone": "02 6566 8567",
+  "source_urls": [
+   "https://fredopies.com.au/"
+  ],
+  "distinctive": "classic drive-through-town pie stop at 73 Macleay Street, open 7 days from 6:15am (from site's own contact block)",
+  "confidence": "high"
+ },
+ {
+  "name": "Harraseeket Lunch & Lobster Company",
+  "trade": "lunch counter and lobster pound",
+  "town": "South Freeport",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://www.harraseeketlunchandlobster.com/",
+  "evidence": [
+   "curl audit: no <meta name=viewport> tag — not mobile-friendly",
+   "hand-coded table-based layout (<table> markup, no CMS generator) in a 19KB page, observed in fetched HTML",
+   "site text says 'since 1970' and title describes 'Lunch counter and lobster pound | South Freeport Maine Harbor'",
+   "email and both phone lines observed directly in fetched HTML"
+  ],
+  "contact_email": "info@harraseeketlunchandlobster.com",
+  "contact_phone": "(207) 865-3535",
+  "source_urls": [
+   "https://www.harraseeketlunchandlobster.com/"
+  ],
+  "distinctive": "lunch counter and lobster pound on the South Freeport harbor waterfront since 1970 (site's own title and text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Jimmy's Pies",
+  "trade": "pie bakery",
+  "town": "Roxburgh",
+  "region": "Central Otago",
+  "country": "New Zealand",
+  "website": "https://jimmyspies.co.nz/",
+  "evidence": [
+   "curl audit: meta generator 'Mobirise v4.8.6' — free 2018-era drag-and-drop builder",
+   "entire homepage is 4KB with <title> just 'Home'",
+   "site's own text: pies 'from Roxburgh are famous throughout the lower South Island'",
+   "contact email is a Gmail address, observed in fetched HTML"
+  ],
+  "contact_email": "jimmyspies.office@gmail.com",
+  "contact_phone": "03 446 9012",
+  "source_urls": [
+   "https://jimmyspies.co.nz/"
+  ],
+  "distinctive": "Roxburgh pie institution 'famous throughout the lower South Island' (site's own words)",
+  "confidence": "high"
+ },
+ {
+  "name": "Karikaas Natural Dairy Products",
+  "trade": "Dutch-style farmhouse cheesemaker and shop",
+  "town": "Loburn",
+  "region": "North Canterbury",
+  "country": "New Zealand",
+  "website": "https://www.karikaas.co.nz/",
+  "evidence": [
+   "footer '© Copyright 2014 Karikaas Natural Dairy Products Limited' observed in fetched HTML — twelve years stale",
+   "legacy <font> tags in markup, observed in curl audit",
+   "two contact emails and phone observed in fetched HTML"
+  ],
+  "contact_email": "info@karikaas.co.nz",
+  "contact_phone": "03 312 8708",
+  "source_urls": [
+   "https://www.karikaas.co.nz/"
+  ],
+  "distinctive": "Dutch cheese made in Loburn 'because the water was so clean' — founding story quoted on the site itself",
+  "confidence": "high"
+ },
+ {
+  "name": "Bilpin Fruit Bowl",
+  "trade": "orchard farm gate / pick-your-own fruit and pies",
+  "town": "Bilpin",
+  "region": "New South Wales (Blue Mountains)",
+  "country": "Australia",
+  "website": "https://bilpinfruitbowl.com.au/",
+  "evidence": [
+   "footer '© 2019 Bilpin Fruit Bowl. All Rights Reserved.' observed in fetched HTML — seven years stale",
+   "homepage <title> is template boilerplate: 'Bilpin Fruit Bowl | Fresh Food Makes your life Healthy and Well'",
+   "site mixes three page builders (Elementor + WPBakery + BeTheme) per generator metas in curl audit",
+   "contact page fetch shows ISP email fruit275@tpg.com.au",
+   "site text: 'Bilpin NSW. Family owned since 1985... open 7 days'"
+  ],
+  "contact_email": "fruit275@tpg.com.au",
+  "contact_phone": "02 4567 1152",
+  "source_urls": [
+   "https://bilpinfruitbowl.com.au/",
+   "https://bilpinfruitbowl.com.au/contact/"
+  ],
+  "distinctive": "family-owned since 1985 with pick-your-own orchard blocks in Bilpin apple country (site's own description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Connemara Smokehouse",
+  "trade": "family salmon smokehouse",
+  "town": "Ballyconneely",
+  "region": "County Galway (Connemara)",
+  "country": "Ireland",
+  "website": "https://smokehouse.ie/",
+  "evidence": [
+   "footer 'Copyright 2021' observed in fetched HTML — five years stale",
+   "WordPress theme is 'Avada-child-04-03-2020' and WPML ver 4.9.7 per generator/theme paths in curl audit — build frozen circa 2020-21",
+   "address on page: Ballyconneely, Galway, Ireland, H71 KR29"
+  ],
+  "contact_email": "info@smokehouse.ie",
+  "contact_phone": "+353 95 23739",
+  "source_urls": [
+   "https://smokehouse.ie/"
+  ],
+  "distinctive": "wild and organic smoked salmon smokehouse at Ballyconneely on the Connemara coast — 'foodies flock to discover the world's finest smoked salmon' (site's own copy)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Apple Farm",
+  "trade": "fruit farm shop, juice maker and campsite",
+  "town": "Cahir",
+  "region": "County Tipperary",
+  "country": "Ireland",
+  "website": "https://theapplefarm.com/",
+  "evidence": [
+   "curl audit: homepage is a 5.5KB hand-coded DIY page that loads its navigation via a copy-pasted w3schools 'w3-include-html' XMLHttpRequest hack — content invisible to non-JS crawlers",
+   "no CMS; bare Bootstrap-from-CDN page with inline styles, observed in fetched source",
+   "contact.html fetch shows con@theapplefarm.com",
+   "meta description: grows apples, strawberries, raspberries, plums, cherries, pears; campsite open May to September"
+  ],
+  "contact_email": "con@theapplefarm.com",
+  "contact_phone": "+353 52 7441459",
+  "source_urls": [
+   "https://theapplefarm.com/",
+   "https://theapplefarm.com/contact.html"
+  ],
+  "distinctive": "farm shop on the apple farm with its own pressed apple juice and a summer campsite among the orchards (site's own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Bagaduce Lunch",
+  "trade": "fried-seafood takeout stand",
+  "town": "Penobscot",
+  "region": "Maine (Blue Hill Peninsula)",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "newenglandwithlove.com lobster-pound guide (fetched) links only a Facebook page for it — no website",
+   "Wikipedia article (fetched) categorizes it as a James Beard 'America's Classics' winner, a seafood restaurant established 1946 in Hancock County",
+   "chamber, visitmaine.com and roadfood.com searches all fetched with no listing — effectively invisible outside Facebook"
+  ],
+  "contact_email": null,
+  "contact_phone": null,
+  "source_urls": [
+   "https://newenglandwithlove.com/lobster-pounds-in-maine/",
+   "https://en.wikipedia.org/wiki/Bagaduce_Lunch",
+   "https://www.facebook.com/bagaduce/"
+  ],
+  "distinctive": "1946 fried-clam and crab-roll stand beside the reversing falls of the Bagaduce River; James Beard America's Classics winner (Wikipedia, fetched)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Kelly's Butchers",
+  "trade": "artisan butcher (black and white puddings)",
+  "town": "Newport",
+  "region": "County Mayo",
+  "country": "Ireland",
+  "website": "https://kellysbutchers.com/",
+  "evidence": [
+   "footer '© 2022' observed in fetched HTML — four years stale",
+   "site describes itself as third-generation artisan butchers in 'Newport, County Mayo, in the West of Ireland' (fetched meta/schema)",
+   "contact email and phone observed in fetched HTML"
+  ],
+  "contact_email": "info@kellysbutchers.com",
+  "contact_phone": "+353 98 41149",
+  "source_urls": [
+   "https://kellysbutchers.com/"
+  ],
+  "distinctive": "third-generation family butchers in Newport, Co. Mayo (site's own title and description)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Hall's Harbour Lobster Pound",
+  "trade": "lobster pound, restaurant and gift shop",
+  "town": "Hall's Harbour",
+  "region": "Nova Scotia (Bay of Fundy shore)",
+  "country": "Canada",
+  "website": "https://hallsharbourlobster.com/",
+  "evidence": [
+   "site runs on legacy DotNetNuke CMS — 'DNN' markers and WebResource.axd resources observed in curl audit, with DNN-style ' > Home' page titles",
+   "third-party module notice 'Copyright 2016 Small Batch, Inc.' embedded in page source",
+   "no email anywhere on homepage or Contact-Us page (both fetched) — contact form and phone only"
+  ],
+  "contact_email": null,
+  "contact_phone": "(902) 679-5299",
+  "source_urls": [
+   "https://hallsharbourlobster.com/",
+   "https://hallsharbourlobster.com/Contact-Us"
+  ],
+  "distinctive": "lobster pound with restaurant and gift shop in a tiny Bay of Fundy harbour village (site's own title)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Doo Doo's Bakery",
+  "trade": "village bakery famous for butter tarts",
+  "town": "Bailieboro",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "https://doodoos.ca/",
+  "evidence": [
+   "footer '© 2024 Doo Doo's Bakery' observed in fetched HTML — two years stale at Aug 2026 fetch",
+   "site's own description: butter tarts, 'Visit our bakery in Bailieboro, Ontario for a taste of country goodness'",
+   "contact email is a Gmail address, observed in fetched HTML"
+  ],
+  "contact_email": "doodoosbakery@gmail.com",
+  "contact_phone": "705.939.1394",
+  "source_urls": [
+   "https://doodoos.ca/"
+  ],
+  "distinctive": "crossroads-hamlet bakery whose butter tarts are the whole identity — 'a taste of country goodness' (site's own copy)",
+  "confidence": "medium"
+ }
+]

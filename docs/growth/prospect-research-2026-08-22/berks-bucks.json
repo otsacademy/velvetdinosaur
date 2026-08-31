@@ -1,0 +1,278 @@
+[
+ {
+  "name": "Below Stairs of Hungerford",
+  "trade": "Antiques shop (19th/early-20th-century domestic antiques)",
+  "town": "Hungerford",
+  "county": "Berkshire",
+  "website": "https://www.belowstairs.co.uk/",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "'Powered by SellerDeck' legacy ecommerce platform in footer (curl)",
+   "2000s-era left-nav catalogue layout with ~140 text link sections, HTML-entity-encoded body text (curl)"
+  ],
+  "contact_email": "hofgartner@belowstairs.co.uk",
+  "contact_phone": "01488 682317",
+  "source_urls": [
+   "https://www.belowstairs.co.uk/"
+  ],
+  "distinctive": "Five themed showrooms around a courtyard at 103 High Street; 'We carry no modern or reproductions' — everything original 19th/early-20th century, refurbished in their own workshops",
+  "confidence": "high"
+ },
+ {
+  "name": "Smith & Sons - Artisan Workshop",
+  "trade": "Shoe & leather repairs, key cutting, engraving",
+  "town": "Aylesbury",
+  "county": "Buckinghamshire",
+  "website": "https://www.smithnsons.co.uk/",
+  "evidence": [
+   "site built on Webador site-builder; only email in homepage source is support@webador.com (curl)",
+   "no phone number or business email findable in homepage HTML (curl)",
+   "Webador machine-generated page URLs like /1401004_aylesbury-s-no-1-shoe-leather-repairs (curl)"
+  ],
+  "contact_email": "info@smithnsons.co.uk",
+  "contact_phone": "01296 330456",
+  "source_urls": [
+   "https://www.smithnsons.co.uk/",
+   "https://www.smithnsons.co.uk/contact",
+   "https://friarssquareshopping.com/shops/smith-and-sons.php"
+  ],
+  "distinctive": "Formerly 'Surelock Homes Security'; self-styled 'Aylesbury's No.1 Shoe & Leather Repairs' at 20B Friars Square, also doing laser engraving, sharpening and watch batteries",
+  "confidence": "high"
+ },
+ {
+  "name": "Petcare Thame",
+  "trade": "Independent pet shop",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "https://petcarethame.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' — discontinued legacy builder (curl)",
+   "template placeholder 'filler@godaddy.com' left in page source (curl)",
+   "page title is just 'Petcare' with no location or keywords (curl)"
+  ],
+  "contact_email": "shop@petcarethame.co.uk",
+  "contact_phone": "01844 213710",
+  "source_urls": [
+   "https://petcarethame.co.uk/",
+   "https://www.thametowncouncil.gov.uk/business-directory/wpbdp_category/daily-essentials-business/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Hungerford Arcade",
+  "trade": "Antiques & collectables arcade",
+  "town": "Hungerford",
+  "county": "Berkshire",
+  "website": "https://www.hungerfordarcade.com/",
+  "evidence": [
+   "footer copyright © 2014 (curl)",
+   "public contact address is a gmail.com account, not the domain (curl)"
+  ],
+  "contact_email": "hungerfordarcade@gmail.com",
+  "contact_phone": "01488 683701",
+  "source_urls": [
+   "https://www.hungerfordarcade.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Thame Specialist Dry Cleaners",
+  "trade": "Dry cleaning, ironing & alterations",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "http://thamespecialistdrycleaners.co.uk/index.html",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "Weebly builder markers throughout source (curl)",
+   "title tag misspells 'Bispoke Tailoring' (curl)",
+   "Thame Town Council directory lists the /index.html URL as their official website (curl of council listing)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01844 212221",
+  "source_urls": [
+   "http://thamespecialistdrycleaners.co.uk/index.html",
+   "https://www.thametowncouncil.gov.uk/business-directory/13108/thame-specialist-dry-cleaners/"
+  ],
+  "distinctive": "High Street shop promoting an express 'VIP Hub' — same-day ironing, dry cleaning and alterations for Thame, Aylesbury, Haddenham and Chinnor",
+  "confidence": "high"
+ },
+ {
+  "name": "M&P Hardware",
+  "trade": "Hardware shop / ironmonger",
+  "town": "Hungerford",
+  "county": "Berkshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Penny Post Hungerford independent-shops directory lists only a Facebook page and phone (WebSearch)",
+   "searches surface only third-party directory listings (Cylex, localstore, hardwareshopfinder, Yell) — no own website (WebSearch)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01488 681048",
+  "source_urls": [
+   "https://www.facebook.com/mandphardware/",
+   "https://pennypost.org.uk/2025/06/hungerford-businesses-june-2025/",
+   "https://www.localstore.co.uk/store/317717/mandp-hardware/hungerford/"
+  ],
+  "distinctive": "At 1 The Cuttings, High Street; reviewers praise staff who mix specific paint colours to order — 'nearly everything for DIY and gardening' plus key cutting",
+  "confidence": "high"
+ },
+ {
+  "name": "The Bakers Shop",
+  "trade": "Bakery",
+  "town": "Wendover",
+  "county": "Buckinghamshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Sarah Greer Wendover small-business directory lists Facebook link only (WebFetch)",
+   "aylesbury.co.uk directory listing shows address and phone with no website link (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01296 624642",
+  "source_urls": [
+   "https://www.aylesbury.co.uk/info/2224/",
+   "https://www.facebook.com/bakersshopwendover/",
+   "https://sarahgreerphotography.co.uk/wendover-small-business-directory-a-z/"
+  ],
+  "distinctive": "Beloved bakery at 1 Icknield Court, Back Street — Wendover News published a 'Thank you The Bakers Shop' tribute piece",
+  "confidence": "high"
+ },
+ {
+  "name": "Area Sweep (Darren Dancey)",
+  "trade": "Chimney sweep",
+  "town": "Newbury",
+  "county": "Berkshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "only owned presence found is a Facebook page; searches return just NACS member listing and whodoyou directory, no website (WebSearch)",
+   "NACS member page requires login (curl returned 401) so even his trade-body listing is not publicly readable"
+  ],
+  "contact_email": null,
+  "contact_phone": "01635 569195",
+  "source_urls": [
+   "https://www.facebook.com/AreaSweep/",
+   "https://www.whodoyou.com/biz/107725/area-sweep-chimney-sweep-newbury-england",
+   "https://nacs.org.uk/members/darren-dancey-area-sweep/"
+  ],
+  "distinctive": "NACS-registered sweep based at Riverside Cottage, Donnington; sweeps AGAs, Rayburns and woodburners and issues official sweeping certificates",
+  "confidence": "high"
+ },
+ {
+  "name": "Greens of Thame",
+  "trade": "Made-to-measure curtains, blinds & upholstery",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "https://greensofthame.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' — discontinued legacy builder (curl)",
+   "legacy domain greensfurnishingsthameltd.com still ranks in search with http:// .html pages; its https root returns HTTP 405 (curl)"
+  ],
+  "contact_email": "info@greensofthame.co.uk",
+  "contact_phone": "01844 212560",
+  "source_urls": [
+   "https://greensofthame.co.uk/",
+   "http://www.greensfurnishingsthameltd.com/",
+   "https://www.thametowncouncil.gov.uk/business-directory/22340/greens-of-thame/"
+  ],
+  "distinctive": "Soft-furnishings house at 4-5 Upper High Street established 1963, taken over in 2024 by Sian Callow-Salt, an employee of 15 years",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Picture Framer",
+  "trade": "Picture framing, restoration & mirrors",
+  "town": "Wargrave (Henley-on-Thames area)",
+  "county": "Berkshire",
+  "website": "https://www.thepicture-framer.co.uk/",
+  "evidence": [
+   "meta generator 'Jimdo Creator' — legacy budget site-builder (curl)",
+   "keyword-stuffed title tag: 'The Picture Framer Berkshire Quality frames, restoration, mirrors...' (curl)",
+   "no email visible on homepage, only on contact subpage (curl)"
+  ],
+  "contact_email": "david@thepicture-framer.co.uk",
+  "contact_phone": "07969 958606",
+  "source_urls": [
+   "https://www.thepicture-framer.co.uk/contact/",
+   "https://www.thomsonlocal.com/search/picture-framers/henley-on-thames-oxfordshire"
+  ],
+  "distinctive": "One-man workshop (David) at Unit 4 Spring Meadows Business Centre, Wargrave — bespoke frames, restoration and mirrors",
+  "confidence": "medium"
+ },
+ {
+  "name": "Gabriel Machin",
+  "trade": "Traditional butcher & game dealer",
+  "town": "Henley-on-Thames",
+  "county": "Oxfordshire",
+  "website": "https://www.gabrielmachin.co.uk/",
+  "evidence": [
+   "meta generator WordPress 6.2.11 — core several major versions out of date (curl)",
+   "runs on an aging WPBakery-era WordPress build despite current © year (curl)"
+  ],
+  "contact_email": "enquiries@gabrielmachin.co.uk",
+  "contact_phone": "01491 574377",
+  "source_urls": [
+   "https://www.gabrielmachin.co.uk/",
+   "https://www.gabrielmachin.co.uk/history/"
+  ],
+  "distinctive": "'Henley's favourite butcher since 1910' at 7 Market Place — the premises have housed a butcher's shop since 1861",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Flower Gallery",
+  "trade": "Florist",
+  "town": "Wendover",
+  "county": "Buckinghamshire",
+  "website": "https://www.wendoverflowers.co.uk/index.html",
+  "evidence": [
+   "hand-built static .html pages; footer © carries no year (curl)",
+   "contact email is a hotmail.co.uk address rather than the domain (curl)"
+  ],
+  "contact_email": "theflowergallery.wendover@hotmail.co.uk",
+  "contact_phone": "01296 620062",
+  "source_urls": [
+   "https://www.wendoverflowers.co.uk/index.html",
+   "https://sarahgreerphotography.co.uk/wendover-small-business-directory-a-z/"
+  ],
+  "distinctive": "Family florist on Wendover High Street since 2002, same-day local delivery with fresh seasonal stock",
+  "confidence": "medium"
+ },
+ {
+  "name": "Whitewaters Deli Cafe",
+  "trade": "Deli café / coffee shop",
+  "town": "Wendover",
+  "county": "Buckinghamshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Sarah Greer Wendover small-business directory lists Facebook link only (WebFetch)",
+   "searches surface only Facebook page and third-party directories (Cylex, bigreddirectory, sluurpy) — no own website (WebSearch)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01296 623331",
+  "source_urls": [
+   "https://www.facebook.com/p/Whitewaters-Deli-Cafe-100063767762036/",
+   "https://wendover.cylex-uk.co.uk/company/whitewaters-deli-23837299.html",
+   "https://sarahgreerphotography.co.uk/wendover-small-business-directory-a-z/"
+  ],
+  "distinctive": "Independently run café at 5 Chiltern Court, Back Street serving Monmouth coffee and Birchall teas",
+  "confidence": "medium"
+ },
+ {
+  "name": "Wrens of Thame",
+  "trade": "Butcher / daily-essentials shop",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "Thame Town Council business directory listing shows phone and address but no website (WebFetch of council listing)",
+   "searches return only directory entries (Cylex, Bucks Herald findit) — no owned web presence (WebSearch)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01844 260269",
+  "source_urls": [
+   "https://www.thametowncouncil.gov.uk/business-directory/22402/wrens-of-thame/",
+   "https://thame.cylex-uk.co.uk/company/the-wrens-of-thame-26780685.html"
+  ],
+  "distinctive": "Traditional shop at 19 Buttermarket in Thame's historic market square",
+  "confidence": "medium"
+ }
+]

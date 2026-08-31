@@ -1,0 +1,54 @@
+{
+  "first": {
+    "output": "velvet-dinosaur-six-prospect-packs-2026-08-30",
+    "sites": [
+      { "id": "jamesons-witney", "name": "Jamesons Accountants", "origin": "https://www.jamesons.co.uk" },
+      { "id": "corn-street-dental-witney", "name": "Corn Street Dental Practice", "origin": "https://www.cornstreetdental.co.uk", "crawlLinks": true },
+      { "id": "hair-lounge-chipping-norton", "name": "Hair Lounge Chipping Norton", "origin": "https://www.hlcn.co.uk", "crawlLinks": true },
+      { "id": "cotswold-dental-wellness", "name": "Cotswold Dental Wellness", "origin": "https://cotswolddentalwellness.net" },
+      { "id": "salutation-inn-pembrokeshire", "name": "Salutation Inn", "origin": "https://salutationcountryhotel.co.uk" },
+      { "id": "simas-beauty-witney", "name": "Sima's Beauty", "origin": "https://www.simasbeauty.co.uk", "seeds": ["/privacy"], "crawlLinks": true }
+    ]
+  },
+  "next": {
+    "output": "velvet-dinosaur-next-six-prospect-packs-2026-08-30",
+    "sites": [
+      { "id": "burford-road-dental-carterton", "name": "Burford Road Dental", "origin": "https://burfordroad.co.uk", "crawlLinks": true },
+      { "id": "teddington-cheese", "name": "The Teddington Cheese", "origin": "http://www.teddingtoncheese.co.uk", "crawlLinks": true },
+      { "id": "popty-cara-pembrokeshire", "name": "Popty Cara", "origin": "http://www.poptycara.co.uk", "crawlLinks": true },
+      { "id": "powys-country-house-corwen", "name": "Powys Country House", "origin": "https://powyscountryhouse.co.uk", "crawlLinks": true },
+      { "id": "bodalwyn-aberystwyth", "name": "Bodalwyn Guest House", "origin": "https://www.bodalwyn.co.uk", "crawlLinks": true },
+      { "id": "number47-grassington", "name": "Number 47 Grassington", "origin": "http://www.number47.co.uk", "crawlLinks": true }
+    ]
+  },
+  "next-ten": {
+    "output": "velvet-dinosaur-next-ten-prospect-packs-2026-08-30",
+    "sites": [
+      { "id": "bath-street-dental-abingdon", "name": "Bath Street Dental Practice", "origin": "https://www.bathstreetdentist.co.uk", "crawlLinks": true },
+      { "id": "riverside-lechlade", "name": "The Riverside Lechlade", "origin": "https://www.riverside-lechlade.com", "crawlLinks": true },
+      { "id": "glamour-and-glow-witney", "name": "Glamour and Glow", "origin": "https://glamourandglow8.godaddysites.com", "crawlLinks": true },
+      { "id": "buscot-manor", "name": "Buscot Manor", "origin": "https://www.buscotmanor.com", "crawlLinks": true },
+      { "id": "home-farm-salon-ardington", "name": "Home Farm Salon", "origin": "https://homefarmsalon.co.uk", "seeds": ["http://homefarmsalon.co.uk/booking.html"], "crawlLinks": true },
+      { "id": "fringe-hair-beauty-minster-lovell", "name": "Fringe Hair & Beauty", "origin": "https://www.fringehairandbeauty.co.uk", "crawlLinks": true },
+      { "id": "witney-hotel", "name": "The Witney Hotel", "origin": "https://www.witneyhotel.co.uk", "crawlLinks": true },
+      { "id": "white-rose-accountancy-faringdon", "name": "White Rose Accountancy", "origin": "https://www.whiteroseaccountancy.co.uk", "crawlLinks": true },
+      { "id": "academy-partnership-witney", "name": "The Academy Partnership", "origin": "https://theacademypartnership.co.uk", "crawlLinks": true },
+      { "id": "portway-dental-care-wantage", "name": "Portway Dental Care", "origin": "https://www.portwaydental.co.uk", "crawlLinks": true }
+    ]
+  },
+  "fourth-ten": {
+    "output": "velvet-dinosaur-fourth-batch-ten-prospect-packs-2026-08-31",
+    "sites": [
+      { "id": "potts-and-co-middle-barton", "name": "Potts & Co", "origin": "https://potts-and-co-accountancy-oxfordshire.co.uk", "crawlLinks": true, "mapQuery": "Potts & Co Accountancy Middle Barton Oxfordshire" },
+      { "id": "stacey-and-mason-witney", "name": "Stacey & Mason Solicitors", "origin": "https://www.staceyandmason.co.uk", "crawlLinks": true },
+      { "id": "francis-george-solicitors-witney", "name": "Francis George Solicitor-Advocate", "origin": "https://www.francisgeorgesolicitor-advocate.com", "crawlLinks": true },
+      { "id": "west-nethercott-farm", "name": "West Nethercott Farm", "origin": "http://www.westnethercott.co.uk", "crawlLinks": true },
+      { "id": "wolfscote-grange-farm", "name": "Wolfscote Grange Farm", "origin": "https://wolfscotegrangecottages.co.uk", "crawlLinks": true },
+      { "id": "chatfield-accountancy-witney", "name": "Chatfield Accountancy", "origin": "https://www.chatfieldaccountancy.co.uk", "crawlLinks": true, "mapQuery": "Chatfield Accountancy Witney Oxfordshire" },
+      { "id": "cotswold-garden-tearooms-stow", "name": "Cotswold Garden Tearooms & B&B", "origin": "https://fullhousebookings.com", "seeds": ["https://fullhousebookings.com/property/detail/103/Cotswold-Garden-Tea-Rooms/"], "crawlLinks": false, "discoverSitemaps": false, "includeHome": false },
+      { "id": "elite-hair-salon-didcot", "name": "Elite Hair Salon Didcot", "origin": "https://www.beautynailhairsalons.com", "seeds": ["https://www.beautynailhairsalons.com/GB/Didcot/103756-1"], "crawlLinks": false, "discoverSitemaps": false, "includeHome": false, "mapQuery": "Elite Hair Salon 44 Park Road Didcot OX11 8QW" },
+      { "id": "morris-clown-bampton", "name": "The Morris Clown", "origin": "https://camra.org.uk", "seeds": ["https://camra.org.uk/pubs/morris-clown-bampton-157200"], "crawlLinks": false, "discoverSitemaps": false, "includeHome": false },
+      { "id": "old-bakery-highworth", "name": "The Old Bakery Highworth", "origin": "https://www.visithighworth.co.uk", "seeds": ["https://www.visithighworth.co.uk/vhl-eatanddrink.html"], "crawlLinks": false, "discoverSitemaps": false, "includeHome": false }
+    ]
+  }
+}

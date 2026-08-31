@@ -1,0 +1,293 @@
+[
+ {
+  "name": "Herb Acupuncture Clinic (Dr. Yong Ming Li)",
+  "trade": "acupuncturist",
+  "town": "Bridgewater",
+  "region": "New Jersey",
+  "country": "USA",
+  "website": "https://www.herbacupuncture.com/",
+  "evidence": [
+   "meta generator 'Yahoo! SiteBuilder/2.6/1.6.0_07' in curl-fetched HTML — builder discontinued ~2010s",
+   "footer 'Copyright © 2005-2015' on homepage HTML fetched by curl — 11 years stale",
+   "no <meta name=viewport> in fetched HTML — not mobile-friendly",
+   "interior page is a 4KB photo+phone-number card with no viewport, seen in curl fetch"
+  ],
+  "contact_email": "tcmaa2004@yahoo.com",
+  "contact_phone": "(908) 619-0601",
+  "source_urls": [
+   "https://www.herbacupuncture.com/",
+   "https://www.herbacupuncture.com/HerbAcupunctureClinic.html"
+  ],
+  "distinctive": "Solo practice of Dr. Yong Ming Li MD PhD LAc — a board-certified pathologist & dermatopathologist practicing 'authentic acupuncture & Chinese herbs'; site is bilingual English/Chinese (针药坊)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Physical Therapy Centers of Osterville and Bourne",
+  "trade": "physical therapist",
+  "town": "Osterville & Bourne (Cape Cod)",
+  "region": "Massachusetts",
+  "country": "USA",
+  "website": "http://www.physical-therapy-centers.com/",
+  "evidence": [
+   "HTTPS connection fails entirely (curl to https:// returned status 000) — site is HTTP-only with no SSL",
+   "no <meta name=viewport> in curl-fetched HTML — not mobile-friendly",
+   "entire homepage is 6KB of 1990s-style static HTML (curl-measured)"
+  ],
+  "contact_email": "info@physical-therapy-centers.com",
+  "contact_phone": "508-428-0300",
+  "source_urls": [
+   "http://www.physical-therapy-centers.com/"
+  ],
+  "distinctive": "Homepage says the Osterville centre 'opened in 1985 as a private rehabilitation facility specializing in hands-on manual therapy' and quotes a patient: 'When I saw two local doctors having treatment at your office, I knew this was the right place!'",
+  "confidence": "high"
+ },
+ {
+  "name": "Smolczynski Physical Therapy",
+  "trade": "physical therapist",
+  "town": "Allentown (Lehigh Valley)",
+  "region": "Pennsylvania",
+  "country": "USA",
+  "website": "https://experiencedphysicaltherapy.com/",
+  "evidence": [
+   "table-based page layout ('table width=' markup) in curl-fetched homepage HTML",
+   "no <meta name=viewport> in fetched HTML — not mobile-friendly",
+   "16KB static-HTML site found via Marginalia's old-HTML index"
+  ],
+  "contact_email": "info@experiencedphysicaltherapy.com",
+  "contact_phone": "(610) 432-7733",
+  "source_urls": [
+   "https://experiencedphysicaltherapy.com/"
+  ],
+  "distinctive": "Family-run clinic whose service menu includes EMG testing and, unusually, canine rehabilitation alongside human physical therapy",
+  "confidence": "high"
+ },
+ {
+  "name": "Balclutha Physiotherapy (Sharon McKinnel)",
+  "trade": "physiotherapist",
+  "town": "Balclutha",
+  "region": "Otago",
+  "country": "New Zealand",
+  "website": "https://balcluthaphysiotherapy.co.nz/",
+  "evidence": [
+   "entire site is one page containing only name, phone, address and a contact form — no services, staff or hours content (full text extracted from curl fetch)",
+   "footer byline 'Made with dazzly' (DIY micro-builder) in fetched HTML",
+   "contact email is legacy NZ ISP address, shown on page",
+   "practice's SEPNZ directory record lists no website"
+  ],
+  "contact_email": "balpt@actrix.co.nz",
+  "contact_phone": "03 418 0005",
+  "source_urls": [
+   "https://balcluthaphysiotherapy.co.nz/",
+   "https://sportsphysiotherapy.org.nz/find-a-sports-and-exercise-physiotherapist/otago-southland-region/"
+  ],
+  "distinctive": "Small-town clinic at 61 Clyde Street, Balclutha; principal Sharon McKinnel is listed in the Sports & Exercise Physiotherapy NZ (SEPNZ) Otago/Southland register",
+  "confidence": "high"
+ },
+ {
+  "name": "Pinhook Chiropractic Clinic (Dr. Brad Grizzaffi)",
+  "trade": "chiropractor",
+  "town": "Lafayette",
+  "region": "Louisiana",
+  "country": "USA",
+  "website": "https://www.pinhookchiropractic.com/",
+  "evidence": [
+   "no <meta name=viewport> in curl-fetched homepage HTML — not mobile-friendly",
+   "legacy flat .html page structure with jquery-migrate shim, seen in fetched HTML",
+   "address & email only present in meta description of contact page, not rendered contact block (curl fetch)"
+  ],
+  "contact_email": "info@pinhookchiropractic.com",
+  "contact_phone": "337-237-2273",
+  "source_urls": [
+   "https://www.pinhookchiropractic.com/",
+   "https://www.pinhookchiropractic.com/page/contact.html"
+  ],
+  "distinctive": "'Home of VAX-D Therapy' — homepage stresses it is locally owned by Dr. Brad Grizzaffi; address 100 LaRue France, Lafayette LA 70508",
+  "confidence": "high"
+ },
+ {
+  "name": "Hares Denture Clinic",
+  "trade": "denturist (denture clinic)",
+  "town": "Cornwall",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "https://www.haresdentureclinic.com/",
+  "evidence": [
+   "homepage <title> is literally just 'Home' (curl fetch) — no practice name or SEO",
+   "built on HostGator's generic 'mywebsitebuilder.com' template platform (brand=HostGator asset URLs in fetched HTML)",
+   "no phone, email or address present in homepage HTML (JS-shell only), observed in curl fetch"
+  ],
+  "contact_email": "info@haresdentureclinic.com",
+  "contact_phone": "(613) 703-0445",
+  "source_urls": [
+   "https://www.haresdentureclinic.com/index.html",
+   "https://www.easternontariolocal.ca/biz/665/hares-denture-clinic"
+  ],
+  "distinctive": "Border-town clinic whose directory profile advertises 'U.S. Patients Welcomed', free in-clinic consultations and same-day denture repair",
+  "confidence": "medium"
+ },
+ {
+  "name": "Whyalla Family Corrective Chiropractic",
+  "trade": "chiropractor",
+  "town": "Whyalla",
+  "region": "South Australia",
+  "country": "Australia",
+  "website": "https://www.whyallachiropractor.com.au/",
+  "evidence": [
+   "site is a Sensis (Yellow Pages AU) white-label Duda template — Sensis platform CSS paths in curl-fetched HTML",
+   "hero imagery is stock files, one with Dec-2015 upload timestamp in filename, seen in fetched HTML",
+   "3-page site (Home/Services/Contact only) with legacy ISP contact address shown on page"
+  ],
+  "contact_email": "whyallafc@internode.on.net",
+  "contact_phone": "08 8645 3897",
+  "source_urls": [
+   "https://www.whyallachiropractor.com.au/"
+  ],
+  "distinctive": "Steel-town family clinic with the tagline 'Optimal spine equals optimal health' repeated across the homepage",
+  "confidence": "medium"
+ },
+ {
+  "name": "Sligo Counselling Service / Counselling To Go",
+  "trade": "counsellor / psychotherapist",
+  "town": "Sligo",
+  "region": "County Sligo",
+  "country": "Ireland",
+  "website": "http://www.sligocounsellingservice.ie/",
+  "evidence": [
+   "legacy site is HTTP-only — curl to https fails completely (status 000), so browsers mark this counselling site 'Not secure'",
+   "no <meta name=viewport> and jQuery 1.8.3 (2012) in curl-fetched HTML",
+   "abandoned free-Weebly build ('Create your own unique website with customizable templates' boilerplate) still live, with homepage banner 'WE HAVE NOW MOVED TO OUR NEW WEBSITE! https://counsellingtogo.com/'",
+   "replacement site counsellingtogo.com relies on a Gmail contact address (observed in curl fetch)"
+  ],
+  "contact_email": "counsellingtogo@gmail.com",
+  "contact_phone": "087 627 0737",
+  "source_urls": [
+   "http://www.sligocounsellingservice.ie/",
+   "https://counsellingtogo.com/"
+  ],
+  "distinctive": "Specialises in divorce, separation and domestic-abuse counselling, including 'Going to Court' support — a sensitive niche currently served from an insecure legacy page",
+  "confidence": "medium"
+ },
+ {
+  "name": "Shepparton Foot Clinic",
+  "trade": "podiatrist",
+  "town": "Shepparton",
+  "region": "Victoria",
+  "country": "Australia",
+  "website": "https://www.sheppartonfootclinic.com.au/",
+  "evidence": [
+   "footer reads '© 2019 Shepparton Foot Clinic. All rights reserved.' in curl-fetched HTML — seven years stale",
+   "contact email published as plain admin@ address in page HTML (curl fetch)"
+  ],
+  "contact_email": "admin@sheppartonfootclinic.com.au",
+  "contact_phone": "(03) 5822 1855",
+  "source_urls": [
+   "https://www.sheppartonfootclinic.com.au/",
+   "https://threebestrated.com.au/podiatrists-in-shepparton-vic"
+  ],
+  "distinctive": "Regional Goulburn Valley clinic with the tagline 'Feet for Life' in its homepage title",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Chiropody Surgery (Anne Marie Lynch)",
+  "trade": "chiropodist / podiatrist",
+  "town": "Cork",
+  "region": "County Cork",
+  "country": "Ireland",
+  "website": "https://www.thechiropodysurgery.com/",
+  "evidence": [
+   "DIY Wix build — meta generator 'Wix.com Website Builder' in curl-fetched HTML",
+   "homepage HTML payload is 483KB (curl-measured) — heavily bloated for a one-practitioner clinic",
+   "email and phone confirmed on-page in curl fetch"
+  ],
+  "contact_email": "Info@thechiropodysurgery.com",
+  "contact_phone": "021 427 6056",
+  "source_urls": [
+   "https://www.thechiropodysurgery.com/",
+   "https://www.fyple.net/company/the-chiropody-surgery-f5j4j4/"
+  ],
+  "distinctive": "Site says Anne Marie Lynch 'has been operating out of Cork for the past 30 years' from the surgery at 11 Marlboro Street",
+  "confidence": "medium"
+ },
+ {
+  "name": "Caplash Dental (Dr. Amit Caplash)",
+  "trade": "independent dentist",
+  "town": "Brampton",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "https://www.caplashdental.com/",
+  "evidence": [
+   "public contact email is a Hotmail address in curl-fetched HTML",
+   "legacy jQuery 2.2.4 (2016) loaded on homepage (curl fetch)",
+   "flat .html page URLs observed via Marginalia and curl"
+  ],
+  "contact_email": "dental201@hotmail.com",
+  "contact_phone": "905-451-2999",
+  "source_urls": [
+   "https://www.caplashdental.com/"
+  ],
+  "distinctive": "Solo family practice of Dr. Amit Caplash; testimonial on page says patients have stayed 'ever since they opened doors'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Shannon Chiropractic Clinic (Dr. Craig Shannon)",
+  "trade": "chiropractor",
+  "town": "Portsmouth",
+  "region": "New Hampshire",
+  "country": "USA",
+  "website": "https://shannonchiropracticclinic.com/",
+  "evidence": [
+   "meta generator 'WordPress 3.8.41' in curl-fetched HTML — a 2014-era WordPress branch, ~12 years old",
+   "malformed duplicated <title> ('...Portsmouth, NHShannon Chiropractic Clinic') seen in fetched HTML",
+   "no email address anywhere in fetched pages; phone only"
+  ],
+  "contact_email": null,
+  "contact_phone": "(603) 766-3130",
+  "source_urls": [
+   "https://shannonchiropracticclinic.com/"
+  ],
+  "distinctive": "Solo practice — site's own nav is 'Meet the Chiropractor' (singular), Dr. Craig Shannon",
+  "confidence": "high"
+ },
+ {
+  "name": "Let it Heal (Bowen & Massage Therapy)",
+  "trade": "massage therapist / Bowen therapist",
+  "town": "Burlington",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "https://letitheal.com/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' in curl-fetched HTML",
+   "footer 'Copyright © 2018 Let it Heal - All Rights Reserved.' in fetched HTML — eight years stale",
+   "template placeholder address 'filler@godaddy.com' still present in contact-page HTML (curl fetch); no real practice email published"
+  ],
+  "contact_email": null,
+  "contact_phone": "(905) 335-9355",
+  "source_urls": [
+   "https://letitheal.com/",
+   "https://letitheal.com/contact-us"
+  ],
+  "distinctive": "Practice leads with Bowen Therapy — 'an Australian bodywork that corrects pain', with a testimonial that it 'ended my need for a chiropractor'",
+  "confidence": "high"
+ },
+ {
+  "name": "Whanganui Foot Clinic",
+  "trade": "podiatrist",
+  "town": "Whanganui",
+  "region": "Manawatū-Whanganui",
+  "country": "New Zealand",
+  "website": "NONE",
+  "evidence": [
+   "Healthpoint listing (fetched by curl) shows address and phone but no website link",
+   "Marginalia search for the clinic returns only its Healthpoint listing — no site of its own found",
+   "no email published on the Healthpoint record (checked in fetched HTML)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(06) 348 7779",
+  "source_urls": [
+   "https://www.healthpoint.co.nz/allied-health/podiatry/whanganui-foot-clinic/",
+   "https://marginalia-search.com/search?query=Whanganui+Foot+Clinic+podiatry"
+  ],
+  "distinctive": "Operates from 35 Guyton Street with the Healthlink EDI mailbox 'awa2feet' — a clinic literally reachable only by phone, fax-era channels",
+  "confidence": "medium"
+ }
+]

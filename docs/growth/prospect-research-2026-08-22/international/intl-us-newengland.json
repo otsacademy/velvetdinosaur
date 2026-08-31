@@ -1,0 +1,293 @@
+[
+ {
+  "name": "Littleton Diner",
+  "trade": "diner",
+  "town": "Littleton",
+  "region": "New Hampshire",
+  "country": "USA",
+  "website": "http://littletondiner.com",
+  "evidence": [
+   "curl: serves over plain HTTP by default - final URL stays http with no redirect to the HTTPS version that exists",
+   "curl: no <meta name=viewport> on homepage or contact page - not mobile-responsive",
+   "curl: hand-built static .php site (menu.php, celebs.php, history.php) with a W3C-validator badge link, credited to legacy local builder NotchNet",
+   "golittleton.com dining page lists it as a featured Littleton restaurant (curl)"
+  ],
+  "contact_email": "info@littletondiner.com",
+  "contact_phone": "603-444-3994",
+  "source_urls": [
+   "http://littletondiner.com/",
+   "http://littletondiner.com/contact.php",
+   "https://golittleton.com/littleton_dining.php"
+  ],
+  "distinctive": "the site keeps a dedicated 'celebs' page of famous visitors (celebs.php in the nav) alongside a diner-history page",
+  "confidence": "high"
+ },
+ {
+  "name": "Harlow Farm",
+  "trade": "organic farm stand",
+  "town": "Westminster (near Bellows Falls/Brattleboro)",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "http://harlowfarm.com",
+  "evidence": [
+   "curl: generator meta reads 'WordPress 4.5.32' - a 2016-era core roughly a decade out of date",
+   "curl: serves over plain HTTP by default (no redirect although an HTTPS version answers 200)",
+   "curl: contact page exposes four plain-text mailto addresses (info@, office@, sales@, jon@)"
+  ],
+  "contact_email": "info@harlowfarm.com",
+  "contact_phone": "802-722-3515",
+  "source_urls": [
+   "http://harlowfarm.com/",
+   "http://harlowfarm.com/contact/"
+  ],
+  "distinctive": "their own title tag: 'An organic farm nestled along the shores of the Connecticut River'",
+  "confidence": "high"
+ },
+ {
+  "name": "The Fairbanks Inn",
+  "trade": "country inn / motel",
+  "town": "St Johnsbury",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://stjay.com",
+  "evidence": [
+   "curl: their legacy domain fairbanksinn.com now redirects to an Indonesian 'YODA4D' slot-gambling site",
+   "Wayback capture 18 Mar 2025 shows fairbanksinn.com already serving 'YODA4D - SLOT DEPOSIT QRIS' spam (fetched)",
+   "curl: the live site stjay.com is a generic Bootstrap/bxslider template with no copyright line and a misspelled amenities image file 'Fairabnks_Amenities.webp'"
+  ],
+  "contact_email": "gmfairbanksinn@gmail.com",
+  "contact_phone": "802-748-5666",
+  "source_urls": [
+   "http://stjay.com",
+   "http://fairbanksinn.com",
+   "http://web.archive.org/web/20250318095710/http://fairbanksinn.com/"
+  ],
+  "distinctive": "their hero images sit next to Expedia/Booking badges while the inn's own historic domain serves gambling spam - a brand-rescue story ready-made",
+  "confidence": "high"
+ },
+ {
+  "name": "Miss Lyndonville Diner",
+  "trade": "diner",
+  "town": "Lyndonville (near St Johnsbury)",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "curl: misslyndonvillediner.com returns only a 114-byte JS redirect to '/lander' (parked-domain page)",
+   "curl: the replacement domain OSM lists serves the identical 114-byte parked lander",
+   "Wayback capture 26 Feb 2024 was already a placeholder-style Bootstrap page titled with the bare domain name (fetched)",
+   "OSM/Nominatim listing (fetched) still carries full hours, Facebook link, email and phone for the diner at 686 Broad Street"
+  ],
+  "contact_email": "misslyndonvillediner@hotmail.com",
+  "contact_phone": "802-626-9890",
+  "source_urls": [
+   "http://misslyndonvillediner.com/",
+   "http://misslyndonvilledinervt.com/",
+   "https://nominatim.openstreetmap.org/search?q=Miss+Lyndonville+Diner+Lyndonville+Vermont&format=jsonv2&extratags=1",
+   "http://web.archive.org/web/20240226032859/https://misslyndonvillediner.com/"
+  ],
+  "distinctive": "OSM lists a 5:30am opening and a cuisine line running 'burger;sandwich;chicken;salad;soup;breakfast;lunch;dinner;omelettes;dessert'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dutton Berry Farm",
+  "trade": "farm stand",
+  "town": "West Brattleboro / Newfane",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://www.duttonberryfarm.com",
+  "evidence": [
+   "curl: homepage <title> is 'About | My Site' - the Square Online builder's unconfigured default title",
+   "curl: generator meta 'Square Online' with leftover Weebly strings in the markup",
+   "curl: their Gmail address and three stand phone lines are on the page"
+  ],
+  "contact_email": "Duttonberryfarm@gmail.com",
+  "contact_phone": "802-254-0254",
+  "source_urls": [
+   "https://www.duttonberryfarm.com/"
+  ],
+  "distinctive": "the page lists three separate farmstand phone lines for their Brattleboro, Manchester and Newfane stands",
+  "confidence": "high"
+ },
+ {
+  "name": "Rockland Cafe",
+  "trade": "family diner",
+  "town": "Rockland",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://rocklandcafe.com",
+  "evidence": [
+   "curl: footer reads 'Copyright © 2016 Rockland Cafe' today - and the Dec 2019 Wayback capture (fetched) shows the same '© 2016' line, i.e. essentially unmaintained for a decade",
+   "curl: WordPress 6.7.7 with LayerSlider and a 'Flash player' compatibility string in the homepage markup",
+   "curl: no email address anywhere on home or contact page - phone-only contact"
+  ],
+  "contact_email": null,
+  "contact_phone": "207-596-7556",
+  "source_urls": [
+   "https://rocklandcafe.com/",
+   "https://rocklandcafe.com/contact/",
+   "http://web.archive.org/web/20191221124255/http://rocklandcafe.com:80/contact/"
+  ],
+  "distinctive": "their own title tag: 'A Classic Family Diner in Midcoast Maine' - the contact page title even embeds the phone number",
+  "confidence": "high"
+ },
+ {
+  "name": "Jack's Hot Dog Stand",
+  "trade": "hot dog stand / lunch counter (since 1917)",
+  "town": "North Adams",
+  "region": "Massachusetts",
+  "country": "USA",
+  "website": "http://jackshotdogstand.com",
+  "evidence": [
+   "curl: serves plain HTTP by default with no HTTPS redirect",
+   "curl: zero <meta viewport> on homepage and contact page - fixed-width 2000s layout",
+   "curl: static .htm pages credited to berksites.com; homepage text says 'Since 1917'",
+   "no public email on the current site or its 2014 Wayback contact page (both fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "413-664-9006",
+  "source_urls": [
+   "http://jackshotdogstand.com/",
+   "http://jackshotdogstand.com/contact-us.htm",
+   "http://web.archive.org/web/20141111080717/http://jackshotdogstand.com/contact-us.htm"
+  ],
+  "distinctive": "slogan in the title: 'Fit For A King', with a 'From the Past' history page and a linked iBerkshires profile of owner Jeff Levanos",
+  "confidence": "high"
+ },
+ {
+  "name": "Bird's Nest B&B",
+  "trade": "bed and breakfast / guest house",
+  "town": "Buckland (Shelburne Falls)",
+  "region": "Massachusetts",
+  "country": "USA",
+  "website": "http://www.birdsnestbnb.com",
+  "evidence": [
+   "curl: birdsnestbnb.com now serves an SEO spam blog about Boston party-bus rentals on a free WordPress 'Iconic One' theme with footer 'Copyright 2022' - no B&B content remains",
+   "Overpass/OSM record (fetched) for the guest house at 2 Charlemont Road, Buckland MA still lists this domain as its website, plus email and phone"
+  ],
+  "contact_email": "birdsnestbnb1797@yahoo.com",
+  "contact_phone": "413-625-9523",
+  "source_urls": [
+   "http://www.birdsnestbnb.com",
+   "https://overpass-api.de/api/interpreter"
+  ],
+  "distinctive": "their Yahoo handle is 'birdsnestbnb1797' - the 1797 almost certainly the house's build year, worth confirming with the owner",
+  "confidence": "medium"
+ },
+ {
+  "name": "Peterboro Basket Company",
+  "trade": "basket workshop and factory outlet store",
+  "town": "Peterborough",
+  "region": "New Hampshire",
+  "country": "USA",
+  "website": "https://www.peterborobasket.com",
+  "evidence": [
+   "curl: homepage footer reads '© 2019 CTMG, INC. ALL RIGHTS RESERVED.' while the contact page shows © 2026 - inconsistent, half-stale storefront on a legacy CTMG ecommerce platform",
+   "curl: about page and contact page fetched for email and history"
+  ],
+  "contact_email": "info@peterborobasket.com",
+  "contact_phone": "603-924-3861",
+  "source_urls": [
+   "https://www.peterborobasket.com/",
+   "https://www.peterborobasket.com/contact-us/",
+   "https://www.peterborobasket.com/about-us/"
+  ],
+  "distinctive": "'Founded in 1854, Peterboro Basket Company is the oldest continuous manufacturer of baskets in the U.S.A.' (their own About page)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Home Kitchen Cafe",
+  "trade": "cafe / breakfast restaurant",
+  "town": "Rockland",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://www.homekitchencafe.com",
+  "evidence": [
+   "curl: footer reads 'Copyright © 2021 Home Kitchen Cafe. All rights reserved.' - four-plus years stale",
+   "curl: heavyweight 2010s stack (The7 multipurpose theme + WPBakery page builder)"
+  ],
+  "contact_email": "info@homekitchencafe.com",
+  "contact_phone": "207-596-2449",
+  "source_urls": [
+   "https://www.homekitchencafe.com/"
+  ],
+  "distinctive": "their own tagline in the title tag: 'When you're hungry, come HOME'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Genuine Auto Services",
+  "trade": "auto repair garage",
+  "town": "Rockland",
+  "region": "Maine",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Overpass/OSM record (fetched): garage at 126 Main Street, Rockland lists only a Facebook page as its web presence - no website tag - alongside a Gmail address and phone"
+  ],
+  "contact_email": "genuineauto126@gmail.com",
+  "contact_phone": "207-594-5872",
+  "source_urls": [
+   "https://overpass-api.de/api/interpreter",
+   "https://www.facebook.com/GenuineAutomotiveSvcsInc/"
+  ],
+  "distinctive": "a Main Street garage open Mon-Fri 7:00-17:00 (OSM hours) with its email handle matching its street number, 126",
+  "confidence": "medium"
+ },
+ {
+  "name": "Central Cafe",
+  "trade": "cafe",
+  "town": "St Johnsbury",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://centralcafe.co",
+  "evidence": [
+   "curl: centralcafe.co - the website its OSM listing carries - returns only a 114-byte JS redirect to '/lander' (parked domain)",
+   "Overpass/OSM record (fetched): cafe at 418 Railroad Street with daily hours, email and phone - so the business advertises a dead domain"
+  ],
+  "contact_email": "Centralcafe.stj@gmail.com",
+  "contact_phone": "802-424-1344",
+  "source_urls": [
+   "http://centralcafe.co/",
+   "https://overpass-api.de/api/interpreter"
+  ],
+  "distinctive": "418 Railroad Street with outdoor seating (OSM), on St Johnsbury's historic main commercial street",
+  "confidence": "medium"
+ },
+ {
+  "name": "Anthony's Diner",
+  "trade": "diner",
+  "town": "St Johnsbury",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "curl: anthonysdiner.com and anthonysdinervt.com both fail DNS - no website found",
+   "Nominatim/OSM record (fetched): diner listed at 321 Railroad Street with a phone number only - no website or email tag"
+  ],
+  "contact_email": null,
+  "contact_phone": "802-748-3613",
+  "source_urls": [
+   "https://nominatim.openstreetmap.org/search?q=Anthony%27s+Diner+Saint+Johnsbury&format=jsonv2&extratags=1"
+  ],
+  "distinctive": "sits at 321 Railroad Street inside St Johnsbury's Railroad Street Historic District (OSM display name)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Doug's Barber Shop",
+  "trade": "barber",
+  "town": "Rockland",
+  "region": "Maine",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Overpass/OSM record (fetched): hairdresser/barber listed in Rockland with a phone number only - no website, email or social tag of any kind"
+  ],
+  "contact_email": null,
+  "contact_phone": "207-542-6608",
+  "source_urls": [
+   "https://overpass-api.de/api/interpreter"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

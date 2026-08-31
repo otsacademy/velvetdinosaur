@@ -1,0 +1,281 @@
+[
+ {
+  "name": "The Teddington Cheese",
+  "trade": "cheesemonger / deli",
+  "town": "Teddington",
+  "county": "Greater London",
+  "website": "http://www.teddingtoncheese.co.uk/",
+  "evidence": [
+   "curl: 1990s-style splash page — 'Click here to ENTER our secure shopping site' with award GIFs for defunct schemes ('.net Internet Shopping Choice', 'Yell Choice of the Week')",
+   "curl: legacy Actinic/SellerDeck store — checkout and search run via /cgi-bin/*.pl Perl scripts; charset iso-8859-1; jQuery 1.11.1 (2014)",
+   "curl: plain http:// serves the site with no redirect to https (url_effective stayed http)",
+   "curl: page loads script from polyfill.io, a CDN publicly compromised in 2024 — live security liability",
+   "curl: contact details only present obfuscated in a meta tag"
+  ],
+  "contact_email": "cheese@teddingtoncheese.co.uk",
+  "contact_phone": "020 8977 6868",
+  "source_urls": [
+   "http://www.teddingtoncheese.co.uk/"
+  ],
+  "distinctive": "over 100 British and continental cheeses matured on the premises, cut and served at peak condition (their homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Hecks Cider",
+  "trade": "cider maker & farm shop",
+  "town": "Street",
+  "county": "Somerset",
+  "website": "https://www.heckscider.com/",
+  "evidence": [
+   "curl: footer reads 'Copyright © 2018' on homepage and contact page — eight years stale",
+   "curl: WordPress + WooCommerce generator meta tags exposed on every page",
+   "curl: contact page lists address 9-11 Middle Leigh, Street, Somerset BA16 — email and phone in page HTML"
+  ],
+  "contact_email": "andrew@heckscider.com",
+  "contact_phone": "01458 442367",
+  "source_urls": [
+   "https://www.heckscider.com/",
+   "https://www.heckscider.com/contact-us/",
+   "https://www.greatbritishlife.co.uk/magazines/somerset/26014545.best-cider-farms-open-public-somerset/"
+  ],
+  "distinctive": "six generations making farmhouse cider since 1841 (site title 'Established 1841'), still fermented in wooden barrels and sold from the wood (Great British Life)",
+  "confidence": "high"
+ },
+ {
+  "name": "Maggie's Fish & Chips",
+  "trade": "fish & chip restaurant",
+  "town": "Hastings",
+  "county": "East Sussex",
+  "website": "https://maggiesfishandchips.co.uk/",
+  "evidence": [
+   "curl: generator meta 'Starfield Technologies; Go Daddy Website Builder 8.0.0000' — legacy GoDaddy builder",
+   "curl: homepage <title> is just 'HOME' — no business name or SEO",
+   "curl: email and phone found in page HTML"
+  ],
+  "contact_email": "info@maggiesfishandchips.co.uk",
+  "contact_phone": "01424 430205",
+  "source_urls": [
+   "https://maggiesfishandchips.co.uk/home"
+  ],
+  "distinctive": "sits on 'Fishmarket Road, Rock-A-Nore Road' by Hastings' fish market (address in their own site HTML)",
+  "confidence": "high"
+ },
+ {
+  "name": "Wilkins Cider (Roger Wilkins, Land's End Farm)",
+  "trade": "farmhouse cider maker",
+  "town": "Mudgley, Wedmore",
+  "county": "Somerset",
+  "website": "http://wilkinscider.com/",
+  "evidence": [
+   "curl -L: homepage answers 301 redirect-to-itself with empty body — site never loads",
+   "WebFetch: fails with 'Too many redirects (exceeded 10)' — site is broken, though its WordPress pages are still indexed in search results",
+   "boutique-retreats.co.uk guide: 'Roger doesn't do email or messaging - you can only telephone him to order'"
+  ],
+  "contact_email": null,
+  "contact_phone": "01934 712385",
+  "source_urls": [
+   "http://wilkinscider.com/",
+   "https://boutique-retreats.co.uk/guides/1669/wilkins-cider-farm-wedmore.html",
+   "https://www.yelp.co.uk/biz/wilkins-cider-farm-mudgley",
+   "https://en.wikipedia.org/wiki/Wilkins_Farm"
+  ],
+  "distinctive": "cider, cheddar and flagons ordered by phone from the barn at Land's End Farm; CAMRA award-winning farmhouse cider (boutique-retreats guide)",
+  "confidence": "high"
+ },
+ {
+  "name": "Saker Bakery (Saker Wholefoods)",
+  "trade": "organic artisan bakery",
+  "town": "Todmorden & Hebden Bridge",
+  "county": "West Yorkshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "curl: their trading-name domain sakerwholefoods.co.uk now redirects to calo188.online, an Indonesian gambling page — domain lost/hijacked",
+   "Cool Places listing shows no website; Open Food Network shop page (curl) lists phone and 'family run artisan bakery based in Todmorden'",
+   "search results: current presence is facebook.com/sakerorganicbread plus directory listings only"
+  ],
+  "contact_email": null,
+  "contact_phone": "07595 349880",
+  "source_urls": [
+   "https://openfoodnetwork.org.uk/saker/shop",
+   "https://www.coolplaces.co.uk/places/uk/england/west-yorkshire/8911-saker-bakery",
+   "https://www.facebook.com/sakerorganicbread"
+  ],
+  "distinctive": "head baker Karl Badger has made organic bread here for 25 years, with a wholesale round across Yorkshire into Lancashire (Cool Places)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Popty Cara",
+  "trade": "handmade cake bakery",
+  "town": "Pembrokeshire (rural, farmers' markets)",
+  "county": "Pembrokeshire",
+  "website": "http://www.poptycara.co.uk/",
+  "evidence": [
+   "curl: no <meta name=\"viewport\"> tag anywhere on homepage — not mobile-friendly",
+   "curl: legacy <font> tags in the markup; no footer copyright year at all",
+   "curl: contact email ORDERS@POPTYCARA.CO.UK visible in page; phone rendered unparseably in HTML"
+  ],
+  "contact_email": "orders@poptycara.co.uk",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.poptycara.co.uk/"
+  ],
+  "distinctive": "handmade Pembrokeshire celebration cakes sold via farmers' markets and worldwide mail order (their own meta keywords)",
+  "confidence": "high"
+ },
+ {
+  "name": "Southcliff Fisheries",
+  "trade": "fish & chip shop",
+  "town": "Withernsea",
+  "county": "East Riding of Yorkshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "search results: no own domain anywhere — presence is a Facebook page plus aggregator/directory listings (Yorkshire.com, cylex, find-open, mymenuweb)",
+   "phone and address 10 S Cliff Road, HU19 2HX listed on find-open.co.uk and cylex",
+   "Yorkshire.com listing: 4.7/5 from 200+ reviews — thriving business with no website"
+  ],
+  "contact_email": null,
+  "contact_phone": "+44 7518 602876",
+  "source_urls": [
+   "https://www.facebook.com/people/Southcliff-Fisheries/100057202221222/",
+   "https://find-open.co.uk/withernsea/southcliff-fisheries-3762169",
+   "https://www.yorkshire.com/withernsea/food-drink/takeaways/southcliff-fisheries"
+  ],
+  "distinctive": "much-loved seaside chippy rated 4.7/5 by 200+ reviewers (Yorkshire.com listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cookie's Crab Shop",
+  "trade": "seafood shop & café",
+  "town": "Salthouse, near Holt",
+  "county": "Norfolk",
+  "website": "http://www.salthouse.org.uk",
+  "evidence": [
+   "curl: listed website salthouse.org.uk fails to connect on both http and https (DNS resolves, connection dies) — tested twice",
+   "Yelp listing (titled 'Updated July 2026') names salthouse.org.uk as its website",
+   "WebFetch of Cool Places listing: still operating, on The Green, Salthouse NR25 7AJ, 'going for over half a century'"
+  ],
+  "contact_email": null,
+  "contact_phone": "01263 740352",
+  "source_urls": [
+   "https://www.yelp.co.uk/biz/cookies-crab-shop-holt",
+   "https://www.coolplaces.co.uk/places/uk/england/norfolk/8190-cookies-crab-shop",
+   "https://www.visitnorthnorfolk.com/see-and-do/cookies-crab-shop-p1526001"
+  ],
+  "distinctive": "'royal salads' piled with dressed crab, hot-smoked salmon and cockles on the village green — BYO wine, and the glasses too (Cool Places)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Wally's Delicatessen & Kaffeehaus",
+  "trade": "delicatessen & café",
+  "town": "Cardiff",
+  "county": "South Glamorgan",
+  "website": "https://wallysdeli.co.uk/",
+  "evidence": [
+   "curl: footer shows the Magento theme vendor's copyright — '© Porto Magento 2021. All Rights Reserved.' — instead of the business's own, five years stale",
+   "curl: email and phone in page HTML"
+  ],
+  "contact_email": "enquiries@wallysdeli.co.uk",
+  "contact_phone": "029 2022 9265",
+  "source_urls": [
+   "https://wallysdeli.co.uk/"
+  ],
+  "distinctive": "upstairs Kaffeehaus 'bringing the Viennese coffee culture into the heart of Cardiff' (their own site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Donnington Brewery",
+  "trade": "family brewery",
+  "town": "Donnington, near Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://donnington-brewery.com/",
+  "evidence": [
+   "curl: footer reads 'Copyright Donnington Brewery © 2023' — three years stale",
+   "curl: 563KB homepage HTML; email info@donningtonales.com and phone in page"
+  ],
+  "contact_email": "info@donningtonales.com",
+  "contact_phone": "01451 830603",
+  "source_urls": [
+   "https://donnington-brewery.com/"
+  ],
+  "distinctive": "brews 'Cotswold Gold', sold by the dozen from the brewery shop (their site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Old Original Bakewell Pudding Shop",
+  "trade": "bakery & pudding shop",
+  "town": "Bakewell",
+  "county": "Derbyshire",
+  "website": "https://www.bakewellpuddingshop.co.uk/",
+  "evidence": [
+   "curl: footer '© 2023 by The Old Original Bakewell Pudding Shop' — three years stale",
+   "curl: generator meta 'Wix.com Website Builder'; homepage HTML is 1.56MB — very heavy page",
+   "curl: email and phone in page HTML"
+  ],
+  "contact_email": "info@bakewellpuddingshop.co.uk",
+  "contact_phone": "01629 812193",
+  "source_urls": [
+   "https://www.bakewellpuddingshop.co.uk/"
+  ],
+  "distinctive": "famous for its handmade Bakewell Pudding, 'in the heart of the market town of Bakewell in Derbyshire's Peak District' (their og:description)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Blue Anchor Inn / Spingo Ales",
+  "trade": "brewpub & microbrewery",
+  "town": "Helston",
+  "county": "Cornwall",
+  "website": "https://www.spingoales.com/",
+  "evidence": [
+   "curl: footer '© Copyright 2024, Spingo Ales' — two years stale",
+   "curl: generator meta 'Wix.com Website Builder'; 828KB homepage HTML",
+   "curl: email and phone in page HTML"
+  ],
+  "contact_email": "enquiries@spingoales.com",
+  "contact_phone": "01326 562821",
+  "source_urls": [
+   "https://www.spingoales.com/"
+  ],
+  "distinctive": "'15th Century Alehouse with an onsite microbrewery' — thatched roof and 'iconic blue windows' (their own site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Old Town Fryer",
+  "trade": "fish & chip shop",
+  "town": "Hastings",
+  "county": "East Sussex",
+  "website": "https://theoldtownfryer.yolasite.com/",
+  "evidence": [
+   "search results: only own web presence is a free Yola sitebuilder subdomain",
+   "curl and WebFetch: that Yolasite returns a 403 'Just a moment...' challenge — effectively unreachable",
+   "directory listings: 1 East Beach Street TN34 3AR; Wheree listing titled 'Updated July 2026'"
+  ],
+  "contact_email": null,
+  "contact_phone": "01424 272475",
+  "source_urls": [
+   "https://theoldtownfryer.yolasite.com/",
+   "https://directory.hertfordshiremercury.co.uk/company/1518047877124096",
+   "https://old-town-fryer.wheree.com/"
+  ],
+  "distinctive": "billed as 'the best tasting fish & chips on Hastings Seafront' (Tripadvisor review snippet)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Carvells The Art of Tea",
+  "trade": "tea room",
+  "town": "Ludlow",
+  "county": "Shropshire",
+  "website": "NONE",
+  "evidence": [
+   "no own domain found: carvells.co.uk belongs to a Cheshire tree-surgery firm (verified by curl); carvellsludlow.co.uk is NXDOMAIN",
+   "only presence found is the ludlow.org.uk directory listing (13 King Street SY8 1AQ, daily hours) — the directory itself blocks bots (401 to curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01584 878833",
+  "source_urls": [
+   "https://www.ludlow.org.uk/restaurant_detail.asp?MemNo=600",
+   "http://www.carvells.co.uk/"
+  ],
+  "distinctive": "family-run tea room serving loose-leaf teas from a collection of fine vintage bone china over two floors (ludlow.org.uk listing)",
+  "confidence": "medium"
+ }
+]

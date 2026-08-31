@@ -1,0 +1,267 @@
+[
+ {
+  "name": "Paxford Garage",
+  "trade": "garage - MOT testing, servicing, tyres (cars, vans, motorcycles & trikes)",
+  "town": "Blockley, nr Moreton-in-Marsh",
+  "county": "Gloucestershire",
+  "website": "https://www.paxfordgarage.co.uk/",
+  "evidence": [
+   "footer '© 2017 Paxford Garage' (curl)",
+   "meta generator 'Mobirise v3.10.8' - free 2016-era site builder (curl)",
+   "entire site is one 12KB page (curl)",
+   "page includes builder's junk text 'top html site design software download' (curl)"
+  ],
+  "contact_email": "info@paxfordgarage.co.uk",
+  "contact_phone": "01386 700814",
+  "source_urls": [
+   "https://www.paxfordgarage.co.uk/",
+   "https://mot-testers.co.uk/garages/view/12978"
+  ],
+  "distinctive": "Serving the North Cotswolds for over thirty years from Unit 89 Northwick Business Centre; owner Clive Wadey competes in UK motorcycle road racing (site has a 'Racing' section)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Morris Clown",
+  "trade": "pub (free house)",
+  "town": "Bampton",
+  "county": "Oxfordshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "no website found in any listing; searches surface only Facebook page facebook.com/TheMorrisClown (search)",
+   "WhatPub/CAMRA listing carries phone but no website URL (curl of whatpub.com JSON-LD)",
+   "CAMRA result titled 'Morris Clown, Bampton - Grade II Listed Free House' (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01993 850217",
+  "source_urls": [
+   "https://whatpub.com/pubs/OXF/WW-40/morris-clown-bampton",
+   "https://camra.org.uk/pubs/morris-clown-bampton-157200",
+   "https://www.facebook.com/TheMorrisClown/"
+  ],
+  "distinctive": "Grade II listed single-bar free house with murals and log fire; renamed from the New Inn by Courage in 1975 - morris sides have a fool not a clown, and locals boycotted it for 25 years",
+  "confidence": "high"
+ },
+ {
+  "name": "Small Talk Tearooms",
+  "trade": "tearoom",
+  "town": "Bourton-on-the-Water",
+  "county": "Gloucestershire",
+  "website": "https://smalltalktearooms.co.uk/",
+  "evidence": [
+   "footer '© Small Talk Tearooms 2021 All rights reserved.' (curl)",
+   "'2021' appears 39 times in page source - content untouched since (curl)",
+   "email printed in page source (curl); still actively listed on Tripadvisor/cylex (search)"
+  ],
+  "contact_email": "info@smalltalktearooms.co.uk",
+  "contact_phone": "01451 822678",
+  "source_urls": [
+   "https://smalltalktearooms.co.uk/",
+   "https://bourton-on-the-water.cylex-uk.co.uk/company/smalltalk-tearooms-13663667.html",
+   "https://www.tripadvisor.com/Restaurant_Review-g186283-d4302174-Reviews-Smalltalk_Tearooms-Bourton_on_the_Water_Cotswolds_England.html"
+  ],
+  "distinctive": "Housed in The Forge on Bourton's High Street; own site tagline is 'Where Time Stood Still...'",
+  "confidence": "high"
+ },
+ {
+  "name": "Woodstock Butchers",
+  "trade": "independent butcher",
+  "town": "Woodstock",
+  "county": "Oxfordshire",
+  "website": "https://www.woodstockshops.co.uk/butchers",
+  "evidence": [
+   "no standalone website: https://www.woodstockbutchers.com fails to connect (curl 000)",
+   "http://www.woodstockbutchers.com 301-redirects to a page on collective site woodstockshops.co.uk (curl -v)",
+   "only presence is a template page on shared 'Woodstock Shops Ltd' site, footer © 2024 (curl)",
+   "town directory visitwoodstock.co.uk that listed them now serves casino spam content (curl)"
+  ],
+  "contact_email": "info@woodstockbutchers.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.woodstockshops.co.uk/butchers",
+   "https://www.visitwoodstock.co.uk/shops/food_and_drink/woodstock_butchers"
+  ],
+  "distinctive": "Local independent butcher at 1 Blandford Court, just off Market Street in the heart of Woodstock",
+  "confidence": "high"
+ },
+ {
+  "name": "Cotswold Electrical",
+  "trade": "electrician",
+  "town": "Chipping Norton",
+  "county": "Oxfordshire",
+  "website": "https://www.cotswoldelectrical.co.uk/",
+  "evidence": [
+   "footer '©2021 by Cotswold Electrical' (curl)",
+   "meta generator 'Wix.com Website Builder' template site (curl)"
+  ],
+  "contact_email": "contact@cotswoldelectrical.co.uk",
+  "contact_phone": "01608 495595",
+  "source_urls": [
+   "https://www.cotswoldelectrical.co.uk/"
+  ],
+  "distinctive": "Family-run firm with over 25 years' experience, covering Stow-on-the-Wold, Moreton-in-Marsh and Burford as well as Chipping Norton",
+  "confidence": "high"
+ },
+ {
+  "name": "Southcombe Garage",
+  "trade": "garage - MOT, servicing, tyres",
+  "town": "Chipping Norton",
+  "county": "Oxfordshire",
+  "website": "https://southcombe-garage.co.uk/",
+  "evidence": [
+   "footer 'Copyright Southcombe Garage Ltd 2014' (curl)",
+   "designer credit 'Copyright it9.co.uk 2016' on contact page (curl)",
+   "old flat .php page architecture (index.php, MOT.php, contact.php) (curl)",
+   "no email anywhere on homepage or contact page - phone only (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01608 643999",
+  "source_urls": [
+   "https://southcombe-garage.co.uk/",
+   "https://southcombe-garage.co.uk/contact.php"
+  ],
+  "distinctive": "Runs a sister tyre business at chippingnorton-tyres.co.uk, linked from its homepage",
+  "confidence": "high"
+ },
+ {
+  "name": "The Garage (Quarry Service Station)",
+  "trade": "garage - MOT class 4, servicing, tyres, bodywork",
+  "town": "Moreton-in-Marsh",
+  "county": "Gloucestershire",
+  "website": "https://lewis902.wixsite.com/the-garage",
+  "evidence": [
+   "only site is a free Wix subdomain lewis902.wixsite.com/the-garage - no own domain (curl)",
+   "meta generator 'Wix.com Website Builder' (curl)",
+   "page confirms 'Moreton in Marsh', MOT Class 4, postcode GL56 9NY, phone on page (curl)",
+   "no email address anywhere on the page (curl); otherwise Facebook-page presence (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01608 650015",
+  "source_urls": [
+   "https://lewis902.wixsite.com/the-garage",
+   "https://www.check-mot-history.co.uk/uk/the-garage-moreton-in-marsh/65367",
+   "https://www.facebook.com/p/The-Garage-100064026186446/"
+  ],
+  "distinctive": "Trades from the old Quarry Service Station site on the edge of Moreton-in-Marsh",
+  "confidence": "high"
+ },
+ {
+  "name": "Charlbury Garage",
+  "trade": "garage - servicing, MOT testing, bodywork, air-con",
+  "town": "Charlbury",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "town directory entry lists no website at all - phone and fax only (curl of charlbury.info/business/102)",
+   "entry still lists a fax number, same as the phone number (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01608 810898",
+  "source_urls": [
+   "https://www.charlbury.info/business/102"
+  ],
+  "distinctive": "Run by Gerry Appadoo and Dean Barber from Hixet Wood, Charlbury OX7 3SB; open Saturday mornings 9-12",
+  "confidence": "high"
+ },
+ {
+  "name": "Cotswold Landscaping Works",
+  "trade": "landscaping - garden design, restoration, patios and driveways",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://cotswoldlandscapingworks.com/index.html",
+  "evidence": [
+   "footer '© 2022 All Rights Reserved' (curl)",
+   "static .html site; gallery images filed under /stow-on-the-wold/ (curl)",
+   "domain is .com but email printed on site is .co.uk - mismatched branding (curl)",
+   "only tradesman listed on stowonthewold.info tradesmen page (curl)"
+  ],
+  "contact_email": "info@cotswoldlandscapingworks.co.uk",
+  "contact_phone": "01608 670714",
+  "source_urls": [
+   "https://cotswoldlandscapingworks.com/index.html",
+   "https://www.stowonthewold.info/local-services/tradesmen.php"
+  ],
+  "distinctive": "Services led by 'Garden Restoration' and 'Soft Landscaping and Horticulture' - period Cotswold garden work",
+  "confidence": "high"
+ },
+ {
+  "name": "Lambournes Butchers",
+  "trade": "traditional family butcher",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://lambournesbutchers.co.uk/",
+  "evidence": [
+   "newest image upload in page source dated wp-content/uploads/2023/07 - content frozen ~3 years (curl)",
+   "footer reads bare 'Copyright © All rights reserved.' with no name or year (curl)",
+   "built on generic free WP themes 'minimal-shop'/'storecommerce' (curl)"
+  ],
+  "contact_email": "info@lambournesbutchers.co.uk",
+  "contact_phone": "01451 830630",
+  "source_urls": [
+   "https://lambournesbutchers.co.uk/",
+   "https://www.stowonthewold.info/shopping/food-drink-shops.php"
+  ],
+  "distinctive": "Traditional butcher on Digbeth Street serving 'regular locals and Cotswold holidaymakers' with hand-picked suppliers",
+  "confidence": "medium"
+ },
+ {
+  "name": "Martha's Coffee + Kitchen",
+  "trade": "coffee house / cafe",
+  "town": "Moreton-in-Marsh",
+  "county": "Gloucestershire",
+  "website": "https://marthascoffeeandkitchen.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' - long-discontinued builder (curl)",
+   "no copyright year or business details in footer (curl)",
+   "primary presence is a Facebook page per search listings (search)"
+  ],
+  "contact_email": "marthascoffeehouse@gmail.com",
+  "contact_phone": "01608 651999",
+  "source_urls": [
+   "https://marthascoffeeandkitchen.co.uk/",
+   "https://www.thomsonlocal.com/search/coffee-shops/gloucester-cheltenham/martha-s-coffee-house/1853553/01608651999"
+  ],
+  "distinctive": "Trades from Gavel Cottage on Moreton-in-Marsh's broad High Street",
+  "confidence": "medium"
+ },
+ {
+  "name": "Tudor House Antiques",
+  "trade": "antiques centre (multi-dealer)",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://www.tudorhouseantiques.com/",
+  "evidence": [
+   "site built on jquery-ui-1.10.3 (2013-era library) (curl)",
+   "meta description and keywords tags both empty (curl)",
+   "uses deprecated synchronous-XHR retina-image hack (curl)"
+  ],
+  "contact_email": "pjcollingridge@gmail.com",
+  "contact_phone": "01451 830021",
+  "source_urls": [
+   "https://www.tudorhouseantiques.com/",
+   "https://www.stowonthewold.info/shopping/art-antiques.php"
+  ],
+  "distinctive": "Multi-dealer antiques centre trading from 'Tudor House', Stow GL54 1AA, with a 'List of Dealers' and stock like circa-1900 Llanelly pottery",
+  "confidence": "medium"
+ },
+ {
+  "name": "Cotswold Garden Tea Rooms",
+  "trade": "tearoom and B&B",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "http://www.cotswoldgardentearooms.co.uk/",
+  "evidence": [
+   "advertised domain cotswoldgardentearooms.co.uk does not resolve - DNS dead (curl)",
+   "town directory still lists that dead URL as their website (curl of stowonthewold.info tea-rooms page)",
+   "newer Tripadvisor listing 'Davenford Cotswold Gardens' exists at same Digbeth Street address - possible rename/new owners (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01451 870994",
+  "source_urls": [
+   "https://www.stowonthewold.info/places-to-eat/tea-rooms.php",
+   "https://www.tripadvisor.com/Restaurant_Review-g186290-d4563235-Reviews-Cotswold_garden_tearooms-Stow_on_the_Wold_Cotswolds_England.html",
+   "https://www.facebook.com/p/Cotswold-Garden-Tea-Rooms-100067396264577/"
+  ],
+  "distinctive": "Characterful tearoom and B&B in Wells Cottage, Digbeth Street, with a pretty courtyard garden for afternoon tea",
+  "confidence": "medium"
+ }
+]

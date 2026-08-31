@@ -1,0 +1,288 @@
+[
+ {
+  "name": "Nevins Newfield Inn",
+  "trade": "pub & restaurant",
+  "town": "Mulranny (Westport area)",
+  "region": "Mayo",
+  "country": "Ireland",
+  "website": "https://www.nevinsinn.com/",
+  "evidence": [
+   "meta generator 'WordPress 5.2.21' - unsupported 2019-era core (curl)",
+   "meta generators 'WooCommerce 3.8.3' and 'Slider Revolution 6.0.8', both 2019-era (curl)",
+   "footer '© 2024 Nevins Newfield Inn' (curl)",
+   "legacy Flash-player references in page scripts (curl)"
+  ],
+  "contact_email": "info@nevinsinn.com",
+  "contact_phone": "(098) 36959",
+  "source_urls": [
+   "https://www.nevinsinn.com/",
+   "https://www.goldenpages.ie/pubs/westport-mayo-county/"
+  ],
+  "distinctive": "title tag touts its 'homely Lounge' serving 'reasonably priced, high standard, fresh, local, homemade bar food' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "2 Mile Lodge",
+  "trade": "B&B",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://www.2milelodge.com/",
+  "evidence": [
+   "no viewport meta - not mobile-optimised (curl)",
+   "table-based layout marker 'table width=' in HTML (curl)",
+   "entire homepage is a ~4.9KB static page with 1990s-style nav including a Guestbook page (curl)"
+  ],
+  "contact_email": "info@2milelodge.com",
+  "contact_phone": "00353 64 6642430",
+  "source_urls": [
+   "https://www.2milelodge.com/",
+   "https://www.kenmare.ie/accommodation"
+  ],
+  "distinctive": "architect-designed B&B on the Killarney Road; page displays a Booking.com 9.7/10 score (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Mourneview Bed & Breakfast",
+  "trade": "B&B",
+  "town": "Carlingford",
+  "region": "Louth",
+  "country": "Ireland",
+  "website": "http://mourneviewcarlingford.net/",
+  "evidence": [
+   "served over plain http; https connection fails outright (curl 000)",
+   "meta generator 'WordPress 6.7.7' - core a full major branch behind (curl)"
+  ],
+  "contact_email": "mourneviewcarlingford@gmail.com",
+  "contact_phone": "00353 (0)42 9373551",
+  "source_urls": [
+   "http://mourneviewcarlingford.net/",
+   "https://carlingford.ie/bbs/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Lissyclearig Thatched Cottage B&B",
+  "trade": "B&B",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://lissyclearigthatchedcottage.com/",
+  "evidence": [
+   "https connection fails - site reachable over plain http only (curl 000)",
+   "meta generator 'WordPress 5.2.15' - unsupported 2019-era core (curl)",
+   "email only found on /contact/ page, not surfaced on homepage (curl)"
+  ],
+  "contact_email": "lissyclearigthatchedcottage@gmail.com",
+  "contact_phone": "064 664 2562",
+  "source_urls": [
+   "http://lissyclearigthatchedcottage.com/",
+   "https://www.kenmare.ie/accommodation"
+  ],
+  "distinctive": "genuine thatched-cottage B&B; tagline 'old world charm combines with modern comforts' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Ashe's B&B (Ashes Townhouse)",
+  "trade": "B&B / townhouse accommodation",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://ashesdingle.com/",
+  "evidence": [
+   "https connection fails - http-only site (curl 000)",
+   "built on dated The7 WordPress theme - 'the7_shortcode' markup visible in page (curl)"
+  ],
+  "contact_email": "ashes@ashesdingle.com",
+  "contact_phone": "+353 66 9151197",
+  "source_urls": [
+   "http://ashesdingle.com/",
+   "https://www.dingle-peninsula.ie/stay-accommodation-on-the-dingle-peninsula/bed-and-breakfast/item/ashe-s-bed-breakfast-dingle.html"
+  ],
+  "distinctive": "townhouse 'a two-minute walk from the main street' of Dingle per its own copy (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "James Long Bar & Restaurant",
+  "trade": "pub & seafood restaurant",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://jameslongdingle.com/",
+  "evidence": [
+   "meta generator 'Powered by Slider Revolution 5.4.8.3' - 2018-era plugin version (curl)",
+   "legacy Flash-player references in page scripts (curl)",
+   "heavy legacy WPBakery page-builder stack (generator meta, curl)"
+  ],
+  "contact_email": "info@jameslongdingle.com",
+  "contact_phone": "(066) 9152823",
+  "source_urls": [
+   "https://jameslongdingle.com/",
+   "https://www.goldenpages.ie/pubs/dingle-kerry-county/"
+  ],
+  "distinctive": "seafood-led bar and restaurant at 44 Strand Street facing Dingle Bay - title tag: 'Seafood | Dingle Bay | Bar Food' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Lily Finnegans",
+  "trade": "traditional pub",
+  "town": "Whitestown, Carlingford",
+  "region": "Louth",
+  "country": "Ireland",
+  "website": "https://www.lilyfinnegans.com/",
+  "evidence": [
+   "no viewport meta - not mobile-friendly (curl)",
+   "legacy Google Translate dropdown widget rendered in header (curl)",
+   "small old-style static page, ~30KB, no CMS generator (curl)"
+  ],
+  "contact_email": "info@lilyfinnegans.com",
+  "contact_phone": "042 9373730",
+  "source_urls": [
+   "https://www.lilyfinnegans.com/",
+   "https://carlingford.ie/bars/"
+  ],
+  "distinctive": "country pub at Whitestown on the Cooley Peninsula outside Carlingford - site title 'Traditional Irish Pub, Whitestown, Carlingford' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Brosnan's Bed & Breakfast",
+  "trade": "B&B",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://www.dinglebrosnansaccommodation.com/",
+  "evidence": [
+   "no viewport meta - not mobile-friendly (curl)",
+   "entire homepage is a ~5KB hand-built static page, no CMS (curl)",
+   "no https redirect - default serves plain http (curl)"
+  ],
+  "contact_email": "info@dinglebrosnansaccommodation.com",
+  "contact_phone": "+353 87 6719240",
+  "source_urls": [
+   "http://www.dinglebrosnansaccommodation.com/",
+   "https://www.dingle-peninsula.ie/stay-accommodation-on-the-dingle-peninsula/bed-and-breakfast/item/brosnan-s-bed-breakfast-dingle.html"
+  ],
+  "distinctive": "homepage says 'Call Melanie for a booking enquiry' - personally run family B&B (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Bay Tree Restaurant & Guesthouse",
+  "trade": "restaurant & guesthouse",
+  "town": "Carlingford",
+  "region": "Louth",
+  "country": "Ireland",
+  "website": "http://www.baytree.ie/",
+  "evidence": [
+   "https connection fails - site served over plain http only, shows 'Not secure' in browsers (curl 000)",
+   "no phone number in page HTML - contact via form only (curl)"
+  ],
+  "contact_email": "info@baytree.ie",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.baytree.ie/",
+   "https://carlingford.ie/bbs/"
+  ],
+  "distinctive": "restaurant-with-rooms combination in Carlingford village (site title, curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Davitt's Kenmare",
+  "trade": "bar-restaurant & guesthouse",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://davittskenmare.com/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' - discontinued legacy builder (curl)",
+   "template debris visible in page: 'Signed in as: filler@godaddy.com' (curl)",
+   "font-license boilerplate from 2010/2012 shipped inline in page CSS (curl)"
+  ],
+  "contact_email": "info@davittskenmare.com",
+  "contact_phone": "+353 64 6642741",
+  "source_urls": [
+   "https://davittskenmare.com/",
+   "https://www.kenmare.ie/eat-drink"
+  ],
+  "distinctive": "bar-restaurant that also sells guesthouse rooms and self-catering homes from the same site nav (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Paris Texas Bar & Smokehouse",
+  "trade": "pub / smokehouse restaurant",
+  "town": "Kilkenny",
+  "region": "Kilkenny",
+  "country": "Ireland",
+  "website": "http://paristexas.ie",
+  "evidence": [
+   "listed website unreachable - curl 000 on http and https, bare and www (Aug 2026)",
+   "GoldenPages still lists paristexas.ie as its website"
+  ],
+  "contact_email": null,
+  "contact_phone": "(056) 7761822",
+  "source_urls": [
+   "https://www.goldenpages.ie/pubs/kilkenny-kilkenny-county/"
+  ],
+  "distinctive": "bar & smokehouse at 92 High Street, Kilkenny (GoldenPages listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Speckled Door Inn",
+  "trade": "pub",
+  "town": "Old Head, Kinsale",
+  "region": "Cork",
+  "country": "Ireland",
+  "website": "http://www.speckleddoor.com",
+  "evidence": [
+   "pub's listed domain now serves an unrelated auto-generated news blog - title observed: 'Speckleddoor - A Collection of the Latest International and National News' (curl)",
+   "GoldenPages still lists www.speckleddoor.com as the pub's website"
+  ],
+  "contact_email": null,
+  "contact_phone": "(021) 4778243",
+  "source_urls": [
+   "https://www.goldenpages.ie/pubs/kinsale-cork-county/",
+   "http://www.speckleddoor.com"
+  ],
+  "distinctive": "pub out at the Old Head of Kinsale, P17 HE97 (GoldenPages listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dan O'Connell's Bar",
+  "trade": "pub",
+  "town": "Ennis",
+  "region": "Clare",
+  "country": "Ireland",
+  "website": "http://www.danoconnells.com/",
+  "evidence": [
+   "domain serves a bare hosting placeholder - title 'Operations Automation Default Page' (curl)",
+   "1.8KB page, no viewport meta, © 1999 boilerplate (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(065) 6849914",
+  "source_urls": [
+   "https://www.goldenpages.ie/pubs/ennis-clare-county/",
+   "http://www.danoconnells.com/"
+  ],
+  "distinctive": "pub at 2 Abbey Street in Ennis town centre (GoldenPages listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Scully's Butchers and Deli",
+  "trade": "butcher & deli",
+  "town": "Clonakilty",
+  "region": "Cork",
+  "country": "Ireland",
+  "website": "https://scullysbutchers.com",
+  "evidence": [
+   "listed website unreachable - curl 000 on all of http/https x bare/www (Aug 2026)",
+   "GoldenPages still lists scullysbutchers.com as its website"
+  ],
+  "contact_email": null,
+  "contact_phone": "(023) 8858881",
+  "source_urls": [
+   "https://www.goldenpages.ie/butchers/clonakilty-cork-county/"
+  ],
+  "distinctive": "butcher with deli counter at 61 Pearse Street, Clonakilty (GoldenPages listing)",
+  "confidence": "medium"
+ }
+]

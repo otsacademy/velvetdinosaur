@@ -1,0 +1,287 @@
+[
+ {
+  "name": "Micks Chimney Sweeping",
+  "trade": "Chimney sweep",
+  "town": "Fethard",
+  "region": "County Tipperary",
+  "country": "Ireland",
+  "website": "NONE",
+  "evidence": [
+   "Golden Pages profile (fetched via WebFetch): no website field at all — only phone and a Gmail address",
+   "Golden Pages Tipperary chimney-cleaning search (fetched): listed with no website, like most sweeps in the county"
+  ],
+  "contact_email": "mickschimneysweeping@gmail.com",
+  "contact_phone": "(086) 850 5655",
+  "source_urls": [
+   "https://www.goldenpages.ie/micks-chimney-sweeping-fethard/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Tipperary/what/Chimney+Cleaning/"
+  ],
+  "distinctive": "Golden Pages address is Burke Street, Fethard — a named-street sole trader in a small Tipperary town, reachable only by phone or Gmail",
+  "confidence": "high"
+ },
+ {
+  "name": "Allan Tong Ltd",
+  "trade": "Painter and decorator",
+  "town": "Whanganui",
+  "region": "Manawatū-Whanganui",
+  "country": "New Zealand",
+  "website": "NONE",
+  "evidence": [
+   "Master Painters NZ member profile (fetched): no website listed — email and landline only",
+   "curl to allantongltd.co.nz and www variant: connection fails (curl exit 000) — the email domain hosts no website",
+   "Profile states member since 1969 (fetched)"
+  ],
+  "contact_email": "admin@allantongltd.co.nz",
+  "contact_phone": "06 345 2743",
+  "source_urls": [
+   "https://www.masterpainters.co.nz/single-company/69",
+   "https://www.masterpainters.co.nz/find-a-painter"
+  ],
+  "distinctive": "Master Painters New Zealand member since 1969 — over five decades of trading heritage with no website to show it",
+  "confidence": "high"
+ },
+ {
+  "name": "Painter Pete Limited",
+  "trade": "Painter and decorator",
+  "town": "New Plymouth",
+  "region": "Taranaki",
+  "country": "New Zealand",
+  "website": "NONE",
+  "evidence": [
+   "Master Painters NZ profile (fetched): website field absent — email, two phone numbers and street address only",
+   "curl to painterpete.co.nz and www variant: neither resolves (curl exit 000) — no site behind the email domain"
+  ],
+  "contact_email": "peter@painterpete.co.nz",
+  "contact_phone": "021 729 683",
+  "source_urls": [
+   "https://www.masterpainters.co.nz/single-company/224"
+  ],
+  "distinctive": "Listed as a Dulux Accredited Painter covering New Plymouth, Stratford and South Taranaki (Master Painters profile)",
+  "confidence": "high"
+ },
+ {
+  "name": "MacLean Renovations and Roofing",
+  "trade": "Roofer / renovations",
+  "town": "York",
+  "region": "Prince Edward Island",
+  "country": "Canada",
+  "website": "https://www.macleanroofing.com/",
+  "evidence": [
+   "curl audit: entire homepage is 17.9KB, roughly 390 words and 9 images — a minimal hand-built Bootstrap one-pager with no CMS",
+   "Contact email published in the site HTML is a personal Hotmail address (observed via curl)",
+   "BBB profile (fetched): owner/operator Jeff MacLean, founded 2014, A+ accredited"
+  ],
+  "contact_email": "jtmaclean_74@hotmail.com",
+  "contact_phone": "(902) 370-3550",
+  "source_urls": [
+   "https://www.bbb.org/ca/pe/york/profile/roofing-contractors/maclean-renovations-and-roofing-0087-32903",
+   "https://www.macleanroofing.com/"
+  ],
+  "distinctive": "Title tag reads 'Maclean Renovations & Roofing Inc. - Serving all of PEI' (observed via curl) — island-wide pitch on an 18KB page",
+  "confidence": "high"
+ },
+ {
+  "name": "David King Painting",
+  "trade": "Painter and decorator",
+  "town": "Carracastle (near Ballaghaderreen)",
+  "region": "County Mayo",
+  "country": "Ireland",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Golden Pages profile (fetched): the website field is facebook.com/davidkingpainting — Facebook is the only web presence",
+   "Same profile lists Gmail address and mobile (fetched)"
+  ],
+  "contact_email": "davidkingpainting@gmail.com",
+  "contact_phone": "(087) 986 1813",
+  "source_urls": [
+   "https://www.goldenpages.ie/david-king-painting-ballaghaderreen/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Roscommon/what/Painters+%26+Decorators/"
+  ],
+  "distinctive": "Golden Pages description: 'Interior and Exterior Painter. Interior design advice.' — offers design advice, a natural hook for a design-led site",
+  "confidence": "high"
+ },
+ {
+  "name": "RLN Painting and Decorating",
+  "trade": "Painter and decorator",
+  "town": "Castlerea",
+  "region": "County Roscommon",
+  "country": "Ireland",
+  "website": "NONE",
+  "evidence": [
+   "Golden Pages profile (fetched): phone plus Gmail address, no website",
+   "Golden Pages Roscommon painters search (fetched): 17 of 20 local painters, RLN included, show no website"
+  ],
+  "contact_email": "nuttz0103@gmail.com",
+  "contact_phone": "(083) 150 1340",
+  "source_urls": [
+   "https://www.goldenpages.ie/rln-painting-and-decorating-castlerea-F45/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Roscommon/what/Painters+%26+Decorators/"
+  ],
+  "distinctive": "Self-described as 'Painting and Bespoke Decorating' (Golden Pages profile)",
+  "confidence": "high"
+ },
+ {
+  "name": "Simmons Roofing",
+  "trade": "Roofer",
+  "town": "Tuscumbia",
+  "region": "Alabama",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "BBB profile (fetched): website field is a Facebook page — no real website for an A+ accredited firm",
+   "BBB: founded January 1968, family owners Marcus, Christy and Tim Simmons",
+   "MerchantCircle listing (fetched): no email, no website — phone only"
+  ],
+  "contact_email": null,
+  "contact_phone": "(256) 627-1793",
+  "source_urls": [
+   "https://www.bbb.org/us/al/tuscumbia/profile/roofing-contractors/simmons-roofing-0513-17001419",
+   "https://www.merchantcircle.com/simmons-roofing-tuscumbia-al"
+  ],
+  "distinctive": "58-year-old family roofing firm (founded 1968 per BBB) whose only web home is a Facebook page under the handle 'CooterSimmons'",
+  "confidence": "high"
+ },
+ {
+  "name": "MDK Contracting",
+  "trade": "Fencing contractor",
+  "town": "Narromine",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "http://mdkcontracting.com.au",
+  "evidence": [
+   "curl to mdkcontracting.com.au returns Google's 'Error 404 (Not Found)!!1' page — a dead Google-hosted site (observed directly)",
+   "localsearch.com.au fencing-contractors listing for Parkes NSW (fetched) still links customers to that dead domain"
+  ],
+  "contact_email": null,
+  "contact_phone": "0439 475 874",
+  "source_urls": [
+   "https://www.localsearch.com.au/find/fencing-contractors/parkes-nsw",
+   "http://mdkcontracting.com.au/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Black Magic Chimney Sweeps of Southern Vermont",
+  "trade": "Chimney sweep",
+  "town": "Manchester Center",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://www.blackmagicchimneysweep.com/",
+  "evidence": [
+   "curl audit: homepage markup contains 30 deprecated <font> tags — legacy content sitting inside a budget Duda builder (cdn-website.com assets observed)",
+   "Email and both phone lines observed in the site HTML",
+   "BBB profile (fetched): founded June 1980, owner Harry Lux, A+ accredited"
+  ],
+  "contact_email": "info@blackmagicchimneysweep.com",
+  "contact_phone": "(802) 362-5755",
+  "source_urls": [
+   "https://www.bbb.org/us/vt/manchester-center/profile/chimney-sweeper/black-magic-chimney-sweeps-of-southern-vermont-llc-0021-127171",
+   "https://www.blackmagicchimneysweep.com/"
+  ],
+  "distinctive": "Sweeping southern Vermont since June 1980 (BBB founding date) — heritage worth a proper site",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dave's Construction & Repair",
+  "trade": "Roofer / handyman",
+  "town": "Erie",
+  "region": "Kansas",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "BBB profile (fetched): no website listed anywhere on an A+ accredited, 26-year-old business",
+   "BBB: founded July 2000, owner Dave Steinbacher, address 323 N Walnut St, Erie KS (pop. ~1,000 town)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(620) 433-2092",
+  "source_urls": [
+   "https://www.bbb.org/us/ks/erie/profile/construction-services/daves-construction-repair-0714-11124",
+   "https://www.bbb.org/search?find_country=USA&find_text=roofing&find_loc=Chanute%2C+KS"
+  ],
+  "distinctive": "BBB categories run from roofing and siding to kitchen remodels, decks and garage doors — a classic do-everything small-town tradesman",
+  "confidence": "high"
+ },
+ {
+  "name": "TJ's Rural Contracting",
+  "trade": "Fencing contractor",
+  "town": "Spring Hill (near Orange)",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "localsearch.com.au profile (fetched): no website, no email — 'Contact can be made via their Facebook and Instagram accounts'",
+   "Profile is unclaimed and notes 'Trading for 10 years' (fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "0413 056 693",
+  "source_urls": [
+   "https://www.localsearch.com.au/profile/tj-s-rural-contracting/orange-nsw-2800/tAIu",
+   "https://www.localsearch.com.au/find/fencing-contractors/parkes-nsw"
+  ],
+  "distinctive": "Service list mixes rural farm fencing with livestock husbandry and farm work (localsearch profile)",
+  "confidence": "high"
+ },
+ {
+  "name": "ZMP Plumbing and Excavation",
+  "trade": "Plumber / excavation",
+  "town": "Greenfield",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "BBB profile (fetched): website field is a Facebook page — Facebook-only presence on an A+ accredited profile",
+   "BBB: owner/operator Zac Palmer, founded 2020"
+  ],
+  "contact_email": null,
+  "contact_phone": "(902) 957-3422",
+  "source_urls": [
+   "https://www.bbb.org/ca/ns/greenfield/profile/plumber/zmp-plumbing-and-excavation-0087-82532",
+   "https://www.bbb.org/search?find_country=CAN&find_text=plumbing&find_loc=Truro%2C+NS"
+  ],
+  "distinctive": "Also rents out excavation equipment alongside plumbing, heating and ventilation work (BBB description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Gary's Plumbing & Heating Ltd",
+  "trade": "Plumber",
+  "town": "Mount Uniacke",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.garysplumbing.ca/",
+  "evidence": [
+   "curl audit: <title> tag is a pasted two-sentence description ending in 'Call us.' — DIY site (generator meta 'Wix.com Website Builder' observed)",
+   "Footer copyright line reads 'Copyright ' with no year at all (observed via curl)",
+   "BBB profile (fetched): president Gary Shannon, founded 2007, A+ accredited"
+  ],
+  "contact_email": "info@garysplumbing.ca",
+  "contact_phone": "(902) 830-7559",
+  "source_urls": [
+   "https://www.bbb.org/ca/ns/mount-uniacke/profile/plumber/garys-plumbing-heating-ltd-0087-25014",
+   "https://www.garysplumbing.ca/"
+  ],
+  "distinctive": "Video sewer inspections are a headline service — currently buried in a broken title tag (observed via curl)",
+  "confidence": "medium"
+ },
+ {
+  "name": "C&B Rural Fencing",
+  "trade": "Fencing contractor",
+  "town": "Parkes",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "https://cbruralfencing.com.au/",
+  "evidence": [
+   "curl audit: generator meta is 'WordPress.com' with stock free theme path — free-tier WordPress.com site",
+   "Title tag uses a lowercase letter 'l' as its divider: 'C&B Rural Fencing l Fencing Contractors Parkes NSW' (observed via curl)",
+   "localsearch.com.au Parkes fencing listing (fetched) confirms local phone and town"
+  ],
+  "contact_email": "admin@cbruralfencing.com.au",
+  "contact_phone": "0429 622 179",
+  "source_urls": [
+   "https://www.localsearch.com.au/find/fencing-contractors/parkes-nsw",
+   "https://cbruralfencing.com.au/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

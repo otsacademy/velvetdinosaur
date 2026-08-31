@@ -1,0 +1,283 @@
+[
+ {
+  "name": "N & R Roofing",
+  "trade": "Roofer",
+  "town": "Brighouse",
+  "county": "West Yorkshire",
+  "website": "https://nrroofing.co.uk",
+  "evidence": [
+   "curl to nrroofing.co.uk (22 Aug 2026) returns a Namecheap 'Domain registration has expired' parking page — website is currently down",
+   "Wayback snapshot 12 May 2026 shows the site live, so the lapse is recent (fetched archived copy)",
+   "archived site text: 'For over 30 years, N & R Roofing... family-run roofing business' covering Brighouse, Halifax, Huddersfield"
+  ],
+  "contact_email": "upontheroofers@gmail.com",
+  "contact_phone": "01422 410724 / 07970 897452",
+  "source_urls": [
+   "https://nrroofing.co.uk/",
+   "http://web.archive.org/web/20260512213134/https://nrroofing.co.uk/"
+  ],
+  "distinctive": "Family-run for 30+ years across Brighouse, Halifax and Huddersfield; their email handle is 'upontheroofers' (archived site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Stopgap Fencing",
+  "trade": "Fencing contractor (agricultural, security & domestic)",
+  "town": "Bradworthy, Holsworthy",
+  "county": "Devon",
+  "website": "https://www.stopgapfencing.co.uk",
+  "evidence": [
+   "HTTPS certificate has expired: curl TLS handshake returns alert 'certificate has expired' (observed 22 Aug 2026) — browsers show a security warning",
+   "no viewport meta tag in fetched HTML (not mobile-friendly)",
+   "footer '©2018 Stop Gap Fencing - Heatherland Farm - Bradworthy - Holsworthy - Devon - EX22 7SL' and meta copyright '© 2000' in fetched HTML",
+   "page title misspells 'Fencing Contactors' (fetched HTML)"
+  ],
+  "contact_email": "mail@stopgapfencing.co.uk",
+  "contact_phone": "01409 241865 / 07779 987342",
+  "source_urls": [
+   "https://www.stopgapfencing.co.uk/"
+  ],
+  "distinctive": "Run from Heatherland Farm, Bradworthy — farm-based outfit doing agricultural stock fencing alongside domestic and security work (site footer and title)",
+  "confidence": "high"
+ },
+ {
+  "name": "Let The Sunshine In",
+  "trade": "Window cleaner",
+  "town": "Blackpool",
+  "county": "Lancashire",
+  "website": "http://www.letthesunshinein.org.uk",
+  "evidence": [
+   "http-only: https connection fails entirely (curl code 000), site served on plain http",
+   "generator meta 'MSHTML 11.00.9600' — page authored in Microsoft Word-era MSHTML tooling (fetched HTML)",
+   "no viewport meta; footer 'Copyright 2022' (fetched HTML)",
+   "page text 'since 1999' with meta description listing FY1/FY2/FY5, Cleveleys, Norbreck, North Shore rounds (fetched HTML)"
+  ],
+  "contact_email": "info@letthesunshinein.org.uk",
+  "contact_phone": "07939 443268",
+  "source_urls": [
+   "http://www.letthesunshinein.org.uk/"
+  ],
+  "distinctive": "Cleaning Fylde-coast windows since 1999 and lists its exact patches on the page — Cleveleys, Thornton, Norbreck, Poulton, North Shore, FY1/FY2/FY5",
+  "confidence": "high"
+ },
+ {
+  "name": "Gregory Fencing",
+  "trade": "Fencing & gates contractor",
+  "town": "Launceston",
+  "county": "Cornwall",
+  "website": "https://www.gregoryfencing.co.uk",
+  "evidence": [
+   "footer '© Gregory Fencing 2013' with 'Web Site By OurSite' credit and XHTML/CSS validator badges (fetched HTML)",
+   "classic ASP pages (index.asp, contact.asp) with HTML 4.01 doctype and no viewport meta (fetched)",
+   "still loads deprecated Google Analytics ga.js with UA- account (fetched contact.asp)"
+  ],
+  "contact_email": "info@gregoryfencing.co.uk",
+  "contact_phone": "01566 772793",
+  "source_urls": [
+   "https://www.gregoryfencing.co.uk/",
+   "https://www.gregoryfencing.co.uk/contact.asp",
+   "https://www.gregoryfencing.co.uk/about.asp"
+  ],
+  "distinctive": "Sources timber from local sawmills, offers slow-grown oak posts and locally made hand-crafted metal gates and railings (about.asp text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Sean Jones Plumbing Services",
+  "trade": "Plumber",
+  "town": "Llandudno Junction",
+  "county": "Conwy (Wales)",
+  "website": "https://www.plumbingandelectrics.co.uk",
+  "evidence": [
+   "no viewport meta; generator 'Web Presence Builder 17.8.12' — legacy Plesk site builder (fetched HTML)",
+   "US template leftovers live in the nav: 'Faucet Plumbing' page and a 'Your browser version is outdated' banner (fetched HTML)",
+   "footer '© 2023. Sean Jones Plumbing Services.' (fetched HTML)",
+   "his other domain seanjonesplumbingservices.co.uk, still linked from the Daily Post directory, fails to connect (curl observed)"
+  ],
+  "contact_email": "Admin@plumbingandelectrics.co.uk",
+  "contact_phone": "01492 701109 / 07902 999247",
+  "source_urls": [
+   "https://www.plumbingandelectrics.co.uk/",
+   "https://www.plumbingandelectrics.co.uk/contact-us/",
+   "https://directory.dailypost.co.uk/search/llandudno/plumbers"
+  ],
+  "distinctive": "24/7 domestic and commercial plumbing from 69 Marl Drive, Llandudno Junction — yet the site still advertises American-template 'Faucet Plumbing' (fetched pages)",
+  "confidence": "high"
+ },
+ {
+  "name": "AJG Decorators",
+  "trade": "Painter & decorator",
+  "town": "Chester",
+  "county": "Cheshire",
+  "website": "https://www.ajg-decorators.co.uk",
+  "evidence": [
+   "homepage <title> tag is completely empty (fetched HTML)",
+   "stock Duda template with placeholder captions 'Write your caption here' left visible in the page source (fetched HTML)",
+   "two different contact emails shown on one page: ajgdecorators@yahoo.com in header, ajgdecorators@gmail.com in contact block (fetched HTML)"
+  ],
+  "contact_email": "ajgdecorators@gmail.com",
+  "contact_phone": "07743 111950",
+  "source_urls": [
+   "https://www.ajg-decorators.co.uk/",
+   "https://directory.dailypost.co.uk/search/wrexham/painters-and-decorators"
+  ],
+  "distinctive": "15+ years' experience with commercial work for housing associations and local schools across Chester and the Wirral (site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "1st Class Cleaning",
+  "trade": "Window cleaner (windows, floors & upholstery)",
+  "town": "Blackpool",
+  "county": "Lancashire",
+  "website": "https://bobbob301.wixsite.com/1stclass",
+  "evidence": [
+   "site lives on a free Wix subdomain (bobbob301.wixsite.com) — no own domain (fetched)",
+   "default Wix footer '©2016 by 1st Class Cleaning. Proudly created with Wix.com' never customised (fetched HTML)",
+   "generator meta 'Wix.com Website Builder' (fetched HTML)"
+  ],
+  "contact_email": "fccleaning@hotmail.com",
+  "contact_phone": "01253 395259",
+  "source_urls": [
+   "https://bobbob301.wixsite.com/1stclass"
+  ],
+  "distinctive": "'Windows Floors and Upholstery' — a Blackpool window-cleaning round trading off a free bobbob301 Wix address and a Hotmail inbox (fetched site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Chimney Sweeps Somerset (Matt Clark)",
+  "trade": "Chimney sweep",
+  "town": "Street",
+  "county": "Somerset",
+  "website": "https://www.chimneysweepssomerset.co.uk",
+  "evidence": [
+   "generator meta 'Wix.com Website Builder' with default footer '©2023 by Chimney Sweeps Somerset. Proudly created with Wix.com' (fetched HTML)",
+   "search result: run by Matt Clark, local sweep based in Street, Guild of Master Chimney Sweeps accredited"
+  ],
+  "contact_email": "info@chimneysweepssomerset.co.uk",
+  "contact_phone": "07891 105529",
+  "source_urls": [
+   "https://www.chimneysweepssomerset.co.uk/",
+   "https://www.findachimneysweep.co.uk/sweeps/chimneysweepssomerset/"
+  ],
+  "distinctive": "One-man sweep Matt Clark, Guild of Master Chimney Sweeps-qualified in stove servicing, based in Street (search snippet)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Lakeside Locks Ltd",
+  "trade": "Locksmith (plus glazing and door/window installation)",
+  "town": "Ashford",
+  "county": "Kent",
+  "website": "https://www.lakesidelocks.co.uk",
+  "evidence": [
+   "domain no longer resolves: NXDOMAIN for both www and bare domain via getent/curl (observed 22 Aug 2026)",
+   "site was live in Wayback snapshot 13 May 2026 with footer '© Lakeside Locks Ltd 2026' — outage is recent (fetched archived copy)",
+   "archived site: Unit 2, 35 Sandyhurst Lane, Ashford; trading since 2000 (fetched archived copy)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01233 770431 / 07734 293819",
+  "source_urls": [
+   "https://web.archive.org/web/20260513004939/https://www.lakesidelocks.co.uk/",
+   "https://www.lakesidelocks.co.uk/"
+  ],
+  "distinctive": "Locksmiths since 2000 who also do glazing and commercial door/window installs, with 20-year housing-association and Premier Inn contracts (archived site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Roy Bradley Painting & Decorating",
+  "trade": "Painter & decorator",
+  "town": "Ellesmere (Oswestry area)",
+  "county": "Shropshire",
+  "website": "http://www.roybradley.co.uk",
+  "evidence": [
+   "footer 'Copyright Roy Bradley Painting & Decorating 2006. All Rights Reserved.' on every fetched page — site frozen for ~20 years",
+   "HTML 4.01 / iso-8859-1 static pages, no viewport meta, 1.4KB homepage (fetched)",
+   "services list still includes 'Artexing' (fetched HTML)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01691 623016 / 07979 497670",
+  "source_urls": [
+   "http://www.roybradley.co.uk/",
+   "http://www.roybradley.co.uk/contact.html"
+  ],
+  "distinctive": "Established 1983 with 'an experienced workforce of six painters and decorators' — the site itself says so, unchanged since 2006",
+  "confidence": "high"
+ },
+ {
+  "name": "Lee Harvey Painting & Decorating Services",
+  "trade": "Painter & decorator",
+  "town": "Wrexham",
+  "county": "Wrexham (Wales)",
+  "website": "https://www.lee-harvey.co.uk",
+  "evidence": [
+   "generator meta 'WordPress 4.9.26' — 2017-era WordPress branch (fetched HTML)",
+   "no viewport meta on homepage or contact page — fails mobile (fetched both)",
+   "no email address published anywhere on fetched pages, phone only"
+  ],
+  "contact_email": null,
+  "contact_phone": "01978 353979 / 07921 164376",
+  "source_urls": [
+   "https://www.lee-harvey.co.uk/",
+   "https://www.lee-harvey.co.uk/contact/"
+  ],
+  "distinctive": "Established 2008 sole trader: 'Every job is undertaken by myself, no sub contractors or apprentices' (site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Complete Painting Services (Bruce Kain)",
+  "trade": "Painter & decorator",
+  "town": "Cannock",
+  "county": "Staffordshire",
+  "website": "NONE",
+  "evidence": [
+   "his only website cpsdecor.vpweb.co.uk now redirects to Vistaprint's 'Webs.com has been shut down' page — lost when the platform closed (curl observed 22 Aug 2026)",
+   "no Wayback snapshot of the old site exists (archive.org availability API checked)",
+   "search results (RatedPeople profile): fully trained, over thirty-five years' experience, covers Cannock, Walsall, Lichfield, Wolverhampton"
+  ],
+  "contact_email": null,
+  "contact_phone": "07479 028697",
+  "source_urls": [
+   "https://cpsdecor.vpweb.co.uk/",
+   "https://www.ratedpeople.com/profile/complete-painting-services"
+  ],
+  "distinctive": "35+ years decorating across Cannock and the Black Country; his website literally vanished when Vistaprint shut the Webs platform",
+  "confidence": "medium"
+ },
+ {
+  "name": "LM & Sons Roofing",
+  "trade": "Roofer & chimney repairs",
+  "town": "Werrington, Stoke-on-Trent",
+  "county": "Staffordshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Facebook page name literally contains the phone number: 'L M & Sons Roofing Contractors. 07794814370' (search result)",
+   "searches surface only Facebook plus TrustATrader/Checkatrade profiles — no own domain found",
+   "TrustATrader listing: based Werrington ST2 0JT, 20+ years' experience, free estimates (search snippet)"
+  ],
+  "contact_email": null,
+  "contact_phone": "07794 814370",
+  "source_urls": [
+   "https://www.facebook.com/p/L-M-Sons-Roofing-Contractors-07794814370-61575893352174/",
+   "https://www.trustatrader.com/traders/lm-sons-roofing-roofers-roofing-stoke-on-trent-north"
+  ],
+  "distinctive": "20+ years of roofing and chimney repairs run entirely off a Facebook page that has the mobile number baked into its name",
+  "confidence": "medium"
+ },
+ {
+  "name": "Darren Burgess Painter & Decorator",
+  "trade": "Painter & decorator",
+  "town": "Wrexham (67 High St, LL11 4LS)",
+  "county": "Wrexham (Wales)",
+  "website": "NONE",
+  "evidence": [
+   "Daily Post/Central Index directory still links website darrenburgessandsons.co.uk (fetched listing HTML)",
+   "that domain no longer resolves: NXDOMAIN via getent for www and bare domain (observed 22 Aug 2026)",
+   "latest Wayback capture of the site (Jan 2022) is itself a 403 error page — dead for years (fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01978 758763",
+  "source_urls": [
+   "https://directory.dailypost.co.uk/search/wrexham/painters-and-decorators",
+   "http://www.darrenburgessandsons.co.uk"
+  ],
+  "distinctive": "The '& Sons' family branding now survives only in the dead domain name and the directory listing at 67 High Street",
+  "confidence": "medium"
+ }
+]

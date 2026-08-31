@@ -1,0 +1,229 @@
+[
+ {
+  "name": "St Breward Silver Band",
+  "trade": "village brass band (registered charity 1175865)",
+  "town": "St Breward, Bodmin",
+  "county": "Cornwall",
+  "website": "https://stbrewardsilverband.com/",
+  "evidence": [
+   "stbrewardsilverband.org (top search result for the band) returns Wix 'ConnectYourDomain Error' 404 (curl)",
+   "Charity Commission register lists no website for the charity (fetched full-print)",
+   "working .com is a minimal 8KB Concrete CMS site; secretary contact is a hotmail address (curl contact page)"
+  ],
+  "contact_email": "stbrewardbandsecretary@hotmail.com",
+  "contact_phone": "07980 863788",
+  "source_urls": [
+   "https://www.stbrewardsilverband.org/",
+   "https://www.stbrewardsilverband.com/index.php/contact",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5107795/full-print"
+  ],
+  "distinctive": "band formed in 1899 ('Records show that the St Breward band was formed in 1899' - own site); rehearses in The Bandroom on Bodmin Moor, next gig listed at The Platt, Port Isaac",
+  "confidence": "high"
+ },
+ {
+  "name": "Bovey Tracey Heritage Trust",
+  "trade": "volunteer-run heritage centre museum (registered charity 1063070)",
+  "town": "Bovey Tracey",
+  "county": "Devon",
+  "website": "NONE",
+  "evidence": [
+   "no own domain - Charity Commission website field points to directory listing devonmuseums.net/bovey (fetched register full-print)",
+   "the devonmuseums.net listing's website field is a malformed href 'http://Bovey Tracey Heritage Centre @boveytraceyheritage' (curl)",
+   "income £10,149, reporting up to date - real, tiny and active (register)"
+  ],
+  "contact_email": "bovey@devonmuseums.net",
+  "contact_phone": "01626 835078",
+  "source_urls": [
+   "https://www.devonmuseums.net/bovey-tracey-heritage-centre/devon-museums/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/3036117/full-print",
+   "https://www.facebook.com/boveytraceyheritage/"
+  ],
+  "distinctive": "museum in the town's Old Railway Station, home to a Swindon-built 1930s GWR twenty-ton 'Toad' brake van (No. W114906) and a relocated salt-glazed pottery kiln discovered in 1932 (devonmuseums.net listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Thames Valley Animal Welfare (TVAW)",
+  "trade": "cat rescue and rehoming charity (registered charity 900616)",
+  "town": "Henley-on-Thames (operates across Reading/Thames Valley)",
+  "county": "Oxfordshire",
+  "website": "http://www.tvaw.org.uk/",
+  "evidence": [
+   "hand-built 16KB homepage still using <font> and <table> markup, no CMS (curl)",
+   "embeds Google Universal Analytics UA-96782967-1, a product retired in 2023 (curl)",
+   "public contact on site is a gmail address plus a personal web-designer address (curl)"
+  ],
+  "contact_email": "Treasurer@tvaw.org.uk",
+  "contact_phone": "0118 972 2082",
+  "source_urls": [
+   "http://www.tvaw.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/900616/full-print"
+  ],
+  "distinctive": "founded by Ann Butler Smith in 1983, specialising in stray and abandoned cats; runs a 'Golden Oldies' older-cat rehoming scheme and a foster-home network (own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "British Vintage Wireless and Television Museum",
+  "trade": "volunteer vintage radio/TV museum (registered charity 1111516)",
+  "town": "West Dulwich",
+  "county": "Greater London",
+  "website": "https://www.bvwtm.org.uk/",
+  "evidence": [
+   "3.5KB homepage shell with no viewport meta (curl)",
+   "pages assembled client-side with the w3schools 'w3-include-html' XHR hack (curl)",
+   "presence split across two live domains: hand-coded bvwtm.org.uk and a parallel WordPress site bvwm.org.uk, the latter listed on the charity register (curl both + register)"
+  ],
+  "contact_email": "mike@workingwireless.co.uk",
+  "contact_phone": "020 8670 3667",
+  "source_urls": [
+   "https://www.bvwtm.org.uk/",
+   "https://www.bvwm.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/4018681/full-print"
+  ],
+  "distinctive": "the valve-radio and pre-war television collection of founder Gerald 'Gerry' Wells, housed in his Dulwich home (site meta description; income £15,901 per register)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cranbrook Museum and Local History CIO",
+  "trade": "volunteer local-history museum (registered charity 1193065)",
+  "town": "Cranbrook",
+  "county": "Kent",
+  "website": "https://www.cranbrookmuseum.org/",
+  "evidence": [
+   "built on Weebly - wsite-* template markup throughout (curl)",
+   "still embeds retired Google Universal Analytics UA-65920430-1 over scheme-relative //www.google-analytics.com (curl)",
+   "income £16,034, reporting up to date (register)"
+  ],
+  "contact_email": "curator@cranbrookmuseum.org",
+  "contact_phone": "01580 712929",
+  "source_urls": [
+   "https://www.cranbrookmuseum.org/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5168621/full-print"
+  ],
+  "distinctive": "exhibit list spans Frittenden Brickworks, the Hartley Workhouse, Sissinghurst Castle Farm and the Cranbrook War Memorial (own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Tring and District Local History and Museum Society",
+  "trade": "volunteer local-history museum (new CIO, charity 1214803)",
+  "town": "Tring",
+  "county": "Hertfordshire",
+  "website": "https://tringlocalhistorymuseum.org.uk/museum/index.html",
+  "evidence": [
+   "generator meta: 'WYSIWYG Web Builder 21' hobbyist desktop tool (curl)",
+   "homepage script browser-sniffs for Internet Explorer ('trident') and redirects to ./index-old.html (curl)",
+   "charity register contact for the CIO is a personal gmail; site contact is a personal address roy@... (register + curl)"
+  ],
+  "contact_email": "roy@tringlocalhistorymuseum.org.uk",
+  "contact_phone": "01442 825491",
+  "source_urls": [
+   "https://tringlocalhistorymuseum.org.uk/museum/index.html",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5271616/full-print"
+  ],
+  "distinctive": "entirely volunteer-run museum with free entrance (Wikipedia/search snippet); society dates from 1974 era with old-style 'TRING:' page titles observed on site",
+  "confidence": "high"
+ },
+ {
+  "name": "SESAW (Suffolk and Essex Small Animal Welfare)",
+  "trade": "small-animal rescue and rehoming charity (registered charity 1124029)",
+  "town": "Sudbury",
+  "county": "Suffolk",
+  "website": "NONE",
+  "evidence": [
+   "former site sesaw.co.uk unreachable - connection fails on both http and https (curl, 000)",
+   "domain was archived as a live site until at least July 2019 (Wayback CDX)",
+   "no website listed on Charity Commission register; reporting up to date, income £81,361 FY2025 (fetched register)"
+  ],
+  "contact_email": null,
+  "contact_phone": "07584 688196",
+  "source_urls": [
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/4037399/full-print",
+   "http://sesaw.co.uk/",
+   "https://curlie.org/en/Regional/Europe/United_Kingdom/Society_and_Culture/Animal_Welfare/Rescues_and_Shelters/"
+  ],
+  "distinctive": "received the transferred funds of the wound-up North Essex Horse Rescue Unit in June 2022 (Charity Commission register)",
+  "confidence": "high"
+ },
+ {
+  "name": "Swanage Museum & Heritage Centre",
+  "trade": "volunteer town museum and heritage centre",
+  "town": "Swanage",
+  "county": "Dorset",
+  "website": "https://swanagemuseum.org.uk/",
+  "evidence": [
+   "old domain swanagemuseum.co.uk now serves a 'Best Non GamStop Casinos' gambling page (curl)",
+   "that domain was archived as the museum's site from 2008 to Nov 2019 (Wayback CDX)",
+   "official contact on current site is a gmail address (curl)"
+  ],
+  "contact_email": "museumswanage@gmail.com",
+  "contact_phone": "01929 421427",
+  "source_urls": [
+   "https://swanagemuseum.co.uk/",
+   "https://swanagemuseum.org.uk/",
+   "http://web.archive.org/cdx/search/cdx?url=swanagemuseum.co.uk"
+  ],
+  "distinctive": "displays centre on Swanage being 'built with hard work & Purbeck stone', the Victorian stone trade, and old London relics saved from destruction; 'the Jurassic Coast starts right here' (own site)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Rays of Sunshine Animal Haven (RoSAH Rescue)",
+  "trade": "animal sanctuary and ex-battery hen rescue (states it is not a registered charity)",
+  "town": "Sutton Bridge",
+  "county": "Lincolnshire",
+  "website": "http://www.raysofsunshine.eshire.net/",
+  "evidence": [
+   "site lives on eshire.net free hosting, no viewport meta, Trebuchet-era hand markup (curl)",
+   "homepage still advertises 'NEW WEBSITE... www.rosahrescue.co.uk', which now serves dating-advice spam articles (curl)",
+   "companion domain lincslittlehens.co.uk unreachable (curl, 000)",
+   "contacts are AOL addresses and an 0845 number (curl)"
+  ],
+  "contact_email": "rosahrescue@aol.com",
+  "contact_phone": "0845 017 9422",
+  "source_urls": [
+   "http://www.raysofsunshine.eshire.net/",
+   "http://www.rosahrescue.co.uk/",
+   "http://www.animalrescuers.co.uk/html/centresmiddle.html"
+  ],
+  "distinctive": "gives lifetime sanctuary to around 30 elderly guinea pigs plus rabbits, cats, 'an ancient pony and recovering hens'; hen collections at East Bank, Sutton Bridge and Corby Glen (own site)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Anim-Mates",
+  "trade": "animal rescue and rehoming group",
+  "town": "north-west Kent (Sevenoaks area per directory listing)",
+  "county": "Kent",
+  "website": "https://www.anim-mates.org.uk/",
+  "evidence": [
+   "footer reads '© Anim-Mates 2019-2021' - four to seven years stale (curl)",
+   "plain http 301s but returned an empty body on first fetch; site only responds cleanly on https www (curl)"
+  ],
+  "contact_email": "info@anim-mates.org.uk",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.anim-mates.org.uk/",
+   "https://curlie.org/en/Regional/Europe/United_Kingdom/Society_and_Culture/Animal_Welfare/Rescues_and_Shelters/"
+  ],
+  "distinctive": "self-described 'Animal Rescue based in north west Kent' with patrons and published annual report in its menu (own site)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Heritage Shunters Trust",
+  "trade": "railway preservation trust - ex-BR diesel shunting locomotives",
+  "town": "Rowsley, near Matlock",
+  "county": "Derbyshire",
+  "website": "https://www.heritageshunterstrust.com/",
+  "evidence": [
+   "Wix site whose <title> misspells the trust's own name as 'heritageshuntertrust' (curl)",
+   "public contact is a personal Yahoo mailto (curl)",
+   "similarly-named heritageshunters.co.uk serves an Indonesian gambling-spam page ('Jam Gacor Mahjong Ways 2 Polo188') (curl)"
+  ],
+  "contact_email": "syr_03099@yahoo.co.uk",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.heritageshunterstrust.com/",
+   "http://www.heritageshunters.co.uk/",
+   "https://en.wikipedia.org/wiki/Heritage_Shunters_Trust"
+  ],
+  "distinctive": "collects, restores and conserves ex-British Railways diesel shunting locomotives 'after the transition from steam to diesel', based in Peak Rail's Rowsley yard (own site)",
+  "confidence": "medium"
+ }
+]

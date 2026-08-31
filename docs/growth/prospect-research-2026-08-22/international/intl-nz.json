@@ -1,0 +1,288 @@
+[
+ {
+  "name": "Cafe Medici",
+  "trade": "cafe",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://cafemedici.co.nz",
+  "evidence": [
+   "Martinborough Wine Village directory 'Visit website' link points to http://cafemedici.co.nz — curl-tested http, https and www variants and all time out (000) on 2026-08-22",
+   "DNS still resolves and MX records exist, so email works while the website is dead — observed via host lookup",
+   "Directory listing shows contact 'Nick & Susan Arnold' with mailto — extracted from fetched listing HTML"
+  ],
+  "contact_email": "nick@cafemedici.co.nz",
+  "contact_phone": null,
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/cafe-medici/",
+   "http://cafemedici.co.nz"
+  ],
+  "distinctive": "Italian-named village cafe run by Nick & Susan Arnold, per its Martinborough Wine Village listing",
+  "confidence": "high"
+ },
+ {
+  "name": "BMT Plumbing",
+  "trade": "plumber",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://bmtplumbing.co.nz",
+  "evidence": [
+   "curl of bmtplumbing.co.nz returns a hosting placeholder: title 'Future website of bmtplumbing.co.nz' with '© 1997 - 2021' — no real site has ever been built",
+   "Martinborough Wine Village directory listing (fetched) shows phone, mobile and mailto, address Dyerville, Martinborough"
+  ],
+  "contact_email": "Mark@bmtplumbing.co.nz",
+  "contact_phone": "06 306 9008",
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/bmt-plumbing/",
+   "http://bmtplumbing.co.nz"
+  ],
+  "distinctive": "Listing leads with 'Hot Water Cylinder Specialists — Guaranteed Quality Service, Emergency Work'",
+  "confidence": "high"
+ },
+ {
+  "name": "Cafe Mes Amis",
+  "trade": "cafe",
+  "town": "Orari, Geraldine",
+  "region": "South Canterbury",
+  "country": "New Zealand",
+  "website": "http://www.cafemesamis.co.nz/",
+  "evidence": [
+   "Go Geraldine business page still links the website — host lookup returns NXDOMAIN (domain no longer registered) and curl gets no connection, observed 2026-08-22",
+   "Listing (fetched) shows email, phone and Facebook page"
+  ],
+  "contact_email": "oraricafe@gmail.com",
+  "contact_phone": "+64 3 693 7981",
+  "source_urls": [
+   "https://geraldine.nz/business/cafe-mes-amis/",
+   "http://www.cafemesamis.co.nz/"
+  ],
+  "distinctive": "French-named country cafe at Orari just outside Geraldine, still promoted by the town's official directory",
+  "confidence": "high"
+ },
+ {
+  "name": "Ann's Abodes",
+  "trade": "self-contained holiday homes / B&B-style accommodation",
+  "town": "Martinborough district (Cape Palliser coast)",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://www.annsabodes.co.nz",
+  "evidence": [
+   "www.annsabodes.co.nz returns HTTP 200 with a zero-byte body on both http and https (curl, two attempts) — visitors get a blank page",
+   "Martinborough Wine Village 'Stay Local' listing (fetched) carries the full property description and contact",
+   "Owner email is a legacy xtra.co.nz address — observed in listing HTML"
+  ],
+  "contact_email": "n-a.gray@xtra.co.nz",
+  "contact_phone": "06 307 7728",
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/anns-abodes/",
+   "http://www.annsabodes.co.nz"
+  ],
+  "distinctive": "Two elevated houses whose coastal views reach the snow-capped Kaikōura peaks; near Cape Palliser lighthouse and Ngawi fishing village",
+  "confidence": "high"
+ },
+ {
+  "name": "Bonz 'n' Stonz",
+  "trade": "jade/bone carving studio and gallery (carve-your-own workshops)",
+  "town": "Hokitika",
+  "region": "West Coast",
+  "country": "New Zealand",
+  "website": "https://www.bonz-n-stonz.co.nz/",
+  "evidence": [
+   "Homepage HTML exposes meta generator 'WordPress 5.8.3' — a December 2021 release, years out of date — observed via curl",
+   "Footer reads 'Copyright © 2021 Bonz N Stonz' in fetched HTML",
+   "A 'BOXING DAY SALE! ... ends midnight Saturday 26 December' banner is still live in August 2026 — observed in homepage text",
+   "/contact/ page is a separate old HTML 4.01 Transitional static page; its Cloudflare-obfuscated email decodes to a legacy ISP address"
+  ],
+  "contact_email": "gwaliasi4@clear.net.nz",
+  "contact_phone": "+64 3 755 6504",
+  "source_urls": [
+   "https://www.bonz-n-stonz.co.nz/",
+   "https://www.bonz-n-stonz.co.nz/contact/"
+  ],
+  "distinctive": "Carve-your-own pounamu/bone/shell workshops at 16 Hamilton Street, directly opposite the Hokitika i-SITE",
+  "confidence": "high"
+ },
+ {
+  "name": "Raglan Sunset Motel",
+  "trade": "motel",
+  "town": "Raglan",
+  "region": "Waikato",
+  "country": "New Zealand",
+  "website": "https://www.raglansunsetmotel.co.nz/",
+  "evidence": [
+   "Footer reads 'Copyright © 2021 Raglan Sunset Motel' — observed in fetched homepage HTML, five years stale",
+   "Site exposes three meta generator tags (WordPress, Elementor, AIOSEO) in page source — observed via curl",
+   "Linked from the Raglan i-HUB accommodation directory as a plain http:// URL",
+   "Booking email and phone visible in homepage HTML"
+  ],
+  "contact_email": "book@raglansunsetmotel.co.nz",
+  "contact_phone": "07 825 0050",
+  "source_urls": [
+   "https://raglan.net.nz/accommodation/",
+   "https://www.raglansunsetmotel.co.nz/"
+  ],
+  "distinctive": "Rooms carry te reo names — Tui Suite and Tahi Executive Suite — and the site has 'Local's Guide' and 'Coastal Roaming' sections",
+  "confidence": "high"
+ },
+ {
+  "name": "Kit Macgregor — The Loft Studio & Gallery",
+  "trade": "artist studio / gallery",
+  "town": "Oamaru",
+  "region": "Waitaki, North Otago",
+  "country": "New Zealand",
+  "website": "http://www.kitmacgregor.com",
+  "evidence": [
+   "Homepage has no viewport meta tag (not mobile-friendly) and uses a Dreamweaver-era three-column template with IE5/IE conditional CSS comments — observed in fetched HTML",
+   "Newest item in the News column is an exhibition dated 27 Aug – 29 Sep 2015 — site content is a decade old",
+   "Served over plain http; page shows mobile number and email",
+   "Listed on the vintage waitaki.net.nz arts directory for Oamaru — fetched that page"
+  ],
+  "contact_email": "mail@kitmacgregor.com",
+  "contact_phone": "027 645 6677",
+  "source_urls": [
+   "http://www.waitaki.net.nz/arts/index.htm",
+   "http://www.kitmacgregor.com"
+  ],
+  "distinctive": "Studio is The Loft at 8 Harbour Street in Oamaru's historic precinct, above the Harbour Street Collective Cafe; paints peat-dark Highland rivers ('Black Water & Other Stories')",
+  "confidence": "high"
+ },
+ {
+  "name": "Cotter and Stevens",
+  "trade": "trades contractor",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Martinborough Wine Village directory listing (fetched) links only the Facebook page — no website field",
+   "Their email domain cans.co.nz is broken as a website: http returns a malformed 301 redirect to 'http://' and https refuses connections — observed via curl 2026-08-22",
+   "Listing exposes mailto"
+  ],
+  "contact_email": "jim@cans.co.nz",
+  "contact_phone": null,
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/cotter-and-stevens/",
+   "http://www.cans.co.nz"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Martinborough Bookshop",
+  "trade": "independent bookshop",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Martinborough Wine Village directory listing (fetched) links only facebook.com/martybooks — no website field present",
+   "Listing shows phone and mailto — extracted from listing HTML"
+  ],
+  "contact_email": "gale.bj@gmail.com",
+  "contact_phone": "027 248 0400",
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/martinborough-bookshop/"
+  ],
+  "distinctive": "Facebook handle is 'martybooks' — the local nickname for Martinborough; listing notes free parking outside",
+  "confidence": "high"
+ },
+ {
+  "name": "Berry Barn Bakery & Cafe",
+  "trade": "bakery and cafe",
+  "town": "Geraldine",
+  "region": "South Canterbury",
+  "country": "New Zealand",
+  "website": "http://www.bernies.nz/BerryBarn.html",
+  "evidence": [
+   "Has no domain of its own — Go Geraldine links to a single orphan page on bernies.nz (a Timaru bakery's site), observed by fetching both",
+   "That page mixes in placeholder/foreign content: 'PO BOX 1234' and the Timaru shop's Washdyke address and hours — observed in fetched page text",
+   "Go Geraldine listing (fetched) gives email; the bernies.nz page gives Berry Barn's phone and address 76 Talbot St"
+  ],
+  "contact_email": "berrybarn17@gmail.com",
+  "contact_phone": "03 693 9900",
+  "source_urls": [
+   "https://geraldine.nz/business/berry-barn-cafe-and-bakery/",
+   "http://www.bernies.nz/BerryBarn.html"
+  ],
+  "distinctive": "Opens 6:30am seven days on Geraldine's main street (76 Talbot St); shares a family connection with Bernie's bakery in Timaru",
+  "confidence": "high"
+ },
+ {
+  "name": "Burtons Lunch Bar and Catering",
+  "trade": "lunch bar and caterer",
+  "town": "Thames",
+  "region": "Coromandel, Waikato",
+  "country": "New Zealand",
+  "website": "NONE",
+  "evidence": [
+   "Thames Business Association directory page (fetched) shows no website for the business; only contact is a gmail address — observed in listing HTML",
+   "Listing text describes shop hours Mon–Fri 7:30am–3pm on Pollen Street — fetched from explorethames.nz"
+  ],
+  "contact_email": "burtonsbistro.catering@gmail.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://explorethames.nz/portfolio-items/burtons-lunch-bar-and-catering/"
+  ],
+  "distinctive": "A 'Daughter'n'Law and Mother'n'Law team' — The Chef & The Cook; the chef married a butcher and they co-own the butcher shop that supplies the meat",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Dangerous Kitchen",
+  "trade": "cafe and pizza restaurant",
+  "town": "Takaka",
+  "region": "Golden Bay, Tasman",
+  "country": "New Zealand",
+  "website": "https://www.dangerouskitchen.co.nz/",
+  "evidence": [
+   "Footer reads '©2017 Dangerous Kitchen. Designed by Bee.' — observed in fetched Wix HTML, nine years stale",
+   "Built on Wix (meta generator in page source); /contact returns 404 and no email appears anywhere in the HTML — phone is the only contact, observed via curl"
+  ],
+  "contact_email": null,
+  "contact_phone": "(03) 525 8686",
+  "source_urls": [
+   "https://www.dangerouskitchen.co.nz/"
+  ],
+  "distinctive": "'By day, a café serving the best hand made cabinet in the district including delicate sushi... by night, a caped crusading restaurant dishing out our famous pizzas'",
+  "confidence": "high"
+ },
+ {
+  "name": "Hokitika Craft Gallery",
+  "trade": "artists' co-operative craft gallery",
+  "town": "Hokitika",
+  "region": "West Coast",
+  "country": "New Zealand",
+  "website": "https://www.hokitikacraftgallery.co.nz/",
+  "evidence": [
+   "Site is built on legacy Jimdo Creator (meta generator in HTML) with the default-style title 'Welcome - hokitikagallery' — observed via curl",
+   "Contact page offers only a captcha form and phone — no email published; observed in fetched contact page text"
+  ],
+  "contact_email": null,
+  "contact_phone": "03 755 8802",
+  "source_urls": [
+   "https://www.hokitikacraftgallery.co.nz/",
+   "https://www.hokitikacraftgallery.co.nz/contact/"
+  ],
+  "distinctive": "Tagline 'absolutely local. absolutely NZ made.' at 25 Tancred Street — pounamu, pottery, fibre, soap, honey and black garlic from local makers",
+  "confidence": "high"
+ },
+ {
+  "name": "Geraldine Fish Supply",
+  "trade": "fish and chip shop",
+  "town": "Geraldine",
+  "region": "South Canterbury",
+  "country": "New Zealand",
+  "website": "NONE",
+  "evidence": [
+   "Go Geraldine directory listing (fetched) has no website link and no email — contact information is phone only, observed in listing HTML",
+   "Categorised 'Food and Drink, Retail, Takeaways' on the fetched geraldine.nz business page"
+  ],
+  "contact_email": null,
+  "contact_phone": "+64 3 693 8441",
+  "source_urls": [
+   "https://geraldine.nz/business/geraldine-fish-supply/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

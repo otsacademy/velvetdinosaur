@@ -1,0 +1,301 @@
+[
+ {
+  "name": "Gympie Cooloola Pet Resort & Pet Cemetery",
+  "trade": "boarding kennels & cattery",
+  "town": "Gympie",
+  "region": "Queensland",
+  "country": "Australia",
+  "website": "http://www.gcpetresort.com.au/",
+  "evidence": [
+   "meta generator 'Joomla! - Open Source Content Management' observed in fetched HTML (curl 2026-08-22)",
+   "'Copyright © 2012' observed in homepage HTML",
+   "https fails to connect (curl exit 000) — site is http-only",
+   "email observed as mailto link in homepage HTML"
+  ],
+  "contact_email": "pets@gcpetresort.com.au",
+  "contact_phone": "+61 7 5483 5364",
+  "source_urls": [
+   "http://www.gcpetresort.com.au/",
+   "https://www.openstreetmap.org/way/1340476317"
+  ],
+  "distinctive": "Runs a pet cemetery alongside the boarding kennels — 'Pet Resort & Pet Cemetery' in its own page title and keywords",
+  "confidence": "high"
+ },
+ {
+  "name": "Highland Shoe & Watch Repair",
+  "trade": "shoe & watch repair",
+  "town": "New Glasgow",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.highlandshoerepair.ca/index.html",
+  "evidence": [
+   "'Copyright 1999-2019' observed in fetched homepage HTML (curl 2026-08-22)",
+   "no <meta name=\"viewport\"> tag in HTML — not mobile-responsive",
+   "homepage still served at bare /index.html path listed in OSM",
+   "email observed in page HTML; services text 'shoe repair, watch repair, key cutting, sharpening' observed"
+  ],
+  "contact_email": "support@highlandshoerepair.ca",
+  "contact_phone": "+1 902-752-2426",
+  "source_urls": [
+   "https://www.highlandshoerepair.ca/index.html",
+   "https://www.openstreetmap.org/node/12413858465"
+  ],
+  "distinctive": "One counter covers shoe repair, watch repair, key cutting and blade sharpening (site services text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Refreshing Paws",
+  "trade": "dog grooming & daycare",
+  "town": "Gorham",
+  "region": "Maine",
+  "country": "USA",
+  "website": "http://www.refreshingpawsmaine.com/",
+  "evidence": [
+   "footer 'Copyright 2009 Refreshing Paws. All rights reserved.' observed in fetched HTML (curl 2026-08-22)",
+   "meta generator 'Site Solution - lunarlander' (legacy Yahoo small-business builder) observed",
+   "no <meta name=\"viewport\"> tag — not mobile-responsive",
+   "email observed on /contact_us page HTML"
+  ],
+  "contact_email": "kathywood@refreshingpawsmaine.com",
+  "contact_phone": "+1 207-839-5547",
+  "source_urls": [
+   "http://www.refreshingpawsmaine.com/",
+   "http://www.refreshingpawsmaine.com/contact_us",
+   "https://www.openstreetmap.org/node/7157246511"
+  ],
+  "distinctive": "Owner Kathy Wood's personal named address is the contact point on the 2009-era site",
+  "confidence": "high"
+ },
+ {
+  "name": "Doyle Driving School",
+  "trade": "driving school",
+  "town": "Carrigaline",
+  "region": "County Cork",
+  "country": "Ireland",
+  "website": "http://www.doyledrivingschool.ie",
+  "evidence": [
+   "served over plain http with no redirect to https (curl 2026-08-22)",
+   "loads jQuery 1.11.1 (2014) and bower_components with template 'SuperFlat_v2' — mid-2010s stack observed in HTML",
+   "meta description typo 'ADI Qulaified' observed in HTML",
+   "email observed as mailto link in HTML (legacy Eircom address)"
+  ],
+  "contact_email": "cronand@eircom.net",
+  "contact_phone": "+353 87 797 6825",
+  "source_urls": [
+   "http://www.doyledrivingschool.ie",
+   "https://www.openstreetmap.org/node/9626036163"
+  ],
+  "distinctive": "Meta description lists ADI qualification, EDT lessons and Eircode P43 R858 — with a 'Qulaified' typo waiting to be fixed",
+  "confidence": "high"
+ },
+ {
+  "name": "TransFURmations",
+  "trade": "dog grooming",
+  "town": "Palmerston North",
+  "region": "Manawatū-Whanganui",
+  "country": "New Zealand",
+  "website": "https://www.transfurmations.co.nz/",
+  "evidence": [
+   "built on DotNetNuke (DNN) legacy ASP.NET CMS — 200+ DNN references, __VIEWSTATE and Telerik assets observed in HTML (curl 2026-08-22)",
+   "'Copyright 2017' and 'Copyright 2015' strings observed in page HTML",
+   "completely empty <title></title> tag observed",
+   "email and tel observed in page HTML"
+  ],
+  "contact_email": "info@thepetcarecompany.co.nz",
+  "contact_phone": "+64 6 355 0609",
+  "source_urls": [
+   "https://www.transfurmations.co.nz/",
+   "https://www.openstreetmap.org/node/13473064950"
+  ],
+  "distinctive": "Calls itself 'Palmerston North's One Stop Dog Shop' (page text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Wagging Tails Kennel",
+  "trade": "boarding kennels",
+  "town": "Wawa",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "http://waggingtailskennel.ca/",
+  "evidence": [
+   "waggingtailskennel.com is a 1990s-style frameset redirect stub (359 bytes, raw <frameset> HTML observed via curl 2026-08-22) forwarding to the .ca domain",
+   "https fails on both domains (curl 000) — site is http-only",
+   "email observed in waggingtailskennel.ca HTML"
+  ],
+  "contact_email": "waggingtailskennelwawa@gmail.com",
+  "contact_phone": "+1 705-856-7750",
+  "source_urls": [
+   "http://www.waggingtailskennel.com",
+   "http://waggingtailskennel.ca/",
+   "https://www.openstreetmap.org/way/1002457838"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Hand Made Frames",
+  "trade": "picture framer",
+  "town": "North Fremantle",
+  "region": "Western Australia",
+  "country": "Australia",
+  "website": "http://www.handmadeframes.com.au",
+  "evidence": [
+   "no <meta name=\"viewport\"> tag — not mobile-responsive (curl 2026-08-22)",
+   "loads jQuery 1.6.4 (2011) and Google Fonts over plain http, empty meta description — hand-rolled static site",
+   "OSM listing points to misspelled domain 'hamdmadeframes.com.au' which does not resolve (curl 000)",
+   "email and phone recorded on OSM node 13417767373"
+  ],
+  "contact_email": "mickhowarth@gmail.com",
+  "contact_phone": "+61 401 028 611",
+  "source_urls": [
+   "http://www.handmadeframes.com.au",
+   "https://www.openstreetmap.org/node/13417767373"
+  ],
+  "distinctive": "'Conservation Picture framing, Gilding, Restoration & Bespoke Frame Craftsman' at 16 Jackson Street, North Fremantle (page text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Silver Leash",
+  "trade": "dog & cat grooming",
+  "town": "Hartland",
+  "region": "Wisconsin",
+  "country": "USA",
+  "website": "http://www.silverleash.com/",
+  "evidence": [
+   "meta generator 'Yahoo! SiteBuilder/2.6/1.6.0_10' observed in fetched HTML (builder discontinued ~2009; curl 2026-08-22)",
+   "no <meta name=\"viewport\"> tag — not mobile-responsive",
+   "entire homepage is 9.6KB with no email anywhere, contactus.html has form/phone only"
+  ],
+  "contact_email": null,
+  "contact_phone": "+1 262-367-5955",
+  "source_urls": [
+   "http://www.silverleash.com/",
+   "http://www.silverleash.com/contactus.html",
+   "https://www.openstreetmap.org/node/9882090205"
+  ],
+  "distinctive": "Owner is active in dog shows, agility and field obedience competitions (page text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Diamond Dogs",
+  "trade": "dog grooming",
+  "town": "Nenagh",
+  "region": "County Tipperary",
+  "country": "Ireland",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "OSM way 220804080 records website as facebook.com/diamond.dogs.nenagh with no own domain",
+   "Facebook page URL returns HTTP 200 (curl HEAD 2026-08-22)",
+   "email and phone recorded on the OSM object"
+  ],
+  "contact_email": "diamonddogsnenagh@gmail.com",
+  "contact_phone": "+353 85 235 4235",
+  "source_urls": [
+   "https://www.openstreetmap.org/way/220804080",
+   "https://www.facebook.com/diamond.dogs.nenagh"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Valley Pet Grooming",
+  "trade": "dog grooming",
+  "town": "Madawaska",
+  "region": "Maine",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "OSM node 12803607199 records contact:facebook and no website tag",
+   "Facebook page URL returns HTTP 200 (curl HEAD 2026-08-22)",
+   "email, phone and street address recorded on the OSM object"
+  ],
+  "contact_email": "valleypetgrooming@gmail.com",
+  "contact_phone": "+1 207-316-4831",
+  "source_urls": [
+   "https://www.openstreetmap.org/node/12803607199",
+   "https://www.facebook.com/valleypetgrooming207"
+  ],
+  "distinctive": "Storefront at 250 Main Street, Madawaska — the US-Canada border town at Maine's northern tip (OSM address tags)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Ayers Shoe Repairs",
+  "trade": "shoe repair / cobbler",
+  "town": "Dunedin",
+  "region": "Otago",
+  "country": "New Zealand",
+  "website": "https://www.ayersshoerepairs.co.nz/",
+  "evidence": [
+   "built with Mobirise free drag-and-drop builder (mobirise asset paths observed in HTML, curl 2026-08-22)",
+   "page <title> is just 'Home'; HTML comment credits a student build with personal gmail addresses",
+   "email and tel observed in page HTML"
+  ],
+  "contact_email": "ayersshoerepairs@gmail.com",
+  "contact_phone": "+64 21 039 2925",
+  "source_urls": [
+   "https://www.ayersshoerepairs.co.nz/",
+   "https://www.openstreetmap.org/node/13521027003"
+  ],
+  "distinctive": "Meta description: 'We do more than just repair shoes… premium leather repair work from a passionate business'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dalhousie Alterations & Repairs",
+  "trade": "shoe repair & clothing alterations",
+  "town": "Calgary (Dalhousie)",
+  "region": "Alberta",
+  "country": "Canada",
+  "website": "http://www.dalhousierepairs.ca",
+  "evidence": [
+   "listed website dead: connection fails on both http and https (curl 000, 2026-08-22)",
+   "email (ISP shaw.ca domain, independent of the dead site) and Tu-Sa opening hours recorded on OSM node 4335866571"
+  ],
+  "contact_email": "dalhousierepairs@shaw.ca",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.dalhousierepairs.ca",
+   "https://www.openstreetmap.org/node/4335866571"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Cootamundra Boarding Kennels",
+  "trade": "boarding kennels",
+  "town": "Cootamundra",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "NONE",
+  "evidence": [
+   "OSM node 13694740620 records name, address (240 Rosehill Road), email and phone but no website tag",
+   "no domain found for the business in any fetched source"
+  ],
+  "contact_email": "cootaboardingkennels@outlook.com",
+  "contact_phone": "+61 429 863 199",
+  "source_urls": [
+   "https://www.openstreetmap.org/node/13694740620"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Athlone Picture Framing",
+  "trade": "picture framer",
+  "town": "Athlone",
+  "region": "County Westmeath",
+  "country": "Ireland",
+  "website": "NONE",
+  "evidence": [
+   "OSM node 11007256067 records email and phone but no website tag",
+   "email domain dalby.ie has live MX records (verified via DNS-over-HTTPS 2026-08-22) but its website does not respond (curl 000) — email works, web presence absent"
+  ],
+  "contact_email": "niamh@dalby.ie",
+  "contact_phone": "+353 87 908 9940",
+  "source_urls": [
+   "https://www.openstreetmap.org/node/11007256067",
+   "https://dns.google/resolve?name=dalby.ie&type=MX"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

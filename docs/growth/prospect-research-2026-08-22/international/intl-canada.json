@@ -1,0 +1,298 @@
+[
+ {
+  "name": "Tripp's Gallery",
+  "trade": "Art gallery / craft studio",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.trippsgallery.com",
+  "evidence": [
+   "curl of trippsgallery.com returns HTTP 404 with title 'ConnectYourDomain Error | Wix.com' — domain pointed at Wix but never connected, site effectively dead (observed on both www and bare domain)",
+   "Annapolis Royal town business directory still links the dead URL and lists the business under 'Craft Shops & Artist Studios'"
+  ],
+  "contact_email": "info@trippsgallery.com",
+  "contact_phone": "902-521-4986",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.trippsgallery.com"
+  ],
+  "distinctive": "Listed in the town directory under 'Craft Shops & Artist Studios' at 324 St. George St., Annapolis Royal's historic main street",
+  "confidence": "high"
+ },
+ {
+  "name": "Hillsdale House Inn",
+  "trade": "Bed & breakfast inn",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.hillsdalehouseinn.ca",
+  "evidence": [
+   "no <meta name=\"viewport\"> in fetched homepage HTML (grep count 0) — not mobile-friendly",
+   "table-based layout: 7 <table> tags in homepage markup (curl)",
+   "footer reads '© 2007-2026 - Hillsdale House Inn' (curl) — site design dates to 2007 era",
+   "page served over plain http:// with no redirect to https when fetched via http"
+  ],
+  "contact_email": "reservations@hillsdalehouseinn.ca",
+  "contact_phone": "902-532-2345",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.hillsdalehouseinn.ca/"
+  ],
+  "distinctive": "Meta description: 'authentic Nova Scotia bed and breakfast inn located in the historic Town of Annapolis Royal... minutes from Port Royal'",
+  "confidence": "high"
+ },
+ {
+  "name": "Joan Bruneau - Studio Potter",
+  "trade": "Pottery studio / gallery showroom",
+  "town": "Lunenburg",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.joanbruneau.com",
+  "evidence": [
+   "homepage is XHTML 1.0 Transitional with no viewport meta (curl grep 0) — pre-mobile-era site",
+   "markup links IE6 and IE7 conditional stylesheets (observed in HTML)",
+   "site CSS versioned with a 2013 Unix timestamp (observed in HTML)",
+   "served over http:// without redirect when fetched via http; Town of Lunenburg artists page links the http URL"
+  ],
+  "contact_email": "joanbruneau@ns.sympatico.ca",
+  "contact_phone": null,
+  "source_urls": [
+   "https://townoflunenburg.ca/artists-and-galleries.html",
+   "http://www.joanbruneau.com/",
+   "http://www.joanbruneau.com/contact.html"
+  ],
+  "distinctive": "Wheel-thrown functional earthenware; site has a 'showroom' section and also features painter F. Scott MacLeod (site nav and meta keywords)",
+  "confidence": "high"
+ },
+ {
+  "name": "Lazy Daisy Cafe",
+  "trade": "Cafe / restaurant",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://lazydaisycafe.square.site/",
+  "evidence": [
+   "only web presence is a free Square Online subdomain (generator meta 'Square Online' observed via curl) — no own domain",
+   "unedited template placeholders 'hi@mystore.com' and '(555) 555-5555' still present in page HTML alongside the real contact details (curl)",
+   "town business directory links the square.site URL as the official website"
+  ],
+  "contact_email": "rach.lazydaisy@gmail.com",
+  "contact_phone": "902-532-1222",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "https://lazydaisycafe.square.site/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "MareGold Bookstore",
+  "trade": "Independent bookstore",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.maregoldbookstore.com",
+  "evidence": [
+   "maregoldbookstore.com serves a 106-byte bare HTML page with only a meta-refresh to an insecure square.site subdomain — no viewport, no content (curl, raw HTML observed)",
+   "real store lives on a free Square Online subdomain with auto-generated number in the URL (generator meta, curl)",
+   "http://www.maregoldbookstore.com does not redirect to https (stayed on http, curl)"
+  ],
+  "contact_email": "info@maregold.com",
+  "contact_phone": "709-689-2794",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.maregoldbookstore.com",
+   "http://maregold-bookstore-104262.square.site"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Seahaven Bed and Breakfast",
+  "trade": "Bed & breakfast",
+  "town": "St. Andrews",
+  "region": "New Brunswick",
+  "country": "Canada",
+  "website": "http://seahavenbb.com",
+  "evidence": [
+   "no viewport meta in homepage HTML (curl grep 0) — not mobile-friendly",
+   "footer 'Copyright © 2013-2026' (curl) — 2013-era static site",
+   "town tourism site links it as a plain-http deep link; no http-to-https redirect on the site (curl stayed on http)",
+   "contact is a legacy ISP mailbox (rogers.com, observed in page HTML)"
+  ],
+  "contact_email": "seahaven@rogers.com",
+  "contact_phone": "506-321-2307",
+  "source_urls": [
+   "https://explorestandrews.ca/where-to-stay/",
+   "http://seahavenbb.com/index.html"
+  ],
+  "distinctive": "Describes itself as 'an organic bed and breakfast located at the water's edge in St. Andrews' (site meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Civic Auto Repair",
+  "trade": "Auto repair garage",
+  "town": "Nelson",
+  "region": "British Columbia",
+  "country": "Canada",
+  "website": "http://civicautorepair.mechanicnet.com/",
+  "evidence": [
+   "listed website fails to load (curl connection failure) and returns NXDOMAIN via Cloudflare DNS-over-HTTPS — the legacy MechanicNet template site is gone",
+   "Nelson & District Chamber directory still lists the dead URL and a @mechanicnet.com email as the shop's contacts"
+  ],
+  "contact_email": "civicautorepair@mechanicnet.com",
+  "contact_phone": "250-354-4146",
+  "source_urls": [
+   "https://www.discovernelson.com/nelson-bc-directory/auto-motorcycle/",
+   "http://civicautorepair.mechanicnet.com/"
+  ],
+  "distinctive": "714 Baker Street shop; chamber listing notes it is a Designated Government Inspection Facility and BCAA-affiliated",
+  "confidence": "high"
+ },
+ {
+  "name": "Encompassing Designs Rug Hooking Studio",
+  "trade": "Rug hooking studio / craft shop",
+  "town": "Mahone Bay",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.encompassingdesigns.com/",
+  "evidence": [
+   "no viewport meta in homepage HTML (curl grep 0) — not mobile-friendly",
+   "footer reads '© Copyright 2023 Encompassing Designs' (curl) — stale copyright",
+   "legacy Weebly platform (asset tree observed in HTML); contact page exposes no email, form only (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "902-624-0370",
+  "source_urls": [
+   "https://mahonebay.com/directory/encompassing-designs-rug-hooking/",
+   "https://www.encompassingdesigns.com/"
+  ],
+  "distinctive": "Self-described simply as 'Rug Hooking Studio' (og:description); sells patterns and runs classes on Main Street Mahone Bay (chamber listing address 498 Main St)",
+  "confidence": "high"
+ },
+ {
+  "name": "Garrison House Inn",
+  "trade": "Inn & restaurant",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.garrisonhouse.ca",
+  "evidence": [
+   "chamber-listed www.garrisonhouse.ca does not resolve — Cloudflare DoH shows no A record for the www host, so the town directory's website link is broken",
+   "bare garrisonhouse.ca redirects to a different domain, garrisonhouseinn.ca, a GoDaddy sitebuilder page whose markup still contains the placeholder 'filler@godaddy.com' and an empty 'mailto:' link (curl)"
+  ],
+  "contact_email": "info@garrisonhouse.ca",
+  "contact_phone": "902-532-5750",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "https://garrisonhouseinn.ca/"
+  ],
+  "distinctive": "Operates as both accommodation and restaurant at 350 St. George Street (site title 'Garrison House Inn and Restaurant')",
+  "confidence": "medium"
+ },
+ {
+  "name": "Fairmont House Bed and Breakfast",
+  "trade": "Bed & breakfast",
+  "town": "Mahone Bay",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.fairmonthouse.com/",
+  "evidence": [
+   "legacy Weebly-reseller platform: favicon loaded from weebly.com reseller assets (observed in HTML via curl)",
+   "og:url and og:image declared as http:// (non-https) URLs in head (curl)",
+   "hero image asset carries 2017 cache timestamp (observed in HTML)"
+  ],
+  "contact_email": "info@fairmonthouse.com",
+  "contact_phone": "902-624-8089",
+  "source_urls": [
+   "https://mahonebay.com/directory/fairmont-house/",
+   "https://www.fairmonthouse.com/",
+   "https://www.fairmonthouse.com/contact.html"
+  ],
+  "distinctive": "'Overlooks Mahone Bay, offering a scenic water view' (site og:description); at 654 Main Street per chamber listing",
+  "confidence": "medium"
+ },
+ {
+  "name": "Inn on Frederick",
+  "trade": "Inn / guest house",
+  "town": "St. Andrews",
+  "region": "New Brunswick",
+  "country": "Canada",
+  "website": "https://innonfrederick.ca/",
+  "evidence": [
+   "hosted on WordPress.com — 'Powered by WordPress.com' footer and generator meta observed via curl",
+   "town tourism site links the inn via the legacy free subdomain innonfred147572534.wordpress.com (observed link), which redirects to innonfrederick.ca",
+   "contact is a gmail address (observed in page HTML)"
+  ],
+  "contact_email": "innonfred@gmail.com",
+  "contact_phone": "506-529-2603",
+  "source_urls": [
+   "https://explorestandrews.ca/where-to-stay/",
+   "https://innonfred147572534.wordpress.com/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Custom Automotive",
+  "trade": "Auto repair garage",
+  "town": "Picton",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "http://www.customautomotive.biz/",
+  "evidence": [
+   "customautomotive.biz serves a 106-byte bare meta-refresh page (no viewport, no content) pointing to a Strikingly page (raw HTML observed via curl)",
+   "the Strikingly target itself returns HTTP 404 (curl) — the entire web presence is a broken redirect chain",
+   "YellowPages.ca listing links the broken .biz domain as the business website"
+  ],
+  "contact_email": null,
+  "contact_phone": "613-471-1450",
+  "source_urls": [
+   "https://www.yellowpages.ca/bus/Ontario/Picton/Custom-Automotive/7191660.html",
+   "http://www.customautomotive.biz/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "The Orient Hotel",
+  "trade": "Historic hotel / B&B",
+  "town": "Victoria-by-the-Sea",
+  "region": "Prince Edward Island",
+  "country": "Canada",
+  "website": "http://www.theorienthotel.com",
+  "evidence": [
+   "theorienthotel.com now serves an Indonesian gambling-spam page — title 'ROKOK88' and footer '© 2026 rokok88' observed via curl — the hotel's domain has lapsed and been taken over",
+   "village association site victoriabythesea.com still links theorienthotel.com from its accommodation listing page",
+   "contact email/phone taken from that same association listing page; the page's title inconsistently reads 'Starfish Beach House' — attribution should be re-confirmed before outreach"
+  ],
+  "contact_email": "conniepgriffin@gmail.com",
+  "contact_phone": "902-367-8249",
+  "source_urls": [
+   "https://www.victoriabythesea.com/copy-of-the-victoria-hotel",
+   "http://www.theorienthotel.com"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Heirloom Cafe Bistro",
+  "trade": "Cafe / bistro",
+  "town": "Almonte",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "http://www.heirloomcafe.ca/",
+  "evidence": [
+   "heirloomcafe.ca serves only a registrar parking lander (JS redirect to '/lander' in a 114-byte page, observed via curl); domain resolves to GoDaddy parking IPs (Cloudflare DoH)",
+   "YellowPages.ca still lists heirloomcafe.ca as the website for the cafe at 7 Mill St, Almonte, alongside a legacy Facebook page link"
+  ],
+  "contact_email": null,
+  "contact_phone": "613-256-9653",
+  "source_urls": [
+   "https://www.yellowpages.ca/bus/Ontario/Almonte/Heirloom-Cafe-Bistro/6447862.html",
+   "http://www.heirloomcafe.ca/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

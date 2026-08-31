@@ -1,0 +1,283 @@
+[
+ {
+  "name": "Dunkirk Lighthouse & Veterans Park Museum",
+  "trade": "volunteer lighthouse & veterans museum",
+  "town": "Dunkirk",
+  "region": "New York",
+  "country": "USA",
+  "website": "http://www.dunkirklighthouse.com/",
+  "evidence": [
+   "meta generator 'Microsoft FrontPage 4.0' in homepage HTML (curl audit)",
+   "no <meta name=viewport> — not mobile-friendly (grep of saved HTML)",
+   "77 <font> tags and 5 table-layout tables counted in homepage source",
+   "served over plain http with no https redirect; https exists but is never forced",
+   "site is active: 'Ghost Hunt 2026 Schedule' text on homepage"
+  ],
+  "contact_email": "dunkirklighthouse@gmail.com",
+  "contact_phone": "716-366-5050",
+  "source_urls": [
+   "http://www.dunkirklighthouse.com/"
+  ],
+  "distinctive": "lighthouse perched on Point Gratiot, Lake Erie since 1827 (homepage text); runs ghost hunts and ham-radio lighthouse special events",
+  "confidence": "high"
+ },
+ {
+  "name": "South Simcoe Railway Heritage Corporation",
+  "trade": "volunteer heritage steam railway",
+  "town": "Tottenham",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "http://www.steamtrain.com/",
+  "evidence": [
+   "entire site runs on 1990s-style CGI URLs (cgi.bin?JOB=RR&PG=1) observed in homepage hrefs (curl)",
+   "no <meta name=viewport>; 6 table-layout tables and 5 <font> tags in 11KB homepage",
+   "steamtrain.com serves as plain-http alias of southsimcoerailway.ca with no https redirect (curl final URL)",
+   "organisation is active: footer '© South Simcoe Railway 2026' observed"
+  ],
+  "contact_email": "info@southsimcoerailway.ca",
+  "contact_phone": "(905) 936-5815",
+  "source_urls": [
+   "http://www.steamtrain.com/",
+   "https://www.southsimcoerailway.ca/cgi.bin?JOB=RR&PG=2&PP=contact"
+  ],
+  "distinctive": "runs Easter, Halloween 'ghost', fall-colours and Santa special steam trains from Tottenham (event pages in site nav)",
+  "confidence": "high"
+ },
+ {
+  "name": "Iron Island Museum",
+  "trade": "volunteer neighbourhood history & veterans museum",
+  "town": "Buffalo (Lovejoy)",
+  "region": "New York",
+  "country": "USA",
+  "website": "http://www.ironislandmuseum.com/",
+  "evidence": [
+   "footer 'Copyright 2009' on homepage fetched Aug 2026 (curl)",
+   "two 'coming soon' strings and 13 table-layout tables in homepage source (grep)",
+   "no <meta name=viewport> — not mobile-friendly",
+   "no https redirect from http:// (curl final URL http)",
+   "active despite dated site: 'Night At the Museum August 8, 2026 — SOLD OUT' on homepage"
+  ],
+  "contact_email": "ramoneschick@gmail.com",
+  "contact_phone": "716-892-3084",
+  "source_urls": [
+   "http://www.ironislandmuseum.com/"
+  ],
+  "distinctive": "museum at 998 Lovejoy Street with a 'reputation for paranormal' — hosts guided overnight ghost investigations and Thursday-night $5 tours (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Bush Tramway Club Inc.",
+  "trade": "volunteer bush-tramway heritage railway",
+  "town": "Pukemiro / Glen Afton, near Huntly",
+  "region": "Waikato",
+  "country": "New Zealand",
+  "website": "http://www.bushtramwayclub.com/",
+  "evidence": [
+   "Microsoft FrontPage signature markup in 4KB index page; table layout + <font> tags (curl audit)",
+   "no <meta name=viewport>; served plain http",
+   "all navigation is PNG button images and the entire Contact Us page content is a single image — no machine-readable text (pages fetched and image read)",
+   "contact page text extracted from the image: club asks callers to 'wait (a long time) until the answering machine answers'"
+  ],
+  "contact_email": "secretary@bushtramwayclub.com",
+  "contact_phone": "+64 (07) 828 4851",
+  "source_urls": [
+   "http://www.bushtramwayclub.com/",
+   "http://www.bushtramwayclub.com/contactus.html"
+  ],
+  "distinctive": "steam open days and charter trains on an ex-coal-field bush tramway; postal address 'Box C10, Glen Afton, R.D.1, Huntly'; running a restoration appeal for Heisler locomotive 1082 (site pages/images)",
+  "confidence": "high"
+ },
+ {
+  "name": "Berrima District Historical & Family History Society Inc",
+  "trade": "historical society & district museum",
+  "town": "Berrima / Mittagong",
+  "region": "New South Wales (Southern Highlands)",
+  "country": "Australia",
+  "website": "https://www.berrimadistricthistoricalsociety.org.au/",
+  "evidence": [
+   "meta generator 'Web Presence Builder 18.0.69' — discontinued Plesk site builder (homepage HTML via curl)",
+   "no <meta name=viewport> — not mobile-friendly",
+   "site shows visitors a 'Your browser version is outdated' banner from the legacy builder (contact page text)",
+   "society is active: '© BDH&FHS 2026' footer and newsletters listed to date"
+  ],
+  "contact_email": "bdhsarchives@gmail.com",
+  "contact_phone": "+61 (02) 4877 1130",
+  "source_urls": [
+   "https://www.berrimadistricthistoricalsociety.org.au/",
+   "https://www.berrimadistricthistoricalsociety.org.au/contact-us/"
+  ],
+  "distinctive": "runs the Berrima District Museum plus quirky local research databases like 'Mittagong Infectious Diseases 1898-1938' and 'The People of Rowes Hill' (site nav)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cobh Museum",
+  "trade": "volunteer town museum",
+  "town": "Cobh",
+  "region": "County Cork",
+  "country": "Ireland",
+  "website": "https://www.cobhmuseum.com/",
+  "evidence": [
+   "hand-coded static HTML site (11KB homepage, table layout, no CMS signature) observed via curl",
+   "no <meta name=viewport> — not mobile-friendly",
+   "email published in page source",
+   "active: '** Season Open March 27th 2026 **' on homepage"
+  ],
+  "contact_email": "cobhmuseum1@gmail.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.cobhmuseum.com/"
+  ],
+  "distinctive": "housed in the 19th-century Scots' Presbyterian Church; current exhibition 'Lusitania — A Day In May' about the 1915 sinking coordinated from Queenstown/Cobh (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "New Brighton Silver Band Inc.",
+  "trade": "community brass band",
+  "town": "Christchurch (New Brighton)",
+  "region": "Canterbury",
+  "country": "New Zealand",
+  "website": "http://www.newbrightonsilverband.org.nz/",
+  "evidence": [
+   "meta generator 'WordPress 4.9.26' — 2018-era core branch, long unsupported (homepage HTML via curl)",
+   "theme derived from 2010 default 'twentyten'; no <meta name=viewport>",
+   "no https redirect (curl -L stayed on http)",
+   "front-page features are '2011 Christchurch Christmas Parade' and 'ANZAC Day 2016' (site nav)",
+   "contact emails hidden behind Cloudflare obfuscation, decoded from page source"
+  ],
+  "contact_email": "newbrightonsilverband@gmail.com",
+  "contact_phone": "+64 027 223 1744 (Ruth Stamler, Secretary)",
+  "source_urls": [
+   "http://www.newbrightonsilverband.org.nz/",
+   "http://www.newbrightonsilverband.org.nz/contacts",
+   "https://www.brassbanz.org/page/find-a-band/"
+  ],
+  "distinctive": "founded 1890, 'community focused band styled in typical British Brass Band tradition'; site celebrates member Geoff Butler's 75 years in brass bands (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cowan Railroad Museum, Inc.",
+  "trade": "volunteer railroad museum",
+  "town": "Cowan",
+  "region": "Tennessee",
+  "country": "USA",
+  "website": "https://www.cowanrailroadmuseum.org/",
+  "evidence": [
+   "legacy Weebly builder site (editmysite.com assets, 'old/fancybox.css') observed in source (curl)",
+   "no <meta name=viewport> — not mobile-friendly; 5 <font> tags",
+   "email only present behind Cloudflare email-protection encoding, decoded from source"
+  ],
+  "contact_email": "visitcowan@gmail.com",
+  "contact_phone": "(931) 967-3078",
+  "source_urls": [
+   "https://www.cowanrailroadmuseum.org/"
+  ],
+  "distinctive": "housed in the Cowan Depot (National Register of Historic Places) beside an active freight mainline, with a live YouTube webcam and model railroad (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "West Clare Railway",
+  "trade": "heritage railway & museum",
+  "town": "Moyasta, near Kilrush",
+  "region": "County Clare",
+  "country": "Ireland",
+  "website": "http://www.westclarerailway.ie/",
+  "evidence": [
+   "live homepage is a WordPress 'under-construction-maintenance-mode' plugin placeholder with empty <h1> (fetched via curl, Aug 2026)",
+   "raw un-executed PHP fragments leak into the page CSS — broken output observed",
+   "placeholder background image uploaded 2025/03 per wp-content path, so the domain is maintained but the site has been 'under maintenance' for a year+",
+   "archived June 2023 homepage said 'Closed to the public until further notice' — organisation status should be checked before pitching (web.archive.org)"
+  ],
+  "contact_email": "info@westclarerailway.ie",
+  "contact_phone": "+353 86 805 2614 (from archived 2023 site)",
+  "source_urls": [
+   "http://www.westclarerailway.ie/",
+   "http://web.archive.org/web/20230609064834/http://www.westclarerailway.ie/"
+  ],
+  "distinctive": "'Ireland's most famous railway' — restored steam heritage line at Moyasta station on the old West Clare line (archived homepage text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Camden Historical Society Inc.",
+  "trade": "historical society & town museum",
+  "town": "Camden",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "http://www.camdenhistory.org.au/",
+  "evidence": [
+   "meta generator 'Alleycode HTML Editor' — 2000s freeware desktop editor (homepage HTML via curl)",
+   "footer '© Camden Historical Society 2016' and a 'Last Updated' label with no date",
+   "no <meta name=viewport>; 8 table-layout tables; plain http, no https redirect",
+   "both mailto: links on the contacts page are empty (mailto: with no address) — broken contact links observed"
+  ],
+  "contact_email": null,
+  "contact_phone": "+61 (02) 4655 3400",
+  "source_urls": [
+   "http://www.camdenhistory.org.au/",
+   "http://www.camdenhistory.org.au/chcontacts.html"
+  ],
+  "distinctive": "runs Camden Museum at 40 John Street; homepage news announces the re-opened 'Dick Nixon Room' after maintenance (site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Orangedale Railway Station Museum",
+  "trade": "volunteer railway station museum",
+  "town": "Orangedale, Cape Breton",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "NONE",
+  "evidence": [
+   "no own website: ANSM member-museums directory links Orangedale only to a novascotia.com tourism listing, unlike peer museums with their own domains (both pages fetched)",
+   "contact published on the tourism listing is a Gmail address and local phone",
+   "listing shows an active seasonal operation (July 1 – Sept 2, weekends by appointment)"
+  ],
+  "contact_email": "orangedale.station@gmail.com",
+  "contact_phone": "902-756-3384",
+  "source_urls": [
+   "https://ansm.ns.ca/member-museums/",
+   "https://novascotia.com/listing/orangedale-railway-station-museum/"
+  ],
+  "distinctive": "award-winning museum in one of Cape Breton's oldest Intercolonial Railway stations (1886), with stationmaster quarters, rolling stock and a freight-shed gift shop; hosts 'Storytelling Time/Tea Time/Train Time' (tourism listing text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Illawarra Light Railway Museum Society",
+  "trade": "volunteer light railway museum",
+  "town": "Albion Park Rail",
+  "region": "New South Wales",
+  "country": "Australia",
+  "website": "https://ilrms.com.au/",
+  "evidence": [
+   "no <meta name=viewport> on homepage — not mobile-friendly (curl audit)",
+   "WordPress 6.7.7 core reported by meta generator (behind current releases)",
+   "contact page offers only a Contact Form 7 form — no email address published anywhere observed (homepage + contact page fetched)"
+  ],
+  "contact_email": null,
+  "contact_phone": "+61 (02) 4256 4627",
+  "source_urls": [
+   "https://ilrms.com.au/",
+   "https://ilrms.com.au/contact/"
+  ],
+  "distinctive": "preserves the Otford Signal Box, Yallah station building and a stationary boiler display, plus a rideable miniature railway; next event 13 September 2026 (site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Musquodoboit Harbour Railway Museum",
+  "trade": "volunteer railway museum",
+  "town": "Musquodoboit Harbour",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.mhrailwaymuseum.com/",
+  "evidence": [
+   "stale footer '© 2023' on Wix template site fetched Aug 2026 (curl)",
+   "museum is active (summer season hours and 'WORK WITH US THIS SEASON!' text) while site copyright lags three years"
+  ],
+  "contact_email": "curator@mhrailwaymuseum.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.mhrailwaymuseum.com/",
+   "https://ansm.ns.ca/member-museums/"
+  ],
+  "distinctive": "open 'by chance or appointment' off-season; trilingual welcome 'Welcome, Bienvenue, Pjila'si!' acknowledging Mi'kmaq territory (site text)",
+  "confidence": "medium"
+ }
+]

@@ -1,0 +1,1546 @@
+[
+ {
+  "name": "Woodstock Butchers",
+  "trade": "independent butcher",
+  "town": "Woodstock",
+  "county": "Oxfordshire",
+  "website": "https://www.woodstockshops.co.uk/butchers",
+  "evidence": [
+   "no standalone website: https://www.woodstockbutchers.com fails to connect (curl 000)",
+   "http://www.woodstockbutchers.com 301-redirects to a page on collective site woodstockshops.co.uk (curl -v)",
+   "only presence is a template page on shared 'Woodstock Shops Ltd' site, footer © 2024 (curl)",
+   "town directory visitwoodstock.co.uk that listed them now serves casino spam content (curl)"
+  ],
+  "contact_email": "info@woodstockbutchers.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.woodstockshops.co.uk/butchers",
+   "https://www.visitwoodstock.co.uk/shops/food_and_drink/woodstock_butchers"
+  ],
+  "distinctive": "Local independent butcher at 1 Blandford Court, just off Market Street in the heart of Woodstock",
+  "confidence": "high",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "John Whitworth Tree Surgery",
+  "trade": "tree surgeon",
+  "town": "Bodicote, Banbury",
+  "county": "Oxfordshire",
+  "website": "http://www.john-whitworth-tree-surgery-banbury-tree-surgeon-oxfordshire.co.uk/",
+  "evidence": [
+   "https:// connection fails entirely, HTTP 000 (curl)",
+   "plain http:// returns 401 Unauthorized (curl)",
+   "Directree listing still advertises the dead URL as his website (WebFetch)"
+  ],
+  "contact_email": "hello@jwtsbanbury.com",
+  "contact_phone": "07970 154552",
+  "source_urls": [
+   "https://directree.org/find-a-tree-surgeon/banbury/john-whitworth-nch-arb-tree-surgery-2/",
+   "https://www.misterwhat.co.uk/company/2053586-john-whitworth-nch-arb-tree-surgery-banbury"
+  ],
+  "distinctive": "NCH (ARB) qualified arborist working from 16 High Street, Bodicote; services list runs pruning, pollarding, deadwooding, crown work, felling (Directree)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Bean & Brew",
+  "trade": "independent coffee house / cafe",
+  "town": "Wallingford",
+  "county": "Oxfordshire",
+  "website": "http://www.beanandbrew.co.uk/",
+  "evidence": [
+   "own domain beanandbrew.co.uk times out on both http and https (curl exit 28, tested separately)",
+   "Daily Info listing still links the dead www.beanandbrew.co.uk (curl)",
+   "only live presence is Facebook page and directory listings (search)"
+  ],
+  "contact_email": "beanandbrew@yahoo.co.uk",
+  "contact_phone": "01491 520685",
+  "source_urls": [
+   "https://www.dailyinfo.co.uk/places/food-and-drink/cafes/t1-p2994/bean-and-brew",
+   "https://wallingford.cylex-uk.co.uk/company/bean---brew-26407018.html",
+   "https://www.facebook.com/beanandbrew/"
+  ],
+  "distinctive": "Indie coffee house at 57 St Marys Street known for crepes and homemade cakes (Facebook/Cylex listings)",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "Long Street Antiques",
+  "trade": "antiques centre (~30 dealers)",
+  "town": "Tetbury",
+  "county": "Gloucestershire",
+  "website": "http://www.longstreetantiques.com",
+  "evidence": [
+   "longstreetantiques.com 301-redirects to heartwoodhospital.com serving Indonesian gambling spam titled 'JAGOBET Permainan Para Master' (curl, redirect chain verified twice)",
+   "Antiques Atlas listing shows phone but no working website link (curl of listing HTML)",
+   "business still trading per Antiques Atlas/Facebook listings while its domain is hijacked (search)"
+  ],
+  "contact_email": "sales@longstreetantiques.com",
+  "contact_phone": "01666 500887",
+  "source_urls": [
+   "https://www.antiques-atlas.com/antique_shop/long_street_antiques/as2141",
+   "https://www.antiquecentral.co.uk/antique/993030/long-street-antiques",
+   "https://www.facebook.com/14longstreet/"
+  ],
+  "distinctive": "association of ~30 specialist dealers over three floors of a Georgian townhouse on Long Street (Antiques Atlas listing)",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "Andrews Quality Meats",
+  "trade": "butcher & game dealer",
+  "town": "Highworth (branch in Marlborough)",
+  "county": "Wiltshire",
+  "website": "https://andrewsqualitymeatsltd.co.uk/",
+  "evidence": [
+   "meta generator 'Starfield Technologies; Go Daddy Website Builder 8.0.0000' — builder discontinued ~2017, site frozen on dead platform (curl, homepage and contact page)",
+   "no page-level copyright year anywhere in footer HTML (curl)"
+  ],
+  "contact_email": "info@andrewsqualitymeatsltd.co.uk",
+  "contact_phone": "01793 762085",
+  "source_urls": [
+   "https://andrewsqualitymeatsltd.co.uk/contact-us",
+   "https://www.thomsonlocal.com/search/andrews-quality-meats/highworth-wiltshire",
+   "https://find-and-update.company-information.service.gov.uk/company/04578484"
+  ],
+  "distinctive": "traditional master butchers and licensed game dealers (pheasant, partridge, venison); meat from local farms hung 28 days and boned/cut in-house (thomsonlocal search snippet)",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "N & R Roofing",
+  "trade": "Roofer",
+  "town": "Brighouse",
+  "county": "West Yorkshire",
+  "website": "https://nrroofing.co.uk",
+  "evidence": [
+   "curl to nrroofing.co.uk (22 Aug 2026) returns a Namecheap 'Domain registration has expired' parking page — website is currently down",
+   "Wayback snapshot 12 May 2026 shows the site live, so the lapse is recent (fetched archived copy)",
+   "archived site text: 'For over 30 years, N & R Roofing... family-run roofing business' covering Brighouse, Halifax, Huddersfield"
+  ],
+  "contact_email": "upontheroofers@gmail.com",
+  "contact_phone": "01422 410724 / 07970 897452",
+  "source_urls": [
+   "https://nrroofing.co.uk/",
+   "http://web.archive.org/web/20260512213134/https://nrroofing.co.uk/"
+  ],
+  "distinctive": "Family-run for 30+ years across Brighouse, Halifax and Huddersfield; their email handle is 'upontheroofers' (archived site)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "Stopgap Fencing",
+  "trade": "Fencing contractor (agricultural, security & domestic)",
+  "town": "Bradworthy, Holsworthy",
+  "county": "Devon",
+  "website": "https://www.stopgapfencing.co.uk",
+  "evidence": [
+   "HTTPS certificate has expired: curl TLS handshake returns alert 'certificate has expired' (observed 22 Aug 2026) — browsers show a security warning",
+   "no viewport meta tag in fetched HTML (not mobile-friendly)",
+   "footer '©2018 Stop Gap Fencing - Heatherland Farm - Bradworthy - Holsworthy - Devon - EX22 7SL' and meta copyright '© 2000' in fetched HTML",
+   "page title misspells 'Fencing Contactors' (fetched HTML)"
+  ],
+  "contact_email": "mail@stopgapfencing.co.uk",
+  "contact_phone": "01409 241865 / 07779 987342",
+  "source_urls": [
+   "https://www.stopgapfencing.co.uk/"
+  ],
+  "distinctive": "Run from Heatherland Farm, Bradworthy — farm-based outfit doing agricultural stock fencing alongside domestic and security work (site footer and title)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "Sean Jones Plumbing Services",
+  "trade": "Plumber",
+  "town": "Llandudno Junction",
+  "county": "Conwy (Wales)",
+  "website": "https://www.plumbingandelectrics.co.uk",
+  "evidence": [
+   "no viewport meta; generator 'Web Presence Builder 17.8.12' — legacy Plesk site builder (fetched HTML)",
+   "US template leftovers live in the nav: 'Faucet Plumbing' page and a 'Your browser version is outdated' banner (fetched HTML)",
+   "footer '© 2023. Sean Jones Plumbing Services.' (fetched HTML)",
+   "his other domain seanjonesplumbingservices.co.uk, still linked from the Daily Post directory, fails to connect (curl observed)"
+  ],
+  "contact_email": "Admin@plumbingandelectrics.co.uk",
+  "contact_phone": "01492 701109 / 07902 999247",
+  "source_urls": [
+   "https://www.plumbingandelectrics.co.uk/",
+   "https://www.plumbingandelectrics.co.uk/contact-us/",
+   "https://directory.dailypost.co.uk/search/llandudno/plumbers"
+  ],
+  "distinctive": "24/7 domestic and commercial plumbing from 69 Marl Drive, Llandudno Junction — yet the site still advertises American-template 'Faucet Plumbing' (fetched pages)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "The Chiropodist (25 Cedar Avenue)",
+  "trade": "Chiropodist / podiatrist",
+  "town": "Cottingham (Hull)",
+  "county": "East Riding of Yorkshire",
+  "website": "https://www.chiropodistpodiatristhull.co.uk/",
+  "evidence": [
+   "curl: live homepage is a single 'Coming soon' placeholder page (12KB) — the entire web presence",
+   "curl: page schema lists address 25 Cedar Avenue, Cottingham HU16 4AL with full Mon–Sat opening hours, so the business is active behind the placeholder",
+   "email and phone shown on the placeholder itself"
+  ],
+  "contact_email": "info@chiropodistpodiatristhull.co.uk",
+  "contact_phone": "01482 848044",
+  "source_urls": [
+   "https://www.chiropodistpodiatristhull.co.uk/",
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/scarborough"
+  ],
+  "distinctive": "An active clinic (open till 7pm Mon–Tue, Sat mornings 9–12, Facebook/Instagram linked) whose whole site literally says 'Coming soon'",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "NLF Chiropody (Nick Farmer)",
+  "trade": "Chiropodist / podiatrist",
+  "town": "Filey",
+  "county": "North Yorkshire",
+  "website": "https://www.nlfchiropody.co.uk/",
+  "evidence": [
+   "curl + Google DoH: nlfchiropody.co.uk is NXDOMAIN — the practice website is dead",
+   "Wayback Machine: site was still live 6 Apr 2025, so it lapsed within ~16 months",
+   "Thomson Local listing still active with phone (30 Scarborough Rd, Filey YO14 9EF); search snippet of the former site: est. 1998, HCPC registered, home visits"
+  ],
+  "contact_email": "nlf-chiropody@mail.com",
+  "contact_phone": "01723 658061",
+  "source_urls": [
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/oldham/nlf-chiropody/2877021/01723658061",
+   "http://web.archive.org/web/20250406130610/https://nlfchiropody.co.uk/",
+   "https://directory.rossendalefreepress.co.uk/company/965554102976512",
+   "https://www.nlfchiropody.co.uk/"
+  ],
+  "distinctive": "Nick Farmer FSSCh, DipPodMed — established 1998, treats in his Scarborough Road surgery or in patients' own homes",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "Brandy House Farm",
+  "trade": "farmhouse B&B / guest house",
+  "town": "Knighton",
+  "county": "Powys",
+  "website": "http://www.brandyhousefarm.co.uk/",
+  "evidence": [
+   "homepage redirects to hacked casino-spam page titled 'EN 365 Casino: Your Ultimate Gaming Experience – Brandy House Farm' (curl, final URL brandyhousefarm.co.uk/en-365-casino-...)",
+   "generator meta: WordPress 5.6.19 — years out of date (curl)",
+   "footer '© Copyright 2021 – Brandy House Farm' (curl)",
+   "Visit Knighton directory still links the site as plain http (curl)"
+  ],
+  "contact_email": "info@brandyhousefarm.co.uk",
+  "contact_phone": "01547 510282",
+  "source_urls": [
+   "http://www.brandyhousefarm.co.uk/index.php/en/",
+   "https://visitknighton.co.uk/where-to-stay/guest-houses/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "working-farm guest house at LD7 1YL in the hills outside Knighton, listed by the town's own tourism site",
+  "confidence": "high",
+  "group": "Inns, B&Bs & farm stays"
+ },
+ {
+  "name": "The White Horse Inn (Clun)",
+  "trade": "village inn with rooms",
+  "town": "Clun",
+  "county": "Shropshire",
+  "website": "https://www.whi-clun.co.uk/",
+  "evidence": [
+   "whi-clun.co.uk — the domain of their published booking email — serves a hacked WordPress homepage titled 'Top Non GamStop Casinos UK 2026 - Instant Payouts & Safe Sites' (curl)",
+   "hacked page footer 'Copyright © 2026 whi-clun.co.uk' with no business branding (curl)",
+   "their other domain whitehorseclun.com/sleep/ sits behind a Cloudflare challenge and could not be verified (curl 403)",
+   "local accommodation list gives booking contact room@whi-clun.co.uk, i.e. email still tied to the compromised domain (curl)"
+  ],
+  "contact_email": "room@whi-clun.co.uk",
+  "contact_phone": "01588 640305",
+  "source_urls": [
+   "https://www.whi-clun.co.uk/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "inn on The Square in Clun (SY7 8JA), the tiny Clun-valley market town",
+  "confidence": "high",
+  "group": "Inns, B&Bs & farm stays"
+ },
+ {
+  "name": "Williamson Brothers Ltd",
+  "trade": "Independent family funeral directors",
+  "town": "Stoke-on-Trent",
+  "county": "Staffordshire",
+  "website": "https://williamsonbrothers.co.uk",
+  "evidence": [
+   "curl to https://williamsonbrothers.co.uk fails with 'SSL certificate problem: unable to get local issuer certificate' (TLS alert: unknown CA, curl exit 60) — observed directly",
+   "http://williamsonbrothers.co.uk 301-redirects into the same broken https, so the site is effectively unreachable for strict clients — observed via curl",
+   "secondary domain williamsonbrothersfunerals.co.uk also 301s into the broken-cert domain — observed via curl",
+   "family firm established 1927, five generations, one of few independents left in North Staffordshire — per search snippets"
+  ],
+  "contact_email": "office@williamsonbrothers.co.uk",
+  "contact_phone": "01782 212880",
+  "source_urls": [
+   "https://williamsonbrothers.co.uk/",
+   "https://www.funeral-directory.co.uk/funeral-director/williamson-brothers-ltd-st16lh/",
+   "https://www.myfamilyannouncements.co.uk/national/directory/view/4140/williamson-brothers"
+  ],
+  "distinctive": "Five generations of the Williamson family have run the firm from Birch House, Birches Head Road since 1927",
+  "confidence": "high",
+  "group": "Lifestyle & services, UK-wide"
+ },
+ {
+  "name": "Paxford Garage",
+  "trade": "garage - MOT testing, servicing, tyres (cars, vans, motorcycles & trikes)",
+  "town": "Blockley, nr Moreton-in-Marsh",
+  "county": "Gloucestershire",
+  "website": "https://www.paxfordgarage.co.uk/",
+  "evidence": [
+   "footer '© 2017 Paxford Garage' (curl)",
+   "meta generator 'Mobirise v3.10.8' - free 2016-era site builder (curl)",
+   "entire site is one 12KB page (curl)",
+   "page includes builder's junk text 'top html site design software download' (curl)"
+  ],
+  "contact_email": "info@paxfordgarage.co.uk",
+  "contact_phone": "01386 700814",
+  "source_urls": [
+   "https://www.paxfordgarage.co.uk/",
+   "https://mot-testers.co.uk/garages/view/12978"
+  ],
+  "distinctive": "Serving the North Cotswolds for over thirty years from Unit 89 Northwick Business Centre; owner Clive Wadey competes in UK motorcycle road racing (site has a 'Racing' section)",
+  "confidence": "high",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "Small Talk Tearooms",
+  "trade": "tearoom",
+  "town": "Bourton-on-the-Water",
+  "county": "Gloucestershire",
+  "website": "https://smalltalktearooms.co.uk/",
+  "evidence": [
+   "footer '© Small Talk Tearooms 2021 All rights reserved.' (curl)",
+   "'2021' appears 39 times in page source - content untouched since (curl)",
+   "email printed in page source (curl); still actively listed on Tripadvisor/cylex (search)"
+  ],
+  "contact_email": "info@smalltalktearooms.co.uk",
+  "contact_phone": "01451 822678",
+  "source_urls": [
+   "https://smalltalktearooms.co.uk/",
+   "https://bourton-on-the-water.cylex-uk.co.uk/company/smalltalk-tearooms-13663667.html",
+   "https://www.tripadvisor.com/Restaurant_Review-g186283-d4302174-Reviews-Smalltalk_Tearooms-Bourton_on_the_Water_Cotswolds_England.html"
+  ],
+  "distinctive": "Housed in The Forge on Bourton's High Street; own site tagline is 'Where Time Stood Still...'",
+  "confidence": "high",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "Cotswold Electrical",
+  "trade": "electrician",
+  "town": "Chipping Norton",
+  "county": "Oxfordshire",
+  "website": "https://www.cotswoldelectrical.co.uk/",
+  "evidence": [
+   "footer '©2021 by Cotswold Electrical' (curl)",
+   "meta generator 'Wix.com Website Builder' template site (curl)"
+  ],
+  "contact_email": "contact@cotswoldelectrical.co.uk",
+  "contact_phone": "01608 495595",
+  "source_urls": [
+   "https://www.cotswoldelectrical.co.uk/"
+  ],
+  "distinctive": "Family-run firm with over 25 years' experience, covering Stow-on-the-Wold, Moreton-in-Marsh and Burford as well as Chipping Norton",
+  "confidence": "high",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "Cotswold Landscaping Works",
+  "trade": "landscaping - garden design, restoration, patios and driveways",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://cotswoldlandscapingworks.com/index.html",
+  "evidence": [
+   "footer '© 2022 All Rights Reserved' (curl)",
+   "static .html site; gallery images filed under /stow-on-the-wold/ (curl)",
+   "domain is .com but email printed on site is .co.uk - mismatched branding (curl)",
+   "only tradesman listed on stowonthewold.info tradesmen page (curl)"
+  ],
+  "contact_email": "info@cotswoldlandscapingworks.co.uk",
+  "contact_phone": "01608 670714",
+  "source_urls": [
+   "https://cotswoldlandscapingworks.com/index.html",
+   "https://www.stowonthewold.info/local-services/tradesmen.php"
+  ],
+  "distinctive": "Services led by 'Garden Restoration' and 'Soft Landscaping and Horticulture' - period Cotswold garden work",
+  "confidence": "high",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "Lambournes Butchers",
+  "trade": "traditional family butcher",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://lambournesbutchers.co.uk/",
+  "evidence": [
+   "newest image upload in page source dated wp-content/uploads/2023/07 - content frozen ~3 years (curl)",
+   "footer reads bare 'Copyright © All rights reserved.' with no name or year (curl)",
+   "built on generic free WP themes 'minimal-shop'/'storecommerce' (curl)"
+  ],
+  "contact_email": "info@lambournesbutchers.co.uk",
+  "contact_phone": "01451 830630",
+  "source_urls": [
+   "https://lambournesbutchers.co.uk/",
+   "https://www.stowonthewold.info/shopping/food-drink-shops.php"
+  ],
+  "distinctive": "Traditional butcher on Digbeth Street serving 'regular locals and Cotswold holidaymakers' with hand-picked suppliers",
+  "confidence": "medium",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "R J Murrey Electrical",
+  "trade": "electrician",
+  "town": "Banbury",
+  "county": "Oxfordshire",
+  "website": "https://www.rjmurreyelectrical.co.uk/",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "footer 'Copyright © 2015 - 2026' — design unchanged since 2015 (curl)",
+   "homepage is a 6KB hand-coded static page with capitalised <Title> tag (curl)"
+  ],
+  "contact_email": "info@rjmurreyelectrical.co.uk",
+  "contact_phone": "01295 720478",
+  "source_urls": [
+   "https://www.rjmurreyelectrical.co.uk/"
+  ],
+  "distinctive": "family company local to Banbury, NICEIC-registered Domestic Installer whose work is annually inspected (site text via curl)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Acorn Tree Work",
+  "trade": "tree surgeon",
+  "town": "Banbury",
+  "county": "Oxfordshire",
+  "website": "https://www.acorntreework.co.uk/",
+  "evidence": [
+   "footer © 2015 (curl)",
+   "generator meta: WordPress 6.3.10 — outdated 2023 branch (curl)"
+  ],
+  "contact_email": "enquiries@acorntreework.co.uk",
+  "contact_phone": "01295 738533",
+  "source_urls": [
+   "https://www.acorntreework.co.uk/"
+  ],
+  "distinctive": "all staff hold NPTC qualifications for the operations they carry out; covers tree and woodland services across Oxfordshire and Warwickshire (site text via curl)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "TWB Motors",
+  "trade": "garage / MOT / tyres / recovery",
+  "town": "Deddington",
+  "county": "Oxfordshire",
+  "website": "https://www.twb-motors.com/",
+  "evidence": [
+   "footer '© 2022 All Rights Reserved | TWB Motors' (curl)",
+   "contact email is twbmotors@gmail.com — no domain email (curl)",
+   "static site-builder page served as /index.html with template attribute rm-empty-value left in footer (curl)"
+  ],
+  "contact_email": "twbmotors@gmail.com",
+  "contact_phone": "01869 337173",
+  "source_urls": [
+   "https://www.twb-motors.com/",
+   "https://find-open.co.uk/deddington/twb-motors-1230509"
+  ],
+  "distinctive": "village garage at Unit E Home Farm Works, Clifton Road, Deddington — MOT testing through tyres, brakes, air-con and vehicle recovery (site pages via curl)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Phillips Autos (Banbury) Ltd",
+  "trade": "garage / MOT",
+  "town": "Banbury",
+  "county": "Oxfordshire",
+  "website": "https://www.phillipsautos-banbury.co.uk/",
+  "evidence": [
+   "footer © 2022 (curl)",
+   "generator meta: Wix.com Website Builder (curl)",
+   "contact email phillipsautos@live.com — legacy live.com address (curl)"
+  ],
+  "contact_email": "phillipsautos@live.com",
+  "contact_phone": "01295 251192",
+  "source_urls": [
+   "https://www.phillipsautos-banbury.co.uk/",
+   "https://www.thomsonlocal.com/search/garage-services/south-warwickshire-banbury/phillips-autos-banbury-ltd/2860273/01295251192",
+   "https://www.thebestof.co.uk/local/banbury/business-guide/feature/phillips-autos/"
+  ],
+  "distinctive": "recognised MOT test station at 3 North Bar Place with 30+ years in the motor trade and strong repeat local custom (thebestof Banbury listing)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Adept Removals Ltd",
+  "trade": "removals",
+  "town": "Banbury",
+  "county": "Oxfordshire",
+  "website": "https://www.adeptremovalsltd.co.uk/",
+  "evidence": [
+   "footer ©2019 (curl)",
+   "generator meta: Wix.com Website Builder (curl)",
+   "contact email adeptremovalsltd@yahoo.com — yahoo address, no domain email (curl)"
+  ],
+  "contact_email": "adeptremovalsltd@yahoo.com",
+  "contact_phone": "01295 720047",
+  "source_urls": [
+   "https://www.adeptremovalsltd.co.uk/"
+  ],
+  "distinctive": "family-run Banbury removals firm whose services scale from a man-and-van up to complete house removals (search listing + site via curl)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Topserve Autos Ltd",
+  "trade": "garage / MOT / servicing",
+  "town": "Brackley",
+  "county": "Northamptonshire",
+  "website": "https://topserveautos.com/",
+  "evidence": [
+   "footer '© 2022 All Rights Reserved' — same neglected builder template year as of audit (curl)",
+   "no generator meta or visible company copyright beyond builder footer; phone numbers only rendered via JS tel: links (curl)"
+  ],
+  "contact_email": "info@topserveautos.com",
+  "contact_phone": "01280 704117",
+  "source_urls": [
+   "https://topserveautos.com/",
+   "https://topserveautos.com/about.html"
+  ],
+  "distinctive": "friendly independent garage servicing Brackley and surrounds for over 20 years (about page per search listing)",
+  "confidence": "high",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "The Mustard Seed",
+  "trade": "Fairtrade food & crafts shop",
+  "town": "Faringdon",
+  "county": "Oxfordshire",
+  "website": "http://www.mustardseed.org.uk/",
+  "evidence": [
+   "meta generator 'NetObjects Fusion 9 for Windows' ~2005-era builder (curl)",
+   "no viewport meta on homepage (curl)",
+   "homepage links out to Blogspot blog and FeedBurner RSS (curl)",
+   "7.3KB hand-built homepage still advertising A4 posters/A5 leaflet PDFs (curl)"
+  ],
+  "contact_email": "sjoerd@vogt.org.uk",
+  "contact_phone": "01367 244821",
+  "source_urls": [
+   "http://www.mustardseed.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/sector-data/top-10-charities/-/charity-details/1049476/contact-information",
+   "http://www.faringdonfairtrade.org.uk/Links/The_Mustard_Seed/the_mustard_seed.html",
+   "https://faringdon.cylex-uk.co.uk/company/mustard-seed-17764284.html"
+  ],
+  "distinctive": "Registered charity (no. 1049476) at 19 Market Place celebrating its 40th anniversary; site says it offers the most comprehensive Fairtrade food and craft selection in the area",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "Hurley Motors",
+  "trade": "garage / MOT & repairs",
+  "town": "Abingdon",
+  "county": "Oxfordshire",
+  "website": "https://www.hurley-motors.com/",
+  "evidence": [
+   "built on legacy Weebly site builder — Weebly asset strings in HTML (curl)",
+   "default all-caps page title 'HURLEY MOTORS, ABINGDON MOT-SERVICE-REPAIRS - HOME' (curl)",
+   "no copyright year anywhere on homepage (curl)"
+  ],
+  "contact_email": "info@hurley-motors.com",
+  "contact_phone": "01235 522971",
+  "source_urls": [
+   "https://www.hurley-motors.com/",
+   "https://www.hurley-motors.com/contact.html"
+  ],
+  "distinctive": "One of Abingdon's longest-serving MOT/repair centres, established 1972, offering local collection from home or work (search snippet of own site)",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "Wantage MOT Centre",
+  "trade": "garage / MOT & servicing",
+  "town": "Wantage",
+  "county": "Oxfordshire",
+  "website": "https://www.wantagemotcentre.co.uk/",
+  "evidence": [
+   "footer '© 2021 www.wantagemotcentre.co.uk' — stale (curl)",
+   "meta generator 'RapidWeaver' legacy Mac site builder (curl)"
+  ],
+  "contact_email": "info@wantagemotcentre.co.uk",
+  "contact_phone": "01235 766491",
+  "source_urls": [
+   "https://www.wantagemotcentre.co.uk/",
+   "https://www.wantagemotcentre.co.uk/contact/",
+   "https://trustmygarage.co.uk/garage/wantage-mot-centre/3993"
+  ],
+  "distinctive": "Family-run independent MOT/service/repair specialist (TrustMyGarage profile); site title targets Wantage, Didcot, Faringdon, Oxford and Abingdon",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "Il Botanico",
+  "trade": "Italian coffee shop & deli",
+  "town": "Oxford (Headington)",
+  "county": "Oxfordshire",
+  "website": "https://ilbotanicooxford.wixsite.com/il-botanicooxford",
+  "evidence": [
+   "site lives on free wixsite.com subdomain, no own domain (curl)",
+   "contact is a gmail address in page HTML (curl)"
+  ],
+  "contact_email": "ilbotanico.oxford@gmail.com",
+  "contact_phone": "07707 888373",
+  "source_urls": [
+   "https://ilbotanicooxford.wixsite.com/il-botanicooxford"
+  ],
+  "distinctive": "Independent Italian coffee & deli at 9 Windmill Road, Headington (site title and Headington shops listing)",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "David John Butchers",
+  "trade": "traditional butcher",
+  "town": "Oxford (Covered Market)",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "official Covered Market trader profile shows no website link (curl)",
+   "listed contact is a hotmail address (curl)"
+  ],
+  "contact_email": "james_torjussen01@hotmail.co.uk",
+  "contact_phone": "01865 249092",
+  "source_urls": [
+   "https://oxford-coveredmarket.co.uk/traders/david-john-butchers/"
+  ],
+  "distinctive": "Butcher's stall trading inside Oxford's historic Covered Market (market's official trader directory)",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "A Taste of China",
+  "trade": "Chinese street food counter",
+  "town": "Oxford (Covered Market)",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "official Covered Market trader profile shows no website link (curl)",
+   "listed contact is chinastreetfoodltd gmail address (curl)"
+  ],
+  "contact_email": "chinastreetfoodltd@gmail.com",
+  "contact_phone": "01865 244442",
+  "source_urls": [
+   "https://oxford-coveredmarket.co.uk/traders/a-taste-of-china/"
+  ],
+  "distinctive": "Street-food counter in Oxford's historic Covered Market (market's official trader directory)",
+  "confidence": "high",
+  "group": "Oxford & south Oxfordshire"
+ },
+ {
+  "name": "Below Stairs of Hungerford",
+  "trade": "Antiques shop (19th/early-20th-century domestic antiques)",
+  "town": "Hungerford",
+  "county": "Berkshire",
+  "website": "https://www.belowstairs.co.uk/",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "'Powered by SellerDeck' legacy ecommerce platform in footer (curl)",
+   "2000s-era left-nav catalogue layout with ~140 text link sections, HTML-entity-encoded body text (curl)"
+  ],
+  "contact_email": "hofgartner@belowstairs.co.uk",
+  "contact_phone": "01488 682317",
+  "source_urls": [
+   "https://www.belowstairs.co.uk/"
+  ],
+  "distinctive": "Five themed showrooms around a courtyard at 103 High Street; 'We carry no modern or reproductions' — everything original 19th/early-20th century, refurbished in their own workshops",
+  "confidence": "high",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "Smith & Sons - Artisan Workshop",
+  "trade": "Shoe & leather repairs, key cutting, engraving",
+  "town": "Aylesbury",
+  "county": "Buckinghamshire",
+  "website": "https://www.smithnsons.co.uk/",
+  "evidence": [
+   "site built on Webador site-builder; only email in homepage source is support@webador.com (curl)",
+   "no phone number or business email findable in homepage HTML (curl)",
+   "Webador machine-generated page URLs like /1401004_aylesbury-s-no-1-shoe-leather-repairs (curl)"
+  ],
+  "contact_email": "info@smithnsons.co.uk",
+  "contact_phone": "01296 330456",
+  "source_urls": [
+   "https://www.smithnsons.co.uk/",
+   "https://www.smithnsons.co.uk/contact",
+   "https://friarssquareshopping.com/shops/smith-and-sons.php"
+  ],
+  "distinctive": "Formerly 'Surelock Homes Security'; self-styled 'Aylesbury's No.1 Shoe & Leather Repairs' at 20B Friars Square, also doing laser engraving, sharpening and watch batteries",
+  "confidence": "high",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "Brutons Home Hardware",
+  "trade": "hardware / ironmonger",
+  "town": "Nailsworth",
+  "county": "Gloucestershire",
+  "website": "https://www.brutonshardware.co.uk/",
+  "evidence": [
+   "meta generator 'WordPress 5.4.21' — unsupported 2020 core, ~6 years out of date (curl)",
+   "meta generator 'LayerSlider 6.11.2' legacy slider plugin (curl)",
+   "email on site is shop@ but site copyright line carries no year (curl)"
+  ],
+  "contact_email": "shop@brutonshardware.co.uk",
+  "contact_phone": "01453 832826",
+  "source_urls": [
+   "https://www.brutonshardware.co.uk/about-us/",
+   "https://www.nailsworthonline.co.uk/brutons-hardware-store/",
+   "https://www.facebook.com/brutonshardware/"
+  ],
+  "distinctive": "independent hardware shop trading from the same Nailsworth site since 1856, one of the town's longest-running family businesses (Nailsworth Online / search)",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "Michael's - Butchers, Bistro, Deli",
+  "trade": "butcher, bistro & deli",
+  "town": "Malmesbury",
+  "county": "Wiltshire",
+  "website": "https://www.michaelsbbd.co.uk/",
+  "evidence": [
+   "24KB static .html-page site with ~60-word keyword-stuffed title tag ('Malmesbury King sausage... buy steaks online, tea shop in Malmesbury, BBQ meat delivered') (curl)",
+   "copyright meta credits builder 'NISA INTERNET AND COMPUTER SOLUTIONS LIMITED', footer 'Copyright (c) 2011 - 2026' auto-year on a 2000s-era template (curl)"
+  ],
+  "contact_email": "hello@michaelsbbd.co.uk",
+  "contact_phone": "01666 823981",
+  "source_urls": [
+   "https://www.michaelsbbd.co.uk/",
+   "https://www.facebook.com/Michaelsbbd/"
+  ],
+  "distinctive": "home of the 'Malmesbury King' sausage — winner of Britain's best sausage, per their own site title; family butcher that added a bistro/deli to survive a supermarket arriving in town (site + search)",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "Ducklings Toy Shop",
+  "trade": "independent toy shop",
+  "town": "Marlborough",
+  "county": "Wiltshire",
+  "website": "https://www.ducklingstoyshop.co.uk/",
+  "evidence": [
+   "footer reads 'This website is Copyright 2017. All Rights Reserved.' (curl)",
+   "homepage title tag is just 'Home' — unbranded (curl)",
+   "contact email is unbranded btinternet.com address shown on site (curl)"
+  ],
+  "contact_email": "ducklingstoyshop@btinternet.com",
+  "contact_phone": "01672 216626",
+  "source_urls": [
+   "https://www.ducklingstoyshop.co.uk/",
+   "https://marlborough.2day.uk/section/LocalShopping"
+  ],
+  "distinctive": "family toy shop at 1a Hilliers Yard with a second branch in Royal Wootton Bassett (site footer, curl)",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "The M O T Garage (prop. Michael Drew)",
+  "trade": "garage / MOT & servicing",
+  "town": "Nailsworth",
+  "county": "Gloucestershire",
+  "website": "http://www.motgaragenailsworth.co.uk",
+  "evidence": [
+   "generic lead-gen boilerplate copy ('If you are looking for reputable and well established garages in Nailsworth then look no further') on a 19KB template (curl)",
+   "broken canonical tag href='index.html' and empty copyright with no year (curl)",
+   "leftover Christmas '.santa' animation CSS still in the homepage in August (curl)"
+  ],
+  "contact_email": "themotgarage@outlook.com",
+  "contact_phone": "01453 834500",
+  "source_urls": [
+   "https://trustedtraders.which.co.uk/businesses/the-m-o-t-garage/",
+   "http://www.motgaragenailsworth.co.uk"
+  ],
+  "distinctive": "small family garage at Days Mill, Old Market ('Prop. Michael Drew' on the site); Tanya handles bookings per Which? Trusted Traders profile",
+  "confidence": "high",
+  "group": "Gloucestershire & Wiltshire"
+ },
+ {
+  "name": "Let The Sunshine In",
+  "trade": "Window cleaner",
+  "town": "Blackpool",
+  "county": "Lancashire",
+  "website": "http://www.letthesunshinein.org.uk",
+  "evidence": [
+   "http-only: https connection fails entirely (curl code 000), site served on plain http",
+   "generator meta 'MSHTML 11.00.9600' — page authored in Microsoft Word-era MSHTML tooling (fetched HTML)",
+   "no viewport meta; footer 'Copyright 2022' (fetched HTML)",
+   "page text 'since 1999' with meta description listing FY1/FY2/FY5, Cleveleys, Norbreck, North Shore rounds (fetched HTML)"
+  ],
+  "contact_email": "info@letthesunshinein.org.uk",
+  "contact_phone": "07939 443268",
+  "source_urls": [
+   "http://www.letthesunshinein.org.uk/"
+  ],
+  "distinctive": "Cleaning Fylde-coast windows since 1999 and lists its exact patches on the page — Cleveleys, Thornton, Norbreck, Poulton, North Shore, FY1/FY2/FY5",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "Gregory Fencing",
+  "trade": "Fencing & gates contractor",
+  "town": "Launceston",
+  "county": "Cornwall",
+  "website": "https://www.gregoryfencing.co.uk",
+  "evidence": [
+   "footer '© Gregory Fencing 2013' with 'Web Site By OurSite' credit and XHTML/CSS validator badges (fetched HTML)",
+   "classic ASP pages (index.asp, contact.asp) with HTML 4.01 doctype and no viewport meta (fetched)",
+   "still loads deprecated Google Analytics ga.js with UA- account (fetched contact.asp)"
+  ],
+  "contact_email": "info@gregoryfencing.co.uk",
+  "contact_phone": "01566 772793",
+  "source_urls": [
+   "https://www.gregoryfencing.co.uk/",
+   "https://www.gregoryfencing.co.uk/contact.asp",
+   "https://www.gregoryfencing.co.uk/about.asp"
+  ],
+  "distinctive": "Sources timber from local sawmills, offers slow-grown oak posts and locally made hand-crafted metal gates and railings (about.asp text)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "AJG Decorators",
+  "trade": "Painter & decorator",
+  "town": "Chester",
+  "county": "Cheshire",
+  "website": "https://www.ajg-decorators.co.uk",
+  "evidence": [
+   "homepage <title> tag is completely empty (fetched HTML)",
+   "stock Duda template with placeholder captions 'Write your caption here' left visible in the page source (fetched HTML)",
+   "two different contact emails shown on one page: ajgdecorators@yahoo.com in header, ajgdecorators@gmail.com in contact block (fetched HTML)"
+  ],
+  "contact_email": "ajgdecorators@gmail.com",
+  "contact_phone": "07743 111950",
+  "source_urls": [
+   "https://www.ajg-decorators.co.uk/",
+   "https://directory.dailypost.co.uk/search/wrexham/painters-and-decorators"
+  ],
+  "distinctive": "15+ years' experience with commercial work for housing associations and local schools across Chester and the Wirral (site text)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "1st Class Cleaning",
+  "trade": "Window cleaner (windows, floors & upholstery)",
+  "town": "Blackpool",
+  "county": "Lancashire",
+  "website": "https://bobbob301.wixsite.com/1stclass",
+  "evidence": [
+   "site lives on a free Wix subdomain (bobbob301.wixsite.com) — no own domain (fetched)",
+   "default Wix footer '©2016 by 1st Class Cleaning. Proudly created with Wix.com' never customised (fetched HTML)",
+   "generator meta 'Wix.com Website Builder' (fetched HTML)"
+  ],
+  "contact_email": "fccleaning@hotmail.com",
+  "contact_phone": "01253 395259",
+  "source_urls": [
+   "https://bobbob301.wixsite.com/1stclass"
+  ],
+  "distinctive": "'Windows Floors and Upholstery' — a Blackpool window-cleaning round trading off a free bobbob301 Wix address and a Hotmail inbox (fetched site)",
+  "confidence": "high",
+  "group": "Trades across England & Wales"
+ },
+ {
+  "name": "Ipswich Counselling Centre",
+  "trade": "Counsellors (group private practice)",
+  "town": "Ipswich",
+  "county": "Suffolk",
+  "website": "https://ipswichcounsellingcentre.co.uk/",
+  "evidence": [
+   "curl: homepage is XHTML 1.0 Transitional with ZERO viewport meta — not mobile-friendly (4.8KB hand-built page)",
+   "curl: still displays a COVID-era 'covidblock' notice about Skype/Zoom sessions in 2026",
+   "emails decoded locally from Cloudflare data-cfemail attributes on /contact"
+  ],
+  "contact_email": "janeeverett1120@gmail.com",
+  "contact_phone": "07966 889227",
+  "source_urls": [
+   "https://ipswichcounsellingcentre.co.uk/",
+   "https://ipswichcounsellingcentre.co.uk/contact"
+  ],
+  "distinctive": "Counsellors Jane Everett and Emilia Mihali answer via 24-hour voicemail on their own work mobiles — deliberately personal, confidential contact",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "Jessup Osteopathic Clinic",
+  "trade": "Osteopath",
+  "town": "Gorleston, Great Yarmouth",
+  "county": "Norfolk",
+  "website": "http://jessupclinic.co.uk/",
+  "evidence": [
+   "curl: https://jessupclinic.co.uk fails TLS handshake (SSL alert internal error) — site works over plain http only",
+   "curl: hand-built static site (credit 'averywebdesign.com'), 11KB homepage",
+   "email decoded locally from the site's JS 'coded/key' obfuscation on /contact"
+  ],
+  "contact_email": "admin@jessupclinic.co.uk",
+  "contact_phone": "01493 443095",
+  "source_urls": [
+   "http://jessupclinic.co.uk/",
+   "http://jessupclinic.co.uk/contact",
+   "https://www.facebook.com/p/Jessup-Osteopathic-Clinic-100054562054004/"
+  ],
+  "distinctive": "Practice of M A Jessup at 93 High Road Gorleston; site has a dedicated dry-needling page",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "Traditional Chinese Medicine Centre (Julie Almond)",
+  "trade": "Acupuncture / Chinese herbal medicine",
+  "town": "Lytham St Annes",
+  "county": "Lancashire",
+  "website": "http://www.acupuncture-herbs.co.uk/",
+  "evidence": [
+   "curl: homepage <title> is just 'Training' — wrong page title on the live homepage",
+   "curl: no viewport meta; template carries IE7/IE8 conditional comments (circa-2012 build); meta description starts with a stray comma",
+   "email, landline and mobile shown in page footer text"
+  ],
+  "contact_email": "juliealmond285@gmail.com",
+  "contact_phone": "01253 728175",
+  "source_urls": [
+   "http://www.acupuncture-herbs.co.uk/",
+   "https://www.thomsonlocal.com/search/acupuncture/preston"
+  ],
+  "distinctive": "Julie Almond BA (Hons) trained clinically in Nanjing, China (1986); the Centre has run in St Annes since 1987, at Fairview Avenue since 2011",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "South Brent Osteopaths (Rachel Prince Osteopathic Practice)",
+  "trade": "Osteopath",
+  "town": "South Brent / Totnes",
+  "county": "Devon",
+  "website": "http://www.southbrentosteopaths.co.uk/",
+  "evidence": [
+   "curl: NO viewport meta on homepage (21KB hand-built page) — not mobile-friendly",
+   "curl: footer copyright reads '© 2020' — six years stale",
+   "email and mobile in page HTML"
+  ],
+  "contact_email": "info@southbrentosteopaths.co.uk",
+  "contact_phone": "07977 497865",
+  "source_urls": [
+   "http://www.southbrentosteopaths.co.uk/",
+   "https://www.thomsonlocal.com/search/osteopaths/plymouth"
+  ],
+  "distinctive": "Rachel Prince B.Ost., B.A.(Hons) — footer describes her as a 'South Hams based Registered Osteopath'",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "Langport Foot Clinic",
+  "trade": "Foot clinic / podiatry + ear wax removal",
+  "town": "Langport",
+  "county": "Somerset",
+  "website": "http://www.langport-foot-clinic.com",
+  "evidence": [
+   "curl: NO viewport meta — not mobile-friendly",
+   "curl: generator meta = 'IONOS MyWebsite' entry-level builder; homepage title plain 'Langport Foot Clinic: Home'",
+   "two hotmail contact addresses and phone in page HTML"
+  ],
+  "contact_email": "langportfootclinic@hotmail.com",
+  "contact_phone": "01458 259639",
+  "source_urls": [
+   "http://www.langport-foot-clinic.com",
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/taunton"
+  ],
+  "distinctive": "Runs a separate ear-wax-removal service with its own hotmail address (langportearwaxremoval@hotmail.com) — two services, one dated site",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "Just Smile Dental",
+  "trade": "Independent dental practice",
+  "town": "King's Lynn",
+  "county": "Norfolk",
+  "website": "http://www.justsmile.biz",
+  "evidence": [
+   "curl: live source still loads 2008-era 'AnyLink CSS Menu — Dynamic Drive DHTML' and a 2008 cryer.co.uk script ('a bit hacked!' in its own comment)",
+   "curl: uses deprecated Google Analytics _gaq/ga.js (sunset 2023) — untouched for years",
+   "gmail contact address and phone in page HTML; practice runs on a .biz domain"
+  ],
+  "contact_email": "justsmilepractice@gmail.com",
+  "contact_phone": "01553 849955",
+  "source_urls": [
+   "http://www.justsmile.biz",
+   "https://www.thomsonlocal.com/search/dentists/kings-lynn"
+  ],
+  "distinctive": "Family and cosmetic dentistry with anti-wrinkle treatments in the same nav — a broad offer buried in a 2008-era site",
+  "confidence": "high",
+  "group": "Health practices, UK-wide"
+ },
+ {
+  "name": "The Teddington Cheese",
+  "trade": "cheesemonger / deli",
+  "town": "Teddington",
+  "county": "Greater London",
+  "website": "http://www.teddingtoncheese.co.uk/",
+  "evidence": [
+   "curl: 1990s-style splash page — 'Click here to ENTER our secure shopping site' with award GIFs for defunct schemes ('.net Internet Shopping Choice', 'Yell Choice of the Week')",
+   "curl: legacy Actinic/SellerDeck store — checkout and search run via /cgi-bin/*.pl Perl scripts; charset iso-8859-1; jQuery 1.11.1 (2014)",
+   "curl: plain http:// serves the site with no redirect to https (url_effective stayed http)",
+   "curl: page loads script from polyfill.io, a CDN publicly compromised in 2024 — live security liability",
+   "curl: contact details only present obfuscated in a meta tag"
+  ],
+  "contact_email": "cheese@teddingtoncheese.co.uk",
+  "contact_phone": "020 8977 6868",
+  "source_urls": [
+   "http://www.teddingtoncheese.co.uk/"
+  ],
+  "distinctive": "over 100 British and continental cheeses matured on the premises, cut and served at peak condition (their homepage text)",
+  "confidence": "high",
+  "group": "Food & drink, UK-wide"
+ },
+ {
+  "name": "Hecks Cider",
+  "trade": "cider maker & farm shop",
+  "town": "Street",
+  "county": "Somerset",
+  "website": "https://www.heckscider.com/",
+  "evidence": [
+   "curl: footer reads 'Copyright © 2018' on homepage and contact page — eight years stale",
+   "curl: WordPress + WooCommerce generator meta tags exposed on every page",
+   "curl: contact page lists address 9-11 Middle Leigh, Street, Somerset BA16 — email and phone in page HTML"
+  ],
+  "contact_email": "andrew@heckscider.com",
+  "contact_phone": "01458 442367",
+  "source_urls": [
+   "https://www.heckscider.com/",
+   "https://www.heckscider.com/contact-us/",
+   "https://www.greatbritishlife.co.uk/magazines/somerset/26014545.best-cider-farms-open-public-somerset/"
+  ],
+  "distinctive": "six generations making farmhouse cider since 1841 (site title 'Established 1841'), still fermented in wooden barrels and sold from the wood (Great British Life)",
+  "confidence": "high",
+  "group": "Food & drink, UK-wide"
+ },
+ {
+  "name": "Maggie's Fish & Chips",
+  "trade": "fish & chip restaurant",
+  "town": "Hastings",
+  "county": "East Sussex",
+  "website": "https://maggiesfishandchips.co.uk/",
+  "evidence": [
+   "curl: generator meta 'Starfield Technologies; Go Daddy Website Builder 8.0.0000' — legacy GoDaddy builder",
+   "curl: homepage <title> is just 'HOME' — no business name or SEO",
+   "curl: email and phone found in page HTML"
+  ],
+  "contact_email": "info@maggiesfishandchips.co.uk",
+  "contact_phone": "01424 430205",
+  "source_urls": [
+   "https://maggiesfishandchips.co.uk/home"
+  ],
+  "distinctive": "sits on 'Fishmarket Road, Rock-A-Nore Road' by Hastings' fish market (address in their own site HTML)",
+  "confidence": "high",
+  "group": "Food & drink, UK-wide"
+ },
+ {
+  "name": "Popty Cara",
+  "trade": "handmade cake bakery",
+  "town": "Pembrokeshire (rural, farmers' markets)",
+  "county": "Pembrokeshire",
+  "website": "http://www.poptycara.co.uk/",
+  "evidence": [
+   "curl: no <meta name=\"viewport\"> tag anywhere on homepage — not mobile-friendly",
+   "curl: legacy <font> tags in the markup; no footer copyright year at all",
+   "curl: contact email ORDERS@POPTYCARA.CO.UK visible in page; phone rendered unparseably in HTML"
+  ],
+  "contact_email": "orders@poptycara.co.uk",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.poptycara.co.uk/"
+  ],
+  "distinctive": "handmade Pembrokeshire celebration cakes sold via farmers' markets and worldwide mail order (their own meta keywords)",
+  "confidence": "high",
+  "group": "Food & drink, UK-wide"
+ },
+ {
+  "name": "West Nethercott Farm",
+  "trade": "farmhouse B&B (dairy and sheep farm)",
+  "town": "Whitstone, near Bude/Holsworthy",
+  "county": "Cornwall",
+  "website": "http://www.westnethercott.co.uk/",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "meta Copyright '(C)2012-2021' (curl)",
+   "navigation is a 2000s-era document.write() table menu in menu.js (curl)",
+   "homepage is a 4.7KB hand-coded page whose nav links point off to the kilkhampton.net village site (curl)"
+  ],
+  "contact_email": "mail@westnethercott.co.uk",
+  "contact_phone": "01288 341394",
+  "source_urls": [
+   "http://www.westnethercott.co.uk/",
+   "http://www.westnethercott.co.uk/contact.html",
+   "http://www.cornwall-online.co.uk/1-accommodation/acc-bb-Boscastle.asp"
+  ],
+  "distinctive": "dairy and sheep farm B&B close to the rugged North Cornwall coast, 'plenty of excellent home cooking' (cornwall-online listing)",
+  "confidence": "high",
+  "group": "Inns, B&Bs & farm stays"
+ },
+ {
+  "name": "Wolfscote Grange Farm",
+  "trade": "farm B&B and holiday cottages",
+  "town": "Hartington",
+  "county": "Derbyshire",
+  "website": "https://wolfscotegrangecottages.co.uk/",
+  "evidence": [
+   "homepage <title> is just the bare domain 'wolfscotegrangecottages.co.uk' — default template never configured (curl)",
+   "generator meta: 'Go Daddy Website Builder 8.0.0000' (curl)",
+   "Peak District Online directory links the site as plain http (curl)",
+   "email published only as obfuscated btinternet.com address on the directory page (curl)"
+  ],
+  "contact_email": "wolfscote@btinternet.com",
+  "contact_phone": "01298 84342",
+  "source_urls": [
+   "https://wolfscotegrangecottages.co.uk/",
+   "https://www.peakdistrictonline.co.uk/accommodation/wolfscote-grange-bed-breakfast-at-hartington-near-buxton/"
+  ],
+  "distinctive": "farm recorded in the Domesday Book, farmhouse datestone 1649, sheltering under Wolfscote Hill above the River Dove",
+  "confidence": "high",
+  "group": "Inns, B&Bs & farm stays"
+ },
+ {
+  "name": "Bush Farm B&B",
+  "trade": "farm B&B in converted granary",
+  "town": "Clunton, near Craven Arms",
+  "county": "Shropshire",
+  "website": "https://www.bushfarmbandb.co.uk/",
+  "evidence": [
+   "footer '© 2020 Bush Farm B&B' — six years stale (curl)",
+   "generator meta: Wix.com Website Builder (curl)",
+   "Visit Shropshire Hills directory links the site as plain http (curl)"
+  ],
+  "contact_email": "enquiries@bushfarmbandb.co.uk",
+  "contact_phone": "01588 660330",
+  "source_urls": [
+   "https://www.bushfarmbandb.co.uk/",
+   "https://www.visitshropshirehills.co.uk/places/shropshire/craven-arms/bb/bush-farm/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "two rooms in a 300-year-old converted granary down its own valley in the south Shropshire hills (Visit Shropshire listing)",
+  "confidence": "high",
+  "group": "Inns, B&Bs & farm stays"
+ },
+ {
+  "name": "Vicki's Dog Grooming & Clipping",
+  "trade": "Dog groomer",
+  "town": "Wrexham (Rhosddu)",
+  "county": "Wrexham, Wales",
+  "website": "http://www.vickisdoggrooming.com",
+  "evidence": [
+   "no HTTPS service at all: curl to https://www.vickisdoggrooming.com returns 000 (connection fails) — observed directly",
+   "site exists only on plain http with flat .html pages (e.g. /services.html indexed in search); http request to homepage returned 403 to curl — observed directly",
+   "search results still link the site as http:// — per Google/Bing result URLs"
+  ],
+  "contact_email": "vicki0633@gmail.com",
+  "contact_phone": "01978 262681",
+  "source_urls": [
+   "http://www.vickisdoggrooming.com/",
+   "https://www.dogservices.co.uk/vickis-dog-grooming-and-clipping/",
+   "https://www.yell.com/biz/vickis-dog-grooming-and-clipping-wrexham-2310277/"
+  ],
+  "distinctive": "Over 20 years' grooming experience from a salon at Units 1-2 East Avenue, Rhosddu — per search snippet of their own site text",
+  "confidence": "high",
+  "group": "Lifestyle & services, UK-wide"
+ },
+ {
+  "name": "P & R Equestrian Centre",
+  "trade": "Riding school",
+  "town": "Friskney",
+  "county": "Lincolnshire",
+  "website": "https://pandrequestrian.co.uk",
+  "evidence": [
+   "homepage has NO viewport meta tag (head contains only charset and X-UA-Compatible) — not mobile-optimised, observed in fetched HTML",
+   "17KB hand-rolled page with no CMS/generator tag — observed in fetched HTML",
+   "public contact address is an AOL webmail account (pearlmasseyis@aol.com) — observed in fetched HTML"
+  ],
+  "contact_email": "pearlmasseyis@aol.com",
+  "contact_phone": "07545 813962",
+  "source_urls": [
+   "https://pandrequestrian.co.uk/"
+  ],
+  "distinctive": "Family-run school in the Friskney countryside with well-mannered horses and ponies for riders from age 3 — per their site title and search snippet",
+  "confidence": "high",
+  "group": "Lifestyle & services, UK-wide"
+ },
+ {
+  "name": "Ivy Lane Riding School",
+  "trade": "Riding school",
+  "town": "Coningsby",
+  "county": "Lincolnshire",
+  "website": "https://ivylaneridingschool.wordpress.com",
+  "evidence": [
+   "entire web presence is a free wordpress.com subdomain — no custom domain; generator meta 'WordPress.com' observed in fetched HTML",
+   "contact email is a Hotmail address published on the free site — observed in fetched HTML",
+   "established 1975, so a 50-year-old business running on a free blog platform — age per search snippet"
+  ],
+  "contact_email": "ivylaneriding@hotmail.com",
+  "contact_phone": "07900 558952",
+  "source_urls": [
+   "https://ivylaneridingschool.wordpress.com/"
+  ],
+  "distinctive": "Family stable established 1975 that specialises in teaching children from 3 years old, including pony days — per search snippet",
+  "confidence": "high",
+  "group": "Lifestyle & services, UK-wide"
+ },
+ {
+  "name": "St Breward Silver Band",
+  "trade": "village brass band (registered charity 1175865)",
+  "town": "St Breward, Bodmin",
+  "county": "Cornwall",
+  "website": "https://stbrewardsilverband.com/",
+  "evidence": [
+   "stbrewardsilverband.org (top search result for the band) returns Wix 'ConnectYourDomain Error' 404 (curl)",
+   "Charity Commission register lists no website for the charity (fetched full-print)",
+   "working .com is a minimal 8KB Concrete CMS site; secretary contact is a hotmail address (curl contact page)"
+  ],
+  "contact_email": "stbrewardbandsecretary@hotmail.com",
+  "contact_phone": "07980 863788",
+  "source_urls": [
+   "https://www.stbrewardsilverband.org/",
+   "https://www.stbrewardsilverband.com/index.php/contact",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5107795/full-print"
+  ],
+  "distinctive": "band formed in 1899 ('Records show that the St Breward band was formed in 1899' - own site); rehearses in The Bandroom on Bodmin Moor, next gig listed at The Platt, Port Isaac",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Bovey Tracey Heritage Trust",
+  "trade": "volunteer-run heritage centre museum (registered charity 1063070)",
+  "town": "Bovey Tracey",
+  "county": "Devon",
+  "website": "NONE",
+  "evidence": [
+   "no own domain - Charity Commission website field points to directory listing devonmuseums.net/bovey (fetched register full-print)",
+   "the devonmuseums.net listing's website field is a malformed href 'http://Bovey Tracey Heritage Centre @boveytraceyheritage' (curl)",
+   "income £10,149, reporting up to date - real, tiny and active (register)"
+  ],
+  "contact_email": "bovey@devonmuseums.net",
+  "contact_phone": "01626 835078",
+  "source_urls": [
+   "https://www.devonmuseums.net/bovey-tracey-heritage-centre/devon-museums/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/3036117/full-print",
+   "https://www.facebook.com/boveytraceyheritage/"
+  ],
+  "distinctive": "museum in the town's Old Railway Station, home to a Swindon-built 1930s GWR twenty-ton 'Toad' brake van (No. W114906) and a relocated salt-glazed pottery kiln discovered in 1932 (devonmuseums.net listing)",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Thames Valley Animal Welfare (TVAW)",
+  "trade": "cat rescue and rehoming charity (registered charity 900616)",
+  "town": "Henley-on-Thames (operates across Reading/Thames Valley)",
+  "county": "Oxfordshire",
+  "website": "http://www.tvaw.org.uk/",
+  "evidence": [
+   "hand-built 16KB homepage still using <font> and <table> markup, no CMS (curl)",
+   "embeds Google Universal Analytics UA-96782967-1, a product retired in 2023 (curl)",
+   "public contact on site is a gmail address plus a personal web-designer address (curl)"
+  ],
+  "contact_email": "Treasurer@tvaw.org.uk",
+  "contact_phone": "0118 972 2082",
+  "source_urls": [
+   "http://www.tvaw.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/900616/full-print"
+  ],
+  "distinctive": "founded by Ann Butler Smith in 1983, specialising in stray and abandoned cats; runs a 'Golden Oldies' older-cat rehoming scheme and a foster-home network (own site)",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "British Vintage Wireless and Television Museum",
+  "trade": "volunteer vintage radio/TV museum (registered charity 1111516)",
+  "town": "West Dulwich",
+  "county": "Greater London",
+  "website": "https://www.bvwtm.org.uk/",
+  "evidence": [
+   "3.5KB homepage shell with no viewport meta (curl)",
+   "pages assembled client-side with the w3schools 'w3-include-html' XHR hack (curl)",
+   "presence split across two live domains: hand-coded bvwtm.org.uk and a parallel WordPress site bvwm.org.uk, the latter listed on the charity register (curl both + register)"
+  ],
+  "contact_email": "mike@workingwireless.co.uk",
+  "contact_phone": "020 8670 3667",
+  "source_urls": [
+   "https://www.bvwtm.org.uk/",
+   "https://www.bvwm.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/4018681/full-print"
+  ],
+  "distinctive": "the valve-radio and pre-war television collection of founder Gerald 'Gerry' Wells, housed in his Dulwich home (site meta description; income £15,901 per register)",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Cranbrook Museum and Local History CIO",
+  "trade": "volunteer local-history museum (registered charity 1193065)",
+  "town": "Cranbrook",
+  "county": "Kent",
+  "website": "https://www.cranbrookmuseum.org/",
+  "evidence": [
+   "built on Weebly - wsite-* template markup throughout (curl)",
+   "still embeds retired Google Universal Analytics UA-65920430-1 over scheme-relative //www.google-analytics.com (curl)",
+   "income £16,034, reporting up to date (register)"
+  ],
+  "contact_email": "curator@cranbrookmuseum.org",
+  "contact_phone": "01580 712929",
+  "source_urls": [
+   "https://www.cranbrookmuseum.org/",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5168621/full-print"
+  ],
+  "distinctive": "exhibit list spans Frittenden Brickworks, the Hartley Workhouse, Sissinghurst Castle Farm and the Cranbrook War Memorial (own site)",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Tring and District Local History and Museum Society",
+  "trade": "volunteer local-history museum (new CIO, charity 1214803)",
+  "town": "Tring",
+  "county": "Hertfordshire",
+  "website": "https://tringlocalhistorymuseum.org.uk/museum/index.html",
+  "evidence": [
+   "generator meta: 'WYSIWYG Web Builder 21' hobbyist desktop tool (curl)",
+   "homepage script browser-sniffs for Internet Explorer ('trident') and redirects to ./index-old.html (curl)",
+   "charity register contact for the CIO is a personal gmail; site contact is a personal address roy@... (register + curl)"
+  ],
+  "contact_email": "roy@tringlocalhistorymuseum.org.uk",
+  "contact_phone": "01442 825491",
+  "source_urls": [
+   "https://tringlocalhistorymuseum.org.uk/museum/index.html",
+   "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5271616/full-print"
+  ],
+  "distinctive": "entirely volunteer-run museum with free entrance (Wikipedia/search snippet); society dates from 1974 era with old-style 'TRING:' page titles observed on site",
+  "confidence": "high",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Swanage Museum & Heritage Centre",
+  "trade": "volunteer town museum and heritage centre",
+  "town": "Swanage",
+  "county": "Dorset",
+  "website": "https://swanagemuseum.org.uk/",
+  "evidence": [
+   "old domain swanagemuseum.co.uk now serves a 'Best Non GamStop Casinos' gambling page (curl)",
+   "that domain was archived as the museum's site from 2008 to Nov 2019 (Wayback CDX)",
+   "official contact on current site is a gmail address (curl)"
+  ],
+  "contact_email": "museumswanage@gmail.com",
+  "contact_phone": "01929 421427",
+  "source_urls": [
+   "https://swanagemuseum.co.uk/",
+   "https://swanagemuseum.org.uk/",
+   "http://web.archive.org/cdx/search/cdx?url=swanagemuseum.co.uk"
+  ],
+  "distinctive": "displays centre on Swanage being 'built with hard work & Purbeck stone', the Victorian stone trade, and old London relics saved from destruction; 'the Jurassic Coast starts right here' (own site)",
+  "confidence": "medium",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Rays of Sunshine Animal Haven (RoSAH Rescue)",
+  "trade": "animal sanctuary and ex-battery hen rescue (states it is not a registered charity)",
+  "town": "Sutton Bridge",
+  "county": "Lincolnshire",
+  "website": "http://www.raysofsunshine.eshire.net/",
+  "evidence": [
+   "site lives on eshire.net free hosting, no viewport meta, Trebuchet-era hand markup (curl)",
+   "homepage still advertises 'NEW WEBSITE... www.rosahrescue.co.uk', which now serves dating-advice spam articles (curl)",
+   "companion domain lincslittlehens.co.uk unreachable (curl, 000)",
+   "contacts are AOL addresses and an 0845 number (curl)"
+  ],
+  "contact_email": "rosahrescue@aol.com",
+  "contact_phone": "0845 017 9422",
+  "source_urls": [
+   "http://www.raysofsunshine.eshire.net/",
+   "http://www.rosahrescue.co.uk/",
+   "http://www.animalrescuers.co.uk/html/centresmiddle.html"
+  ],
+  "distinctive": "gives lifetime sanctuary to around 30 elderly guinea pigs plus rabbits, cats, 'an ancient pony and recovering hens'; hen collections at East Bank, Sutton Bridge and Corby Glen (own site)",
+  "confidence": "medium",
+  "group": "Museums, rescues & community"
+ },
+ {
+  "name": "Martha's Coffee + Kitchen",
+  "trade": "coffee house / cafe",
+  "town": "Moreton-in-Marsh",
+  "county": "Gloucestershire",
+  "website": "https://marthascoffeeandkitchen.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' - long-discontinued builder (curl)",
+   "no copyright year or business details in footer (curl)",
+   "primary presence is a Facebook page per search listings (search)"
+  ],
+  "contact_email": "marthascoffeehouse@gmail.com",
+  "contact_phone": "01608 651999",
+  "source_urls": [
+   "https://marthascoffeeandkitchen.co.uk/",
+   "https://www.thomsonlocal.com/search/coffee-shops/gloucester-cheltenham/martha-s-coffee-house/1853553/01608651999"
+  ],
+  "distinctive": "Trades from Gavel Cottage on Moreton-in-Marsh's broad High Street",
+  "confidence": "medium",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "Tudor House Antiques",
+  "trade": "antiques centre (multi-dealer)",
+  "town": "Stow-on-the-Wold",
+  "county": "Gloucestershire",
+  "website": "https://www.tudorhouseantiques.com/",
+  "evidence": [
+   "site built on jquery-ui-1.10.3 (2013-era library) (curl)",
+   "meta description and keywords tags both empty (curl)",
+   "uses deprecated synchronous-XHR retina-image hack (curl)"
+  ],
+  "contact_email": "pjcollingridge@gmail.com",
+  "contact_phone": "01451 830021",
+  "source_urls": [
+   "https://www.tudorhouseantiques.com/",
+   "https://www.stowonthewold.info/shopping/art-antiques.php"
+  ],
+  "distinctive": "Multi-dealer antiques centre trading from 'Tudor House', Stow GL54 1AA, with a 'List of Dealers' and stock like circa-1900 Llanelly pottery",
+  "confidence": "medium",
+  "group": "Cotswolds & west Oxfordshire"
+ },
+ {
+  "name": "DM Gas",
+  "trade": "plumbing, heating & bathroom fitting",
+  "town": "Brackley",
+  "county": "Northamptonshire",
+  "website": "https://www.dm-gas.com/",
+  "evidence": [
+   "homepage <title> tag is completely empty (curl)",
+   "contact email dmgplumbers@gmail.com — gmail only, no domain email (curl)"
+  ],
+  "contact_email": "dmgplumbers@gmail.com",
+  "contact_phone": "07538 574018",
+  "source_urls": [
+   "https://www.dm-gas.com/",
+   "https://www.dm-gas.com/bathrooms"
+  ],
+  "distinctive": "Brackley plumbing and gas engineers who also design and fit full bathrooms across Brackley and Bicester (site text via curl)",
+  "confidence": "medium",
+  "group": "North Oxfordshire & Brackley trades"
+ },
+ {
+  "name": "Petcare Thame",
+  "trade": "Independent pet shop",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "https://petcarethame.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' — discontinued legacy builder (curl)",
+   "template placeholder 'filler@godaddy.com' left in page source (curl)",
+   "page title is just 'Petcare' with no location or keywords (curl)"
+  ],
+  "contact_email": "shop@petcarethame.co.uk",
+  "contact_phone": "01844 213710",
+  "source_urls": [
+   "https://petcarethame.co.uk/",
+   "https://www.thametowncouncil.gov.uk/business-directory/wpbdp_category/daily-essentials-business/"
+  ],
+  "distinctive": null,
+  "confidence": "high",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "Hungerford Arcade",
+  "trade": "Antiques & collectables arcade",
+  "town": "Hungerford",
+  "county": "Berkshire",
+  "website": "https://www.hungerfordarcade.com/",
+  "evidence": [
+   "footer copyright © 2014 (curl)",
+   "public contact address is a gmail.com account, not the domain (curl)"
+  ],
+  "contact_email": "hungerfordarcade@gmail.com",
+  "contact_phone": "01488 683701",
+  "source_urls": [
+   "https://www.hungerfordarcade.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "Greens of Thame",
+  "trade": "Made-to-measure curtains, blinds & upholstery",
+  "town": "Thame",
+  "county": "Oxfordshire",
+  "website": "https://greensofthame.co.uk/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' — discontinued legacy builder (curl)",
+   "legacy domain greensfurnishingsthameltd.com still ranks in search with http:// .html pages; its https root returns HTTP 405 (curl)"
+  ],
+  "contact_email": "info@greensofthame.co.uk",
+  "contact_phone": "01844 212560",
+  "source_urls": [
+   "https://greensofthame.co.uk/",
+   "http://www.greensfurnishingsthameltd.com/",
+   "https://www.thametowncouncil.gov.uk/business-directory/22340/greens-of-thame/"
+  ],
+  "distinctive": "Soft-furnishings house at 4-5 Upper High Street established 1963, taken over in 2024 by Sian Callow-Salt, an employee of 15 years",
+  "confidence": "medium",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "The Picture Framer",
+  "trade": "Picture framing, restoration & mirrors",
+  "town": "Wargrave (Henley-on-Thames area)",
+  "county": "Berkshire",
+  "website": "https://www.thepicture-framer.co.uk/",
+  "evidence": [
+   "meta generator 'Jimdo Creator' — legacy budget site-builder (curl)",
+   "keyword-stuffed title tag: 'The Picture Framer Berkshire Quality frames, restoration, mirrors...' (curl)",
+   "no email visible on homepage, only on contact subpage (curl)"
+  ],
+  "contact_email": "david@thepicture-framer.co.uk",
+  "contact_phone": "07969 958606",
+  "source_urls": [
+   "https://www.thepicture-framer.co.uk/contact/",
+   "https://www.thomsonlocal.com/search/picture-framers/henley-on-thames-oxfordshire"
+  ],
+  "distinctive": "One-man workshop (David) at Unit 4 Spring Meadows Business Centre, Wargrave — bespoke frames, restoration and mirrors",
+  "confidence": "medium",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "Gabriel Machin",
+  "trade": "Traditional butcher & game dealer",
+  "town": "Henley-on-Thames",
+  "county": "Oxfordshire",
+  "website": "https://www.gabrielmachin.co.uk/",
+  "evidence": [
+   "meta generator WordPress 6.2.11 — core several major versions out of date (curl)",
+   "runs on an aging WPBakery-era WordPress build despite current © year (curl)"
+  ],
+  "contact_email": "enquiries@gabrielmachin.co.uk",
+  "contact_phone": "01491 574377",
+  "source_urls": [
+   "https://www.gabrielmachin.co.uk/",
+   "https://www.gabrielmachin.co.uk/history/"
+  ],
+  "distinctive": "'Henley's favourite butcher since 1910' at 7 Market Place — the premises have housed a butcher's shop since 1861",
+  "confidence": "medium",
+  "group": "Berkshire & Buckinghamshire"
+ },
+ {
+  "name": "The Flower Gallery",
+  "trade": "Florist",
+  "town": "Wendover",
+  "county": "Buckinghamshire",
+  "website": "https://www.wendoverflowers.co.uk/index.html",
+  "evidence": [
+   "hand-built static .html pages; footer © carries no year (curl)",
+   "contact email is a hotmail.co.uk address rather than the domain (curl)"
+  ],
+  "contact_email": "theflowergallery.wendover@hotmail.co.uk",
+  "contact_phone": "01296 620062",
+  "source_urls": [
+   "https://www.wendoverflowers.co.uk/index.html",
+   "https://sarahgreerphotography.co.uk/wendover-small-business-directory-a-z/"
+  ],
+  "distinctive": "Family florist on Wendover High Street since 2002, same-day local delivery with fresh seasonal stock",
+  "confidence": "medium",
+  "group": "Berkshire & Buckinghamshire"
+ }
+]

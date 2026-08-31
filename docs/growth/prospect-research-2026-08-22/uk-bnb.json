@@ -1,0 +1,229 @@
+[
+ {
+  "name": "Brandy House Farm",
+  "trade": "farmhouse B&B / guest house",
+  "town": "Knighton",
+  "county": "Powys",
+  "website": "http://www.brandyhousefarm.co.uk/",
+  "evidence": [
+   "homepage redirects to hacked casino-spam page titled 'EN 365 Casino: Your Ultimate Gaming Experience – Brandy House Farm' (curl, final URL brandyhousefarm.co.uk/en-365-casino-...)",
+   "generator meta: WordPress 5.6.19 — years out of date (curl)",
+   "footer '© Copyright 2021 – Brandy House Farm' (curl)",
+   "Visit Knighton directory still links the site as plain http (curl)"
+  ],
+  "contact_email": "info@brandyhousefarm.co.uk",
+  "contact_phone": "01547 510282",
+  "source_urls": [
+   "http://www.brandyhousefarm.co.uk/index.php/en/",
+   "https://visitknighton.co.uk/where-to-stay/guest-houses/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "working-farm guest house at LD7 1YL in the hills outside Knighton, listed by the town's own tourism site",
+  "confidence": "high"
+ },
+ {
+  "name": "The White Horse Inn (Clun)",
+  "trade": "village inn with rooms",
+  "town": "Clun",
+  "county": "Shropshire",
+  "website": "https://www.whi-clun.co.uk/",
+  "evidence": [
+   "whi-clun.co.uk — the domain of their published booking email — serves a hacked WordPress homepage titled 'Top Non GamStop Casinos UK 2026 - Instant Payouts & Safe Sites' (curl)",
+   "hacked page footer 'Copyright © 2026 whi-clun.co.uk' with no business branding (curl)",
+   "their other domain whitehorseclun.com/sleep/ sits behind a Cloudflare challenge and could not be verified (curl 403)",
+   "local accommodation list gives booking contact room@whi-clun.co.uk, i.e. email still tied to the compromised domain (curl)"
+  ],
+  "contact_email": "room@whi-clun.co.uk",
+  "contact_phone": "01588 640305",
+  "source_urls": [
+   "https://www.whi-clun.co.uk/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "inn on The Square in Clun (SY7 8JA), the tiny Clun-valley market town",
+  "confidence": "high"
+ },
+ {
+  "name": "West Nethercott Farm",
+  "trade": "farmhouse B&B (dairy and sheep farm)",
+  "town": "Whitstone, near Bude/Holsworthy",
+  "county": "Cornwall",
+  "website": "http://www.westnethercott.co.uk/",
+  "evidence": [
+   "no viewport meta — not mobile-friendly (curl)",
+   "meta Copyright '(C)2012-2021' (curl)",
+   "navigation is a 2000s-era document.write() table menu in menu.js (curl)",
+   "homepage is a 4.7KB hand-coded page whose nav links point off to the kilkhampton.net village site (curl)"
+  ],
+  "contact_email": "mail@westnethercott.co.uk",
+  "contact_phone": "01288 341394",
+  "source_urls": [
+   "http://www.westnethercott.co.uk/",
+   "http://www.westnethercott.co.uk/contact.html",
+   "http://www.cornwall-online.co.uk/1-accommodation/acc-bb-Boscastle.asp"
+  ],
+  "distinctive": "dairy and sheep farm B&B close to the rugged North Cornwall coast, 'plenty of excellent home cooking' (cornwall-online listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Trehane Farmhouse Bed and Breakfast",
+  "trade": "farmhouse B&B",
+  "town": "Trevalga, near Boscastle",
+  "county": "Cornwall",
+  "website": "http://www.trehanefarm.co.uk/",
+  "evidence": [
+   "https serves an invalid certificate issued for *.stackcp.com, not trehanefarm.co.uk (curl exit 60; WebFetch TLS altnames error)",
+   "http access sits behind a hosting 'Security Verification' wall, HTTP 401 (curl)",
+   "indexed page title is old-style 'Trehane Farm Tel: 01840 250510' (search result)",
+   "cornwall-online directory entry shows mojibake pricing text (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01840 250510",
+  "source_urls": [
+   "http://www.trehanefarm.co.uk/",
+   "http://www.cornwall-online.co.uk/acc-ser-tint.htm",
+   "http://www.cornwall-online.co.uk/1-accommodation/acc-bb-Boscastle.asp"
+  ],
+  "distinctive": "18th-century farmhouse in a cliff-top location with sea views along the North Cornwall coast (cornwall-online listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Summer Lodge Farm B&B",
+  "trade": "working-farm B&B",
+  "town": "Low Row, Swaledale (near Reeth)",
+  "county": "North Yorkshire",
+  "website": "NONE",
+  "evidence": [
+   "own domain summerlodgefarm.co.uk no longer resolves — DNS lookup fails on http and https (curl exit 6)",
+   "YorkshireNet directory page still shows a 'Book Direct' button linking the dead domain (curl)",
+   "only remaining web presence is a hosted page on the 1995-era YorkshireNet directory (curl, footer '© YorkshireNet 1995-2026')"
+  ],
+  "contact_email": null,
+  "contact_phone": "01748 886504",
+  "source_urls": [
+   "https://www.yorkshirenet.co.uk/stayat/summerlodgefarm/"
+  ],
+  "distinctive": "Swaledale working farm B&B (Low Row, DL11 6NP) with homemade preserves and free-range eggs, in Herriot country near Reeth",
+  "confidence": "medium"
+ },
+ {
+  "name": "Wolfscote Grange Farm",
+  "trade": "farm B&B and holiday cottages",
+  "town": "Hartington",
+  "county": "Derbyshire",
+  "website": "https://wolfscotegrangecottages.co.uk/",
+  "evidence": [
+   "homepage <title> is just the bare domain 'wolfscotegrangecottages.co.uk' — default template never configured (curl)",
+   "generator meta: 'Go Daddy Website Builder 8.0.0000' (curl)",
+   "Peak District Online directory links the site as plain http (curl)",
+   "email published only as obfuscated btinternet.com address on the directory page (curl)"
+  ],
+  "contact_email": "wolfscote@btinternet.com",
+  "contact_phone": "01298 84342",
+  "source_urls": [
+   "https://wolfscotegrangecottages.co.uk/",
+   "https://www.peakdistrictonline.co.uk/accommodation/wolfscote-grange-bed-breakfast-at-hartington-near-buxton/"
+  ],
+  "distinctive": "farm recorded in the Domesday Book, farmhouse datestone 1649, sheltering under Wolfscote Hill above the River Dove",
+  "confidence": "high"
+ },
+ {
+  "name": "Bush Farm B&B",
+  "trade": "farm B&B in converted granary",
+  "town": "Clunton, near Craven Arms",
+  "county": "Shropshire",
+  "website": "https://www.bushfarmbandb.co.uk/",
+  "evidence": [
+   "footer '© 2020 Bush Farm B&B' — six years stale (curl)",
+   "generator meta: Wix.com Website Builder (curl)",
+   "Visit Shropshire Hills directory links the site as plain http (curl)"
+  ],
+  "contact_email": "enquiries@bushfarmbandb.co.uk",
+  "contact_phone": "01588 660330",
+  "source_urls": [
+   "https://www.bushfarmbandb.co.uk/",
+   "https://www.visitshropshirehills.co.uk/places/shropshire/craven-arms/bb/bush-farm/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "two rooms in a 300-year-old converted granary down its own valley in the south Shropshire hills (Visit Shropshire listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Bank House Guest House",
+  "trade": "guest house",
+  "town": "Hartington",
+  "county": "Derbyshire",
+  "website": "NONE",
+  "evidence": [
+   "own domain visitbankhouse.co.uk no longer resolves — DNS lookup fails (curl exit 6)",
+   "Peak District Online directory still links 'visit website' to the dead domain (curl)",
+   "published contact is a personal outlook.com address obfuscated on the directory page (curl)"
+  ],
+  "contact_email": "helenbharrison@outlook.com",
+  "contact_phone": "01298 84465",
+  "source_urls": [
+   "https://www.peakdistrictonline.co.uk/accommodation/bank-house-guest-house/"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Bryn Heulog Guest House",
+  "trade": "farmhouse guest house with pod camping",
+  "town": "Llanfair Waterdine, near Knighton",
+  "county": "Powys",
+  "website": "http://www.bednbreakfast.co.uk/",
+  "evidence": [
+   "site lives on the generic shared-style domain bednbreakfast.co.uk rather than its own name (curl; Visit Knighton link)",
+   "homepage <title> is just 'Home' (curl)",
+   "generator meta: generic 'Website Builder' (curl)",
+   "served over plain http by default — no redirect to https (curl, final URL stays http)"
+  ],
+  "contact_email": "bryn.heulog@bednbreakfast.co.uk",
+  "contact_phone": "01547 528155",
+  "source_urls": [
+   "http://www.bednbreakfast.co.uk/",
+   "https://visitknighton.co.uk/where-to-stay/guest-houses/",
+   "https://www.bobbybritnell.co.uk/courses/accommodation"
+  ],
+  "distinctive": "traditional farmhouse B&B with pod camping in the Teme valley at Llanfair Waterdine (Visit Knighton listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Old Craft Barn",
+  "trade": "B&B (barn conversion)",
+  "town": "Dent, Dentdale",
+  "county": "Cumbria",
+  "website": "https://theoldcraftbarn.co.uk/",
+  "evidence": [
+   "generator meta: 'Go Daddy Website Builder 8.0.0000' (curl)",
+   "Yorkshire Dales National Park directory listing shows no website link, only a gmail address (curl)",
+   "public contact is gmail-only (curl of NP listing)"
+  ],
+  "contact_email": "theoldcraftbarn@gmail.com",
+  "contact_phone": "01539 625400",
+  "source_urls": [
+   "https://www.yorkshiredales.org.uk/places/the-old-craft-barn/",
+   "https://theoldcraftbarn.co.uk/"
+  ],
+  "distinctive": "5-star gold-award B&B beneath Helm Knott in Dentdale; tea and scones served in the guest lounge on arrival (National Park listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Poplar Farm House",
+  "trade": "guest house B&B",
+  "town": "Waxham",
+  "county": "Norfolk",
+  "website": "NONE",
+  "evidence": [
+   "official North Norfolk tourism listing (visitnorthnorfolk.com) shows no website link for the business (curl)",
+   "only contact published on the listing is a mobile number (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "07811 453109",
+  "source_urls": [
+   "https://www.visitnorthnorfolk.com/stay/poplar-farm-house-guest-house-accommodation-p2177441"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

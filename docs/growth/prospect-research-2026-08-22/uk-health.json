@@ -1,0 +1,266 @@
+[
+ {
+  "name": "The Chiropodist (25 Cedar Avenue)",
+  "trade": "Chiropodist / podiatrist",
+  "town": "Cottingham (Hull)",
+  "county": "East Riding of Yorkshire",
+  "website": "https://www.chiropodistpodiatristhull.co.uk/",
+  "evidence": [
+   "curl: live homepage is a single 'Coming soon' placeholder page (12KB) — the entire web presence",
+   "curl: page schema lists address 25 Cedar Avenue, Cottingham HU16 4AL with full Mon–Sat opening hours, so the business is active behind the placeholder",
+   "email and phone shown on the placeholder itself"
+  ],
+  "contact_email": "info@chiropodistpodiatristhull.co.uk",
+  "contact_phone": "01482 848044",
+  "source_urls": [
+   "https://www.chiropodistpodiatristhull.co.uk/",
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/scarborough"
+  ],
+  "distinctive": "An active clinic (open till 7pm Mon–Tue, Sat mornings 9–12, Facebook/Instagram linked) whose whole site literally says 'Coming soon'",
+  "confidence": "high"
+ },
+ {
+  "name": "Ipswich Counselling Centre",
+  "trade": "Counsellors (group private practice)",
+  "town": "Ipswich",
+  "county": "Suffolk",
+  "website": "https://ipswichcounsellingcentre.co.uk/",
+  "evidence": [
+   "curl: homepage is XHTML 1.0 Transitional with ZERO viewport meta — not mobile-friendly (4.8KB hand-built page)",
+   "curl: still displays a COVID-era 'covidblock' notice about Skype/Zoom sessions in 2026",
+   "emails decoded locally from Cloudflare data-cfemail attributes on /contact"
+  ],
+  "contact_email": "janeeverett1120@gmail.com",
+  "contact_phone": "07966 889227",
+  "source_urls": [
+   "https://ipswichcounsellingcentre.co.uk/",
+   "https://ipswichcounsellingcentre.co.uk/contact"
+  ],
+  "distinctive": "Counsellors Jane Everett and Emilia Mihali answer via 24-hour voicemail on their own work mobiles — deliberately personal, confidential contact",
+  "confidence": "high"
+ },
+ {
+  "name": "Jessup Osteopathic Clinic",
+  "trade": "Osteopath",
+  "town": "Gorleston, Great Yarmouth",
+  "county": "Norfolk",
+  "website": "http://jessupclinic.co.uk/",
+  "evidence": [
+   "curl: https://jessupclinic.co.uk fails TLS handshake (SSL alert internal error) — site works over plain http only",
+   "curl: hand-built static site (credit 'averywebdesign.com'), 11KB homepage",
+   "email decoded locally from the site's JS 'coded/key' obfuscation on /contact"
+  ],
+  "contact_email": "admin@jessupclinic.co.uk",
+  "contact_phone": "01493 443095",
+  "source_urls": [
+   "http://jessupclinic.co.uk/",
+   "http://jessupclinic.co.uk/contact",
+   "https://www.facebook.com/p/Jessup-Osteopathic-Clinic-100054562054004/"
+  ],
+  "distinctive": "Practice of M A Jessup at 93 High Road Gorleston; site has a dedicated dry-needling page",
+  "confidence": "high"
+ },
+ {
+  "name": "Traditional Chinese Medicine Centre (Julie Almond)",
+  "trade": "Acupuncture / Chinese herbal medicine",
+  "town": "Lytham St Annes",
+  "county": "Lancashire",
+  "website": "http://www.acupuncture-herbs.co.uk/",
+  "evidence": [
+   "curl: homepage <title> is just 'Training' — wrong page title on the live homepage",
+   "curl: no viewport meta; template carries IE7/IE8 conditional comments (circa-2012 build); meta description starts with a stray comma",
+   "email, landline and mobile shown in page footer text"
+  ],
+  "contact_email": "juliealmond285@gmail.com",
+  "contact_phone": "01253 728175",
+  "source_urls": [
+   "http://www.acupuncture-herbs.co.uk/",
+   "https://www.thomsonlocal.com/search/acupuncture/preston"
+  ],
+  "distinctive": "Julie Almond BA (Hons) trained clinically in Nanjing, China (1986); the Centre has run in St Annes since 1987, at Fairview Avenue since 2011",
+  "confidence": "high"
+ },
+ {
+  "name": "Julian Hill Opticians",
+  "trade": "Independent optician",
+  "town": "Oldswinford, Stourbridge",
+  "county": "West Midlands",
+  "website": "http://www.jhopticians.co.uk/",
+  "evidence": [
+   "curl: https fails TLS handshake — http-only site",
+   "curl: 4KB XHTML homepage with NO viewport meta, 2000s 'fadeSlideShow' DHTML gallery (fixed 780px) and 'CSS valid | XHTML valid' badges",
+   "curl /contact.php: contact by email is via form only; address 108 Hagley Road DY8 1QU and phone shown"
+  ],
+  "contact_email": null,
+  "contact_phone": "01384 374232",
+  "source_urls": [
+   "http://www.jhopticians.co.uk/",
+   "http://www.jhopticians.co.uk/contact.php",
+   "https://www.thomsonlocal.com/search/opticians-ophthalmic-optometrists/dudley"
+  ],
+  "distinctive": "Husband-and-wife practice — 'Julian and Beverley Hill, providing highest quality eyecare and eyewear in Oldswinford since 2001' (their own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "South Brent Osteopaths (Rachel Prince Osteopathic Practice)",
+  "trade": "Osteopath",
+  "town": "South Brent / Totnes",
+  "county": "Devon",
+  "website": "http://www.southbrentosteopaths.co.uk/",
+  "evidence": [
+   "curl: NO viewport meta on homepage (21KB hand-built page) — not mobile-friendly",
+   "curl: footer copyright reads '© 2020' — six years stale",
+   "email and mobile in page HTML"
+  ],
+  "contact_email": "info@southbrentosteopaths.co.uk",
+  "contact_phone": "07977 497865",
+  "source_urls": [
+   "http://www.southbrentosteopaths.co.uk/",
+   "https://www.thomsonlocal.com/search/osteopaths/plymouth"
+  ],
+  "distinctive": "Rachel Prince B.Ost., B.A.(Hons) — footer describes her as a 'South Hams based Registered Osteopath'",
+  "confidence": "high"
+ },
+ {
+  "name": "Langport Foot Clinic",
+  "trade": "Foot clinic / podiatry + ear wax removal",
+  "town": "Langport",
+  "county": "Somerset",
+  "website": "http://www.langport-foot-clinic.com",
+  "evidence": [
+   "curl: NO viewport meta — not mobile-friendly",
+   "curl: generator meta = 'IONOS MyWebsite' entry-level builder; homepage title plain 'Langport Foot Clinic: Home'",
+   "two hotmail contact addresses and phone in page HTML"
+  ],
+  "contact_email": "langportfootclinic@hotmail.com",
+  "contact_phone": "01458 259639",
+  "source_urls": [
+   "http://www.langport-foot-clinic.com",
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/taunton"
+  ],
+  "distinctive": "Runs a separate ear-wax-removal service with its own hotmail address (langportearwaxremoval@hotmail.com) — two services, one dated site",
+  "confidence": "high"
+ },
+ {
+  "name": "NLF Chiropody (Nick Farmer)",
+  "trade": "Chiropodist / podiatrist",
+  "town": "Filey",
+  "county": "North Yorkshire",
+  "website": "https://www.nlfchiropody.co.uk/",
+  "evidence": [
+   "curl + Google DoH: nlfchiropody.co.uk is NXDOMAIN — the practice website is dead",
+   "Wayback Machine: site was still live 6 Apr 2025, so it lapsed within ~16 months",
+   "Thomson Local listing still active with phone (30 Scarborough Rd, Filey YO14 9EF); search snippet of the former site: est. 1998, HCPC registered, home visits"
+  ],
+  "contact_email": "nlf-chiropody@mail.com",
+  "contact_phone": "01723 658061",
+  "source_urls": [
+   "https://www.thomsonlocal.com/search/chiropodists-podiatrists/oldham/nlf-chiropody/2877021/01723658061",
+   "http://web.archive.org/web/20250406130610/https://nlfchiropody.co.uk/",
+   "https://directory.rossendalefreepress.co.uk/company/965554102976512",
+   "https://www.nlfchiropody.co.uk/"
+  ],
+  "distinctive": "Nick Farmer FSSCh, DipPodMed — established 1998, treats in his Scarborough Road surgery or in patients' own homes",
+  "confidence": "high"
+ },
+ {
+  "name": "Just Smile Dental",
+  "trade": "Independent dental practice",
+  "town": "King's Lynn",
+  "county": "Norfolk",
+  "website": "http://www.justsmile.biz",
+  "evidence": [
+   "curl: live source still loads 2008-era 'AnyLink CSS Menu — Dynamic Drive DHTML' and a 2008 cryer.co.uk script ('a bit hacked!' in its own comment)",
+   "curl: uses deprecated Google Analytics _gaq/ga.js (sunset 2023) — untouched for years",
+   "gmail contact address and phone in page HTML; practice runs on a .biz domain"
+  ],
+  "contact_email": "justsmilepractice@gmail.com",
+  "contact_phone": "01553 849955",
+  "source_urls": [
+   "http://www.justsmile.biz",
+   "https://www.thomsonlocal.com/search/dentists/kings-lynn"
+  ],
+  "distinctive": "Family and cosmetic dentistry with anti-wrinkle treatments in the same nav — a broad offer buried in a 2008-era site",
+  "confidence": "high"
+ },
+ {
+  "name": "Feet Up Mobile Foot Clinic",
+  "trade": "Mobile foot health practitioner (chiropody)",
+  "town": "Wrexham",
+  "county": "Wrexham (Wales)",
+  "website": "https://www.feetupwrexham.com/",
+  "evidence": [
+   "curl + Google DoH: feetupwrexham.com is NXDOMAIN — website domain has lapsed",
+   "Wayback Machine: full site (with contact@feetupwrexham.com) still live 2 May 2024",
+   "Scoot/Cylex directories still list the business (19 Fferm Llidiart Werdd LL11 3PJ, open Mon–Sun 9–6) pointing at the dead URL"
+  ],
+  "contact_email": null,
+  "contact_phone": "07792 406512",
+  "source_urls": [
+   "https://www.scoot.co.uk/Wales/Clwyd/Wrexham/Feet-Up-Mobile-Foot-Clinic-20346901.html",
+   "https://wrexham.cylex-uk.co.uk/company/feet-up-mobile-foot-clinic-26672172.html",
+   "http://web.archive.org/web/20240502195219/https://www.feetupwrexham.com/"
+  ],
+  "distinctive": "Qualified foot health practitioner since 2009 who treats people of all ages in their own homes around Wrexham",
+  "confidence": "medium"
+ },
+ {
+  "name": "OsteoPAF Teale Ltd (Paul Teale Osteopath)",
+  "trade": "Osteopath",
+  "town": "Hastings",
+  "county": "East Sussex",
+  "website": "http://www.paultealeosteopath.co.uk",
+  "evidence": [
+   "curl + Google DoH: paultealeosteopath.co.uk is NXDOMAIN — website dead",
+   "Wayback Machine (Sep 2021): site was a free classic Google Sites page, platform since shut down",
+   "Thomson Local still lists 'Paul Teale, Osteopaths in Hastings' at 24 Downs Road with phone"
+  ],
+  "contact_email": null,
+  "contact_phone": "01424 428754",
+  "source_urls": [
+   "https://www.thomsonlocal.com/search/osteopaths/hastings",
+   "http://web.archive.org/web/20210924181837/http://www.paultealeosteopath.co.uk/"
+  ],
+  "distinctive": "Family-run practice established in Hastings for over 30 years, two osteopaths, offered free short telephone consultations (archived site)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Doncaster Osteopaths",
+  "trade": "Osteopath",
+  "town": "Doncaster",
+  "county": "South Yorkshire",
+  "website": "https://www.doncasterosteopathsltd.co.uk/",
+  "evidence": [
+   "curl: footer copyright '© 2023' — three years stale",
+   "curl: generator meta = 'One.com Web Editor' budget builder",
+   "practice email addresses are free gmail accounts, observed in page HTML"
+  ],
+  "contact_email": "doncasterosteopaths@gmail.com",
+  "contact_phone": "01302 768638",
+  "source_urls": [
+   "https://www.doncasterosteopathsltd.co.uk/"
+  ],
+  "distinctive": "Established over 30 years in Doncaster (their own search listing)",
+  "confidence": "medium"
+ },
+ {
+  "name": "City Osteopathic Practice",
+  "trade": "Osteopath",
+  "town": "Plymouth",
+  "county": "Devon",
+  "website": "http://www.cityosteopathicpractice.co.uk",
+  "evidence": [
+   "curl: footer '© 2020 Forward Clinical Ltd – All rights reserved' — six years stale",
+   "curl: homepage title literally 'Frontpage - City Osteopathic Practice' — default page name left in place",
+   "contact is a personal gmail, observed in page HTML with phone"
+  ],
+  "contact_email": "kate.cityosteo@gmail.com",
+  "contact_phone": "01752 223518",
+  "source_urls": [
+   "http://www.cityosteopathicpractice.co.uk",
+   "https://www.thomsonlocal.com/search/osteopaths/plymouth"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ }
+]

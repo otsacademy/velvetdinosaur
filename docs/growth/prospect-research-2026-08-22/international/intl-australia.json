@@ -1,0 +1,267 @@
+[
+ {
+  "name": "Deloraine Deli",
+  "trade": "Licensed deli, cafe and providore",
+  "town": "Deloraine",
+  "region": "Tasmania",
+  "country": "Australia",
+  "website": "https://delorainedeli.com.au/",
+  "evidence": [
+   "delorainedeli.com.au renders 'SITE NOT FOUND — This site is not published or does not have a domain assigned to it' (observed in headless Chrome, 2026-08-22; curl gets 403)",
+   "Their active Facebook page still lists delorainedeli.com.au as the website (observed on FB page)",
+   "Business is trading: FB cover photo updated July 2026, 3,424 likes, 92% recommend from 324 reviews (observed on FB page)"
+  ],
+  "contact_email": "info@delorainedeli.com.au",
+  "contact_phone": "+61 3 6362 2127",
+  "source_urls": [
+   "https://www.facebook.com/DeloraineDeli/",
+   "https://delorainedeli.com.au/"
+  ],
+  "distinctive": "Licensed deli, cafe and providore at 81 Emu Bay Rd 'on route to Cradle Mountain', also supplies catering (from their Facebook about section)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Commercial Hotel Cygnet",
+  "trade": "Country pub (1884) with accommodation",
+  "town": "Cygnet",
+  "region": "Tasmania",
+  "country": "Australia",
+  "website": "https://commercialhotelcygnet.com.au/",
+  "evidence": [
+   "Generator meta tag 'Starfield Technologies; Go Daddy Website Builder 8.0.0000' (observed via curl)",
+   "Page <title> is the bare domain, and footer reads '© 2024 commercialhotelcygnet.com.au — Powered by GoDaddy'",
+   "Main heading misspelled 'THE COMMECRIAL HOTEL CYGNET', repeated throughout the HTML (observed via curl)",
+   "No email anywhere on the rendered site — reCAPTCHA form only; template junk 'filler@godaddy.com' visible in markup"
+  ],
+  "contact_email": null,
+  "contact_phone": "(03) 6295 1296",
+  "source_urls": [
+   "https://commercialhotelcygnet.com.au/"
+  ],
+  "distinctive": "Built in 1884 — site text calls it 'a cherished part of the town's history for over a 140 years'; at 2 Mary Street on the Channel Highway",
+  "confidence": "high"
+ },
+ {
+  "name": "The Braidwood Bakery",
+  "trade": "Country bakery (est. 1932)",
+  "town": "Braidwood",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://braidwoodbakery.com.au/",
+  "evidence": [
+   "Footer reads 'Copyright 1998 - 2021 Trappers Bakery' — stale year and the wrong business name (sister bakery in Goulburn) on Braidwood Bakery's own site (observed via curl)",
+   "Page last-modified marker in content dated 2025-01-23 by 'FrankWhite' exposed in body HTML (observed via curl)",
+   "No email on homepage; only found on /contact/ page (observed via curl)"
+  ],
+  "contact_email": "info@braidwoodbakery.com.au",
+  "contact_phone": "(02) 4842 2541",
+  "source_urls": [
+   "https://braidwoodbakery.com.au/",
+   "https://braidwoodbakery.com.au/contact/"
+  ],
+  "distinctive": "'Established in 1932 — providing locals and tourists a familiar place to meet and chat' (from site text); tagline 'Great Tucker' in the title tag",
+  "confidence": "high"
+ },
+ {
+  "name": "Royal Mail Hotel Braidwood",
+  "trade": "Historic country pub with accommodation and bistro",
+  "town": "Braidwood",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://royalmailhotelbraidwood.com.au/",
+  "evidence": [
+   "Footer reads '© COPYRIGHT 2018' — eight years stale (observed via curl)",
+   "Booking email is a plain gmail address rather than the domain, shown on /contact/ (observed via curl)"
+  ],
+  "contact_email": "royalmailbraidwood@gmail.com",
+  "contact_phone": "(02) 4842 2488",
+  "source_urls": [
+   "https://royalmailhotelbraidwood.com.au/",
+   "https://royalmailhotelbraidwood.com.au/contact/"
+  ],
+  "distinctive": "Self-described in its title tag as 'Braidwood's Historic Hotel, Accomodation & Bistro' — with 'Accomodation' misspelled in the live title",
+  "confidence": "high"
+ },
+ {
+  "name": "Kookaburra Lodge Motel",
+  "trade": "Boutique motel",
+  "town": "Yungaburra",
+  "region": "Queensland",
+  "country": "Australia",
+  "website": "https://kookaburra-lodge.com/",
+  "evidence": [
+   "Generator meta tag 'Joomla! - Open Source Content Management' (observed via curl)",
+   "Footer reads '© 2022 Kookaburra Lodge. All Rights Reserved.' (observed via curl)",
+   "No phone number on the contact page — JavaScript-dependent enquiry form with a 'Warning! JavaScript must be enabled' notice (observed via curl)"
+  ],
+  "contact_email": "relax@kookaburra-lodge.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://kookaburra-lodge.com/",
+   "https://kookaburra-lodge.com/contact-us",
+   "https://www.yungaburra.com/places/kookaburra-lodge-motel/"
+  ],
+  "distinctive": "'A beautiful 3.5 star boutique motel hidden with it's own fragrant gardens', 400m from the village centre, 70km from Cairns (from site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Sevenhill Hotel",
+  "trade": "Country pub, restaurant and wine cellar",
+  "town": "Sevenhill (Clare Valley)",
+  "region": "SA",
+  "country": "Australia",
+  "website": "https://www.sevenhillhotel.com.au/",
+  "evidence": [
+   "Footer reads '© 2019 Sevenhill Hotel. All Rights Reserved.' — seven years stale (observed via curl)",
+   "Runs Slider Revolution 6.6.15 slider plugin, declared in a generator meta tag (observed via curl)"
+  ],
+  "contact_email": "sales@sevenhillhotel.com.au",
+  "contact_phone": "+61 8 8843 4217",
+  "source_urls": [
+   "https://www.sevenhillhotel.com.au/"
+  ],
+  "distinctive": "Title tag sells it as 'Family Friendly Restaurant - Clare Valley Country Pub & Wine Cellar' — a pub with its own wine cellar in the Clare Valley",
+  "confidence": "high"
+ },
+ {
+  "name": "Afterglow Cottages",
+  "trade": "Luxury cottage accommodation",
+  "town": "Bellingen",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://afterglowcottages.com.au/",
+  "evidence": [
+   "Footer reads '©2015 Afterglow Cottages.' — eleven years stale (observed via curl)",
+   "Old WordPress theme 'root-pro-2' visible in asset paths (observed via curl)",
+   "Listed in the dated bellingen.com town directory, which still links it as http:// (observed via curl)"
+  ],
+  "contact_email": "indulge@afterglowcottages.com.au",
+  "contact_phone": "(02) 6655 2215",
+  "source_urls": [
+   "https://afterglowcottages.com.au/",
+   "http://www.bellingen.com/"
+  ],
+  "distinctive": "Books 'Bellingen luxury accommodation' through the email address indulge@afterglowcottages.com.au (from site contact details)",
+  "confidence": "high"
+ },
+ {
+  "name": "Bellingen Farmstay",
+  "trade": "Organic farm stay accommodation",
+  "town": "Bellingen",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://bellingenfarmstay.com.au/",
+  "evidence": [
+   "No <meta name=viewport> tag on homepage — not mobile-responsive (observed via curl)",
+   "Built on 'atahualpa367' WordPress theme, a circa-2010 legacy theme, visible in asset paths (observed via curl)",
+   "The 'Email - click here' link on the contact page links back to the contact page itself — no email address reachable anywhere on the site (observed via curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(02) 6655 2786",
+  "source_urls": [
+   "https://bellingenfarmstay.com.au/",
+   "https://bellingenfarmstay.com.au/contact-us/",
+   "http://www.bellingen.com/"
+  ],
+  "distinctive": "Organic farmstay at 417 Martells Road hosted by Brett and Fiona Hannaford; site urges guests to 'book early' for the Bellingen Community Markets and Bellinger River Agricultural Show (from contact page)",
+  "confidence": "high"
+ },
+ {
+  "name": "Woolpack Hotel",
+  "trade": "Country pub with accommodation",
+  "town": "Mudgee",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://woolpackhotelmudgee.com.au/",
+  "evidence": [
+   "Footer reads '© Woolpack Hotel Mudgee 2020' — six years stale (observed via curl)",
+   "Generator meta tag shows Elementor 3.12.2, a 2023 plugin version left unupdated (observed via curl)"
+  ],
+  "contact_email": "info@woolpackhotelmudgee.com.au",
+  "contact_phone": "(02) 6372 1908",
+  "source_urls": [
+   "https://woolpackhotelmudgee.com.au/"
+  ],
+  "distinctive": "'An iconic country hotel located in the heart of Mudgee's CBD', pitched as 'Eat | Drink | Stay' in its title tag (from site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Curtain Fig Motel",
+  "trade": "Heritage-style motel",
+  "town": "Yungaburra",
+  "region": "Queensland",
+  "country": "Australia",
+  "website": "https://www.curtainfig.com/",
+  "evidence": [
+   "Footer reads '© 2020 Curtain Fig Motel - Yungaburra' — six years stale (observed via curl)",
+   "2017-era asset filenames still serving on the homepage (observed via curl)"
+  ],
+  "contact_email": "holiday@curtainfig.com",
+  "contact_phone": "0466 809 288",
+  "source_urls": [
+   "https://www.curtainfig.com/",
+   "https://www.yungaburra.com/places/curtain-fig-motel/"
+  ],
+  "distinctive": "'Heritage style motel, centrally located in the heart of Yungaburra' named after the town's famous Curtain Fig Tree (from its meta description)",
+  "confidence": "medium"
+ },
+ {
+  "name": "41 South Tasmania",
+  "trade": "Inland salmon and ginseng farm with farm-gate sales and tours",
+  "town": "Deloraine",
+  "region": "Tasmania",
+  "country": "Australia",
+  "website": "https://www.41southtasmania.com.au/",
+  "evidence": [
+   "The page <title> tag is completely empty (<title></title>) — site shows no name in browser tabs or search results (observed via curl)",
+   "Built on Square Online (Weebly) site builder, declared in generator meta tag (observed via curl)"
+  ],
+  "contact_email": "info@41southtasmania.com",
+  "contact_phone": "(03) 6362 4130",
+  "source_urls": [
+   "https://www.41southtasmania.com.au/"
+  ],
+  "distinctive": "Farms Atlantic salmon inland 'using a wetland as a natural biofilter', plus ginseng — products 'can be sent anywhere in Australia' and guided tours run for groups of 10+ (from site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Five Flags Hotel",
+  "trade": "Country pub and bistro",
+  "town": "Campbells Creek (Castlemaine)",
+  "region": "Victoria",
+  "country": "Australia",
+  "website": "https://www.fiveflagshotel.com.au/",
+  "evidence": [
+   "Live page <title> is the literal unrendered template variable '%fiveflagshotel' (observed via curl)",
+   "Site's own address line misspells its town as 'Cambells Creek' (observed via curl)"
+  ],
+  "contact_email": "admin@fiveflags.com.au",
+  "contact_phone": "(03) 5472 1010",
+  "source_urls": [
+   "https://www.fiveflagshotel.com.au/"
+  ],
+  "distinctive": "House motto on the homepage: 'Eat with Leisure, Drink with pleasure' — Bob Lamaro; at 155 Main Road Campbells Creek (from site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Glenlyon General Store",
+  "trade": "General store, cafe and provedore",
+  "town": "Glenlyon (Daylesford outskirts)",
+  "region": "Victoria",
+  "country": "Australia",
+  "website": "https://glenlyongeneralstore.com.au/",
+  "evidence": [
+   "Footer reads '© 2019 Glenlyon General Store | All rights reserved | 63 Barkly Street' — seven years stale (observed via curl)",
+   "No email address anywhere on homepage or /contact/ page — contact form only (observed via curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "(03) 5301 8252",
+  "source_urls": [
+   "https://glenlyongeneralstore.com.au/",
+   "https://glenlyongeneralstore.com.au/contact/",
+   "https://www.facebook.com/GlenlyonGeneralStore"
+  ],
+  "distinctive": "Title tag promises 'great food, wine & gin' at the 63 Barkly Street store near Daylesford (from title tag and footer)",
+  "confidence": "medium"
+ }
+]

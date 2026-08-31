@@ -1,0 +1,262 @@
+[
+ {
+  "name": "Williamson Brothers Ltd",
+  "trade": "Independent family funeral directors",
+  "town": "Stoke-on-Trent",
+  "county": "Staffordshire",
+  "website": "https://williamsonbrothers.co.uk",
+  "evidence": [
+   "curl to https://williamsonbrothers.co.uk fails with 'SSL certificate problem: unable to get local issuer certificate' (TLS alert: unknown CA, curl exit 60) — observed directly",
+   "http://williamsonbrothers.co.uk 301-redirects into the same broken https, so the site is effectively unreachable for strict clients — observed via curl",
+   "secondary domain williamsonbrothersfunerals.co.uk also 301s into the broken-cert domain — observed via curl",
+   "family firm established 1927, five generations, one of few independents left in North Staffordshire — per search snippets"
+  ],
+  "contact_email": "office@williamsonbrothers.co.uk",
+  "contact_phone": "01782 212880",
+  "source_urls": [
+   "https://williamsonbrothers.co.uk/",
+   "https://www.funeral-directory.co.uk/funeral-director/williamson-brothers-ltd-st16lh/",
+   "https://www.myfamilyannouncements.co.uk/national/directory/view/4140/williamson-brothers"
+  ],
+  "distinctive": "Five generations of the Williamson family have run the firm from Birch House, Birches Head Road since 1927",
+  "confidence": "high"
+ },
+ {
+  "name": "Vicki's Dog Grooming & Clipping",
+  "trade": "Dog groomer",
+  "town": "Wrexham (Rhosddu)",
+  "county": "Wrexham, Wales",
+  "website": "http://www.vickisdoggrooming.com",
+  "evidence": [
+   "no HTTPS service at all: curl to https://www.vickisdoggrooming.com returns 000 (connection fails) — observed directly",
+   "site exists only on plain http with flat .html pages (e.g. /services.html indexed in search); http request to homepage returned 403 to curl — observed directly",
+   "search results still link the site as http:// — per Google/Bing result URLs"
+  ],
+  "contact_email": "vicki0633@gmail.com",
+  "contact_phone": "01978 262681",
+  "source_urls": [
+   "http://www.vickisdoggrooming.com/",
+   "https://www.dogservices.co.uk/vickis-dog-grooming-and-clipping/",
+   "https://www.yell.com/biz/vickis-dog-grooming-and-clipping-wrexham-2310277/"
+  ],
+  "distinctive": "Over 20 years' grooming experience from a salon at Units 1-2 East Avenue, Rhosddu — per search snippet of their own site text",
+  "confidence": "high"
+ },
+ {
+  "name": "P & R Equestrian Centre",
+  "trade": "Riding school",
+  "town": "Friskney",
+  "county": "Lincolnshire",
+  "website": "https://pandrequestrian.co.uk",
+  "evidence": [
+   "homepage has NO viewport meta tag (head contains only charset and X-UA-Compatible) — not mobile-optimised, observed in fetched HTML",
+   "17KB hand-rolled page with no CMS/generator tag — observed in fetched HTML",
+   "public contact address is an AOL webmail account (pearlmasseyis@aol.com) — observed in fetched HTML"
+  ],
+  "contact_email": "pearlmasseyis@aol.com",
+  "contact_phone": "07545 813962",
+  "source_urls": [
+   "https://pandrequestrian.co.uk/"
+  ],
+  "distinctive": "Family-run school in the Friskney countryside with well-mannered horses and ponies for riders from age 3 — per their site title and search snippet",
+  "confidence": "high"
+ },
+ {
+  "name": "Ivy Lane Riding School",
+  "trade": "Riding school",
+  "town": "Coningsby",
+  "county": "Lincolnshire",
+  "website": "https://ivylaneridingschool.wordpress.com",
+  "evidence": [
+   "entire web presence is a free wordpress.com subdomain — no custom domain; generator meta 'WordPress.com' observed in fetched HTML",
+   "contact email is a Hotmail address published on the free site — observed in fetched HTML",
+   "established 1975, so a 50-year-old business running on a free blog platform — age per search snippet"
+  ],
+  "contact_email": "ivylaneriding@hotmail.com",
+  "contact_phone": "07900 558952",
+  "source_urls": [
+   "https://ivylaneridingschool.wordpress.com/"
+  ],
+  "distinctive": "Family stable established 1975 that specialises in teaching children from 3 years old, including pony days — per search snippet",
+  "confidence": "high"
+ },
+ {
+  "name": "Top Gear Driving School",
+  "trade": "Driving school",
+  "town": "Plymouth",
+  "county": "Devon",
+  "website": "https://www.topgear-drivingschool.co.uk",
+  "evidence": [
+   "no viewport meta tag anywhere in the head (only charset/description/robots/og) — not mobile-optimised, observed in fetched HTML",
+   "table-based layout and 2010s bootstrap/jquery template from mill provider drivinginstructorsites.co.uk (footer credit observed)",
+   "no email address anywhere on homepage or booking page; /contact.html returns 404 'Page not found or moved' — observed via curl"
+  ],
+  "contact_email": null,
+  "contact_phone": "07930 908155",
+  "source_urls": [
+   "https://www.topgear-drivingschool.co.uk/",
+   "https://www.topgear-drivingschool.co.uk/book-driving-lessons"
+  ],
+  "distinctive": "Run by instructor Chris Piper with a hand-built page for every Plymouth suburb (Crownhill, Devonport, Efford, Eggbuckland...) — observed in site nav",
+  "confidence": "high"
+ },
+ {
+  "name": "Floral Designs",
+  "trade": "Florist",
+  "town": "Great Yarmouth / Gorleston",
+  "county": "Norfolk",
+  "website": "https://www.floraldesignsgreatyarmouth.co.uk",
+  "evidence": [
+   "site is a rented Direct2Florist white-label template, not their own build — d2f-footer-logo assets and direct2florist branding observed in fetched HTML",
+   "malformed double-slash asset URLs (co.uk//assets/uploads/...) x4 on homepage — observed in fetched HTML",
+   "contact addresses are personal webmail (gmail + hotmail) rather than domain email — observed in fetched HTML"
+  ],
+  "contact_email": "gaynorbeckettfloraldesigns@gmail.com",
+  "contact_phone": "01493 718299",
+  "source_urls": [
+   "https://www.floraldesignsgreatyarmouth.co.uk/"
+  ],
+  "distinctive": "Advertises fresh flowers direct from Holland plus 'the finest silks', delivering across Gorleston and Great Yarmouth — per search snippet of site text",
+  "confidence": "medium"
+ },
+ {
+  "name": "Lynn's Clothing Alterations",
+  "trade": "Clothing alterations / seamstress",
+  "town": "Sunderland",
+  "county": "Tyne and Wear",
+  "website": "NONE",
+  "evidence": [
+   "no website found in any search — presence is only Yelp, Nextdoor and Facebook listings — per search result set",
+   "city-centre premises (Lower Floor, 48 Frederick Street, SR1 1NF) with a landline, so an established physical business with zero owned web presence — per Yelp listing"
+  ],
+  "contact_email": null,
+  "contact_phone": "0191 565 7163",
+  "source_urls": [
+   "https://www.yelp.com/biz/lynns-clothing-alterations-sunderland",
+   "https://nextdoor.co.uk/pages/lynns-clothing-alterations/"
+  ],
+  "distinctive": "Operates from the lower floor of 48 Frederick Street in Sunderland city centre — a walk-down basement shop, per the Yelp address",
+  "confidence": "high"
+ },
+ {
+  "name": "Michael's Picture Framing & Gallery",
+  "trade": "Picture framer",
+  "town": "Carlisle",
+  "county": "Cumbria",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "no website listed on Thomson Local, Yell, Cylex, 192.com or Big Red Directory — only a Facebook page — per search result set",
+   "phone number is embedded in the Thomson Local listing URL itself — per that URL",
+   "described as family-run bespoke framers — per Cylex review summary snippet"
+  ],
+  "contact_email": null,
+  "contact_phone": "01228 545415",
+  "source_urls": [
+   "https://www.thomsonlocal.com/search/framing/carlisle/michael-s-picture-framing-gallery/1515159/01228545415",
+   "https://www.facebook.com/p/Michaels-Framing-Picture-Gallery-100057208940118/",
+   "https://carlisle.cylex-uk.co.uk/company/michaels-picture-gallery-14119662.html"
+  ],
+  "distinctive": "Works out of Holme Works on Norfolk Street, Carlisle (CA2 5JA) — a named works building, per directory listings",
+  "confidence": "high"
+ },
+ {
+  "name": "Uffington Riding Stables",
+  "trade": "Riding school and livery yard",
+  "town": "Stamford (Uffington)",
+  "county": "Lincolnshire",
+  "website": "NONE",
+  "evidence": [
+   "their listed domain www.uffingtonridingstables.co.uk no longer resolves at all ('Could not resolve host' on both http and https) — observed via curl",
+   "business is actively listed with that dead URL on My Equine Life directory — fetched the listing",
+   "family-run by Lisa and daughter Demi — per fetched My Equine Life profile"
+  ],
+  "contact_email": null,
+  "contact_phone": "01780 745044",
+  "source_urls": [
+   "https://myequinelife.co.uk/business/uffington-riding-stables/"
+  ],
+  "distinctive": "Mother-and-daughter team (Lisa and Demi) offering lessons, countryside hacks and a separate DIY/part/full livery yard on Essendine Road — per fetched profile",
+  "confidence": "high"
+ },
+ {
+  "name": "The Barber Shop",
+  "trade": "Barbers",
+  "town": "Merthyr Tydfil",
+  "county": "Mid Glamorgan, Wales",
+  "website": "NONE",
+  "evidence": [
+   "no website on its Fresha listing ('not currently affiliated with or partnered with Fresha') or Yell listing — Fresha page fetched, Yell per search snippet",
+   "presence is a Facebook page plus unclaimed booking-platform listings — per search result set",
+   "open 7 days including Sunday mornings — per fetched Fresha page"
+  ],
+  "contact_email": null,
+  "contact_phone": "01685 722836",
+  "source_urls": [
+   "https://www.fresha.com/lvp/the-barber-shop-high-street-xZ0L6E",
+   "https://www.facebook.com/mariaandcath/",
+   "https://www.yell.com/biz/the-barber-shop-merthyr-tydfil-261962/"
+  ],
+  "distinctive": "Walk-in shop at 140 High Street cutting for men, women, children and OAPs, seven days a week — per Yell snippet and Fresha hours",
+  "confidence": "medium"
+ },
+ {
+  "name": "J2A Jake Alexander Hair Salon",
+  "trade": "Hair salon",
+  "town": "Accrington",
+  "county": "Lancashire",
+  "website": "https://www.j-2-a.co.uk",
+  "evidence": [
+   "own domain is dead: curl to www.j-2-a.co.uk returns 'Could not resolve host' on https — observed directly",
+   "salon still trades: current Treatwell profile (established 2005, loyal client base) and blackburn.co.uk directory listing with the dead URL — per those pages",
+   "phone and address from fetched blackburn.co.uk Accrington hairdressers directory"
+  ],
+  "contact_email": null,
+  "contact_phone": "01254 394360",
+  "source_urls": [
+   "https://www.treatwell.co.uk/place/j2a-jake-alexander-hair-salon/",
+   "https://www.blackburn.co.uk/hairdressers/accrington/"
+  ],
+  "distinctive": "Established 2005 at 98a Blackburn Road with a reputation built on a loyal client base — per Treatwell snippet",
+  "confidence": "medium"
+ },
+ {
+  "name": "Grays Picture Framers Ltd",
+  "trade": "Picture framer",
+  "town": "Carlisle",
+  "county": "Cumbria",
+  "website": "https://www.graysframers.co.uk",
+  "evidence": [
+   "built on 2015-era Revolution Slider 5.0 jQuery stack with FontAwesome CDN — observed in fetched HTML",
+   "duplicated title tag 'Grays Picture Framers Ltd - Grays Picture Framers Ltd' and og:updated_time of 27-12-2023 — observed in fetched HTML",
+   "viewport sets maximum-scale=1, blocking pinch-zoom on mobile — observed in fetched HTML"
+  ],
+  "contact_email": "david@graysframers.co.uk",
+  "contact_phone": "01228 531837",
+  "source_urls": [
+   "https://www.graysframers.co.uk/",
+   "https://www.graysframers.co.uk/contact",
+   "https://www.scoot.co.uk/England/Cumbria/Carlisle/Grays-Picture-Framers-Ltd-CFXK327.html"
+  ],
+  "distinctive": "Owner David Scott started at Grays in 1982 aged seventeen and bought the shop with his wife in 2001; the showroom sells local artists' work — per fetched site text",
+  "confidence": "medium"
+ },
+ {
+  "name": "Buddle Oak Boarding Cattery",
+  "trade": "Boarding cattery",
+  "town": "Halse, Taunton",
+  "county": "Somerset",
+  "website": "NONE",
+  "evidence": [
+   "no website link on its findpetboarding.com profile (fetched) and no own site surfaced in search results — directory presence only",
+   "described as family run — per fetched findpetboarding profile text",
+   "phone at Halse, Taunton TA4 3AG — per fetched profile and search snippet"
+  ],
+  "contact_email": null,
+  "contact_phone": "01823 433360",
+  "source_urls": [
+   "https://www.findpetboarding.com/boardingcatteries/profile/1692"
+  ],
+  "distinctive": "Family-run cattery in the hamlet of Halse outside Taunton, reachable only by phone — per fetched directory profile",
+  "confidence": "medium"
+ }
+]

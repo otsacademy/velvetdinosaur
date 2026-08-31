@@ -1,0 +1,255 @@
+[
+ {
+  "name": "The Mustard Seed",
+  "trade": "Fairtrade food & crafts shop",
+  "town": "Faringdon",
+  "county": "Oxfordshire",
+  "website": "http://www.mustardseed.org.uk/",
+  "evidence": [
+   "meta generator 'NetObjects Fusion 9 for Windows' ~2005-era builder (curl)",
+   "no viewport meta on homepage (curl)",
+   "homepage links out to Blogspot blog and FeedBurner RSS (curl)",
+   "7.3KB hand-built homepage still advertising A4 posters/A5 leaflet PDFs (curl)"
+  ],
+  "contact_email": "sjoerd@vogt.org.uk",
+  "contact_phone": "01367 244821",
+  "source_urls": [
+   "http://www.mustardseed.org.uk/",
+   "https://register-of-charities.charitycommission.gov.uk/en/sector-data/top-10-charities/-/charity-details/1049476/contact-information",
+   "http://www.faringdonfairtrade.org.uk/Links/The_Mustard_Seed/the_mustard_seed.html",
+   "https://faringdon.cylex-uk.co.uk/company/mustard-seed-17764284.html"
+  ],
+  "distinctive": "Registered charity (no. 1049476) at 19 Market Place celebrating its 40th anniversary; site says it offers the most comprehensive Fairtrade food and craft selection in the area",
+  "confidence": "high"
+ },
+ {
+  "name": "Bean & Brew",
+  "trade": "independent coffee house / cafe",
+  "town": "Wallingford",
+  "county": "Oxfordshire",
+  "website": "http://www.beanandbrew.co.uk/",
+  "evidence": [
+   "own domain beanandbrew.co.uk times out on both http and https (curl exit 28, tested separately)",
+   "Daily Info listing still links the dead www.beanandbrew.co.uk (curl)",
+   "only live presence is Facebook page and directory listings (search)"
+  ],
+  "contact_email": "beanandbrew@yahoo.co.uk",
+  "contact_phone": "01491 520685",
+  "source_urls": [
+   "https://www.dailyinfo.co.uk/places/food-and-drink/cafes/t1-p2994/bean-and-brew",
+   "https://wallingford.cylex-uk.co.uk/company/bean---brew-26407018.html",
+   "https://www.facebook.com/beanandbrew/"
+  ],
+  "distinctive": "Indie coffee house at 57 St Marys Street known for crepes and homemade cakes (Facebook/Cylex listings)",
+  "confidence": "high"
+ },
+ {
+  "name": "Hurley Motors",
+  "trade": "garage / MOT & repairs",
+  "town": "Abingdon",
+  "county": "Oxfordshire",
+  "website": "https://www.hurley-motors.com/",
+  "evidence": [
+   "built on legacy Weebly site builder — Weebly asset strings in HTML (curl)",
+   "default all-caps page title 'HURLEY MOTORS, ABINGDON MOT-SERVICE-REPAIRS - HOME' (curl)",
+   "no copyright year anywhere on homepage (curl)"
+  ],
+  "contact_email": "info@hurley-motors.com",
+  "contact_phone": "01235 522971",
+  "source_urls": [
+   "https://www.hurley-motors.com/",
+   "https://www.hurley-motors.com/contact.html"
+  ],
+  "distinctive": "One of Abingdon's longest-serving MOT/repair centres, established 1972, offering local collection from home or work (search snippet of own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Wantage MOT Centre",
+  "trade": "garage / MOT & servicing",
+  "town": "Wantage",
+  "county": "Oxfordshire",
+  "website": "https://www.wantagemotcentre.co.uk/",
+  "evidence": [
+   "footer '© 2021 www.wantagemotcentre.co.uk' — stale (curl)",
+   "meta generator 'RapidWeaver' legacy Mac site builder (curl)"
+  ],
+  "contact_email": "info@wantagemotcentre.co.uk",
+  "contact_phone": "01235 766491",
+  "source_urls": [
+   "https://www.wantagemotcentre.co.uk/",
+   "https://www.wantagemotcentre.co.uk/contact/",
+   "https://trustmygarage.co.uk/garage/wantage-mot-centre/3993"
+  ],
+  "distinctive": "Family-run independent MOT/service/repair specialist (TrustMyGarage profile); site title targets Wantage, Didcot, Faringdon, Oxford and Abingdon",
+  "confidence": "high"
+ },
+ {
+  "name": "Il Botanico",
+  "trade": "Italian coffee shop & deli",
+  "town": "Oxford (Headington)",
+  "county": "Oxfordshire",
+  "website": "https://ilbotanicooxford.wixsite.com/il-botanicooxford",
+  "evidence": [
+   "site lives on free wixsite.com subdomain, no own domain (curl)",
+   "contact is a gmail address in page HTML (curl)"
+  ],
+  "contact_email": "ilbotanico.oxford@gmail.com",
+  "contact_phone": "07707 888373",
+  "source_urls": [
+   "https://ilbotanicooxford.wixsite.com/il-botanicooxford"
+  ],
+  "distinctive": "Independent Italian coffee & deli at 9 Windmill Road, Headington (site title and Headington shops listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Top Wok",
+  "trade": "Chinese takeaway",
+  "town": "Oxford (Cowley)",
+  "county": "Oxfordshire",
+  "website": "https://topwokchinese.co.uk/",
+  "evidence": [
+   "entire homepage is an 892-byte shell that loads the whole site in an iframe of alidodo.co.uk white-label ordering platform (curl)",
+   "no own contact details, no copyright, user-scalable=no viewport in own HTML (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01865 772655",
+  "source_urls": [
+   "https://topwokchinese.co.uk/",
+   "https://www.yell.com/biz/top-wok-oxford-9253008/",
+   "https://www.bigreddirectory.com/top-wok-oxford"
+  ],
+  "distinctive": "At 5 Church Cowley Road; originally opened 1972 as Rose Hill Chinese Kitchen — 50+ years of Chinese cooking in Oxford (Yell listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "David John Butchers",
+  "trade": "traditional butcher",
+  "town": "Oxford (Covered Market)",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "official Covered Market trader profile shows no website link (curl)",
+   "listed contact is a hotmail address (curl)"
+  ],
+  "contact_email": "james_torjussen01@hotmail.co.uk",
+  "contact_phone": "01865 249092",
+  "source_urls": [
+   "https://oxford-coveredmarket.co.uk/traders/david-john-butchers/"
+  ],
+  "distinctive": "Butcher's stall trading inside Oxford's historic Covered Market (market's official trader directory)",
+  "confidence": "high"
+ },
+ {
+  "name": "A Taste of China",
+  "trade": "Chinese street food counter",
+  "town": "Oxford (Covered Market)",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "official Covered Market trader profile shows no website link (curl)",
+   "listed contact is chinastreetfoodltd gmail address (curl)"
+  ],
+  "contact_email": "chinastreetfoodltd@gmail.com",
+  "contact_phone": "01865 244442",
+  "source_urls": [
+   "https://oxford-coveredmarket.co.uk/traders/a-taste-of-china/"
+  ],
+  "distinctive": "Street-food counter in Oxford's historic Covered Market (market's official trader directory)",
+  "confidence": "high"
+ },
+ {
+  "name": "Elite Hair Salon",
+  "trade": "hair salon",
+  "town": "Didcot",
+  "county": "Oxfordshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Big Red Directory listing states 'No website' (curl)",
+   "two web searches surface only a Facebook page and booking directories, no own site (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01235 817429",
+  "source_urls": [
+   "https://www.bigreddirectory.com/elite-hair-salon-didcot",
+   "https://www.facebook.com/p/Elite-Hair-Salon-100087768353492/",
+   "https://www.vagaro.com/listings/hair-salon/didcot--oxfordshire--gb"
+  ],
+  "distinctive": "7 independent stylists with over 25 years' experience at 44 Park Road (Vagaro listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Roly's Revived",
+  "trade": "barber shop",
+  "town": "Wantage",
+  "county": "Oxfordshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Big Red Directory listing states 'No website' (curl)",
+   "wantage.com town directory listing links only a Facebook page (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01235 760044",
+  "source_urls": [
+   "https://www.bigreddirectory.com/rolys-revived-wantage",
+   "https://wantage.com/directory/business/rolys-revived/",
+   "https://www.yellowtom.co.uk/1300531",
+   "https://www.thomsonlocal.com/search/barbers/oxford/roly-s-revived/1106752/01235760044"
+  ],
+  "distinctive": "Established 2011 at 16a Mill Street; appointment-only Mon-Fri with Saturday walk-ins and a seniors/juniors discount scheme (wantage.com listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Snips Hair & Beauty",
+  "trade": "hair & beauty salon",
+  "town": "Kidlington",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "Big Red Directory listing states 'No website' (curl)",
+   "address confirmed 5 Bicester Road, Kidlington OX5 2LA on same listing (curl)",
+   "only directory listings in search results, no own site (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01865 376422",
+  "source_urls": [
+   "https://www.bigreddirectory.com/snips-kidlington",
+   "https://kidlington.cylex-uk.co.uk/company/snips-hair---beauty-16439288.html"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Pat Thomas Butchers",
+  "trade": "butcher",
+  "town": "Faringdon",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "Faringdon Directory Market Place listing shows phone only, no website link (WebFetch)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01367 240551",
+  "source_urls": [
+   "https://www.faringdondirectory.co.uk/shops-faringdon-town-market-place/"
+  ],
+  "distinctive": "'Locally sourced meat & poultry' at 3 Market Place (Faringdon Directory)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Sheffords Bakery",
+  "trade": "bakery",
+  "town": "Faringdon",
+  "county": "Oxfordshire",
+  "website": "NONE",
+  "evidence": [
+   "Faringdon Directory listing shows phone only, no website link (WebFetch)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01367 240047",
+  "source_urls": [
+   "https://www.faringdondirectory.co.uk/shops-faringdon-town-market-place/"
+  ],
+  "distinctive": "'Fresh bread, cakes and sandwiches made to order' at 9 London Street (Faringdon Directory)",
+  "confidence": "medium"
+ }
+]

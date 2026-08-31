@@ -1,0 +1,259 @@
+[
+ {
+  "name": "Grand Harbour Hotel",
+  "trade": "small family harbour-view hotel",
+  "town": "Valletta",
+  "region": "Malta",
+  "country": "Malta",
+  "website": "http://www.grandharbourhotel.com/en_US/",
+  "evidence": [
+   "curl -sL to https lands on plain-http final URL http://www.grandharbourhotel.com/en_US/; a second curl confirmed https:// answers 302 redirecting down to http",
+   "grep of saved homepage HTML: zero <meta name=\"viewport\"> matches (not mobile-friendly)",
+   "footer copyright in fetched HTML reads '© 2013' (13 years stale)",
+   "generator meta shows WordPress core 7.1 but the 2013-era theme/footer was never touched"
+  ],
+  "contact_email": "info@grandharbourhotel.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.grandharbourhotel.com/en_US/",
+   "https://www.grandharbourhotel.com/"
+  ],
+  "distinctive": "Homepage title tagline: 'The best view in the city!' — budget rooms overlooking Valletta's Grand Harbour",
+  "confidence": "high"
+ },
+ {
+  "name": "Olympic Bike",
+  "trade": "bicycle tours and rental",
+  "town": "Rethymno",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "http://olympicbike.com/",
+  "evidence": [
+   "curl of homepage and contact page: zero viewport meta on either page (not mobile-friendly)",
+   "requested over http, no redirect to https (final URL stayed http)",
+   "footer in fetched HTML: '© 2000-2026: OLYMPIC BIKE – Nikeas 48, GR-74100 Rethymnon' — 2000-era hand-built design still live",
+   "email only present as HTML-entity-obfuscated mailto on contact page (decoded)"
+  ],
+  "contact_email": "bikerental@kretabike.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://olympicbike.com/",
+   "http://olympicbike.com/en/information/contact.html",
+   "https://www.west-crete.com/crete-links.htm"
+  ],
+  "distinctive": "Site title 'Olympic Bike - Explore Crete by bicycle'; shop at Nikeas 48, Rethymnon",
+  "confidence": "high"
+ },
+ {
+  "name": "Crete Walks",
+  "trade": "private guided walks and hikes",
+  "town": "Chania area (western Crete)",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "https://www.crete-walks.com/index3.htm",
+  "evidence": [
+   "fetched HTML footer: '© 2022 crete-walks.com' (4 years stale)",
+   "source contains IE6/7/8 conditional comments, html5shiv and respond.min.js polyfills, and Ajatix menu-builder assets — circa-2012 hand-built stack",
+   "still loads dead Universal Analytics tag (GA sunset 2023) and cookieconsent2 v1.0.9 from 2013 cdnjs",
+   "entire homepage is 4.4KB with one h2 and a mailto footer"
+  ],
+  "contact_email": "info@crete-walks.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.crete-walks.com/index3.htm",
+   "https://www.west-crete.com/excursions.htm"
+  ],
+  "distinctive": "One-person business — nav item literally reads 'ABOUT MYSELF'; dedicated pages for Crete's mountains, flowers and photography",
+  "confidence": "high"
+ },
+ {
+  "name": "Brigolante Guest Apartments",
+  "trade": "self-catering farm apartments",
+  "town": "Assisi",
+  "region": "Umbria",
+  "country": "Italy",
+  "website": "http://www.brigolante.com/en/index",
+  "evidence": [
+   "curl -I https fails entirely (000, TLS handshake) — site is HTTP-only in 2026; http:// pages load fine",
+   "meta copyright '(C) Copyright Capri On Line S.r.l.' and footer '© 2015 Caprionline' observed in fetched HTML",
+   "runs obscure legacy Italian 'Salsa' CMS (generator meta 'Salsa', salsa_call.php endpoints)",
+   "English version confirmed at /en/index ('self-catering apartments in Assisi's town center and countryside')"
+  ],
+  "contact_email": "info@brigolante.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.brigolante.com/",
+   "http://www.brigolante.com/en/index"
+  ],
+  "distinctive": "Tagline on English homepage: 'City of peace, land of serenity' — apartments split between Assisi's town centre and its countryside",
+  "confidence": "high"
+ },
+ {
+  "name": "Maison de Mags and Mags",
+  "trade": "bed and breakfast",
+  "town": "Lanouaille",
+  "region": "Dordogne",
+  "country": "France",
+  "website": "https://www.maisondemagsandmags.com/",
+  "evidence": [
+   "generator meta in fetched HTML: 'MyWebsite NOW' (IONOS budget site-builder) plus IONOS asset strings",
+   "footer reads '©Copyright. All rights reserved.' with no year filled in — template default left in place",
+   "English-only title; no phone number found anywhere in homepage HTML"
+  ],
+  "contact_email": "enquiries@maisondemagsandmags.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.maisondemagsandmags.com/",
+   "https://gitelink.com/bandb-in-france/dordogne-west-france-bandbs"
+  ],
+  "distinctive": "Named guest rooms observed in nav: The Undine, Venus, Marie Antoinette, Willow and Attic Rooms, plus 'The Outside Kitchen' and dine-at-home picnic menus",
+  "confidence": "high"
+ },
+ {
+  "name": "Divina Cucina",
+  "trade": "cookery classes and culinary tours",
+  "town": "Florence",
+  "region": "Tuscany",
+  "country": "Italy",
+  "website": "https://divinacucina.com/",
+  "evidence": [
+   "footer '© Copyright 2023 Simply Divina, Inc.' observed in fetches of both homepage and /contact/ (3 years stale)",
+   "homepage <title> is broken: it begins with a bare pipe — '| Divina Cucina' (empty SEO title field)",
+   "site blocks default curl UA with 406 but serves browser UA — misconfigured server rules",
+   "2015-era Genesis/Foodie Pro WordPress theme visible in asset paths"
+  ],
+  "contact_email": "hello@divinacucina.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://divinacucina.com/",
+   "https://divinacucina.com/contact/"
+  ],
+  "distinctive": "Homepage text: cooking classes and culinary vacations 'since 1988', based in her space in front of Florence's Mercato Centrale",
+  "confidence": "high"
+ },
+ {
+  "name": "Artemis Studios",
+  "trade": "guesthouse / studios",
+  "town": "Agia Roumeli (Sfakia)",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "https://www.agiaroumeli.com/",
+  "evidence": [
+   "footer in fetched HTML: 'All content © 2001-2024' (stale)",
+   "hand-built .htm site using Ajatix menu-builder assets and a stylesheet literally named '2023.css'",
+   "contact page is plain text with seasonal phone lists and a mailto — no form, no booking engine on-site",
+   "English is the primary language with ger/swe/gr subfolder versions"
+  ],
+  "contact_email": "artemis@agiaroumeli.com",
+  "contact_phone": "+30 28250 91377",
+  "source_urls": [
+   "https://www.agiaroumeli.com/",
+   "https://www.agiaroumeli.com/contact.htm"
+  ],
+  "distinctive": "Homepage: the village has no road — reachable only on foot or by boat, at the exit of the Samaria Gorge; displays Greek tourism licence MHTE 1042K123K2523101",
+  "confidence": "high"
+ },
+ {
+  "name": "Casa Annette",
+  "trade": "bed and breakfast",
+  "town": "Cortelazor (Sierra de Aracena, Huelva)",
+  "region": "Andalucía",
+  "country": "Spain",
+  "website": "https://www.casaannette.com/",
+  "evidence": [
+   "zero viewport meta in fetched homepage and contact page HTML (not mobile-friendly)",
+   "6KB table-layout pages with Dreamweaver-era .style1–.style10 Verdana classes and keyword-stuffed meta tags",
+   "TripAdvisor widget still loaded from plain http script (mixed content, widget long deprecated)",
+   "no email address anywhere — contact page offers phones, a 'click here' JS link and an enquiry form only"
+  ],
+  "contact_email": null,
+  "contact_phone": "+34 959124065",
+  "source_urls": [
+   "https://www.casaannette.com/",
+   "https://www.casaannette.com/contact.php"
+  ],
+  "distinctive": "English-run B&B registered with the Junta de Andalucía as Vivienda Turística de Alojamiento Rural ref. AR/HU/00137; site signs off 'Hasta Luego !!!!' and cheers 'hooray for e-mails!!!'",
+  "confidence": "high"
+ },
+ {
+  "name": "Kalamitsi Hotel",
+  "trade": "small seaside hotel and studios",
+  "town": "Kardamyli (Mani)",
+  "region": "Peloponnese",
+  "country": "Greece",
+  "website": "https://kalamitsi-hotel.gr/",
+  "evidence": [
+   "generator metas in fetched HTML: Elementor 3.11.5 (early-2023 build) and WPML 4.5.14 — unupdated for ~3.5 years",
+   "room list on homepage carries the misspelling 'Studio Appartments'",
+   "English-language site (title 'Kalamitsi – Welcome to Kardamyli')"
+  ],
+  "contact_email": "info@kalamitsi-hotel.gr",
+  "contact_phone": null,
+  "source_urls": [
+   "https://kalamitsi-hotel.gr/"
+  ],
+  "distinctive": "Rooms and studios carry classical names (e.g. 'Theano') in the homepage room list",
+  "confidence": "medium"
+ },
+ {
+  "name": "En Bord de Rivière",
+  "trade": "riverside B&B / gîte estate",
+  "town": "Casseneuil (Lot-et-Garonne)",
+  "region": "Dordogne",
+  "country": "France",
+  "website": "https://enbordderiviere.com/",
+  "evidence": [
+   "generator meta in fetched HTML: WordPress 6.6.7 — two major versions behind current",
+   "contact is a bare Gmail address rather than a domain mailbox, observed in page HTML",
+   "English sales copy confirmed on homepage ('A Paradise in South Western France')"
+  ],
+  "contact_email": "enbordderiviere@gmail.com",
+  "contact_phone": "+33 6 52 36 26 74",
+  "source_urls": [
+   "https://enbordderiviere.com/",
+   "https://gitelink.com/bandb-in-france/dordogne-west-france-bandbs"
+  ],
+  "distinctive": "Estate sits on a natural peninsula at the confluence of the Lot in Casseneuil, 'between Toulouse and Bordeaux' (homepage text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Agios Andronikos Village Apartments",
+  "trade": "agrotourism guesthouse apartments",
+  "town": "Kalopanayiotis (Marathasa Valley)",
+  "region": "rural Cyprus",
+  "country": "Cyprus",
+  "website": "NONE",
+  "evidence": [
+   "no own domain observed: its agrotourism.com.cy listing links out only to a white-label booking page at agiosandronikos.reserve-online.net",
+   "contact email on the listing is a legacy ISP address: cytanet.com.cy (observed in fetched listing HTML)",
+   "English-language listing page fetched and read directly"
+  ],
+  "contact_email": "ayios.andronikos@cytanet.com.cy",
+  "contact_phone": null,
+  "source_urls": [
+   "https://agrotourism.com.cy/property/agios-andronikos/"
+  ],
+  "distinctive": "Restored village apartments in the Marathasa Valley — listing text: 'the beautiful village of Kalopanayiotis rises up... to the mountain top'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Paradise in Portugal (Quinta do Barranco da Estrada)",
+  "trade": "lakeside birdwatching and nature lodge",
+  "town": "Santa Clara lake, near São Marcos da Serra",
+  "region": "Algarve (inland)",
+  "country": "Portugal",
+  "website": "https://www.paradiseinportugal.com/en/",
+  "evidence": [
+   "fetched English homepage HTML weighs 871KB in a single document — severely bloated/slow",
+   "generator meta: 'Helix Ultimate - The Most Popular Joomla! Template Framework' plus legacy jquery.parallax.js in page source",
+   "email observed in page HTML"
+  ],
+  "contact_email": "info@paradiseinportugal.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.paradiseinportugal.com/en/"
+  ],
+  "distinctive": "Homepage: 'Set beside a beautiful lake, the Quinta is surrounded by unspoilt countryside' — a quinta on the Santa Clara reservoir marketed for wildlife and retreats",
+  "confidence": "medium"
+ }
+]

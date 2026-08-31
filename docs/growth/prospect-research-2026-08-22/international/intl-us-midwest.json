@@ -1,0 +1,302 @@
+[
+ {
+  "name": "McHappy's Bake Shoppe",
+  "trade": "donut shop / bakery",
+  "town": "Marietta",
+  "region": "Ohio",
+  "country": "USA",
+  "website": "http://www.mchappys.com",
+  "evidence": [
+   "curl audit of mchappys.com: no <meta name=viewport> tag (not mobile-friendly)",
+   "curl: footer copyright '© 2022' (stale)",
+   "curl: meta generator '2018.1.0.386' — legacy site-builder version string",
+   "contact email is a Yahoo address shown on the page, extracted via curl",
+   "Marietta Area Chamber member listing fetched confirms independent family bakery at 333 Pike Street"
+  ],
+  "contact_email": "mchappysdonuts@yahoo.com",
+  "contact_phone": "(740) 423-8178",
+  "source_urls": [
+   "http://www.mchappys.com/",
+   "https://business.mariettachamber.com/list/member/enlows-bakery-inc-mchappy-s-donuts-of-marietta-inc-3034"
+  ],
+  "distinctive": "Site tagline 'Smiles by the Dozen!' — fresh donuts, pastries, cakes and bread (their own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Mabe's Pizza",
+  "trade": "pizza restaurant / diner",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "https://mabespizza.com/",
+  "evidence": [
+   "curl audit: meta generator 'Starfield Technologies; Go Daddy Website Builder 8.0' (legacy builder)",
+   "curl: footer 'Copyright 2016' — a decade stale",
+   "no email anywhere on site (contact page 404s); email only found on chamber listing",
+   "Decorah Area Chamber listing fetched with mailto and tel links"
+  ],
+  "contact_email": "mabespizza@gmail.com",
+  "contact_phone": "(563) 382-4297",
+  "source_urls": [
+   "https://mabespizza.com/",
+   "https://www.decorahareachamber.com/directory/mabes-pizza/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Red Rooster Café (Lawinger's)",
+  "trade": "diner / café",
+  "town": "Mineral Point",
+  "region": "Wisconsin",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Mineral Point Chamber member page fetched via curl: no business website listed, only the Facebook page",
+   "chamber listing exposes gmail contact via mailto link (observed in fetched HTML)",
+   "address 158 High St and phone from chamber tel: links"
+  ],
+  "contact_email": "redroostercafemp@gmail.com",
+  "contact_phone": "(608) 987-9936",
+  "source_urls": [
+   "https://www.mineralpoint.com/list/member/red-rooster-caf%C3%A9",
+   "https://mineralpoint.com/list/category/restaurants-74"
+  ],
+  "distinctive": "3rd-generation-owned cafe specializing in Cornish fare — fresh pasty, figgy hobbin and saffron served daily (chamber profile text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Vander Ploeg Bakery",
+  "trade": "Dutch bakery",
+  "town": "Pella",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "https://www.pellabakery.com/",
+  "evidence": [
+   "curl audit of pellabakery.com: footer '© 2023' — stale Wix site",
+   "meta generator 'Wix.com Website Builder' observed via curl",
+   "contact email is a legacy ISP address (iowatelecom.net) shown on page, extracted via curl",
+   "current Pella chamber member listing fetched: 711 Franklin St, confirms operating"
+  ],
+  "contact_email": "pellabakery@iowatelecom.net",
+  "contact_phone": "(641) 628-2293",
+  "source_urls": [
+   "https://www.pellabakery.com/",
+   "https://members.pella.org/list/member/vander-ploeg-bakery-1736"
+  ],
+  "distinctive": "Dutch Letters are the specialty — 'flaky puff pastry dough wrapped around a sweet almond' filling, puff pastry made from scratch (their own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Plaza Restaurant & Oyster Bar",
+  "trade": "restaurant / diner",
+  "town": "Thomasville",
+  "region": "Georgia",
+  "country": "USA",
+  "website": "https://thomasvilleplaza.com/",
+  "evidence": [
+   "curl audit: footer '© 2018' — 8 years stale",
+   "site text still says '2016 marked our 100th anniversary' (observed via curl) — content frozen for a decade",
+   "email and phone extracted from fetched homepage HTML",
+   "currently linked from Discover Thomasville tourism dining page (fetched)"
+  ],
+  "contact_email": "info@thomasvilleplaza.com",
+  "contact_phone": "(229) 226-5153",
+  "source_urls": [
+   "https://thomasvilleplaza.com/",
+   "https://discoverthomasville.com/dine/"
+  ],
+  "distinctive": "Established 1916 — claims 'oldest continuously operating restaurant in the state of Georgia' (their own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Decorah Tire Service",
+  "trade": "tire shop / garage",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: no business website linked, only Facebook page",
+   "curl of decorahtire.com returns 404 'Not Found' (315 bytes) — matching domain serves nothing",
+   "email is a Mediacom ISP address exposed in chamber mailto link",
+   "address 416 Montgomery Street and phone from chamber tel: links"
+  ],
+  "contact_email": "decorahtire@mediacombb.net",
+  "contact_phone": "(563) 382-3687",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/decorah-tire-service/",
+   "http://decorahtire.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "West Side Whisk Bakery",
+  "trade": "bakery",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: only a Facebook profile link, no website",
+   "getent DNS: westsidewhiskbakery.com and westsidewhisk.com do not resolve",
+   "gmail contact exposed in chamber mailto link; address 209 West Street, Decorah on listing"
+  ],
+  "contact_email": "westsidewhiskbakery@gmail.com",
+  "contact_phone": "(563) 379-8538",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/west-side-whisk-bakery/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "County Wide Plumbing & Heating",
+  "trade": "plumbing & heating contractor",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: no website linked",
+   "curl of countywideplumbing.com serves only a GoDaddy parked-domain redirect to /lander (114-byte JS stub, observed)",
+   "contact is a Hotmail address exposed in chamber mailto link"
+  ],
+  "contact_email": "cowide@hotmail.com",
+  "contact_phone": "(563) 382-2407",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/county-wide-plumbing-htg/",
+   "http://countywideplumbing.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Bell Buckle Cafe",
+  "trade": "Southern diner / cafe",
+  "town": "Bell Buckle",
+  "region": "Tennessee",
+  "country": "USA",
+  "website": "http://bellbucklecafe.com",
+  "evidence": [
+   "getent/curl: bellbucklecafe.com no longer resolves (dead domain)",
+   "Bell Buckle Chamber 'plan a weekend' guide (fetched) still links bellbucklecafe.com and presents the cafe as operating",
+   "chamber 'Where to Eat' page (fetched) lists it at Tennessee 269 with phone"
+  ],
+  "contact_email": null,
+  "contact_phone": "(931) 389-9693",
+  "source_urls": [
+   "https://bellbucklechamber.com/where-to-eat-in-bell-buckle-tennessee/",
+   "https://bellbucklechamber.com/how-to-plan-a-weekend-in-bell-buckle/"
+  ],
+  "distinctive": "'The town's famed cafe' — featured on Tennessee Crossroads and 'in just about every travel magazine'; fried biscuits and country-fried steak (chamber guide)",
+  "confidence": "high"
+ },
+ {
+  "name": "Papaleno's Restaurant",
+  "trade": "pizza / Italian restaurant",
+  "town": "Berea",
+  "region": "Kentucky",
+  "country": "USA",
+  "website": "https://papalenos.com/",
+  "evidence": [
+   "curl: papalenos.com and www both return 404 on the homepage (broken site)",
+   "Berea Tourism dining page (fetched) currently lists Papaleno's and links the now-404 papalenos.com/menu",
+   "Wayback snapshot 2025-12-16 (fetched) shows site was live with footer '© 2021' — already stale before breaking; phone extracted from that archived page"
+  ],
+  "contact_email": null,
+  "contact_phone": "(859) 986-4497",
+  "source_urls": [
+   "https://visitberea.com/dining-2023/",
+   "http://web.archive.org/web/20251216112009/https://papalenos.com/"
+  ],
+  "distinctive": "'Serving great pizza and other Italian dishes in Berea since 1984' (archived site og:description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Clover Leaf Kitchen",
+  "trade": "breakfast/lunch diner",
+  "town": "Pella",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "https://www.cloverleafkitchen.com/",
+  "evidence": [
+   "curl of cloverleafkitchen.com (the website linked from its Pella chamber member page) returns a Wix 'ConnectYourDomain Error' page — domain bought but site never connected",
+   "current Pella chamber member listing fetched: 621 Franklin St, phone via tel: link"
+  ],
+  "contact_email": null,
+  "contact_phone": "(641) 780-8132",
+  "source_urls": [
+   "https://members.pella.org/list/member/clover-leaf-kitchen-2386",
+   "https://www.cloverleafkitchen.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Lumber Mill Antique Mall",
+  "trade": "antique mall",
+  "town": "Madison",
+  "region": "Indiana",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Visit Madison directory listing (fetched via curl) shows phone only — no website linked",
+   "Visit Madison blog post dated Oct 2025 confirms recently operating",
+   "phone extracted from the fetched listing page"
+  ],
+  "contact_email": null,
+  "contact_phone": "(812) 273-3040",
+  "source_urls": [
+   "https://visitmadison.org/directory/business-listing/lumber-mill-antique-mall/",
+   "https://visitmadison.org/2025/10/an-antiquarys-dream-at-the-lumber-mill/",
+   "https://visitmadison.org/do/antiquing-road-trip/"
+  ],
+  "distinctive": "Three stories of booths; 'Deal with the Dealer' days the first Saturday of March and November (Visit Madison antiquing guide)",
+  "confidence": "high"
+ },
+ {
+  "name": "Jones Furniture Mart",
+  "trade": "furniture store (main-street retail)",
+  "town": "Cheraw",
+  "region": "South Carolina",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Town of Cheraw 'Where to Shop' municipal page (fetched via curl) lists it with a Yahoo email and phone but no website",
+   "getent DNS: jonesfurnituremart.com does not resolve",
+   "address 1101 West Greene Street from the fetched town listing"
+  ],
+  "contact_email": "jonesfurnituremart@yahoo.com",
+  "contact_phone": "(843) 537-5186",
+  "source_urls": [
+   "https://www.cheraw.com/residents/where_to/where_to_shop.php"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Boathouse BBQ",
+  "trade": "BBQ restaurant",
+  "town": "Marietta",
+  "region": "Ohio",
+  "country": "USA",
+  "website": "http://www.bhousebbq.com",
+  "evidence": [
+   "getent/curl: bhousebbq.com no longer resolves (dead domain) while Marietta chamber member page still lists it as the website",
+   "current Marietta Area Chamber member listing fetched: 218 Virginia Street, phones via tel: links",
+   "Facebook page exists (observed via WebFetch)",
+   "Washington County CVB article (fetched) describes riverside BBQ with 12+ awards"
+  ],
+  "contact_email": null,
+  "contact_phone": "(740) 373-3006",
+  "source_urls": [
+   "https://business.mariettachamber.com/list/member/boathouse-bbq-4592",
+   "https://mariettaohio.org/must-food-options-marietta-oh/",
+   "https://www.facebook.com/BoathouseBBQ/"
+  ],
+  "distinctive": "'Over 12 awards for ribs, wings, and chili' with dining overlooking the Muskingum River (Washington County CVB)",
+  "confidence": "medium"
+ }
+]

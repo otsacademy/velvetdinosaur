@@ -1,0 +1,226 @@
+[
+  {
+    "name": "John Whitworth Tree Surgery",
+    "trade": "tree surgeon",
+    "town": "Bodicote, Banbury",
+    "county": "Oxfordshire",
+    "website": "http://www.john-whitworth-tree-surgery-banbury-tree-surgeon-oxfordshire.co.uk/",
+    "evidence": [
+      "https:// connection fails entirely, HTTP 000 (curl)",
+      "plain http:// returns 401 Unauthorized (curl)",
+      "Directree listing still advertises the dead URL as his website (WebFetch)"
+    ],
+    "contact_email": "hello@jwtsbanbury.com",
+    "contact_phone": "07970 154552",
+    "source_urls": [
+      "https://directree.org/find-a-tree-surgeon/banbury/john-whitworth-nch-arb-tree-surgery-2/",
+      "https://www.misterwhat.co.uk/company/2053586-john-whitworth-nch-arb-tree-surgery-banbury"
+    ],
+    "distinctive": "NCH (ARB) qualified arborist working from 16 High Street, Bodicote; services list runs pruning, pollarding, deadwooding, crown work, felling (Directree)",
+    "confidence": "high"
+  },
+  {
+    "name": "R J Murrey Electrical",
+    "trade": "electrician",
+    "town": "Banbury",
+    "county": "Oxfordshire",
+    "website": "https://www.rjmurreyelectrical.co.uk/",
+    "evidence": [
+      "no viewport meta — not mobile-friendly (curl)",
+      "footer 'Copyright © 2015 - 2026' — design unchanged since 2015 (curl)",
+      "homepage is a 6KB hand-coded static page with capitalised <Title> tag (curl)"
+    ],
+    "contact_email": "info@rjmurreyelectrical.co.uk",
+    "contact_phone": "01295 720478",
+    "source_urls": ["https://www.rjmurreyelectrical.co.uk/"],
+    "distinctive": "family company local to Banbury, NICEIC-registered Domestic Installer whose work is annually inspected (site text via curl)",
+    "confidence": "high"
+  },
+  {
+    "name": "Acorn Tree Work",
+    "trade": "tree surgeon",
+    "town": "Banbury",
+    "county": "Oxfordshire",
+    "website": "https://www.acorntreework.co.uk/",
+    "evidence": [
+      "footer © 2015 (curl)",
+      "generator meta: WordPress 6.3.10 — outdated 2023 branch (curl)"
+    ],
+    "contact_email": "enquiries@acorntreework.co.uk",
+    "contact_phone": "01295 738533",
+    "source_urls": ["https://www.acorntreework.co.uk/"],
+    "distinctive": "all staff hold NPTC qualifications for the operations they carry out; covers tree and woodland services across Oxfordshire and Warwickshire (site text via curl)",
+    "confidence": "high"
+  },
+  {
+    "name": "TWB Motors",
+    "trade": "garage / MOT / tyres / recovery",
+    "town": "Deddington",
+    "county": "Oxfordshire",
+    "website": "https://www.twb-motors.com/",
+    "evidence": [
+      "footer '© 2022 All Rights Reserved | TWB Motors' (curl)",
+      "contact email is twbmotors@gmail.com — no domain email (curl)",
+      "static site-builder page served as /index.html with template attribute rm-empty-value left in footer (curl)"
+    ],
+    "contact_email": "twbmotors@gmail.com",
+    "contact_phone": "01869 337173",
+    "source_urls": [
+      "https://www.twb-motors.com/",
+      "https://find-open.co.uk/deddington/twb-motors-1230509"
+    ],
+    "distinctive": "village garage at Unit E Home Farm Works, Clifton Road, Deddington — MOT testing through tyres, brakes, air-con and vehicle recovery (site pages via curl)",
+    "confidence": "high"
+  },
+  {
+    "name": "Phillips Autos (Banbury) Ltd",
+    "trade": "garage / MOT",
+    "town": "Banbury",
+    "county": "Oxfordshire",
+    "website": "https://www.phillipsautos-banbury.co.uk/",
+    "evidence": [
+      "footer © 2022 (curl)",
+      "generator meta: Wix.com Website Builder (curl)",
+      "contact email phillipsautos@live.com — legacy live.com address (curl)"
+    ],
+    "contact_email": "phillipsautos@live.com",
+    "contact_phone": "01295 251192",
+    "source_urls": [
+      "https://www.phillipsautos-banbury.co.uk/",
+      "https://www.thomsonlocal.com/search/garage-services/south-warwickshire-banbury/phillips-autos-banbury-ltd/2860273/01295251192",
+      "https://www.thebestof.co.uk/local/banbury/business-guide/feature/phillips-autos/"
+    ],
+    "distinctive": "recognised MOT test station at 3 North Bar Place with 30+ years in the motor trade and strong repeat local custom (thebestof Banbury listing)",
+    "confidence": "high"
+  },
+  {
+    "name": "Adept Removals Ltd",
+    "trade": "removals",
+    "town": "Banbury",
+    "county": "Oxfordshire",
+    "website": "https://www.adeptremovalsltd.co.uk/",
+    "evidence": [
+      "footer ©2019 (curl)",
+      "generator meta: Wix.com Website Builder (curl)",
+      "contact email adeptremovalsltd@yahoo.com — yahoo address, no domain email (curl)"
+    ],
+    "contact_email": "adeptremovalsltd@yahoo.com",
+    "contact_phone": "01295 720047",
+    "source_urls": ["https://www.adeptremovalsltd.co.uk/"],
+    "distinctive": "family-run Banbury removals firm whose services scale from a man-and-van up to complete house removals (search listing + site via curl)",
+    "confidence": "high"
+  },
+  {
+    "name": "Topserve Autos Ltd",
+    "trade": "garage / MOT / servicing",
+    "town": "Brackley",
+    "county": "Northamptonshire",
+    "website": "https://topserveautos.com/",
+    "evidence": [
+      "footer '© 2022 All Rights Reserved' — same neglected builder template year as of audit (curl)",
+      "no generator meta or visible company copyright beyond builder footer; phone numbers only rendered via JS tel: links (curl)"
+    ],
+    "contact_email": "info@topserveautos.com",
+    "contact_phone": "01280 704117",
+    "source_urls": [
+      "https://topserveautos.com/",
+      "https://topserveautos.com/about.html"
+    ],
+    "distinctive": "friendly independent garage servicing Brackley and surrounds for over 20 years (about page per search listing)",
+    "confidence": "high"
+  },
+  {
+    "name": "Man and Van Bicester",
+    "trade": "removals / man and van",
+    "town": "Bicester",
+    "county": "Oxfordshire",
+    "website": "https://www.manandvanbicester.co.uk/",
+    "evidence": [
+      "generator meta: Drupal 7 — end-of-life CMS (curl)",
+      "footer 'Copyright (c) Man and Van Bicester 2017' (curl)",
+      "/contact returns 404 (curl)",
+      "no email address anywhere in HTML, mobile number only (curl)"
+    ],
+    "contact_email": null,
+    "contact_phone": "07503 916041",
+    "source_urls": ["https://www.manandvanbicester.co.uk/"],
+    "distinctive": "trading 'since 2006' with a lengthy track record in the removals industry (site text via curl)",
+    "confidence": "high"
+  },
+  {
+    "name": "Treepro (tree surgeons and forestry contractors)",
+    "trade": "tree surgeon / forestry",
+    "town": "near Banbury",
+    "county": "Oxfordshire",
+    "website": "https://treepro.co.uk/",
+    "evidence": [
+      "footer '© Copyright 2020' (curl)",
+      "/contact-us/ returns 404 (curl)",
+      "no email address in homepage HTML (curl)"
+    ],
+    "contact_email": null,
+    "contact_phone": "01608 730166",
+    "source_urls": ["https://treepro.co.uk/"],
+    "distinctive": "also supplies biomass, fire logs and trade timber alongside tree surgery and forestry contracting (site text via curl)",
+    "confidence": "medium"
+  },
+  {
+    "name": "BVS Brackley Ltd",
+    "trade": "garage / MOT",
+    "town": "Brackley",
+    "county": "Northamptonshire",
+    "website": "https://bvsmot.co.uk/",
+    "evidence": [
+      "homepage title 'Welcome to BVS Brackley Limited -' with dangling separator (curl)",
+      "default 'Powered by WordPress' credit left in footer (curl)",
+      "no copyright year anywhere on page (curl)"
+    ],
+    "contact_email": "info@bvsmot.co.uk",
+    "contact_phone": "01280 706999",
+    "source_urls": [
+      "https://bvsmot.co.uk/",
+      "https://brackley.co.uk/motoring/bvs-brackley-garage/"
+    ],
+    "distinctive": "'MOTs whilst you wait' garage trading about 20 years at Unit 4, Network 43, off Buckingham Road (brackley.co.uk town directory via WebFetch)",
+    "confidence": "medium"
+  },
+  {
+    "name": "DM Gas",
+    "trade": "plumbing, heating & bathroom fitting",
+    "town": "Brackley",
+    "county": "Northamptonshire",
+    "website": "https://www.dm-gas.com/",
+    "evidence": [
+      "homepage <title> tag is completely empty (curl)",
+      "contact email dmgplumbers@gmail.com — gmail only, no domain email (curl)"
+    ],
+    "contact_email": "dmgplumbers@gmail.com",
+    "contact_phone": "07538 574018",
+    "source_urls": [
+      "https://www.dm-gas.com/",
+      "https://www.dm-gas.com/bathrooms"
+    ],
+    "distinctive": "Brackley plumbing and gas engineers who also design and fit full bathrooms across Brackley and Bicester (site text via curl)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Brackley Prestige (Mercedes & BMW Specialists)",
+    "trade": "garage / prestige car servicing",
+    "town": "Brackley",
+    "county": "Northamptonshire",
+    "website": "https://brackleyprestige.co.uk/",
+    "evidence": [
+      "domain brackleyprestige.co.uk is NXDOMAIN (host lookup)",
+      "curl to both https and http fails, HTTP 000 (curl)",
+      "misterwhat listing carries phone and address but no website or email (WebFetch)"
+    ],
+    "contact_email": null,
+    "contact_phone": "01280 706123",
+    "source_urls": [
+      "https://www.misterwhat.co.uk/company/2869782-brackley-prestige-mercedes-bmw-specialists-brackley",
+      "https://brackleyprestige.co.uk/"
+    ],
+    "distinctive": "independent Mercedes & BMW specialist at Unit 8b Boundary Road, Buckingham Road Industrial Estate (misterwhat listing); verify still trading before pitching — listing last updated 6+ months ago",
+    "confidence": "medium"
+  }
+]

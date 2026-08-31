@@ -1,0 +1,264 @@
+[
+ {
+  "name": "Long Street Antiques",
+  "trade": "antiques centre (~30 dealers)",
+  "town": "Tetbury",
+  "county": "Gloucestershire",
+  "website": "http://www.longstreetantiques.com",
+  "evidence": [
+   "longstreetantiques.com 301-redirects to heartwoodhospital.com serving Indonesian gambling spam titled 'JAGOBET Permainan Para Master' (curl, redirect chain verified twice)",
+   "Antiques Atlas listing shows phone but no working website link (curl of listing HTML)",
+   "business still trading per Antiques Atlas/Facebook listings while its domain is hijacked (search)"
+  ],
+  "contact_email": "sales@longstreetantiques.com",
+  "contact_phone": "01666 500887",
+  "source_urls": [
+   "https://www.antiques-atlas.com/antique_shop/long_street_antiques/as2141",
+   "https://www.antiquecentral.co.uk/antique/993030/long-street-antiques",
+   "https://www.facebook.com/14longstreet/"
+  ],
+  "distinctive": "association of ~30 specialist dealers over three floors of a Georgian townhouse on Long Street (Antiques Atlas listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Brutons Home Hardware",
+  "trade": "hardware / ironmonger",
+  "town": "Nailsworth",
+  "county": "Gloucestershire",
+  "website": "https://www.brutonshardware.co.uk/",
+  "evidence": [
+   "meta generator 'WordPress 5.4.21' — unsupported 2020 core, ~6 years out of date (curl)",
+   "meta generator 'LayerSlider 6.11.2' legacy slider plugin (curl)",
+   "email on site is shop@ but site copyright line carries no year (curl)"
+  ],
+  "contact_email": "shop@brutonshardware.co.uk",
+  "contact_phone": "01453 832826",
+  "source_urls": [
+   "https://www.brutonshardware.co.uk/about-us/",
+   "https://www.nailsworthonline.co.uk/brutons-hardware-store/",
+   "https://www.facebook.com/brutonshardware/"
+  ],
+  "distinctive": "independent hardware shop trading from the same Nailsworth site since 1856, one of the town's longest-running family businesses (Nailsworth Online / search)",
+  "confidence": "high"
+ },
+ {
+  "name": "Andrews Quality Meats",
+  "trade": "butcher & game dealer",
+  "town": "Highworth (branch in Marlborough)",
+  "county": "Wiltshire",
+  "website": "https://andrewsqualitymeatsltd.co.uk/",
+  "evidence": [
+   "meta generator 'Starfield Technologies; Go Daddy Website Builder 8.0.0000' — builder discontinued ~2017, site frozen on dead platform (curl, homepage and contact page)",
+   "no page-level copyright year anywhere in footer HTML (curl)"
+  ],
+  "contact_email": "info@andrewsqualitymeatsltd.co.uk",
+  "contact_phone": "01793 762085",
+  "source_urls": [
+   "https://andrewsqualitymeatsltd.co.uk/contact-us",
+   "https://www.thomsonlocal.com/search/andrews-quality-meats/highworth-wiltshire",
+   "https://find-and-update.company-information.service.gov.uk/company/04578484"
+  ],
+  "distinctive": "traditional master butchers and licensed game dealers (pheasant, partridge, venison); meat from local farms hung 28 days and boned/cut in-house (thomsonlocal search snippet)",
+  "confidence": "high"
+ },
+ {
+  "name": "Michael's - Butchers, Bistro, Deli",
+  "trade": "butcher, bistro & deli",
+  "town": "Malmesbury",
+  "county": "Wiltshire",
+  "website": "https://www.michaelsbbd.co.uk/",
+  "evidence": [
+   "24KB static .html-page site with ~60-word keyword-stuffed title tag ('Malmesbury King sausage... buy steaks online, tea shop in Malmesbury, BBQ meat delivered') (curl)",
+   "copyright meta credits builder 'NISA INTERNET AND COMPUTER SOLUTIONS LIMITED', footer 'Copyright (c) 2011 - 2026' auto-year on a 2000s-era template (curl)"
+  ],
+  "contact_email": "hello@michaelsbbd.co.uk",
+  "contact_phone": "01666 823981",
+  "source_urls": [
+   "https://www.michaelsbbd.co.uk/",
+   "https://www.facebook.com/Michaelsbbd/"
+  ],
+  "distinctive": "home of the 'Malmesbury King' sausage — winner of Britain's best sausage, per their own site title; family butcher that added a bistro/deli to survive a supermarket arriving in town (site + search)",
+  "confidence": "high"
+ },
+ {
+  "name": "Ducklings Toy Shop",
+  "trade": "independent toy shop",
+  "town": "Marlborough",
+  "county": "Wiltshire",
+  "website": "https://www.ducklingstoyshop.co.uk/",
+  "evidence": [
+   "footer reads 'This website is Copyright 2017. All Rights Reserved.' (curl)",
+   "homepage title tag is just 'Home' — unbranded (curl)",
+   "contact email is unbranded btinternet.com address shown on site (curl)"
+  ],
+  "contact_email": "ducklingstoyshop@btinternet.com",
+  "contact_phone": "01672 216626",
+  "source_urls": [
+   "https://www.ducklingstoyshop.co.uk/",
+   "https://marlborough.2day.uk/section/LocalShopping"
+  ],
+  "distinctive": "family toy shop at 1a Hilliers Yard with a second branch in Royal Wootton Bassett (site footer, curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "The M O T Garage (prop. Michael Drew)",
+  "trade": "garage / MOT & servicing",
+  "town": "Nailsworth",
+  "county": "Gloucestershire",
+  "website": "http://www.motgaragenailsworth.co.uk",
+  "evidence": [
+   "generic lead-gen boilerplate copy ('If you are looking for reputable and well established garages in Nailsworth then look no further') on a 19KB template (curl)",
+   "broken canonical tag href='index.html' and empty copyright with no year (curl)",
+   "leftover Christmas '.santa' animation CSS still in the homepage in August (curl)"
+  ],
+  "contact_email": "themotgarage@outlook.com",
+  "contact_phone": "01453 834500",
+  "source_urls": [
+   "https://trustedtraders.which.co.uk/businesses/the-m-o-t-garage/",
+   "http://www.motgaragenailsworth.co.uk"
+  ],
+  "distinctive": "small family garage at Days Mill, Old Market ('Prop. Michael Drew' on the site); Tanya handles bookings per Which? Trusted Traders profile",
+  "confidence": "high"
+ },
+ {
+  "name": "Country Quality Meat",
+  "trade": "butcher",
+  "town": "Nailsworth",
+  "county": "Gloucestershire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "visitstroud.uk listing's only outbound business link is facebook.com/CountryQualityMeat (curl, link extraction)",
+   "countryqualitymeat.co.uk resolves but serves a bare 'Domain parking page' (curl)",
+   "phone shown on directory listing, no website field (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01453 835058",
+  "source_urls": [
+   "https://www.visitstroud.uk/england/nailsworth/retail/country-quality-meat",
+   "https://www.facebook.com/CountryQualityMeat/",
+   "https://stroudtimes.com/meat-the-butcher-a-chat-with-paul-dowdeswell-of-country-quality-meats/"
+  ],
+  "distinctive": "est. 1988 at 9 Old Market; all sausages, burgers, bacon and hams made/cured in-house, nearly all sausages gluten-free (visitstroud listing / Stroud Times)",
+  "confidence": "high"
+ },
+ {
+  "name": "Leonard Walker Family Butchers",
+  "trade": "butcher",
+  "town": "Malmesbury",
+  "county": "Wiltshire",
+  "website": "NONE",
+  "evidence": [
+   "domain directories attribute to them (www.leonardwalker.co.uk) has no DNS record — getent fails, curl exit 6 (observed)",
+   "thomsonlocal listing page shows phone but no website or email (curl)",
+   "directory search results still advertise the dead leonardwalker.co.uk URL (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01666 822132",
+  "source_urls": [
+   "https://www.thomsonlocal.com/search/butchers/swindon/leonard-walker-family-butchers/350566/01666822132",
+   "https://www.yell.com/biz/leonard-walker-family-butchers-malmesbury-104616/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Andrew Butler Butchers",
+  "trade": "butcher",
+  "town": "Fairford",
+  "county": "Gloucestershire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "no website found in any search result — Facebook page is the primary presence (search)",
+   "Fairford Town Council amenity page for the shop contains no business website link (curl, link extraction)",
+   "listed at 3 Market Place with phone only on FindOpen/BigBarn directory listings (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01285 713177",
+  "source_urls": [
+   "https://www.facebook.com/andrewbutlerbutchers/",
+   "https://fairfordtowncouncil.gov.uk/service/andrew-butler-butchers/",
+   "https://find-open.co.uk/fairford/andrew-butler-butchers-1243248"
+  ],
+  "distinctive": "traditional butcher on Fairford's Market Place known for prize-winning pies and sausages (FindOpen listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Old Bakery",
+  "trade": "café / coffee shop",
+  "town": "Highworth",
+  "county": "Wiltshire",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Discover Highworth town guide's schema.org data lists its 'url' as the Facebook page — the only café on the page whose sole link is Facebook (curl, JSON-LD extraction)",
+   "phone taken from the same structured data (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01793 764500",
+  "source_urls": [
+   "https://discoverhighworth.com/visit/eat-and-drink.html",
+   "https://www.facebook.com/theoldbakeryhighworth/"
+  ],
+  "distinctive": "café at 12 High Street trading under the name of the town's old bakery (Discover Highworth listing)",
+  "confidence": "high"
+ },
+ {
+  "name": "Michael Hart & Son Family Butchers",
+  "trade": "butcher",
+  "town": "Cirencester",
+  "county": "Gloucestershire",
+  "website": "NONE",
+  "evidence": [
+   "no official website in any search — only Instagram/Facebook and directory pages (search, multiple queries)",
+   "michaelhartbutchers.co.uk does not resolve (getent, observed)",
+   "cirencester.co.uk directory listing shows phone with no site (search snippet)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01285 642564",
+  "source_urls": [
+   "https://www.cirencester.co.uk/business/michael-hart-and-son-family-butchers/647",
+   "https://www.instagram.com/michaelhartbutchers/",
+   "https://www.yell.com/biz/michael-hart-and-son-ltd-cirencester-7009147/"
+  ],
+  "distinctive": "4th-generation family butchers at 3 Bishops Walk with a second shop in Cricklade, known for house-made pies and ~20 local cheeses (directory search snippets)",
+  "confidence": "medium"
+ },
+ {
+  "name": "The Old Ironmongers Antiques Centre",
+  "trade": "antiques / architectural salvage",
+  "town": "Lechlade",
+  "county": "Gloucestershire",
+  "website": "NONE",
+  "evidence": [
+   "no website found in searches; bigreddirectory listing shows phone and address only (curl)",
+   "oldironmongers.co.uk does not resolve (getent, observed)",
+   "thomsonlocal lists mobile number only, no site (search)"
+  ],
+  "contact_email": null,
+  "contact_phone": "01367 252397",
+  "source_urls": [
+   "https://www.bigreddirectory.com/old-ironmongers-5-burford-street-lechlade",
+   "https://www.thomsonlocal.com/search/antique-dealers/chipping-sodbury-avon/old-ironmongers/249665/07976564099"
+  ],
+  "distinctive": "trades from an old ironmonger's shop at 5 Burford Street — woodworking tools, gardening bygones, iron and copperware (riverthames.co.uk town guide, search)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Lechlade Antiques Arcade",
+  "trade": "multi-dealer antiques arcade",
+  "town": "Lechlade",
+  "county": "Gloucestershire",
+  "website": "NONE",
+  "evidence": [
+   "no website found in searches (Yelp/Cylex/business-dir listings only) (search)",
+   "bigreddirectory listing shows mobile phone only, no website field (curl)"
+  ],
+  "contact_email": null,
+  "contact_phone": "07949 130875",
+  "source_urls": [
+   "https://www.bigreddirectory.com/lechlade-antiques-arcade-lechlade-on-thames-lechlade",
+   "https://www.yelp.com/biz/lechlade-antiques-arcade-lechlade"
+  ],
+  "distinctive": "multi-dealer arcade in a charming building at 5-7 High Street with a café next door (Yelp listing)",
+  "confidence": "medium"
+ }
+]

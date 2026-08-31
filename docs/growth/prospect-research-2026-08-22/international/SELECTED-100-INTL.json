@@ -1,0 +1,2121 @@
+[
+ {
+  "name": "Tripp's Gallery",
+  "trade": "Art gallery / craft studio",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.trippsgallery.com",
+  "evidence": [
+   "curl of trippsgallery.com returns HTTP 404 with title 'ConnectYourDomain Error | Wix.com' — domain pointed at Wix but never connected, site effectively dead (observed on both www and bare domain)",
+   "Annapolis Royal town business directory still links the dead URL and lists the business under 'Craft Shops & Artist Studios'"
+  ],
+  "contact_email": "info@trippsgallery.com",
+  "contact_phone": "902-521-4986",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.trippsgallery.com"
+  ],
+  "distinctive": "Listed in the town directory under 'Craft Shops & Artist Studios' at 324 St. George St., Annapolis Royal's historic main street",
+  "confidence": "high"
+ },
+ {
+  "name": "Civic Auto Repair",
+  "trade": "Auto repair garage",
+  "town": "Nelson",
+  "region": "British Columbia",
+  "country": "Canada",
+  "website": "http://civicautorepair.mechanicnet.com/",
+  "evidence": [
+   "listed website fails to load (curl connection failure) and returns NXDOMAIN via Cloudflare DNS-over-HTTPS — the legacy MechanicNet template site is gone",
+   "Nelson & District Chamber directory still lists the dead URL and a @mechanicnet.com email as the shop's contacts"
+  ],
+  "contact_email": "civicautorepair@mechanicnet.com",
+  "contact_phone": "250-354-4146",
+  "source_urls": [
+   "https://www.discovernelson.com/nelson-bc-directory/auto-motorcycle/",
+   "http://civicautorepair.mechanicnet.com/"
+  ],
+  "distinctive": "714 Baker Street shop; chamber listing notes it is a Designated Government Inspection Facility and BCAA-affiliated",
+  "confidence": "high"
+ },
+ {
+  "name": "Iron Island Museum",
+  "trade": "volunteer neighbourhood history & veterans museum",
+  "town": "Buffalo (Lovejoy)",
+  "region": "New York",
+  "country": "USA",
+  "website": "http://www.ironislandmuseum.com/",
+  "evidence": [
+   "footer 'Copyright 2009' on homepage fetched Aug 2026 (curl)",
+   "two 'coming soon' strings and 13 table-layout tables in homepage source (grep)",
+   "no <meta name=viewport> — not mobile-friendly",
+   "no https redirect from http:// (curl final URL http)",
+   "active despite dated site: 'Night At the Museum August 8, 2026 — SOLD OUT' on homepage"
+  ],
+  "contact_email": "ramoneschick@gmail.com",
+  "contact_phone": "716-892-3084",
+  "source_urls": [
+   "http://www.ironislandmuseum.com/"
+  ],
+  "distinctive": "museum at 998 Lovejoy Street with a 'reputation for paranormal' — hosts guided overnight ghost investigations and Thursday-night $5 tours (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Crete Walks",
+  "trade": "private guided walks and hikes",
+  "town": "Chania area (western Crete)",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "https://www.crete-walks.com/index3.htm",
+  "evidence": [
+   "fetched HTML footer: '© 2022 crete-walks.com' (4 years stale)",
+   "source contains IE6/7/8 conditional comments, html5shiv and respond.min.js polyfills, and Ajatix menu-builder assets — circa-2012 hand-built stack",
+   "still loads dead Universal Analytics tag (GA sunset 2023) and cookieconsent2 v1.0.9 from 2013 cdnjs",
+   "entire homepage is 4.4KB with one h2 and a mailto footer"
+  ],
+  "contact_email": "info@crete-walks.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.crete-walks.com/index3.htm",
+   "https://www.west-crete.com/excursions.htm"
+  ],
+  "distinctive": "One-person business — nav item literally reads 'ABOUT MYSELF'; dedicated pages for Crete's mountains, flowers and photography",
+  "confidence": "high"
+ },
+ {
+  "name": "Chauncey Creek Lobster Pier",
+  "trade": "lobster pier / seafood shack",
+  "town": "Kittery Point",
+  "region": "Maine",
+  "country": "USA",
+  "website": "http://www.chaunceycreek.com/",
+  "evidence": [
+   "curl audit: no <meta name=viewport> tag — not mobile-friendly",
+   "https on apex domain fails to connect at all (curl exit 000); site only reliably serves at www",
+   "contact email on page is a Gmail address, observed in fetched HTML",
+   "page schema/address block confirms Kittery, ME 03905 in fetched HTML"
+  ],
+  "contact_email": "chaunceycreeklobster@gmail.com",
+  "contact_phone": "(207) 439-1030",
+  "source_urls": [
+   "http://www.chaunceycreek.com/"
+  ],
+  "distinctive": "BYOB lobster pier on tidal Chauncey Creek — 'BYOB establishment' stated in the site's own meta description",
+  "confidence": "high"
+ },
+ {
+  "name": "Connemara Smokehouse",
+  "trade": "family salmon smokehouse",
+  "town": "Ballyconneely",
+  "region": "County Galway (Connemara)",
+  "country": "Ireland",
+  "website": "https://smokehouse.ie/",
+  "evidence": [
+   "footer 'Copyright 2021' observed in fetched HTML — five years stale",
+   "WordPress theme is 'Avada-child-04-03-2020' and WPML ver 4.9.7 per generator/theme paths in curl audit — build frozen circa 2020-21",
+   "address on page: Ballyconneely, Galway, Ireland, H71 KR29"
+  ],
+  "contact_email": "info@smokehouse.ie",
+  "contact_phone": "+353 95 23739",
+  "source_urls": [
+   "https://smokehouse.ie/"
+  ],
+  "distinctive": "wild and organic smoked salmon smokehouse at Ballyconneely on the Connemara coast — 'foodies flock to discover the world's finest smoked salmon' (site's own copy)",
+  "confidence": "high"
+ },
+ {
+  "name": "Gympie Cooloola Pet Resort & Pet Cemetery",
+  "trade": "boarding kennels & cattery",
+  "town": "Gympie",
+  "region": "Queensland",
+  "country": "Australia",
+  "website": "http://www.gcpetresort.com.au/",
+  "evidence": [
+   "meta generator 'Joomla! - Open Source Content Management' observed in fetched HTML (curl 2026-08-22)",
+   "'Copyright © 2012' observed in homepage HTML",
+   "https fails to connect (curl exit 000) — site is http-only",
+   "email observed as mailto link in homepage HTML"
+  ],
+  "contact_email": "pets@gcpetresort.com.au",
+  "contact_phone": "+61 7 5483 5364",
+  "source_urls": [
+   "http://www.gcpetresort.com.au/",
+   "https://www.openstreetmap.org/way/1340476317"
+  ],
+  "distinctive": "Runs a pet cemetery alongside the boarding kennels — 'Pet Resort & Pet Cemetery' in its own page title and keywords",
+  "confidence": "high"
+ },
+ {
+  "name": "Hand Made Frames",
+  "trade": "picture framer",
+  "town": "North Fremantle",
+  "region": "Western Australia",
+  "country": "Australia",
+  "website": "http://www.handmadeframes.com.au",
+  "evidence": [
+   "no <meta name=\"viewport\"> tag — not mobile-responsive (curl 2026-08-22)",
+   "loads jQuery 1.6.4 (2011) and Google Fonts over plain http, empty meta description — hand-rolled static site",
+   "OSM listing points to misspelled domain 'hamdmadeframes.com.au' which does not resolve (curl 000)",
+   "email and phone recorded on OSM node 13417767373"
+  ],
+  "contact_email": "mickhowarth@gmail.com",
+  "contact_phone": "+61 401 028 611",
+  "source_urls": [
+   "http://www.handmadeframes.com.au",
+   "https://www.openstreetmap.org/node/13417767373"
+  ],
+  "distinctive": "'Conservation Picture framing, Gilding, Restoration & Bespoke Frame Craftsman' at 16 Jackson Street, North Fremantle (page text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cafe Medici",
+  "trade": "cafe",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://cafemedici.co.nz",
+  "evidence": [
+   "Martinborough Wine Village directory 'Visit website' link points to http://cafemedici.co.nz — curl-tested http, https and www variants and all time out (000) on 2026-08-22",
+   "DNS still resolves and MX records exist, so email works while the website is dead — observed via host lookup",
+   "Directory listing shows contact 'Nick & Susan Arnold' with mailto — extracted from fetched listing HTML"
+  ],
+  "contact_email": "nick@cafemedici.co.nz",
+  "contact_phone": null,
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/cafe-medici/",
+   "http://cafemedici.co.nz"
+  ],
+  "distinctive": "Italian-named village cafe run by Nick & Susan Arnold, per its Martinborough Wine Village listing",
+  "confidence": "high"
+ },
+ {
+  "name": "Cafe Mes Amis",
+  "trade": "cafe",
+  "town": "Orari, Geraldine",
+  "region": "South Canterbury",
+  "country": "New Zealand",
+  "website": "http://www.cafemesamis.co.nz/",
+  "evidence": [
+   "Go Geraldine business page still links the website — host lookup returns NXDOMAIN (domain no longer registered) and curl gets no connection, observed 2026-08-22",
+   "Listing (fetched) shows email, phone and Facebook page"
+  ],
+  "contact_email": "oraricafe@gmail.com",
+  "contact_phone": "+64 3 693 7981",
+  "source_urls": [
+   "https://geraldine.nz/business/cafe-mes-amis/",
+   "http://www.cafemesamis.co.nz/"
+  ],
+  "distinctive": "French-named country cafe at Orari just outside Geraldine, still promoted by the town's official directory",
+  "confidence": "high"
+ },
+ {
+  "name": "The Plaza Restaurant & Oyster Bar",
+  "trade": "restaurant / diner",
+  "town": "Thomasville",
+  "region": "Georgia",
+  "country": "USA",
+  "website": "https://thomasvilleplaza.com/",
+  "evidence": [
+   "curl audit: footer '© 2018' — 8 years stale",
+   "site text still says '2016 marked our 100th anniversary' (observed via curl) — content frozen for a decade",
+   "email and phone extracted from fetched homepage HTML",
+   "currently linked from Discover Thomasville tourism dining page (fetched)"
+  ],
+  "contact_email": "info@thomasvilleplaza.com",
+  "contact_phone": "(229) 226-5153",
+  "source_urls": [
+   "https://thomasvilleplaza.com/",
+   "https://discoverthomasville.com/dine/"
+  ],
+  "distinctive": "Established 1916 — claims 'oldest continuously operating restaurant in the state of Georgia' (their own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Fairbanks Inn",
+  "trade": "country inn / motel",
+  "town": "St Johnsbury",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://stjay.com",
+  "evidence": [
+   "curl: their legacy domain fairbanksinn.com now redirects to an Indonesian 'YODA4D' slot-gambling site",
+   "Wayback capture 18 Mar 2025 shows fairbanksinn.com already serving 'YODA4D - SLOT DEPOSIT QRIS' spam (fetched)",
+   "curl: the live site stjay.com is a generic Bootstrap/bxslider template with no copyright line and a misspelled amenities image file 'Fairabnks_Amenities.webp'"
+  ],
+  "contact_email": "gmfairbanksinn@gmail.com",
+  "contact_phone": "802-748-5666",
+  "source_urls": [
+   "http://stjay.com",
+   "http://fairbanksinn.com",
+   "http://web.archive.org/web/20250318095710/http://fairbanksinn.com/"
+  ],
+  "distinctive": "their hero images sit next to Expedia/Booking badges while the inn's own historic domain serves gambling spam - a brand-rescue story ready-made",
+  "confidence": "high"
+ },
+ {
+  "name": "Joseph Fly Shoppe, LLC",
+  "trade": "fly shop / fishing outfitter",
+  "town": "Joseph",
+  "region": "Oregon",
+  "country": "USA",
+  "website": "https://www.josephflyshoppe.org/",
+  "evidence": [
+   "Their old brand domain josephflyshoppe.com now redirects (curl -sL) to artsypads.com serving an Indonesian gambling site titled 'HarapanQQ: Situs PKV Games...'",
+   "Current .org homepage is a 2.29MB Wix HTML payload (curl size_download 2292890; meta generator 'Wix.com Website Builder')",
+   "Wallowa County Chamber member page confirms shop active at 203 North Main Street, Joseph, listing the .org as its website (fetched)"
+  ],
+  "contact_email": "Josephflyshoppe@gmail.com",
+  "contact_phone": "541-432-4343",
+  "source_urls": [
+   "https://www.josephflyshoppe.org/",
+   "https://business.wallowacountychamber.com/list/member/joseph-fly-shoppe-llc-1064",
+   "https://www.josephflyshoppe.com/"
+  ],
+  "distinctive": "Chamber listing describes 'absolute dedication to the graceful art of fly angling' — a full-service destination shop on Main Street in Joseph",
+  "confidence": "high"
+ },
+ {
+  "name": "Coldsmoke Automotive",
+  "trade": "auto repair garage (transmission & diesel)",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "http://www.coldsmokeauto.com/",
+  "evidence": [
+   "Site served over plain HTTP only — curl to https fails to connect (000), so browsers show 'Not secure'",
+   "WordPress site (wp-content asset refs in fetched HTML), no TLS despite © 2026 footer",
+   "Livingston Chamber automotive directory lists the shop (contact Elise Moir) confirming it is a current member (fetched)"
+  ],
+  "contact_email": "coldsmokeauto@gmail.com",
+  "contact_phone": "(406) 222-7169",
+  "source_urls": [
+   "http://www.coldsmokeauto.com/",
+   "https://livingston-chamber.com/directory/automotive/"
+  ],
+  "distinctive": "Full-service foreign & domestic shop that leads with transmission and diesel repair in its own title tag",
+  "confidence": "high"
+ },
+ {
+  "name": "Deloraine Deli",
+  "trade": "Licensed deli, cafe and providore",
+  "town": "Deloraine",
+  "region": "Tasmania",
+  "country": "Australia",
+  "website": "https://delorainedeli.com.au/",
+  "evidence": [
+   "delorainedeli.com.au renders 'SITE NOT FOUND — This site is not published or does not have a domain assigned to it' (observed in headless Chrome, 2026-08-22; curl gets 403)",
+   "Their active Facebook page still lists delorainedeli.com.au as the website (observed on FB page)",
+   "Business is trading: FB cover photo updated July 2026, 3,424 likes, 92% recommend from 324 reviews (observed on FB page)"
+  ],
+  "contact_email": "info@delorainedeli.com.au",
+  "contact_phone": "+61 3 6362 2127",
+  "source_urls": [
+   "https://www.facebook.com/DeloraineDeli/",
+   "https://delorainedeli.com.au/"
+  ],
+  "distinctive": "Licensed deli, cafe and providore at 81 Emu Bay Rd 'on route to Cradle Mountain', also supplies catering (from their Facebook about section)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Braidwood Bakery",
+  "trade": "Country bakery (est. 1932)",
+  "town": "Braidwood",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://braidwoodbakery.com.au/",
+  "evidence": [
+   "Footer reads 'Copyright 1998 - 2021 Trappers Bakery' — stale year and the wrong business name (sister bakery in Goulburn) on Braidwood Bakery's own site (observed via curl)",
+   "Page last-modified marker in content dated 2025-01-23 by 'FrankWhite' exposed in body HTML (observed via curl)",
+   "No email on homepage; only found on /contact/ page (observed via curl)"
+  ],
+  "contact_email": "info@braidwoodbakery.com.au",
+  "contact_phone": "(02) 4842 2541",
+  "source_urls": [
+   "https://braidwoodbakery.com.au/",
+   "https://braidwoodbakery.com.au/contact/"
+  ],
+  "distinctive": "'Established in 1932 — providing locals and tourists a familiar place to meet and chat' (from site text); tagline 'Great Tucker' in the title tag",
+  "confidence": "high"
+ },
+ {
+  "name": "Royal Mail Hotel Braidwood",
+  "trade": "Historic country pub with accommodation and bistro",
+  "town": "Braidwood",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://royalmailhotelbraidwood.com.au/",
+  "evidence": [
+   "Footer reads '© COPYRIGHT 2018' — eight years stale (observed via curl)",
+   "Booking email is a plain gmail address rather than the domain, shown on /contact/ (observed via curl)"
+  ],
+  "contact_email": "royalmailbraidwood@gmail.com",
+  "contact_phone": "(02) 4842 2488",
+  "source_urls": [
+   "https://royalmailhotelbraidwood.com.au/",
+   "https://royalmailhotelbraidwood.com.au/contact/"
+  ],
+  "distinctive": "Self-described in its title tag as 'Braidwood's Historic Hotel, Accomodation & Bistro' — with 'Accomodation' misspelled in the live title",
+  "confidence": "high"
+ },
+ {
+  "name": "Kookaburra Lodge Motel",
+  "trade": "Boutique motel",
+  "town": "Yungaburra",
+  "region": "Queensland",
+  "country": "Australia",
+  "website": "https://kookaburra-lodge.com/",
+  "evidence": [
+   "Generator meta tag 'Joomla! - Open Source Content Management' (observed via curl)",
+   "Footer reads '© 2022 Kookaburra Lodge. All Rights Reserved.' (observed via curl)",
+   "No phone number on the contact page — JavaScript-dependent enquiry form with a 'Warning! JavaScript must be enabled' notice (observed via curl)"
+  ],
+  "contact_email": "relax@kookaburra-lodge.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://kookaburra-lodge.com/",
+   "https://kookaburra-lodge.com/contact-us",
+   "https://www.yungaburra.com/places/kookaburra-lodge-motel/"
+  ],
+  "distinctive": "'A beautiful 3.5 star boutique motel hidden with it's own fragrant gardens', 400m from the village centre, 70km from Cairns (from site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Sevenhill Hotel",
+  "trade": "Country pub, restaurant and wine cellar",
+  "town": "Sevenhill (Clare Valley)",
+  "region": "SA",
+  "country": "Australia",
+  "website": "https://www.sevenhillhotel.com.au/",
+  "evidence": [
+   "Footer reads '© 2019 Sevenhill Hotel. All Rights Reserved.' — seven years stale (observed via curl)",
+   "Runs Slider Revolution 6.6.15 slider plugin, declared in a generator meta tag (observed via curl)"
+  ],
+  "contact_email": "sales@sevenhillhotel.com.au",
+  "contact_phone": "+61 8 8843 4217",
+  "source_urls": [
+   "https://www.sevenhillhotel.com.au/"
+  ],
+  "distinctive": "Title tag sells it as 'Family Friendly Restaurant - Clare Valley Country Pub & Wine Cellar' — a pub with its own wine cellar in the Clare Valley",
+  "confidence": "high"
+ },
+ {
+  "name": "Afterglow Cottages",
+  "trade": "Luxury cottage accommodation",
+  "town": "Bellingen",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://afterglowcottages.com.au/",
+  "evidence": [
+   "Footer reads '©2015 Afterglow Cottages.' — eleven years stale (observed via curl)",
+   "Old WordPress theme 'root-pro-2' visible in asset paths (observed via curl)",
+   "Listed in the dated bellingen.com town directory, which still links it as http:// (observed via curl)"
+  ],
+  "contact_email": "indulge@afterglowcottages.com.au",
+  "contact_phone": "(02) 6655 2215",
+  "source_urls": [
+   "https://afterglowcottages.com.au/",
+   "http://www.bellingen.com/"
+  ],
+  "distinctive": "Books 'Bellingen luxury accommodation' through the email address indulge@afterglowcottages.com.au (from site contact details)",
+  "confidence": "high"
+ },
+ {
+  "name": "Woolpack Hotel",
+  "trade": "Country pub with accommodation",
+  "town": "Mudgee",
+  "region": "NSW",
+  "country": "Australia",
+  "website": "https://woolpackhotelmudgee.com.au/",
+  "evidence": [
+   "Footer reads '© Woolpack Hotel Mudgee 2020' — six years stale (observed via curl)",
+   "Generator meta tag shows Elementor 3.12.2, a 2023 plugin version left unupdated (observed via curl)"
+  ],
+  "contact_email": "info@woolpackhotelmudgee.com.au",
+  "contact_phone": "(02) 6372 1908",
+  "source_urls": [
+   "https://woolpackhotelmudgee.com.au/"
+  ],
+  "distinctive": "'An iconic country hotel located in the heart of Mudgee's CBD', pitched as 'Eat | Drink | Stay' in its title tag (from site text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Hillsdale House Inn",
+  "trade": "Bed & breakfast inn",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.hillsdalehouseinn.ca",
+  "evidence": [
+   "no <meta name=\"viewport\"> in fetched homepage HTML (grep count 0) — not mobile-friendly",
+   "table-based layout: 7 <table> tags in homepage markup (curl)",
+   "footer reads '© 2007-2026 - Hillsdale House Inn' (curl) — site design dates to 2007 era",
+   "page served over plain http:// with no redirect to https when fetched via http"
+  ],
+  "contact_email": "reservations@hillsdalehouseinn.ca",
+  "contact_phone": "902-532-2345",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.hillsdalehouseinn.ca/"
+  ],
+  "distinctive": "Meta description: 'authentic Nova Scotia bed and breakfast inn located in the historic Town of Annapolis Royal... minutes from Port Royal'",
+  "confidence": "high"
+ },
+ {
+  "name": "Joan Bruneau - Studio Potter",
+  "trade": "Pottery studio / gallery showroom",
+  "town": "Lunenburg",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.joanbruneau.com",
+  "evidence": [
+   "homepage is XHTML 1.0 Transitional with no viewport meta (curl grep 0) — pre-mobile-era site",
+   "markup links IE6 and IE7 conditional stylesheets (observed in HTML)",
+   "site CSS versioned with a 2013 Unix timestamp (observed in HTML)",
+   "served over http:// without redirect when fetched via http; Town of Lunenburg artists page links the http URL"
+  ],
+  "contact_email": "joanbruneau@ns.sympatico.ca",
+  "contact_phone": null,
+  "source_urls": [
+   "https://townoflunenburg.ca/artists-and-galleries.html",
+   "http://www.joanbruneau.com/",
+   "http://www.joanbruneau.com/contact.html"
+  ],
+  "distinctive": "Wheel-thrown functional earthenware; site has a 'showroom' section and also features painter F. Scott MacLeod (site nav and meta keywords)",
+  "confidence": "high"
+ },
+ {
+  "name": "Seahaven Bed and Breakfast",
+  "trade": "Bed & breakfast",
+  "town": "St. Andrews",
+  "region": "New Brunswick",
+  "country": "Canada",
+  "website": "http://seahavenbb.com",
+  "evidence": [
+   "no viewport meta in homepage HTML (curl grep 0) — not mobile-friendly",
+   "footer 'Copyright © 2013-2026' (curl) — 2013-era static site",
+   "town tourism site links it as a plain-http deep link; no http-to-https redirect on the site (curl stayed on http)",
+   "contact is a legacy ISP mailbox (rogers.com, observed in page HTML)"
+  ],
+  "contact_email": "seahaven@rogers.com",
+  "contact_phone": "506-321-2307",
+  "source_urls": [
+   "https://explorestandrews.ca/where-to-stay/",
+   "http://seahavenbb.com/index.html"
+  ],
+  "distinctive": "Describes itself as 'an organic bed and breakfast located at the water's edge in St. Andrews' (site meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Garrison House Inn",
+  "trade": "Inn & restaurant",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.garrisonhouse.ca",
+  "evidence": [
+   "chamber-listed www.garrisonhouse.ca does not resolve — Cloudflare DoH shows no A record for the www host, so the town directory's website link is broken",
+   "bare garrisonhouse.ca redirects to a different domain, garrisonhouseinn.ca, a GoDaddy sitebuilder page whose markup still contains the placeholder 'filler@godaddy.com' and an empty 'mailto:' link (curl)"
+  ],
+  "contact_email": "info@garrisonhouse.ca",
+  "contact_phone": "902-532-5750",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "https://garrisonhouseinn.ca/"
+  ],
+  "distinctive": "Operates as both accommodation and restaurant at 350 St. George Street (site title 'Garrison House Inn and Restaurant')",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dunkirk Lighthouse & Veterans Park Museum",
+  "trade": "volunteer lighthouse & veterans museum",
+  "town": "Dunkirk",
+  "region": "New York",
+  "country": "USA",
+  "website": "http://www.dunkirklighthouse.com/",
+  "evidence": [
+   "meta generator 'Microsoft FrontPage 4.0' in homepage HTML (curl audit)",
+   "no <meta name=viewport> — not mobile-friendly (grep of saved HTML)",
+   "77 <font> tags and 5 table-layout tables counted in homepage source",
+   "served over plain http with no https redirect; https exists but is never forced",
+   "site is active: 'Ghost Hunt 2026 Schedule' text on homepage"
+  ],
+  "contact_email": "dunkirklighthouse@gmail.com",
+  "contact_phone": "716-366-5050",
+  "source_urls": [
+   "http://www.dunkirklighthouse.com/"
+  ],
+  "distinctive": "lighthouse perched on Point Gratiot, Lake Erie since 1827 (homepage text); runs ghost hunts and ham-radio lighthouse special events",
+  "confidence": "high"
+ },
+ {
+  "name": "South Simcoe Railway Heritage Corporation",
+  "trade": "volunteer heritage steam railway",
+  "town": "Tottenham",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "http://www.steamtrain.com/",
+  "evidence": [
+   "entire site runs on 1990s-style CGI URLs (cgi.bin?JOB=RR&PG=1) observed in homepage hrefs (curl)",
+   "no <meta name=viewport>; 6 table-layout tables and 5 <font> tags in 11KB homepage",
+   "steamtrain.com serves as plain-http alias of southsimcoerailway.ca with no https redirect (curl final URL)",
+   "organisation is active: footer '© South Simcoe Railway 2026' observed"
+  ],
+  "contact_email": "info@southsimcoerailway.ca",
+  "contact_phone": "(905) 936-5815",
+  "source_urls": [
+   "http://www.steamtrain.com/",
+   "https://www.southsimcoerailway.ca/cgi.bin?JOB=RR&PG=2&PP=contact"
+  ],
+  "distinctive": "runs Easter, Halloween 'ghost', fall-colours and Santa special steam trains from Tottenham (event pages in site nav)",
+  "confidence": "high"
+ },
+ {
+  "name": "Bush Tramway Club Inc.",
+  "trade": "volunteer bush-tramway heritage railway",
+  "town": "Pukemiro / Glen Afton, near Huntly",
+  "region": "Waikato",
+  "country": "New Zealand",
+  "website": "http://www.bushtramwayclub.com/",
+  "evidence": [
+   "Microsoft FrontPage signature markup in 4KB index page; table layout + <font> tags (curl audit)",
+   "no <meta name=viewport>; served plain http",
+   "all navigation is PNG button images and the entire Contact Us page content is a single image — no machine-readable text (pages fetched and image read)",
+   "contact page text extracted from the image: club asks callers to 'wait (a long time) until the answering machine answers'"
+  ],
+  "contact_email": "secretary@bushtramwayclub.com",
+  "contact_phone": "+64 (07) 828 4851",
+  "source_urls": [
+   "http://www.bushtramwayclub.com/",
+   "http://www.bushtramwayclub.com/contactus.html"
+  ],
+  "distinctive": "steam open days and charter trains on an ex-coal-field bush tramway; postal address 'Box C10, Glen Afton, R.D.1, Huntly'; running a restoration appeal for Heisler locomotive 1082 (site pages/images)",
+  "confidence": "high"
+ },
+ {
+  "name": "Berrima District Historical & Family History Society Inc",
+  "trade": "historical society & district museum",
+  "town": "Berrima / Mittagong",
+  "region": "New South Wales (Southern Highlands)",
+  "country": "Australia",
+  "website": "https://www.berrimadistricthistoricalsociety.org.au/",
+  "evidence": [
+   "meta generator 'Web Presence Builder 18.0.69' — discontinued Plesk site builder (homepage HTML via curl)",
+   "no <meta name=viewport> — not mobile-friendly",
+   "site shows visitors a 'Your browser version is outdated' banner from the legacy builder (contact page text)",
+   "society is active: '© BDH&FHS 2026' footer and newsletters listed to date"
+  ],
+  "contact_email": "bdhsarchives@gmail.com",
+  "contact_phone": "+61 (02) 4877 1130",
+  "source_urls": [
+   "https://www.berrimadistricthistoricalsociety.org.au/",
+   "https://www.berrimadistricthistoricalsociety.org.au/contact-us/"
+  ],
+  "distinctive": "runs the Berrima District Museum plus quirky local research databases like 'Mittagong Infectious Diseases 1898-1938' and 'The People of Rowes Hill' (site nav)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cobh Museum",
+  "trade": "volunteer town museum",
+  "town": "Cobh",
+  "region": "County Cork",
+  "country": "Ireland",
+  "website": "https://www.cobhmuseum.com/",
+  "evidence": [
+   "hand-coded static HTML site (11KB homepage, table layout, no CMS signature) observed via curl",
+   "no <meta name=viewport> — not mobile-friendly",
+   "email published in page source",
+   "active: '** Season Open March 27th 2026 **' on homepage"
+  ],
+  "contact_email": "cobhmuseum1@gmail.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.cobhmuseum.com/"
+  ],
+  "distinctive": "housed in the 19th-century Scots' Presbyterian Church; current exhibition 'Lusitania — A Day In May' about the 1915 sinking coordinated from Queenstown/Cobh (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "New Brighton Silver Band Inc.",
+  "trade": "community brass band",
+  "town": "Christchurch (New Brighton)",
+  "region": "Canterbury",
+  "country": "New Zealand",
+  "website": "http://www.newbrightonsilverband.org.nz/",
+  "evidence": [
+   "meta generator 'WordPress 4.9.26' — 2018-era core branch, long unsupported (homepage HTML via curl)",
+   "theme derived from 2010 default 'twentyten'; no <meta name=viewport>",
+   "no https redirect (curl -L stayed on http)",
+   "front-page features are '2011 Christchurch Christmas Parade' and 'ANZAC Day 2016' (site nav)",
+   "contact emails hidden behind Cloudflare obfuscation, decoded from page source"
+  ],
+  "contact_email": "newbrightonsilverband@gmail.com",
+  "contact_phone": "+64 027 223 1744 (Ruth Stamler, Secretary)",
+  "source_urls": [
+   "http://www.newbrightonsilverband.org.nz/",
+   "http://www.newbrightonsilverband.org.nz/contacts",
+   "https://www.brassbanz.org/page/find-a-band/"
+  ],
+  "distinctive": "founded 1890, 'community focused band styled in typical British Brass Band tradition'; site celebrates member Geoff Butler's 75 years in brass bands (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Cowan Railroad Museum, Inc.",
+  "trade": "volunteer railroad museum",
+  "town": "Cowan",
+  "region": "Tennessee",
+  "country": "USA",
+  "website": "https://www.cowanrailroadmuseum.org/",
+  "evidence": [
+   "legacy Weebly builder site (editmysite.com assets, 'old/fancybox.css') observed in source (curl)",
+   "no <meta name=viewport> — not mobile-friendly; 5 <font> tags",
+   "email only present behind Cloudflare email-protection encoding, decoded from source"
+  ],
+  "contact_email": "visitcowan@gmail.com",
+  "contact_phone": "(931) 967-3078",
+  "source_urls": [
+   "https://www.cowanrailroadmuseum.org/"
+  ],
+  "distinctive": "housed in the Cowan Depot (National Register of Historic Places) beside an active freight mainline, with a live YouTube webcam and model railroad (homepage text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Grand Harbour Hotel",
+  "trade": "small family harbour-view hotel",
+  "town": "Valletta",
+  "region": "Malta",
+  "country": "Malta",
+  "website": "http://www.grandharbourhotel.com/en_US/",
+  "evidence": [
+   "curl -sL to https lands on plain-http final URL http://www.grandharbourhotel.com/en_US/; a second curl confirmed https:// answers 302 redirecting down to http",
+   "grep of saved homepage HTML: zero <meta name=\"viewport\"> matches (not mobile-friendly)",
+   "footer copyright in fetched HTML reads '© 2013' (13 years stale)",
+   "generator meta shows WordPress core 7.1 but the 2013-era theme/footer was never touched"
+  ],
+  "contact_email": "info@grandharbourhotel.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.grandharbourhotel.com/en_US/",
+   "https://www.grandharbourhotel.com/"
+  ],
+  "distinctive": "Homepage title tagline: 'The best view in the city!' — budget rooms overlooking Valletta's Grand Harbour",
+  "confidence": "high"
+ },
+ {
+  "name": "Olympic Bike",
+  "trade": "bicycle tours and rental",
+  "town": "Rethymno",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "http://olympicbike.com/",
+  "evidence": [
+   "curl of homepage and contact page: zero viewport meta on either page (not mobile-friendly)",
+   "requested over http, no redirect to https (final URL stayed http)",
+   "footer in fetched HTML: '© 2000-2026: OLYMPIC BIKE – Nikeas 48, GR-74100 Rethymnon' — 2000-era hand-built design still live",
+   "email only present as HTML-entity-obfuscated mailto on contact page (decoded)"
+  ],
+  "contact_email": "bikerental@kretabike.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://olympicbike.com/",
+   "http://olympicbike.com/en/information/contact.html",
+   "https://www.west-crete.com/crete-links.htm"
+  ],
+  "distinctive": "Site title 'Olympic Bike - Explore Crete by bicycle'; shop at Nikeas 48, Rethymnon",
+  "confidence": "high"
+ },
+ {
+  "name": "Brigolante Guest Apartments",
+  "trade": "self-catering farm apartments",
+  "town": "Assisi",
+  "region": "Umbria",
+  "country": "Italy",
+  "website": "http://www.brigolante.com/en/index",
+  "evidence": [
+   "curl -I https fails entirely (000, TLS handshake) — site is HTTP-only in 2026; http:// pages load fine",
+   "meta copyright '(C) Copyright Capri On Line S.r.l.' and footer '© 2015 Caprionline' observed in fetched HTML",
+   "runs obscure legacy Italian 'Salsa' CMS (generator meta 'Salsa', salsa_call.php endpoints)",
+   "English version confirmed at /en/index ('self-catering apartments in Assisi's town center and countryside')"
+  ],
+  "contact_email": "info@brigolante.com",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.brigolante.com/",
+   "http://www.brigolante.com/en/index"
+  ],
+  "distinctive": "Tagline on English homepage: 'City of peace, land of serenity' — apartments split between Assisi's town centre and its countryside",
+  "confidence": "high"
+ },
+ {
+  "name": "Maison de Mags and Mags",
+  "trade": "bed and breakfast",
+  "town": "Lanouaille",
+  "region": "Dordogne",
+  "country": "France",
+  "website": "https://www.maisondemagsandmags.com/",
+  "evidence": [
+   "generator meta in fetched HTML: 'MyWebsite NOW' (IONOS budget site-builder) plus IONOS asset strings",
+   "footer reads '©Copyright. All rights reserved.' with no year filled in — template default left in place",
+   "English-only title; no phone number found anywhere in homepage HTML"
+  ],
+  "contact_email": "enquiries@maisondemagsandmags.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://www.maisondemagsandmags.com/",
+   "https://gitelink.com/bandb-in-france/dordogne-west-france-bandbs"
+  ],
+  "distinctive": "Named guest rooms observed in nav: The Undine, Venus, Marie Antoinette, Willow and Attic Rooms, plus 'The Outside Kitchen' and dine-at-home picnic menus",
+  "confidence": "high"
+ },
+ {
+  "name": "Divina Cucina",
+  "trade": "cookery classes and culinary tours",
+  "town": "Florence",
+  "region": "Tuscany",
+  "country": "Italy",
+  "website": "https://divinacucina.com/",
+  "evidence": [
+   "footer '© Copyright 2023 Simply Divina, Inc.' observed in fetches of both homepage and /contact/ (3 years stale)",
+   "homepage <title> is broken: it begins with a bare pipe — '| Divina Cucina' (empty SEO title field)",
+   "site blocks default curl UA with 406 but serves browser UA — misconfigured server rules",
+   "2015-era Genesis/Foodie Pro WordPress theme visible in asset paths"
+  ],
+  "contact_email": "hello@divinacucina.com",
+  "contact_phone": null,
+  "source_urls": [
+   "https://divinacucina.com/",
+   "https://divinacucina.com/contact/"
+  ],
+  "distinctive": "Homepage text: cooking classes and culinary vacations 'since 1988', based in her space in front of Florence's Mercato Centrale",
+  "confidence": "high"
+ },
+ {
+  "name": "Artemis Studios",
+  "trade": "guesthouse / studios",
+  "town": "Agia Roumeli (Sfakia)",
+  "region": "Crete",
+  "country": "Greece",
+  "website": "https://www.agiaroumeli.com/",
+  "evidence": [
+   "footer in fetched HTML: 'All content © 2001-2024' (stale)",
+   "hand-built .htm site using Ajatix menu-builder assets and a stylesheet literally named '2023.css'",
+   "contact page is plain text with seasonal phone lists and a mailto — no form, no booking engine on-site",
+   "English is the primary language with ger/swe/gr subfolder versions"
+  ],
+  "contact_email": "artemis@agiaroumeli.com",
+  "contact_phone": "+30 28250 91377",
+  "source_urls": [
+   "https://www.agiaroumeli.com/",
+   "https://www.agiaroumeli.com/contact.htm"
+  ],
+  "distinctive": "Homepage: the village has no road — reachable only on foot or by boat, at the exit of the Samaria Gorge; displays Greek tourism licence MHTE 1042K123K2523101",
+  "confidence": "high"
+ },
+ {
+  "name": "Erica's Seafood",
+  "trade": "seafood shack / lobster takeout",
+  "town": "Harpswell (Basin Point)",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://www.ericasseafood.com/",
+  "evidence": [
+   "curl audit of homepage: no <meta name=viewport> tag — not mobile-friendly",
+   "legacy Weebly build observed in HTML with <font> tags",
+   "meta description still announces 'last day of the season to be Monday October 14, 2024' when fetched in Aug 2026 — content ~2 years stale",
+   "TripAdvisor Certificate of Excellence 2014 badge image still embedded in page",
+   "contact email is an AOL address, decoded from Cloudflare-obfuscated data-cfemail in the fetched HTML"
+  ],
+  "contact_email": "hntandr2@aol.com",
+  "contact_phone": "(207) 833-7354",
+  "source_urls": [
+   "https://www.ericasseafood.com/",
+   "https://newenglandwithlove.com/lobster-pounds-in-maine/"
+  ],
+  "distinctive": "takeout on a working lobster wharf at Basin Point, Harpswell, 'overlooking Casco Bay' with live lobster sales (from site's own text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Fredo Pies & Cafe",
+  "trade": "country pie shop / cafe",
+  "town": "Frederickton",
+  "region": "New South Wales (Macleay Valley)",
+  "country": "Australia",
+  "website": "https://fredopies.com.au/",
+  "evidence": [
+   "curl audit: meta generator 'Joomla! - Open Source Content Management' — legacy CMS",
+   "footer '© Copyright 2018' observed in fetched HTML — eight years stale",
+   "page <title> is just 'Home' — no business name or SEO",
+   "full contact block observed on page: 73 Macleay Street Frederickton NSW 2440"
+  ],
+  "contact_email": "info@fredopies.com.au",
+  "contact_phone": "02 6566 8567",
+  "source_urls": [
+   "https://fredopies.com.au/"
+  ],
+  "distinctive": "classic drive-through-town pie stop at 73 Macleay Street, open 7 days from 6:15am (from site's own contact block)",
+  "confidence": "high"
+ },
+ {
+  "name": "Harraseeket Lunch & Lobster Company",
+  "trade": "lunch counter and lobster pound",
+  "town": "South Freeport",
+  "region": "Maine",
+  "country": "USA",
+  "website": "https://www.harraseeketlunchandlobster.com/",
+  "evidence": [
+   "curl audit: no <meta name=viewport> tag — not mobile-friendly",
+   "hand-coded table-based layout (<table> markup, no CMS generator) in a 19KB page, observed in fetched HTML",
+   "site text says 'since 1970' and title describes 'Lunch counter and lobster pound | South Freeport Maine Harbor'",
+   "email and both phone lines observed directly in fetched HTML"
+  ],
+  "contact_email": "info@harraseeketlunchandlobster.com",
+  "contact_phone": "(207) 865-3535",
+  "source_urls": [
+   "https://www.harraseeketlunchandlobster.com/"
+  ],
+  "distinctive": "lunch counter and lobster pound on the South Freeport harbor waterfront since 1970 (site's own title and text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Jimmy's Pies",
+  "trade": "pie bakery",
+  "town": "Roxburgh",
+  "region": "Central Otago",
+  "country": "New Zealand",
+  "website": "https://jimmyspies.co.nz/",
+  "evidence": [
+   "curl audit: meta generator 'Mobirise v4.8.6' — free 2018-era drag-and-drop builder",
+   "entire homepage is 4KB with <title> just 'Home'",
+   "site's own text: pies 'from Roxburgh are famous throughout the lower South Island'",
+   "contact email is a Gmail address, observed in fetched HTML"
+  ],
+  "contact_email": "jimmyspies.office@gmail.com",
+  "contact_phone": "03 446 9012",
+  "source_urls": [
+   "https://jimmyspies.co.nz/"
+  ],
+  "distinctive": "Roxburgh pie institution 'famous throughout the lower South Island' (site's own words)",
+  "confidence": "high"
+ },
+ {
+  "name": "Karikaas Natural Dairy Products",
+  "trade": "Dutch-style farmhouse cheesemaker and shop",
+  "town": "Loburn",
+  "region": "North Canterbury",
+  "country": "New Zealand",
+  "website": "https://www.karikaas.co.nz/",
+  "evidence": [
+   "footer '© Copyright 2014 Karikaas Natural Dairy Products Limited' observed in fetched HTML — twelve years stale",
+   "legacy <font> tags in markup, observed in curl audit",
+   "two contact emails and phone observed in fetched HTML"
+  ],
+  "contact_email": "info@karikaas.co.nz",
+  "contact_phone": "03 312 8708",
+  "source_urls": [
+   "https://www.karikaas.co.nz/"
+  ],
+  "distinctive": "Dutch cheese made in Loburn 'because the water was so clean' — founding story quoted on the site itself",
+  "confidence": "high"
+ },
+ {
+  "name": "Bilpin Fruit Bowl",
+  "trade": "orchard farm gate / pick-your-own fruit and pies",
+  "town": "Bilpin",
+  "region": "New South Wales (Blue Mountains)",
+  "country": "Australia",
+  "website": "https://bilpinfruitbowl.com.au/",
+  "evidence": [
+   "footer '© 2019 Bilpin Fruit Bowl. All Rights Reserved.' observed in fetched HTML — seven years stale",
+   "homepage <title> is template boilerplate: 'Bilpin Fruit Bowl | Fresh Food Makes your life Healthy and Well'",
+   "site mixes three page builders (Elementor + WPBakery + BeTheme) per generator metas in curl audit",
+   "contact page fetch shows ISP email fruit275@tpg.com.au",
+   "site text: 'Bilpin NSW. Family owned since 1985... open 7 days'"
+  ],
+  "contact_email": "fruit275@tpg.com.au",
+  "contact_phone": "02 4567 1152",
+  "source_urls": [
+   "https://bilpinfruitbowl.com.au/",
+   "https://bilpinfruitbowl.com.au/contact/"
+  ],
+  "distinctive": "family-owned since 1985 with pick-your-own orchard blocks in Bilpin apple country (site's own description)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Apple Farm",
+  "trade": "fruit farm shop, juice maker and campsite",
+  "town": "Cahir",
+  "region": "County Tipperary",
+  "country": "Ireland",
+  "website": "https://theapplefarm.com/",
+  "evidence": [
+   "curl audit: homepage is a 5.5KB hand-coded DIY page that loads its navigation via a copy-pasted w3schools 'w3-include-html' XMLHttpRequest hack — content invisible to non-JS crawlers",
+   "no CMS; bare Bootstrap-from-CDN page with inline styles, observed in fetched source",
+   "contact.html fetch shows con@theapplefarm.com",
+   "meta description: grows apples, strawberries, raspberries, plums, cherries, pears; campsite open May to September"
+  ],
+  "contact_email": "con@theapplefarm.com",
+  "contact_phone": "+353 52 7441459",
+  "source_urls": [
+   "https://theapplefarm.com/",
+   "https://theapplefarm.com/contact.html"
+  ],
+  "distinctive": "farm shop on the apple farm with its own pressed apple juice and a summer campsite among the orchards (site's own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Herb Acupuncture Clinic (Dr. Yong Ming Li)",
+  "trade": "acupuncturist",
+  "town": "Bridgewater",
+  "region": "New Jersey",
+  "country": "USA",
+  "website": "https://www.herbacupuncture.com/",
+  "evidence": [
+   "meta generator 'Yahoo! SiteBuilder/2.6/1.6.0_07' in curl-fetched HTML — builder discontinued ~2010s",
+   "footer 'Copyright © 2005-2015' on homepage HTML fetched by curl — 11 years stale",
+   "no <meta name=viewport> in fetched HTML — not mobile-friendly",
+   "interior page is a 4KB photo+phone-number card with no viewport, seen in curl fetch"
+  ],
+  "contact_email": "tcmaa2004@yahoo.com",
+  "contact_phone": "(908) 619-0601",
+  "source_urls": [
+   "https://www.herbacupuncture.com/",
+   "https://www.herbacupuncture.com/HerbAcupunctureClinic.html"
+  ],
+  "distinctive": "Solo practice of Dr. Yong Ming Li MD PhD LAc — a board-certified pathologist & dermatopathologist practicing 'authentic acupuncture & Chinese herbs'; site is bilingual English/Chinese (针药坊)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Physical Therapy Centers of Osterville and Bourne",
+  "trade": "physical therapist",
+  "town": "Osterville & Bourne (Cape Cod)",
+  "region": "Massachusetts",
+  "country": "USA",
+  "website": "http://www.physical-therapy-centers.com/",
+  "evidence": [
+   "HTTPS connection fails entirely (curl to https:// returned status 000) — site is HTTP-only with no SSL",
+   "no <meta name=viewport> in curl-fetched HTML — not mobile-friendly",
+   "entire homepage is 6KB of 1990s-style static HTML (curl-measured)"
+  ],
+  "contact_email": "info@physical-therapy-centers.com",
+  "contact_phone": "508-428-0300",
+  "source_urls": [
+   "http://www.physical-therapy-centers.com/"
+  ],
+  "distinctive": "Homepage says the Osterville centre 'opened in 1985 as a private rehabilitation facility specializing in hands-on manual therapy' and quotes a patient: 'When I saw two local doctors having treatment at your office, I knew this was the right place!'",
+  "confidence": "high"
+ },
+ {
+  "name": "Smolczynski Physical Therapy",
+  "trade": "physical therapist",
+  "town": "Allentown (Lehigh Valley)",
+  "region": "Pennsylvania",
+  "country": "USA",
+  "website": "https://experiencedphysicaltherapy.com/",
+  "evidence": [
+   "table-based page layout ('table width=' markup) in curl-fetched homepage HTML",
+   "no <meta name=viewport> in fetched HTML — not mobile-friendly",
+   "16KB static-HTML site found via Marginalia's old-HTML index"
+  ],
+  "contact_email": "info@experiencedphysicaltherapy.com",
+  "contact_phone": "(610) 432-7733",
+  "source_urls": [
+   "https://experiencedphysicaltherapy.com/"
+  ],
+  "distinctive": "Family-run clinic whose service menu includes EMG testing and, unusually, canine rehabilitation alongside human physical therapy",
+  "confidence": "high"
+ },
+ {
+  "name": "Balclutha Physiotherapy (Sharon McKinnel)",
+  "trade": "physiotherapist",
+  "town": "Balclutha",
+  "region": "Otago",
+  "country": "New Zealand",
+  "website": "https://balcluthaphysiotherapy.co.nz/",
+  "evidence": [
+   "entire site is one page containing only name, phone, address and a contact form — no services, staff or hours content (full text extracted from curl fetch)",
+   "footer byline 'Made with dazzly' (DIY micro-builder) in fetched HTML",
+   "contact email is legacy NZ ISP address, shown on page",
+   "practice's SEPNZ directory record lists no website"
+  ],
+  "contact_email": "balpt@actrix.co.nz",
+  "contact_phone": "03 418 0005",
+  "source_urls": [
+   "https://balcluthaphysiotherapy.co.nz/",
+   "https://sportsphysiotherapy.org.nz/find-a-sports-and-exercise-physiotherapist/otago-southland-region/"
+  ],
+  "distinctive": "Small-town clinic at 61 Clyde Street, Balclutha; principal Sharon McKinnel is listed in the Sports & Exercise Physiotherapy NZ (SEPNZ) Otago/Southland register",
+  "confidence": "high"
+ },
+ {
+  "name": "Pinhook Chiropractic Clinic (Dr. Brad Grizzaffi)",
+  "trade": "chiropractor",
+  "town": "Lafayette",
+  "region": "Louisiana",
+  "country": "USA",
+  "website": "https://www.pinhookchiropractic.com/",
+  "evidence": [
+   "no <meta name=viewport> in curl-fetched homepage HTML — not mobile-friendly",
+   "legacy flat .html page structure with jquery-migrate shim, seen in fetched HTML",
+   "address & email only present in meta description of contact page, not rendered contact block (curl fetch)"
+  ],
+  "contact_email": "info@pinhookchiropractic.com",
+  "contact_phone": "337-237-2273",
+  "source_urls": [
+   "https://www.pinhookchiropractic.com/",
+   "https://www.pinhookchiropractic.com/page/contact.html"
+  ],
+  "distinctive": "'Home of VAX-D Therapy' — homepage stresses it is locally owned by Dr. Brad Grizzaffi; address 100 LaRue France, Lafayette LA 70508",
+  "confidence": "high"
+ },
+ {
+  "name": "Nevins Newfield Inn",
+  "trade": "pub & restaurant",
+  "town": "Mulranny (Westport area)",
+  "region": "Mayo",
+  "country": "Ireland",
+  "website": "https://www.nevinsinn.com/",
+  "evidence": [
+   "meta generator 'WordPress 5.2.21' - unsupported 2019-era core (curl)",
+   "meta generators 'WooCommerce 3.8.3' and 'Slider Revolution 6.0.8', both 2019-era (curl)",
+   "footer '© 2024 Nevins Newfield Inn' (curl)",
+   "legacy Flash-player references in page scripts (curl)"
+  ],
+  "contact_email": "info@nevinsinn.com",
+  "contact_phone": "(098) 36959",
+  "source_urls": [
+   "https://www.nevinsinn.com/",
+   "https://www.goldenpages.ie/pubs/westport-mayo-county/"
+  ],
+  "distinctive": "title tag touts its 'homely Lounge' serving 'reasonably priced, high standard, fresh, local, homemade bar food' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "2 Mile Lodge",
+  "trade": "B&B",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://www.2milelodge.com/",
+  "evidence": [
+   "no viewport meta - not mobile-optimised (curl)",
+   "table-based layout marker 'table width=' in HTML (curl)",
+   "entire homepage is a ~4.9KB static page with 1990s-style nav including a Guestbook page (curl)"
+  ],
+  "contact_email": "info@2milelodge.com",
+  "contact_phone": "00353 64 6642430",
+  "source_urls": [
+   "https://www.2milelodge.com/",
+   "https://www.kenmare.ie/accommodation"
+  ],
+  "distinctive": "architect-designed B&B on the Killarney Road; page displays a Booking.com 9.7/10 score (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Lissyclearig Thatched Cottage B&B",
+  "trade": "B&B",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://lissyclearigthatchedcottage.com/",
+  "evidence": [
+   "https connection fails - site reachable over plain http only (curl 000)",
+   "meta generator 'WordPress 5.2.15' - unsupported 2019-era core (curl)",
+   "email only found on /contact/ page, not surfaced on homepage (curl)"
+  ],
+  "contact_email": "lissyclearigthatchedcottage@gmail.com",
+  "contact_phone": "064 664 2562",
+  "source_urls": [
+   "http://lissyclearigthatchedcottage.com/",
+   "https://www.kenmare.ie/accommodation"
+  ],
+  "distinctive": "genuine thatched-cottage B&B; tagline 'old world charm combines with modern comforts' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Ashe's B&B (Ashes Townhouse)",
+  "trade": "B&B / townhouse accommodation",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://ashesdingle.com/",
+  "evidence": [
+   "https connection fails - http-only site (curl 000)",
+   "built on dated The7 WordPress theme - 'the7_shortcode' markup visible in page (curl)"
+  ],
+  "contact_email": "ashes@ashesdingle.com",
+  "contact_phone": "+353 66 9151197",
+  "source_urls": [
+   "http://ashesdingle.com/",
+   "https://www.dingle-peninsula.ie/stay-accommodation-on-the-dingle-peninsula/bed-and-breakfast/item/ashe-s-bed-breakfast-dingle.html"
+  ],
+  "distinctive": "townhouse 'a two-minute walk from the main street' of Dingle per its own copy (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "James Long Bar & Restaurant",
+  "trade": "pub & seafood restaurant",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://jameslongdingle.com/",
+  "evidence": [
+   "meta generator 'Powered by Slider Revolution 5.4.8.3' - 2018-era plugin version (curl)",
+   "legacy Flash-player references in page scripts (curl)",
+   "heavy legacy WPBakery page-builder stack (generator meta, curl)"
+  ],
+  "contact_email": "info@jameslongdingle.com",
+  "contact_phone": "(066) 9152823",
+  "source_urls": [
+   "https://jameslongdingle.com/",
+   "https://www.goldenpages.ie/pubs/dingle-kerry-county/"
+  ],
+  "distinctive": "seafood-led bar and restaurant at 44 Strand Street facing Dingle Bay - title tag: 'Seafood | Dingle Bay | Bar Food' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Lily Finnegans",
+  "trade": "traditional pub",
+  "town": "Whitestown, Carlingford",
+  "region": "Louth",
+  "country": "Ireland",
+  "website": "https://www.lilyfinnegans.com/",
+  "evidence": [
+   "no viewport meta - not mobile-friendly (curl)",
+   "legacy Google Translate dropdown widget rendered in header (curl)",
+   "small old-style static page, ~30KB, no CMS generator (curl)"
+  ],
+  "contact_email": "info@lilyfinnegans.com",
+  "contact_phone": "042 9373730",
+  "source_urls": [
+   "https://www.lilyfinnegans.com/",
+   "https://carlingford.ie/bars/"
+  ],
+  "distinctive": "country pub at Whitestown on the Cooley Peninsula outside Carlingford - site title 'Traditional Irish Pub, Whitestown, Carlingford' (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Brosnan's Bed & Breakfast",
+  "trade": "B&B",
+  "town": "Dingle",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "http://www.dinglebrosnansaccommodation.com/",
+  "evidence": [
+   "no viewport meta - not mobile-friendly (curl)",
+   "entire homepage is a ~5KB hand-built static page, no CMS (curl)",
+   "no https redirect - default serves plain http (curl)"
+  ],
+  "contact_email": "info@dinglebrosnansaccommodation.com",
+  "contact_phone": "+353 87 6719240",
+  "source_urls": [
+   "http://www.dinglebrosnansaccommodation.com/",
+   "https://www.dingle-peninsula.ie/stay-accommodation-on-the-dingle-peninsula/bed-and-breakfast/item/brosnan-s-bed-breakfast-dingle.html"
+  ],
+  "distinctive": "homepage says 'Call Melanie for a booking enquiry' - personally run family B&B (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "The Bay Tree Restaurant & Guesthouse",
+  "trade": "restaurant & guesthouse",
+  "town": "Carlingford",
+  "region": "Louth",
+  "country": "Ireland",
+  "website": "http://www.baytree.ie/",
+  "evidence": [
+   "https connection fails - site served over plain http only, shows 'Not secure' in browsers (curl 000)",
+   "no phone number in page HTML - contact via form only (curl)"
+  ],
+  "contact_email": "info@baytree.ie",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.baytree.ie/",
+   "https://carlingford.ie/bbs/"
+  ],
+  "distinctive": "restaurant-with-rooms combination in Carlingford village (site title, curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Davitt's Kenmare",
+  "trade": "bar-restaurant & guesthouse",
+  "town": "Kenmare",
+  "region": "Kerry",
+  "country": "Ireland",
+  "website": "https://davittskenmare.com/",
+  "evidence": [
+   "meta generator 'Go Daddy Website Builder 8.0.0000' - discontinued legacy builder (curl)",
+   "template debris visible in page: 'Signed in as: filler@godaddy.com' (curl)",
+   "font-license boilerplate from 2010/2012 shipped inline in page CSS (curl)"
+  ],
+  "contact_email": "info@davittskenmare.com",
+  "contact_phone": "+353 64 6642741",
+  "source_urls": [
+   "https://davittskenmare.com/",
+   "https://www.kenmare.ie/eat-drink"
+  ],
+  "distinctive": "bar-restaurant that also sells guesthouse rooms and self-catering homes from the same site nav (curl)",
+  "confidence": "high"
+ },
+ {
+  "name": "Highland Shoe & Watch Repair",
+  "trade": "shoe & watch repair",
+  "town": "New Glasgow",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.highlandshoerepair.ca/index.html",
+  "evidence": [
+   "'Copyright 1999-2019' observed in fetched homepage HTML (curl 2026-08-22)",
+   "no <meta name=\"viewport\"> tag in HTML — not mobile-responsive",
+   "homepage still served at bare /index.html path listed in OSM",
+   "email observed in page HTML; services text 'shoe repair, watch repair, key cutting, sharpening' observed"
+  ],
+  "contact_email": "support@highlandshoerepair.ca",
+  "contact_phone": "+1 902-752-2426",
+  "source_urls": [
+   "https://www.highlandshoerepair.ca/index.html",
+   "https://www.openstreetmap.org/node/12413858465"
+  ],
+  "distinctive": "One counter covers shoe repair, watch repair, key cutting and blade sharpening (site services text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Refreshing Paws",
+  "trade": "dog grooming & daycare",
+  "town": "Gorham",
+  "region": "Maine",
+  "country": "USA",
+  "website": "http://www.refreshingpawsmaine.com/",
+  "evidence": [
+   "footer 'Copyright 2009 Refreshing Paws. All rights reserved.' observed in fetched HTML (curl 2026-08-22)",
+   "meta generator 'Site Solution - lunarlander' (legacy Yahoo small-business builder) observed",
+   "no <meta name=\"viewport\"> tag — not mobile-responsive",
+   "email observed on /contact_us page HTML"
+  ],
+  "contact_email": "kathywood@refreshingpawsmaine.com",
+  "contact_phone": "+1 207-839-5547",
+  "source_urls": [
+   "http://www.refreshingpawsmaine.com/",
+   "http://www.refreshingpawsmaine.com/contact_us",
+   "https://www.openstreetmap.org/node/7157246511"
+  ],
+  "distinctive": "Owner Kathy Wood's personal named address is the contact point on the 2009-era site",
+  "confidence": "high"
+ },
+ {
+  "name": "Doyle Driving School",
+  "trade": "driving school",
+  "town": "Carrigaline",
+  "region": "County Cork",
+  "country": "Ireland",
+  "website": "http://www.doyledrivingschool.ie",
+  "evidence": [
+   "served over plain http with no redirect to https (curl 2026-08-22)",
+   "loads jQuery 1.11.1 (2014) and bower_components with template 'SuperFlat_v2' — mid-2010s stack observed in HTML",
+   "meta description typo 'ADI Qulaified' observed in HTML",
+   "email observed as mailto link in HTML (legacy Eircom address)"
+  ],
+  "contact_email": "cronand@eircom.net",
+  "contact_phone": "+353 87 797 6825",
+  "source_urls": [
+   "http://www.doyledrivingschool.ie",
+   "https://www.openstreetmap.org/node/9626036163"
+  ],
+  "distinctive": "Meta description lists ADI qualification, EDT lessons and Eircode P43 R858 — with a 'Qulaified' typo waiting to be fixed",
+  "confidence": "high"
+ },
+ {
+  "name": "TransFURmations",
+  "trade": "dog grooming",
+  "town": "Palmerston North",
+  "region": "Manawatū-Whanganui",
+  "country": "New Zealand",
+  "website": "https://www.transfurmations.co.nz/",
+  "evidence": [
+   "built on DotNetNuke (DNN) legacy ASP.NET CMS — 200+ DNN references, __VIEWSTATE and Telerik assets observed in HTML (curl 2026-08-22)",
+   "'Copyright 2017' and 'Copyright 2015' strings observed in page HTML",
+   "completely empty <title></title> tag observed",
+   "email and tel observed in page HTML"
+  ],
+  "contact_email": "info@thepetcarecompany.co.nz",
+  "contact_phone": "+64 6 355 0609",
+  "source_urls": [
+   "https://www.transfurmations.co.nz/",
+   "https://www.openstreetmap.org/node/13473064950"
+  ],
+  "distinctive": "Calls itself 'Palmerston North's One Stop Dog Shop' (page text)",
+  "confidence": "high"
+ },
+ {
+  "name": "BMT Plumbing",
+  "trade": "plumber",
+  "town": "Martinborough",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://bmtplumbing.co.nz",
+  "evidence": [
+   "curl of bmtplumbing.co.nz returns a hosting placeholder: title 'Future website of bmtplumbing.co.nz' with '© 1997 - 2021' — no real site has ever been built",
+   "Martinborough Wine Village directory listing (fetched) shows phone, mobile and mailto, address Dyerville, Martinborough"
+  ],
+  "contact_email": "Mark@bmtplumbing.co.nz",
+  "contact_phone": "06 306 9008",
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/bmt-plumbing/",
+   "http://bmtplumbing.co.nz"
+  ],
+  "distinctive": "Listing leads with 'Hot Water Cylinder Specialists — Guaranteed Quality Service, Emergency Work'",
+  "confidence": "high"
+ },
+ {
+  "name": "Ann's Abodes",
+  "trade": "self-contained holiday homes / B&B-style accommodation",
+  "town": "Martinborough district (Cape Palliser coast)",
+  "region": "Wairarapa",
+  "country": "New Zealand",
+  "website": "http://www.annsabodes.co.nz",
+  "evidence": [
+   "www.annsabodes.co.nz returns HTTP 200 with a zero-byte body on both http and https (curl, two attempts) — visitors get a blank page",
+   "Martinborough Wine Village 'Stay Local' listing (fetched) carries the full property description and contact",
+   "Owner email is a legacy xtra.co.nz address — observed in listing HTML"
+  ],
+  "contact_email": "n-a.gray@xtra.co.nz",
+  "contact_phone": "06 307 7728",
+  "source_urls": [
+   "https://martinboroughwinevillage.nz/business-directory/anns-abodes/",
+   "http://www.annsabodes.co.nz"
+  ],
+  "distinctive": "Two elevated houses whose coastal views reach the snow-capped Kaikōura peaks; near Cape Palliser lighthouse and Ngawi fishing village",
+  "confidence": "high"
+ },
+ {
+  "name": "Bonz 'n' Stonz",
+  "trade": "jade/bone carving studio and gallery (carve-your-own workshops)",
+  "town": "Hokitika",
+  "region": "West Coast",
+  "country": "New Zealand",
+  "website": "https://www.bonz-n-stonz.co.nz/",
+  "evidence": [
+   "Homepage HTML exposes meta generator 'WordPress 5.8.3' — a December 2021 release, years out of date — observed via curl",
+   "Footer reads 'Copyright © 2021 Bonz N Stonz' in fetched HTML",
+   "A 'BOXING DAY SALE! ... ends midnight Saturday 26 December' banner is still live in August 2026 — observed in homepage text",
+   "/contact/ page is a separate old HTML 4.01 Transitional static page; its Cloudflare-obfuscated email decodes to a legacy ISP address"
+  ],
+  "contact_email": "gwaliasi4@clear.net.nz",
+  "contact_phone": "+64 3 755 6504",
+  "source_urls": [
+   "https://www.bonz-n-stonz.co.nz/",
+   "https://www.bonz-n-stonz.co.nz/contact/"
+  ],
+  "distinctive": "Carve-your-own pounamu/bone/shell workshops at 16 Hamilton Street, directly opposite the Hokitika i-SITE",
+  "confidence": "high"
+ },
+ {
+  "name": "Raglan Sunset Motel",
+  "trade": "motel",
+  "town": "Raglan",
+  "region": "Waikato",
+  "country": "New Zealand",
+  "website": "https://www.raglansunsetmotel.co.nz/",
+  "evidence": [
+   "Footer reads 'Copyright © 2021 Raglan Sunset Motel' — observed in fetched homepage HTML, five years stale",
+   "Site exposes three meta generator tags (WordPress, Elementor, AIOSEO) in page source — observed via curl",
+   "Linked from the Raglan i-HUB accommodation directory as a plain http:// URL",
+   "Booking email and phone visible in homepage HTML"
+  ],
+  "contact_email": "book@raglansunsetmotel.co.nz",
+  "contact_phone": "07 825 0050",
+  "source_urls": [
+   "https://raglan.net.nz/accommodation/",
+   "https://www.raglansunsetmotel.co.nz/"
+  ],
+  "distinctive": "Rooms carry te reo names — Tui Suite and Tahi Executive Suite — and the site has 'Local's Guide' and 'Coastal Roaming' sections",
+  "confidence": "high"
+ },
+ {
+  "name": "Kit Macgregor — The Loft Studio & Gallery",
+  "trade": "artist studio / gallery",
+  "town": "Oamaru",
+  "region": "Waitaki, North Otago",
+  "country": "New Zealand",
+  "website": "http://www.kitmacgregor.com",
+  "evidence": [
+   "Homepage has no viewport meta tag (not mobile-friendly) and uses a Dreamweaver-era three-column template with IE5/IE conditional CSS comments — observed in fetched HTML",
+   "Newest item in the News column is an exhibition dated 27 Aug – 29 Sep 2015 — site content is a decade old",
+   "Served over plain http; page shows mobile number and email",
+   "Listed on the vintage waitaki.net.nz arts directory for Oamaru — fetched that page"
+  ],
+  "contact_email": "mail@kitmacgregor.com",
+  "contact_phone": "027 645 6677",
+  "source_urls": [
+   "http://www.waitaki.net.nz/arts/index.htm",
+   "http://www.kitmacgregor.com"
+  ],
+  "distinctive": "Studio is The Loft at 8 Harbour Street in Oamaru's historic precinct, above the Harbour Street Collective Cafe; paints peat-dark Highland rivers ('Black Water & Other Stories')",
+  "confidence": "high"
+ },
+ {
+  "name": "Micks Chimney Sweeping",
+  "trade": "Chimney sweep",
+  "town": "Fethard",
+  "region": "County Tipperary",
+  "country": "Ireland",
+  "website": "NONE",
+  "evidence": [
+   "Golden Pages profile (fetched via WebFetch): no website field at all — only phone and a Gmail address",
+   "Golden Pages Tipperary chimney-cleaning search (fetched): listed with no website, like most sweeps in the county"
+  ],
+  "contact_email": "mickschimneysweeping@gmail.com",
+  "contact_phone": "(086) 850 5655",
+  "source_urls": [
+   "https://www.goldenpages.ie/micks-chimney-sweeping-fethard/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Tipperary/what/Chimney+Cleaning/"
+  ],
+  "distinctive": "Golden Pages address is Burke Street, Fethard — a named-street sole trader in a small Tipperary town, reachable only by phone or Gmail",
+  "confidence": "high"
+ },
+ {
+  "name": "MacLean Renovations and Roofing",
+  "trade": "Roofer / renovations",
+  "town": "York",
+  "region": "Prince Edward Island",
+  "country": "Canada",
+  "website": "https://www.macleanroofing.com/",
+  "evidence": [
+   "curl audit: entire homepage is 17.9KB, roughly 390 words and 9 images — a minimal hand-built Bootstrap one-pager with no CMS",
+   "Contact email published in the site HTML is a personal Hotmail address (observed via curl)",
+   "BBB profile (fetched): owner/operator Jeff MacLean, founded 2014, A+ accredited"
+  ],
+  "contact_email": "jtmaclean_74@hotmail.com",
+  "contact_phone": "(902) 370-3550",
+  "source_urls": [
+   "https://www.bbb.org/ca/pe/york/profile/roofing-contractors/maclean-renovations-and-roofing-0087-32903",
+   "https://www.macleanroofing.com/"
+  ],
+  "distinctive": "Title tag reads 'Maclean Renovations & Roofing Inc. - Serving all of PEI' (observed via curl) — island-wide pitch on an 18KB page",
+  "confidence": "high"
+ },
+ {
+  "name": "David King Painting",
+  "trade": "Painter and decorator",
+  "town": "Carracastle (near Ballaghaderreen)",
+  "region": "County Mayo",
+  "country": "Ireland",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Golden Pages profile (fetched): the website field is facebook.com/davidkingpainting — Facebook is the only web presence",
+   "Same profile lists Gmail address and mobile (fetched)"
+  ],
+  "contact_email": "davidkingpainting@gmail.com",
+  "contact_phone": "(087) 986 1813",
+  "source_urls": [
+   "https://www.goldenpages.ie/david-king-painting-ballaghaderreen/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Roscommon/what/Painters+%26+Decorators/"
+  ],
+  "distinctive": "Golden Pages description: 'Interior and Exterior Painter. Interior design advice.' — offers design advice, a natural hook for a design-led site",
+  "confidence": "high"
+ },
+ {
+  "name": "RLN Painting and Decorating",
+  "trade": "Painter and decorator",
+  "town": "Castlerea",
+  "region": "County Roscommon",
+  "country": "Ireland",
+  "website": "NONE",
+  "evidence": [
+   "Golden Pages profile (fetched): phone plus Gmail address, no website",
+   "Golden Pages Roscommon painters search (fetched): 17 of 20 local painters, RLN included, show no website"
+  ],
+  "contact_email": "nuttz0103@gmail.com",
+  "contact_phone": "(083) 150 1340",
+  "source_urls": [
+   "https://www.goldenpages.ie/rln-painting-and-decorating-castlerea-F45/",
+   "https://www.goldenpages.ie/q/business/advanced/where/Roscommon/what/Painters+%26+Decorators/"
+  ],
+  "distinctive": "Self-described as 'Painting and Bespoke Decorating' (Golden Pages profile)",
+  "confidence": "high"
+ },
+ {
+  "name": "McHappy's Bake Shoppe",
+  "trade": "donut shop / bakery",
+  "town": "Marietta",
+  "region": "Ohio",
+  "country": "USA",
+  "website": "http://www.mchappys.com",
+  "evidence": [
+   "curl audit of mchappys.com: no <meta name=viewport> tag (not mobile-friendly)",
+   "curl: footer copyright '© 2022' (stale)",
+   "curl: meta generator '2018.1.0.386' — legacy site-builder version string",
+   "contact email is a Yahoo address shown on the page, extracted via curl",
+   "Marietta Area Chamber member listing fetched confirms independent family bakery at 333 Pike Street"
+  ],
+  "contact_email": "mchappysdonuts@yahoo.com",
+  "contact_phone": "(740) 423-8178",
+  "source_urls": [
+   "http://www.mchappys.com/",
+   "https://business.mariettachamber.com/list/member/enlows-bakery-inc-mchappy-s-donuts-of-marietta-inc-3034"
+  ],
+  "distinctive": "Site tagline 'Smiles by the Dozen!' — fresh donuts, pastries, cakes and bread (their own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Mabe's Pizza",
+  "trade": "pizza restaurant / diner",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "https://mabespizza.com/",
+  "evidence": [
+   "curl audit: meta generator 'Starfield Technologies; Go Daddy Website Builder 8.0' (legacy builder)",
+   "curl: footer 'Copyright 2016' — a decade stale",
+   "no email anywhere on site (contact page 404s); email only found on chamber listing",
+   "Decorah Area Chamber listing fetched with mailto and tel links"
+  ],
+  "contact_email": "mabespizza@gmail.com",
+  "contact_phone": "(563) 382-4297",
+  "source_urls": [
+   "https://mabespizza.com/",
+   "https://www.decorahareachamber.com/directory/mabes-pizza/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Red Rooster Café (Lawinger's)",
+  "trade": "diner / café",
+  "town": "Mineral Point",
+  "region": "Wisconsin",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Mineral Point Chamber member page fetched via curl: no business website listed, only the Facebook page",
+   "chamber listing exposes gmail contact via mailto link (observed in fetched HTML)",
+   "address 158 High St and phone from chamber tel: links"
+  ],
+  "contact_email": "redroostercafemp@gmail.com",
+  "contact_phone": "(608) 987-9936",
+  "source_urls": [
+   "https://www.mineralpoint.com/list/member/red-rooster-caf%C3%A9",
+   "https://mineralpoint.com/list/category/restaurants-74"
+  ],
+  "distinctive": "3rd-generation-owned cafe specializing in Cornish fare — fresh pasty, figgy hobbin and saffron served daily (chamber profile text)",
+  "confidence": "high"
+ },
+ {
+  "name": "Vander Ploeg Bakery",
+  "trade": "Dutch bakery",
+  "town": "Pella",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "https://www.pellabakery.com/",
+  "evidence": [
+   "curl audit of pellabakery.com: footer '© 2023' — stale Wix site",
+   "meta generator 'Wix.com Website Builder' observed via curl",
+   "contact email is a legacy ISP address (iowatelecom.net) shown on page, extracted via curl",
+   "current Pella chamber member listing fetched: 711 Franklin St, confirms operating"
+  ],
+  "contact_email": "pellabakery@iowatelecom.net",
+  "contact_phone": "(641) 628-2293",
+  "source_urls": [
+   "https://www.pellabakery.com/",
+   "https://members.pella.org/list/member/vander-ploeg-bakery-1736"
+  ],
+  "distinctive": "Dutch Letters are the specialty — 'flaky puff pastry dough wrapped around a sweet almond' filling, puff pastry made from scratch (their own site)",
+  "confidence": "high"
+ },
+ {
+  "name": "Decorah Tire Service",
+  "trade": "tire shop / garage",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: no business website linked, only Facebook page",
+   "curl of decorahtire.com returns 404 'Not Found' (315 bytes) — matching domain serves nothing",
+   "email is a Mediacom ISP address exposed in chamber mailto link",
+   "address 416 Montgomery Street and phone from chamber tel: links"
+  ],
+  "contact_email": "decorahtire@mediacombb.net",
+  "contact_phone": "(563) 382-3687",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/decorah-tire-service/",
+   "http://decorahtire.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "West Side Whisk Bakery",
+  "trade": "bakery",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: only a Facebook profile link, no website",
+   "getent DNS: westsidewhiskbakery.com and westsidewhisk.com do not resolve",
+   "gmail contact exposed in chamber mailto link; address 209 West Street, Decorah on listing"
+  ],
+  "contact_email": "westsidewhiskbakery@gmail.com",
+  "contact_phone": "(563) 379-8538",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/west-side-whisk-bakery/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "County Wide Plumbing & Heating",
+  "trade": "plumbing & heating contractor",
+  "town": "Decorah",
+  "region": "Iowa",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "Decorah Area Chamber listing fetched via curl: no website linked",
+   "curl of countywideplumbing.com serves only a GoDaddy parked-domain redirect to /lander (114-byte JS stub, observed)",
+   "contact is a Hotmail address exposed in chamber mailto link"
+  ],
+  "contact_email": "cowide@hotmail.com",
+  "contact_phone": "(563) 382-2407",
+  "source_urls": [
+   "https://www.decorahareachamber.com/directory/county-wide-plumbing-htg/",
+   "http://countywideplumbing.com/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Littleton Diner",
+  "trade": "diner",
+  "town": "Littleton",
+  "region": "New Hampshire",
+  "country": "USA",
+  "website": "http://littletondiner.com",
+  "evidence": [
+   "curl: serves over plain HTTP by default - final URL stays http with no redirect to the HTTPS version that exists",
+   "curl: no <meta name=viewport> on homepage or contact page - not mobile-responsive",
+   "curl: hand-built static .php site (menu.php, celebs.php, history.php) with a W3C-validator badge link, credited to legacy local builder NotchNet",
+   "golittleton.com dining page lists it as a featured Littleton restaurant (curl)"
+  ],
+  "contact_email": "info@littletondiner.com",
+  "contact_phone": "603-444-3994",
+  "source_urls": [
+   "http://littletondiner.com/",
+   "http://littletondiner.com/contact.php",
+   "https://golittleton.com/littleton_dining.php"
+  ],
+  "distinctive": "the site keeps a dedicated 'celebs' page of famous visitors (celebs.php in the nav) alongside a diner-history page",
+  "confidence": "high"
+ },
+ {
+  "name": "Harlow Farm",
+  "trade": "organic farm stand",
+  "town": "Westminster (near Bellows Falls/Brattleboro)",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "http://harlowfarm.com",
+  "evidence": [
+   "curl: generator meta reads 'WordPress 4.5.32' - a 2016-era core roughly a decade out of date",
+   "curl: serves over plain HTTP by default (no redirect although an HTTPS version answers 200)",
+   "curl: contact page exposes four plain-text mailto addresses (info@, office@, sales@, jon@)"
+  ],
+  "contact_email": "info@harlowfarm.com",
+  "contact_phone": "802-722-3515",
+  "source_urls": [
+   "http://harlowfarm.com/",
+   "http://harlowfarm.com/contact/"
+  ],
+  "distinctive": "their own title tag: 'An organic farm nestled along the shores of the Connecticut River'",
+  "confidence": "high"
+ },
+ {
+  "name": "Miss Lyndonville Diner",
+  "trade": "diner",
+  "town": "Lyndonville (near St Johnsbury)",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "NONE",
+  "evidence": [
+   "curl: misslyndonvillediner.com returns only a 114-byte JS redirect to '/lander' (parked-domain page)",
+   "curl: the replacement domain OSM lists serves the identical 114-byte parked lander",
+   "Wayback capture 26 Feb 2024 was already a placeholder-style Bootstrap page titled with the bare domain name (fetched)",
+   "OSM/Nominatim listing (fetched) still carries full hours, Facebook link, email and phone for the diner at 686 Broad Street"
+  ],
+  "contact_email": "misslyndonvillediner@hotmail.com",
+  "contact_phone": "802-626-9890",
+  "source_urls": [
+   "http://misslyndonvillediner.com/",
+   "http://misslyndonvilledinervt.com/",
+   "https://nominatim.openstreetmap.org/search?q=Miss+Lyndonville+Diner+Lyndonville+Vermont&format=jsonv2&extratags=1",
+   "http://web.archive.org/web/20240226032859/https://misslyndonvillediner.com/"
+  ],
+  "distinctive": "OSM lists a 5:30am opening and a cuisine line running 'burger;sandwich;chicken;salad;soup;breakfast;lunch;dinner;omelettes;dessert'",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dutton Berry Farm",
+  "trade": "farm stand",
+  "town": "West Brattleboro / Newfane",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://www.duttonberryfarm.com",
+  "evidence": [
+   "curl: homepage <title> is 'About | My Site' - the Square Online builder's unconfigured default title",
+   "curl: generator meta 'Square Online' with leftover Weebly strings in the markup",
+   "curl: their Gmail address and three stand phone lines are on the page"
+  ],
+  "contact_email": "Duttonberryfarm@gmail.com",
+  "contact_phone": "802-254-0254",
+  "source_urls": [
+   "https://www.duttonberryfarm.com/"
+  ],
+  "distinctive": "the page lists three separate farmstand phone lines for their Brattleboro, Manchester and Newfane stands",
+  "confidence": "high"
+ },
+ {
+  "name": "Central Cafe",
+  "trade": "cafe",
+  "town": "St Johnsbury",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://centralcafe.co",
+  "evidence": [
+   "curl: centralcafe.co - the website its OSM listing carries - returns only a 114-byte JS redirect to '/lander' (parked domain)",
+   "Overpass/OSM record (fetched): cafe at 418 Railroad Street with daily hours, email and phone - so the business advertises a dead domain"
+  ],
+  "contact_email": "Centralcafe.stj@gmail.com",
+  "contact_phone": "802-424-1344",
+  "source_urls": [
+   "http://centralcafe.co/",
+   "https://overpass-api.de/api/interpreter"
+  ],
+  "distinctive": "418 Railroad Street with outdoor seating (OSM), on St Johnsbury's historic main commercial street",
+  "confidence": "medium"
+ },
+ {
+  "name": "Sweetwater Fishing Expeditions, LLC",
+  "trade": "fly-fishing outfitter / wilderness pack trips",
+  "town": "Lander",
+  "region": "Wyoming",
+  "country": "USA",
+  "website": "https://www.sweetwaterfishing.com/",
+  "evidence": [
+   "Homepage has no <meta name=\"viewport\"> tag (grep of fetched HTML) — not mobile-responsive",
+   "Hand-built XHTML 1.0 Transitional page with document.write() email obfuscation (read in fetched source)",
+   "Business is active: page reads 'Now Booking for 2026!' (fetched HTML)"
+  ],
+  "contact_email": "sweetwaterflyfishing@gmail.com",
+  "contact_phone": "307-332-3986",
+  "source_urls": [
+   "https://www.sweetwaterfishing.com/"
+  ],
+  "distinctive": "Owned by George, Paula and Hank Hunker since 1977; Orvis-endorsed guided camping trips into the Wind River Range, with a dedicated golden trout page",
+  "confidence": "high"
+ },
+ {
+  "name": "Valley Bronze of Oregon",
+  "trade": "bronze foundry & gallery",
+  "town": "Joseph",
+  "region": "Oregon",
+  "country": "USA",
+  "website": "https://www.valleybronze.com/",
+  "evidence": [
+   "Built on legacy Weebly builder (weebly asset references in fetched HTML)",
+   "Unbranded page titles: homepage <title> is just 'Home', contact page just 'Contact' (observed in fetched source)",
+   "Headline rendered with deprecated <font size=\"6\"> tag: 'A PREMIER BRONZE FOUNDRY' (fetched HTML)"
+  ],
+  "contact_email": "info@valleybronze.com",
+  "contact_phone": "(541) 432-7551",
+  "source_urls": [
+   "https://www.valleybronze.com/",
+   "https://www.valleybronze.com/contact.html"
+  ],
+  "distinctive": "Family-owned foundry doing lost-wax bronze casting up to monumental public art, per its own meta description and keywords",
+  "confidence": "high"
+ },
+ {
+  "name": "Hatch Finders Fly Shop",
+  "trade": "fly shop",
+  "town": "Livingston",
+  "region": "Montana",
+  "country": "USA",
+  "website": "https://www.hatchfinders.com/",
+  "evidence": [
+   "Meta generator 'Wix.com Website Builder' (fetched HTML)",
+   "Stale footer: '© 2024 by Hatch Finders' observed in 2026 (fetched HTML)",
+   "Homepage HTML alone is ~985KB (curl size_download 985266) — heavy, slow-loading build"
+  ],
+  "contact_email": "flyshop@hatchfinders.com",
+  "contact_phone": "406-222-0989",
+  "source_urls": [
+   "https://www.hatchfinders.com/"
+  ],
+  "distinctive": "Positions itself on the Yellowstone River at Livingston with 'expert advice and premium flies' (own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "Wild West Weaving",
+  "trade": "weaving gallery & classes",
+  "town": "Silver City",
+  "region": "New Mexico",
+  "country": "USA",
+  "website": "https://www.wildwestweaving.com/",
+  "evidence": [
+   "Square Online builder (meta generator in fetched HTML)",
+   "Template placeholder contact data left in the served page: 'hi@mystore.com' and '(555) 555-5555' appear alongside the real details (grep of fetched HTML)",
+   "Generic homepage title 'Home | Wild West Weaving' (fetched)"
+  ],
+  "contact_email": "wildwestweaving@gmail.com",
+  "contact_phone": "575-313-1032",
+  "source_urls": [
+   "https://www.wildwestweaving.com/"
+  ],
+  "distinctive": "Specializes in Chimayo, Rio Grande and Navajo handwoven blankets and rugs, natural-dyed yarn, and weaving classes (own meta description)",
+  "confidence": "high"
+ },
+ {
+  "name": "41 South Tasmania",
+  "trade": "Inland salmon and ginseng farm with farm-gate sales and tours",
+  "town": "Deloraine",
+  "region": "Tasmania",
+  "country": "Australia",
+  "website": "https://www.41southtasmania.com.au/",
+  "evidence": [
+   "The page <title> tag is completely empty (<title></title>) — site shows no name in browser tabs or search results (observed via curl)",
+   "Built on Square Online (Weebly) site builder, declared in generator meta tag (observed via curl)"
+  ],
+  "contact_email": "info@41southtasmania.com",
+  "contact_phone": "(03) 6362 4130",
+  "source_urls": [
+   "https://www.41southtasmania.com.au/"
+  ],
+  "distinctive": "Farms Atlantic salmon inland 'using a wetland as a natural biofilter', plus ginseng — products 'can be sent anywhere in Australia' and guided tours run for groups of 10+ (from site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Five Flags Hotel",
+  "trade": "Country pub and bistro",
+  "town": "Campbells Creek (Castlemaine)",
+  "region": "Victoria",
+  "country": "Australia",
+  "website": "https://www.fiveflagshotel.com.au/",
+  "evidence": [
+   "Live page <title> is the literal unrendered template variable '%fiveflagshotel' (observed via curl)",
+   "Site's own address line misspells its town as 'Cambells Creek' (observed via curl)"
+  ],
+  "contact_email": "admin@fiveflags.com.au",
+  "contact_phone": "(03) 5472 1010",
+  "source_urls": [
+   "https://www.fiveflagshotel.com.au/"
+  ],
+  "distinctive": "House motto on the homepage: 'Eat with Leisure, Drink with pleasure' — Bob Lamaro; at 155 Main Road Campbells Creek (from site text)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Lazy Daisy Cafe",
+  "trade": "Cafe / restaurant",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://lazydaisycafe.square.site/",
+  "evidence": [
+   "only web presence is a free Square Online subdomain (generator meta 'Square Online' observed via curl) — no own domain",
+   "unedited template placeholders 'hi@mystore.com' and '(555) 555-5555' still present in page HTML alongside the real contact details (curl)",
+   "town business directory links the square.site URL as the official website"
+  ],
+  "contact_email": "rach.lazydaisy@gmail.com",
+  "contact_phone": "902-532-1222",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "https://lazydaisycafe.square.site/"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "MareGold Bookstore",
+  "trade": "Independent bookstore",
+  "town": "Annapolis Royal",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "http://www.maregoldbookstore.com",
+  "evidence": [
+   "maregoldbookstore.com serves a 106-byte bare HTML page with only a meta-refresh to an insecure square.site subdomain — no viewport, no content (curl, raw HTML observed)",
+   "real store lives on a free Square Online subdomain with auto-generated number in the URL (generator meta, curl)",
+   "http://www.maregoldbookstore.com does not redirect to https (stayed on http, curl)"
+  ],
+  "contact_email": "info@maregold.com",
+  "contact_phone": "709-689-2794",
+  "source_urls": [
+   "https://annapolisroyal.com/businesses/",
+   "http://www.maregoldbookstore.com",
+   "http://maregold-bookstore-104262.square.site"
+  ],
+  "distinctive": null,
+  "confidence": "high"
+ },
+ {
+  "name": "Fairmont House Bed and Breakfast",
+  "trade": "Bed & breakfast",
+  "town": "Mahone Bay",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.fairmonthouse.com/",
+  "evidence": [
+   "legacy Weebly-reseller platform: favicon loaded from weebly.com reseller assets (observed in HTML via curl)",
+   "og:url and og:image declared as http:// (non-https) URLs in head (curl)",
+   "hero image asset carries 2017 cache timestamp (observed in HTML)"
+  ],
+  "contact_email": "info@fairmonthouse.com",
+  "contact_phone": "902-624-8089",
+  "source_urls": [
+   "https://mahonebay.com/directory/fairmont-house/",
+   "https://www.fairmonthouse.com/",
+   "https://www.fairmonthouse.com/contact.html"
+  ],
+  "distinctive": "'Overlooks Mahone Bay, offering a scenic water view' (site og:description); at 654 Main Street per chamber listing",
+  "confidence": "medium"
+ },
+ {
+  "name": "Hares Denture Clinic",
+  "trade": "denturist (denture clinic)",
+  "town": "Cornwall",
+  "region": "Ontario",
+  "country": "Canada",
+  "website": "https://www.haresdentureclinic.com/",
+  "evidence": [
+   "homepage <title> is literally just 'Home' (curl fetch) — no practice name or SEO",
+   "built on HostGator's generic 'mywebsitebuilder.com' template platform (brand=HostGator asset URLs in fetched HTML)",
+   "no phone, email or address present in homepage HTML (JS-shell only), observed in curl fetch"
+  ],
+  "contact_email": "info@haresdentureclinic.com",
+  "contact_phone": "(613) 703-0445",
+  "source_urls": [
+   "https://www.haresdentureclinic.com/index.html",
+   "https://www.easternontariolocal.ca/biz/665/hares-denture-clinic"
+  ],
+  "distinctive": "Border-town clinic whose directory profile advertises 'U.S. Patients Welcomed', free in-clinic consultations and same-day denture repair",
+  "confidence": "medium"
+ },
+ {
+  "name": "Whyalla Family Corrective Chiropractic",
+  "trade": "chiropractor",
+  "town": "Whyalla",
+  "region": "South Australia",
+  "country": "Australia",
+  "website": "https://www.whyallachiropractor.com.au/",
+  "evidence": [
+   "site is a Sensis (Yellow Pages AU) white-label Duda template — Sensis platform CSS paths in curl-fetched HTML",
+   "hero imagery is stock files, one with Dec-2015 upload timestamp in filename, seen in fetched HTML",
+   "3-page site (Home/Services/Contact only) with legacy ISP contact address shown on page"
+  ],
+  "contact_email": "whyallafc@internode.on.net",
+  "contact_phone": "08 8645 3897",
+  "source_urls": [
+   "https://www.whyallachiropractor.com.au/"
+  ],
+  "distinctive": "Steel-town family clinic with the tagline 'Optimal spine equals optimal health' repeated across the homepage",
+  "confidence": "medium"
+ },
+ {
+  "name": "Valley Pet Grooming",
+  "trade": "dog grooming",
+  "town": "Madawaska",
+  "region": "Maine",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "OSM node 12803607199 records contact:facebook and no website tag",
+   "Facebook page URL returns HTTP 200 (curl HEAD 2026-08-22)",
+   "email, phone and street address recorded on the OSM object"
+  ],
+  "contact_email": "valleypetgrooming@gmail.com",
+  "contact_phone": "+1 207-316-4831",
+  "source_urls": [
+   "https://www.openstreetmap.org/node/12803607199",
+   "https://www.facebook.com/valleypetgrooming207"
+  ],
+  "distinctive": "Storefront at 250 Main Street, Madawaska — the US-Canada border town at Maine's northern tip (OSM address tags)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Dalhousie Alterations & Repairs",
+  "trade": "shoe repair & clothing alterations",
+  "town": "Calgary (Dalhousie)",
+  "region": "Alberta",
+  "country": "Canada",
+  "website": "http://www.dalhousierepairs.ca",
+  "evidence": [
+   "listed website dead: connection fails on both http and https (curl 000, 2026-08-22)",
+   "email (ISP shaw.ca domain, independent of the dead site) and Tu-Sa opening hours recorded on OSM node 4335866571"
+  ],
+  "contact_email": "dalhousierepairs@shaw.ca",
+  "contact_phone": null,
+  "source_urls": [
+   "http://www.dalhousierepairs.ca",
+   "https://www.openstreetmap.org/node/4335866571"
+  ],
+  "distinctive": null,
+  "confidence": "medium"
+ },
+ {
+  "name": "Black Magic Chimney Sweeps of Southern Vermont",
+  "trade": "Chimney sweep",
+  "town": "Manchester Center",
+  "region": "Vermont",
+  "country": "USA",
+  "website": "https://www.blackmagicchimneysweep.com/",
+  "evidence": [
+   "curl audit: homepage markup contains 30 deprecated <font> tags — legacy content sitting inside a budget Duda builder (cdn-website.com assets observed)",
+   "Email and both phone lines observed in the site HTML",
+   "BBB profile (fetched): founded June 1980, owner Harry Lux, A+ accredited"
+  ],
+  "contact_email": "info@blackmagicchimneysweep.com",
+  "contact_phone": "(802) 362-5755",
+  "source_urls": [
+   "https://www.bbb.org/us/vt/manchester-center/profile/chimney-sweeper/black-magic-chimney-sweeps-of-southern-vermont-llc-0021-127171",
+   "https://www.blackmagicchimneysweep.com/"
+  ],
+  "distinctive": "Sweeping southern Vermont since June 1980 (BBB founding date) — heritage worth a proper site",
+  "confidence": "medium"
+ },
+ {
+  "name": "Gary's Plumbing & Heating Ltd",
+  "trade": "Plumber",
+  "town": "Mount Uniacke",
+  "region": "Nova Scotia",
+  "country": "Canada",
+  "website": "https://www.garysplumbing.ca/",
+  "evidence": [
+   "curl audit: <title> tag is a pasted two-sentence description ending in 'Call us.' — DIY site (generator meta 'Wix.com Website Builder' observed)",
+   "Footer copyright line reads 'Copyright ' with no year at all (observed via curl)",
+   "BBB profile (fetched): president Gary Shannon, founded 2007, A+ accredited"
+  ],
+  "contact_email": "info@garysplumbing.ca",
+  "contact_phone": "(902) 830-7559",
+  "source_urls": [
+   "https://www.bbb.org/ca/ns/mount-uniacke/profile/plumber/garys-plumbing-heating-ltd-0087-25014",
+   "https://www.garysplumbing.ca/"
+  ],
+  "distinctive": "Video sewer inspections are a headline service — currently buried in a broken title tag (observed via curl)",
+  "confidence": "medium"
+ },
+ {
+  "name": "Genuine Auto Services",
+  "trade": "auto repair garage",
+  "town": "Rockland",
+  "region": "Maine",
+  "country": "USA",
+  "website": "FACEBOOK-ONLY",
+  "evidence": [
+   "Overpass/OSM record (fetched): garage at 126 Main Street, Rockland lists only a Facebook page as its web presence - no website tag - alongside a Gmail address and phone"
+  ],
+  "contact_email": "genuineauto126@gmail.com",
+  "contact_phone": "207-594-5872",
+  "source_urls": [
+   "https://overpass-api.de/api/interpreter",
+   "https://www.facebook.com/GenuineAutomotiveSvcsInc/"
+  ],
+  "distinctive": "a Main Street garage open Mon-Fri 7:00-17:00 (OSM hours) with its email handle matching its street number, 126",
+  "confidence": "medium"
+ }
+]
