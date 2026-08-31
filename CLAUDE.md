@@ -33,7 +33,7 @@ This file provides a concise, machine-readable overview of how to work in this c
 ## Infrastructure Notes
 
 - **nginx + certbot:** The installer writes nginx site configs and obtains TLS certificates via certbot.
-- **systemd or PM2:** Sites may run under systemd or PM2. Prefer direct in-place build + restart unless a site override documents a different production model.
+- **systemd + blue/green:** New deployed sites run under systemd using blue/green slot services and nginx upstream switching. Treat this as the default production process model for new installs.
 
 ## Tooling Requirements
 
@@ -42,8 +42,9 @@ This file provides a concise, machine-readable overview of how to work in this c
 ## Operations Guardrails
 
 - Release locally. Do not depend on GitHub Actions for the primary build/test/deploy path.
-- Use `main` as the default long-lived branch. Validate locally, commit intentionally, and push the exact commit you plan to deploy to GitHub.
-- Prefer `bun run deploy:manual` for the full local quality + deploy path and `bun run deploy:safe` for direct rebuild/restart of the current checkout.
+- Work on `develop`, validate locally, promote locally to `main`, deploy the exact `main` commit, then push `develop` and `main` to GitHub as backup/mirror.
+- Prefer the local release entrypoint (`bun run release:local` when present) over ad-hoc deploy commands.
+- For blue/green site deploys, build and validate the inactive slot first, then switch nginx to the healthy slot. Never rebuild the live slot in place.
 - GitHub push-triggered deploy loops are not allowed. If GitHub workflows exist, keep them manual-only unless there is a documented exception.
 - Legacy PM2 sites may still exist during migration. When a site override explicitly documents legacy PM2 operation, follow that override until the site is migrated.
 
@@ -53,16 +54,41 @@ This file provides a concise, machine-readable overview of how to work in this c
 - Prefer small focused files, reusable components, and shared utilities in `lib/`.
 - **Hard limit:** no code file should exceed **600 lines**. Split into smaller modules if needed.
 
+## Design Rules (Non-Negotiable)
+
+Every site — existing and newly ported — must ship:
+
+- **Sticky chrome menu.** The header/navbar stays visible while scrolling (`position: sticky` or
+  `fixed`). Because Puck renders the header block bare, a block that wraps itself in a design-shell
+  `<div>` makes that div the sticky containing block and the header gets **zero travel** — the
+  fleet's most common regression. Fix with the **chrome-host pattern**: `display: contents` on the
+  header block's root shell (precedent: `.ba-headerhost` in blue-anchor). Utility/announce bars
+  above the nav may scroll away; the `<header>` must not. Sticky (in-flow) headers must not keep
+  the `pt-20 md:pt-0` offset on `app/(site)/[...slug]/page.tsx`; fixed headers need it.
+- **Scroll-in motion on sections.** Standard mechanism is JS-free, design-scoped CSS:
+  `@supports (animation-timeline: view())` + `data-reveal` attributes on section inner wrappers,
+  with an on-load `[data-reveal-load]` variant. **Never scroll-reveal the hero/LCP element.**
+  **Reveal keyframes animate `transform` only — never `opacity`:** an opacity ramp leaves elements
+  that are partially visible at load stuck half-faded until scroll, and Lighthouse measures the
+  blended text against the background, failing `color-contrast` (found on claire-lewis /about,
+  desktop, 0.94 ×3).
+  A `@media (prefers-reduced-motion: reduce)` block disabling the animations is mandatory.
+  Avoid IntersectionObserver-latched `opacity: 0` reveals: they can strand blank sections in the
+  Puck canvas and in full-page snapshots; scroll-driven CSS self-corrects.
+- **Enforcement:** `tests/visual/design-rules.spec.ts` (runtime: header stays at top after
+  scrolling; motion markers present) runs in the visual gate, and `demo:check` fails when design
+  CSS lacks sticky/fixed + motion wiring + reduced-motion handling.
+
 ## Design Parity
 
 - When adapting or cloning an existing website, achieve **100% pixel parity** with the source design while still following all constraints in this AGENTS.md (tech choices, shadcn-only UI, tokens, etc.).
 
-## Workflow Safety
+## Workflow Safety (Green → Main)
 
-- Complete required local quality gates before deploying from `main`.
-- Never deploy if Lighthouse or visual snapshot gates fail for targets that require them.
+- Complete required local quality gates before promoting `develop` to `main`.
+- Never promote or deploy if Lighthouse or visual snapshot gates fail for targets that require them.
 - Production deploys must use an already-created commit. Do not create a fresh commit as part of the deploy itself.
-- Push the same deployable commit to GitHub so remote history stays aligned with production.
+- After production is healthy, push the already-deployed `develop` and `main` history to GitHub so the remote remains a backup of the local source of truth.
 
 ## Quality Gates (Required)
 
@@ -83,7 +109,7 @@ This file provides a concise, machine-readable overview of how to work in this c
 
 - Use Snapshot MCP when you need pixel-level verification of UI changes or regression checks.
 - Store baselines in `tests/visual/__screenshots__` and update intentionally with `bun run visual:update`.
-- Local deploy automation must run `bun run visual:test` and fail on any diff.
+- Local release automation must run `bun run visual:test` and fail on any diff.
 - Capture both mobile and desktop viewports for key URLs (minimum `/` plus one stable secondary route).
 
 ## When Checks Fail
@@ -138,7 +164,7 @@ This file provides a concise, machine-readable overview of how to work in this c
 - `bun run quality --only <target>` (or `bun run quality --all`)
 - `bun run quality:validate`
 - `bun run sync:agents` (if `template/AGENTS.md` changed)
-- If releasing: validate locally on `main`, push the deployable commit to GitHub, run `bun run deploy:manual`, then verify health
+- If releasing: promote locally from `develop` to `main`, deploy the exact `main` commit with the local blue/green flow, verify health, then push `develop` and `main` to GitHub
 
 ## Site Overrides
 

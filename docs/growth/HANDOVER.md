@@ -4,7 +4,7 @@ _Last updated: 2026-08-31_
 
 ## Where things stand
 
-**26 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
+**33 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
 fleet. The inventory is additive: every new demo must inherit the same demo-safety, authentication,
 evidence and release gates and be added here.
 
@@ -50,6 +50,31 @@ grepping vhosts under-reports.
 | Sima's Beauty, Witney | `simas-beauty-witney` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/09-simas-beauty-witney; prospect email simaflp@aol.com) |
 | Jamesons Accountants, Witney | `jamesons-witney` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/33-jamesons-witney; prospect email advice@jamesons.co.uk) |
 | Cotswold Dental Wellness, Chipping Norton | `cotswold-dental` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/07-cotswold-dental-chipping-norton; prospect email info@cotswolddentalwellness.co.uk) |
+| The Salutation Inn, Pembrokeshire | `salutation-inn` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/17-salutation-inn-pembrokeshire; prospect email bwydbrenda62@outlook.com — the only address the site publishes). Invite + tracked link were minted 31 Aug by the fleet-audit session, not the build session. |
+| Bodalwyn Guest House, Aberystwyth | `bodalwyn-aberystwyth` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/bodalwyn-aberystwyth; prospect email enquiries@bodalwyn.co.uk). Invite minted 31 Aug by the fleet-audit session. |
+| Popty Cara | `popty-cara` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/popty-cara). **Two published addresses**: the homepage displays ENQUIRES@POPTYCARA.CO.UK but every mailto routes to orders@poptycara.co.uk — the invite is minted against `orders@` (the address their own site actually sends to); switch if Ian prefers the displayed one. Invite minted 31 Aug by the fleet-audit session. |
+| Powys Country House, Corwen | `powys-country-house` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; **no docs/mocks pack** — facts verified against a fresh 16-page mirror of the live site in the workspace + the design project's own harvest; prospect email info@powyscountryhouse.co.uk) |
+| Bath Street Dental Practice, Cheltenham | `bath-street-dental` | Stamped 31 Aug, then re-released (eb167cd) to fix a blank `/team`. 15 pages live incl. 9 `/treatments/<slug>`. **No prospect email published** — this one is a walk-in/phone demo, so there is no tracked invite to mint and it is absent from tracked-links-2026-08-31.md. First site in the fleet serving optimized images (14 opt / 2 raw on /team; the 2 are header+footer logos, already 14KB webp). |
+| The Teddington Cheese, Teddington & Richmond | `teddington-cheese` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; **no docs/mocks pack** — facts verified against a fresh 229-page mirror of the live site + its 78 published photographs, archived in the workspace; prospect email cheese@teddingtoncheese.co.uk) |
+| Number 47 Grassington | `number-47-grassington` | Stamped 31 Aug (take 2) — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/number-47-grassington with fact-by-fact summary.md; prospect email sarahwhitfield479@btinternet.com — the only address the site publishes, reservations handled by Sarah Whitfield). 6 pages (home / about=The House / rooms / grassington / gallery / contact-us), 20 Puck blocks. Take 1 failed at seed+media+integrity: the gallery block stored shots as `path | w | h | alt | caption` textarea rows, and the media importer only rewrites a `/demo-photos/` reference when the path is the WHOLE value — fixed by converting to an array field with a scalar `image` sub-field. All photography is the guest house's own, including three panels cropped out of their own slider triptych; small originals Lanczos-upscaled. Comp's unsourced '5/5 guest rating' panel replaced with the two magazine features their site actually publishes. |
+
+### Standing rule: a stamp is not finished until the prospect link exists
+
+`demo-fleet-health` proves a site SERVES; it says nothing about whether Ian can email it.
+Three sites (salutation-inn, bodalwyn-aberystwyth, popty-cara) went live 31 Aug with no
+prospect invite in Mongo, so `demo-recipient-links-batch.ts` silently skipped them and they
+were absent from the link pack — invisible until a fleet audit diffed live sites against the
+pack. **Every build session must run `mint-invite.sh <slug> <prospect-email>` before
+reporting done**, and the audit below catches any that slip:
+
+```
+cd /srv/apps/velvetdinosaur
+bun run demo:fleet | grep '^- ' | awk '{print $2}' | sort > /tmp/live.txt
+bun scripts/demo-recipient-links-batch.ts     # prints "Skipped (no prospect invite): ..."
+```
+
+Anything named in that Skipped line is either a deliberate no-email demo (bath-street-dental
+publishes no address — walk-in/phone pitch) or a missed mint that must be fixed.
 
 ## The bench
 
@@ -84,10 +109,9 @@ folder, and a `summary.md` with social links and the verified evidence of what's
 | Corn Street Dental, Witney | `30d7cc1d-b6c9-4723-a410-5e1c26adecb5` | `docs/mocks/11-corn-street-dental-witney` |
 | Hair Lounge, Chipping Norton | `8ceef699-6a71-4604-b355-a7217ab4a813` (the one WITH files — `0a8c19bd…` is an empty duplicate) | `docs/mocks/29-hairlounge-chipping-norton` |
 
-**Designed but NOT built — only ONE remains** (Cotswold Dental Wellness shipped 31 Aug):
-| Site | Design project | Design files | Evidence pack |
-|---|---|---|---|
-| Salutation Inn, Pembrokeshire | `4371b0c3-f5ce-4b0f-b954-21a21a404531` | `Home.dc.html` (39KB, single view) | `docs/mocks/17-salutation-inn-pembrokeshire` |
+**Designed but NOT built: NONE.** Every design project with files is now live — Cotswold
+Dental Wellness and Salutation Inn both shipped 31 Aug. The next batch starts from new
+designs, not from a backlog.
 
 Dead projects to ignore: `af74a16b…` ("Website redesign request", empty), `0a8c19bd…` (Hair
 Lounge duplicate, uploads only), `125f0a2a…` (Bubbleton duplicate, uploads only),
@@ -96,8 +120,8 @@ Lounge duplicate, uploads only), `125f0a2a…` (Bubbleton duplicate, uploads onl
 **Full procedure: `docs/growth/DEMO-BUILD-PLAYBOOK.md` — read it start to finish before
 porting anything.** It encodes every gate failure from the 29 Aug builds (demos 19–21) as a
 rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipeline` memory
-file holds the same lessons as history. **Next batch: Ian plans 6 more sites** — inputs per
-site are his Claude Design project + the `docs/mocks/` pack + the prospect email.
+file holds the same lessons as history. **Next batch**: inputs per site are a Claude Design project + the `docs/mocks/` pack +
+the prospect email.
 
 ### Port hardening learned on the New Inn stamp (29 Aug pm — template carries all three fixes)
 
