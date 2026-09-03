@@ -18,6 +18,9 @@ export type ParitySite = {
   name: string;
   path: string;
   branch: string | null;
+  publicMode?: 'production' | 'demo' | 'platform';
+  demoFleet?: boolean;
+  sharedEditingFleet?: string[];
   offline?: boolean;
   template?: boolean;
   workspace?: boolean;

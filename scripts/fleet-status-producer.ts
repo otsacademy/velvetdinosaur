@@ -223,6 +223,7 @@ function buildView(): DashboardView {
 
   const catalogEntries = [...CATALOG, ...discoverSiteCatalogEntries(parityManifest)];
   for (const entry of catalogEntries) {
+    const paritySite = parityManifest?.sites.find((site) => site.name === entry.repoId);
     const isGit = existsSync(join(entry.path, '.git'));
     const branch = isGit ? sh('git', ['branch', '--show-current'], entry.path) : null;
     const commit = isGit ? sh('git', ['rev-parse', '--short', 'HEAD'], entry.path) : null;
@@ -298,6 +299,48 @@ function buildView(): DashboardView {
       })
     ];
 
+    if (paritySite?.publicMode) {
+      fields.push(
+        fact({
+          key: `repository.${entry.repoId}.public-mode`,
+          category: 'identity',
+          value: paritySite.publicMode,
+          label: 'Public site mode',
+          explanation: 'Explicit public-site classification from the Sauro fleet manifest.',
+          evidenceRef: `file://${process.cwd()}/docs/platform/sauro-core-manifest.json`
+        })
+      );
+    }
+
+    if (typeof paritySite?.demoFleet === 'boolean') {
+      fields.push(
+        fact({
+          key: `repository.${entry.repoId}.demo-fleet`,
+          category: 'identity',
+          value: paritySite.demoFleet ? 'member' : 'excluded',
+          label: 'Demo fleet',
+          badgeClass: paritySite.demoFleet ? 'stale' : 'verified',
+          explanation: paritySite.demoFleet
+            ? 'This site belongs to the public demo/prospect fleet.'
+            : 'This production site is explicitly excluded from the public demo/prospect fleet.',
+          evidenceRef: `file://${process.cwd()}/docs/platform/sauro-core-manifest.json`
+        })
+      );
+    }
+
+    if (paritySite?.sharedEditingFleet?.length) {
+      fields.push(
+        fact({
+          key: `repository.${entry.repoId}.shared-editing-fleet`,
+          category: 'template',
+          value: paritySite.sharedEditingFleet.join(', '),
+          label: 'Shared editing fleet',
+          explanation: 'Shared CMS/editor/backend cohorts this site participates in.',
+          evidenceRef: `file://${process.cwd()}/docs/platform/sauro-core-manifest.json`
+        })
+      );
+    }
+
     // Puck migration telemetry: report the deprecated package and its successor
     // side by side so /admin/fleet shows the 0.20.2 -> @puckeditor/core drift
     // per site as the migration rolls out.
@@ -334,7 +377,7 @@ function buildView(): DashboardView {
       );
     }
 
-    const isParitySite = parityManifest ? discoverInstalledSites(parityManifest).some((site) => site.name === entry.repoId) : false;
+    const isParitySite = Boolean(paritySite);
     if (parityManifest && parityReference && isParitySite && hasSauroScopes(entry.path, parityManifest)) {
       const parity = compareSite(parityManifest, entry.repoId, entry.path, parityReference);
       const { value, inParity } = summarizeCounts(parity.counts);

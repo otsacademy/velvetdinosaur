@@ -120,7 +120,15 @@
     {
       "name": "ra",
       "path": "/srv/apps/ra",
-      "branch": "develop"
+      "branch": "develop",
+      "publicMode": "production",
+      "demoFleet": false,
+      "sharedEditingFleet": [
+        "sauro-core",
+        "puck-editor",
+        "admin-backend"
+      ],
+      "note": "Production Rising Dust public site; excluded from the demo/prospect fleet while sharing the Sauro/Puck editor and admin backend fleet."
     },
     {
       "name": "thebrave",
