@@ -4,7 +4,7 @@ _Last updated: 2026-09-04_
 
 ## Where things stand
 
-**36 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
+**38 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
 fleet. The inventory is additive: every new demo must inherit the same demo-safety, authentication,
 evidence and release gates and be added here.
 
@@ -53,6 +53,7 @@ grepping vhosts under-reports.
 | The Salutation Inn, Pembrokeshire | `salutation-inn` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/17-salutation-inn-pembrokeshire; prospect email bwydbrenda62@outlook.com — the only address the site publishes). Invite + tracked link were minted 31 Aug by the fleet-audit session, not the build session. |
 | Glamour and Glow, Witney | `glamour-and-glow` | Released 4 Sep — NOT emailed. **No prospect email exists**: the salon publishes none anywhere on its site, so there is no tracked invite to mint (phone/walk-in demo, like bath-street). Review link in the stamp log. Design comp `bcdd0f72-78e6-4a9a-a344-ad9075e31842`; pack docs/mocks/glamour-and-glow. Note the branded domain glamourandglowbeauty.co.uk is DEAD (NXDOMAIN) and their public address is a GoDaddy subdomain — the strongest opener on this row. |
 | Portway Dental Care, Wantage | `portway-dental` | Released 4 Sep — NOT emailed. **No prospect email exists** (the practice publishes none), so no tracked invite. Review link in the stamp log. Design comp `32f0eb69-4aab-4bc9-9354-e9d350aa8475`; pack docs/mocks/portway-dental. **Read the Portman-group note before sending anything**: this is a group-owned practice, not the local independent the ledger describes. |
+| Pokhara Delight, Witney | `pokhara-delight` | Released 4 Sep — NOT emailed. **Has a tracked link and pixel** (pokharadelicious@gmail.com); both in tracked-links-2026-09-04.md. Clean on the first stamp. Design comp `5743766a-1dd9-4a45-8620-352b402878f5`; pack docs/mocks/pokhara-delight. Opener: their live nav still shows the theme's placeholder "Menu Title / Single Link" four times, and their menu lists categories with no dishes or prices. |
 | Bodalwyn Guest House, Aberystwyth | `bodalwyn-aberystwyth` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/bodalwyn-aberystwyth; prospect email enquiries@bodalwyn.co.uk). Invite minted 31 Aug by the fleet-audit session. |
 | Popty Cara | `popty-cara` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/popty-cara). **Two published addresses**: the homepage displays ENQUIRES@POPTYCARA.CO.UK but every mailto routes to orders@poptycara.co.uk — the invite is minted against `orders@` (the address their own site actually sends to); switch if Ian prefers the displayed one. Invite minted 31 Aug by the fleet-audit session. |
 | Powys Country House, Corwen | `powys-country-house` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; **no docs/mocks pack** — facts verified against a fresh 16-page mirror of the live site in the workspace + the design project's own harvest; prospect email info@powyscountryhouse.co.uk) |
@@ -62,9 +63,13 @@ grepping vhosts under-reports.
 | White Rose Accountancy, Faringdon | `white-rose-accountancy` | Stamped 1 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email alison@whiteroseaccountancy.co.uk). Single-page practice site ported as home + /about. The practice publishes exactly one image (its rose mark); the comp's three photographic slots render editable placeholders rather than borrowed imagery. **Was serving 502 for ~3 days** (see outage note below) — restored 4 Sep. Its build session deliberately stamped with an EMPTY prospect-email arg, noting Ian had not authorised outreach, so no invite existed and the link pack skipped it silently; invite minted 4 Sep under the standing rule below. Confirm with Ian before emailing. |
 | Fringe Hair & Beauty, Minster Lovell | `fringe-hair-beauty` | Stamped 1 Sep — **no prospect email published** (ledger row 11 is phone-only), so like bath-street-dental there is no tracked invite to mint and it is absent from the link pack. Walk-in/phone pitch. |
 | The Academy Partnership, Witney | `academy-partnership` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email admin@theacademypartnership.co.uk). **No docs/mocks pack** — the practice's live site answers HTTP 403 to every non-browser client, so the evidence is a byte-exact Wayback mirror archived in the workspace (`/opt/vdplatform/workspaces/academy-partnership/evidence`, with `summary.md`). 8 pages: home + about + services + case-studies + faqs + contact-us, 15 Puck blocks. Design `50e5121d-fd13-4dcb-8d17-b719907ac975`. All four gates 100 first cycle. Ledger row 3's "counters claim unverified" is now settled: the four figures ARE published (`data-counter-value` 300 / 25 / 192 / 40000), and the demo states exactly those. |
+| Buscot Manor, Buscot | `buscot-manor` | Stamped 4 Sep — **no prospect email published** (the house lists a telephone and a postal address only, so like bath-street-dental and fringe-hair-beauty there is no tracked invite to mint and it is absent from the link pack). Walk-in/phone pitch: 07973 831690. **No docs/mocks pack** — the evidence is the Wix site harvested into the design project (6 pages of text, 33 assets), mirrored in the workspace. 6 pages (home / about=The Manor / stay / the-barn / gallery / contact-us), 20 Puck blocks. Design `05aa9f25-dd03-4199-b84a-ee27e9fb193f`. All four gates 100 first cycle; 58 optimized images and zero raw across the six pages. The comp's 17 images were Wix display derivatives (some 306px wide) — this port re-downloaded the ORIGINALS from static.wixstatic.com, up to 4256x2832. |
+| Burford Road Dental, Carterton | `burford-road-dental` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email reception@burfordroad.co.uk). **No docs/mocks pack** — the evidence is the practice's live site harvested into the design project (129 pages of text, 112 assets). **15 pages**, incl. six nested `/treatments/<id>`; 19 Puck blocks. Design `99dced20-bdd2-4df9-bea9-a76ed6f9f957`. All four gates 100 first cycle. Every published price is reproduced with the date the practice gives it (NHS list 'correct as of December 2020', Denplan 'from 1st April 2023', endodontics 'from 1st August 2021'). Four comp corrections: no 'NHS & private' new-patient claim, PRIVATE not FREE car park, the published '50+' years rather than '70+', and the five-star rating row removed — the asterisks on their testimonials page are dividers, not a rating. |
 
 
 | The Riverside, Lechlade | `riverside-lechlade` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email theriverside.lechlade@arkells.com, published on their contact page — the ledger's "phone only" was wrong). 10 pages, 18 Puck blocks. **Built WITHOUT a Claude Design comp** — see the section below before treating it as a normal port. All four gates passed first time. |
+| The Witney Hotel | `witney-hotel` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email info@witneyhotel.co.uk — **the ledger had the wrong domain**, the live site is witneyhotel.co.uk not thewitneyhotel.co.uk). 7 pages, 15 Puck blocks. **Built WITHOUT a Claude Design comp** (same 403 as riverside — see that section). All four gates passed first time, 12/12 Lighthouse runs at 100. |
+| Home Farm & Home Town Salon | `home-farm-salon` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email info@homefarmsalon.co.uk — **the ledger said "phone only", which is wrong**: they publish two numbers and two emails in their own contact-card graphic). **This is TWO salons**: Home Farm, Ardington (2014) and Home Town, Wantage (2017, with its own licensed bar) — the demo keeps them distinct and never attributes the bar to Ardington. 8 pages, 20 Puck blocks. **Built WITHOUT a Claude Design comp** (same 403 as riverside). All four gates passed first time, 12/12 Lighthouse runs at 100. Their site's duplicated opening-hours block (the ledger's finding) is confirmed: the same unlabelled block prints twice on both home and contact, and since no per-salon hours exist anywhere the demo publishes one set for both. |
 ### Outage: white-rose-accountancy served 502 for ~3 days (1–4 Sep)
 
 Both slot units were SIGTERM'd within the same second (`exited with code 143`, 1 Sep
@@ -145,6 +150,45 @@ porting anything.** It encodes every gate failure from the 29 Aug builds (demos 
 rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipeline` memory
 file holds the same lessons as history. **Next batch**: inputs per site are a Claude Design project + the `docs/mocks/` pack +
 the prospect email.
+
+### Three comps ported and released (4 Sep): Glamour and Glow, Portway Dental Care, Pokhara Delight
+
+All three were blocked until Ian ran `/design-login` — the ordinary claude.ai login carries no
+`user:design:read` scope, and `/design-login` writes a SEPARATE `designOauth` credential. Detail,
+including how to pull binary design assets (MCP `read_file` refuses them; use `render_preview`'s
+short-lived serve URL), is in `docs/growth/PORT-READINESS-glamour-portway-2026-09-04.md` and the
+`demo-port-pipeline` memory.
+
+Fact-checking held up well: all 72 of Glamour's prices matched their published list exactly, and
+all 14 of Portway's team members matched including every GDC number. Four corrections were
+needed — Portway advertised Wednesday late opening the practice does not offer; Glamour carried
+an unsourced "self-employed hairdresser" and star ratings the salon never publishes; and Pokhara's
+comp assumed nothing was confirmed when the restaurant in fact publishes its address, phone, full
+opening hours and five prices, which were filled in on Ian's instruction.
+
+**Five traps found the hard way. Every one of them passed at least one full green gate run.**
+
+- **A generated `.ts` content file can contain `\\n`**, which TypeScript reads as a literal
+  backslash-n. Glamour shipped **9 price rows instead of 72** through a completely green stamp,
+  and the visual baselines were captured FROM the broken build, so `visual:test` matched the bug
+  forever. Grep `components/` for it and count rendered rows before releasing.
+- **`new-demo.sh` names the wrong stage on a quality-gate failure** — `STAGE` is never updated for
+  `quality: site`, so a Lighthouse failure prints "FAILED during: seed + media + integrity". Read
+  the `-- gate: X --` markers.
+- **`media:import` needs the whole production env**, not just `MONGODB_URI`; it reads
+  `process.env.R2_BUCKET` with no dotenv. `set -a; . .env.production; set +a` first.
+- **Never `exec` from a claim-holding launcher** — it discards the EXIT trap and the stamp claim
+  outlives the run, so every later launcher sees `CLAIM HELD` by a dead pid.
+- **An empty-state placeholder with `position: absolute; inset: 0` escapes its grid cell** unless
+  that cell is itself positioned, and paints over the neighbouring photograph.
+
+Two authoring rules now worth applying fleet-wide: give a logo's `sizes` its rendered WIDTH (passing
+the CSS height served a 96px file into a 65px slot and cost best-practices 0.96 on both gate URLs),
+and wrap scope resets in `:where()` so `.xx p { margin: 0 }` at (0,1,1) stops outranking every block
+class. The second was flagged by the academy-partnership session and was live in two of my packages.
+
+Also: photo filenames are not identities. A first pass on Pokhara captioned a lamb curry as momo.
+Build a labelled montage and map images by eye before writing alt text.
 
 ### The Riverside, Lechlade — built WITHOUT a comp (4 Sep)
 

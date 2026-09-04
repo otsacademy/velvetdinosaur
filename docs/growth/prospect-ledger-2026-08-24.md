@@ -23,7 +23,7 @@
 | 6 | Shilton Accounting | Carterton | Accountancy | **Dead (000)** ✅ | phone only |
 | 7 | Corncroft Guest House | Witney | B&B | **Dead (000)** ✅ | phone only |
 | 8 | The Laurels Guest House | Witney | B&B | **Dead (000)** ✅ | phone only |
-| 9 | The Witney Hotel | Witney | Hotel | **Alive (200)** — do not claim dead | enquiries@thewitneyhotel.co.uk |
+| 9 | The Witney Hotel | Witney | Hotel | **Alive (200)** — do not claim dead | info@witneyhotel.co.uk (corrected 4 Sep: the live domain is witneyhotel.co.uk, not thewitneyhotel.co.uk, and this is the address the site publishes) |
 | 10 | Bellissimo Hair | Carterton | Hair | **Dead (000)** ✅ | bellissimohair@live.co.uk |
 | 11 | Fringe Hair & Beauty | Minster Lovell | Hair/beauty | Alive — 502 was transient ⚠️ | phone only |
 | 12 | ~~The White Hart~~ | Minster Lovell | Pub | **ALREADY BUILT** | — |
@@ -43,7 +43,7 @@
 | 26 | The Star Inn | Woodstock | Inn/pub | Live — brochure-era, no booking journey ✅ | phone only |
 | 27 | The Riverside | Lechlade | Pub/accommodation | Live — dated, conflicting booking instructions ✅ | theriverside.lechlade@arkells.com (corrected 4 Sep: published on their contact page; was recorded here as "phone only") |
 | 28 | Sima's Beauty | Witney | Beauty | Live — "Button" labels, no booking system ✅ | simaflp@aol.com |
-| 29 | Home Farm Salon | Ardington | Hair | Live — duplicated hours ✅ | phone only |
+| 29 | Home Farm Salon | Ardington | Hair | Live — duplicated hours ✅ (confirmed: the same block prints twice, unlabelled, on home and contact) | info@homefarmsalon.co.uk (corrected 4 Sep: was "phone only"; the salons publish two numbers — 01235 831900 Ardington, 01235 770636 Wantage — and two emails in their own contact-card graphic. Note this is TWO salons: Home Farm, Ardington and Home Town, Wantage) |
 | 30 | Corn Street Dental | Witney | Dental | Live — © 2019 footer ✅ | dentist@cornstreetdental.co.uk |
 
 ## Recommended batch order
