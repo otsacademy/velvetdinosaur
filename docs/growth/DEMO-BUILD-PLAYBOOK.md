@@ -327,6 +327,20 @@ are spans, not buttons. Drop fake pagination; write an honest count line instead
 
 ## 8. Accessibility traps with worked numbers (each cost a gate cycle)
 
+- **A bare scope reset outranks every block class — wrap it in `:where()`** (academy-partnership,
+  2026-09-04, then confirmed by a peer in two more packages the same hour). The reference packages
+  open with `.xx p { margin: 0 }` and `.xx input, .xx textarea, .xx button { font: inherit; color:
+  inherit }`. Those are (0,1,1); a block class like `.xx-hero-lead { margin-bottom: 32px }` or
+  `.xx-form-btn { color: var(--xx-paper) }` is (0,1,0), so **the reset silently wins**. Two distinct
+  failures came out of that one line: every paragraph gap in the design collapsed to zero (a pure
+  fidelity bug no gate can see — the visual baseline just records the wrong render), and the submit
+  button inherited body colour onto a dark ground for a **2.07:1** axe `color-contrast` failure that
+  only appears on whichever page carries the form. A peer found the same pattern collapsing a hero
+  lede's margin and rendering every display heading at weight 400 where the comp said 300.
+  Fix is one character-level change, not a specificity war: `.xx :where(p) { margin: 0 }` and
+  `.xx :where(input, textarea, button) { … }`. `:where()` contributes zero specificity, so the reset
+  still applies to unclassed elements and every block class outranks it. Audit any reset you write at
+  scope level the same way — if it names a bare element, it beats your classes.
 - **4.5:1 for text <18.7px** — the designs' muted tokens usually measure 3.2–4.4:
   deepen them (`#A8836A→#866750` on cream; brass `oklch(0.55…)→oklch(0.51…)`; 4.4:1 FAILS).
   On-dark cream text: alpha ≥ .55. Compute, don't eyeball; verify computed colours via a
@@ -410,7 +424,11 @@ are spans, not buttons. Drop fake pagination; write an honest count line instead
   (c) delete `app/about`, serve via `[...slug]` with the static map → head metadata AND full
   chrome. Always ship (c).
 - **Footer tel/email links fail `tap-targets`** as a stacked 16px inline pair (every page,
-  SEO 0.85–0.99). Make them block anchors with ≥12px vertical padding.
+  SEO 0.85–0.99). Make them block anchors with ≥12px vertical padding. The same audit fails on a
+  **one-glyph social link**: an `X` (Twitter) anchor measured **7x40px** and overlapped its LinkedIn
+  neighbour for SEO 0.87 on mobile only (academy-partnership, 2026-09-04). Padding alone cannot fix a
+  7px label — put a `min-width: 48px; min-height: 48px` floor on the anchor (inline-flex, centred).
+  Desktop scores 1.00 throughout, so this is invisible unless you read the mobile run.
 - **Image natural size vs rendered size (mobile best-practices 0.93–0.96, cotswold).** Two
   audits bite: `image-size-responsive` (natural px must roughly cover displayed px × DPR —
   a 120×47 logo upscaled in the header fails) and `image-aspect-ratio` (a landscape source

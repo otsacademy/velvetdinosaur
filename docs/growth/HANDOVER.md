@@ -4,7 +4,7 @@ _Last updated: 2026-09-04_
 
 ## Where things stand
 
-**35 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
+**36 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
 fleet. The inventory is additive: every new demo must inherit the same demo-safety, authentication,
 evidence and release gates and be added here.
 
@@ -51,6 +51,8 @@ grepping vhosts under-reports.
 | Jamesons Accountants, Witney | `jamesons-witney` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/33-jamesons-witney; prospect email advice@jamesons.co.uk) |
 | Cotswold Dental Wellness, Chipping Norton | `cotswold-dental` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/07-cotswold-dental-chipping-norton; prospect email info@cotswolddentalwellness.co.uk) |
 | The Salutation Inn, Pembrokeshire | `salutation-inn` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/17-salutation-inn-pembrokeshire; prospect email bwydbrenda62@outlook.com — the only address the site publishes). Invite + tracked link were minted 31 Aug by the fleet-audit session, not the build session. |
+| Glamour and Glow, Witney | `glamour-and-glow` | Released 4 Sep — NOT emailed. **No prospect email exists**: the salon publishes none anywhere on its site, so there is no tracked invite to mint (phone/walk-in demo, like bath-street). Review link in the stamp log. Design comp `bcdd0f72-78e6-4a9a-a344-ad9075e31842`; pack docs/mocks/glamour-and-glow. Note the branded domain glamourandglowbeauty.co.uk is DEAD (NXDOMAIN) and their public address is a GoDaddy subdomain — the strongest opener on this row. |
+| Portway Dental Care, Wantage | `portway-dental` | Released 4 Sep — NOT emailed. **No prospect email exists** (the practice publishes none), so no tracked invite. Review link in the stamp log. Design comp `32f0eb69-4aab-4bc9-9354-e9d350aa8475`; pack docs/mocks/portway-dental. **Read the Portman-group note before sending anything**: this is a group-owned practice, not the local independent the ledger describes. |
 | Bodalwyn Guest House, Aberystwyth | `bodalwyn-aberystwyth` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/bodalwyn-aberystwyth; prospect email enquiries@bodalwyn.co.uk). Invite minted 31 Aug by the fleet-audit session. |
 | Popty Cara | `popty-cara` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/popty-cara). **Two published addresses**: the homepage displays ENQUIRES@POPTYCARA.CO.UK but every mailto routes to orders@poptycara.co.uk — the invite is minted against `orders@` (the address their own site actually sends to); switch if Ian prefers the displayed one. Invite minted 31 Aug by the fleet-audit session. |
 | Powys Country House, Corwen | `powys-country-house` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; **no docs/mocks pack** — facts verified against a fresh 16-page mirror of the live site in the workspace + the design project's own harvest; prospect email info@powyscountryhouse.co.uk) |
@@ -59,8 +61,10 @@ grepping vhosts under-reports.
 | Number 47 Grassington | `number-47-grassington` | Stamped 31 Aug (take 2) — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/number-47-grassington with fact-by-fact summary.md; prospect email sarahwhitfield479@btinternet.com — the only address the site publishes, reservations handled by Sarah Whitfield). 6 pages (home / about=The House / rooms / grassington / gallery / contact-us), 20 Puck blocks. Take 1 failed at seed+media+integrity: the gallery block stored shots as `path | w | h | alt | caption` textarea rows, and the media importer only rewrites a `/demo-photos/` reference when the path is the WHOLE value — fixed by converting to an array field with a scalar `image` sub-field. All photography is the guest house's own, including three panels cropped out of their own slider triptych; small originals Lanczos-upscaled. Comp's unsourced '5/5 guest rating' panel replaced with the two magazine features their site actually publishes. |
 | White Rose Accountancy, Faringdon | `white-rose-accountancy` | Stamped 1 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email alison@whiteroseaccountancy.co.uk). Single-page practice site ported as home + /about. The practice publishes exactly one image (its rose mark); the comp's three photographic slots render editable placeholders rather than borrowed imagery. **Was serving 502 for ~3 days** (see outage note below) — restored 4 Sep. Its build session deliberately stamped with an EMPTY prospect-email arg, noting Ian had not authorised outreach, so no invite existed and the link pack skipped it silently; invite minted 4 Sep under the standing rule below. Confirm with Ian before emailing. |
 | Fringe Hair & Beauty, Minster Lovell | `fringe-hair-beauty` | Stamped 1 Sep — **no prospect email published** (ledger row 11 is phone-only), so like bath-street-dental there is no tracked invite to mint and it is absent from the link pack. Walk-in/phone pitch. |
+| The Academy Partnership, Witney | `academy-partnership` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email admin@theacademypartnership.co.uk). **No docs/mocks pack** — the practice's live site answers HTTP 403 to every non-browser client, so the evidence is a byte-exact Wayback mirror archived in the workspace (`/opt/vdplatform/workspaces/academy-partnership/evidence`, with `summary.md`). 8 pages: home + about + services + case-studies + faqs + contact-us, 15 Puck blocks. Design `50e5121d-fd13-4dcb-8d17-b719907ac975`. All four gates 100 first cycle. Ledger row 3's "counters claim unverified" is now settled: the four figures ARE published (`data-counter-value` 300 / 25 / 192 / 40000), and the demo states exactly those. |
 
 
+| The Riverside, Lechlade | `riverside-lechlade` | Stamped 4 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email theriverside.lechlade@arkells.com, published on their contact page — the ledger's "phone only" was wrong). 10 pages, 18 Puck blocks. **Built WITHOUT a Claude Design comp** — see the section below before treating it as a normal port. All four gates passed first time. |
 ### Outage: white-rose-accountancy served 502 for ~3 days (1–4 Sep)
 
 Both slot units were SIGTERM'd within the same second (`exited with code 143`, 1 Sep
@@ -142,35 +146,45 @@ rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipe
 file holds the same lessons as history. **Next batch**: inputs per site are a Claude Design project + the `docs/mocks/` pack +
 the prospect email.
 
-### In progress: The Riverside, Lechlade — prepped, blocked on `/design-login` (4 Sep)
+### The Riverside, Lechlade — built WITHOUT a comp (4 Sep)
 
-Workspace `/opt/vdplatform/workspaces/riverside-lechlade/` is scaffolded and the evidence is
-complete, but **the comp itself could not be pulled**. Claude Design authorization is missing
-from this machine's claude.ai login. The stored OAuth token carries no `user:design:*` scope,
-so the MCP server, `DesignSync` and a direct API call all return HTTP 403 with
-`needs_design_scopes`; the API's own message says refreshing the sign-in will not fix it. An
-agent cannot grant this — **Ian runs `/design-login` once and the port can proceed.**
+**Read this before treating the site as a normal fleet port.** The Claude Design
+comp (`700c5ad0-970c-4055-8bc0-5c7c4ed1700f`) could not be pulled: this machine's
+claude.ai token carries no `user:design:*` scope, so the MCP server, `DesignSync`
+and a direct API call all return HTTP 403 `needs_design_scopes`, and the API says
+refreshing the sign-in will not fix it. **`/design-login` is still the fix** if the
+comp is wanted. Ian instructed the session to build regardless, so **the layout,
+palette, type and section structure of this site are the agent's, not Ian's** —
+the first fleet site where that is true. Expect a divergence if the comp is
+pulled later. Full diagnosis in the workspace's `design/PROVENANCE.md`.
 
-Design project `700c5ad0-970c-4055-8bc0-5c7c4ed1700f`, file `The Riverside Lechlade.dc.html`.
-Full diagnosis in that workspace's `design/PROVENANCE.md`.
+Content is another matter: every word comes from the pub's own site and its two
+current menu PDFs, archived in the workspace with 119 of its own photographs and
+a fact-by-fact `evidence/summary.md`. Ten seeded pages (home, about,
+bar-and-food, rooms, garden, location, functions, events, gallery, contact-us),
+18 Puck blocks, nothing on a custom route.
 
-Ready and waiting: all 9 public pages mirrored, both current menu PDFs, 119 photographs
-(16 MB) indexed by pixel size, a verified `evidence/summary.md`, the template scaffold, and a
-`run-stamp.sh` launcher. **All ten images the comp imports are already downloaded** — their
-`NNNN-<original-name>-<hash8>.jpg` names map onto the pub's own live files — so only the
-`.dc.html` is actually blocking.
+Three findings worth carrying to the next build:
 
-Two findings worth carrying forward:
+- **The ledger's "phone only" for this row was wrong.** The pub publishes
+  `theriverside.lechlade@arkells.com` on its contact page. Ledger corrected.
+- **Strip HTML comments BEFORE tags when harvesting a hand-built site.** This one
+  comments stale copy out rather than deleting it: its Bar & Food page is 5,414
+  characters with comments and **721 without**, and the buried 87% held a 2023
+  Easter trail, a closure notice, four contradictory sets of opening hours and a
+  superseded menu. Now a rule in the playbook (§4).
+- **Don't guess room photos from filenames.** The first-numbered shot in each set
+  is often an exterior — `windrush_1` is two ducks, `thames1_1` and `thames2_1`
+  are building fronts, `leach2_1` is the pub sign. An earlier pass shipped those
+  as bedrooms; the correct pairing was read off the pub's own accommodation page.
 
-- **The ledger's "phone only" for this row is wrong.** The pub publishes
-  `theriverside.lechlade@arkells.com` on its contact page. It is emailable.
-- **A commented-content trap that will bite any hand-built HTML source.** This site comments
-  out seasonal copy instead of deleting it, and a naive tag-strip resurrects it as if it were
-  live: the Bar & Food page is 5,414 characters with comments and **721 without**. The buried
-  87% includes a Roald Dahl trail dated April 2023, a "closed 19 January – 20 February"
-  refurbishment notice, four contradictory sets of opening hours, and a whole superseded menu.
-  **Strip HTML comments before stripping tags** on any site harvested this way, and diff the
-  two extractions to see what you would have shipped.
+Two defects caught locally that would each have cost a ~40-minute gate cycle:
+`/about` scored SEO 92 on the `canonical` audit (the root layout emits a homepage
+canonical on every page, which Lighthouse flags on an inner page — fixed with a
+per-route `alternates.canonical`), and the first preview 404'd every inner page
+because the build ran before the seed, so `generateStaticParams` enumerated
+nothing. **Mirror the stamp's order — seed, then build — or the probe measures a
+site that does not exist yet.**
 
 ### Port hardening learned on the New Inn stamp (29 Aug pm — template carries all three fixes)
 
