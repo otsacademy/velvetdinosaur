@@ -41,7 +41,7 @@
 | 24 | Chatfield Accountancy | Witney | Accountancy | Live — outdated-browser warning ✅ | hannah@chatfieldaccountancy.co.uk |
 | 25 | The New Inn Hotel | Lechlade | Hotel/pub | Live — fragmented booking frames ✅ | info@newinnhotel.co.uk |
 | 26 | The Star Inn | Woodstock | Inn/pub | Live — brochure-era, no booking journey ✅ | phone only |
-| 27 | The Riverside | Lechlade | Pub/accommodation | Live — dated, conflicting booking instructions ✅ | phone only |
+| 27 | The Riverside | Lechlade | Pub/accommodation | Live — dated, conflicting booking instructions ✅ | theriverside.lechlade@arkells.com (corrected 4 Sep: published on their contact page; was recorded here as "phone only") |
 | 28 | Sima's Beauty | Witney | Beauty | Live — "Button" labels, no booking system ✅ | simaflp@aol.com |
 | 29 | Home Farm Salon | Ardington | Hair | Live — duplicated hours ✅ | phone only |
 | 30 | Corn Street Dental | Witney | Dental | Live — © 2019 footer ✅ | dentist@cornstreetdental.co.uk |

@@ -1,10 +1,10 @@
 # Velvet Dinosaur — session handover
 
-_Last updated: 2026-08-31_
+_Last updated: 2026-09-04_
 
 ## Where things stand
 
-**33 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
+**35 demo websites are live** at `https://<slug>.velvetdinosaur.com`. This is the authoritative
 fleet. The inventory is additive: every new demo must inherit the same demo-safety, authentication,
 evidence and release gates and be added here.
 
@@ -57,6 +57,25 @@ grepping vhosts under-reports.
 | Bath Street Dental Practice, Cheltenham | `bath-street-dental` | Stamped 31 Aug, then re-released (eb167cd) to fix a blank `/team`. 15 pages live incl. 9 `/treatments/<slug>`. **No prospect email published** — this one is a walk-in/phone demo, so there is no tracked invite to mint and it is absent from tracked-links-2026-08-31.md. First site in the fleet serving optimized images (14 opt / 2 raw on /team; the 2 are header+footer logos, already 14KB webp). |
 | The Teddington Cheese, Teddington & Richmond | `teddington-cheese` | Stamped 31 Aug — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; **no docs/mocks pack** — facts verified against a fresh 229-page mirror of the live site + its 78 published photographs, archived in the workspace; prospect email cheese@teddingtoncheese.co.uk) |
 | Number 47 Grassington | `number-47-grassington` | Stamped 31 Aug (take 2) — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-08-31.md; pack docs/mocks/number-47-grassington with fact-by-fact summary.md; prospect email sarahwhitfield479@btinternet.com — the only address the site publishes, reservations handled by Sarah Whitfield). 6 pages (home / about=The House / rooms / grassington / gallery / contact-us), 20 Puck blocks. Take 1 failed at seed+media+integrity: the gallery block stored shots as `path | w | h | alt | caption` textarea rows, and the media importer only rewrites a `/demo-photos/` reference when the path is the WHOLE value — fixed by converting to an array field with a scalar `image` sub-field. All photography is the guest house's own, including three panels cropped out of their own slider triptych; small originals Lanczos-upscaled. Comp's unsourced '5/5 guest rating' panel replaced with the two magazine features their site actually publishes. |
+| White Rose Accountancy, Faringdon | `white-rose-accountancy` | Stamped 1 Sep — NOT yet emailed (tracked link + tracked invite in tracked-links-2026-09-04.md; prospect email alison@whiteroseaccountancy.co.uk). Single-page practice site ported as home + /about. The practice publishes exactly one image (its rose mark); the comp's three photographic slots render editable placeholders rather than borrowed imagery. **Was serving 502 for ~3 days** (see outage note below) — restored 4 Sep. Its build session deliberately stamped with an EMPTY prospect-email arg, noting Ian had not authorised outreach, so no invite existed and the link pack skipped it silently; invite minted 4 Sep under the standing rule below. Confirm with Ian before emailing. |
+| Fringe Hair & Beauty, Minster Lovell | `fringe-hair-beauty` | Stamped 1 Sep — **no prospect email published** (ledger row 11 is phone-only), so like bath-street-dental there is no tracked invite to mint and it is absent from the link pack. Walk-in/phone pitch. |
+
+
+### Outage: white-rose-accountancy served 502 for ~3 days (1–4 Sep)
+
+Both slot units were SIGTERM'd within the same second (`exited with code 143`, 1 Sep
+12:23:56) and neither was restarted. `.next/BUILD_ID` was intact in both slots, so this was
+purely a stopped service — `systemctl start vd-white-rose-accountancy-green` restored it in
+seconds on 4 Sep.
+
+Same failure class as bakewell-pudding on 28–29 Aug (interrupted slot switch, never
+restarted), and the reason `vd-demo-fleet-health.timer` exists. **The monitor did its job and
+still nobody acted**: it emails only on CHANGE, so the site was reported once when it broke
+and then stayed silent for three days. Two sessions were stamping other sites that evening.
+The likely trigger is a broad kill that caught both slots at once — the playbook's "NEVER
+`pkill -f next-server` on this box" rule, §9b.
+
+Worth considering: a daily digest of anything currently unhealthy, not just transitions.
 
 ### Standing rule: a stamp is not finished until the prospect link exists
 
@@ -122,6 +141,36 @@ porting anything.** It encodes every gate failure from the 29 Aug builds (demos 
 rule; a site built to it should pass the stamp in one cycle. The `demo-port-pipeline` memory
 file holds the same lessons as history. **Next batch**: inputs per site are a Claude Design project + the `docs/mocks/` pack +
 the prospect email.
+
+### In progress: The Riverside, Lechlade — prepped, blocked on `/design-login` (4 Sep)
+
+Workspace `/opt/vdplatform/workspaces/riverside-lechlade/` is scaffolded and the evidence is
+complete, but **the comp itself could not be pulled**. Claude Design authorization is missing
+from this machine's claude.ai login. The stored OAuth token carries no `user:design:*` scope,
+so the MCP server, `DesignSync` and a direct API call all return HTTP 403 with
+`needs_design_scopes`; the API's own message says refreshing the sign-in will not fix it. An
+agent cannot grant this — **Ian runs `/design-login` once and the port can proceed.**
+
+Design project `700c5ad0-970c-4055-8bc0-5c7c4ed1700f`, file `The Riverside Lechlade.dc.html`.
+Full diagnosis in that workspace's `design/PROVENANCE.md`.
+
+Ready and waiting: all 9 public pages mirrored, both current menu PDFs, 119 photographs
+(16 MB) indexed by pixel size, a verified `evidence/summary.md`, the template scaffold, and a
+`run-stamp.sh` launcher. **All ten images the comp imports are already downloaded** — their
+`NNNN-<original-name>-<hash8>.jpg` names map onto the pub's own live files — so only the
+`.dc.html` is actually blocking.
+
+Two findings worth carrying forward:
+
+- **The ledger's "phone only" for this row is wrong.** The pub publishes
+  `theriverside.lechlade@arkells.com` on its contact page. It is emailable.
+- **A commented-content trap that will bite any hand-built HTML source.** This site comments
+  out seasonal copy instead of deleting it, and a naive tag-strip resurrects it as if it were
+  live: the Bar & Food page is 5,414 characters with comments and **721 without**. The buried
+  87% includes a Roald Dahl trail dated April 2023, a "closed 19 January – 20 February"
+  refurbishment notice, four contradictory sets of opening hours, and a whole superseded menu.
+  **Strip HTML comments before stripping tags** on any site harvested this way, and diff the
+  two extractions to see what you would have shipped.
 
 ### Port hardening learned on the New Inn stamp (29 Aug pm — template carries all three fixes)
 

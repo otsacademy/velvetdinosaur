@@ -80,6 +80,21 @@ Open the pack screenshots with the Read tool and check the design's content agai
   fact, not shipped.
 - **Testimonials**: only quote text the prospect publishes. If unverifiable, reframe (rename
   the prop away from `quote/review/testimonial` and make it a statement) or drop it.
+- **Strip HTML comments BEFORE stripping tags** when the source is a hand-built site (found on
+  riverside-lechlade, 2026-09-04). Owners of hand-maintained HTML routinely comment out
+  seasonal content rather than deleting it, and a naive tag-strip pulls it all back as if it
+  were live copy — indistinguishable from published text once the angle brackets are gone.
+  Measured on that site's Bar & Food page: **5,414 characters with comments, 721 without** —
+  87% of a naive extraction was invisible to real visitors, and all of it was stale: an event
+  dated April 2023, a "closed for refurbishment" notice, four mutually contradictory sets of
+  opening hours, and a complete superseded menu with different prices. Any of it would have
+  been an invented fact on a prospect's demo, and `demo:check` cannot catch it because the
+  manifest would have cited the page it really came from.
+  Order matters: `re.sub(r'(?s)<!--.*?-->', ' ', html)` **first**, then scripts/styles, then
+  tags. Keep both extractions and diff them — the difference is precisely the content the
+  owner chose to hide, which is also a good read on how stale the site is.
+  Watch for a nav entry commented out while its page stays live (that site's Functions page is
+  reachable by URL but linked from nowhere).
 
 ## 5. Scaffold
 
