@@ -46,6 +46,13 @@
 | 29 | Home Farm Salon | Ardington | Hair | Live — duplicated hours ✅ (confirmed: the same block prints twice, unlabelled, on home and contact) | info@homefarmsalon.co.uk (corrected 4 Sep: was "phone only"; the salons publish two numbers — 01235 831900 Ardington, 01235 770636 Wantage — and two emails in their own contact-card graphic. Note this is TWO salons: Home Farm, Ardington and Home Town, Wantage) |
 | 30 | Corn Street Dental | Witney | Dental | Live — © 2019 footer ✅ | dentist@cornstreetdental.co.uk |
 
+## Added 2026-09-06 (not in the original 30)
+
+| Business | Town | Sector | Site status (verified 6 Sep) | Email |
+|---|---|---|---|---|
+| Hall's Gardening Services | Witney | Gardening | Live — Wix; "Welcome to Timber Land!" (someone else's headline) on all 15 pages; © 2017 footer; /decking says only "Images coming soon."; contact page renders its own post-submit confirmation ✅ | info@hallsgardeningservices.co.uk |
+| ReesRussell LLP | Witney | Accountancy | Live — **/ourteam ships three unshipped template cards reading "Member Name" / "Member About Goes Here"**; footer lists 3 offices, team page lists 4; services page leaks "SELECT A SECTION ABOVE TO SHOW OUR SERVICES HERE"; about page calls its own founder video "dated" ✅ | witney@reesrussell.co.uk |
+
 ## Recommended batch order
 1. **Batch A (email-ready, booking-engine fit):** Claire Lewis, Bellissimo, Woodstock Dental, Cotswold Dental Wellness, Burford Road Dental, New Inn Hotel, Sima's Beauty, Penguin Hair
 2. **Batch B (walk-in lane, phone-only locals):** Corncroft, Laurels, Bath Street, Star Inn, Riverside, Glamour and Glow, Buscot Manor

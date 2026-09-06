@@ -218,12 +218,22 @@ File set (pattern identical across all three references; `xx` = 2-letter scope l
   way had a peer not checked the slots.
 
 ```bash
+# Test the TEMPLATE, not the live tree. At pre-stamp time the root copy does
+# not exist yet — the installer is about to restore it — so a both-present test
+# sees nothing and the collision still happens during the installer's own
+# build. Checking the template also protects segments that legitimately live in
+# the template's own (site) group, like [...slug], from being cleared.
 for base in "/srv/apps/$SLUG" "/srv/apps/$SLUG-blue" "/srv/apps/$SLUG-green"; do
   for d in "$base/app/(site)"/*/; do
-    n=$(basename "$d"); [ -d "$base/app/$n" ] && rm -rf "$d"
+    [ -d "$d" ] || continue
+    n=$(basename "$d")
+    [ -d "/opt/vdplatform/template/app/$n" ] && rm -rf "$d"
   done
 done
 ```
+The both-present form this replaced was measured failing on rees-russell
+(2026-09-06): the guard ran, found no path holding both, cleared nothing, and
+the installer then died two minutes later on `/(site)/about` vs `/about`.
 
   Safe to run mid-preflight; the installer restores template routes and rebuilds afterwards, and
   the package rsync reintroduces the group route in the correct order. Leave `app/X` alone — the
@@ -319,6 +329,31 @@ are spans, not buttons. Drop fake pagination; write an honest count line instead
   small, lazy and below the fold where the bytes don't justify the churn (popty-cara's two award
   certificates, 153KB total) — and never trade a green audit for a few KB by forcing such an
   image into a cover box, since only `cover` fills are exempt from `image-aspect-ratio`.
+- **A long hero heading is a CLS risk, and only `display: optional` fixes it**
+  (rees-russell, 2026-09-06). Its h1 wraps to two lines at 1280px and **four at
+  375px**, so any metric difference between the fallback and the webfont flips a
+  line and pushes the lede and buttons down: measured CLS **0.042–0.072 on four
+  of six gate runs**, costing perf 99 and passing only on the median. Four other
+  sites built the same week measured 0, because their headings are short enough
+  never to flip. Two fixes that did NOT work, both measured: an explicit
+  `fallback` stack with `adjustFontFallback` (no change), and a `min-height` on
+  the hero copy container — that one cannot work, because the shift is the h1's
+  own height changing and min-height on a parent does not stop its children
+  moving relative to each other. What works is `display: 'optional'` on the
+  display face in `next/font`: the browser gets ~100ms to use the real font and
+  then commits to whatever it painted, so no swap can occur. Measured CLS 0.0000
+  on all six mobile gate runs afterwards, perf 100, and the real face still
+  renders (next/font preloads it). Check `cumulative-layout-shift` numericValue
+  across the six runs, not just the category score — a shift that only costs one
+  point still hides behind the median.
+- **The stamp requires at least one file in `public/demo-photos`.**
+  `new-demo.sh:52` aborts with "Site package has no demo media" before the
+  installer runs. A prospect that publishes no usable photography still needs
+  one real asset: use their logo, which is genuinely theirs. Do not reach for
+  the stock photograph on their site — rees-russell's only non-logo image is a
+  Pexels file whose filename says so, and republishing someone else's licensed
+  stock on a demo is not ours to do. The failure is cheap (seconds, before the
+  installer) and the message is exact.
 - **A page-opening block's image is that page's LCP element.** Blocks reused mid-page are
   lazy, but the same block placed first must load eagerly — give the block an explicit
   "page-opening" prop rather than hard-coding it (popty-cara's `imagePriority`), and set it in
@@ -493,6 +528,16 @@ PID=$(ss -ltnp | grep ":$PORT " | grep -o 'pid=[0-9]*' | head -1 | cut -d= -f2)
 [ "$(readlink /proc/$PID/cwd)" = "$SITE" ] || { echo "wrong server on $PORT"; exit 2; }
 ```
 
+**Seed BEFORE you build, or the probe grades a site that 404s its own pages.** The playbook already
+says to mirror the stamp's order; here is the concrete failure when you don't (go-engineers,
+2026-09-06). `app/api/site/known-paths/route.ts` has a `GET()` that takes no request argument, so
+Next prerenders it at build time — with an empty database it bakes `{"paths":["/","/about"]}`, and
+the proxy's soft-404 guard then answers **404 for every other seeded page** on a site whose renderer
+is perfectly healthy. `/sitemap.xml` is prerendered the same way and ships empty. `NEXT_PUBLIC_*`
+values are inlined at build time too, so a build that predates the brand env leaves the title reading
+"Your business". All three look like package defects and are none: rebuild with the database seeded
+and the env in place, exactly as `new-demo.sh` does it.
+
 **Assert geometry per breakpoint, not just screenshots.** Two real mobile chrome bugs on
 teddington-cheese were invisible in full-page captures and only fell out of measurement: a
 `flex: 0 0 auto` brand block 345px wide pushed the menu toggle to x=512 on a 390px viewport —
@@ -628,6 +673,23 @@ in §7 on both packages.
 **Serialize with other sessions first.** Two parallel stamps sabotage each other's Lighthouse
 runs — the documented penalty is ~10 desktop performance points, against gates that assert
 `minScore: 1` with no headroom.
+
+**Certbot is a machine-wide lock, and losing it kills the whole stamp — not a stage.** If a peer's
+installer is requesting a certificate when yours gets there, `install.sh` prints `Another instance of
+Certbot is already running.` and exits 1, roughly seven minutes in, with no retry and no partial
+credit (witney-dental-practice take-1, 2026-09-06). The claim did not prevent it: the peer had taken
+the claim, so my launcher's own *later* claim was legitimate — but the earlier run's certbot was
+still finishing. Two consequences worth wiring into a launcher: gate on a running certbot as well as
+on peer stamps, reading `/proc/<pid>/comm` (the executable's own name) rather than the command line;
+and note that the stamp IS safely re-runnable from the top after this failure — DNS upsert is
+idempotent, and the installer skips work it has already done.
+
+> **Detect other processes by `/proc/<pid>/comm`, never by a cmdline substring.** A cmdline scan
+> matches the scanning script's own argv, so a wait loop written that way never exits — mine sat
+> "waiting: 34 browser processes" against 34 chrome processes that were 22 hours and 2.8 days old,
+> orphans from earlier sessions, while its own command line contained the word it was grepping for.
+> Same family as the `pgrep -f next-server` self-match in §9b, and `pkill -f 'foo.sh'` will also kill
+> a background task whose argv merely mentions `foo.log`.
 
 **The queue only serialises stamps against EACH OTHER — the box also hosts non-fleet work, and
 that quietly costs you the run.** Every detector in this section looks for `new-demo.sh` /
