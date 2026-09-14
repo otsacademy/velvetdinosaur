@@ -224,3 +224,28 @@ export function collectAssetStorageKeys(record: AssetStorageRecord | null | unde
   }
   return keys;
 }
+
+const UPLOADS_PREFIX = 'uploads/';
+const ORIGINALS_PREFIX = 'asset-originals/';
+
+/** `asset-originals/<path without extension>` for a public upload key, or null. */
+export function originalKeyStem(publicKey: unknown): string | null {
+  if (typeof publicKey !== 'string' || !publicKey.startsWith(UPLOADS_PREFIX)) return null;
+  const withoutExtension = publicKey.slice(UPLOADS_PREFIX.length).replace(/\.[^/.]+$/, '');
+  if (!withoutExtension || withoutExtension.includes('..') || withoutExtension.endsWith('/')) return null;
+  return `${ORIGINALS_PREFIX}${withoutExtension}`;
+}
+
+/**
+ * Whether a stored key is one of the private originals of a public upload:
+ * `<stem>.<ext>` as written by the upload and import pipelines, or
+ * `<stem>--replace-<timestamp>.<ext>` as written by the replace route. Records
+ * created before Sep 2026 never persisted `originalKey` (the schema did not
+ * declare it), so purges find their originals by listing the stem and keeping
+ * only keys of this exact shape.
+ */
+export function isOriginalKeyOf(publicKey: unknown, candidate: unknown): boolean {
+  const stem = originalKeyStem(publicKey);
+  if (!stem || typeof candidate !== 'string' || !candidate.startsWith(stem)) return false;
+  return /^(--replace-\d+)?\.[a-z0-9]+$/i.test(candidate.slice(stem.length));
+}

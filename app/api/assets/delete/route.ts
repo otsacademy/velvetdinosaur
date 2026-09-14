@@ -4,8 +4,8 @@ import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
 import { getR2Client } from '@/lib/r2';
 import { Asset } from '@/models/Asset';
-import { collectAssetStorageKeys, type AssetStorageRecord } from '@/lib/assets/image-variants';
-import { deleteAssetObjects } from '@/lib/assets/trash.server';
+import type { AssetStorageRecord } from '@/lib/assets/image-variants';
+import { collectPurgeKeys, deleteAssetObjects } from '@/lib/assets/trash.server';
 
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store',
@@ -116,10 +116,17 @@ export async function POST(request: Request) {
   for (const key of keys) {
     const record = recordByKey.get(key);
     const bucket = record?.bucket || defaultBucket;
-    // Purge everything the record owns (public key, private original, every
+    // Purge everything the record owns (public key, private original(s), every
     // rendered variant). Deleting only the public key left the rest in storage.
-    const storageKeys = record ? collectAssetStorageKeys(record) : [key];
-    if (!storageKeys.includes(key)) storageKeys.unshift(key);
+    const { keys: storageKeys, error: listError } = await collectPurgeKeys({
+      client,
+      bucket,
+      record: record ?? { key }
+    });
+    if (listError) {
+      results.push({ key, ok: false, error: `listing originals: ${listError}`, removedObjects: 0 });
+      continue;
+    }
     const outcome = await deleteAssetObjects({ client, bucket, keys: storageKeys });
     if (outcome.failed.length) {
       // Keep the record so the purge can be retried for the objects that remain.

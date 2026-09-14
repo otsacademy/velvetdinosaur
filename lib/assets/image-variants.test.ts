@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { buildVariantKey, collectAssetStorageKeys } from './image-variants';
+import { buildVariantKey, collectAssetStorageKeys, isOriginalKeyOf, originalKeyStem } from './image-variants';
 
 describe('collectAssetStorageKeys', () => {
   test('lists the public key, the original and every rendered variant once', () => {
@@ -53,5 +53,28 @@ describe('collectAssetStorageKeys', () => {
         variants: { thumbnail: { key: 42 }, card: null, hero: { key: 'uploads/' } }
       })
     ).toEqual(['uploads/a.webp']);
+  });
+});
+
+describe('originalKeyStem / isOriginalKeyOf', () => {
+  const publicKey = 'uploads/site-media/popty-cara/award-rich-fruit-4243656432c96fd45991.jpg';
+
+  test('maps a public key to its private original stem', () => {
+    expect(originalKeyStem(publicKey)).toBe('asset-originals/site-media/popty-cara/award-rich-fruit-4243656432c96fd45991');
+    expect(originalKeyStem('asset-originals/x.png')).toBeNull();
+    expect(originalKeyStem('uploads/')).toBeNull();
+    expect(originalKeyStem('uploads/../etc.png')).toBeNull();
+    expect(originalKeyStem(42)).toBeNull();
+  });
+
+  test('accepts the pipeline and replace shapes only', () => {
+    const stem = 'asset-originals/site-media/popty-cara/award-rich-fruit-4243656432c96fd45991';
+    expect(isOriginalKeyOf(publicKey, `${stem}.jpg`)).toBe(true);
+    expect(isOriginalKeyOf(publicKey, `${stem}.PNG`)).toBe(true);
+    expect(isOriginalKeyOf(publicKey, `${stem}--replace-20260914120000.jpg`)).toBe(true);
+    expect(isOriginalKeyOf(publicKey, `${stem}0.jpg`)).toBe(false);
+    expect(isOriginalKeyOf(publicKey, `${stem}-extra.jpg`)).toBe(false);
+    expect(isOriginalKeyOf(publicKey, `${stem}`)).toBe(false);
+    expect(isOriginalKeyOf(publicKey, 'uploads/site-media/popty-cara/award-rich-fruit-4243656432c96fd45991.jpg')).toBe(false);
   });
 });

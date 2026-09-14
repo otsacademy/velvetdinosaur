@@ -60,6 +60,16 @@ const AssetSchema = new Schema(
     mime: { type: String },
     size: { type: Number },
     etag: { type: String },
+    // Storage bookkeeping written by the upload/replace pipeline. These were
+    // never declared, so Mongoose stripped them and a purge could not find the
+    // private original (customer test, 13 Sep 2026).
+    originalKey: { type: String },
+    originalMime: { type: String },
+    originalSize: { type: Number },
+    optimizedSize: { type: Number },
+    processingStatus: { type: String },
+    processedAt: { type: Date },
+    fallbackKey: { type: String },
     deletedAt: { type: Date, index: true },
     deletedBy: { type: String }
   },

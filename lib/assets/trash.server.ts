@@ -1,8 +1,13 @@
-import { DeleteObjectsCommand, type S3Client } from '@aws-sdk/client-s3';
+import { DeleteObjectsCommand, ListObjectsV2Command, type S3Client } from '@aws-sdk/client-s3';
 import { connectDB } from '@/lib/db';
 import { getR2Client } from '@/lib/r2';
 import { Asset } from '@/models/Asset';
-import { collectAssetStorageKeys, type AssetStorageRecord } from '@/lib/assets/image-variants';
+import {
+  collectAssetStorageKeys,
+  isOriginalKeyOf,
+  originalKeyStem,
+  type AssetStorageRecord
+} from '@/lib/assets/image-variants';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -66,6 +71,61 @@ export async function deleteAssetObjects(input: {
     }
   }
   return result;
+}
+
+/**
+ * The private originals stored for a public upload, found by listing the
+ * original's stem. Needed for every record created before `originalKey` was
+ * persisted (the Asset schema did not declare it until Sep 2026) and for
+ * `--replace-<timestamp>` originals the replace route leaves behind.
+ */
+export async function listStoredOriginalKeys(input: {
+  client: S3Client;
+  bucket: string;
+  publicKey: string;
+}): Promise<string[]> {
+  const stem = originalKeyStem(input.publicKey);
+  if (!stem) return [];
+  const keys: string[] = [];
+  let token: string | undefined;
+  do {
+    const page = await input.client.send(
+      new ListObjectsV2Command({ Bucket: input.bucket, Prefix: stem, ContinuationToken: token })
+    );
+    for (const object of page.Contents || []) {
+      if (object.Key && isOriginalKeyOf(input.publicKey, object.Key)) keys.push(object.Key);
+    }
+    token = page.IsTruncated ? page.NextContinuationToken : undefined;
+  } while (token);
+  return keys;
+}
+
+/**
+ * Every storage object a purge must remove for a record: the keys the record
+ * knows about plus the private originals found by stem. A listing failure is
+ * reported so the caller keeps the record (and the purge stays retryable)
+ * instead of silently leaving the original behind.
+ */
+export async function collectPurgeKeys(input: {
+  client: S3Client;
+  bucket: string;
+  record: AssetStorageRecord & { key: string };
+}): Promise<{ keys: string[]; error?: string }> {
+  const keys = collectAssetStorageKeys(input.record);
+  if (!keys.includes(input.record.key)) keys.unshift(input.record.key);
+  try {
+    for (const key of await listStoredOriginalKeys({
+      client: input.client,
+      bucket: input.bucket,
+      publicKey: input.record.key
+    })) {
+      if (!keys.includes(key)) keys.push(key);
+    }
+    return { keys };
+  } catch (error) {
+    if (isNotFoundError(error)) return { keys };
+    return { keys, error: error instanceof Error ? error.message : 'Listing originals failed' };
+  }
 }
 
 function isNotFoundError(error: unknown) {
@@ -157,10 +217,13 @@ export async function purgeExpiredTrashedAssets(
       results.push({ key, status: 'failed', reason: 'Missing bucket configuration' });
       continue;
     }
-    // Purge the public key, the private original and every rendered variant —
+    // Purge the public key, the private original(s) and every rendered variant —
     // not just the public key, which left originals and thumbnails behind.
-    const storageKeys = collectAssetStorageKeys(record);
-    if (!storageKeys.includes(key)) storageKeys.unshift(key);
+    const { keys: storageKeys, error: listError } = await collectPurgeKeys({ client, bucket, record });
+    if (listError) {
+      results.push({ key, status: 'failed', reason: `listing originals: ${listError}` });
+      continue;
+    }
     const outcome = await deleteAssetObjects({ client, bucket, keys: storageKeys });
     if (outcome.failed.length) {
       results.push({
