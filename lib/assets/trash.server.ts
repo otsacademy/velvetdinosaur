@@ -1,15 +1,72 @@
-import { DeleteObjectCommand } from '@aws-sdk/client-s3';
+import { DeleteObjectsCommand, type S3Client } from '@aws-sdk/client-s3';
 import { connectDB } from '@/lib/db';
 import { getR2Client } from '@/lib/r2';
 import { Asset } from '@/models/Asset';
+import { collectAssetStorageKeys, type AssetStorageRecord } from '@/lib/assets/image-variants';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-type TrashAssetRecord = {
+type TrashAssetRecord = AssetStorageRecord & {
   key: string;
   bucket?: string;
   deletedAt?: Date | null;
 };
+
+const DELETE_BATCH_SIZE = 1000;
+
+export type DeleteAssetObjectsResult = {
+  deleted: string[];
+  missing: string[];
+  failed: Array<{ key: string; reason: string }>;
+};
+
+/**
+ * Deletes every key from the bucket in DeleteObjects batches. Objects that no
+ * longer exist count as success; each failure is reported per key so callers
+ * can keep the database record (and retry) when storage is only partly cleared.
+ */
+export async function deleteAssetObjects(input: {
+  client: S3Client;
+  bucket: string;
+  keys: string[];
+}): Promise<DeleteAssetObjectsResult> {
+  const result: DeleteAssetObjectsResult = { deleted: [], missing: [], failed: [] };
+  const keys = Array.from(new Set(input.keys.filter((key) => typeof key === 'string' && key.length > 0)));
+  for (let index = 0; index < keys.length; index += DELETE_BATCH_SIZE) {
+    const batch = keys.slice(index, index + DELETE_BATCH_SIZE);
+    try {
+      const response = await input.client.send(
+        new DeleteObjectsCommand({
+          Bucket: input.bucket,
+          Delete: { Objects: batch.map((Key) => ({ Key })), Quiet: false }
+        })
+      );
+      const failures = new Map<string, string>();
+      for (const error of response.Errors || []) {
+        if (!error.Key) continue;
+        const code = error.Code || '';
+        if (code === 'NoSuchKey' || code === 'NotFound') {
+          result.missing.push(error.Key);
+          continue;
+        }
+        failures.set(error.Key, error.Message || code || 'Delete failed');
+      }
+      for (const key of batch) {
+        const reason = failures.get(key);
+        if (reason) result.failed.push({ key, reason });
+        else if (!result.missing.includes(key)) result.deleted.push(key);
+      }
+    } catch (error) {
+      if (isNotFoundError(error)) {
+        result.missing.push(...batch);
+        continue;
+      }
+      const reason = error instanceof Error ? error.message : 'Delete failed';
+      for (const key of batch) result.failed.push({ key, reason });
+    }
+  }
+  return result;
+}
 
 function isNotFoundError(error: unknown) {
   const status =
@@ -71,7 +128,7 @@ export async function purgeExpiredTrashedAssets(
   })
     .sort({ deletedAt: 1 })
     .limit(limit)
-    .select({ key: 1, bucket: 1, deletedAt: 1 })
+    .select({ key: 1, bucket: 1, originalKey: 1, fallbackKey: 1, variants: 1, deletedAt: 1 })
     .lean()
     .exec()) as unknown as TrashAssetRecord[];
 
@@ -100,19 +157,21 @@ export async function purgeExpiredTrashedAssets(
       results.push({ key, status: 'failed', reason: 'Missing bucket configuration' });
       continue;
     }
-    try {
-      await client.send(new DeleteObjectCommand({ Bucket: bucket, Key: key }));
-      keysToRemoveFromDb.add(key);
-      results.push({ key, status: 'purged' });
-    } catch (error) {
-      if (isNotFoundError(error)) {
-        keysToRemoveFromDb.add(key);
-        results.push({ key, status: 'purged' });
-        continue;
-      }
-      const reason = error instanceof Error ? error.message : 'Delete failed';
-      results.push({ key, status: 'failed', reason });
+    // Purge the public key, the private original and every rendered variant —
+    // not just the public key, which left originals and thumbnails behind.
+    const storageKeys = collectAssetStorageKeys(record);
+    if (!storageKeys.includes(key)) storageKeys.unshift(key);
+    const outcome = await deleteAssetObjects({ client, bucket, keys: storageKeys });
+    if (outcome.failed.length) {
+      results.push({
+        key,
+        status: 'failed',
+        reason: outcome.failed.map((failure) => `${failure.key}: ${failure.reason}`).join('; ')
+      });
+      continue;
     }
+    keysToRemoveFromDb.add(key);
+    results.push({ key, status: 'purged' });
   }
 
   if (keysToRemoveFromDb.size > 0) {

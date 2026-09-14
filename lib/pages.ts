@@ -126,19 +126,14 @@ async function getDraftPageDataUncached(slug: string): Promise<Data> {
   const data = resolveDraftData(page);
   return isPuckData(data) ? normalizePageDataForSlug(slug, data) : defaultData(slug);
 }
-async function getDraftPageDataCached(slug: string): Promise<Data> {
-  'use cache';
-  applyCacheLife('minutes');
-  cacheTag(pageTags.content);
-  cacheTag(pageTags.draft(slug));
-  return getDraftPageDataUncached(slug);
-}
+// Draft data is only ever read by authenticated editor surfaces (/edit, /preview,
+// /admin/theme, /api/puck/load and the draft site chrome). It used to sit behind a
+// 'use cache' loader whose tag revalidation is stale-while-revalidate in Next 16,
+// so the first editor load after a save rendered the previous draft (customer
+// test, 13 Sep 2026). Always read it fresh; published/record readers keep caches.
 export async function getDraftPageData(slug: string): Promise<Data> {
-  if (disablePageCache || isEditorSmoke) {
-    applyNoStore();
-    return getDraftPageDataUncached(slug);
-  }
-  return getDraftPageDataCached(slug);
+  applyNoStore();
+  return getDraftPageDataUncached(slug);
 }
 async function getPageRecordUncached(slug: string): Promise<PageDoc | null> {
   const conn = await connectPageDB();

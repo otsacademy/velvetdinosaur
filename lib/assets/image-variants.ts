@@ -181,3 +181,46 @@ export function selectAssetVariantKey(
   }
   return asset.fallbackKey || asset.variants?.inline?.key || asset.key || null;
 }
+
+export type AssetStorageRecord = {
+  key?: unknown;
+  fallbackKey?: unknown;
+  originalKey?: unknown;
+  variants?: unknown;
+};
+
+const DELETABLE_KEY_PREFIXES = ['uploads/', 'asset-originals/'];
+
+function toDeletableStorageKey(value: unknown) {
+  if (typeof value !== 'string') return null;
+  const key = value.trim();
+  if (!key || key.includes('..') || key.includes('\\')) return null;
+  return DELETABLE_KEY_PREFIXES.some((prefix) => key.startsWith(prefix) && key.length > prefix.length)
+    ? key
+    : null;
+}
+
+/**
+ * Every object an asset record owns in storage: the public key, the fallback,
+ * the private original and each rendered variant. Purging only the public key
+ * (the behaviour until Sep 2026) left the original and every variant behind.
+ * Stable order, duplicates removed; anything outside `uploads/` or
+ * `asset-originals/` is ignored so a corrupt record can never delete elsewhere.
+ */
+export function collectAssetStorageKeys(record: AssetStorageRecord | null | undefined): string[] {
+  if (!record || typeof record !== 'object') return [];
+  const candidates: unknown[] = [record.key, record.fallbackKey, record.originalKey];
+  if (record.variants && typeof record.variants === 'object') {
+    for (const variant of Object.values(record.variants as Record<string, unknown>)) {
+      if (variant && typeof variant === 'object') {
+        candidates.push((variant as { key?: unknown }).key);
+      }
+    }
+  }
+  const keys: string[] = [];
+  for (const candidate of candidates) {
+    const key = toDeletableStorageKey(candidate);
+    if (key && !keys.includes(key)) keys.push(key);
+  }
+  return keys;
+}

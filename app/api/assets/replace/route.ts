@@ -5,6 +5,7 @@ import { getR2Client } from '@/lib/r2';
 import { Asset } from '@/models/Asset';
 import { storeAssetWithVariants } from '@/lib/assets/image-pipeline.server';
 import { getOriginalExtension } from '@/lib/assets/image-variants';
+import { deleteAssetObjects } from '@/lib/assets/trash.server';
 
 function parsePositiveInt(input: unknown) {
   if (typeof input !== 'string') return undefined;
@@ -50,10 +51,11 @@ export async function POST(request: Request) {
   const existing = (await Asset.findOne({ key })
     .select({
       key: 1,
-      bucket: 1
+      bucket: 1,
+      originalKey: 1
     })
     .lean()
-    .exec()) as { key?: string; bucket?: string } | null;
+    .exec()) as { key?: string; bucket?: string; originalKey?: string } | null;
   if (!existing?.key) {
     return NextResponse.json({ error: 'Asset not found' }, { status: 404 });
   }
@@ -76,6 +78,16 @@ export async function POST(request: Request) {
     body: buffer,
     contentType
   });
+
+  // The replacement wrote a new private original; remove the superseded one so
+  // it does not linger in storage. Best effort: never fails the replacement.
+  if (
+    typeof existing.originalKey === 'string' &&
+    existing.originalKey.startsWith('asset-originals/') &&
+    existing.originalKey !== stored.originalKey
+  ) {
+    await deleteAssetObjects({ client, bucket, keys: [existing.originalKey] });
+  }
 
   const setPayload: Record<string, unknown> = {
     bucket,

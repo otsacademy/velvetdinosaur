@@ -1,10 +1,11 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { DeleteObjectCommand } from '@aws-sdk/client-s3';
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
 import { getR2Client } from '@/lib/r2';
 import { Asset } from '@/models/Asset';
+import { collectAssetStorageKeys, type AssetStorageRecord } from '@/lib/assets/image-variants';
+import { deleteAssetObjects } from '@/lib/assets/trash.server';
 
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store',
@@ -24,22 +25,6 @@ function normalizeKeys(input: unknown): string[] {
 function normalizeMode(input: unknown): DeleteMode {
   if (input === 'purge') return 'purge';
   return 'trash';
-}
-
-function isNotFoundError(error: unknown) {
-  const status =
-    typeof error === 'object' && error !== null
-      ? ((error as { $metadata?: { httpStatusCode?: unknown } }).$metadata?.httpStatusCode as unknown)
-      : undefined;
-  if (status === 404 || status === '404') return true;
-  const rawCode =
-    typeof error === 'object' && error !== null
-      ? ((error as { Code?: unknown; code?: unknown; name?: unknown }).Code ??
-          (error as { code?: unknown }).code ??
-          (error as { name?: unknown }).name)
-      : undefined;
-  const code = typeof rawCode === 'string' ? rawCode : '';
-  return code === 'NotFound' || code === 'NoSuchKey' || code === 'NoSuchBucket';
 }
 
 export async function POST(request: Request) {
@@ -114,36 +99,40 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, results }, { headers: NO_STORE_HEADERS });
   }
 
+  type PurgeRecord = AssetStorageRecord & { key: string; bucket?: string };
   const records = (await Asset.find({ key: { $in: keys } })
-    .select({ key: 1, bucket: 1 })
+    .select({ key: 1, bucket: 1, originalKey: 1, fallbackKey: 1, variants: 1 })
     .lean()
-    .exec()) as unknown as Array<{ key: string; bucket?: string }>;
+    .exec()) as unknown as PurgeRecord[];
 
-  const bucketByKey = new Map<string, string>();
+  const recordByKey = new Map<string, PurgeRecord>();
   for (const record of records) {
-    if (record?.key) {
-      bucketByKey.set(record.key, record.bucket || defaultBucket);
-    }
+    if (record?.key) recordByKey.set(record.key, record);
   }
 
   const client = getR2Client();
-  const results: Array<{ key: string; ok: boolean; error?: string }> = [];
+  const results: Array<{ key: string; ok: boolean; error?: string; removedObjects?: number }> = [];
   const keysToRemoveFromDb = new Set<string>();
   for (const key of keys) {
-    const bucket = bucketByKey.get(key) || defaultBucket;
-    try {
-      await client.send(new DeleteObjectCommand({ Bucket: bucket, Key: key }));
-      keysToRemoveFromDb.add(key);
-      results.push({ key, ok: true });
-    } catch (error) {
-      if (isNotFoundError(error)) {
-        keysToRemoveFromDb.add(key);
-        results.push({ key, ok: true });
-        continue;
-      }
-      const message = error instanceof Error ? error.message : 'Delete failed';
-      results.push({ key, ok: false, error: message });
+    const record = recordByKey.get(key);
+    const bucket = record?.bucket || defaultBucket;
+    // Purge everything the record owns (public key, private original, every
+    // rendered variant). Deleting only the public key left the rest in storage.
+    const storageKeys = record ? collectAssetStorageKeys(record) : [key];
+    if (!storageKeys.includes(key)) storageKeys.unshift(key);
+    const outcome = await deleteAssetObjects({ client, bucket, keys: storageKeys });
+    if (outcome.failed.length) {
+      // Keep the record so the purge can be retried for the objects that remain.
+      results.push({
+        key,
+        ok: false,
+        error: outcome.failed.map((failure) => `${failure.key}: ${failure.reason}`).join('; '),
+        removedObjects: outcome.deleted.length
+      });
+      continue;
     }
+    keysToRemoveFromDb.add(key);
+    results.push({ key, ok: true, removedObjects: outcome.deleted.length });
   }
 
   if (keysToRemoveFromDb.size > 0) {

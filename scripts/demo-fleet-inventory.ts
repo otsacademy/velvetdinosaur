@@ -7,6 +7,8 @@ type DemoSite = {
   domain: string;
   path: string;
   workspacePackage: boolean;
+  r2Bucket: string;
+  r2BucketName: string;
 };
 
 const args = process.argv.slice(2);
@@ -16,6 +18,10 @@ const requireIndex = args.indexOf('--require');
 const requiredSlug = requireIndex >= 0 ? args[requireIndex + 1] : '';
 const appsRoot = process.env.VD_APPS_ROOT || '/srv/apps';
 const workspacesRoot = process.env.VD_DEMO_WORKSPACES_ROOT || '/opt/vdplatform/workspaces';
+// Every demo uploads to the hub's shared bucket (new-demo.sh upserts it over the
+// installer's per-site default). Two sites kept the installer default and every
+// upload failed with AccessDenied (customer test, 13 Sep 2026).
+const hubEnvPath = process.env.VD_HUB_ENV_FILE || join(appsRoot, 'velvetdinosaur', '.env.production');
 
 function envValue(source: string, key: string) {
   const prefix = `${key}=`;
@@ -48,7 +54,9 @@ function discoverDemoSites(): DemoSite[] {
           slug,
         domain: envValue(env, 'DOMAIN'),
         path,
-        workspacePackage: existsSync(join(workspacesRoot, slug))
+        workspacePackage: existsSync(join(workspacesRoot, slug)),
+        r2Bucket: envValue(env, 'R2_BUCKET'),
+        r2BucketName: envValue(env, 'R2_BUCKET_NAME')
       }];
     })
     .sort((a, b) => a.slug.localeCompare(b.slug));
@@ -56,12 +64,21 @@ function discoverDemoSites(): DemoSite[] {
 
 const sites = discoverDemoSites();
 const errors: string[] = [];
+const sharedBucket = existsSync(hubEnvPath) ? envValue(readFileSync(hubEnvPath, 'utf8'), 'R2_BUCKET') : '';
 const duplicateSlugs = sites.filter((site, index) => sites.findIndex((candidate) => candidate.slug === site.slug) !== index);
 for (const site of duplicateSlugs) errors.push(`duplicate demo slug: ${site.slug}`);
 for (const site of sites) {
   if (!site.domain) errors.push(`${site.slug}: DOMAIN is missing`);
   if (!existsSync(join(site.path, 'demo/site-manifest.json'))) errors.push(`${site.slug}: demo/site-manifest.json is missing`);
   if (!existsSync(join(site.path, 'sauro-core.json'))) errors.push(`${site.slug}: sauro-core.json is missing`);
+  if (sharedBucket) {
+    if (site.r2Bucket !== sharedBucket) {
+      errors.push(`${site.slug}: R2_BUCKET is "${site.r2Bucket || '(unset)'}", expected the shared bucket "${sharedBucket}"`);
+    }
+    if (site.r2BucketName !== sharedBucket) {
+      errors.push(`${site.slug}: R2_BUCKET_NAME is "${site.r2BucketName || '(unset)'}", expected the shared bucket "${sharedBucket}"`);
+    }
+  }
 }
 if (requiredSlug && !sites.some((site) => site.slug === requiredSlug)) {
   errors.push(`required demo is not in the runtime inventory: ${requiredSlug}`);

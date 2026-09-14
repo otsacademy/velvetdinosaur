@@ -139,6 +139,11 @@ export function EditorClient({
   const [data, setData] = useState<Data>(() =>
     sanitizeData(initialData && slug === (initialSlug || 'home') ? initialData : defaultData('home'))
   );
+  // Puck reads `data` once, when it mounts. Whenever the canvas content is
+  // replaced from the server (a stored draft that differs from the seed, a
+  // draft reset, a legacy conversion) this version changes the Puck `key` so
+  // the canvas actually shows the new data instead of the mount-time seed.
+  const [canvasVersion, setCanvasVersion] = useState(0);
   const [hasPublished, setHasPublished] = useState(false);
   const [pendingApproval, setPendingApproval] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -212,8 +217,11 @@ export function EditorClient({
           payload?.chapterSlugs || activeProfile?.chapterSlugs,
           nextPrimaryChapterSlug
         );
-        const nextData = draft || published || defaultData(slug);
-        setData(sanitizeData(nextData));
+        const nextData = sanitizeData(draft || published || defaultData(slug));
+        setData(nextData);
+        if (JSON.stringify(nextData) !== JSON.stringify(seed)) {
+          setCanvasVersion((version) => version + 1);
+        }
         setHasPublished(Boolean(published));
         setPendingApproval(hasPendingPublishRequest(payload));
         setPrimaryChapterSlug(nextPrimaryChapterSlug);
@@ -300,6 +308,7 @@ export function EditorClient({
       const response = await requestJson(`${baseUrl}/reset-draft`, { method: 'POST' });
       const nextData = response?.draftData ?? response?.publishedData ?? defaultData(slug);
       setData(sanitizeData(nextData));
+      setCanvasVersion((version) => version + 1);
       setHasPublished(Boolean(response?.publishedData));
       setPendingApproval(hasPendingPublishRequest(response));
       setPrimaryChapterSlug(normalizeChapterSlug(response?.primaryChapterSlug || activeProfile?.primaryChapterSlug));
@@ -329,6 +338,7 @@ export function EditorClient({
       const response = await requestJson(`${baseUrl}/convert-legacy`, { method: 'POST' });
       const nextData = response?.draftData ?? response?.publishedData ?? data;
       setData(sanitizeData(nextData));
+      setCanvasVersion((version) => version + 1);
       setHasPublished(Boolean(response?.publishedData));
       setPendingApproval(hasPendingPublishRequest(response));
       setPrimaryChapterSlug(normalizeChapterSlug(response?.primaryChapterSlug || pageOwnership.primaryChapterSlug));
@@ -446,6 +456,7 @@ export function EditorClient({
 
   return (
     <Puck
+      key={`${slug}:${canvasVersion}`}
       config={editorConfig}
       data={data}
       iframe={puckIframe}
