@@ -46,3 +46,16 @@ cutover, and rollback commands.
 and port for compatibility, but runs directly from the canonical
 `/srv/apps/velvetdinosaur` main checkout. The legacy green slot remains
 disabled; releases no longer switch between copied slot directories.
+
+## Fleet operations scripts (`ops/scripts/`)
+
+- `nginx-media-carveout.sh [--dry-run]` — gives `/api/assets/file` its own rate-limit and
+  connection zones in every vhost that has the standard `location /api/ {` block (clones that
+  vhost's own proxy lines). Idempotent; backs up to `/etc/nginx/backups/media-carveout-<stamp>/`,
+  runs `nginx -t`, reloads. Needs passwordless sudo.
+- `r2-bucket-probe.ts` — proves a site's env can write, read and delete in its configured bucket:
+  `bun --env-file=/srv/apps/<slug>-current/.env.production ops/scripts/r2-bucket-probe.ts`.
+- `fleet-release-queue.sh --marker <text> <slug>...` — serial, full-gated blue/green release of
+  the canonical core to installed sites (`sync:editor` → commit → `release:local` → live-slot
+  marker check). Holds the stamp claim; stops on the first failure; skips sites already carrying
+  the marker. Logs under `logs/fleet-release-<run>/`.

@@ -483,6 +483,30 @@ are spans, not buttons. Drop fake pagination; write an honest count line instead
   own shell's command line and never exits. Match the full path with a bracket:
   `ps -eo args | grep -c "bash /opt/vdplatform/scripts/new-demo[.]sh <slug>"`.
 
+- **Draft data must be read fresh, and a Puck canvas only reads `data` at mount** (13 Sep 2026
+  customer test, 30/30 sites). `revalidateTag(tag, '<profile>')` is stale-while-revalidate in
+  Next 16 — the next request still gets the old entry. `getDraftPageData()` is uncached for that
+  reason; do not put it back behind `'use cache'`. If server data must replace what Puck shows,
+  change the `<Puck key>` (or dispatch `setData`); setting the `data` prop does nothing after
+  mount. The editor-smoke gate runs the uncached in-memory store, so it cannot catch either.
+- **A stamp's env must end with the shared bucket.** `installer/install.sh` writes
+  `R2_BUCKET="vd-<slug>"`; `new-demo.sh` overwrites it with the shared bucket later. Two 31 Aug
+  sites kept the installer default and every upload was 403. `demo:fleet -- --strict` now fails
+  on it; `bun --env-file=/srv/apps/<slug>-current/.env.production ops/scripts/r2-bucket-probe.ts`
+  (hub) proves the write path.
+- **Test nginx limits with a browser, never curl.** Browsers negotiate HTTP/2 on the shared
+  :443 socket and multiplex every image on a page over one connection, so a per-IP
+  `limit_conn 20` 429s the 21st concurrent image; curl (HTTP/1.1, 6 connections) passes.
+  `/api/assets/file` now has its own zones (`ops/scripts/nginx-media-carveout.sh`); a new
+  `limit_conn` on any path browsers fetch in bulk has the same trap.
+- **Purging an asset must delete every key the record owns** (`key`, `fallbackKey`,
+  `originalKey`, `variants.*.key`) plus the originals found by stem — `collectPurgeKeys()` in
+  `lib/assets/trash.server.ts`. Records made before 14 Sep 2026 have no `originalKey` at all
+  (the schema did not declare it and Mongoose stripped it), which is why the stem lookup
+  exists. Verify by listing `uploads/<folder>/` and `asset-originals/<folder>/` in R2, not by
+  the API's `ok: true`. Any new field the pipeline writes must be declared in `models/Asset.ts`
+  or it is silently dropped.
+
 ## 10. Pre-stamp local checks (in the workspace — catches 90% before the 40-min gate)
 
 ```bash

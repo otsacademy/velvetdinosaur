@@ -110,6 +110,37 @@ bun scripts/demo-recipient-links-batch.ts     # prints "Skipped (no prospect inv
 Anything named in that Skipped line is either a deliberate no-email demo (bath-street-dental
 publishes no address — walk-in/phone pitch) or a missed mint that must be fixed.
 
+### Customer-journey defects fixed fleet-wide (14 Sep)
+
+The 13 Sep real-browser test of the 30 emailed demos (`output/customer-test-2026-09-13/README.md`)
+passed registration, verified login, save, preview, publish and sign-out everywhere but found six
+defects. All six are fixed; four were one template fix, because the files were byte-identical on
+48 of 49 blue/green sites.
+
+| Finding | Root cause | Fix |
+|---|---|---|
+| Editor showed the old draft after reload (30/30) | `getDraftPageData()` was `'use cache'` and `revalidateTag(tag, 'default')` is stale-while-revalidate in Next 16; Puck 0.22 reads its `data` prop once, so the fresh API fetch never reached the canvas. The editor-smoke gate runs the uncached in-memory branch, so it could not see it. | Draft reads are always fresh; `revalidateTagSafe` expires immediately (`{ expire: 0 }`); the canvas remounts (`key`) when server data replaces it. Hub commit `1a88631`. |
+| "Submit for approval" shown to admins, button published anyway (30/30) | `app/edit/[slug]/page.tsx` never passed `isAdmin` to `EditorShell`. | Route resolves `requireAdmin` + the chapter profile exactly like the dashboard editor. |
+| Popty Cara / Salutation Inn uploads 403 | Installer's per-site bucket `vd-<slug>` survived a partially re-run stamp; the shared key only has rights on `velvetdinosaur`. | Six env files repointed, active slots restarted, write proven with `ops/scripts/r2-bucket-probe.ts`; `demo:fleet -- --strict` now fails on bucket drift. |
+| Purge left originals and thumbnails (28/28) | Purge deleted only the public key, not the original or the six variants; replace orphaned the previous original. Worse, `models/Asset.ts` never declared `originalKey` (nor `fallbackKey`/processing fields), so Mongoose stripped them on every upload and no record knew where its original lived. | Schema declares the fields; `collectPurgeKeys()` merges the record's keys with originals found by stem (`asset-originals/<path sans extension>.<ext>`, incl. `--replace-<ts>`); `deleteAssetObjects()` removes them in batches (unit-tested; proven by listing the bucket on the canary). |
+| Corn Street team photos 429 | Browsers negotiate HTTP/2 on the shared :443 socket and multiplex 20+ image streams; `/api/` carried `limit_conn vd_conn 20` (and `vd_api` 20 r/s). Only a real browser reproduces it — curl never does. | `location ^~ /api/assets/file` with its own zones (`vd_media` 60 r/s, `vd_media_conn` 100) on all 53 vhosts + installer templates via `ops/scripts/nginx-media-carveout.sh`. Verified: 3 Chromium visits, 0 non-200 images. |
+| Hair Lounge burger off-screen at 390px | Header row could not shrink: 30px letter-spaced wordmark + Book button + burger needed ~485px; `overflow-x: clip` hid it. | Wordmark `clamp(22px, 6.5vw, 30px)`, Book button hidden under 640px and added to the mobile menu (workspace + checkout). |
+
+Rollout: every site takes the fix through its own full-gated blue/green release, one at a time
+(`ops/scripts/fleet-release-queue.sh`, ~40 min per site; the gates share Playwright ports). The
+release covers all 48 sites, not only the 30 tested, because the code is identical.
+
+**Baseline glyph drift (found the same day).** The zero-tolerance visual gate failed on the hub
+(10 snapshots) and on the popty-cara canary (3 snapshots) by 148–182 pixels each: icon glyphs
+(external-link arrow, WhatsApp, the "photo to follow" placeholder, the demo-notice icon) render
+a few pixels differently than when the baselines were captured in late August. Proven
+environmental on the hub by re-running the gate on the previous commit (identical failure
+set). Expect it on every site stamped before September. The queue runner refreshes and
+retries once when the only failures are public `visual.spec.ts` baselines of ≤ 1000 pixels
+(`GLYPH_DRIFT_MAX_PIXELS`), records the counts in the site log, and stops for a human on
+anything else. Each drifted site therefore costs ~46 min instead of ~40.
+**Status (14 Sep, 13:15 UTC):** hub deployed (`2ebcaa5`), popty-cara released twice as the canary and re-tested with the 13 Sep harness — 13/13 journey steps, button reads "Publish", reload shows the saved heading, upload works, bucket empty after purge. The 47-site queue started at 13:15 UTC (`ops/scripts/fleet-release-queue.sh --marker listStoredOriginalKeys --from-file output/fleet-fix-2026-09-14/queue-slugs.txt`); progress in `logs/fleet-release-<run>/summary.tsv`. Per-site logs there show any glyph-drift refresh.
+
 ## The bench
 
 42 verified prospects in `prospect-ledger-2026-08-24.md`. There are **56 harvested content packs**
@@ -381,12 +412,24 @@ interaction + dwell counts as a human visit.
   `<slug>.velvetdinosaur.com`, the files are `<slug>.conf`, so the domain then serves a **502**),
   the `-current` symlink and systemd units, and the Mongo database (`dropDatabase` fails — the
   site's user is readWrite; drop every collection instead). See the `demo-ops-scripts` memory.
+- ~~**Editor shows a stale draft after reload; admins see "Submit for approval"; purge leaves
+  originals and variants in R2; image-heavy pages 429 in browsers.**~~ **Fixed 2026-09-14** — see
+  "Customer-journey defects fixed fleet-wide (14 Sep)" above. The gate blind spot remains worth
+  knowing: anything under the editor-smoke token runs the uncached in-memory page store, so a
+  production cache bug can never fail a gate.
+- **Two demos had the installer's per-site bucket in their env** (`vd-popty-cara`,
+  `vd-salutation-inn`) and could not upload. `new-demo.sh` upserts the shared bucket late in the
+  stamp; a re-run that skips that stage keeps the installer default. `demo:fleet -- --strict`
+  now catches it; prove a site's storage chain with `ops/scripts/r2-bucket-probe.ts`.
 - **`new-demo.sh` mints its admin invite to `eugenia@ontourism.academy`** (hardcoded, line 55) but
   Ian signs in as `ian.wickens@ontourism.academy`, so every stamp produces an admin link that
   expires unused.
 
 ## Open items
 
+- **Fleet release queue for the 14 Sep core fix.** `ops/scripts/fleet-release-queue.sh` runs the
+  48 releases serially with full gates. If a site fails its gate the queue stops with its commit
+  on `develop`; fix and rerun the queue (released sites are skipped by the marker check).
 - **Demo auto-delete is manual.** Nothing sweeps expired demos on a timer, so the advertised
   "deleted after 14 days" needs running by hand — and `retire-demo.sh` is incomplete (see above).
   With invites now expiring 30 September, the first sweep falls due mid-September.
