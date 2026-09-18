@@ -13,8 +13,11 @@ test('demo uploads stay in the session library and survive saving and reopening 
   // The existing composer field labels are visual labels without an input association.
   await page.locator('input').filter({ visible: true }).first().fill('Uploaded newsletter draft');
 
-  await page.locator('[data-slate-editor="true"] [data-slate-string="true"]').first().click();
-  await page.keyboard.press('End');
+  const firstParagraph = page.locator('[data-slate-editor="true"] [data-slate-string="true"]').first();
+  await firstParagraph.click({ clickCount: 3 });
+  // End moves to the visual line boundary, which can split this paragraph on mobile.
+  // Select the paragraph, then collapse right so both viewports use the same insertion.
+  await page.keyboard.press('ArrowRight');
   await page.getByRole('button', { name: 'Insert image', exact: true }).focus();
   await page.keyboard.press('Enter');
   const imagePicker = page.getByRole('dialog', { name: 'Choose newsletter image', exact: true });
