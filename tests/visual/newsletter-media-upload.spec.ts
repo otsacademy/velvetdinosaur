@@ -68,6 +68,7 @@ test('demo uploads stay in the session library and survive saving and reopening 
   await expect(attachmentPicker).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(attachmentPicker).not.toBeVisible();
+  await expect(page.getByRole('button', { name: 'Add attachment', exact: true })).toBeFocused();
   await expect(attachments).toContainText('1/5 files');
 
   // Dismissing an image editor with the keyboard must leave the document unchanged.
@@ -95,6 +96,47 @@ test('demo uploads stay in the session library and survive saving and reopening 
   await page.getByRole('button', { name: 'Redo', exact: true }).click();
   await expect(uploadedImage).toHaveAttribute('src', '/assets/demo-media/newsletter/sample.png');
   expect(liveRequests).toEqual([]);
+});
+
+test('closing a media picker restores focus without stealing a deliberate next choice', async ({ page }) => {
+  await page.goto('/demo/newsletter', { waitUntil: 'networkidle' });
+  await page.getByRole('dialog', { name: 'How the newsletter demo works', exact: true }).getByRole('button', { name: 'Close', exact: true }).first().click();
+  const addAttachment = page.getByRole('button', { name: 'Add attachment', exact: true });
+  const attachmentPicker = page.getByRole('dialog', { name: 'Add attachment', exact: true });
+  await addAttachment.click();
+  await expect(attachmentPicker).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(attachmentPicker).not.toBeVisible();
+  await expect(addAttachment).toBeFocused();
+
+  await addAttachment.click();
+  await expect(attachmentPicker).toBeVisible();
+  // Hold queued frames to reproduce a user moving focus before close restoration runs.
+  await page.evaluate(() => {
+    const controls = window as typeof window & { newsletterPendingFrames?: () => number; flushNewsletterFrames?: () => void };
+    const requestFrame = window.requestAnimationFrame.bind(window);
+    const callbacks: Array<() => void> = [];
+    window.requestAnimationFrame = (callback) => requestFrame((time) => { callbacks.push(() => callback(time)); });
+    controls.newsletterPendingFrames = () => callbacks.length;
+    controls.flushNewsletterFrames = () => {
+      window.requestAnimationFrame = requestFrame;
+      callbacks.splice(0).forEach((callback) => callback());
+    };
+  });
+  await page.keyboard.press('Escape');
+  await expect(attachmentPicker).not.toBeVisible();
+  await expect.poll(() => page.evaluate(() => (window as typeof window & { newsletterPendingFrames?: () => number }).newsletterPendingFrames?.() || 0)).toBeGreaterThan(0);
+  const insertImage = page.getByRole('button', { name: 'Insert image', exact: true });
+  await insertImage.focus();
+  await page.evaluate(() => (window as typeof window & { flushNewsletterFrames?: () => void }).flushNewsletterFrames?.());
+  await expect(insertImage).toBeFocused();
+  await page.keyboard.press('Enter');
+  const imagePicker = page.getByRole('dialog', { name: 'Choose newsletter image', exact: true });
+  await expect(imagePicker).toBeVisible();
+  await expect(attachmentPicker).not.toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(imagePicker).not.toBeVisible();
+  await expect(insertImage).toBeFocused();
 });
 
 
