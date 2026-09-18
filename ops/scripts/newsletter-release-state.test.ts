@@ -123,3 +123,73 @@ test('tracked runtime state is privately captured and restored only for the exac
   expect(() => captureAndRestoreTrackedDeploymentState(clone, commit, config)).toThrow('differs from');
   expect(JSON.parse(readFileSync(path.join(clone, '.state.json'), 'utf8')).custom).toBe('unexpected user edit');
 });
+
+function untrackedStateFixture() {
+  const fixture = liveFixture(); const { clone, config, green } = fixture;
+  const command = (args: string[]) => {
+    const result = spawnSync('git', ['-C', clone, '-c', 'user.name=Tests', '-c', 'user.email=tests@localhost', ...args]);
+    if (result.status !== 0) throw new Error('Git fixture failed');
+  };
+  command(['init', '-qb', 'develop']); write(clone, 'feature.ts', 'reviewed feature');
+  command(['add', '.']); command(['commit', '-qm', 'candidate']);
+  const commit = git(clone, ['rev-parse', 'HEAD']);
+  const attempt = prepareReleaseAttempt(clone, commit, config); attempt.status = 'deploying'; saveReleaseAttempt(clone, attempt);
+  unlinkSync(config.activeLink); symlinkSync(green, config.activeLink);
+  writeFileSync(config.upstreamConf, 'proxy_pass http://127.0.0.1:3002;\n');
+  write(green, 'feature.ts', 'reviewed feature');
+  const deploy: Record<string, unknown> = { mode: 'blue-green', activeSlot: 'green', lastCommit: commit,
+    updatedAt: new Date().toISOString(), upstreamConf: config.upstreamConf, activeLink: config.activeLink,
+    rollbackWindowSeconds: 300, slots: config.slots };
+  const state: Record<string, unknown> = { deploy };
+  write(clone, '.state.json', JSON.stringify(state));
+  return { ...fixture, commit, attempt, state, deploy };
+}
+
+test('only generated untracked deployment state is archived, keeping retries on the existing live slot', async () => {
+  const { clone, config, commit, attempt, blue } = untrackedStateFixture();
+  const captured = captureAndRestoreTrackedDeploymentState(clone, commit, config);
+  expect(captured.capturedUntracked).toBe(true);
+  expect(existsSync(path.join(clone, '.state.json'))).toBe(false);
+  expect(git(clone, ['status', '--porcelain'])).toBe('');
+  const saved = JSON.parse(readFileSync(path.join(clone, '.git/newsletter-deployment-state.json'), 'utf8'));
+  expect(saved.source).toBe('generated-untracked');
+  expect(saved.generatedStateSha256).toMatch(/^[a-f0-9]{64}$/);
+  expect(readDeploymentState(clone, commit)?.deploy?.lastCommit).toBe(commit);
+  expect(readDeploymentState(clone, 'f'.repeat(40))).toBeNull();
+  const healthy = (async () => new Response('', { status: 200 })) as unknown as typeof fetch;
+  expect((await deploymentAction(config, attempt, new Map([['feature.ts', Buffer.from('reviewed feature')]]), healthy)).action).toBe('already-live');
+  expect(readFileSync(path.join(blue, 'previous-content'), 'utf8')).toBe('rollback version');
+  write(clone, '.state.json', JSON.stringify({ custom: 'new work', deploy: { lastCommit: 'different' } }));
+  expect(readDeploymentState(clone, commit)?.deploy?.lastCommit).toBe('different');
+  expect(git(clone, ['status', '--porcelain'])).toBe('?? .state.json');
+});
+
+test('untracked state with extra data or unknown writer metadata is preserved for review', () => {
+  const changes: Array<(state: Record<string, unknown>, deploy: Record<string, unknown>) => void> = [
+    (state) => { state.custom = 'unrelated work'; },
+    (_state, deploy) => { deploy.custom = 'unknown metadata'; },
+    (_state, deploy) => { deploy.lastCommit = 'f'.repeat(40); },
+    (_state, deploy) => { deploy.rollbackWindowSeconds = 999; },
+    (_state, deploy) => { delete deploy.rollbackWindowSeconds; }
+  ];
+  for (const change of changes) {
+    const { clone, config, commit, state, deploy } = untrackedStateFixture();
+    change(state, deploy); const bytes = JSON.stringify(state); write(clone, '.state.json', bytes);
+    expect(() => captureAndRestoreTrackedDeploymentState(clone, commit, config)).toThrow('differs from');
+    expect(readFileSync(path.join(clone, '.state.json'), 'utf8')).toBe(bytes);
+    expect(existsSync(path.join(clone, '.git/newsletter-deployment-state.json'))).toBe(false);
+  }
+});
+
+test('untracked state needs a matching started deployment and matching live routing', () => {
+  for (const condition of ['missing', 'different', 'not-started', 'routing']) {
+    const { clone, config, commit, attempt } = untrackedStateFixture();
+    const bytes = readFileSync(path.join(clone, '.state.json'), 'utf8');
+    if (condition === 'missing') unlinkSync(path.join(clone, '.git/newsletter-release-attempt.json'));
+    if (condition === 'different') { attempt.commit = 'f'.repeat(40); saveReleaseAttempt(clone, attempt); }
+    if (condition === 'not-started') { attempt.status = 'ready'; saveReleaseAttempt(clone, attempt); }
+    if (condition === 'routing') writeFileSync(config.upstreamConf, 'proxy_pass http://127.0.0.1:3001;\n');
+    expect(() => captureAndRestoreTrackedDeploymentState(clone, commit, config)).toThrow('preserved for review');
+    expect(readFileSync(path.join(clone, '.state.json'), 'utf8')).toBe(bytes);
+  }
+});
