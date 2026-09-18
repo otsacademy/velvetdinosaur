@@ -15,6 +15,13 @@ export async function readNewsletterEnvironment(file: string): Promise<Record<st
   return result;
 }
 
+/** A maintenance command must not borrow the caller's database or storage credentials. */
+export function assertNewsletterStorageEnvironment(env: Record<string, string | undefined>) {
+  for (const key of ['MONGODB_URI', 'R2_ENDPOINT', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY']) {
+    if (!env[key]?.trim()) throw new Error(`The selected site environment must explicitly configure ${key}.`);
+  }
+}
+
 export function newsletterCronUrl(env: Record<string, string | undefined>): URL {
   const origin = env.PUBLIC_BASE_URL || env.NEXT_PUBLIC_BASE_URL || env.APP_BASE_URL ||
     (env.DOMAIN ? `https://${env.DOMAIN}` : '');

@@ -2,7 +2,7 @@ import path from 'node:path';
 import { readFile } from 'node:fs/promises';
 import mongoose from 'mongoose';
 import { z } from 'zod';
-import { readNewsletterEnvironment } from '@/lib/newsletter/operations';
+import { assertNewsletterStorageEnvironment, readNewsletterEnvironment } from '@/lib/newsletter/operations';
 
 const ManifestSchema = z.object({
   site: z.string().min(1),
@@ -18,6 +18,7 @@ async function main() {
   const manifest = ManifestSchema.parse(JSON.parse(await readFile(manifestPath, 'utf8')));
   const envPath = path.resolve(args.find((arg) => arg.startsWith('--env-file='))?.slice('--env-file='.length) || '.env.production');
   const env = await readNewsletterEnvironment(envPath);
+  assertNewsletterStorageEnvironment(env);
   if (manifest.site !== (env.SITE_SLUG || env.VD_SITE_SLUG)) throw new Error('Ownership evidence is for a different site.');
   if (new Set(manifest.assets.map((asset) => asset.key)).size !== manifest.assets.length) throw new Error('The ownership manifest contains duplicate keys.');
   Object.assign(process.env, env);

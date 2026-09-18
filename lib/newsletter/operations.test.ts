@@ -1,7 +1,15 @@
 import { describe, expect, test } from 'bun:test';
-import { invokeNewsletterCron, newsletterCronUrl, requireEmptyNewsletterQueue, type NewsletterCronSummary } from './operations';
+import { assertNewsletterStorageEnvironment, invokeNewsletterCron, newsletterCronUrl, requireEmptyNewsletterQueue, type NewsletterCronSummary } from './operations';
 
 describe('newsletter operational safeguards', () => {
+  test('maintenance requires the selected site to configure its own database and storage', () => {
+    const env = { MONGODB_URI: 'mongodb://localhost/test', R2_ENDPOINT: 'https://storage.invalid',
+      R2_ACCESS_KEY_ID: 'test-key', R2_SECRET_ACCESS_KEY: 'test-secret' };
+    expect(() => assertNewsletterStorageEnvironment(env)).not.toThrow();
+    for (const key of Object.keys(env)) {
+      expect(() => assertNewsletterStorageEnvironment({ ...env, [key]: '' })).toThrow(key);
+    }
+  });
   test('uses stable HTTPS origin, never a slot or localhost endpoint', () => {
     expect(newsletterCronUrl({ DOMAIN: 'example.com' }).href).toBe('https://example.com/api/internal/newsletter-dispatch-cron');
     for (const origin of ['http://example.com', 'https://example.com:3103', 'https://localhost', 'https://u:p@example.com']) {

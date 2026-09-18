@@ -1,11 +1,12 @@
 import path from 'node:path';
 import mongoose from 'mongoose';
-import { readNewsletterEnvironment } from '@/lib/newsletter/operations';
+import { assertNewsletterStorageEnvironment, readNewsletterEnvironment } from '@/lib/newsletter/operations';
 
 try {
   const args = process.argv.slice(2);
   const envPath = path.resolve(args.find((arg) => arg.startsWith('--env-file='))?.slice('--env-file='.length) || '.env.production');
   const env = await readNewsletterEnvironment(envPath);
+  assertNewsletterStorageEnvironment(env);
   Object.assign(process.env, env);
   const { cleanupNewsletterMedia } = await import('@/lib/newsletter/media');
   const dryRun = !args.includes('--apply');

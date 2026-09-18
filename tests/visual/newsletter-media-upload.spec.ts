@@ -98,9 +98,11 @@ test('demo uploads stay in the session library and survive saving and reopening 
 test('switching composer views never repeats an inserted token', async ({ page }) => {
   await page.goto('/demo/newsletter', { waitUntil: 'networkidle' });
   await page.getByRole('dialog', { name: 'How the newsletter demo works', exact: true }).getByRole('button', { name: 'Close', exact: true }).first().click();
-  await page.getByRole('button', { name: '{{email}}', exact: true }).click();
   const editor = page.locator('[data-slate-editor="true"]');
-  await expect(editor).toContainText('{{email}}');
+  const original = await editor.textContent();
+  // No editor focus or selection yet: the token must append at the document end.
+  await page.getByRole('button', { name: '{{email}}', exact: true }).click();
+  await expect(editor).toHaveText(`${original || ''}{{email}}`);
   const inserted = await editor.textContent();
   await page.getByRole('tab', { name: 'Preview', exact: true }).click();
   await page.getByRole('tab', { name: 'Editor', exact: true }).click();

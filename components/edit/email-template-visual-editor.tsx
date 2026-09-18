@@ -166,14 +166,22 @@ type EmailTemplateVisualEditorBodyProps = {
   disabled: boolean;
 };
 
+function insertEditorToken(editor: ReturnType<typeof useEditorRef>, token: string) {
+  const at = editor.selection || editor.dom.prevSelection || editor.api.end([]);
+  if (!at) return false;
+  editor.tf.select(at);
+  editor.tf.insertText(token);
+  editor.tf.focus();
+  return true;
+}
+
 function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, onInsertTokenConsumed, disabled }: EmailTemplateVisualEditorBodyProps) {
   const editor = useEditorRef();
   const consumedToken = useRef<number | null>(null);
   useEffect(() => {
     if (disabled || !insertTokenRequest?.token || consumedToken.current === insertTokenRequest.nonce) return;
+    if (!insertEditorToken(editor, insertTokenRequest.token)) return;
     consumedToken.current = insertTokenRequest.nonce;
-    editor.tf.insertText(insertTokenRequest.token);
-    editor.tf.focus();
     onInsertTokenConsumed?.();
   }, [disabled, editor, insertTokenRequest?.nonce, insertTokenRequest?.token, onInsertTokenConsumed]);
   const activeBlock = useEditorSelector((currentEditor) => {
@@ -354,8 +362,7 @@ function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, onInsertTok
                 key={token}
                 onSelect={(event) => {
                   event.preventDefault();
-                  editor.tf.insertText(token);
-                  editor.tf.focus();
+                  insertEditorToken(editor, token);
                 }}
               >
                 <span className="font-mono text-xs">{token}</span>
