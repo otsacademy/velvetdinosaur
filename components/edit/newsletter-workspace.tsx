@@ -214,7 +214,7 @@ export function NewsletterWorkspace() {
     [campaigns, form.campaignId]
   );
 
-  const canEditSelected = !selectedCampaign || selectedCampaign.status === 'draft' || selectedCampaign.status === 'queued';
+  const canEditSelected = !selectedCampaign || selectedCampaign.status === 'draft';
 
   const dirty = useMemo(() => {
     if (!selectedCampaign) return true;
@@ -253,7 +253,7 @@ export function NewsletterWorkspace() {
             preheader: form.preheader,
             htmlBody,
             textBody,
-            visualBody
+            visualBody, bodySource: form.bodySource, attachments: form.attachments
           }
         : {
             action: 'create_draft',
@@ -262,7 +262,7 @@ export function NewsletterWorkspace() {
             preheader: form.preheader,
             htmlBody,
             textBody,
-            visualBody
+            visualBody, bodySource: form.bodySource, attachments: form.attachments
           };
       const response = await fetch('/api/admin/newsletter/campaigns', {
         method: 'POST',
@@ -395,7 +395,7 @@ export function NewsletterWorkspace() {
           subject: form.subject,
           preheader: form.preheader,
           htmlBody,
-          textBody
+          textBody, bodySource: form.bodySource, attachments: form.attachments, visualBody: form.visualBody
         })
       });
       const payload = (await response.json().catch(() => ({}))) as { toEmail?: string; error?: string };

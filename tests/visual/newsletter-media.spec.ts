@@ -1,0 +1,40 @@
+import { expect, test } from '@playwright/test';
+
+test('newsletter images, attachments and source authority survive draft selection', async ({ page }) => {
+  const forbiddenRequests: string[] = [];
+  page.on('request', (request) => {
+    if (request.url().includes('/api/admin/newsletter/') || /\/api\/assets\/(upload|presign|complete|list)/.test(request.url())) forbiddenRequests.push(request.url());
+  });
+  await page.goto('/demo/newsletter', { waitUntil: 'networkidle' });
+  await page.getByRole('dialog', { name: 'How the newsletter demo works', exact: true }).getByRole('button', { name: 'Close', exact: true }).first().click();
+  await page.getByRole('button', { name: 'New draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Insert image', exact: true }).click();
+  await page.getByTestId('puck-asset-browse-newsletter-image').click();
+  await page.getByTestId('asset-use-seed-newsletter-image').click();
+  await page.getByLabel('Alternative text', { exact: true }).fill('A newsletter image kept with this draft');
+  await page.getByLabel('Caption', { exact: true }).fill('Example caption');
+  await page.getByRole('button', { name: 'Save image', exact: true }).click();
+  await expect(page.getByRole('img', { name: 'A newsletter image kept with this draft', exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Add attachment', exact: true }).click();
+  await page.getByTestId('puck-asset-browse-newsletter-attachment').click();
+  await page.getByTestId('asset-use-seed-newsletter-pdf').click();
+  await expect(page.getByRole('region', { name: 'Newsletter attachments' })).toContainText('Newsletter information.pdf');
+  await page.getByRole('button', { name: 'Show HTML & Plain Text', exact: true }).click();
+  await page.getByRole('tab', { name: 'HTML', exact: true }).click();
+  await page.getByRole('tabpanel').getByRole('textbox').fill('<p>Custom HTML kept after saving</p>');
+  await page.getByRole('tab', { name: 'Editor', exact: true }).click();
+  await expect(page.getByRole('img', { name: 'A newsletter image kept with this draft', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Insert image', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: 'Save draft', exact: true }).click();
+  await page.getByRole('tab', { name: 'HTML', exact: true }).click();
+  await expect(page.getByRole('tabpanel').getByRole('textbox')).toHaveValue('<p>Custom HTML kept after saving</p>');
+  await page.getByRole('button', { name: 'Resume saved visual version', exact: true }).click();
+  await page.getByRole('button', { name: 'Continue', exact: true }).click();
+  await page.getByRole('tab', { name: 'Editor', exact: true }).click();
+  await page.getByRole('button', { name: 'Remove image', exact: true }).click();
+  await expect(page.getByRole('img', { name: 'A newsletter image kept with this draft', exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Undo', exact: true }).click();
+  await expect(page.getByRole('img', { name: 'A newsletter image kept with this draft', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Newsletter attachments' })).toContainText('Newsletter information.pdf');
+  expect(forbiddenRequests).toEqual([]);
+});

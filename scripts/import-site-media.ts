@@ -4,6 +4,7 @@ import path from 'node:path';
 import { connectDB } from '@/lib/db';
 import { getR2Client } from '@/lib/r2';
 import { storeAssetWithVariants } from '@/lib/assets/image-pipeline.server';
+import { uploadedAssetOwnership } from '@/lib/assets/ownership.server';
 import { Asset } from '@/models/Asset';
 import { Page } from '@/models/Page';
 
@@ -88,6 +89,7 @@ async function importFile(root: string, relative: string, siteSlug: string, buck
   await Asset.findOneAndUpdate(
     { key: stored.key },
     {
+      ...uploadedAssetOwnership('site-media-import'),
       key: stored.key,
       bucket,
       folder: 'site-media',
@@ -100,7 +102,14 @@ async function importFile(root: string, relative: string, siteSlug: string, buck
       width: stored.width,
       height: stored.height,
       etag: stored.etag,
-      variants: stored.variants
+      variants: stored.variants,
+      originalKey: stored.originalKey,
+      originalMime: stored.originalMime,
+      originalSize: stored.originalSize,
+      optimizedSize: stored.optimizedSize,
+      processingStatus: stored.processingStatus,
+      processedAt: stored.processedAt,
+      fallbackKey: stored.fallbackKey
     },
     { upsert: true, new: true }
   );

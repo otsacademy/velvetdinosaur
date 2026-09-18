@@ -6,6 +6,8 @@ import { clean } from '@/lib/newsletter/shared';
 
 const DELIVERY_STATUSES = new Set([
   'pending',
+  'processing',
+  'needs_review',
   'sent',
   'failed',
   'skipped_no_consent',
@@ -33,6 +35,8 @@ export async function GET(request: Request) {
     status: status as
       | 'all'
       | 'pending'
+      | 'processing'
+      | 'needs_review'
       | 'sent'
       | 'failed'
       | 'skipped_no_consent'

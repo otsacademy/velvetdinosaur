@@ -12,6 +12,8 @@ import { type AssetFolderItem } from '@/lib/uploads';
 import { FOLDER_ROOT } from './shared';
 
 type AssetUploadControlsProps = {
+  maxUploadBytes?: number;
+  onError?: (message: string) => void;
   accept: string;
   busy: boolean;
   queuedFiles: File[] | null;
@@ -43,6 +45,7 @@ type AssetUploadControlsProps = {
 };
 
 export function AssetUploadControls({
+  maxUploadBytes, onError,
   accept,
   busy,
   queuedFiles,
@@ -117,7 +120,7 @@ export function AssetUploadControls({
           </Select>
         </div>
         <div className="flex items-end text-xs text-[var(--vd-muted-fg)]">
-          Uploads are stored in R2. Folder assignment is for organization and search.
+          Folders help organize and find uploaded files.
         </div>
       </div>
     </>
@@ -146,9 +149,10 @@ export function AssetUploadControls({
         <Dropzone
           src={queuedFiles ?? undefined}
           onDrop={onDrop}
-          accept={accept.startsWith('image/') ? { 'image/*': [] } : undefined}
+          accept={Object.fromEntries(accept.split(',').map((mime) => [mime.trim(), []]))}
+          onError={(error) => onError?.(error.message)}
           maxFiles={20}
-          maxSize={10 * 1024 * 1024}
+          maxSize={maxUploadBytes ?? 10 * 1024 * 1024}
           disabled={busy}
           className={cn(
             'rounded-lg border-dashed bg-white/50 text-[var(--vd-muted-fg)]',

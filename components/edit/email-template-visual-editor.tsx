@@ -7,6 +7,8 @@ import {
   H2Plugin,
   H3Plugin
 } from '@platejs/basic-nodes/react';
+import { ImagePlugin } from '@platejs/media/react';
+import { NewsletterImageButton, NewsletterImageContext, NewsletterImageElement } from '@/components/edit/newsletter/media/newsletter-image-editor';
 import { unwrapLink, upsertLink } from '@platejs/link';
 import { LinkPlugin, useLinkToolbarButton, useLinkToolbarButtonState } from '@platejs/link/react';
 import { toggleList } from '@platejs/list';
@@ -22,7 +24,7 @@ import {
   usePlateEditor
 } from 'platejs/react';
 import { Bold, Braces, Heading2, Heading3, Link2, List, ListOrdered, Pilcrow, Quote, Redo, Undo } from 'lucide-react';
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -32,6 +34,7 @@ import { ensureVisualValue, type EmailTemplateVisualNode } from '@/lib/email-tem
 const EMAIL_TEMPLATE_VISUAL_PLUGINS = [
   BasicBlocksPlugin,
   BasicMarksPlugin,
+  ImagePlugin.withComponent(NewsletterImageElement),
   LinkPlugin,
   ListPlugin,
   TrailingBlockPlugin
@@ -146,10 +149,12 @@ function LinkButton({ disabled = false }: LinkButtonProps) {
 }
 
 type EmailTemplateVisualEditorProps = {
+  demo?: boolean;
   editorKey: number;
   initialValue: EmailTemplateVisualNode[];
   tokens: string[];
   insertTokenRequest?: { token: string; nonce: number } | null;
+  onInsertTokenConsumed?: () => void;
   disabled?: boolean;
   onChange: (value: EmailTemplateVisualNode[]) => void;
 };
@@ -157,16 +162,20 @@ type EmailTemplateVisualEditorProps = {
 type EmailTemplateVisualEditorBodyProps = {
   tokens: string[];
   insertTokenRequest?: { token: string; nonce: number } | null;
+  onInsertTokenConsumed?: () => void;
   disabled: boolean;
 };
 
-function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, disabled }: EmailTemplateVisualEditorBodyProps) {
+function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, onInsertTokenConsumed, disabled }: EmailTemplateVisualEditorBodyProps) {
   const editor = useEditorRef();
+  const consumedToken = useRef<number | null>(null);
   useEffect(() => {
-    if (!insertTokenRequest?.token) return;
+    if (disabled || !insertTokenRequest?.token || consumedToken.current === insertTokenRequest.nonce) return;
+    consumedToken.current = insertTokenRequest.nonce;
     editor.tf.insertText(insertTokenRequest.token);
     editor.tf.focus();
-  }, [editor, insertTokenRequest?.nonce, insertTokenRequest?.token]);
+    onInsertTokenConsumed?.();
+  }, [disabled, editor, insertTokenRequest?.nonce, insertTokenRequest?.token, onInsertTokenConsumed]);
   const activeBlock = useEditorSelector((currentEditor) => {
     if (
       currentEditor.api.some({
@@ -214,6 +223,7 @@ function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, disabled }:
   return (
     <div className={cn('space-y-3', disabled && 'pointer-events-none opacity-70')}>
       <div className="flex flex-wrap items-center gap-2 rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-muted)]/20 p-2">
+        <NewsletterImageButton />
         <div className="flex items-center gap-1">
           <ToolbarButton
             label="Undo"
@@ -378,10 +388,12 @@ function EmailTemplateVisualEditorBody({ tokens, insertTokenRequest, disabled }:
 }
 
 export function EmailTemplateVisualEditor({
+  demo = false,
   editorKey,
   initialValue,
   tokens,
   insertTokenRequest,
+  onInsertTokenConsumed,
   disabled = false,
   onChange
 }: EmailTemplateVisualEditorProps) {
@@ -394,13 +406,13 @@ export function EmailTemplateVisualEditor({
   );
 
   return (
-    <Plate
+    <NewsletterImageContext.Provider value={{ demo, disabled }}><Plate
       editor={editor}
       onChange={({ value }) => {
         onChange(ensureVisualValue(value));
       }}
     >
-      <EmailTemplateVisualEditorBody tokens={tokens} insertTokenRequest={insertTokenRequest} disabled={disabled} />
-    </Plate>
+      <EmailTemplateVisualEditorBody tokens={tokens} insertTokenRequest={insertTokenRequest} onInsertTokenConsumed={onInsertTokenConsumed} disabled={disabled} />
+    </Plate></NewsletterImageContext.Provider>
   );
 }

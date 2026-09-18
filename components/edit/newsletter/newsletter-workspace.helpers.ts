@@ -5,25 +5,9 @@ import {
   type CampaignItem,
   type OverviewPayload
 } from '@/components/edit/newsletter/newsletter-workspace.shared';
-import { visualValueFromPlainText, visualValueToEmailHtml, visualValueToPlainText } from '@/lib/email-template-visual';
+import { getNewsletterBodySource } from '@/lib/newsletter/composer-source';
 
-export function deriveCampaignBody(input: CampaignFormState) {
-  const hasVisualSource = Array.isArray(input.visualBody) && input.visualBody.length > 0;
-  const visualBody = hasVisualSource ? input.visualBody : visualValueFromPlainText(input.textBody);
-  const textBody = hasVisualSource ? visualValueToPlainText(visualBody) : input.textBody;
-  const htmlBody = hasVisualSource
-    ? visualValueToEmailHtml({
-        value: visualBody,
-        heading: (input.subject || input.name || 'Newsletter update').trim(),
-        previewText: input.preheader || textBody,
-        siteNameToken: '{{siteName}}',
-        appUrlToken: '{{appUrl}}',
-        logoUrlToken: '{{logoUrl}}'
-      })
-    : input.htmlBody;
-
-  return { htmlBody, textBody, visualBody };
-}
+export { deriveNewsletterComposerSource as deriveCampaignBody } from '@/lib/newsletter/composer-source';
 
 export function toCampaignFormState(campaign: CampaignItem): CampaignFormState {
   return {
@@ -34,6 +18,7 @@ export function toCampaignFormState(campaign: CampaignItem): CampaignFormState {
     htmlBody: campaign.htmlBody,
     textBody: campaign.textBody,
     visualBody: Array.isArray(campaign.visualBody) ? campaign.visualBody : [],
+    bodySource: getNewsletterBodySource(campaign), attachments: campaign.attachments || [],
     scheduledAt: toDateTimeLocalInput(campaign.scheduledAt)
   };
 }

@@ -7,6 +7,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
+import { NewsletterAttachments } from '@/components/edit/newsletter/media/newsletter-attachments';
+import { NewsletterSourceNotice } from '@/components/edit/newsletter/media/newsletter-source-notice';
+import { getNewsletterBodySource } from '@/lib/newsletter/composer-source';
 import { DemoHelpTooltip } from '@/components/demo/demo-help-tooltip';
 import { DemoEmailTemplateVisualEditor } from '@/components/demo/newsletter/demo-email-template-visual-editor';
 import {
@@ -114,14 +117,14 @@ export function DemoNewsletterComposerCard({
       renderNewsletterPreview({
         subject: form.subject,
         preheader: form.preheader,
-        htmlBody: form.htmlBody,
-        textBody: form.textBody,
+        htmlBody: deriveNewsletterSource(form).htmlBody,
+        textBody: deriveNewsletterSource(form).textBody,
         email: testEmail,
         firstName: testFirstName,
         newsOptions,
         eventOptions
       }),
-    [eventOptions, form.htmlBody, form.preheader, form.subject, form.textBody, newsOptions, previewNonce, testEmail, testFirstName]
+    [eventOptions, form, newsOptions, previewNonce, testEmail, testFirstName]
   );
   const visualValue = useMemo(() => getVisualSource(form), [form]);
   const visualEditorKey = useMemo(
@@ -137,30 +140,25 @@ export function DemoNewsletterComposerCard({
       current,
       Array.isArray(visualBody) ? visualBody : []
     );
-    return { ...current, visualBody: nextVisualBody, htmlBody, textBody };
+    return { ...current, bodySource: 'visual' as const, visualBody: nextVisualBody, htmlBody, textBody };
   }
 
   function handleTabChange(value: string) {
     const nextTab = value as ComposerTab;
     setActiveTab(nextTab);
-    if (nextTab === 'visual' && (!Array.isArray(form.visualBody) || !form.visualBody.length)) {
-      setForm((current) => ({
-        ...current,
-        visualBody: visualValueFromPlainText(current.textBody || '')
-      }));
-      setVisualEditorNonce((nonce) => nonce + 1);
-    }
+
   }
 
   function insertToken(token: string) {
     if (activeTab === 'html') {
-      setForm((current) => ({ ...current, htmlBody: `${current.htmlBody}${token}`, visualBody: [] }));
+      setForm((current) => ({ ...current, htmlBody: `${current.htmlBody}${token}`, bodySource: 'html' }));
       return;
     }
     if (activeTab === 'text') {
-      setForm((current) => ({ ...current, textBody: `${current.textBody}${token}`, visualBody: [] }));
+      setForm((current) => ({ ...current, textBody: `${current.textBody}${token}`, bodySource: 'text' }));
       return;
     }
+    if (getNewsletterBodySource(form) !== 'visual') return;
     if (activeTab === 'preview') {
       setActiveTab('visual');
     }
@@ -201,7 +199,7 @@ export function DemoNewsletterComposerCard({
               onChange={(event) =>
                 setForm((current) => {
                   const next = { ...current, name: event.target.value };
-                  return Array.isArray(current.visualBody) && current.visualBody.length
+                  return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                     ? syncFromVisual(next, current.visualBody)
                     : next;
                 })
@@ -214,7 +212,7 @@ export function DemoNewsletterComposerCard({
               onChange={(event) =>
                 setForm((current) => {
                   const next = { ...current, subject: event.target.value };
-                  return Array.isArray(current.visualBody) && current.visualBody.length
+                  return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                     ? syncFromVisual(next, current.visualBody)
                     : next;
                 })
@@ -227,7 +225,7 @@ export function DemoNewsletterComposerCard({
               onChange={(event) =>
                 setForm((current) => {
                   const next = { ...current, preheader: event.target.value };
-                  return Array.isArray(current.visualBody) && current.visualBody.length
+                  return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                     ? syncFromVisual(next, current.visualBody)
                     : next;
                 })
@@ -245,6 +243,7 @@ export function DemoNewsletterComposerCard({
       </CardHeader>
 
       <CardContent className="space-y-6 pt-6">
+        <NewsletterSourceNotice source={getNewsletterBodySource(form)} onResume={() => { setForm((current) => syncFromVisual(current, getVisualSource(current))); setVisualEditorNonce((nonce) => nonce + 1); }} onConvert={() => { setForm((current) => syncFromVisual(current, visualValueFromPlainText(current.textBody))); setVisualEditorNonce((nonce) => nonce + 1); }} />
         <Tabs value={activeTab} onValueChange={handleTabChange} className="space-y-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <TabsList
@@ -302,8 +301,10 @@ export function DemoNewsletterComposerCard({
               initialValue={visualValue}
               tokens={COMPOSER_TOKENS}
               insertTokenRequest={pendingEditorToken}
+              onInsertTokenConsumed={() => setPendingEditorToken(null)}
+              disabled={getNewsletterBodySource(form) !== 'visual'}
               onChange={(value) => {
-                setForm((current) => syncFromVisual(current, value));
+                setForm((current) => getNewsletterBodySource(current) === 'visual' ? syncFromVisual(current, value) : current);
               }}
             />
           </TabsContent>
@@ -321,7 +322,7 @@ export function DemoNewsletterComposerCard({
             <Textarea
               value={form.htmlBody}
               onChange={(event) =>
-                setForm((current) => ({ ...current, htmlBody: event.target.value, visualBody: [] }))
+                setForm((current) => ({ ...current, htmlBody: event.target.value, bodySource: 'html' }))
               }
               className="min-h-[320px] font-mono text-xs leading-6"
             />
@@ -331,13 +332,14 @@ export function DemoNewsletterComposerCard({
             <Textarea
               value={form.textBody}
               onChange={(event) =>
-                setForm((current) => ({ ...current, textBody: event.target.value, visualBody: [] }))
+                setForm((current) => ({ ...current, textBody: event.target.value, bodySource: 'text' }))
               }
               className="min-h-[300px] font-mono text-xs leading-6"
             />
           </TabsContent>
         </Tabs>
 
+        <NewsletterAttachments value={form.attachments || []} demo onChange={(attachments) => setForm((current) => ({ ...current, attachments }))} />
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
           <div className="rounded-[1.5rem] border border-[var(--vd-border)] bg-[var(--vd-card)] p-5">
             <div className="flex items-center justify-between gap-3">

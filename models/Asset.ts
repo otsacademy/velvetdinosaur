@@ -22,6 +22,11 @@ const AssetSchema = new Schema(
   {
     key: { type: String, required: true, unique: true },
     bucket: { type: String, required: true },
+    ownerSite: { type: String, index: true },
+    ownershipSource: { type: String, enum: ['upload', 'reviewed-migration'] },
+    ownershipVerifiedAt: Date,
+    ownershipEvidence: String,
+    uploadedBy: String,
     // Virtual folder path for UI organization (e.g. "blog/2026"). Empty/null means root.
     folder: { type: String, index: true },
     name: { type: String },

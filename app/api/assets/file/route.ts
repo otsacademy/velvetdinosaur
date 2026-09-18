@@ -1,6 +1,6 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
+import { GetObjectCommand } from '@aws-sdk/client-s3';
 import { Readable } from 'node:stream';
 import { connectDB } from '@/lib/db';
 import { Asset } from '@/models/Asset';
@@ -10,46 +10,6 @@ import {
   selectAssetVariantKey,
   type AssetImageVariantMap
 } from '@/lib/assets/image-variants';
-
-async function headObject(bucket: string, key: string) {
-  const client = getR2Client();
-  const command = new HeadObjectCommand({ Bucket: bucket, Key: key });
-  try {
-    return await client.send(command);
-  } catch (error) {
-    const status =
-      typeof error === 'object' && error !== null
-        ? ((error as { $metadata?: { httpStatusCode?: unknown } }).$metadata?.httpStatusCode as unknown)
-        : undefined;
-    if (status === 404 || status === '404') return null;
-    if (typeof status === 'number' && status >= 400 && status < 500) return null;
-    const rawCode =
-      typeof error === 'object' && error !== null
-        ? ((error as { Code?: unknown; code?: unknown; name?: unknown }).Code ??
-            (error as { code?: unknown }).code ??
-            (error as { name?: unknown }).name)
-        : undefined;
-    const code = typeof rawCode === 'string' ? rawCode : '';
-    if (code === 'NotFound' || code === 'NoSuchKey' || code === 'NoSuchBucket') {
-      return null;
-    }
-    throw error;
-  }
-}
-
-function inferFolderFromKey(key: string) {
-  const prefix = 'uploads/';
-  if (!key.startsWith(prefix)) return undefined;
-  const rest = key.slice(prefix.length);
-  const parts = rest.split('/').filter(Boolean);
-  if (parts.length <= 1) return undefined;
-  return parts.slice(0, -1).join('/');
-}
-
-function inferNameFromKey(key: string) {
-  const filename = key.split('/').pop() || '';
-  return filename.replace(/\.[^/.]+$/, '') || undefined;
-}
 
 function isImmutableUploadKey(key: string) {
   const filename = key.split('/').pop() || '';
@@ -76,7 +36,6 @@ export async function GET(request: Request) {
     .replace(/\\/g, '/')
     .replace(/\/{2,}/g, '/')
     .replace(/[\\/]+$/, '');
-  const requestedKey = key;
   const intent = normalizeAssetImageIntent(url.searchParams.get('intent'));
   if (!key) {
     // Next may (incorrectly) prefetch internal URLs as RSC requests, dropping query params.
@@ -92,62 +51,21 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
   }
 
-  // Prefer DB records (multi-bucket + admin metadata), but fall back to the default bucket
-  // so legacy uploads do not break public pages if the Asset record is missing.
-  const defaultBucket = process.env.R2_BUCKET || process.env.R2_BUCKET_NAME;
-
+  // Public requests must never manufacture library records or use a shared
+  // bucket as an ownership oracle. Existing registered legacy assets continue
+  // to work; newsletter preparation additionally requires verified provenance.
   const conn = await connectDB();
-  let bucket = defaultBucket || undefined;
-  let hasAssetRecord = false;
-  if (conn) {
-    const asset = (await Asset.findOne({ key })
-      .select({ bucket: 1, key: 1, fallbackKey: 1, variants: 1 })
-      .lean()
-      .exec()) as {
-      bucket?: string;
-      key?: string;
-      fallbackKey?: string;
+  if (!conn) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  const asset = (await Asset.findOne({ key })
+    .select({ bucket: 1, key: 1, fallbackKey: 1, variants: 1 })
+    .lean().exec()) as {
+      bucket?: string; key?: string; fallbackKey?: string;
       variants?: AssetImageVariantMap | null;
     } | null;
-    if (asset) {
-      hasAssetRecord = true;
-      bucket = asset.bucket || defaultBucket || undefined;
-      const variantKey = selectAssetVariantKey(asset, intent);
-      if (variantKey?.startsWith('uploads/')) {
-        key = variantKey;
-      }
-    }
-  }
-
-  if (!bucket) {
-    // No safe fallback without knowing which bucket to use.
-    return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  }
-
-  const head = await headObject(bucket, key);
-  if (!head) {
-    return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  }
-
-  // If DB is up, backfill a minimal record so future list/search/edit works.
-  if (conn && key === requestedKey) {
-    const setFields: Record<string, unknown> = { bucket };
-    if (typeof head.ContentType === 'string') setFields.mime = head.ContentType;
-    if (typeof head.ContentLength === 'number') setFields.size = head.ContentLength;
-    if (typeof head.ETag === 'string') setFields.etag = head.ETag;
-
-    const setOnInsertFields: Record<string, unknown> = { key };
-    const inferredFolder = inferFolderFromKey(key);
-    const inferredName = inferNameFromKey(key);
-    if (inferredFolder) setOnInsertFields.folder = inferredFolder;
-    if (inferredName) setOnInsertFields.name = inferredName;
-
-    await Asset.findOneAndUpdate(
-      { key },
-      hasAssetRecord ? { $set: setFields } : { $set: setFields, $setOnInsert: setOnInsertFields },
-      { upsert: true }
-    );
-  }
+  if (!asset?.bucket) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  const bucket = asset.bucket;
+  const variantKey = selectAssetVariantKey(asset, intent);
+  if (variantKey?.startsWith('uploads/')) key = variantKey;
 
   try {
     const client = getR2Client();

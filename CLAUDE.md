@@ -173,6 +173,8 @@ Every site — existing and newly ported — must ship:
 - Branch + deploy flow override:
   - `main` is the only long-lived branch for this site.
   - GitHub (`git@github.com:otsacademy/velvetdinosaur.git`) is the canonical remote for shared history.
-  - Use `bun run deploy:manual` from a clean `main` checkout for the full local quality + deploy path.
-  - Use `bun run deploy:safe` when you intentionally want a faster in-place rebuild/restart of the current checkout.
-- Notes: This site no longer uses a `develop -> main` promotion step or blue/green slot switching.
+  - Use `bun run release:local` from a clean, committed `main` checkout for all local quality gates, exact-commit blue/green deployment, and the subsequent GitHub push.
+  - `bun run deploy:blue-green -- --commit=<validated-main-commit>` is the deployment entrypoint after all manifest gates pass; it does not run the full quality suite itself.
+  - Production slots are declared in `deploy/local-first.json`; never rebuild the live slot in place. The controller checkout is not the service WorkingDirectory.
+- Notes: This site does not use a `develop -> main` promotion step. It uses blue/green slot switching.
+- Newsletter media work: use existing components and local Playwright verification. Do not use Figma MCP or Snapshot MCP, per the user's explicit instruction.

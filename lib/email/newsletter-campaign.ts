@@ -1,9 +1,10 @@
 import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/email/newsletter-campaign.ts');
 
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
 import { ServerClient } from 'postmark';
+import { loadInlineSocialIconAttachments, withHtmlFooter, withTextFooter } from './newsletter-social';
+import { assertNewsletterSendingAllowed } from '@/lib/newsletter/send-policy';
+import { assertNewsletterMessageSize } from '@/lib/newsletter/media-validation';
 import {
   buildBrandedEmailHtml,
   escapeHtml,
@@ -15,7 +16,7 @@ import { resolveNewsletterHighlightDirectives } from '@/lib/newsletter/highlight
 import { clean, normalizeEmail, toFirstName } from '@/lib/newsletter/shared';
 import { createNewsletterUnsubscribeToken } from '@/lib/newsletter/unsubscribe-token';
 
-type SendNewsletterCampaignEmailInput = {
+export type SendNewsletterCampaignEmailInput = {
   to: string;
   firstName?: string;
   subject: string;
@@ -24,12 +25,14 @@ type SendNewsletterCampaignEmailInput = {
   textBody: string;
   campaignId: string;
   metadata?: Record<string, string>;
+  prepared?: PreparedNewsletterEmail;
 };
 
 type SendNewsletterCampaignEmailResult = {
   ok: boolean;
   messageId: string;
   error: string;
+  ambiguous?: boolean;
 };
 
 type RenderNewsletterCampaignEmailOptions = {
@@ -47,7 +50,7 @@ type RenderNewsletterCampaignEmailResult = {
   attachments: PostmarkAttachment[];
 };
 
-type PostmarkAttachment = NonNullable<Parameters<ServerClient['sendEmail']>[0]['Attachments']>[number];
+export type PostmarkAttachment = NonNullable<Parameters<ServerClient['sendEmail']>[0]['Attachments']>[number];
 
 function getPostmarkConfig() {
   const token = (process.env.POSTMARK_SERVER_TOKEN || '').trim();
@@ -58,6 +61,11 @@ function getPostmarkConfig() {
     ''
   ).trim();
   return { token, from };
+}
+
+export function assertNewsletterTransportConfigured() {
+  const { token, from } = getPostmarkConfig();
+  if (!token || !extractEmailAddress(from)) throw new Error('Newsletter sending requires a configured Postmark token and sender email.');
 }
 
 function extractEmailAddress(from: string) {
@@ -78,7 +86,7 @@ function normalizeEnvValue(raw: string | undefined | null) {
   return value;
 }
 
-function resolveBaseUrl() {
+export function resolveNewsletterBaseUrl() {
   const candidates = [
     process.env.NEXT_PUBLIC_BASE_URL,
     process.env.PUBLIC_BASE_URL,
@@ -128,7 +136,7 @@ function resolveHeadingSize(heading: string) {
 function buildUnsubscribeUrl(email: string, campaignId: string) {
   const token = createNewsletterUnsubscribeToken({ email, campaignId });
   if (!token) return '';
-  const base = resolveBaseUrl().replace(/\/+$/, '');
+  const base = resolveNewsletterBaseUrl().replace(/\/+$/, '');
   if (!base) return '';
   return `${base}/newsletter/unsubscribe?token=${encodeURIComponent(token)}`;
 }
@@ -136,115 +144,18 @@ function buildUnsubscribeUrl(email: string, campaignId: string) {
 function buildOneClickUnsubscribeUrl(email: string, campaignId: string) {
   const token = createNewsletterUnsubscribeToken({ email, campaignId });
   if (!token) return '';
-  const base = resolveBaseUrl().replace(/\/+$/, '');
+  const base = resolveNewsletterBaseUrl().replace(/\/+$/, '');
   if (!base) return '';
   return `${base}/api/newsletter/unsubscribe/one-click?token=${encodeURIComponent(token)}`;
 }
 
-type SocialLink = {
-  label: string;
-  href: string;
-  iconPath: string;
-};
-
-const NEWSLETTER_SOCIAL_LINKS: SocialLink[] = [
-  {
-    label: 'Facebook',
-    href: 'https://www.facebook.com/AcademicsStandAgainstPoverty',
-    iconPath: '/images/email-social/facebook.png'
-  },
-  {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/academicsstandagainstpoverty',
-    iconPath: '/images/email-social/instagram.svg'
-  },
-  {
-    label: 'X (AcademicsStand)',
-    href: 'https://x.com/academicsstand',
-    iconPath: '/images/email-social/x.png'
-  },
-  {
-    label: 'Bluesky',
-    href: 'https://bsky.app/profile/acadsap.bsky.social',
-    iconPath: '/images/email-social/bluesky.svg'
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/academics-stand-against-poverty',
-    iconPath: '/images/email-social/linkedin.png'
-  }
-];
-
-async function loadInlineSocialIconAttachments() {
-  const attachments: PostmarkAttachment[] = [];
-  const iconSrcByLabel: Record<string, string> = {};
-  const iconRoot = path.join(process.cwd(), 'public', 'images', 'email-social');
-
-  for (const item of NEWSLETTER_SOCIAL_LINKS) {
-    const fileName = item.iconPath.split('/').pop();
-    if (!fileName) continue;
-    const cid = `vd-social-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-    const iconPath = path.join(iconRoot, fileName);
-    try {
-      const content = await readFile(iconPath);
-      attachments.push({
-        Name: fileName,
-        Content: content.toString('base64'),
-        ContentType: fileName.toLowerCase().endsWith('.png')
-          ? 'image/png'
-          : fileName.toLowerCase().endsWith('.svg')
-            ? 'image/svg+xml'
-            : 'application/octet-stream',
-        ContentID: `cid:${cid}`,
-        Disposition: 'inline'
-      });
-      iconSrcByLabel[item.label] = `cid:${cid}`;
-    } catch {
-      continue;
-    }
-  }
-
-  return { attachments, iconSrcByLabel };
-}
-
-function buildSocialLinksHtml(baseUrl: string, iconSrcByLabel: Record<string, string>) {
-  const items = NEWSLETTER_SOCIAL_LINKS.map((item) => {
-    const iconUrl = iconSrcByLabel[item.label] || (baseUrl ? `${baseUrl}${item.iconPath}` : item.iconPath);
-    return `<a href="${escapeHtml(item.href)}" style="display:inline-block;margin:0 4px" aria-label="${escapeHtml(item.label)}"><img src="${escapeHtml(iconUrl)}" width="18" height="18" alt="${escapeHtml(item.label)}" style="display:block;border:0;width:18px;height:18px" /></a>`;
-  }).join('');
-  return `<div style="margin:12px 0 0 0;text-align:left"><p style="margin:0 0 8px 0;font-size:12px;line-height:18px;color:#6b7280">Follow us</p><div style="margin:0">${items}</div></div>`;
-}
-
-function buildSocialLinksText() {
-  return `Follow us: ${NEWSLETTER_SOCIAL_LINKS.map((item) => `${item.label}: ${item.href}`).join(' | ')}`;
-}
-
-function withHtmlFooter(
-  html: string,
-  unsubscribeUrl: string,
-  options: { baseUrl: string; iconSrcByLabel: Record<string, string> }
-) {
-  if (!unsubscribeUrl) return html;
-  if (html.includes('{{unsubscribeUrl}}') || html.includes(unsubscribeUrl)) return html;
-  const socialHtml = buildSocialLinksHtml(options.baseUrl, options.iconSrcByLabel);
-  const footer =
-    '<hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0" />' +
-    `<p style="margin:0;font-size:12px;line-height:18px;color:#6b7280">You are receiving this email because you opted in to updates. <a href="${unsubscribeUrl}" style="color:#1f2937">Unsubscribe</a>.</p>` +
-    socialHtml;
-  if (html.includes('</body>')) return html.replace('</body>', `${footer}</body>`);
-  if (html.includes('</html>')) return html.replace('</html>', `${footer}</html>`);
-  return `${html}${footer}`;
-}
-
-function withTextFooter(text: string, unsubscribeUrl: string) {
-  if (!unsubscribeUrl) return text;
-  if (text.includes('{{unsubscribeUrl}}') || text.includes(unsubscribeUrl)) return text;
-  return `${text}\n\nYou can unsubscribe at any time: ${unsubscribeUrl}\n${buildSocialLinksText()}`;
-}
-
 export async function sendNewsletterCampaignEmail(
-  input: SendNewsletterCampaignEmailInput
+  input: SendNewsletterCampaignEmailInput,
+  transport?: (message: Parameters<ServerClient['sendEmail']>[0]) => Promise<{ MessageID: string }>
 ): Promise<SendNewsletterCampaignEmailResult> {
+  try { assertNewsletterSendingAllowed(); } catch (error) {
+    return { ok: false, messageId: '', error: error instanceof Error ? error.message : 'Sending disabled' };
+  }
   const recipient = normalizeEmail(input.to);
   if (!recipient) {
     return { ok: false, messageId: '', error: 'missing-recipient' };
@@ -255,7 +166,13 @@ export async function sendNewsletterCampaignEmail(
     return { ok: false, messageId: '', error: 'missing-postmark-config' };
   }
 
-  const rendered = await renderNewsletterCampaignEmail(input, { inlineSocialIcons: true });
+  let rendered: RenderNewsletterCampaignEmailResult | null;
+  try {
+    rendered = await renderNewsletterCampaignEmail(input, { inlineSocialIcons: true });
+  } catch (error) {
+    // No provider request has occurred: a rendering/size failure is definite.
+    return { ok: false, messageId: '', error: error instanceof Error ? error.message : 'Newsletter rendering failed', ambiguous: false };
+  }
   if (!rendered) {
     return { ok: false, messageId: '', error: 'missing-recipient' };
   }
@@ -300,14 +217,16 @@ export async function sendNewsletterCampaignEmail(
     if (rendered.attachments.length) {
       message.Attachments = rendered.attachments;
     }
-    const response = await client.sendEmail(message);
+    const response = await (transport ? transport(message) : client.sendEmail(message));
     const messageId = clean((response as { MessageID?: string }).MessageID);
+    if (!messageId) return { ok: false, messageId: '', error: 'Provider acceptance could not be confirmed.', ambiguous: true };
     return { ok: true, messageId, error: '' };
   } catch (error) {
     return {
       ok: false,
       messageId: '',
-      error: error instanceof Error ? error.message : 'postmark-send-failed'
+      error: error instanceof Error ? error.message : 'postmark-send-failed',
+      ambiguous: true
     };
   }
 }
@@ -322,7 +241,7 @@ export async function renderNewsletterCampaignEmail(
   const firstName = toFirstName(input.firstName) || 'there';
   const unsubscribeUrl = buildUnsubscribeUrl(recipient, input.campaignId);
   const oneClickUnsubscribeUrl = buildOneClickUnsubscribeUrl(recipient, input.campaignId);
-  const appUrl = resolveBaseUrl();
+  const appUrl = resolveNewsletterBaseUrl();
   const siteName = resolveSiteName();
   const logoUrl = resolveLogoUrl(undefined, appUrl);
   const values = {
@@ -340,13 +259,12 @@ export async function renderNewsletterCampaignEmail(
   const heading = formatNewsletterHeading(subject) || subject;
   const headingSize = resolveHeadingSize(heading);
   const preheader = applyTemplateValues(input.preheader || '', values);
-  const htmlBase = applyTemplateValues(input.htmlBody || '', values);
+  const htmlValues = Object.fromEntries(Object.entries(values).map(([key, value]) => [key, escapeHtml(value)]));
+  const htmlBase = applyTemplateValues(input.htmlBody || '', htmlValues);
   const textBase = applyTemplateValues(input.textBody || '', values);
-  const resolved = await resolveNewsletterHighlightDirectives({
-    htmlBody: htmlBase,
-    textBody: textBase,
-    appUrl
-  });
+  const resolved = input.prepared
+    ? { htmlBody: applyTemplateValues(input.prepared.htmlBody, htmlValues), textBody: applyTemplateValues(input.prepared.textBody, values) }
+    : await resolveNewsletterHighlightDirectives({ htmlBody: htmlBase, textBody: textBase, appUrl });
 
   const htmlWithPreheader =
     preheader && !resolved.htmlBody.includes(preheader)
@@ -357,7 +275,7 @@ export async function renderNewsletterCampaignEmail(
   const socialBaseUrl = appUrl.replace(/\/+$/, '');
   const inlineIcons = options?.inlineSocialIcons !== false;
   const { attachments, iconSrcByLabel } = inlineIcons
-    ? await loadInlineSocialIconAttachments()
+    ? input.prepared?.icons || await loadInlineSocialIconAttachments()
     : { attachments: [], iconSrcByLabel: {} as Record<string, string> };
   const isFullHtmlDocument = /<html[\s>]|<body[\s>]/i.test(htmlWithPreheader);
   const htmlBody = isFullHtmlDocument
@@ -373,6 +291,8 @@ export async function renderNewsletterCampaignEmail(
         headingLineHeightPx: headingSize.lineHeight
       });
   const textBody = withTextFooter(textWithPreheader, unsubscribeUrl);
+  const allAttachments = [...attachments, ...(input.prepared?.attachments || [])];
+  assertNewsletterMessageSize({ htmlBody, textBody, subject, attachments: allAttachments });
 
   return {
     toEmail: recipient,
@@ -382,6 +302,31 @@ export async function renderNewsletterCampaignEmail(
     textBody,
     unsubscribeUrl,
     oneClickUnsubscribeUrl,
-    attachments
+    attachments: allAttachments
   };
+}
+
+export type PreparedNewsletterEmail = {
+  htmlBody: string;
+  textBody: string;
+  attachments: PostmarkAttachment[];
+  icons: Awaited<ReturnType<typeof loadInlineSocialIconAttachments>>;
+};
+
+/** Resolve shared body directives and read icon files once per batch. */
+export async function prepareNewsletterCampaignEmail(
+  input: { htmlBody: string; textBody: string; attachments?: PostmarkAttachment[] },
+  loadIcons = loadInlineSocialIconAttachments
+): Promise<PreparedNewsletterEmail> {
+  const appUrl = resolveNewsletterBaseUrl();
+  if (input.htmlBody.includes('/api/newsletter/media/')) {
+    let valid = false;
+    try { const url = new URL(appUrl); valid = url.protocol === 'https:' && !url.username && !url.password; } catch { /* Missing origin is an actionable configuration error. */ }
+    if (!valid) throw new Error('Configure this site’s public HTTPS origin before previewing or sending newsletter images.');
+  }
+  const resolved = await resolveNewsletterHighlightDirectives({ htmlBody: input.htmlBody, textBody: input.textBody, appUrl });
+  const icons = await loadIcons();
+  const attachments = input.attachments || [];
+  assertNewsletterMessageSize({ ...resolved, attachments: [...icons.attachments, ...attachments] });
+  return { ...resolved, attachments, icons };
 }

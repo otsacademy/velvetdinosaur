@@ -45,7 +45,9 @@ export function NewsletterCampaignList({
               <span>Sent: {campaign.sentCount}</span>
               <span>Failed: {campaign.failedCount}</span>
               <span>Skipped: {campaign.skippedCount}</span>
+              {campaign.needsReviewCount ? <span className="text-destructive">Needs review: {campaign.needsReviewCount}</span> : null}
             </div>
+            {campaign.lastError ? <p className="mt-2 text-xs text-destructive">{campaign.lastError}</p> : null}
             <p className="mt-1 text-[11px] text-muted-foreground">Scheduled: {formatDate(campaign.scheduledAt)}</p>
           </button>
         ))}

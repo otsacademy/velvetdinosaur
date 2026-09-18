@@ -5,10 +5,11 @@ assertServerOnly('lib/assets/usage.server.ts');
 import { connectDB } from '@/lib/db';
 import { Page } from '@/models/Page';
 import { NewsArticle } from '@/models/NewsArticle';
+import { NewsletterCampaign } from '@/models/NewsletterCampaign';
 
 export type AssetUsageReference = {
   id: string;
-  type: 'page' | 'article';
+  type: 'page' | 'article' | 'newsletter';
   slug: string;
   title: string;
   status?: string;
@@ -24,7 +25,7 @@ export type AssetUsageItem = {
 
 type UsageReferenceAccumulator = {
   id: string;
-  type: 'page' | 'article';
+  type: 'page' | 'article' | 'newsletter';
   slug: string;
   title: string;
   status?: string;
@@ -170,7 +171,7 @@ function addMatch(
   key: string,
   reference: {
     id: string;
-    type: 'page' | 'article';
+    type: 'page' | 'article' | 'newsletter';
     slug: string;
     title: string;
     status?: string;
@@ -317,7 +318,7 @@ export async function getAssetUsage(keysInput: unknown): Promise<AssetUsageItem[
     return keys.map((key) => ({ key, count: 0, references: [] }));
   }
 
-  const [pageRows, newsRows] = await Promise.all([
+  const [pageRows, newsRows, campaignRows] = await Promise.all([
     (Page.find({})
       .select({ slug: 1, path: 1, title: 1, data: 1, draftData: 1, publishedData: 1 })
       .lean()
@@ -336,7 +337,8 @@ export async function getAssetUsage(keysInput: unknown): Promise<AssetUsageItem[
         authorSnapshot: 1
       })
       .lean()
-      .exec()) as unknown as Promise<NewsUsageRow[]>
+      .exec()) as unknown as Promise<NewsUsageRow[]>,
+    NewsletterCampaign.find({}).select({ name: 1, status: 1, visualBody: 1, htmlBody: 1, attachments: 1, frozenContent: 1 }).lean().exec(),
   ]);
 
   const keySet = new Set(keys);
@@ -345,6 +347,19 @@ export async function getAssetUsage(keysInput: unknown): Promise<AssetUsageItem[
 
   scanPages(pageRows, keyPatterns, keySet, usageByKey);
   scanNewsArticles(newsRows, keyPatterns, keySet, usageByKey);
+  for (const campaign of campaignRows) {
+    const id = String(campaign._id);
+    walkValue({ visualBody: campaign.visualBody, htmlBody: campaign.htmlBody, attachments: campaign.attachments, frozenContent: campaign.frozenContent }, 'newsletter', (candidate, path) => {
+      for (const key of findKeysInString(candidate, keyPatterns, keySet)) {
+        addMatch(usageByKey, key, {
+          id: `newsletter:${id}`, type: 'newsletter', slug: id,
+          title: typeof campaign.name === 'string' ? campaign.name : 'Newsletter',
+          status: typeof campaign.status === 'string' ? campaign.status : undefined,
+          url: `/edit?tab=newsletter&campaignId=${encodeURIComponent(id)}`,
+        }, path);
+      }
+    });
+  }
 
   return toUsageItems(keys, usageByKey);
 }

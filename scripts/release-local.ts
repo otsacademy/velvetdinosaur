@@ -2,13 +2,11 @@ import { spawnSync } from 'node:child_process';
 
 type Options = {
   envFile: string;
-  skipQuality: boolean;
   skipPush: boolean;
 };
 
 function parseArgs(argv: string[]): Options {
   let envFile = '.env.production';
-  let skipQuality = false;
   let skipPush = false;
 
   for (const arg of argv) {
@@ -17,15 +15,14 @@ function parseArgs(argv: string[]): Options {
       continue;
     }
     if (arg === '--skip-quality') {
-      skipQuality = true;
-      continue;
+      throw new Error('Release requires all quality gates. --skip-quality is not supported.');
     }
     if (arg === '--skip-push') {
       skipPush = true;
     }
   }
 
-  return { envFile, skipQuality, skipPush };
+  return { envFile, skipPush };
 }
 
 function run(command: string, args: string[], cwd: string) {
@@ -74,19 +71,22 @@ function main() {
   const cwd = process.cwd();
   const branch = readStdout('git', ['branch', '--show-current'], cwd);
 
-  if (!branch || branch === 'HEAD') {
-    throw new Error('Release requires a checked-out branch.');
+  if (branch !== 'main') {
+    throw new Error('Velvet Dinosaur releases require a clean main checkout.');
   }
 
   ensureCleanWorktree(cwd);
 
-  const deployArgs = ['run', 'deploy:manual', '--', `--env-file=${options.envFile}`];
-  if (options.skipQuality) {
-    deployArgs.push('--skip-quality');
+  const releaseCommit = readStdout('git', ['rev-parse', 'HEAD'], cwd);
+  run('bun', ['run', 'quality:validate'], cwd);
+  run('bun', ['run', 'quality', '--only', 'velvetdinosaur'], cwd);
+  ensureCleanWorktree(cwd);
+  if (readStdout('git', ['rev-parse', 'HEAD'], cwd) !== releaseCommit) {
+    throw new Error('The release commit changed during validation. Restart the release.');
   }
+  const deployArgs = ['run', 'deploy:blue-green', '--', `--env-file=${options.envFile}`, `--commit=${releaseCommit}`];
   run('bun', deployArgs, cwd);
 
-  const releaseCommit = readStdout('git', ['rev-parse', 'HEAD'], cwd);
   const hasOrigin = hasRemote(cwd, 'origin');
 
   if (!options.skipPush && hasOrigin) {

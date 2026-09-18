@@ -28,6 +28,15 @@ describe('demo public-safety policy', () => {
     for (const pathname of allowed) expect(shouldBlockDemoSideEffect(pathname, 'POST')).toBe(false);
   });
 
+  test('permits immutable newsletter image reads without enabling public newsletter actions', () => {
+    const image = `/api/newsletter/media/${'a'.repeat(64)}`;
+    expect(shouldBlockDemoSideEffect(image, 'GET')).toBe(false);
+    expect(shouldBlockDemoSideEffect(image, 'HEAD')).toBe(false);
+    expect(shouldBlockDemoSideEffect(image, 'POST')).toBe(true);
+    expect(shouldBlockDemoSideEffect('/api/newsletter/subscribe', 'GET')).toBe(true);
+    expect(shouldBlockDemoSideEffect('/api/newsletter/dispatch', 'POST')).toBe(true);
+  });
+
   test('leaves reads and searches safe while identifying public action UI', () => {
     expect(shouldBlockDemoSideEffect('/api/orders', 'GET')).toBe(false);
     expect(isPublicDemoPath('/')).toBe(true);

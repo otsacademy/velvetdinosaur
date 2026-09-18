@@ -7,6 +7,7 @@ import { DemoNewsletterCampaignList } from '@/components/demo/newsletter/demo-ne
 import {
   applyHighlightSelections,
   createCampaignForm,
+  deriveNewsletterSource,
   createDraftCampaign,
   createNewsletterOverview,
   filterDeliveries,
@@ -99,6 +100,7 @@ export function DemoNewsletterWorkspace() {
   }
 
   function saveDraft() {
+    const prepared = deriveNewsletterSource(form);
     if (!form.name.trim() || !form.subject.trim() || !form.htmlBody.trim() || !form.textBody.trim()) {
       toast.error('Name, subject, HTML body, and plain-text body are required.');
       return;
@@ -113,9 +115,10 @@ export function DemoNewsletterWorkspace() {
                 name: form.name.trim(),
                 subject: form.subject.trim(),
                 preheader: form.preheader.trim(),
-                htmlBody: form.htmlBody,
-                textBody: form.textBody,
+                htmlBody: prepared.htmlBody,
+                textBody: prepared.textBody,
                 visualBody: Array.isArray(form.visualBody) ? form.visualBody : [],
+                bodySource: form.bodySource, attachments: form.attachments,
                 scheduledAt: fromDateTimeLocalInput(form.scheduledAt) || null
               }
             : campaign

@@ -1,3 +1,4 @@
+import type { NewsletterAttachment, NewsletterBodySource } from '@/lib/newsletter/media-client-types';
 import {
   visualValueToBodyHtml,
   visualValueToPlainText,
@@ -30,6 +31,8 @@ export type DemoNewsletterCampaign = {
   htmlBody: string;
   textBody: string;
   visualBody: unknown[];
+  bodySource: NewsletterBodySource;
+  attachments: NewsletterAttachment[];
   status: DemoNewsletterCampaignStatus;
   scheduledAt: string | null;
   recipientSnapshotCount: number;
@@ -82,6 +85,8 @@ export type DemoNewsletterFormState = {
   htmlBody: string;
   textBody: string;
   visualBody: unknown[];
+  bodySource: NewsletterBodySource;
+  attachments: NewsletterAttachment[];
   scheduledAt: string;
 };
 
@@ -210,7 +215,7 @@ export function buildDemoNewsletterForm(defaults: DemoNewsletterSeed['defaults']
     preheader: 'A calmer monthly round-up from Harbour & Pine.',
     htmlBody: defaults.htmlBody,
     textBody: defaults.textBody,
-    visualBody: cloneVisualNodes(defaults.visualBody),
+    visualBody: cloneVisualNodes(defaults.visualBody), bodySource: 'visual', attachments: [],
     scheduledAt: ''
   };
 }
@@ -267,7 +272,7 @@ export function createDemoNewsletterSeed(): DemoNewsletterSeed {
         preheader: 'The latest design notes, launch planning, and April sessions.',
         htmlBody: defaultContent.htmlBody,
         textBody: defaultContent.textBody,
-        visualBody: cloneVisualNodes(defaultContent.visualBody),
+        visualBody: cloneVisualNodes(defaultContent.visualBody), bodySource: 'visual', attachments: [],
         status: 'completed',
         scheduledAt: '2026-03-10T09:00:00.000Z',
         recipientSnapshotCount: 6,
@@ -283,7 +288,7 @@ export function createDemoNewsletterSeed(): DemoNewsletterSeed {
         preheader: 'A preview of the next release and the latest client work.',
         htmlBody: aprilContent.htmlBody,
         textBody: aprilContent.textBody,
-        visualBody: cloneVisualNodes(aprilContent.visualBody),
+        visualBody: cloneVisualNodes(aprilContent.visualBody), bodySource: 'visual', attachments: [],
         status: 'queued',
         scheduledAt: '2026-04-04T08:30:00.000Z',
         recipientSnapshotCount: 5,
@@ -299,7 +304,7 @@ export function createDemoNewsletterSeed(): DemoNewsletterSeed {
         preheader: 'Still being shaped inside the demo.',
         htmlBody: draftContent.htmlBody,
         textBody: draftContent.textBody,
-        visualBody: cloneVisualNodes(draftContent.visualBody),
+        visualBody: cloneVisualNodes(draftContent.visualBody), bodySource: 'visual', attachments: [],
         status: 'draft',
         scheduledAt: null,
         recipientSnapshotCount: 0,

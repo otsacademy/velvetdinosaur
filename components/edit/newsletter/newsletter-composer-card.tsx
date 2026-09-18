@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { Loader2, RefreshCw, Send } from 'lucide-react';
+import { NewsletterAttachments } from './media/newsletter-attachments';
+import { NewsletterSourceNotice } from './media/newsletter-source-notice';
+import { deriveNewsletterComposerSource, getNewsletterBodySource } from '@/lib/newsletter/composer-source';
 import { NewsletterComposerPreview } from '@/components/edit/newsletter/newsletter-composer-preview';
 import {
   NewsletterHighlightPicker,
@@ -21,8 +24,6 @@ import { Textarea } from '@/components/ui/textarea';
 import {
   ensureVisualValue,
   visualValueFromPlainText,
-  visualValueToEmailHtml,
-  visualValueToPlainText
 } from '@/lib/email-template-visual';
 
 const COMPOSER_TOKENS = [
@@ -96,25 +97,7 @@ function getVisualSource(form: CampaignFormState) {
   return visualValueFromPlainText(form.textBody || '');
 }
 
-function deriveComposerSource(form: CampaignFormState, visualOverride?: unknown[]) {
-  const hasVisualSource = Array.isArray(visualOverride) ? visualOverride.length > 0 : Array.isArray(form.visualBody) && form.visualBody.length > 0;
-  const visualBody = hasVisualSource
-    ? ensureVisualValue(Array.isArray(visualOverride) ? visualOverride : form.visualBody)
-    : visualValueFromPlainText(form.textBody || '');
-  const textBody = hasVisualSource ? visualValueToPlainText(visualBody) : form.textBody || '';
-  const htmlBody = hasVisualSource
-    ? visualValueToEmailHtml({
-        value: visualBody,
-        heading: (form.subject || form.name || 'Newsletter update').trim(),
-        previewText: form.preheader || textBody,
-        siteNameToken: '{{siteName}}',
-        appUrlToken: '{{appUrl}}',
-        logoUrlToken: '{{logoUrl}}'
-      })
-    : form.htmlBody || '';
-
-  return { htmlBody, textBody, visualBody };
-}
+const deriveComposerSource = deriveNewsletterComposerSource;
 
 function stableKeyFromId(value: string) {
   let hash = 0;
@@ -185,7 +168,7 @@ export function NewsletterComposerCard({
           subject: form.subject,
           preheader: form.preheader,
           htmlBody: previewSource.htmlBody,
-          textBody: previewSource.textBody
+          textBody: previewSource.textBody, bodySource: getNewsletterBodySource(form), attachments: form.attachments, visualBody: form.visualBody
         })
       });
       const payload = (await response.json().catch(() => ({}))) as {
@@ -212,7 +195,7 @@ export function NewsletterComposerCard({
       }
     }
   }, [
-    form.campaignId,
+    form.campaignId, form.bodySource, form.attachments, form.visualBody,
     form.preheader,
     form.subject,
     previewSource.htmlBody,
@@ -269,21 +252,19 @@ export function NewsletterComposerCard({
   function handleTabChange(value: string) {
     const nextTab = value as ComposerTab;
     setActiveTab(nextTab);
-    if (nextTab === 'visual' && (!Array.isArray(form.visualBody) || !form.visualBody.length)) {
-      setForm((current) => ({ ...current, visualBody: visualValueFromPlainText(current.textBody || '') }));
-      setVisualEditorNonce((nonce) => nonce + 1);
-    }
+
   }
 
   function insertToken(token: string) {
     if (activeTab === 'html') {
-      setForm((current) => ({ ...current, htmlBody: `${current.htmlBody}${token}`, visualBody: [] }));
+      setForm((current) => ({ ...current, htmlBody: `${current.htmlBody}${token}`, bodySource: 'html' }));
       return;
     }
     if (activeTab === 'text') {
-      setForm((current) => ({ ...current, textBody: `${current.textBody}${token}`, visualBody: [] }));
+      setForm((current) => ({ ...current, textBody: `${current.textBody}${token}`, bodySource: 'text' }));
       return;
     }
+    if (getNewsletterBodySource(form) !== 'visual') return;
     if (activeTab === 'preview') {
       setActiveTab('visual');
     }
@@ -293,7 +274,7 @@ export function NewsletterComposerCard({
 
   function syncFromVisual(current: CampaignFormState, visualBody: unknown[]) {
     const { htmlBody, textBody, visualBody: nextVisualBody } = deriveComposerSource(current, Array.isArray(visualBody) ? visualBody : []);
-    return { ...current, visualBody: nextVisualBody, htmlBody, textBody };
+    return { ...current, bodySource: 'visual' as const, visualBody: nextVisualBody, htmlBody, textBody };
   }
 
   return (
@@ -307,6 +288,7 @@ export function NewsletterComposerCard({
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+        {selectedCampaignStatus === 'queued' ? <p className="text-sm text-muted-foreground">This campaign’s content and attachments are frozen for delivery. Cancel the schedule to edit the draft.</p> : null}
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Campaign name">
             <Input
@@ -314,7 +296,7 @@ export function NewsletterComposerCard({
               onChange={(event) =>
                 setForm((current) => {
                   const next = { ...current, name: event.target.value };
-                  return Array.isArray(current.visualBody) && current.visualBody.length
+                  return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                     ? syncFromVisual(next, current.visualBody)
                     : next;
                 })
@@ -328,7 +310,7 @@ export function NewsletterComposerCard({
               onChange={(event) =>
                 setForm((current) => {
                   const next = { ...current, subject: event.target.value };
-                  return Array.isArray(current.visualBody) && current.visualBody.length
+                  return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                     ? syncFromVisual(next, current.visualBody)
                     : next;
                 })
@@ -343,7 +325,7 @@ export function NewsletterComposerCard({
             onChange={(event) =>
               setForm((current) => {
                 const next = { ...current, preheader: event.target.value };
-                return Array.isArray(current.visualBody) && current.visualBody.length
+                return getNewsletterBodySource(current) === 'visual' && Array.isArray(current.visualBody) && current.visualBody.length
                   ? syncFromVisual(next, current.visualBody)
                   : next;
               })
@@ -352,6 +334,7 @@ export function NewsletterComposerCard({
           />
         </Field>
 
+        <NewsletterSourceNotice source={getNewsletterBodySource(form)} disabled={!canEditSelected} onResume={() => { setForm((current) => syncFromVisual(current, getVisualSource(current))); setVisualEditorNonce((nonce) => nonce + 1); }} onConvert={() => { setForm((current) => syncFromVisual(current, visualValueFromPlainText(current.textBody))); setVisualEditorNonce((nonce) => nonce + 1); }} />
         <Tabs value={activeTab} onValueChange={handleTabChange}>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <TabsList
@@ -398,7 +381,7 @@ export function NewsletterComposerCard({
           <TabsContent value="visual" className="space-y-3">
             <div className="rounded-[var(--vd-radius)] border border-[var(--vd-border)] bg-[var(--vd-muted)]/20 p-3 text-xs text-[var(--vd-muted-fg)]">
               <p>
-                Edit in Plate mode. HTML and plain-text source are regenerated automatically for delivery.
+                Edit the visual version. HTML and plain-text source are regenerated automatically for delivery.
               </p>
             </div>
             <EmailTemplateVisualEditor
@@ -406,9 +389,10 @@ export function NewsletterComposerCard({
               initialValue={visualValue}
               tokens={COMPOSER_TOKENS}
               insertTokenRequest={pendingEditorToken}
-              disabled={!canEditSelected}
+              onInsertTokenConsumed={() => setPendingEditorToken(null)}
+              disabled={!canEditSelected || getNewsletterBodySource(form) !== 'visual'}
               onChange={(value) => {
-                setForm((current) => syncFromVisual(current, value));
+                setForm((current) => getNewsletterBodySource(current) === 'visual' ? syncFromVisual(current, value) : current);
               }}
             />
           </TabsContent>
@@ -430,7 +414,7 @@ export function NewsletterComposerCard({
             <Textarea
               value={form.htmlBody}
               onChange={(event) =>
-                setForm((current) => ({ ...current, htmlBody: event.target.value, visualBody: [] }))
+                setForm((current) => ({ ...current, htmlBody: event.target.value, bodySource: 'html' }))
               }
               className="min-h-[260px] font-mono text-xs"
               disabled={!canEditSelected}
@@ -441,13 +425,15 @@ export function NewsletterComposerCard({
             <Textarea
               value={form.textBody}
               onChange={(event) =>
-                setForm((current) => ({ ...current, textBody: event.target.value, visualBody: [] }))
+                setForm((current) => ({ ...current, textBody: event.target.value, bodySource: 'text' }))
               }
               className="min-h-[220px] font-mono text-xs"
               disabled={!canEditSelected}
             />
           </TabsContent>
         </Tabs>
+
+        <NewsletterAttachments value={form.attachments || []} disabled={!canEditSelected} onChange={(attachments) => setForm((current) => ({ ...current, attachments }))} />
 
         <NewsletterHighlightPicker
           canEditSelected={canEditSelected}
@@ -506,7 +492,7 @@ export function NewsletterComposerCard({
             {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Save draft
           </Button>
-          <Button variant="secondary" onClick={onQueueCampaign} disabled={isQueueing || !form.campaignId}>
+          <Button variant="secondary" onClick={onQueueCampaign} disabled={isQueueing || !form.campaignId || !canEditSelected}>
             {isQueueing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
             Queue campaign
           </Button>

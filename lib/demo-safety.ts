@@ -67,8 +67,13 @@ export function isPublicDemoPath(pathname: string) {
 
 export function shouldBlockDemoSideEffect(pathname: string, method: string) {
   const normalized = normalizePathname(pathname);
+  const normalizedMethod = String(method || 'GET').toUpperCase();
   if (!normalized.startsWith('/api/')) return false;
   if (INTERNAL_MUTATION_PREFIXES.some((prefix) => matchesPrefix(normalized, prefix))) return false;
+  // Immutable image reads power the real editor preview on installed demos.
+  // Subscription and send endpoints retain their existing demo restrictions.
+  if ((normalizedMethod === 'GET' || normalizedMethod === 'HEAD') &&
+      /^\/api\/newsletter\/media\/[a-f0-9]{64}$/.test(normalized)) return false;
 
   if (matchesPrefix(normalized, '/api/auth/sign-up') || matchesPrefix(normalized, '/api/auth/signup')) {
     return true;
@@ -79,7 +84,6 @@ export function shouldBlockDemoSideEffect(pathname: string, method: string) {
   if (/^\/api\/events\/[^/]+\/(register|registration)$/.test(normalized)) return true;
   if (normalized === '/api/contact' || normalized === '/api/stays/enquiry') return true;
 
-  const normalizedMethod = String(method || 'GET').toUpperCase();
   if (normalizedMethod === 'GET' || normalizedMethod === 'HEAD' || normalizedMethod === 'OPTIONS') {
     return false;
   }

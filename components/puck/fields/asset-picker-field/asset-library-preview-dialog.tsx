@@ -38,7 +38,7 @@ export function AssetLibraryPreviewDialog({
             <div className="overflow-hidden rounded-xl border border-[var(--vd-border)] bg-[var(--vd-muted)]/20">
               {isImage ? (
                 <img
-                  src={buildAssetImageUrl(item.key, { width: 1600, height: 1100, fit: 'contain', quality: 90 })}
+                  src={item.previewUrl || buildAssetImageUrl(item.key, { width: 1600, height: 1100, fit: 'contain', quality: 90 })}
                   alt={item.alt || assetPickerLabel(item)}
                   className="h-auto max-h-[62vh] w-full object-contain"
                   loading="eager"
@@ -85,13 +85,13 @@ export function AssetLibraryPreviewDialog({
                   Edit metadata
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href={buildAssetUrl(item.key)} download>
+                  <a href={item.previewUrl || buildAssetUrl(item.key)} download>
                     <Download className="h-4 w-4" />
                     Download
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href={buildAssetUrl(item.key)} target="_blank" rel="noreferrer">
+                  <a href={item.previewUrl || buildAssetUrl(item.key)} target="_blank" rel="noreferrer">
                     <ExternalLink className="h-4 w-4" />
                     Open raw
                   </a>

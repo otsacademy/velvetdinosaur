@@ -5,6 +5,8 @@ import { Schema, model, models } from 'mongoose';
 
 const DELIVERY_STATUSES = [
   'pending',
+  'processing',
+  'needs_review',
   'sent',
   'failed',
   'skipped_no_consent',
@@ -22,7 +24,9 @@ const NewsletterDeliverySchema = new Schema(
     postmarkMessageId: { type: String, default: '', trim: true },
     sentAt: { type: Date, default: null },
     error: { type: String, default: '', trim: true },
-    attempts: { type: Number, default: 0 }
+    attempts: { type: Number, default: 0 },
+    claimToken: { type: String, default: null },
+    claimedAt: { type: Date, default: null }
   },
   { timestamps: true }
 );

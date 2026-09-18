@@ -1,3 +1,7 @@
+import { HeadObjectCommand } from '@aws-sdk/client-s3';
+import { getR2Client } from '@/lib/r2';
+import { assetOwnerSite, uploadedAssetOwnership } from '@/lib/assets/ownership.server';
+import { AssetUploadReceipt } from '@/models/AssetUploadReceipt';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
@@ -24,7 +28,6 @@ export async function POST(request: Request) {
   const hasTags = Object.prototype.hasOwnProperty.call(body ?? {}, 'tags');
   const key = body?.key;
   const etag = body?.etag;
-  const size = body?.size;
   const mime = body?.mime;
   const folder = typeof body?.folder === 'string' && body.folder.trim() ? body.folder.trim() : undefined;
   const name = typeof body?.name === 'string' && body.name.trim() ? body.name.trim() : undefined;
@@ -38,7 +41,7 @@ export async function POST(request: Request) {
     typeof body?.height === 'number' && Number.isFinite(body.height) && body.height > 0 ? Math.round(body.height) : undefined;
   const tags = normalizeAssetTags(body?.tags);
 
-  if (!key) {
+  if (typeof key !== 'string' || !key.startsWith('uploads/') || key.includes('..')) {
     return NextResponse.json({ error: 'Missing key' }, { status: 400 });
   }
   if (isImageUploadMime(mime, key)) {
@@ -57,15 +60,20 @@ export async function POST(request: Request) {
   if (!conn) {
     return NextResponse.json({ error: 'Database unavailable' }, { status: 500 });
   }
+  const receipt = await AssetUploadReceipt.findOne({ key, bucket, ownerSite: assetOwnerSite(), userId: session.user.id, expiresAt: { $gt: new Date() } }).lean().exec() as { _id: unknown; mime: string } | null;
+  if (!receipt) return NextResponse.json({ error: 'Upload authorization expired. Upload the file again.' }, { status: 403 });
+  const stored = await getR2Client().send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
+  if (stored.ContentType !== receipt.mime || !stored.ContentLength) return NextResponse.json({ error: 'Uploaded file does not match the authorized upload.' }, { status: 400 });
   const update: Record<string, unknown> = {
     key,
     bucket,
-    etag,
-    size,
-    mime,
-    originalMime: mime,
-    originalSize: size,
-    optimizedSize: size,
+    ...uploadedAssetOwnership(session.user.id),
+    etag: stored.ETag || etag,
+    size: stored.ContentLength,
+    mime: stored.ContentType,
+    originalMime: stored.ContentType,
+    originalSize: stored.ContentLength,
+    optimizedSize: stored.ContentLength,
     processingStatus: 'passthrough',
     processedAt: new Date(),
     fallbackKey: key
@@ -94,6 +102,7 @@ export async function POST(request: Request) {
     update.focalSetBy = session?.user?.id || 'system';
   }
   await Asset.findOneAndUpdate({ key }, update, { upsert: true, new: true });
+  await AssetUploadReceipt.deleteOne({ _id: receipt._id });
 
   const generationCandidate = {
     key,

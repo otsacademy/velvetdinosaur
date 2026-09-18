@@ -1,3 +1,4 @@
+import { uploadedAssetOwnership } from '@/lib/assets/ownership.server';
 import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from '@/lib/auth';
@@ -118,6 +119,7 @@ export async function POST(request: Request) {
     const update: Record<string, unknown> = {
       key: stored.key,
       bucket,
+      ...uploadedAssetOwnership(session.user.id),
       originalKey: stored.originalKey,
       originalMime: stored.originalMime,
       originalSize: stored.originalSize,

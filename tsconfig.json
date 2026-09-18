@@ -45,6 +45,7 @@
     ".next.release-20260314232352/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "output"
   ]
 }

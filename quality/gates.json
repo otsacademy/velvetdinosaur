@@ -18,6 +18,10 @@
           "command": "bun run test:unit"
         },
         {
+          "name": "newsletter-integration",
+          "command": "bun run scripts/newsletter-mongo-test.ts"
+        },
+        {
           "name": "build",
           "command": "bun run build"
         },

@@ -1,3 +1,4 @@
+import { isTrustedAsset } from '@/lib/assets/ownership.server';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
@@ -52,12 +53,16 @@ export async function POST(request: Request) {
     .select({
       key: 1,
       bucket: 1,
-      originalKey: 1
+      originalKey: 1, ownerSite: 1, ownershipSource: 1
     })
     .lean()
-    .exec()) as { key?: string; bucket?: string; originalKey?: string } | null;
+    .exec()) as { key?: string; bucket?: string; originalKey?: string; ownerSite?: string; ownershipSource?: string } | null;
   if (!existing?.key) {
     return NextResponse.json({ error: 'Asset not found' }, { status: 404 });
+  }
+
+  if (!isTrustedAsset(existing)) {
+    return NextResponse.json({ error: 'Review legacy asset ownership before replacing this file, or upload it as a new asset.' }, { status: 409 });
   }
 
   const defaultBucket = process.env.R2_BUCKET || process.env.R2_BUCKET_NAME;

@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element -- asset picker supports arbitrary external URLs */
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CustomFieldRender } from '@puckeditor/core';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { isBlobMediaReference, isInlineImageDataUrl } from '@/lib/inline-media';
-import { buildAssetUrlWithFocal, createAssetFolder, listAssetFolders, updateAssetMetadata, uploadFile as uploadAssetFile, type AssetFolderItem } from '@/lib/uploads';
+import { buildAssetUrlWithFocal, updateAssetMetadata, type AssetFolderItem } from '@/lib/uploads';
+import { createPickerFolder, listPickerAssets, listPickerFolders, pickerAssetUrl, uploadPickerFile } from './asset-picker-field/selection-adapter';
 import { AssetLibraryPanel } from './asset-picker-field/asset-library-panel';
 import { AssetUploadControls } from './asset-picker-field/asset-upload-controls';
 import { SelectedAssetSummary } from './asset-picker-field/selected-asset-summary';
@@ -31,7 +32,11 @@ function appendLiveCaptureQuery(url: URL) {
   return url;
 }
 
-export function AssetPickerField({ value, onChange, accept = 'image/*', compact = false, defaultUploadFolder = FOLDER_ROOT, showUrlInput = true, showAdvancedOptions = true, showSelectedAssetMeta = true, simple = false, autoUploadOnDrop = false, autoSelectSingleUpload = true, testIdBase }: {
+export function AssetPickerField({ value, onChange, accept = 'image/*', compact = false, defaultUploadFolder = FOLDER_ROOT, showUrlInput = true, showAdvancedOptions = true, showSelectedAssetMeta = true, simple = false, autoUploadOnDrop = false, autoSelectSingleUpload = true, testIdBase, onSelectAsset, allowedMimeTypes, maxUploadBytes, demo = false }: {
+  onSelectAsset?: (item: AssetPickerListItem) => void;
+  allowedMimeTypes?: readonly string[];
+  maxUploadBytes?: number;
+  demo?: boolean;
   value: string;
   onChange: (value: string) => void;
   accept?: string;
@@ -45,6 +50,8 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   autoSelectSingleUpload?: boolean;
   testIdBase?: string;
 }) {
+  const uploadAbort = useRef<AbortController | null>(null);
+  useEffect(() => () => uploadAbort.current?.abort(), []);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [libraryOpen, setLibraryOpen] = useState(false);
@@ -76,6 +83,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   const useCompactLayout = compact || simple;
 
   const mimePrefix = useMemo(() => {
+    if (new Set(accept.split(',').map((mime) => mime.trim().split('/')[0])).size > 1) return '';
     if (accept.startsWith('image/')) return 'image/';
     if (accept.startsWith('application/')) return 'application/';
     return '';
@@ -84,7 +92,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   const selectedAssetLabel = useMemo(() => getSelectedAssetLabel(value), [value]);
 
   const commitValue = (nextValue: string) => {
-    if (isBlobMediaReference(nextValue)) {
+    if (!demo && isBlobMediaReference(nextValue)) {
       toast.error('Blob preview URLs cannot be saved. Upload the file to the media library first.');
       return;
     }
@@ -98,7 +106,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   const loadFolders = async () => {
     setFoldersLoading(true);
     try {
-      const next = await listAssetFolders();
+      const next = await listPickerFolders(demo);
       setFolders(next);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load folders');
@@ -118,12 +126,9 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
     if (typeof folderValue === 'string') url.searchParams.set('folder', folderValue);
     url.searchParams.set('limit', '24');
     if (nextCursor) url.searchParams.set('cursor', nextCursor);
-    const res = await fetch(url.toString(), { credentials: 'include', cache: 'no-store' });
-    const data = await res.json().catch(() => null);
-    if (!res.ok) {
-      throw new Error(data?.error || 'Failed to load assets');
-    }
-    setItems((prev) => (reset ? data.items || [] : [...prev, ...(data.items || [])]));
+    const data = await listPickerAssets(url, demo);
+    const matches = (data.items || []).filter((item: AssetPickerListItem) => !allowedMimeTypes || allowedMimeTypes.includes(item.mime || ''));
+    setItems((prev) => (reset ? matches : [...prev, ...matches]));
     setCursor(data.nextCursor || null);
   };
 
@@ -162,6 +167,8 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   }, [query]);
 
   const uploadSingle = async (file: File, options: { allowCustomName: boolean }) => {
+    if (allowedMimeTypes && !allowedMimeTypes.includes(file.type)) throw new Error('This file type is not supported.');
+    if (maxUploadBytes !== undefined && file.size > maxUploadBytes) throw new Error('This file exceeds the remaining attachment allowance.');
     const name =
       options.allowCustomName && uploadName.trim()
         ? uploadName.trim()
@@ -170,7 +177,8 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
     const alt = uploadAlt.trim() || undefined;
     const folderValue = resolveFolderParam(uploadFolder);
     const dims = await readImageDimensions(file);
-    const uploaded = await uploadAssetFile(file, {
+    const uploaded = await uploadPickerFile(file, {
+      signal: uploadAbort.current?.signal,
       name,
       caption,
       alt,
@@ -178,7 +186,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
       width: dims.width,
       height: dims.height,
       onProgress: (progress) => setUploadProgress(progress)
-    });
+    }, demo);
 
     const nextItem: AssetPickerListItem = {
       key: uploaded.key,
@@ -193,7 +201,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
       createdAt: new Date().toISOString()
     };
     setItems((prev) => [nextItem, ...prev.filter((item) => item.key !== nextItem.key)]);
-    return uploaded;
+    return { ...uploaded, item: nextItem };
   };
 
   const runQueuedUpload = async (
@@ -211,21 +219,25 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
 
     setBusy(true);
     setError('');
+    uploadAbort.current = new AbortController();
     setUploadProgress(0);
     setUploadBatch({ current: 1, total: files.length });
 
     try {
       let lastUploadedUrl: string | null = null;
+      let lastUploadedItem: AssetPickerListItem | null = null;
       for (let index = 0; index < files.length; index += 1) {
         setUploadBatch({ current: index + 1, total: files.length });
         setUploadProgress(0);
         const uploaded = await uploadSingle(files[index], { allowCustomName: files.length === 1 });
         lastUploadedUrl = uploaded.url;
+        lastUploadedItem = uploaded.item;
       }
 
       const shouldAutoSelectSingle = options?.autoSelectSingleUpload ?? true;
       if (files.length === 1 && lastUploadedUrl && shouldAutoSelectSingle) {
         commitValue(lastUploadedUrl);
+        if (lastUploadedItem) onSelectAsset?.(lastUploadedItem);
       }
       if (files.length > 1 && options?.notifyMultipleNoSelection) {
         toast.message(`${files.length} images uploaded to the library. Pick one to use for this field.`);
@@ -240,7 +252,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
         await refreshLibrary({ preserve: true });
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Upload failed');
+      setError(e instanceof Error && e.name === 'AbortError' ? 'Upload cancelled. Choose Upload to retry.' : e instanceof Error ? e.message : 'Upload failed');
     } finally {
       setBusy(false);
       setUploadProgress(null);
@@ -334,10 +346,10 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
     setCreatingFolder(true);
     setError('');
     try {
-      const created = await createAssetFolder({
+      const created = await createPickerFolder({
         path: rawPath,
         label: newFolderLabel.trim() || undefined
-      });
+      }, demo);
       setNewFolderPath('');
       setNewFolderLabel('');
       setShowCreateFolder(false);
@@ -355,6 +367,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
   return (
     <div className="space-y-2">
       <AssetUploadControls
+        maxUploadBytes={maxUploadBytes} onError={setError}
         accept={accept}
         busy={busy}
         queuedFiles={queuedFiles}
@@ -367,7 +380,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
         }
         onUpload={() => void runQueuedUpload()}
         onClearSelection={() => setQueuedFiles(null)}
-        onPasteSvg={() => void pasteSvg()}
+        onPasteSvg={allowedMimeTypes && !allowedMimeTypes.includes('image/svg+xml') ? undefined : () => void pasteSvg()}
         uploadProgress={uploadProgress}
         uploadBatch={uploadBatch}
         uploadName={uploadName}
@@ -401,6 +414,7 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
         </Button>
       </div>
 
+      {uploadProgress !== null ? <Button type="button" variant="outline" onClick={() => uploadAbort.current?.abort()}>Cancel upload</Button> : null}
       {error ? <p className="text-xs text-rose-600">{error}</p> : null}
 
       {value && canPreviewImage && showSelectedAssetMeta ? (
@@ -440,13 +454,14 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
               setNewFolderLabel={setNewFolderLabel}
               uploadControls={
                 <AssetUploadControls
+        maxUploadBytes={maxUploadBytes} onError={setError}
                   accept={accept}
                   busy={busy}
                   queuedFiles={queuedFiles}
                   onDrop={(acceptedFiles) => handleUploadDrop(acceptedFiles)}
                   onUpload={() => void runQueuedUpload()}
                   onClearSelection={() => setQueuedFiles(null)}
-                  onPasteSvg={() => void pasteSvg()}
+                  onPasteSvg={allowedMimeTypes && !allowedMimeTypes.includes('image/svg+xml') ? undefined : () => void pasteSvg()}
                   uploadProgress={uploadProgress}
                   uploadBatch={uploadBatch}
                   uploadName={uploadName}
@@ -473,11 +488,12 @@ export function AssetPickerField({ value, onChange, accept = 'image/*', compact 
                   .finally(() => setBusy(false));
               }}
               onUse={(item) => {
-                commitValue(buildAssetUrlWithFocal(item.key, item.focalX, item.focalY));
+                commitValue(pickerAssetUrl(item, demo) || buildAssetUrlWithFocal(item.key, item.focalX, item.focalY));
+                onSelectAsset?.(item);
                 setLibraryOpen(false);
               }}
               editingKey={editingKey}
-              startEditing={startEditing}
+              startEditing={demo ? () => setError('Demo files are kept only in this session.') : startEditing}
               cancelEditing={cancelEditing}
               saveEditing={(key) => void saveEditing(key)}
               draftName={draftName}

@@ -1,5 +1,6 @@
 'use client';
 
+import { resetDemoEditorAssets } from '@/lib/demo-editor-assets';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { DemoNewsletterWorkspace } from '@/components/demo/newsletter/demo-newsletter-workspace';
@@ -18,6 +19,7 @@ export function DemoNewsletter({ mainSiteHref }: DemoNewsletterProps) {
       activeNav="newsletter"
       mainSiteHref={mainSiteHref}
       onResetDemo={() => {
+        resetDemoEditorAssets();
         setWorkspaceKey((current) => current + 1);
         toast.success('The newsletter demo has been reset.');
       }}

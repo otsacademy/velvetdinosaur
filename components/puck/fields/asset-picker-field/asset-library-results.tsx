@@ -113,7 +113,7 @@ function AssetGridCard({
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-xl bg-[var(--vd-muted)]/25">
           {isImage ? (
             <img
-              src={buildAssetImageUrl(item.key, { width: 720, height: 540, fit: 'cover', quality: 80 })}
+              src={item.previewUrl || buildAssetImageUrl(item.key, { width: 720, height: 540, fit: 'cover', quality: 80 })}
               alt={item.alt || assetPickerLabel(item)}
               className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
               loading="lazy"
@@ -212,7 +212,7 @@ function AssetListRow({
       >
         {isImage ? (
           <img
-            src={buildAssetImageUrl(item.key, { width: 192, height: 160, fit: 'cover', quality: 80 })}
+            src={item.previewUrl || buildAssetImageUrl(item.key, { width: 192, height: 160, fit: 'cover', quality: 80 })}
             alt={item.alt || assetPickerLabel(item)}
             className="h-full w-full object-cover"
             loading="lazy"

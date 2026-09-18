@@ -1,3 +1,6 @@
+import { connectDB } from '@/lib/db';
+import { assetOwnerSite } from '@/lib/assets/ownership.server';
+import { AssetUploadReceipt } from '@/models/AssetUploadReceipt';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { createPresignedUpload } from '@/lib/presign';
@@ -78,6 +81,9 @@ export async function POST(request: Request) {
   const keyBase = slugifyName(name);
   const folderPrefix = folder ? `${folder}/` : '';
   const key = `uploads/${folderPrefix}${keyBase}-${uuidv4()}.${ext}`;
+
+  if (!await connectDB()) return NextResponse.json({ error: 'Database unavailable' }, { status: 503 });
+  await AssetUploadReceipt.create({ key, bucket, ownerSite: assetOwnerSite(), userId: session.user.id, mime: contentType, expiresAt: new Date(Date.now() + 60 * 60 * 1000) });
 
   const uploadUrl = await createPresignedUpload({
     bucket,

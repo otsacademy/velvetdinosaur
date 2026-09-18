@@ -11,7 +11,8 @@ import {
   type DemoNewsletterSubscriber,
   type DemoNewsletterContentItem
 } from '@/lib/demo-newsletter-seed';
-import { buildDemoBrandedEmailHtml, ensureVisualValue, visualValueFromPlainText, visualValueToEmailHtml, visualValueToPlainText } from '@/lib/demo-email-template-visual';
+import { deriveNewsletterComposerSource, getNewsletterBodySource } from '@/lib/newsletter/composer-source';
+import { buildDemoBrandedEmailHtml, ensureVisualValue, visualValueFromPlainText, visualValueToEmailHtml } from '@/lib/demo-email-template-visual';
 
 type RenderNewsletterPreviewArgs = {
   subject: string;
@@ -127,8 +128,7 @@ export function applyHighlightSelections(
     '{{eventHighlights}}': buildHighlightDirective('eventHighlights', selectedEventSlugs)
   }).replace(/\{\{newsHighlights:[^}]+\}\}/g, buildHighlightDirective('newsHighlights', selectedNewsSlugs))
     .replace(/\{\{eventHighlights:[^}]+\}\}/g, buildHighlightDirective('eventHighlights', selectedEventSlugs));
-  const visualBody =
-    Array.isArray(form.visualBody) && form.visualBody.length ? visualValueFromPlainText(textBody) : [];
+  const visualBody = JSON.parse(JSON.stringify(form.visualBody, (_key, value) => typeof value === 'string' ? value.replace(/\{\{newsHighlights(?::[^}]+)?\}\}/g, buildHighlightDirective('newsHighlights', selectedNewsSlugs)).replace(/\{\{eventHighlights(?::[^}]+)?\}\}/g, buildHighlightDirective('eventHighlights', selectedEventSlugs)) : value));
 
   return {
     ...form,
@@ -207,25 +207,7 @@ export function getVisualSource(form: DemoNewsletterFormState) {
 }
 
 export function deriveNewsletterSource(form: DemoNewsletterFormState, visualOverride?: unknown[]) {
-  const hasVisualSource = Array.isArray(visualOverride)
-    ? visualOverride.length > 0
-    : Array.isArray(form.visualBody) && form.visualBody.length > 0;
-  const visualBody = hasVisualSource
-    ? ensureVisualValue(Array.isArray(visualOverride) ? visualOverride : form.visualBody)
-    : visualValueFromPlainText(form.textBody || '');
-  const textBody = hasVisualSource ? visualValueToPlainText(visualBody) : form.textBody || '';
-  const htmlBody = hasVisualSource
-    ? visualValueToEmailHtml({
-        value: visualBody,
-        heading: (form.subject || form.name || 'Newsletter update').trim(),
-        previewText: form.preheader || textBody,
-        siteNameToken: '{{siteName}}',
-        appUrlToken: '{{appUrl}}',
-        logoUrlToken: '{{logoUrl}}'
-      })
-    : form.htmlBody;
-
-  return { htmlBody, textBody, visualBody };
+  return deriveNewsletterComposerSource(form, visualOverride, visualValueToEmailHtml);
 }
 
 export function createCampaignForm(
@@ -244,19 +226,22 @@ export function createCampaignForm(
     htmlBody: campaign.htmlBody,
     textBody: campaign.textBody,
     visualBody: Array.isArray(campaign.visualBody) ? campaign.visualBody : [],
+    bodySource: getNewsletterBodySource(campaign), attachments: campaign.attachments || [],
     scheduledAt: toDateTimeLocalInput(campaign.scheduledAt)
   };
 }
 
 export function createDraftCampaign(form: DemoNewsletterFormState, id: string): DemoNewsletterCampaign {
+  const prepared = deriveNewsletterSource(form);
   return {
     id,
     name: form.name.trim(),
     subject: form.subject.trim(),
     preheader: form.preheader.trim(),
-    htmlBody: form.htmlBody,
-    textBody: form.textBody,
+    htmlBody: prepared.htmlBody,
+    textBody: prepared.textBody,
     visualBody: Array.isArray(form.visualBody) ? form.visualBody : [],
+    bodySource: getNewsletterBodySource(form), attachments: form.attachments || [],
     status: 'draft',
     scheduledAt: form.scheduledAt || null,
     recipientSnapshotCount: 0,

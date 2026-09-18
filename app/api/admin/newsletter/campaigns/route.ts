@@ -10,6 +10,7 @@ import {
   updateNewsletterCampaignDraft
 } from '@/lib/newsletter/campaigns';
 import { requireAdminFromHeaders } from '@/lib/newsletter/auth';
+import { NewsletterAttachmentSchema } from '@/lib/newsletter/request-preparation';
 import { clean } from '@/lib/newsletter/shared';
 
 const CreateDraftSchema = z.object({
@@ -17,36 +18,40 @@ const CreateDraftSchema = z.object({
   name: z.string().trim().min(1).max(160),
   subject: z.string().trim().min(1).max(200),
   preheader: z.string().trim().max(200).optional(),
-  htmlBody: z.string().min(1),
-  textBody: z.string().min(1),
-  visualBody: z.array(z.unknown()).optional()
+  htmlBody: z.string().min(1).max(2_000_000),
+  textBody: z.string().min(1).max(2_000_000),
+  visualBody: z.array(z.unknown()).optional(),
+  bodySource: z.enum(['visual', 'html', 'text']).optional(),
+  attachments: z.array(NewsletterAttachmentSchema).max(5).optional()
 });
 
 const UpdateDraftSchema = z.object({
   action: z.literal('update_draft'),
-  campaignId: z.string().trim().min(1),
+  campaignId: z.string().trim().regex(/^[a-f\d]{24}$/i),
   name: z.string().trim().min(1).max(160),
   subject: z.string().trim().min(1).max(200),
   preheader: z.string().trim().max(200).optional(),
-  htmlBody: z.string().min(1),
-  textBody: z.string().min(1),
-  visualBody: z.array(z.unknown()).optional()
+  htmlBody: z.string().min(1).max(2_000_000),
+  textBody: z.string().min(1).max(2_000_000),
+  visualBody: z.array(z.unknown()).optional(),
+  bodySource: z.enum(['visual', 'html', 'text']).optional(),
+  attachments: z.array(NewsletterAttachmentSchema).max(5).optional()
 });
 
 const QueueSchema = z.object({
   action: z.literal('queue'),
-  campaignId: z.string().trim().min(1),
+  campaignId: z.string().trim().regex(/^[a-f\d]{24}$/i),
   scheduledAt: z.string().trim().optional()
 });
 
 const CancelSchema = z.object({
   action: z.literal('cancel'),
-  campaignId: z.string().trim().min(1)
+  campaignId: z.string().trim().regex(/^[a-f\d]{24}$/i)
 });
 
 const UnscheduleSchema = z.object({
   action: z.literal('unschedule'),
-  campaignId: z.string().trim().min(1)
+  campaignId: z.string().trim().regex(/^[a-f\d]{24}$/i)
 });
 
 const ActionSchema = z.discriminatedUnion('action', [
@@ -83,6 +88,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
   }
 
+  try {
   if (parsed.data.action === 'create_draft') {
     const item = await createNewsletterCampaignDraft({
       name: parsed.data.name,
@@ -91,6 +97,8 @@ export async function POST(request: Request) {
       htmlBody: parsed.data.htmlBody,
       textBody: parsed.data.textBody,
       visualBody: parsed.data.visualBody,
+      bodySource: parsed.data.bodySource,
+      attachments: parsed.data.attachments,
       createdByUserId: admin.id
     });
     return NextResponse.json({ item });
@@ -104,7 +112,9 @@ export async function POST(request: Request) {
       preheader: parsed.data.preheader,
       htmlBody: parsed.data.htmlBody,
       textBody: parsed.data.textBody,
-      visualBody: parsed.data.visualBody
+      visualBody: parsed.data.visualBody,
+      bodySource: parsed.data.bodySource,
+      attachments: parsed.data.attachments
     });
     if (!item) {
       return NextResponse.json({ error: 'Campaign not found or not editable' }, { status: 404 });
@@ -137,4 +147,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Campaign not found or cannot be cancelled' }, { status: 404 });
   }
   return NextResponse.json({ item });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : 'Campaign update failed' }, { status: 400 });
+  }
 }

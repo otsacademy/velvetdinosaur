@@ -1,3 +1,4 @@
+import { serializeNewsletterImageHtml, serializeNewsletterImageText } from '@/lib/newsletter/visual-image';
 import { buildBrandedEmailHtml } from '@/lib/email-branding';
 
 export type EmailTemplateVisualNode = {
@@ -158,6 +159,8 @@ function serializeListItemHtml(node: EmailTemplateVisualNode): string {
 function serializeBlockHtml(node: EmailTemplateVisualNode): string {
   const type = typeof node.type === 'string' ? node.type.toLowerCase() : 'p';
 
+  if (type === 'img') return serializeNewsletterImageHtml(node);
+
   if (type === 'ul' || type === 'ol') {
     const listChildren = asNodeArray(node.children);
     const items = listChildren.map((child) => serializeListItemHtml(child)).join('');
@@ -252,6 +255,12 @@ export function visualValueToPlainText(value: unknown): string {
 
   for (const node of nodes) {
     const type = typeof node.type === 'string' ? node.type.toLowerCase() : 'p';
+
+    if (type === 'img') {
+      const text = serializeNewsletterImageText(node);
+      if (text) chunks.push(text);
+      continue;
+    }
 
     if (type === 'ul' || type === 'ol') {
       const items = asNodeArray(node.children)

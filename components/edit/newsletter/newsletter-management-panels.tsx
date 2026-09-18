@@ -113,6 +113,8 @@ export function NewsletterDeliveryPanel({
               <SelectItem value="failed">Failed</SelectItem>
               <SelectItem value="skipped_no_consent">Skipped: No consent</SelectItem>
               <SelectItem value="skipped_unsubscribed">Skipped: Unsubscribed</SelectItem>
+              <SelectItem value="processing">Processing</SelectItem>
+              <SelectItem value="needs_review">Needs review</SelectItem>
               <SelectItem value="skipped_suppressed">Skipped: Suppressed</SelectItem>
             </SelectContent>
           </Select>

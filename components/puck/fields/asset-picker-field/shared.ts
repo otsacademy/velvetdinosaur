@@ -1,5 +1,6 @@
 export type AssetPickerListItem = {
   key: string;
+  previewUrl?: string;
   name?: string;
   caption?: string;
   alt?: string;

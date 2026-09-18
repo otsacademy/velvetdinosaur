@@ -13,6 +13,8 @@ function statusBadge(status: DeliveryItem['status']) {
   if (status === 'failed') return <Badge variant="destructive">Failed</Badge>;
   if (status === 'pending') return <Badge variant="outline">Pending</Badge>;
   if (status === 'skipped_no_consent') return <Badge variant="secondary">Skipped: No consent</Badge>;
+  if (status === 'processing') return <Badge variant="secondary">Processing</Badge>;
+  if (status === 'needs_review') return <Badge variant="destructive">Needs review</Badge>;
   if (status === 'skipped_suppressed') return <Badge variant="secondary">Skipped: Suppressed</Badge>;
   return <Badge variant="secondary">Skipped: Unsubscribed</Badge>;
 }

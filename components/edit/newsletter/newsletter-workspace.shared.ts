@@ -1,6 +1,9 @@
+import type { NewsletterAttachment, NewsletterBodySource } from '@/lib/newsletter/media-client-types';
 export type NewsletterStatus = 'not_consented' | 'pending' | 'subscribed' | 'unsubscribed';
 export type CampaignStatus = 'draft' | 'queued' | 'sending' | 'completed' | 'cancelled';
 export type DeliveryStatus =
+  | 'processing'
+  | 'needs_review'
   | 'pending'
   | 'sent'
   | 'failed'
@@ -25,12 +28,16 @@ export type CampaignItem = {
   htmlBody: string;
   textBody: string;
   visualBody: unknown[];
+  bodySource: NewsletterBodySource;
+  attachments: NewsletterAttachment[];
   status: CampaignStatus;
   scheduledAt: string | null;
   recipientSnapshotCount: number;
   sentCount: number;
   failedCount: number;
   skippedCount: number;
+  needsReviewCount?: number;
+  lastError?: string;
   createdAt: string | null;
 };
 
@@ -88,6 +95,8 @@ export type CampaignFormState = {
   htmlBody: string;
   textBody: string;
   visualBody: unknown[];
+  bodySource: NewsletterBodySource;
+  attachments: NewsletterAttachment[];
   scheduledAt: string;
 };
 
@@ -184,7 +193,7 @@ export function buildInitialForm(defaults: OverviewPayload['defaults']): Campaig
     preheader: 'Latest news, events, and updates.',
     htmlBody: defaults.htmlBody,
     textBody: defaults.textBody,
-    visualBody: [],
+    visualBody: [], bodySource: 'visual', attachments: [],
     scheduledAt: ''
   };
 }

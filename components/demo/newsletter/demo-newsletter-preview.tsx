@@ -62,6 +62,7 @@ export function DemoNewsletterPreview({
         </p>
         {mode === 'html' ? (
           <iframe
+            sandbox=""
             title="Newsletter HTML preview"
             srcDoc={htmlBody || '<p style="font-family:Arial,sans-serif;padding:16px">No preview content yet.</p>'}
             className="h-[620px] w-full bg-white"

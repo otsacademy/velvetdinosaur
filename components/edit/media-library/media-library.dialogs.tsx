@@ -127,7 +127,7 @@ export function MediaLibraryDialogs({
   inTrashView: boolean;
   confirmDeleteKeys: string[] | null;
   setConfirmDeleteKeys: (keys: string[] | null) => void;
-  deleteUsageReferences: Array<{ id: string; title: string; type: 'page' | 'article'; status?: string; url: string; assets: string[] }>;
+  deleteUsageReferences: Array<{ id: string; title: string; type: 'page' | 'article' | 'newsletter'; status?: string; url: string; assets: string[] }>;
   deleteUsageLoading: boolean;
   onConfirmDelete: () => void;
   altProviderInfo: { configured: boolean; envVar: string } | null;
@@ -407,7 +407,7 @@ export function MediaLibraryDialogs({
                 <div key={reference.id} className="rounded-lg border border-[var(--vd-border)]/70 p-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-medium text-[var(--vd-fg)]">{reference.title}</p>
-                    <Badge variant="outline">{reference.type === 'page' ? 'Page' : 'Article'}</Badge>
+                    <Badge variant="outline">{reference.type === 'page' ? 'Page' : reference.type === 'newsletter' ? 'Newsletter' : 'Article'}</Badge>
                   </div>
                   <p className="mt-1 text-xs text-[var(--vd-muted-fg)]">
                     {reference.status ? `${reference.status} · ` : null}
@@ -456,7 +456,7 @@ export function MediaLibraryDialogs({
                 <div className="max-h-36 space-y-1 overflow-y-auto pr-1">
                   {deleteUsageReferences.slice(0, 8).map((reference) => (
                     <p key={reference.id} className="text-xs text-amber-900">
-                      {reference.type === 'page' ? 'Page' : 'Article'}: {reference.title}
+                      {reference.type === 'page' ? 'Page' : reference.type === 'newsletter' ? 'Newsletter' : 'Article'}: {reference.title}
                     </p>
                   ))}
                   {deleteUsageReferences.length > 8 ? (
