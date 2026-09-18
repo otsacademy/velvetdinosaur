@@ -37,8 +37,14 @@ export async function dispatchQueuedNewsletterCampaigns(options?: { now?: Date; 
   for (const candidate of candidates) {
     const campaign = mapCampaign(candidate);
     const token = randomUUID();
+    // A candidate can be unscheduled and queued again while an earlier campaign sends.
+    // Claim only the same queued version, still due and still eligible for dispatch.
     const locked = await NewsletterCampaign.findOneAndUpdate({ _id: campaign.id, status: { $in: ['queued', 'sending'] },
-      $or: [{ dispatchLeaseToken: null }, { dispatchLeaseUntil: { $lte: now } }] },
+      queuedAt: candidate.queuedAt ?? null, needsReviewCount: { $not: { $gt: 0 } },
+      $and: [
+        { $or: [{ scheduledAt: null }, { scheduledAt: { $lte: now } }] },
+        { $or: [{ dispatchLeaseToken: null }, { dispatchLeaseUntil: { $lte: now } }] }
+      ] },
       { $set: { dispatchLeaseToken: token, dispatchLeaseUntil: new Date(now.getTime() + LEASE_MS), status: 'sending', startedAt: candidate.startedAt || now } }, { new: true }).lean() as CampaignDoc | null;
     if (!locked) continue;
     let sent = 0; let failed = 0; let skipped = 0; let needsReview = 0;

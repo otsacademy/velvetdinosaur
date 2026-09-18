@@ -99,6 +99,44 @@ describe.skipIf(!run)('newsletter real Mongo lifecycle and concurrency (isolated
     expect(sent.length).toBe(2);
   });
 
+  test('a snapshotted due campaign requeued for the future is not claimed or sent', async () => {
+    const now = new Date();
+    const first = await createNewsletterCampaignDraft(input);
+    const second = await createNewsletterCampaignDraft(input);
+    await queueNewsletterCampaign({ campaignId: first.id, scheduledAt: new Date(now.getTime() - 120_000) });
+    await queueNewsletterCampaign({ campaignId: second.id, scheduledAt: new Date(now.getTime() - 60_000) });
+    const future = new Date(now.getTime() + 24 * 60 * 60_000);
+    let rescheduled = false;
+    const sentCampaigns: string[] = [];
+    spyOn(sender, 'sendNewsletterCampaignEmail').mockImplementation(async (message) => {
+      sentCampaigns.push(message.campaignId!);
+      if (!rescheduled) {
+        rescheduled = true;
+        expect((await unscheduleNewsletterCampaign(second.id))?.status).toBe('draft');
+        await queueNewsletterCampaign({ campaignId: second.id, scheduledAt: future });
+      }
+      return { ok: true, messageId: `mock-${sentCampaigns.length}`, error: '' };
+    });
+    await dispatchQueuedNewsletterCampaigns({ now });
+    expect(sentCampaigns).toEqual([first.id, first.id]);
+    const saved = await findCampaign(second.id);
+    expect(saved?.status).toBe('queued');
+    expect(saved?.scheduledAt).toEqual(future);
+    expect(saved?.dispatchLeaseToken).toBeNull();
+    expect(saved?.startedAt).toBeNull();
+    expect(await NewsletterDelivery.countDocuments({ campaignId: second.id, status: 'pending' })).toBe(2);
+    expect(await NewsletterDelivery.countDocuments({ campaignId: second.id, attempts: { $gt: 0 } })).toBe(0);
+  });
+
+  test('legacy campaigns with a null schedule remain immediately dispatchable', async () => {
+    const queued = await queuedCampaign();
+    await NewsletterCampaign.updateOne({ _id: queued.id }, { $set: { scheduledAt: null, queuedAt: null } });
+    const send = spyOn(sender, 'sendNewsletterCampaignEmail').mockResolvedValue({ ok: true, messageId: 'accepted', error: '' });
+    await dispatchQueuedNewsletterCampaigns();
+    expect(send).toHaveBeenCalledTimes(2);
+    expect((await findCampaign(queued.id))?.status).toBe('completed');
+  });
+
   test('ambiguous provider response pauses the campaign and never retries the recipient', async () => {
     const queued = await queuedCampaign();
     const send = spyOn(sender, 'sendNewsletterCampaignEmail').mockResolvedValue({ ok: false, messageId: '', error: 'connection lost', ambiguous: true });

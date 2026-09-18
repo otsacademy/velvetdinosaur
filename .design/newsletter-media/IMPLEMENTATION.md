@@ -25,6 +25,9 @@ Updated: 2026-09-18. Work remains in progress until final gates and staged rollo
 - Cleanup dry-run on the hub: removed=0, failed=0, eligible=0. Scheduler installation and nginx changes have only been prepared/dry-run; no automatic dispatch has been enabled yet.
 - Reviewed ownership manifests pin current object checksums and source evidence; the apply command rechecks bytes and uses a compare-and-set against the reviewed Asset record. Popty Cara's ten verified assets were migrated successfully. ASAP's 528 active assets and The Brave's 31 have reviewed manifests; remaining shared-bucket review is in progress. Unverifiable legacy files require reupload and are listed explicitly, including the hub's cropped profile image.
 - The Brave's controller checkout is behind its active development/release history. Rollout uses develop/main c04ccd5, preserving the eight subsequent owner-workflow/editor fixes. It does not deploy the detached aa8cac5 checkout.
+- Independent review reproduced and fixed a dispatch race: a campaign rescheduled after candidate selection is now rejected by an atomic due-date, queued-version and review-status check. Thirteen isolated Mongo tests pass, including future rescheduling and legacy null schedules.
+- The complete second workspace quality run passed both Lighthouse viewports (nine runs each) and theme smoke. The first isolated release attempt was stopped before deployment to incorporate the scheduling fix; production remains unchanged until the final exact-commit run passes.
+- All 51 sites' source and active-slot database identities match. Ownership review finished: 1,918 of 1,926 records verified; four trashed ASAP records and four shared-bucket files lacking source proof are excluded. Current manifests and reasons are retained locally under ownership-review/.
 
 ## Operations
 

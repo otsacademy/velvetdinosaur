@@ -168,7 +168,7 @@ export function NewsletterComposerCard({
           subject: form.subject,
           preheader: form.preheader,
           htmlBody: previewSource.htmlBody,
-          textBody: previewSource.textBody, bodySource: getNewsletterBodySource(form), attachments: form.attachments, visualBody: form.visualBody
+          textBody: previewSource.textBody, bodySource: previewSource.bodySource, attachments: form.attachments, visualBody: form.visualBody
         })
       });
       const payload = (await response.json().catch(() => ({}))) as {
@@ -195,11 +195,12 @@ export function NewsletterComposerCard({
       }
     }
   }, [
-    form.campaignId, form.bodySource, form.attachments, form.visualBody,
+    form.campaignId, form.attachments, form.visualBody,
     form.preheader,
     form.subject,
     previewSource.htmlBody,
     previewSource.textBody,
+    previewSource.bodySource,
     testEmail,
     testFirstName
   ]);
