@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "site": "academy-partnership",
+  "reviewedAt": "2026-09-18T20:15:43.584Z",
+  "mode": "read-only source/generated CSS and environment evidence",
+  "baseCommit": "785a9334ea6569f445109e560f51353392c46c1c",
+  "candidateCommit": "02ac1730cf876a289d97761f23213891f9c1092b",
+  "livePath": "/srv/apps/academy-partnership-green",
+  "source": [
+    {
+      "file": "app/academy.css",
+      "baseSha256": "0be33d2edc8c591d63730299f28d7824468e0b6a947eca2ed2e9907c2709e4db",
+      "candidateSha256": "0be33d2edc8c591d63730299f28d7824468e0b6a947eca2ed2e9907c2709e4db",
+      "unchanged": true
+    },
+    {
+      "file": "app/globals.css",
+      "baseSha256": "277b5be78adfecc82be8c1ffc2b733b180da20f21a54d4fdf9f76dae78c20c14",
+      "candidateSha256": "277b5be78adfecc82be8c1ffc2b733b180da20f21a54d4fdf9f76dae78c20c14",
+      "unchanged": true
+    },
+    {
+      "file": "app/layout.tsx",
+      "baseSha256": "75b571d59e328bf00eb24f56ef787d3170e8117b85f2b9bdd27c18193b142138",
+      "candidateSha256": "75b571d59e328bf00eb24f56ef787d3170e8117b85f2b9bdd27c18193b142138",
+      "unchanged": true
+    },
+    {
+      "file": "components/academy/shared.tsx",
+      "baseSha256": "179c7c35dcf51efc2dd954c64e48cd944738cd52c8c8801f256ab6ef9b9eb1a3",
+      "candidateSha256": "179c7c35dcf51efc2dd954c64e48cd944738cd52c8c8801f256ab6ef9b9eb1a3",
+      "unchanged": true
+    },
+    {
+      "file": "components/blocks/store/ap-sections.tsx",
+      "baseSha256": "acfa1a1cc4fb6c0ba317bd8fb9981a8eff9200089ea1d1effe6df7c06f41ea8b",
+      "candidateSha256": "acfa1a1cc4fb6c0ba317bd8fb9981a8eff9200089ea1d1effe6df7c06f41ea8b",
+      "unchanged": true
+    },
+    {
+      "file": "bun.lock",
+      "baseSha256": "89d64926bc39ec6fed68b5ea145160bc38bf01d05a167edce91cda17cdbf64ae",
+      "candidateSha256": "89d64926bc39ec6fed68b5ea145160bc38bf01d05a167edce91cda17cdbf64ae",
+      "unchanged": true
+    },
+    {
+      "file": "playwright.config.ts",
+      "baseSha256": "daf3e252082933ebc5a85fc976abca2e27a6287b7e91fb7d2709410726c0772e",
+      "candidateSha256": "daf3e252082933ebc5a85fc976abca2e27a6287b7e91fb7d2709410726c0772e",
+      "unchanged": true
+    },
+    {
+      "file": "tests/visual/visual.spec.ts",
+      "baseSha256": "88e8221f6d6e09e82b205b83c75f6e8c3aebea75cd47470fa431fad74129de24",
+      "candidateSha256": "88e8221f6d6e09e82b205b83c75f6e8c3aebea75cd47470fa431fad74129de24",
+      "unchanged": true
+    },
+    {
+      "file": "postcss.config.mjs",
+      "baseSha256": "da6f31f590c099981a51b1a954178dae5e7256af1c028b828483c8922d727774",
+      "candidateSha256": "da6f31f590c099981a51b1a954178dae5e7256af1c028b828483c8922d727774",
+      "unchanged": true
+    }
+  ],
+  "styles": {
+    "candidate": {
+      "sheets": [
+        {
+          "file": "1_cbuc3lcytc_.css",
+          "sha256": "18c2105bd2f13f667c73da26ba1684533ab66dc07f61bdb436f0edb84eb2d15f",
+          "fontDeclarationCount": 176,
+          "orderedFontDeclarationsSha256": "db5d8e3917fcf2ddb936b12b7437d95f4610c95aee54da9426c1a94db44ccd46"
+        },
+        {
+          "file": "3-nhpecnyvk1l.css",
+          "sha256": "b282617faa5d5db6c9798082b284b1e3b7d4b79dd83f8872b7b44dbf8d169860",
+          "fontDeclarationCount": 11,
+          "orderedFontDeclarationsSha256": "8f0ceca7dc8b82460a374b1fe17193a17f60dcbfb4ae80925e8a5476b83842c2"
+        },
+        {
+          "file": "0f635vkuq_1kp.css",
+          "sha256": "cd80ff6a4ae2174c41c5d2d630cd3226ea810f7ebca92c2afc53975565c96eb7",
+          "fontDeclarationCount": 95,
+          "orderedFontDeclarationsSha256": "050eb817ced28f62ea8b2d76054d18d5403683b999f1bc15c31db293b2bcb696"
+        },
+        {
+          "file": "28mtlg0tvk2ji.css",
+          "sha256": "f72a6aff5b3cd74136e3fe67fe30d64f014898d0ab1c7311b3b28ad7c14c361a",
+          "fontDeclarationCount": 118,
+          "orderedFontDeclarationsSha256": "d6d4300917e21d4e1daef050a2f18a56d347321be29c34a961079b1d6f682331"
+        },
+        {
+          "file": "1z_mbvpkjhpd5.css",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "fontDeclarationCount": 0,
+          "orderedFontDeclarationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "file": "2r_02fnxfp3-6.css",
+          "sha256": "efb4e3081cca39d59de1469a59e5876eb5b2c61fa1816344464a1f4a24a18b60",
+          "fontDeclarationCount": 220,
+          "orderedFontDeclarationsSha256": "780bc06619b667568b79c2006fb924651ca6445b0da38c367e57df7a69a401e9"
+        }
+      ],
+      "uniqueFontDeclarationCount": 539,
+      "fontDeclarationsSha256": "6ca6bd517625adaea315e3017d338cb7c02a635af3e1d0e6ceab49e3432fdbba"
+    },
+    "live": {
+      "sheets": [
+        {
+          "file": "0ufyumk92bslu.css",
+          "sha256": "2a8f4e0b67fabf4632234b95a5752eee011409ca71828f2a37f0d7afeb7b3d78",
+          "fontDeclarationCount": 118,
+          "orderedFontDeclarationsSha256": "d6d4300917e21d4e1daef050a2f18a56d347321be29c34a961079b1d6f682331"
+        },
+        {
+          "file": "1_cbuc3lcytc_.css",
+          "sha256": "18c2105bd2f13f667c73da26ba1684533ab66dc07f61bdb436f0edb84eb2d15f",
+          "fontDeclarationCount": 176,
+          "orderedFontDeclarationsSha256": "db5d8e3917fcf2ddb936b12b7437d95f4610c95aee54da9426c1a94db44ccd46"
+        },
+        {
+          "file": "3-nhpecnyvk1l.css",
+          "sha256": "b282617faa5d5db6c9798082b284b1e3b7d4b79dd83f8872b7b44dbf8d169860",
+          "fontDeclarationCount": 11,
+          "orderedFontDeclarationsSha256": "8f0ceca7dc8b82460a374b1fe17193a17f60dcbfb4ae80925e8a5476b83842c2"
+        },
+        {
+          "file": "0f635vkuq_1kp.css",
+          "sha256": "cd80ff6a4ae2174c41c5d2d630cd3226ea810f7ebca92c2afc53975565c96eb7",
+          "fontDeclarationCount": 95,
+          "orderedFontDeclarationsSha256": "050eb817ced28f62ea8b2d76054d18d5403683b999f1bc15c31db293b2bcb696"
+        },
+        {
+          "file": "1z_mbvpkjhpd5.css",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "fontDeclarationCount": 0,
+          "orderedFontDeclarationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "file": "2r_02fnxfp3-6.css",
+          "sha256": "efb4e3081cca39d59de1469a59e5876eb5b2c61fa1816344464a1f4a24a18b60",
+          "fontDeclarationCount": 220,
+          "orderedFontDeclarationsSha256": "780bc06619b667568b79c2006fb924651ca6445b0da38c367e57df7a69a401e9"
+        }
+      ],
+      "uniqueFontDeclarationCount": 539,
+      "fontDeclarationsSha256": "6ca6bd517625adaea315e3017d338cb7c02a635af3e1d0e6ceab49e3432fdbba"
+    }
+  },
+  "dependencies": [
+    {
+      "name": "playwright-core",
+      "candidateVersion": "1.58.1",
+      "controllerVersion": "1.58.1",
+      "candidatePackageSha256": "054ab8b06c0cfadb0f5cb72bf7a29a4fd29b451256577ea7b4101e0dcfd2d375",
+      "controllerPackageSha256": "054ab8b06c0cfadb0f5cb72bf7a29a4fd29b451256577ea7b4101e0dcfd2d375"
+    },
+    {
+      "name": "@playwright/test",
+      "candidateVersion": "1.58.1",
+      "controllerVersion": "1.58.1",
+      "candidatePackageSha256": "e6ec44217acca93950104b599008c0144261cbc38d857379446093eb40215a54",
+      "controllerPackageSha256": "e6ec44217acca93950104b599008c0144261cbc38d857379446093eb40215a54"
+    },
+    {
+      "name": "tailwindcss",
+      "candidateVersion": "4.1.18",
+      "controllerVersion": "4.1.18",
+      "candidatePackageSha256": "6c7bc6dd0cae428b97d94140f29da2575c1f69298b2fa2e9603d031d61864e86",
+      "controllerPackageSha256": "6c7bc6dd0cae428b97d94140f29da2575c1f69298b2fa2e9603d031d61864e86"
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "candidateVersion": "4.1.18",
+      "controllerVersion": "4.1.18",
+      "candidatePackageSha256": "6f575b928e8916f302f6fac7cfa28a180850682ad9ae13dcc965803339a9ef74",
+      "controllerPackageSha256": "6f575b928e8916f302f6fac7cfa28a180850682ad9ae13dcc965803339a9ef74"
+    },
+    {
+      "name": "@tailwindcss/oxide",
+      "candidateVersion": "4.1.18",
+      "controllerVersion": "4.1.18",
+      "candidatePackageSha256": "e218b475c0294b1f373a4d04738556dd5d5d43d6cd910372001cf76ac47aa439",
+      "controllerPackageSha256": "e218b475c0294b1f373a4d04738556dd5d5d43d6cd910372001cf76ac47aa439"
+    }
+  ],
+  "browsers": {
+    "manifestSha256": "6b6e0538d6e46eef71d3e1a0dcb65f8f5ea7914033c8150529d8e207afb6030c",
+    "versions": [
+      {
+        "name": "chromium",
+        "revision": "1208",
+        "browserVersion": "145.0.7632.6"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1208",
+        "browserVersion": "145.0.7632.6"
+      },
+      {
+        "name": "webkit",
+        "revision": "2248",
+        "browserVersion": "26.0"
+      }
+    ]
+  },
+  "baselines": {
+    "tree": "3f0a46c759ef20b5ad03b23355c671c41cbf1681",
+    "files": [
+      {
+        "file": "tests/visual/__screenshots__/visual.spec.ts/home-desktop.png",
+        "sha256": "ffbc31de9fb7fa5747476705bca49a58e7b3912ac69b5610ea153f9c28b4cdd9",
+        "lastChange": "785a9334ea6569f445109e560f51353392c46c1c 2026-09-04T11:20:40+02:00",
+        "unchangedInCandidate": true
+      },
+      {
+        "file": "tests/visual/__screenshots__/visual.spec.ts/home-mobile.png",
+        "sha256": "cd8ad28072fe38c85b46f50bd3e0ef9f150436e13c198bfa6d3f9e42bba8c525",
+        "lastChange": "785a9334ea6569f445109e560f51353392c46c1c 2026-09-04T11:20:40+02:00",
+        "unchangedInCandidate": true
+      },
+      {
+        "file": "tests/visual/__screenshots__/visual.spec.ts/about-desktop.png",
+        "sha256": "98bd00336489fd2daed0fe19ca70c8b89d4524408d7254a5d6dc5aa11420dace",
+        "lastChange": "785a9334ea6569f445109e560f51353392c46c1c 2026-09-04T11:20:40+02:00",
+        "unchangedInCandidate": true
+      },
+      {
+        "file": "tests/visual/__screenshots__/visual.spec.ts/about-mobile.png",
+        "sha256": "84a771070d1fec8d9d94977e3e3183d9c81f22996c4a66c89675b6f142d79f4c",
+        "lastChange": "785a9334ea6569f445109e560f51353392c46c1c 2026-09-04T11:20:40+02:00",
+        "unchangedInCandidate": true
+      }
+    ]
+  },
+  "fontInstallations": [
+    {
+      "startedAt": "2026-09-11  19:21:16",
+      "endedAt": "2026-09-11  19:21:30",
+      "relevantPackages": [
+        "ttf-mscorefonts-installer"
+      ]
+    },
+    {
+      "startedAt": "2026-09-11  20:01:23",
+      "endedAt": "2026-09-11  20:01:58",
+      "relevantPackages": [
+        "libreoffice-base-core",
+        "libreoffice-core",
+        "libreoffice-common",
+        "libreoffice-uiconfig-writer",
+        "fonts-opensymbol",
+        "libreoffice-style-colibre",
+        "libreoffice-writer",
+        "libreoffice-uiconfig-common"
+      ]
+    }
+  ],
+  "fontMatches": [
+    {
+      "requested": "Arial",
+      "result": "Arial | /usr/share/fonts/truetype/msttcorefonts/Arial.ttf"
+    },
+    {
+      "requested": "Courier New",
+      "result": "Courier New | /usr/share/fonts/truetype/msttcorefonts/Courier_New.ttf"
+    },
+    {
+      "requested": "OpenSymbol",
+      "result": "OpenSymbol | /usr/share/fonts/truetype/libreoffice/opens___.ttf"
+    },
+    {
+      "requested": "monospace",
+      "result": "DejaVu Sans Mono | /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+    }
+  ],
+  "conclusions": [
+    "No public Academy styling/component, lockfile, Playwright configuration or screenshot test source changes in the newsletter candidate.",
+    "Five generated stylesheets are byte-identical to live. The differing global utility sheet has identical font declarations in order; all 539 unique font declarations match across all stylesheets.",
+    "Current candidate/controller dependency versions and pinned browser revisions match. Baselines were committed on September 4, before the September 11 system font installations.",
+    "Process-only Fontconfig exclusion is an appropriate controlled reproduction experiment; rendered-font and baseline-match proof is owned by the UI agent and is not assumed by this report."
+  ],
+  "limits": [
+    "The baseline PNGs do not retain historical browser launch or resolved-system-font metadata. Installation chronology plus source equivalence supports, but alone does not prove, font causation."
+  ],
+  "changes": "No source, baseline, production font, or runtime environment changes."
+}

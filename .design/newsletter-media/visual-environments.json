@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "profileSha256": "d286b9a1e88626101cee92aed643526b317cb32a3b3ab60c6f097b7bcc740f9b",
+  "basis": "Academy unchanged live and candidate fail identically after September11 Microsoft/OpenSymbol font installation; excluding only those added fonts restores all4 original screenshots exactly. Earlier baseline trees use that process-only environment; later trees keep system fonts. Each site still requires every unchanged screenshot and full quality gate to pass.",
+  "sites": [
+    {
+      "site": "academy-partnership",
+      "baselineTree": "3f0a46c759ef20b5ad03b23355c671c41cbf1681",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "785a9334ea6569f445109e560f51353392c46c1c",
+      "latestBaselineDate": "2026-09-04T11:20:40+02:00"
+    },
+    {
+      "site": "bakewell-pudding",
+      "baselineTree": "74bdb09c3dc53e883f4bb5d557d41678457aca5a",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "8b0969f12f61c02183c1bafeadd5df5d1faa33c2",
+      "latestBaselineDate": "2026-08-31T16:52:45+02:00"
+    },
+    {
+      "site": "bank-house",
+      "baselineTree": "b4d09642f292681d28051d9bf7d0cf09deb7cccb",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "2ada1325c9cc30c8a69b8b532935b62b6a2b6639",
+      "latestBaselineDate": "2026-08-27T12:22:04+02:00"
+    },
+    {
+      "site": "bath-street-dental",
+      "baselineTree": "a1d757505b4b9ad207d6c926d4f925e2fa24ef28",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "a927dd82e92a1dbe11f1debf775d6048d8fb839d",
+      "latestBaselineDate": "2026-08-31T12:52:57+02:00"
+    },
+    {
+      "site": "blue-anchor",
+      "baselineTree": "727ff2f2a1d3f93961e9136aa6317d8eec8d63fc",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "ad3e0b620bbb3279f2c41bf2ca291dac93ceec03",
+      "latestBaselineDate": "2026-08-29T10:32:22+02:00"
+    },
+    {
+      "site": "bodalwyn-aberystwyth",
+      "baselineTree": "9a18b2deab81cfa1b823b73bef75083d94696c10",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "6c7581a717590479844cc85c075017918b6ebc5e",
+      "latestBaselineDate": "2026-08-31T22:04:25+02:00"
+    },
+    {
+      "site": "bubbleton-tenby",
+      "baselineTree": "560f6cc1ac4082ac027e48bf71022f9c96a2409d",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "60e27ce45a194f436f95ad8188acbd65a7d0b985",
+      "latestBaselineDate": "2026-08-29T16:08:14+02:00"
+    },
+    {
+      "site": "burford-road-dental",
+      "baselineTree": "5d644b7ce540e66538b2c180e3616d91070d4ad5",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "cc1a7ab0dc04d21d446840247ef701213ddf8dce",
+      "latestBaselineDate": "2026-09-04T17:03:24+02:00"
+    },
+    {
+      "site": "buscot-manor",
+      "baselineTree": "4e5b6861a82996426e5aabbff9eb8e558dc83515",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "069c309a23b598e8e19066964ca58752dac53997",
+      "latestBaselineDate": "2026-09-04T16:37:18+02:00"
+    },
+    {
+      "site": "bush-farm",
+      "baselineTree": "d8f95b4952baa6c7b925d057260c584c585cdce4",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "47791dd9ec2f11bf0e96b6ff7fd0d34d9239c84e",
+      "latestBaselineDate": "2026-08-27T14:53:10+02:00"
+    },
+    {
+      "site": "claire-lewis",
+      "baselineTree": "c1a1f8a0d03657f4abe9e9a86c0223feffd474c2",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "b811d92575883a0935d25fa356236a3b2930e020",
+      "latestBaselineDate": "2026-08-27T12:22:04+02:00"
+    },
+    {
+      "site": "contour-leek",
+      "baselineTree": "b271d95800007f62a7407e6be62dc8d3d6146216",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "d384d2353b2b50426421fd44d09947802359b185",
+      "latestBaselineDate": "2026-08-29T14:16:53+02:00"
+    },
+    {
+      "site": "corn-street-dental",
+      "baselineTree": "dcedde5c2099a5270e5a3fb3aa167fbec43a9cec",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "242a9425c8eb5849c7631f5cb9796f18ab3c3695",
+      "latestBaselineDate": "2026-08-31T02:01:06+02:00"
+    },
+    {
+      "site": "cotswold-dental",
+      "baselineTree": "6ca09c6a3d69a9c6f6b52b45fbde93e1028efba5",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "2c2392d994680f1a918294d9a1fa2c32c019e398",
+      "latestBaselineDate": "2026-08-31T03:43:15+02:00"
+    },
+    {
+      "site": "eynsham-dental",
+      "baselineTree": "20bba04276852586b21d102c9496e0acede0809c",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "ad93991909912f79987871b00cd6e6f0ed769945",
+      "latestBaselineDate": "2026-08-27T12:22:04+02:00"
+    },
+    {
+      "site": "fringe-hair-beauty",
+      "baselineTree": "568ca0839da7dd516232ce48295c33b5d15a3cd7",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "f8d371b5dd330e2d7ad821f08b5c3c21d1dfff30",
+      "latestBaselineDate": "2026-09-01T01:44:42+02:00"
+    },
+    {
+      "site": "glamour-and-glow",
+      "baselineTree": "48b065f9e54a96148dd1be30628483ffc71536f5",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "db6b823fe8405715da0b4de242205c9b65dea382",
+      "latestBaselineDate": "2026-09-04T12:05:15+02:00"
+    },
+    {
+      "site": "go-engineers",
+      "baselineTree": "553509e4f68cce6824d0410034e90cd2e44ef63f",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "a3c8b3cf8e709d2962f691dad961a56897f62ddc",
+      "latestBaselineDate": "2026-09-06T16:22:00+02:00"
+    },
+    {
+      "site": "hair-lounge-chipping-norton",
+      "baselineTree": "b873150f0fdcaf2f0475a587cd965cafe886aa35",
+      "profile": "system",
+      "latestBaselineCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912",
+      "latestBaselineDate": "2026-09-14T14:17:26+02:00"
+    },
+    {
+      "site": "halls-gardening",
+      "baselineTree": "7012b75350db63e9f8f5243215db4affeb54b35f",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "f30ee0704095feab281eba6492b11d3b47e59ec5",
+      "latestBaselineDate": "2026-09-06T15:56:15+02:00"
+    },
+    {
+      "site": "higher-farm-malpas",
+      "baselineTree": "234ba3ee23e5ddc2157da23665f4a229e4cc1dae",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "41f67abc2e55fb7ed4f888b2c9f2b8ef1465f41f",
+      "latestBaselineDate": "2026-08-27T18:29:36+02:00"
+    },
+    {
+      "site": "home-farm-salon",
+      "baselineTree": "303c9f268c418f6a9ee464b6bcec89ba8a7e36e0",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "bdaa08fa9aad151f94fc772ecf0305b8bb9a5231",
+      "latestBaselineDate": "2026-09-04T17:55:26+02:00"
+    },
+    {
+      "site": "homedene-farm",
+      "baselineTree": "e91cfd7c995ac6bcd99347ddad6a819747fa38b9",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "9f36e9263804cb78359ece5e8bc54707db39ac39",
+      "latestBaselineDate": "2026-08-31T16:52:45+02:00"
+    },
+    {
+      "site": "il-botanico",
+      "baselineTree": "99099a776380fcf78aaefa9d5ea083fbd4c33f8a",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "3c2bd281a436bf2662843ddbe8ca3fa0f1e0dc19",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    },
+    {
+      "site": "jamesons-witney",
+      "baselineTree": "31120f43ecc1a8278ae2e411ecd979fa60f1c0e5",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "d74936b0785e86260a37301b3d991dc8cd4dba93",
+      "latestBaselineDate": "2026-08-31T03:18:09+02:00"
+    },
+    {
+      "site": "maggies-fish",
+      "baselineTree": "7eb18b441e16239f3bcc30975128a6be8a577f17",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "20a19f1f20b30841f45bafe8c32140129f7f0531",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    },
+    {
+      "site": "marthas-coffee",
+      "baselineTree": "6d64e585db88af352d7484053385fadab5eb731f",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "7a83d7914668afda9fc38e0ec9c176150b9899af",
+      "latestBaselineDate": "2026-08-29T10:47:01+02:00"
+    },
+    {
+      "site": "michaels-malmesbury",
+      "baselineTree": "edf3af05585c5b347d15ec28fc8e3ad5398bacea",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "71d751c68ff0aa99d9fbbff5f27b838d29967475",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    },
+    {
+      "site": "new-inn-lechlade",
+      "baselineTree": "4c0cb8e1c1a34ca8d9391aa06502dc8802b0f0ff",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "6de0cc57634571ca33bac61a2379bb2d712a6e65",
+      "latestBaselineDate": "2026-08-29T13:08:35+02:00"
+    },
+    {
+      "site": "number-47-grassington",
+      "baselineTree": "58ab94828066be2a2fd94af3077f7b9295424e1b",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "2e0162d04b94aff6caecac0d1930c10062c1b009",
+      "latestBaselineDate": "2026-08-31T14:13:34+02:00"
+    },
+    {
+      "site": "old-craft-barn",
+      "baselineTree": "ef1799fbb2ded41e0a9847d007e642f6c48c38d8",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "7be1b23b4fd9fcc3b9ce699d53f15d21b2bb2cf5",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    },
+    {
+      "site": "pokhara-delight",
+      "baselineTree": "96083532ad435f93053820d6f208ac2f6704795a",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "8203fc85ef119725d317d86081160512a21760be",
+      "latestBaselineDate": "2026-09-04T17:28:31+02:00"
+    },
+    {
+      "site": "portway-dental",
+      "baselineTree": "b320c0960189e0957be94da734db1455709ad236",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "5d83727ac677421b9cd98d24eabf015b76886b7f",
+      "latestBaselineDate": "2026-09-04T12:33:52+02:00"
+    },
+    {
+      "site": "powys-country-house",
+      "baselineTree": "ffbc9e6ed32fd13f85c55357efcd1bd5de793037",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "52965dc372c5b63213e423d26abfabbccb1b1fbd",
+      "latestBaselineDate": "2026-08-31T11:24:20+02:00"
+    },
+    {
+      "site": "rees-russell",
+      "baselineTree": "48486e7d79a5f189a1569d159ef6b2e38cdcd798",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "6368539cf297b1926282200b30666b8e4854accc",
+      "latestBaselineDate": "2026-09-06T16:55:41+02:00"
+    },
+    {
+      "site": "riverside-lechlade",
+      "baselineTree": "d89b376f1193d4dc1b6e9893161e07909cb9f2a0",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "a9437734adaa389dee7b2d04035b4dee0073d1e5",
+      "latestBaselineDate": "2026-09-04T15:02:48+02:00"
+    },
+    {
+      "site": "salutation-inn",
+      "baselineTree": "176140488f995b1fd73fd300e75250b4bdf9472e",
+      "profile": "system",
+      "latestBaselineCommit": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "latestBaselineDate": "2026-09-14T15:14:28+02:00"
+    },
+    {
+      "site": "simas-beauty-witney",
+      "baselineTree": "8c3b523aa1a78ce68602e9d299e2859a4ee2da0b",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "cb26dd912e72373d8a22ce8641b47029314e520c",
+      "latestBaselineDate": "2026-08-31T02:49:50+02:00"
+    },
+    {
+      "site": "small-talk-tearooms",
+      "baselineTree": "76395042b8a80b05604a7e5f44381d96b26679bd",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "0ddfd6de724d11c819fff7d9198e3605dfcae676",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    },
+    {
+      "site": "star-inn-woodstock",
+      "baselineTree": "fb604fd46b79098fe5b4348354b3401e26bbc8ea",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "5e13871b5cb8d89a2c4f0f436a8a254af08b414f",
+      "latestBaselineDate": "2026-08-31T16:52:44+02:00"
+    },
+    {
+      "site": "teddington-cheese",
+      "baselineTree": "e642c100228eb02fe560fa6585308b8e94c9eb06",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "366a1a165108eb55657d3aa34277370a8869279b",
+      "latestBaselineDate": "2026-08-31T13:17:46+02:00"
+    },
+    {
+      "site": "wallys-deli",
+      "baselineTree": "86656c689713c7bc9158a52574f2e2492c3b946a",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "6f55b6641fea7bf94800b65e94cc58925ab9ea60",
+      "latestBaselineDate": "2026-08-31T16:52:45+02:00"
+    },
+    {
+      "site": "white-hart-minster",
+      "baselineTree": "2369a5f834888557560b0ad2a6ce9ce66dee59da",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "7e60f8db2778c6dc5072514c0cd90530ddfbf064",
+      "latestBaselineDate": "2026-08-29T10:50:32+02:00"
+    },
+    {
+      "site": "white-rose-accountancy",
+      "baselineTree": "a472377e9b914d26b86724d87793ad5b3650da04",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "65c7ea9a17fe0d50f389df2405ef9eee84cae131",
+      "latestBaselineDate": "2026-09-04T10:39:51+02:00"
+    },
+    {
+      "site": "witney-dental-practice",
+      "baselineTree": "75d2e88edb7e08cb58f2bb82153c78e74bdfbceb",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "405131c3a29531537d51864abfee5069325c9ed9",
+      "latestBaselineDate": "2026-09-06T15:28:46+02:00"
+    },
+    {
+      "site": "witney-hotel",
+      "baselineTree": "b74b3474f031054233fa4f35daf697dafbe7001a",
+      "profile": "system",
+      "latestBaselineCommit": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "latestBaselineDate": "2026-09-13T18:36:32+02:00"
+    },
+    {
+      "site": "woodstock-dental",
+      "baselineTree": "10e4869673bd41d9709d4f4fcac346b620539432",
+      "profile": "pre-september-2026",
+      "latestBaselineCommit": "0548c33f12a93df3e54081e77b7bbaf7ee46acdd",
+      "latestBaselineDate": "2026-08-27T12:22:05+02:00"
+    }
+  ]
+}
