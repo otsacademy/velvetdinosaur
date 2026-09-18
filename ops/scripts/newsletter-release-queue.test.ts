@@ -7,6 +7,7 @@ import { parseArgs } from './newsletter-release-queue';
 import { EXPECTED_FEATURE_FILES, EXPECTED_SUPPORT_FILES, RECEIPT_PATH, verifyNewsletterScopedRelease } from './newsletter-release-preflight';
 import { classifyFile, git, LEGACY_HASHES, mergePackage, mergeQuality, pathsOverlap, sha256 } from './newsletter-release-review';
 import { acquireClaim, assertCurrentControllerMain, assertEquivalentDotenv, runLogged, runNewsletterQuality, siteEnvironment, stageClone, updateController } from './newsletter-release-runtime';
+import { verifyNewsletterLighthouse } from './newsletter-release-lighthouse';
 
 const temporary: string[] = [];
 function temp() { const dir = mkdtempSync(path.join(tmpdir(), 'newsletter-release-test-')); temporary.push(dir); return dir; }
@@ -161,4 +162,106 @@ test('scoped preflight is opt-in, requires committed complete scope, and rejects
   const receipt = JSON.parse(readFileSync(path.join(root, RECEIPT_PATH), 'utf8')); receipt.files.pop();
   write(root, RECEIPT_PATH, JSON.stringify(receipt)); commit(root);
   expect(() => verifyNewsletterScopedRelease(root, { NEWSLETTER_RELEASE_RECEIPT: RECEIPT_PATH })).toThrow('exactly the reviewed');
+});
+
+function lighthouseFixture(mobile = [0.96, 1, 1], desktop = [1, 0.75, 1]) {
+  const clone = temp(); const qualityStartedAt = Date.now() - 10_000;
+  write(clone, 'quality/gates.json', JSON.stringify({ targets: [{ name: 'fixture', kind: 'site', gates: ['build', 'lighthouse'] }] }));
+  for (const [viewport, performance] of [['mobile', mobile], ['desktop', desktop]] as const) {
+    const names = ['performance', 'accessibility', 'best-practices', 'seo'];
+    const url = 'http://localhost:3100/'; const directory = `.lighthouseci/${viewport}`;
+    write(clone, `lighthouserc.${viewport}.json`, JSON.stringify({ ci: {
+      collect: { numberOfRuns: 3, url: [url], settings: { formFactor: viewport } },
+      assert: { assertions: Object.fromEntries(names.map((name) => [`categories:${name}`, ['error', { minScore: 1 }]])) },
+      upload: { target: 'filesystem', outputDir: directory }
+    } }));
+    const manifest = performance.map((score, i) => {
+      const jsonPath = path.join(clone, directory, `${i}.report.json`);
+      write(clone, path.relative(clone, jsonPath), JSON.stringify({
+        requestedUrl: url, fetchTime: new Date(qualityStartedAt + 1000 + i * 1000).toISOString(),
+        configSettings: { formFactor: viewport }, categories: Object.fromEntries(names.map((name) => [name, { score: name === 'performance' ? score : 1 }])),
+        audits: { arbitrary: 'do-not-copy-audit-secret' }
+      }));
+      return { url, jsonPath, summary: { performance: 1 } }; // Never trust the export's summary.
+    });
+    write(clone, `${directory}/manifest.json`, JSON.stringify(manifest));
+  }
+  return { clone, site: 'fixture', commit: 'a'.repeat(40), qualityStartedAt, reportFile: path.join(clone, 'release-evidence.json') };
+}
+
+function changeJson(root: string, file: string, change: (value: Record<string, unknown>) => void) {
+  const value = JSON.parse(readFileSync(path.join(root, file), 'utf8')); change(value); write(root, file, JSON.stringify(value));
+}
+
+describe('newsletter release Lighthouse evidence', () => {
+  test('accepts three-run median 100 with variance and records only sanitized raw scores', () => {
+    const options = lighthouseFixture();
+    const result = verifyNewsletterLighthouse(options);
+    expect(result.status).toBe('passed');
+    expect(result.viewports[0].pages[0].categories.performance).toEqual({ scores: [0.96, 1, 1], median: 1 });
+    expect(result.viewports[1].pages[0].categories.performance).toEqual({ scores: [1, 0.75, 1], median: 1 });
+    expect(readFileSync(options.reportFile, 'utf8')).not.toContain('do-not-copy-audit-secret');
+    expect(result.viewports[0].pages[0].runs[0].sha256).toMatch(/^[a-f0-9]{64}$/);
+  });
+
+  test('an optimistic LHCI pass cannot authorize deployment when the median is below 100', () => {
+    const options = lighthouseFixture([0.96, 0.98, 1]);
+    expect(() => verifyNewsletterLighthouse(options)).toThrow('medians must be exactly 100');
+    const summary = JSON.parse(readFileSync(options.reportFile, 'utf8'));
+    expect(summary.status).toBe('failed');
+    expect(summary.viewports[0].pages[0].categories.performance.median).toBe(0.98);
+  });
+
+  test('requires three reports for every configured URL on each viewport', () => {
+    const options = lighthouseFixture();
+    const file = '.lighthouseci/desktop/manifest.json';
+    const manifest = JSON.parse(readFileSync(path.join(options.clone, file), 'utf8')); manifest.pop();
+    write(options.clone, file, JSON.stringify(manifest));
+    expect(() => verifyNewsletterLighthouse(options)).toThrow('Exactly three');
+    expect(JSON.parse(readFileSync(options.reportFile, 'utf8')).status).toBe('failed');
+  });
+
+  test('rejects stale and future timestamps even if cached reports all score 100', () => {
+    for (const fetchTime of [new Date(0).toISOString(), new Date(Date.now() + 60_000).toISOString()]) {
+      const options = lighthouseFixture([1, 1, 1], [1, 1, 1]);
+      changeJson(options.clone, '.lighthouseci/mobile/0.report.json', (data) => { data.fetchTime = fetchTime; });
+      expect(() => verifyNewsletterLighthouse(options)).toThrow('fresh for this quality run');
+    }
+  });
+
+  test('rejects duplicate manifest references and copied report bytes as separate runs', () => {
+    for (const copiedBytes of [false, true]) {
+      const options = lighthouseFixture(); const file = '.lighthouseci/mobile/manifest.json';
+      const manifest = JSON.parse(readFileSync(path.join(options.clone, file), 'utf8'));
+      if (copiedBytes) write(options.clone, '.lighthouseci/mobile/1.report.json', readFileSync(manifest[0].jsonPath));
+      else { manifest[1] = manifest[0]; write(options.clone, file, JSON.stringify(manifest)); }
+      expect(() => verifyNewsletterLighthouse(options)).toThrow('Duplicate Lighthouse report');
+    }
+  });
+
+  test('missing or null required categories cannot pass through optimistic filtering', () => {
+    for (const missing of [true, false]) {
+      const options = lighthouseFixture();
+      changeJson(options.clone, '.lighthouseci/mobile/0.report.json', (data) => {
+        const categories = data.categories as Record<string, unknown>;
+        if (missing) delete categories.accessibility; else categories.accessibility = { score: null };
+      });
+      expect(() => verifyNewsletterLighthouse(options)).toThrow('invalid Lighthouse category score: accessibility');
+    }
+  });
+
+  test('missing files and unexpected URLs fail with a recorded safe reason', () => {
+    const missing = lighthouseFixture(); rmSync(path.join(missing.clone, '.lighthouseci/mobile/0.report.json'));
+    expect(() => verifyNewsletterLighthouse(missing)).toThrow('missing or unreadable');
+    const unexpected = lighthouseFixture();
+    changeJson(unexpected.clone, '.lighthouseci/mobile/0.report.json', (data) => { data.requestedUrl = 'http://localhost:3100/wrong'; });
+    expect(() => verifyNewsletterLighthouse(unexpected)).toThrow('does not match');
+  });
+
+  test('an actual manifest without Lighthouse is explicitly skipped without requiring report files', () => {
+    const clone = temp();
+    write(clone, 'quality/gates.json', JSON.stringify({ targets: [{ name: 'admin', gates: [{ name: 'build' }] }] }));
+    const result = verifyNewsletterLighthouse({ clone, site: 'admin', commit: 'b'.repeat(40), qualityStartedAt: Date.now(), reportFile: path.join(clone, 'evidence.json') });
+    expect(result.status).toBe('skipped'); expect(result.reason).toContain('declares no Lighthouse gate');
+  });
 });

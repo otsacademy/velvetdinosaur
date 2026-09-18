@@ -9,6 +9,7 @@ import { acquireClaim, assertCleanCommit, assertCurrentControllerMain, assertEqu
 import { captureLiveSnapshot, deploymentAction, prepareReleaseAttempt, requireReleaseDiskSpace, saveReleaseAttempt,
   type ReleaseAttempt } from './newsletter-release-state';
 import { captureAndRestoreTrackedDeploymentState } from './newsletter-release-operational-state';
+import { verifyNewsletterLighthouse } from './newsletter-release-lighthouse';
 
 type Options = {
   mode: 'dry-run' | 'stage' | 'release'; sites: string[]; remainingDemos: boolean;
@@ -138,7 +139,11 @@ async function executeSite(options: Options, site: InventorySite, review: Return
     report.diskBeforeQuality = requireReleaseDiskSpace(clone); save();
     await assertEquivalentDotenv(clone, env);
     await step('install-frozen-lockfile', () => run('bun', ['install', '--frozen-lockfile']));
+    const qualityStartedAt = Date.now();
     await runNewsletterQuality((args, environment) => run('bun', args, clone, environment), childEnv, step);
+    report.lighthouse = await step('verify-lighthouse-category-medians', async () => verifyNewsletterLighthouse({
+      clone, site: site.slug, commit, qualityStartedAt, reportFile: path.join(directory, `${site.slug}-lighthouse-summary.json`)
+    }));
     assertCleanCommit(clone, commit);
     await step('verify-committed-scope', () => run('bun', ['-e',
       "import {verifySauroCore} from './scripts/sauro-core-preflight'; verifySauroCore();"], clone,
