@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { access, readFile, realpath, writeFile, mkdir } from 'node:fs/promises';
+import { access, readFile, realpath, writeFile, mkdir, chmod } from 'node:fs/promises';
 import { randomBytes } from 'node:crypto';
 import { readNewsletterEnvironment } from '@/lib/newsletter/operations';
 
@@ -18,7 +18,16 @@ async function main() {
   const configFile = path.join(siteRoot, 'deploy/local-first.json');
   const config = await exists(configFile) ? JSON.parse(await readFile(configFile, 'utf8')) : {};
   const paths = [path.join(siteRoot, '.env.production')];
-  for (const slot of Object.values(config.slots || {}) as Array<{ path: string; envFile?: string }>) {
+  const controller = await readNewsletterEnvironment(paths[0]);
+  const slots = Object.values(config.slots || {}) as Array<{ path: string; envFile?: string }>;
+  // Installed demos commonly keep their slot metadata in the environment.
+  if (!slots.length) {
+    for (const name of ['BLUE', 'GREEN']) {
+      const slotPath = controller[`VD_DEPLOY_${name}_PATH`];
+      if (slotPath) slots.push({ path: slotPath });
+    }
+  }
+  for (const slot of slots) {
     const envPath = slot.envFile || path.join(slot.path, '.env.production');
     if (await exists(envPath)) paths.push(envPath);
   }
@@ -27,7 +36,8 @@ async function main() {
   const knownKeys = new Set(configs.map((env) => env.NEWSLETTER_MEDIA_ENCRYPTION_KEY).filter(Boolean));
   if (knownKeys.size > 1) throw new Error('Controller and slot encryption keys disagree. Resolve without overwriting any existing key.');
   const encryptionKey = [...knownKeys][0] || randomBytes(32).toString('base64');
-  if (Buffer.from(encryptionKey, 'base64').length !== 32) throw new Error('The existing newsletter encryption key must encode exactly 32 bytes.');
+  const decodedKey = Buffer.from(encryptionKey, 'base64');
+  if (decodedKey.length !== 32 || decodedKey.toString('base64') !== encryptionKey) throw new Error('The existing newsletter encryption key must canonically encode exactly 32 bytes.');
   const knownCron = new Set(configs.map((env) => env.CRON_SECRET).filter(Boolean));
   if (knownCron.size > 1) throw new Error('Controller and slot cron secrets disagree. Resolve before enabling a scheduler.');
   const cronSecret = [...knownCron][0] || randomBytes(32).toString('hex');
@@ -52,6 +62,7 @@ async function main() {
       next = pattern.test(next) ? next.replace(pattern, line) : `${next.trimEnd()}\n${line}\n`;
     }
     await writeFile(files[index], next, { mode: 0o600 });
+    await chmod(files[index], 0o600);
   }
   console.log(JSON.stringify({ site: path.basename(siteRoot), environmentFiles: files.length, changed, applied: apply, asapSocialLinksPreserved: isAsap }));
 }
