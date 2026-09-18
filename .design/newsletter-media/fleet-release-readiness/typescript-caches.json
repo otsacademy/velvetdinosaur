@@ -1,0 +1,1481 @@
+[
+  {
+    "site": "academy-partnership",
+    "tracked": true,
+    "regular": true,
+    "unchanged": false,
+    "status": "M tsconfig.tsbuildinfo",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6118,
+      "fileInfos": 6118,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bakewell-pudding",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6111,
+      "fileInfos": 6111,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bank-house",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6109,
+      "fileInfos": 6109,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bath-street-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6111,
+      "fileInfos": 6111,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "blue-anchor",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6121,
+      "fileInfos": 6121,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bodalwyn-aberystwyth",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bubbleton-tenby",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6114,
+      "fileInfos": 6114,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "burford-road-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6118,
+      "fileInfos": 6118,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "buscot-manor",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6116,
+      "fileInfos": 6116,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "bush-farm",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6116,
+      "fileInfos": 6116,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "claire-lewis",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6108,
+      "fileInfos": 6108,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "contour-leek",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6115,
+      "fileInfos": 6115,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "corn-street-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6117,
+      "fileInfos": 6117,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "cotswold-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "eynsham-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6152,
+      "fileInfos": 6152,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "fringe-hair-beauty",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "glamour-and-glow",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "go-engineers",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6114,
+      "fileInfos": 6114,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "hair-lounge-chipping-norton",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6111,
+      "fileInfos": 6111,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "halls-gardening",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "higher-farm-malpas",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6107,
+      "fileInfos": 6107,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "home-farm-salon",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6115,
+      "fileInfos": 6115,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "homedene-farm",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6105,
+      "fileInfos": 6105,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "il-botanico",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6114,
+      "fileInfos": 6114,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "jamesons-witney",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "maggies-fish",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6111,
+      "fileInfos": 6111,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "marthas-coffee",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6115,
+      "fileInfos": 6115,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "michaels-malmesbury",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6108,
+      "fileInfos": 6108,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "new-inn-lechlade",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "number-47-grassington",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6111,
+      "fileInfos": 6111,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "old-craft-barn",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6101,
+      "fileInfos": 6101,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "pokhara-delight",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "portway-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6114,
+      "fileInfos": 6114,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "powys-country-house",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "rees-russell",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "riverside-lechlade",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "salutation-inn",
+    "tracked": false,
+    "regular": null,
+    "unchanged": null,
+    "status": ""
+  },
+  {
+    "site": "simas-beauty-witney",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "small-talk-tearooms",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "star-inn-woodstock",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6100,
+      "fileInfos": 6100,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "teddington-cheese",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6118,
+      "fileInfos": 6118,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "wallys-deli",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6101,
+      "fileInfos": 6101,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "white-hart-minster",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6535,
+      "fileInfos": 6535,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "white-rose-accountancy",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6112,
+      "fileInfos": 6112,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "witney-dental-practice",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6114,
+      "fileInfos": 6114,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "witney-hotel",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6113,
+      "fileInfos": 6113,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  },
+  {
+    "site": "woodstock-dental",
+    "tracked": true,
+    "regular": true,
+    "unchanged": true,
+    "status": "",
+    "info": {
+      "keys": [
+        "fileNames",
+        "fileIdsList",
+        "fileInfos",
+        "root",
+        "options",
+        "referencedMap",
+        "affectedFilesPendingEmit",
+        "version"
+      ],
+      "version": "5.9.3",
+      "fileNames": 6103,
+      "fileInfos": 6103,
+      "fileInfoTypes": [
+        "object",
+        "string"
+      ],
+      "fileInfoObjectKeys": [
+        "version",
+        "affectsGlobalScope",
+        "impliedFormat",
+        "signature"
+      ]
+    }
+  }
+]

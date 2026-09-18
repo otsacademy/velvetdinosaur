@@ -1,0 +1,428 @@
+[
+  {
+    "slug": "hair-lounge-chipping-norton",
+    "mode": "existing public visual spec against current live slot",
+    "startedAt": "2026-09-18T20:22:59.179Z",
+    "proof": {
+      "live": "/srv/apps/hair-lounge-chipping-norton-green",
+      "slot": "green",
+      "port": 3084,
+      "recordedCommit": "efa869b05450459c1b8f8f862ebc13312de8d6df",
+      "buildId": "JdKA0H7HFdbW4GGwIjUi5",
+      "nginx": "proxy_pass http://127.0.0.1:3084;"
+    },
+    "baselineHashes": {
+      "home-desktop.png": "9cb8b9dc0f3aa552990676043191306ef8b0326133a34c02d954d7a1d8061316",
+      "home-mobile.png": "e5b647c230b2c8fae0c4e667b28b473ef2e5bb458e7f7849bf9c35f6fe9b4477",
+      "about-desktop.png": "0cd5127072d91ffe6a3179e7a6222b6801dbc159b87b8c5e99070c9d8c93dde7",
+      "about-mobile.png": "af2acf3530be7a6ae296a5d47246fe669aa834b9502643e58fa3b2fe0a506ee4"
+    },
+    "configSha256": "daf3e252082933ebc5a85fc976abca2e27a6287b7e91fb7d2709410726c0772e",
+    "specSha256": "88e8221f6d6e09e82b205b83c75f6e8c3aebea75cd47470fa431fad74129de24",
+    "disk": {
+      "path": "/srv/apps/.ops/newsletter-media/hair-lounge-chipping-norton",
+      "freeBytes": 32471113728,
+      "minimumFreeBytes": 8589934592
+    },
+    "sourceChangesAllowed": false,
+    "snapshotUpdates": "none",
+    "fontEnvironment": "native system fonts; no FONTCONFIG override",
+    "installExit": 0,
+    "installEvidence": "/tmp/newsletter-native-font-preflight/hair-lounge-chipping-norton-launcher-error/install.log",
+    "priorLauncherError": "Direct Bun and bun run path execution could not load Playwright’s .esm.preflight; no tests ran in either attempt. Completed checks used bun x --no-install with the installed CLI’s Node shebang.",
+    "playwrightVersion": "1.58.1",
+    "command": [
+      "bun",
+      "--no-env-file",
+      "x",
+      "--no-install",
+      "playwright",
+      "test",
+      "tests/visual/visual.spec.ts",
+      "--config=playwright.config.ts",
+      "--update-snapshots=none",
+      "--output=/tmp/newsletter-native-font-preflight/hair-lounge-chipping-norton/test-results",
+      "--reporter=line,json"
+    ],
+    "testExit": 1,
+    "sourceUnchanged": true,
+    "liveUnchanged": true,
+    "tests": [
+      {
+        "title": "home page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 2044,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "about page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 1292,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "home page",
+        "project": "mobile",
+        "outcome": "unexpected",
+        "status": "failed",
+        "durationMs": 4628,
+        "differingPixels": 157475,
+        "comparisonError": "snapshot mismatch",
+        "browser": "webkit"
+      },
+      {
+        "title": "about page",
+        "project": "mobile",
+        "outcome": "unexpected",
+        "status": "failed",
+        "durationMs": 2680,
+        "differingPixels": 57556,
+        "comparisonError": "snapshot mismatch",
+        "browser": "webkit"
+      }
+    ],
+    "stats": {
+      "startTime": "2026-09-18T20:22:59.957Z",
+      "duration": 13128.243999999999,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "status": "failed",
+    "completedAt": "2026-09-18T20:23:13.120Z",
+    "browsers": {
+      "desktop": {
+        "engine": "chromium",
+        "browserVersion": "145.0.7632.6",
+        "revision": "1208",
+        "observedExecutableVersion": "Google Chrome for Testing 145.0.7632.6"
+      },
+      "mobile": {
+        "engine": "webkit",
+        "browserVersion": "26.0",
+        "revision": "2248",
+        "evidence": "installed Playwright browser metadata and unchanged iPhone 13 project; Hair Lounge failure trace confirms WebKit"
+      }
+    },
+    "baselineHistory": [
+      {
+        "file": "home-desktop.png",
+        "lastCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912 2026-09-14T14:17:26+02:00 fix(header): keep the burger on screen at phone widths"
+      },
+      {
+        "file": "home-mobile.png",
+        "lastCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912 2026-09-14T14:17:26+02:00 fix(header): keep the burger on screen at phone widths"
+      },
+      {
+        "file": "about-desktop.png",
+        "lastCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912 2026-09-14T14:17:26+02:00 fix(header): keep the burger on screen at phone widths"
+      },
+      {
+        "file": "about-mobile.png",
+        "lastCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912 2026-09-14T14:17:26+02:00 fix(header): keep the burger on screen at phone widths"
+      }
+    ],
+    "interpretation": "Public live-slot preflight only; not a test of the staged newsletter candidate. Required candidate gates remain authoritative.",
+    "liveSourceComparison": {
+      "file": "/tmp/newsletter-native-font-preflight/hair-lounge-chipping-norton/live-source-comparison.json",
+      "changedFiles": [
+        "app/hairlounge-chrome.css",
+        "components/hairlounge/header.client.tsx"
+      ],
+      "allInspectedLiveBytesMatchRecordedCommit": true,
+      "stagedHeaderAndBaselinesNewerThanLive": true,
+      "candidateFailureNotEstablished": true
+    },
+    "sourceIdentity": {
+      "stagingBase": "e333c63c632c13eefc25b97a34612d5f73f9eaee",
+      "controllerDevelop": "e333c63c632c13eefc25b97a34612d5f73f9eaee",
+      "cloneHead": "e333c63c632c13eefc25b97a34612d5f73f9eaee",
+      "unchanged": true
+    }
+  },
+  {
+    "slug": "salutation-inn",
+    "mode": "existing public visual spec against current live slot",
+    "startedAt": "2026-09-18T20:23:13.163Z",
+    "proof": {
+      "live": "/srv/apps/salutation-inn-blue",
+      "slot": "blue",
+      "port": 3085,
+      "recordedCommit": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "buildId": "qpDbc5H3ni704O7hkXkS1",
+      "nginx": "proxy_pass http://127.0.0.1:3085;"
+    },
+    "baselineHashes": {
+      "home-desktop.png": "50b107786abc9ee4d647d4ea29bfb0259e46539738cfdb63dea9a0e1673dafdc",
+      "home-mobile.png": "19ff0d8c75e7abf8f9ac65149ce91adbd724c7236b7d3fa8d68ca9226055253f",
+      "about-desktop.png": "3aa91a3eb7286556768291b4f122c5053929f8c1ead232c7a7624cb84f7b7d78",
+      "about-mobile.png": "e58f6d385c939508f7abd8a89101beea6f4c36d6a210370ff95fd368219b9f16"
+    },
+    "configSha256": "daf3e252082933ebc5a85fc976abca2e27a6287b7e91fb7d2709410726c0772e",
+    "specSha256": "88e8221f6d6e09e82b205b83c75f6e8c3aebea75cd47470fa431fad74129de24",
+    "disk": {
+      "path": "/srv/apps/.ops/newsletter-media/salutation-inn",
+      "freeBytes": 32456359936,
+      "minimumFreeBytes": 8589934592
+    },
+    "sourceChangesAllowed": false,
+    "snapshotUpdates": "none",
+    "fontEnvironment": "native system fonts; no FONTCONFIG override",
+    "installExit": 0,
+    "playwrightVersion": "1.58.1",
+    "command": [
+      "bun",
+      "--no-env-file",
+      "x",
+      "--no-install",
+      "playwright",
+      "test",
+      "tests/visual/visual.spec.ts",
+      "--config=playwright.config.ts",
+      "--update-snapshots=none",
+      "--output=/tmp/newsletter-native-font-preflight/salutation-inn/test-results",
+      "--reporter=line,json"
+    ],
+    "testExit": 0,
+    "sourceUnchanged": true,
+    "liveUnchanged": true,
+    "tests": [
+      {
+        "title": "home page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 2815,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "about page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 1782,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "home page",
+        "project": "mobile",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 3650,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "webkit"
+      },
+      {
+        "title": "about page",
+        "project": "mobile",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 2234,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "webkit"
+      }
+    ],
+    "stats": {
+      "startTime": "2026-09-18T20:23:15.448Z",
+      "duration": 12040.22,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "status": "passed",
+    "completedAt": "2026-09-18T20:23:27.527Z",
+    "browsers": {
+      "desktop": {
+        "engine": "chromium",
+        "browserVersion": "145.0.7632.6",
+        "revision": "1208",
+        "observedExecutableVersion": "Google Chrome for Testing 145.0.7632.6"
+      },
+      "mobile": {
+        "engine": "webkit",
+        "browserVersion": "26.0",
+        "revision": "2248",
+        "evidence": "installed Playwright browser metadata and unchanged iPhone 13 project; Hair Lounge failure trace confirms WebKit"
+      }
+    },
+    "baselineHistory": [
+      {
+        "file": "home-desktop.png",
+        "lastCommit": "2a39387b10ddb8a86dd8002d76ac2788a0e52047 2026-09-14T15:14:28+02:00 chore(visual): refresh baselines after glyph rendering drift (<= 1000 px)"
+      },
+      {
+        "file": "home-mobile.png",
+        "lastCommit": "2a39387b10ddb8a86dd8002d76ac2788a0e52047 2026-09-14T15:14:28+02:00 chore(visual): refresh baselines after glyph rendering drift (<= 1000 px)"
+      },
+      {
+        "file": "about-desktop.png",
+        "lastCommit": "51c5b5f4f2220497af846080ce1f458e765142fc 2026-08-31T20:16:15+02:00 establish Salutation Inn source baseline"
+      },
+      {
+        "file": "about-mobile.png",
+        "lastCommit": "2a39387b10ddb8a86dd8002d76ac2788a0e52047 2026-09-14T15:14:28+02:00 chore(visual): refresh baselines after glyph rendering drift (<= 1000 px)"
+      }
+    ],
+    "interpretation": "Public live-slot preflight only; not a test of the staged newsletter candidate. Required candidate gates remain authoritative.",
+    "sourceIdentity": {
+      "stagingBase": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "controllerDevelop": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "cloneHead": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "unchanged": true
+    }
+  },
+  {
+    "slug": "witney-hotel",
+    "mode": "existing public visual spec against current live slot",
+    "startedAt": "2026-09-18T20:23:27.558Z",
+    "proof": {
+      "live": "/srv/apps/witney-hotel-blue",
+      "slot": "blue",
+      "port": 3113,
+      "recordedCommit": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "buildId": "XXvO7qg3Boat_htAIAPKd",
+      "nginx": "proxy_pass http://127.0.0.1:3113;"
+    },
+    "baselineHashes": {
+      "home-desktop.png": "558350b34b6a26ce83d2a08d0ede25bcfe656dbaa6d532e01d677844cd8ef8ad",
+      "home-mobile.png": "bad3565fff322989bc1c05b213658409584c9a095401d9fe3eb50c97a65f0a40",
+      "about-desktop.png": "bab18fe9a7dbb3c7e2db1c8bd04ee41164c96313e1365f18ae329d3435240bcd",
+      "about-mobile.png": "d07e6ff33e646e0fd24bad74f2df57056c1a08337434269420d2b5ff1008fcda"
+    },
+    "configSha256": "daf3e252082933ebc5a85fc976abca2e27a6287b7e91fb7d2709410726c0772e",
+    "specSha256": "88e8221f6d6e09e82b205b83c75f6e8c3aebea75cd47470fa431fad74129de24",
+    "disk": {
+      "path": "/srv/apps/.ops/newsletter-media/witney-hotel",
+      "freeBytes": 32396713984,
+      "minimumFreeBytes": 8589934592
+    },
+    "sourceChangesAllowed": false,
+    "snapshotUpdates": "none",
+    "fontEnvironment": "native system fonts; no FONTCONFIG override",
+    "installExit": 0,
+    "playwrightVersion": "1.58.1",
+    "command": [
+      "bun",
+      "--no-env-file",
+      "x",
+      "--no-install",
+      "playwright",
+      "test",
+      "tests/visual/visual.spec.ts",
+      "--config=playwright.config.ts",
+      "--update-snapshots=none",
+      "--output=/tmp/newsletter-native-font-preflight/witney-hotel/test-results",
+      "--reporter=line,json"
+    ],
+    "testExit": 0,
+    "sourceUnchanged": true,
+    "liveUnchanged": true,
+    "tests": [
+      {
+        "title": "home page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 1923,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "about page",
+        "project": "desktop",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 1730,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "chromium"
+      },
+      {
+        "title": "home page",
+        "project": "mobile",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 3505,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "webkit"
+      },
+      {
+        "title": "about page",
+        "project": "mobile",
+        "outcome": "expected",
+        "status": "passed",
+        "durationMs": 2022,
+        "differingPixels": 0,
+        "comparisonError": null,
+        "browser": "webkit"
+      }
+    ],
+    "stats": {
+      "startTime": "2026-09-18T20:23:29.866Z",
+      "duration": 10631.149000000001,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "status": "passed",
+    "completedAt": "2026-09-18T20:23:40.535Z",
+    "browsers": {
+      "desktop": {
+        "engine": "chromium",
+        "browserVersion": "145.0.7632.6",
+        "revision": "1208",
+        "observedExecutableVersion": "Google Chrome for Testing 145.0.7632.6"
+      },
+      "mobile": {
+        "engine": "webkit",
+        "browserVersion": "26.0",
+        "revision": "2248",
+        "evidence": "installed Playwright browser metadata and unchanged iPhone 13 project; Hair Lounge failure trace confirms WebKit"
+      }
+    },
+    "baselineHistory": [
+      {
+        "file": "home-desktop.png",
+        "lastCommit": "bda75da3bf235917eda587650279aaa2c94815a2 2026-09-13T18:36:32+02:00 fix: rooms page layout, gallery frames, duplicate headings and nav gaps"
+      },
+      {
+        "file": "home-mobile.png",
+        "lastCommit": "bda75da3bf235917eda587650279aaa2c94815a2 2026-09-13T18:36:32+02:00 fix: rooms page layout, gallery frames, duplicate headings and nav gaps"
+      },
+      {
+        "file": "about-desktop.png",
+        "lastCommit": "bda75da3bf235917eda587650279aaa2c94815a2 2026-09-13T18:36:32+02:00 fix: rooms page layout, gallery frames, duplicate headings and nav gaps"
+      },
+      {
+        "file": "about-mobile.png",
+        "lastCommit": "bda75da3bf235917eda587650279aaa2c94815a2 2026-09-13T18:36:32+02:00 fix: rooms page layout, gallery frames, duplicate headings and nav gaps"
+      }
+    ],
+    "interpretation": "Public live-slot preflight only; not a test of the staged newsletter candidate. Required candidate gates remain authoritative.",
+    "sourceIdentity": {
+      "stagingBase": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "controllerDevelop": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "cloneHead": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "unchanged": true
+    }
+  }
+]

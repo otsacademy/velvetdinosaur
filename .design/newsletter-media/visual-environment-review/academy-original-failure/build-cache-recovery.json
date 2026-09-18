@@ -1,0 +1,11 @@
+{
+  "site": "academy-partnership",
+  "commit": "02ac1730cf876a289d97761f23213891f9c1092b",
+  "at": "2026-09-18T20:22:38.604Z",
+  "reason": "Tracked TypeScript5.9.3 cache changed by the first runner quality pass; file mtime20:04:28UTC falls within that recorded pass, clean tracked candidate was checked before quality. Only this generated clone artifact was dirty.",
+  "generatedSha256": "5e476bc1cb8b20c0cfa97ca2c691014400366649973a238a1d571619b8b3806a",
+  "restoredSha256": "bbcef2283000f760028bb16ff104b7a6b3a0e31ce830c91628a8ee56bb7e1593",
+  "privateBackup": "/srv/apps/.ops/newsletter-media/academy-partnership/.git/newsletter-first-quality-tsconfig.tsbuildinfo",
+  "gitStatusAfter": "",
+  "sourceOrBaselineChanges": false
+}

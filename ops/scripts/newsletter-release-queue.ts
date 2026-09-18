@@ -11,6 +11,7 @@ import { captureLiveSnapshot, deploymentAction, prepareReleaseAttempt, requireRe
 import { captureAndRestoreTrackedDeploymentState } from './newsletter-release-operational-state';
 import { verifyNewsletterLighthouse } from './newsletter-release-lighthouse';
 import { reviewedVisualEnvironment } from './newsletter-release-fonts';
+import { withTrackedTypeScriptCache } from './newsletter-release-typescript-cache';
 
 type Options = {
   mode: 'dry-run' | 'stage' | 'release'; sites: string[]; remainingDemos: boolean;
@@ -142,8 +143,11 @@ async function executeSite(options: Options, site: InventorySite, review: Return
     await step('install-frozen-lockfile', () => run('bun', ['install', '--frozen-lockfile']));
     const visualEnvironment = reviewedVisualEnvironment(clone, site, options.catalogDirectory, childEnv);
     report.visualEnvironment = visualEnvironment.evidence; save();
-    const qualityStartedAt = Date.now();
-    await runNewsletterQuality((args, environment) => run('bun', args, clone, environment), visualEnvironment.environment, step);
+    let qualityStartedAt = 0;
+    await withTrackedTypeScriptCache({ clone, commit }, async () => {
+      qualityStartedAt = Date.now();
+      await runNewsletterQuality((args, environment) => run('bun', args, clone, environment), visualEnvironment.environment, step);
+    }, (evidence) => { report.typescriptBuildCache = evidence; save(); });
     if (JSON.stringify(reviewedVisualEnvironment(clone, site, options.catalogDirectory, childEnv).evidence) !== JSON.stringify(visualEnvironment.evidence)) {
       throw new Error('Visual environment changed during quality checks.');
     }

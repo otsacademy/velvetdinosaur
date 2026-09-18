@@ -1,0 +1,184 @@
+{
+  "site": "hair-lounge-chipping-norton",
+  "recordedLiveCommit": "efa869b05450459c1b8f8f862ebc13312de8d6df",
+  "stagedBaseCommit": "e333c63c632c13eefc25b97a34612d5f73f9eaee",
+  "comparisons": [
+    {
+      "file": "app/(site)/[...slug]/page.tsx",
+      "stagedSha256": "0d2dafa313191f9d77ffaf0169491692444fbc6189bff2221d02cc1ecbeabbe4",
+      "liveSha256": "0d2dafa313191f9d77ffaf0169491692444fbc6189bff2221d02cc1ecbeabbe4",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/(site)/layout.tsx",
+      "stagedSha256": "496e9354b7c2a47270c0d81b7576e6ed6d50200d401585de536c67bace2a63ba",
+      "liveSha256": "496e9354b7c2a47270c0d81b7576e6ed6d50200d401585de536c67bace2a63ba",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/globals.css",
+      "stagedSha256": "277b5be78adfecc82be8c1ffc2b733b180da20f21a54d4fdf9f76dae78c20c14",
+      "liveSha256": "277b5be78adfecc82be8c1ffc2b733b180da20f21a54d4fdf9f76dae78c20c14",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/hairlounge-chrome.css",
+      "stagedSha256": "272ffc486888f507313ec7c555bde88cc317ef6fddec332540cdc8fdf2f14938",
+      "liveSha256": "d54593b9797ff6b22bdcbb04e3f0e7cf9b37034da1f4c6070e96db03241b7505",
+      "liveMatchesRecordedCommit": true,
+      "same": false
+    },
+    {
+      "file": "app/hairlounge-pages.css",
+      "stagedSha256": "1b40b5009d0e6a14f3c9835095288b8512d22bcaa14e38529185eca60103543c",
+      "liveSha256": "1b40b5009d0e6a14f3c9835095288b8512d22bcaa14e38529185eca60103543c",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/hairlounge-salon.css",
+      "stagedSha256": "e9fe456cf9b08599da1837e634a7afc8287d12839683c2b94870f3da678c33f1",
+      "liveSha256": "e9fe456cf9b08599da1837e634a7afc8287d12839683c2b94870f3da678c33f1",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/hairlounge-sections.css",
+      "stagedSha256": "1b9076311a04fa964a96b936a6c041a71e054246abc2afde580222c96876b950",
+      "liveSha256": "1b9076311a04fa964a96b936a6c041a71e054246abc2afde580222c96876b950",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/hairlounge.css",
+      "stagedSha256": "7c72d407c958af64845999060c0468dca8a970c0931c261750982f8c6ffabbca",
+      "liveSha256": "7c72d407c958af64845999060c0468dca8a970c0931c261750982f8c6ffabbca",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "app/layout.tsx",
+      "stagedSha256": "75b571d59e328bf00eb24f56ef787d3170e8117b85f2b9bdd27c18193b142138",
+      "liveSha256": "75b571d59e328bf00eb24f56ef787d3170e8117b85f2b9bdd27c18193b142138",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-chrome.tsx",
+      "stagedSha256": "640e4f49cf0733c4938ba55d9d107b3645305753c3d2132b49cde5af1dbcd48b",
+      "liveSha256": "640e4f49cf0733c4938ba55d9d107b3645305753c3d2132b49cde5af1dbcd48b",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-home-2.tsx",
+      "stagedSha256": "6125292c567fb521be4bf673f3ecc1f332122b7280c2899df68f0c54f3965882",
+      "liveSha256": "6125292c567fb521be4bf673f3ecc1f332122b7280c2899df68f0c54f3965882",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-home.tsx",
+      "stagedSha256": "c8f4612df10de3b943ac02a65e80bc6fd993d9f3a08f5b931d8c5ac479c763db",
+      "liveSha256": "c8f4612df10de3b943ac02a65e80bc6fd993d9f3a08f5b931d8c5ac479c763db",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-prices-2.tsx",
+      "stagedSha256": "3667638a102433ddc9b445c832d6917ea26ce77f49560b3bfb086fe2138f5b56",
+      "liveSha256": "3667638a102433ddc9b445c832d6917ea26ce77f49560b3bfb086fe2138f5b56",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-prices.tsx",
+      "stagedSha256": "5e159e7e4dbe483d09a51e07291e5a93cd88467741d1972ef05259927b4eed03",
+      "liveSha256": "5e159e7e4dbe483d09a51e07291e5a93cd88467741d1972ef05259927b4eed03",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-salon.tsx",
+      "stagedSha256": "8cf02b890e7f8c0cca3e43367b686cbd1b02df5ddb0e95aa5aa2cb6a50d8abe2",
+      "liveSha256": "8cf02b890e7f8c0cca3e43367b686cbd1b02df5ddb0e95aa5aa2cb6a50d8abe2",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/blocks/store/hairlounge-team.tsx",
+      "stagedSha256": "bdfeb78638df605e90f19976d4dd7d7167e23e7a426e4271290333e6d241ac25",
+      "liveSha256": "bdfeb78638df605e90f19976d4dd7d7167e23e7a426e4271290333e6d241ac25",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/block-defaults.ts",
+      "stagedSha256": "c8c16a2b89ee1304e528e87065ae11b919c5bbd7b4164cfd1ba35a31ab6e5f6f",
+      "liveSha256": "c8c16a2b89ee1304e528e87065ae11b919c5bbd7b4164cfd1ba35a31ab6e5f6f",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/content.ts",
+      "stagedSha256": "58887d906d1129f3d8eaea2bd1aecf3fd41a6487b81c302b13e4020e4b4ecd08",
+      "liveSha256": "58887d906d1129f3d8eaea2bd1aecf3fd41a6487b81c302b13e4020e4b4ecd08",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/fields.ts",
+      "stagedSha256": "6168c83301bdb4b8bed18d8abdbc0eb44d9585dd8d9c0bf6dc7f6fa556049646",
+      "liveSha256": "6168c83301bdb4b8bed18d8abdbc0eb44d9585dd8d9c0bf6dc7f6fa556049646",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/hairlounge-fonts.ts",
+      "stagedSha256": "57733cbf3683295b0aa5ea805d2065033bb771ef72b6fd4c2ef8898f2f70cbfd",
+      "liveSha256": "57733cbf3683295b0aa5ea805d2065033bb771ef72b6fd4c2ef8898f2f70cbfd",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/header.client.tsx",
+      "stagedSha256": "43f62fd7d2bbe6480a37b4e4fe6bd661606f0b92e1d7638dd48fb7d2ceb74ea3",
+      "liveSha256": "253c65f4bb14876ce5841bf6a1a4e5ba1271fb0520c97af6fb470995bdbd6cf6",
+      "liveMatchesRecordedCommit": true,
+      "same": false
+    },
+    {
+      "file": "components/hairlounge/photos.ts",
+      "stagedSha256": "6333b7f32cd93fe6871c3b34a631a0c1a3d4ad34880753fa9c46f00310a04826",
+      "liveSha256": "6333b7f32cd93fe6871c3b34a631a0c1a3d4ad34880753fa9c46f00310a04826",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/shared.tsx",
+      "stagedSha256": "21e9185717a8a21c518ddbef954c0b82c16c8d79a1b26fa1cb68b968f0cae49c",
+      "liveSha256": "21e9185717a8a21c518ddbef954c0b82c16c8d79a1b26fa1cb68b968f0cae49c",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/hairlounge/subnav.client.tsx",
+      "stagedSha256": "36356c424b056c4107749e27c0eaefb7a8591cfaba662183ad6adc9c354d6f03",
+      "liveSha256": "36356c424b056c4107749e27c0eaefb7a8591cfaba662183ad6adc9c354d6f03",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    },
+    {
+      "file": "components/site/site-design-frame.tsx",
+      "stagedSha256": "26b5576a813c05c4b2b3d31281a14a44a15868ccb4431a702e13dd628797c65b",
+      "liveSha256": "26b5576a813c05c4b2b3d31281a14a44a15868ccb4431a702e13dd628797c65b",
+      "liveMatchesRecordedCommit": true,
+      "same": true
+    }
+  ],
+  "mobileChangeCommit": "fbeaa5dd0179b5e7152c316e69fe6c47d63bf912 2026-09-14T14:17:26+02:00 fix(header): keep the burger on screen at phone widths",
+  "interpretation": "Live public source still has the older mobile header. The September 14 source commit adjusts phone wordmark sizing, hides the booking button below 640px, moves booking into the menu, and updates mobile baselines. This is concrete source/baseline age mismatch; the live failures do not establish an environment defect or predict staged-candidate failure."
+}
