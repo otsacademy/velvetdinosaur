@@ -31,18 +31,27 @@ async function main() {
   const ownerSite = assetOwnerSite();
   const reviewed: Array<{ key: string; bucket: string; originalKey: string | null; ownerSite: string | null; updatedAt: Date | null }> = [];
   // Verify the complete manifest before making any ownership changes.
-  for (const item of manifest.assets) {
-    const asset = await Asset.findOne({ key: item.key, deletedAt: null }).lean() as { bucket?: string; ownerSite?: string; originalKey?: string; updatedAt?: Date } | null;
-    if (!asset?.bucket) throw new Error(`No current-site library record exists for ${item.key}.`);
-    if (asset.ownerSite && asset.ownerSite !== ownerSite) throw new Error(`Conflicting ownership for ${item.key}.`);
-    if (mediaChecksum(await readMediaBytes(asset.bucket, item.key)) !== item.sha256) throw new Error(`The reviewed bytes have changed for ${item.key}.`);
-    if (asset.originalKey) {
-      if (!item.originalSha256 || mediaChecksum(await readMediaBytes(asset.bucket, asset.originalKey)) !== item.originalSha256) {
-        throw new Error(`The private original must also have a reviewed checksum for ${item.key}.`);
+  for (let offset = 0; offset < manifest.assets.length; offset += 4) {
+    // Small read-only batches bound memory and make large reviewed imports practical.
+    const batch = await Promise.all(manifest.assets.slice(offset, offset + 4).map(async (item) => {
+      const asset = await Asset.findOne({ key: item.key, deletedAt: null }).lean() as { bucket?: string; ownerSite?: string; originalKey?: string; updatedAt?: Date } | null;
+      if (!asset?.bucket) throw new Error(`No current-site library record exists for ${item.key}.`);
+      if (asset.ownerSite && asset.ownerSite !== ownerSite) throw new Error(`Conflicting ownership for ${item.key}.`);
+      try {
+        if (mediaChecksum(await readMediaBytes(asset.bucket, item.key)) !== item.sha256) throw new Error('The reviewed bytes have changed.');
+        if (asset.originalKey && (!item.originalSha256 || mediaChecksum(await readMediaBytes(asset.bucket, asset.originalKey)) !== item.originalSha256)) {
+          throw new Error('The private original must also have a reviewed checksum.');
+        }
+      } catch (error) {
+        throw new Error(`Unable to verify ${item.key}: ${error instanceof Error ? error.message : 'Storage read failed.'}`);
       }
+      return { key: item.key, bucket: asset.bucket, originalKey: asset.originalKey || null,
+        ownerSite: asset.ownerSite || null, updatedAt: asset.updatedAt || null };
+    }));
+    reviewed.push(...batch);
+    if (reviewed.length % 100 === 0 || reviewed.length === manifest.assets.length) {
+      console.log(JSON.stringify({ site: manifest.site, phase: 'verification', verified: reviewed.length, total: manifest.assets.length }));
     }
-    reviewed.push({ key: item.key, bucket: asset.bucket, originalKey: asset.originalKey || null,
-      ownerSite: asset.ownerSite || null, updatedAt: asset.updatedAt || null });
   }
   if (args.includes('--apply')) {
     for (const item of reviewed) {

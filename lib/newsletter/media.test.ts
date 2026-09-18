@@ -9,7 +9,7 @@ import { Asset } from '@/models/Asset';
 import { NewsletterMedia } from '@/models/NewsletterMedia';
 import { NewsletterCampaign } from '@/models/NewsletterCampaign';
 import { prepareNewsletterMedia, loadNewsletterMedia, selectNewsletterMedia, cleanupNewsletterMedia, retainNewsletterMediaImages } from './media';
-import { getNewsletterMediaRecord } from './media-storage';
+import { getNewsletterMediaRecord, readMediaBytes } from './media-storage';
 import type { NewsletterMediaRecord } from './media-storage';
 
 const pdf = Buffer.from('%PDF-1.7\n1 0 obj<</Type/Catalog>>endobj\n%%EOF');
@@ -71,7 +71,7 @@ beforeEach(() => {
     return query(record || null);
   });
   spyOn(mediaModel, 'deleteOne').mockImplementation(async (filter: { id: string }) => { records.delete(filter.id); });
-  spyOn(r2, 'getR2Client').mockReturnValue({ send: async (command: GetObjectCommand | PutObjectCommand | DeleteObjectCommand) => {
+  spyOn(r2, 'getR2Client').mockReturnValue({ destroy: () => undefined, send: async (command: GetObjectCommand | PutObjectCommand | DeleteObjectCommand) => {
     const key = String(command.input.Key);
     if (command instanceof PutObjectCommand) {
       expect([...records.values()].some((record) => record.storageKey === key)).toBe(true);
@@ -101,6 +101,59 @@ function addAsset(key: string, bytes: Buffer = pdf) {
   assets.set(key, { key, bucket: 'shared-bucket', ownerSite: assetOwnerSite(), ownershipSource: 'upload', name: 'Newsletter file' });
   objects.set(key, bytes);
 }
+
+describe('bounded newsletter storage reads', () => {
+  function storage(send: (command: GetObjectCommand, options: { abortSignal: AbortSignal }) => Promise<{ Body?: Readable; ContentLength?: number }>) {
+    const destroy = mock(() => undefined);
+    spyOn(r2, 'getR2Client').mockReturnValue({ send, destroy } as unknown as ReturnType<typeof r2.getR2Client>);
+    return destroy;
+  }
+
+  test('a stalled response stream times out and releases the request, body and client', async () => {
+    const body = new Readable({ read() {} });
+    body.push(Buffer.from('partial'));
+    let signal: AbortSignal | undefined;
+    const destroy = storage(async (_command, options) => {
+      signal = options.abortSignal;
+      return { Body: body, ContentLength: 100 };
+    });
+    const started = Date.now();
+    await expect(readMediaBytes('bucket', 'uploads/stalled.pdf', 1024, 20)).rejects.toThrow('timed out');
+    expect(Date.now() - started).toBeLessThan(1000);
+    expect(signal?.aborted).toBe(true);
+    expect(body.destroyed).toBe(true);
+    expect(destroy).toHaveBeenCalledTimes(1);
+  });
+
+  test('the deadline also covers stalled response headers and destroys any late body', async () => {
+    let release: ((response: { Body: Readable }) => void) | undefined;
+    let signal: AbortSignal | undefined;
+    const destroy = storage((_command, options) => {
+      signal = options.abortSignal;
+      return new Promise((resolve) => { release = resolve; });
+    });
+    await expect(readMediaBytes('bucket', 'uploads/stalled.pdf', 1024, 20)).rejects.toThrow('timed out');
+    expect(signal?.aborted).toBe(true);
+    expect(destroy).toHaveBeenCalledTimes(1);
+    const body = new Readable({ read() {} });
+    release!({ Body: body });
+    await Promise.resolve();
+    expect(body.destroyed).toBe(true);
+  });
+
+  test.each([5, 3])('rejects oversized headers or streamed bytes and cleans up (declared size %s)', async (declaredSize) => {
+    const body = Readable.from([Buffer.from('12345')]);
+    let signal: AbortSignal | undefined;
+    const destroy = storage(async (_command, options) => {
+      signal = options.abortSignal;
+      return { Body: body, ContentLength: declaredSize };
+    });
+    await expect(readMediaBytes('bucket', 'uploads/large.pdf', 4, 100)).rejects.toThrow('too large');
+    expect(signal?.aborted).toBe(true);
+    expect(body.destroyed).toBe(true);
+    expect(destroy).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('newsletter media preparation and retention', () => {
   test('rejects missing, backfilled and cross-site assets without reading shared storage', async () => {

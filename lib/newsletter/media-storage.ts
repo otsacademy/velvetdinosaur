@@ -23,20 +23,44 @@ export async function requireMediaDatabase() {
   return assetOwnerSite();
 }
 
-export async function readMediaBytes(bucket: string, key: string, limit = NEWSLETTER_SOURCE_BYTES) {
-  const object = await getR2Client().send(new GetObjectCommand({ Bucket: bucket, Key: key }));
-  if (!object.Body || (object.ContentLength != null && object.ContentLength > limit)) throw new Error('The selected file is missing or too large.');
-  const chunks: Buffer[] = [];
-  let size = 0;
-  // A bounded stream protects against incorrect object metadata as well.
-  for await (const chunk of object.Body as AsyncIterable<Uint8Array>) {
-    const bytes = Buffer.from(chunk);
-    size += bytes.length;
-    if (size > limit) throw new Error('The selected file is too large.');
-    chunks.push(bytes);
+export async function readMediaBytes(bucket: string, key: string, limit = NEWSLETTER_SOURCE_BYTES, timeoutMs = 60_000) {
+  const client = getR2Client();
+  const controller = new AbortController();
+  const timeoutError = new Error('Reading the newsletter file timed out. Try again.');
+  let body: (AsyncIterable<Uint8Array> & { destroy?: () => void }) | undefined;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let completed = false;
+  const deadline = new Promise<never>((_resolve, reject) => {
+    timer = setTimeout(() => reject(timeoutError), timeoutMs);
+  });
+  const read = async () => {
+    const object = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }), { abortSignal: controller.signal });
+    body = object.Body as typeof body;
+    // A late response still needs cleanup if the SDK did not honor cancellation.
+    if (controller.signal.aborted) { body?.destroy?.(); throw timeoutError; }
+    if (!body || (object.ContentLength != null && object.ContentLength > limit)) throw new Error('The selected file is missing or too large.');
+    const chunks: Buffer[] = [];
+    let size = 0;
+    // Enforce the deadline through the entire stream, not just response headers.
+    for await (const chunk of body) {
+      const bytes = Buffer.from(chunk);
+      size += bytes.length;
+      if (size > limit) throw new Error('The selected file is too large.');
+      chunks.push(bytes);
+    }
+    if (!size) throw new Error('The selected file is empty.');
+    return Buffer.concat(chunks);
+  };
+  try {
+    const bytes = await Promise.race([read(), deadline]);
+    completed = true;
+    return bytes;
+  } finally {
+    clearTimeout(timer);
+    if (!completed) controller.abort();
+    body?.destroy?.();
+    client.destroy();
   }
-  if (!size) throw new Error('The selected file is empty.');
-  return Buffer.concat(chunks);
 }
 
 export async function resolveNewsletterSource(assetKey: string) {
