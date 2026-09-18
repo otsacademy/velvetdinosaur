@@ -1,0 +1,1770 @@
+{
+  "generatedAt": "2026-09-18T18:34:51.027Z",
+  "baseline": "hub071a1be",
+  "templateBase": "0d8aa83",
+  "sites": [
+    {
+      "slug": "academy-partnership",
+      "source": "/srv/apps/academy-partnership",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "asap",
+      "source": "/srv/apps/asap",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 57,
+        "merge-conflict": 1,
+        "existing-new-file-review": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "app/api/internal/newsletter-dispatch-cron/route.ts",
+          "mode": "existing-new-file-review"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bakewell-pudding",
+      "source": "/srv/apps/bakewell-pudding",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bank-house",
+      "source": "/srv/apps/bank-house",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bath-street-dental",
+      "source": "/srv/apps/bath-street-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "blue-anchor",
+      "source": "/srv/apps/blue-anchor",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bodalwyn-aberystwyth",
+      "source": "/srv/apps/bodalwyn-aberystwyth",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bubbleton-tenby",
+      "source": "/srv/apps/bubbleton-tenby",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "burford-road-dental",
+      "source": "/srv/apps/burford-road-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "buscot-manor",
+      "source": "/srv/apps/buscot-manor",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "bush-farm",
+      "source": "/srv/apps/bush-farm",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "claire-lewis",
+      "source": "/srv/apps/claire-lewis",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "contour-leek",
+      "source": "/srv/apps/contour-leek",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "corn-street-dental",
+      "source": "/srv/apps/corn-street-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "cotswold-dental",
+      "source": "/srv/apps/cotswold-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "eynsham-dental",
+      "source": "/srv/apps/eynsham-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "fringe-hair-beauty",
+      "source": "/srv/apps/fringe-hair-beauty",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "glamour-and-glow",
+      "source": "/srv/apps/glamour-and-glow",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "go-engineers",
+      "source": "/srv/apps/go-engineers",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "hair-lounge-chipping-norton",
+      "source": "/srv/apps/hair-lounge-chipping-norton",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 37,
+        "add": 58,
+        "already-current": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": []
+    },
+    {
+      "slug": "halls-gardening",
+      "source": "/srv/apps/halls-gardening",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "higher-farm-malpas",
+      "source": "/srv/apps/higher-farm-malpas",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "home-farm-salon",
+      "source": "/srv/apps/home-farm-salon",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "homedene-farm",
+      "source": "/srv/apps/homedene-farm",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "il-botanico",
+      "source": "/srv/apps/il-botanico",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "jamesons-witney",
+      "source": "/srv/apps/jamesons-witney",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "maggies-fish",
+      "source": "/srv/apps/maggies-fish",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "marthas-coffee",
+      "source": "/srv/apps/marthas-coffee",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "michaels-malmesbury",
+      "source": "/srv/apps/michaels-malmesbury",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "new-inn-lechlade",
+      "source": "/srv/apps/new-inn-lechlade",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "number-47-grassington",
+      "source": "/srv/apps/number-47-grassington",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "old-craft-barn",
+      "source": "/srv/apps/old-craft-barn",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "pokhara-delight",
+      "source": "/srv/apps/pokhara-delight",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "popty-cara",
+      "source": "/srv/apps/popty-cara",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 37,
+        "add": 58,
+        "already-current": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": []
+    },
+    {
+      "slug": "portway-dental",
+      "source": "/srv/apps/portway-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "powys-country-house",
+      "source": "/srv/apps/powys-country-house",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "rees-russell",
+      "source": "/srv/apps/rees-russell",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "riverside-lechlade",
+      "source": "/srv/apps/riverside-lechlade",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "salutation-inn",
+      "source": "/srv/apps/salutation-inn",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 37,
+        "add": 58,
+        "already-current": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": []
+    },
+    {
+      "slug": "simas-beauty-witney",
+      "source": "/srv/apps/simas-beauty-witney",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "small-talk-tearooms",
+      "source": "/srv/apps/small-talk-tearooms",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "star-inn-woodstock",
+      "source": "/srv/apps/star-inn-woodstock",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "teddington-cheese",
+      "source": "/srv/apps/teddington-cheese",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "thebrave",
+      "source": "/srv/apps/thebrave",
+      "sourceRef": "develop c04ccd5b331f0a36a85bdadc241b9235cb9b4c7b",
+      "counts": {
+        "copy": 36,
+        "add": 57,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "velvetdinosaur",
+      "source": "/srv/apps/velvetdinosaur",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "already-current": 98
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": []
+    },
+    {
+      "slug": "wallys-deli",
+      "source": "/srv/apps/wallys-deli",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "white-hart-minster",
+      "source": "/srv/apps/white-hart-minster",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "white-rose-accountancy",
+      "source": "/srv/apps/white-rose-accountancy",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "witney-dental-practice",
+      "source": "/srv/apps/witney-dental-practice",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "witney-hotel",
+      "source": "/srv/apps/witney-hotel",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    },
+    {
+      "slug": "woodstock-dental",
+      "source": "/srv/apps/woodstock-dental",
+      "sourceRef": "working-tree (read-only)",
+      "counts": {
+        "copy": 35,
+        "add": 58,
+        "merge-conflict": 1,
+        "already-current": 1,
+        "merge-preserves-site-differences": 3
+      },
+      "dependencyVersions": {
+        "@platejs/media": "52.0.11",
+        "sharp": "^0.34.5",
+        "postmark": "^4.0.5",
+        "mongodb": "^6.20.0"
+      },
+      "differences": [
+        {
+          "file": "app/api/assets/replace/route.ts",
+          "mode": "merge-conflict"
+        },
+        {
+          "file": "lib/assets/image-variants.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "lib/assets/trash.server.ts",
+          "mode": "merge-preserves-site-differences"
+        },
+        {
+          "file": "models/Asset.ts",
+          "mode": "merge-preserves-site-differences"
+        }
+      ]
+    }
+  ]
+}

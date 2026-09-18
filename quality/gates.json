@@ -22,6 +22,10 @@
           "command": "bun run scripts/newsletter-mongo-test.ts"
         },
         {
+          "name": "newsletter-release",
+          "command": "bun test ops/scripts/newsletter-release-*.test.ts"
+        },
+        {
           "name": "build",
           "command": "bun run build"
         },
