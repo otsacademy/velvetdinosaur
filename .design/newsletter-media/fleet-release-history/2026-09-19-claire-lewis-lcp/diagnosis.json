@@ -32,5 +32,12 @@
   "ordinaryBrowser": "Chromium145 and152: candidate/live localhost and127.0.0.1 allheroLCP under1200ms",
   "requestTiming": "Original candidate Lighthouse hero waited7898ms for response headers; font delay was socket queuing. Fresh instrumented candidate returned all image requests in108–183ms with R2 response times89–165ms.",
   "conclusion": "Cause unproven; delay ceased after restarting only diagnostic candidate server. No application, baseline, gate or threshold changes. Full fresh manifest gates are required before release.",
-  "diagnosticServerStopped": true
+  "diagnosticServerStopped": true,
+  "outcome": "fresh-full-gates-and-release-passed",
+  "deployedCommit": "0710a0b813f2b31d987fb6e202dab17c410206fa",
+  "completedAt": "2026-09-19T12:31:12.039Z",
+  "finalLighthouse": "All twelve raw reports score100 in every required category. Desktop Home LCP572/184/163ms.",
+  "releaseEvidence": "fleet-release-final/claire-lewis.json",
+  "operationsEvidence": "fleet-release-final/claire-lewis-post-deploy.json",
+  "cause": "Unproven; no source or gate changes. Original failure remains preserved."
 }
