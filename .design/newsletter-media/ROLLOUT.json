@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T14:22:48.496Z",
+  "generatedAt": "2026-09-19T14:29:35.023Z",
   "total": 51,
   "completed": 22,
   "remaining": 29,
@@ -178,7 +178,7 @@
     {
       "site": "hair-lounge-chipping-norton",
       "completed": false,
-      "commit": "749f08e786ce2ea650e24bf50657d37f0dc7eab8",
+      "commit": "369bb126fde33e87a0d50e906a42b9c525fb113a",
       "release": "all-manifest-quality-gates",
       "operations": "pending",
       "evidence": "fleet-release-final/hair-lounge-chipping-norton.json",

@@ -1,0 +1,28 @@
+{
+  "site": "hair-lounge-chipping-norton",
+  "at": "2026-09-19T14:29:11.450Z",
+  "originalCandidate": "749f08e786ce2ea650e24bf50657d37f0dc7eab8",
+  "failure": "44 mobile Home pixels differ, within small offscreen mirror/flower photo and award image. Other three baseline checks passed.",
+  "diagnostics": "All nine isolated captures match original baseline, with and without explicit settling; timing is inferred, not deterministically reproduced.",
+  "fix": "Use existing Bush Farm test stabilization: full-page paint at CSS scale, then1000ms high-quality repaint wait before the unchanged assertion.",
+  "runtimeChanges": false,
+  "baselineChanges": false,
+  "thresholdChanges": false,
+  "visualStats": {
+    "startTime": "2026-09-19T14:26:59.736Z",
+    "duration": 49090.649000000005,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "siteFixCommit": "b06ce75e648701290e571946026adf2c363c2cdd",
+  "mergedCandidate": "948a99dd22953e2de472834587832a94f41e46c4",
+  "receipt": "Only baseCommit refreshed; all102 scoped file hashes verified unchanged.",
+  "baselineTree": "b873150f0fdcaf2f0475a587cd965cafe886aa35",
+  "controllerUnrelatedCacheSha256": "c08af901da66196235d525902e2e907f545c89db7694e29d9bd9918205cae931",
+  "diagnosticServerStopped": true,
+  "outcome": "awaiting-full-fresh-gates",
+  "candidateCommit": "369bb126fde33e87a0d50e906a42b9c525fb113a",
+  "repeatedVisualReportSha256": "965651718d77d37b0912b452fb0dc6e647a66fa194cd7b467132747b979c25ea"
+}
