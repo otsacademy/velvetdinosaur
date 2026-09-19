@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-19T11:22:35.908Z",
+  "generatedAt": "2026-09-19T12:16:22.036Z",
   "total": 51,
-  "completed": 13,
-  "remaining": 38,
+  "completed": 14,
+  "remaining": 37,
   "sites": [
     {
       "site": "academy-partnership",
@@ -96,18 +96,18 @@
     },
     {
       "site": "bush-farm",
-      "completed": false,
+      "completed": true,
       "commit": "709e4212ee5e68c3c45f103dfdeb0e527429c703",
-      "release": "all-manifest-quality-gates",
-      "operations": "pending",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/bush-farm.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/bush-farm-post-deploy.json"
     },
     {
       "site": "claire-lewis",
       "completed": false,
-      "commit": null,
-      "release": "staged",
+      "commit": "0710a0b813f2b31d987fb6e202dab17c410206fa",
+      "release": "all-manifest-quality-gates",
       "operations": "pending",
       "evidence": "fleet-release-final/claire-lewis.json",
       "operationsEvidence": null

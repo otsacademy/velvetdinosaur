@@ -8,7 +8,7 @@
   "primarySource": "https://raw.githubusercontent.com/WebKit/WebKit/main/Source/WebCore/rendering/ImageQualityController.cpp",
   "sourceDetail": "ImageQualityController uses a 500ms low-quality threshold before high-quality repaint after image scaling/live resize.",
   "proposedFix": "Committed: perform a full-page paint, then wait1000ms before the original strict screenshot assertion. Runtime source, comparison thresholds and baseline images are unchanged.",
-  "verification": "All four original baselines passed three repeated runs (12/12); scoped lint and diff checks passed. Full candidate gates still required.",
+  "verification": "All manifest gates and the median guard passed; every one of the12 raw Lighthouse reports scored100 in every required category. Exact inactive-slot deployment, health, controller fast-forward and serial media/nginx/read-only scheduler/cleanup checks passed.",
   "baselineUpdates": false,
   "thresholdChanges": false,
   "idleOnlyValidation": "Extended idle alone passed 11/12 repeated existing baseline checks; first mobile About still fails, so it is insufficient.",
@@ -16,5 +16,10 @@
   "mergedCandidate": "45f582480e3d1fdda016776ea922b8c7c65141bd",
   "receipt": "Only baseCommit refreshed to the separate site test fix; all102 reviewed file hashes reverified unchanged.",
   "candidateCommit": "709e4212ee5e68c3c45f103dfdeb0e527429c703",
-  "restartedAt": "2026-09-19T11:21:42.442Z"
+  "restartedAt": "2026-09-19T11:21:42.442Z",
+  "outcome": "resolved-and-deployed",
+  "deployedCommit": "709e4212ee5e68c3c45f103dfdeb0e527429c703",
+  "completedAt": "2026-09-19T11:40:04.910Z",
+  "releaseEvidence": "fleet-release-final/bush-farm.json",
+  "operationsEvidence": "fleet-release-final/bush-farm-post-deploy.json"
 }

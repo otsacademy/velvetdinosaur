@@ -1,0 +1,36 @@
+{
+  "at": "2026-09-19T12:16:06.153Z",
+  "candidate": "0710a0b813f2b31d987fb6e202dab17c410206fa",
+  "originalFailure": {
+    "desktopHomePerformance": [
+      65,
+      65,
+      71
+    ],
+    "liveUntouched": true
+  },
+  "reports": [
+    {
+      "name": "home",
+      "fetchTime": "2026-09-19T12:00:41.238Z",
+      "score": 0.67,
+      "lcp": 8044.21
+    },
+    {
+      "name": "live-home",
+      "fetchTime": "2026-09-19T12:13:11.398Z",
+      "score": 1,
+      "lcp": 292.237
+    },
+    {
+      "name": "instrumented-home",
+      "fetchTime": "2026-09-19T12:14:27.620Z",
+      "score": 1,
+      "lcp": 580.702
+    }
+  ],
+  "ordinaryBrowser": "Chromium145 and152: candidate/live localhost and127.0.0.1 allheroLCP under1200ms",
+  "requestTiming": "Original candidate Lighthouse hero waited7898ms for response headers; font delay was socket queuing. Fresh instrumented candidate returned all image requests in108–183ms with R2 response times89–165ms.",
+  "conclusion": "Cause unproven; delay ceased after restarting only diagnostic candidate server. No application, baseline, gate or threshold changes. Full fresh manifest gates are required before release.",
+  "diagnosticServerStopped": true
+}

@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-09-19T11:47:59.512Z",
+  "operation": "Read existing scheduled job logs only",
+  "sites": [
+    {
+      "site": "academy-partnership",
+      "at": "2026-09-19T11:45:01.954Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "asap",
+      "at": "2026-09-19T11:45:01.942Z",
+      "dryRun": false,
+      "expectedModeMatched": true,
+      "checkedCampaigns": 0,
+      "processedCampaigns": 0,
+      "sent": 0,
+      "failed": 0,
+      "skipped": 0,
+      "needsReview": 0
+    },
+    {
+      "site": "bakewell-pudding",
+      "at": "2026-09-19T11:45:01.951Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "bank-house",
+      "at": "2026-09-19T11:45:01.962Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "bath-street-dental",
+      "at": "2026-09-19T11:45:01.993Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "blue-anchor",
+      "at": "2026-09-19T11:45:01.973Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "bodalwyn-aberystwyth",
+      "at": "2026-09-19T11:45:01.990Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "bubbleton-tenby",
+      "at": "2026-09-19T11:45:01.988Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "burford-road-dental",
+      "at": "2026-09-19T11:45:01.959Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "buscot-manor",
+      "at": "2026-09-19T11:45:01.948Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "bush-farm",
+      "at": "2026-09-19T11:45:01.994Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "popty-cara",
+      "at": "2026-09-19T11:45:01.987Z",
+      "dryRun": true,
+      "expectedModeMatched": true
+    },
+    {
+      "site": "thebrave",
+      "at": "2026-09-19T11:45:01.940Z",
+      "dryRun": false,
+      "expectedModeMatched": true,
+      "checkedCampaigns": 0,
+      "processedCampaigns": 0,
+      "sent": 0,
+      "failed": 0,
+      "skipped": 0,
+      "needsReview": 0
+    },
+    {
+      "site": "velvetdinosaur",
+      "at": "2026-09-19T11:45:01.933Z",
+      "dryRun": false,
+      "expectedModeMatched": true,
+      "checkedCampaigns": 0,
+      "processedCampaigns": 0,
+      "sent": 0,
+      "failed": 0,
+      "skipped": 0,
+      "needsReview": 0
+    }
+  ]
+}
