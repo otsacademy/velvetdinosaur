@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T16:15:50.341Z",
+  "generatedAt": "2026-09-19T16:35:59.302Z",
   "managedSites": 51,
-  "verifiedSites": 27,
+  "verifiedSites": 28,
   "complete": false,
   "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
   "results": [
@@ -3936,6 +3936,170 @@
               "e05784f7d39e34e2bdeb8c76292441a4662d9d1e71ada0768148fef816d8fd12",
               "c1ed8d1664617fddc540f0a7b644d53611f6706f38aa277d4248d3d5b66f1d0e",
               "f111ad2e876cecfad31d734fe6c51833f45ff4ed8aaac20a2f10aaee31473193"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "il-botanico",
+      "commit": "0f375ac0aa1308d253ce6b9de66b85be9bfb2114",
+      "completedAt": "2026-09-19T16:35:20.591Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/il-botanico-post-deploy.json",
+          "sha256": "716391b8ad494eaa5a18b6f6402d3d0c197af5aea74e71073b3c1086fb4ea6b3"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/il-botanico-lighthouse-summary.json",
+          "sha256": "c137f14f28f78cc52b64c7670489ff74af52c37662ba7b46ecd044f3d29b24bc"
+        },
+        "release": {
+          "file": "fleet-release-final/il-botanico.json",
+          "sha256": "bb76431381ed5ee6feb463edcc6a8409ccd288f0c667a4395e0672ae2c71f5b5"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "7815d6302906478cfd0f445f4e0fef156f0754047952e50f81cd982335059484",
+              "d51a7f28e326e2f3603871a912022f6bd79632962dbf745e25215c539bd08ffb",
+              "dde556701dcc897d6e1c8a1e2c5dec88743d43a3ffb20ec4182b48a930832f73"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "f420d53a1781aec166318dae2a5ecc0ddadd1191fd7e9563488cff183e6f8ee8",
+              "6d1e71602e83e47175bdb743da54da6847e2fa8313a7028cb0f5d9f0908e4b1e",
+              "8c2fa2136b90b93a137c51c14ba646223fe0396f6d9fd181708e35aa4b875a42"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "9a2423e5f14f6c6ff4d755cf7810d264b5352872e529f39202b248b3739a2775",
+              "20428700a167894d9308190a60efe8995910763a18a6eb56c20d609bffc08da0",
+              "e5fde3c1abed8a6d72b71116048a6c2243b17aa6d8c527429671685398df953b"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "1c6e7b97bec177ff35e688fa368bfcd468c283907bc3efcc12fb743c173cdd5b",
+              "83f246f1cddfd1591752ca2b526c6a80e5f56ed4f49ab05acdb745048dcddb81",
+              "9bec57d5525c5b90897bc3b327293fc01a10209195cf7c4d78714a17a10e4c78"
             ]
           }
         ]

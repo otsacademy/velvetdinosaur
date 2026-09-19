@@ -47,5 +47,105 @@
   "mergedCandidate": "35fa405fbfd1f1987d97d74c8f94ed282ea30137",
   "receipt": "Only baseCommit refreshed; all102 scoped hashes verified unchanged.",
   "baselineTree": "99099a776380fcf78aaefa9d5ea083fbd4c33f8a",
-  "outcome": "awaiting-full-fresh-gates"
+  "outcome": "full-fresh-gates-and-post-deploy-passed",
+  "finalCommit": "0f375ac0aa1308d253ce6b9de66b85be9bfb2114",
+  "completedAt": "2026-09-19T16:35:10.860Z",
+  "lighthouseRuns": [
+    {
+      "viewport": "mobile",
+      "url": "/",
+      "scores": [
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "url": "/about",
+      "scores": [
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "url": "/",
+      "scores": [
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "url": "/about",
+      "scores": [
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        },
+        {
+          "performance": 1,
+          "accessibility": 1,
+          "best-practices": 1,
+          "seo": 1
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-19T16:15:50.306Z",
+  "generatedAt": "2026-09-19T16:35:59.260Z",
   "total": 51,
-  "completed": 27,
-  "remaining": 24,
+  "completed": 28,
+  "remaining": 23,
   "sites": [
     {
       "site": "academy-partnership",
@@ -222,18 +222,18 @@
     },
     {
       "site": "il-botanico",
-      "completed": false,
+      "completed": true,
       "commit": "0f375ac0aa1308d253ce6b9de66b85be9bfb2114",
-      "release": "all-manifest-quality-gates",
-      "operations": "pending",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/il-botanico.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/il-botanico-post-deploy.json"
     },
     {
       "site": "jamesons-witney",
       "completed": false,
-      "commit": null,
-      "release": "staged",
+      "commit": "5e894b8ec45b715b20d964fb7ff546a9b141f991",
+      "release": "all-manifest-quality-gates",
       "operations": "pending",
       "evidence": "fleet-release-final/jamesons-witney.json",
       "operationsEvidence": null
