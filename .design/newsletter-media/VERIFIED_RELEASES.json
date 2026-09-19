@@ -1,0 +1,2361 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-19T12:20:23.185Z",
+  "managedSites": 51,
+  "verifiedSites": 14,
+  "complete": false,
+  "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
+  "results": [
+    {
+      "site": "academy-partnership",
+      "commit": "02ac1730cf876a289d97761f23213891f9c1092b",
+      "completedAt": "2026-09-18T20:46:47.960Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/academy-partnership-post-deploy.json",
+          "sha256": "0f6824b14aed5231a5f5b0fadd4811ad5d8daa3b21dc5a93ae7fe19de6704871"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/academy-partnership-lighthouse-summary.json",
+          "sha256": "c41c54ee719c95c89d0801fd8906ba166f57551623717ef46f628734aca089bf"
+        },
+        "release": {
+          "file": "fleet-release-final/academy-partnership.json",
+          "sha256": "ac95b9d6282c3e0d26ecea7bc99530884cc566c70cdb170e579e060e7dbc856b"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "afdf90ca7c703e7680419e0bebea532e48037e9afbc7f96177f335efbfdcfbca",
+              "9ad71c2f03aff6669b335bf9910b83fe2414cd1e39f55fe1cad55d6ca66427b8",
+              "e23789f41fd0f088d98738293a09019e1066c1e4b1e8115a72285712040b5ce7"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "228dec857156d769f4ae9b15d7e45140d977808d5a46a8bf03bbcf45ae658c17",
+              "925cf9ef7d5430ddbdecdb86eff035f00ecaca143c8923551f1b8a953a154fcb",
+              "93331577c0269eede5cfd54e90ef6c064840d874aeddb9fdb3427a466426dff2"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c73365b3502a0df619ab533c0621c6ac226c74c47a04cde1690ff51e8995834d",
+              "7f2564e7ae4390adf16d2a1c3f7c71a096b371e930ddb76507c04b1a287f7e79",
+              "9449f66b65464c6f3459929ef443a75c96035c7547fc5d83dccf3c84619320e0"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "3436028528366e7aa585cbc5a30040337c19c2678be4951923bf094f1ab6c421",
+              "f6575ab6cc0f0902ee84b7a16f56a6122f012455cfb9a9fb733a6d15dc9af867",
+              "399e54b0ad9a514cc1b6d3e0a5659bf7a8559d87ffddfa1dfb50e3dcdcf8d7ca"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "asap",
+      "commit": "de6daf044b5335a4fa74c529a82637a2c5c47708",
+      "completedAt": "2026-09-18T19:50:32.699Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "pilot-release-final/asap-post-deploy.json",
+          "sha256": "9bbe7f19c2bb6e2d72dd0be4dd3526affd363def60f05136e31aab64e2af2a25"
+        },
+        "lighthouse": {
+          "file": "pilot-release-final/asap-lighthouse-summary.json",
+          "sha256": "2c418ecdac05ee30adb77b85013fabc8b8ffa173ea5cb23886d63c68862d280a"
+        },
+        "release": {
+          "file": "pilot-release-final/asap.json",
+          "sha256": "6f32e4529be361e8c515ec7daf0cbc10ce1b7282ddee157b5c347f51c0b0d283"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dispatch",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "83f32398d275011e29a369ff0800cb08d2e36343550e7c6157415f28cbbbe15c",
+              "e69317004f391523bebe832690d64d491a8d89e0cc3b23ba1075d1a5f7a9fe20",
+              "9b1544964f12e954d71a6915753bebda7b9ffe7e8a1ba121d41c83713453743f"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "346663e636c832682828b46e3da54bec1a2d666515554835b009c21daaedbabb",
+              "083095c763f9546aacb935a89d717d3edb91f9f1bb41d505aefca0889087806f",
+              "763434d3ceb066b17647862e357c0277fcc11f48558234750cc1997ec127c5eb"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "e37c5f78c8819cd37c2ecf133877ab558659c8629b5227bd92128a4d474ffa6a",
+              "71efb527f84d937f4cbec2a6ec68c126bcbaa38c9bf41aeb99c54014d330ece2",
+              "fdcff2d7a11244f02ca41d7e76371ba58c224a64d213fdb05c618d2e85410871"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "86530ce3d34f796a2f987be33a812c0d510019f160d85b2d7ffa079f2e2ecdf1",
+              "01ec782ca07ef2831a79eb302b80312a359ac1bc992f2a7a48e2463ecb7388d8",
+              "3a479d7cde208e8a842eac6fb1b5822fb25304b7f7d55ac39f48f016b402c7c3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bakewell-pudding",
+      "commit": "f9d90e4a5b255fe3e1dd875886acefe2be6130f5",
+      "completedAt": "2026-09-18T21:02:09.153Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bakewell-pudding-post-deploy.json",
+          "sha256": "1a0c58d610e9da6e4912a31c0d2272e5c7c34ee4a6ffaf1b7e7a822139f22f79"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bakewell-pudding-lighthouse-summary.json",
+          "sha256": "19039cb238f2839aeb74cb6d48de6d3d2978a7249b5aac85f76eb385fce981ef"
+        },
+        "release": {
+          "file": "fleet-release-final/bakewell-pudding.json",
+          "sha256": "e158da66a8a06e2ae6906c6fdb4a726198c4694c1d960ea445c6632106c63336"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "21c6219ada417780ced8b4242dbf94ec42f6b8126ed1ceec7fec13247b11a89e",
+              "5320106d9a3002ecebfc5058b47e9632b596bfd33bc9059b097fccece771f749",
+              "f75aa64f2c17fe59ac1ff5df6deeb546f56176062cc652095bea99ea311ac7c7"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "cdd2985772f58038f73aaa25172fe910e251b5570dd7a65a883a0cccf3307b1b",
+              "f22a7f488df37683450d52202a969d91ce3cf9891cc3e4a25672fb062d9307a7",
+              "a7cc83023b6c1b93c90286a0eb4bf8641b63e87c04a909f579d3c31c750118c4"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "025c1980b28014f6788ed7f7f42b696f93e73636f1803d63282be8d4e535d3e0",
+              "97dfb0348a754831c141b0e871c11ea5e92cd2b4cb21160e5950176eccdd6408",
+              "691c02030e599f538c456a083e751bff06576a19c4bcb6d2ba405c0e408e77fb"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "d931261f49148f13c245d5642f73226b51362ec552685f7a395b8495203029ac",
+              "26dfdb621f31791734ab5bb5456074db74bed36ff01d28da376c743038ceb25c",
+              "f653870163ecccf478abd27d5f1a33a18d6b7e809f0359004b70a4839b6393b4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bank-house",
+      "commit": "6184659a1b476863b93b98cc8a6ece1cc06ccbd3",
+      "completedAt": "2026-09-18T21:20:40.252Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bank-house-post-deploy.json",
+          "sha256": "b4a497fd51a906dd329297c2c2501cc664140b07b7531e8975c09766025f8be1"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bank-house-lighthouse-summary.json",
+          "sha256": "f511a593a5ef45e4087e8fce9859baa2d01e78c982cf9a0a94a168a03ab15818"
+        },
+        "release": {
+          "file": "fleet-release-final/bank-house.json",
+          "sha256": "76ede3bde4749f588b47c087c3e8d9bae75d1a6bd05e7be6663fccc0fbc7e5cc"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "dcc65c980a0fca86bb5de9638205155f09017a621cdc9eaf9e38c63a5251dda8",
+              "d6498ede622dea4bf778c3a96e6635193ca1e86fd309c64bdf00f1b7d6d77b48",
+              "31139b0e216e4c71b58fd4fc956e79f7b08c065e0c42061ba034d72ba1abbd36"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6718a5892873660288b5bc82c11ef8c6c7243a8bce30f4f5958b879f3f6d8d0c",
+              "9310a43a8a4e1ea62d49e90cc774cde17a1b318aa93c40bd2cd2370b07af1645",
+              "2e0fd45466b1e8645532b985aab05689bbe10bf7d7bcf2cdc52dc5bcae366d2b"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6cbbe59b2dead2bcbfa4fcf519160e13706a1ffba9864dbf0b7f63abb2fcd6fc",
+              "ec410f9122217024a50506e6aabeb3bd4d2fa7c9388a86264156be54f47e2969",
+              "e0c041c4405ac81bc1d486721238ea2d6cbea75bfe8717a2593914cd7ccd3fcd"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "187e3493e7343e263cb1f68ba2eff13ef32814d6f6c2d8001dfca1a0fd6d832b",
+              "d28bbc191fae13d9d70a9a826a538393cce8494376df0dbea4c4e396cb902fbc",
+              "ab3296df42e0564cac8403bf30950a97f27cee6de24dd2210430251c23cb895d"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bath-street-dental",
+      "commit": "84c702cc75d2fb3714a597dc1661b61881411f9f",
+      "completedAt": "2026-09-18T21:35:51.312Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bath-street-dental-post-deploy.json",
+          "sha256": "6aa297a4ed27cfcad9dd4ba993d4f7c3475044ab4598d39ece226535ee0e500a"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bath-street-dental-lighthouse-summary.json",
+          "sha256": "7a96024d12c7ae9adf5d4241446711476a78e642737213990ad29e98c6d38a90"
+        },
+        "release": {
+          "file": "fleet-release-final/bath-street-dental.json",
+          "sha256": "bbda4ac8a91b805c3d2c0bfeb33834b9565e2d9c3429dae0ccff69042b153b31"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6c57342651307cb8f7dc2337f828ab73b42e4467f18787bfddb4bd2f6b50fc4f",
+              "f6fec314d22b835a9cd70bef6b33944993b437107a88d7a4c1935f0ff086778a",
+              "bae99b03ceb0a2773184efdd38720e27e589bfba8e4a3712b85949a361d91980"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "a739996b2eb6a917ff09da55ab8eb91758d1d01608d59e0068f69d57b85ccb72",
+              "121062a5e8934d1cad8a8b0b235f337e5e36b865d32303e02977571a4cf26111",
+              "470d838eb2694422730889930a5fa17bf505f9d83a13affb3415d5455a1cf241"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "82707d6140c61ff2cc88be498d4cf39392e3f6384293896fd0bf242c92d3425a",
+              "17a1a3f8b0db802fb29779f5369a83a6122064a09ab004595d04d0b1a93bf383",
+              "642f5830c13fed3288a536811f7da2b3a9dda4581ffbbce485ed077b49777401"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "730334f1afc2b997daa13774d0b3d0ff061fc23f683099827606b271b7cd8445",
+              "fee145e2f7b3c2bcf0666fd302e4ad40cfa7e604b533f3ae7fd1f32f38137a47",
+              "a9b39b530c03c9c78542dcef16c5797aae5187cc246ade94f4fcf49cc16df740"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "blue-anchor",
+      "commit": "b966cf2aea31633f3eac879be2e9f0d77f170a79",
+      "completedAt": "2026-09-19T06:05:29.665Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/blue-anchor-post-deploy.json",
+          "sha256": "8d63e1be88e3408b79279b7eea7ca2bd0143c0687e141d42c386106bddc10d01"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/blue-anchor-lighthouse-summary.json",
+          "sha256": "70ee26161d8880980a891a626a155f7fee99f53152a318cfa9d5cd528f300818"
+        },
+        "release": {
+          "file": "fleet-release-final/blue-anchor.json",
+          "sha256": "a8ceaf87011a1f3c8b8e867accd85323f3f051d6941a6cecff5612689b761856"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "e00d75c03c59f4c4064e162eccc0f677aff27bf733e4390ccbb17bd7ec3e7358",
+              "c69e3d467180167ecf4deed3b19173d399bd87fdb4e489d97d791b06c4f2319f",
+              "d40f7604cd98664158694ddc5ed5d540906a68e03d47d157e6a2e055dd091b3d"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "69f203cae573b2b47bd7fd49064882816a1eb17f312b21d52552fbf4afd55f93",
+              "cf6448fb5caa86e052bdd9c68d278d1b795829f115247c2e737465b81d31afbe",
+              "127f6b328e4414f4153108dc477b1d5ec669b6ae4dad324013c9fb7765806a1b"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                99,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "2e898a7a4c71bf49f628ae9f2cc093b2a8fc745071d280af6a3d9f5093924255",
+              "d5e3992b3feaa9801d62adb1621bb83c9309fca2d2b8fc499d8e801b4710e18b",
+              "84fc5ec4a8e37de506b2937f86ed9f45e802a45ca32d6591e7a8244e82a31ef3"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "d97162c43cc853394e4409759a368663dd773115d97536a29ea8501f734e4b9b",
+              "dc539440d5fad7933371453541938d4dc22140877288146d14e1033faa884e5d",
+              "2b0424244058cfa0d1a2e4706cb89900f8cb344b3b7fbf65e4b0e7aef829d955"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bodalwyn-aberystwyth",
+      "commit": "58547a68b707486a3219ba054f06dbad1633e683",
+      "completedAt": "2026-09-19T06:21:10.743Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bodalwyn-aberystwyth-post-deploy.json",
+          "sha256": "afa22a57eec280fb5c23e210cc3cb0ce1f7a8116e67fb52bb6615a9a8a4252f5"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bodalwyn-aberystwyth-lighthouse-summary.json",
+          "sha256": "07328f7127a72e56ded265eb01225a05ff9d9221c2b81b612a4058d6f967db97"
+        },
+        "release": {
+          "file": "fleet-release-final/bodalwyn-aberystwyth.json",
+          "sha256": "edb227db7e65f472eac64a5f8851d798fa99243cbcc9d43bf2f42d8f2b2b37de"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "642a185cc0aca75a6ee628b6d9dc32ab20d341b0294da86e031cc716a93b41ff",
+              "9f9e33afc395bee5f5f6744a1837b1e2a7c9e9cef8b5e87522fa65eb4b048d18",
+              "578d585744332b8b2d8b623a335a431372d7a3b1ea79cd3931e13d8e9c55e8df"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "91abb53c26841b76887c8d5d720c39de0a21daf35a44119b0af2e6bc8570ef40",
+              "83c32424e67cf244b3ba1111d6edc58a0c3710980be08b11d8b61556dd60774a",
+              "408a7fee0b52acd44ce51da33b71ad61ef103205422cb4127443f17fc602f260"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "55d8e072fd5851a48eed69432d421a09a5d4a03d49d62ce17a8c1a001111b9c2",
+              "6ba799be222f89760e0486dc34132c7efddccbf39a4b07840201a6d414e6b483",
+              "b8ae0b0165ea9f5eb20ea30bcce18c52e5707814bdfdf4f1bd428d87b5354886"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "03f3f5e7965ea0bfcf67add2e62ef0d2a2477009a91f5eb54dea6398213a11b6",
+              "7b51fed00fc192c1e8c9945410f6eb1026720accf906fc7d72d283708dda0c2c",
+              "2a3aa14a6169c99b0902a27f60ef955e2e170cf470c5827cd1d573aaf9d81cf4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bubbleton-tenby",
+      "commit": "48dae05875a01362f41282fb51055b9a917649d0",
+      "completedAt": "2026-09-19T10:35:11.129Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bubbleton-tenby-post-deploy.json",
+          "sha256": "fb21977186432a16125f891e14e505e657a5d2ffe821a795b33cbeed2671ff26"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bubbleton-tenby-lighthouse-summary.json",
+          "sha256": "727546455a76d4d63a4c7bbceec2cbd1426b42893f904da78dd40f2accc0a868"
+        },
+        "release": {
+          "file": "fleet-release-final/bubbleton-tenby.json",
+          "sha256": "68d099b9b2af8f465c10c9fc8526264cb3216255b388fff27f7364e90c52c0ef"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "4ddf0dc50bd7dfeef268d0a4f1576648edd19fe32adc5447dbc1f653e3b4b3ea",
+              "078f6787167c0fdc1bef63c1dbc7649ea41ebe57f38b743d600a5fe68303a52d",
+              "901b4f4dce4c4d2ae22685198484c09a01e5aaf8f6c7b86cbe0853dff051579a"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "06c511693473f3ef63f9969a46e195e4997c923f97902a9d4737f407fdd2f6c0",
+              "63a6cd48a8b87cb911b5908b19192ad9a6ee0067e106a542c9bc9e0698d1bae3",
+              "0a729a7d51a76514d13fec96d571a46b3cd80a16a62ba14bf71d27f2e240b0d4"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "ab7f192d6c0f4af073e86737fe5f9d335fddcec6f9930e56151c5529e60bcb1a",
+              "d760362466cf28c23874355fe23a9274948ab2dc4be6a8e9d536208480b393a2",
+              "4daf0dfcaff2982b8b9a058bea6ab2f14554aae3e110e84de514eff3ac631d5f"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "5c0a6dbbb81825f5b54ddff85a21a56f87dc937486a3cd23fe68ac1433427e63",
+              "abc19ed7ab41ffa2602f4cce033da40e0e6932ab9fdf9c220de25b154a9ab109",
+              "fecac1df15f42044867bc1d3b24c0e63dc2b2b2cb4f42d6472736e1c31496c5b"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "burford-road-dental",
+      "commit": "8af2b7433367c34f774b3d96871d3988c5f69627",
+      "completedAt": "2026-09-19T10:51:02.417Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/burford-road-dental-post-deploy.json",
+          "sha256": "707ef2be360262d74d48e12f3a726b97c269b895614b36ac58633834fb15ddc6"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/burford-road-dental-lighthouse-summary.json",
+          "sha256": "bf1e8ee4689c696977410c1a0c1a8a48ba8587103dacb275ef63ac4b6e7b1b0f"
+        },
+        "release": {
+          "file": "fleet-release-final/burford-road-dental.json",
+          "sha256": "31f8f0f419b2753cc5c82ec9bb6dfaeb2b8e9f6f07a2c5e1e926888f5438c605"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "fb344bb344dd7193978e22b9a606d275c8b607c90d5692cf9d0cb7fb5f9fec84",
+              "71fefce8de1a154e4a60905e2baed525534d8c023fe51bba2019183a11940381",
+              "950abcafc9a4c0da71a1240146cda077fc39ad65bb88e5cc34f0d47f1d37ddb2"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c5a082eb82e19cc7bacf10efdb3adf2ee4886854a3239fbea38d2776ac8c83ab",
+              "d9ff928463d0c263809c325e7f65fd57791a5fce34f4e688247a74e73dfc84fd",
+              "8386bec55225cc28a4873027ea3f7cb3b776b47d5c009a8a57795ee5f8030aed"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                98,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6b1878ed11a30cf383c927adde3cbb61d7e27051519308d9560414e84ff08c31",
+              "8e773fe24ae1a4505f70ddc451e41a62725403e1e37f2fb8f10e72eea3b64c29",
+              "4d962a5eaced892b0910ff3e1d6a27d4c6a25bf0307c3d41315b990db1bc818f"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "46d86a6faddc73f97de5449095943ba9ec2f56ee7db8588e3fd2eb7b42509871",
+              "91254ce63dd656402b38c321c03dbbdca5a966d3e6b18c0bfd7c710840845e7d",
+              "a5acba453b2864c57eb9f4ac397552a16c3a2cdc4f4c9675791e93304a034492"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "buscot-manor",
+      "commit": "f05343d409d7fc8e1fdfe917794cd6a2add12a33",
+      "completedAt": "2026-09-19T11:06:53.852Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/buscot-manor-post-deploy.json",
+          "sha256": "cef3da472318487df4b5c77fdcd1cbc630a673e7aab38503fb6f297f3d3eb61d"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/buscot-manor-lighthouse-summary.json",
+          "sha256": "4fdc468d0fd1d4229196fe89c190f7593ef33ac6cc160573eb7e0ec0c09051c3"
+        },
+        "release": {
+          "file": "fleet-release-final/buscot-manor.json",
+          "sha256": "5f30964a3f9da389579e5ac06bb811eef77819e05b7fa3513ae137cd95ce1b97"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "7b9776ef7ebfe091688d394cc08c6022cd76609e2fd046ab92800061586fdeba",
+              "a608bce4e5a2dbdb3d841fa054c156eeaf91941b8dd55efdb8833a2f27328878",
+              "36082a8c07ea05ae6455c0d9d9f21486e5458269944cc04ed82a8cb2443ed35f"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "51dca3da09d524f54595ccfc952547fd97495f3648765e84b6215e0eadd87ee1",
+              "fc33903e70d01b282499dc624592520de979a2e80dc9f470cb9fee57cf89a7a0",
+              "ea4d344c48476cd01184a071738e32ff4d744384edf240aa6a2c1f59d2a3fed5"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                99,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "91594a3b116869bc1cd1228801d3741126daebaee11306c9e4265cf3bc9af7b6",
+              "98d8a122070c4426fa2400e3ae0670276b11364dfef6cfc97931a61bf40b5413",
+              "e6f8c01fc09742dc08446c3b4c226fa637955502591eefc25bac50ef5242c570"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "01d6e8e1afbf161d018e438a6a9f152ae43f798400e0b34a9a05388f7c647653",
+              "93f4c9ce63276c73c32fa97b99d804021aecce3fa7dff1b0b180c00ba76f841a",
+              "48437bde4abfee6b18a87232d5a6b9c28ed21771886b0226944bdc68b0304a43"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "bush-farm",
+      "commit": "709e4212ee5e68c3c45f103dfdeb0e527429c703",
+      "completedAt": "2026-09-19T11:40:04.910Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/bush-farm-post-deploy.json",
+          "sha256": "546f5b54dfec83d8c1ac6990c7d9106a10a61a0e702013947937afa8b1b48adb"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/bush-farm-lighthouse-summary.json",
+          "sha256": "911f7356fc7f3e1e3905e25e7f9d5026ef5dd4f20160dbc4d13b01c8fc7a2c7c"
+        },
+        "release": {
+          "file": "fleet-release-final/bush-farm.json",
+          "sha256": "41bedb6f44e4b0fae1b9bceb0e03ea353955afb59065572379dde7bd9b38c068"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6920b61204ad2f0effa214041afbdc744270cac4b5ed7e093069f3561638cb47",
+              "1c843f7831ea9b1c7f78f0f220d1138a2cec96196608cefd2c8a041ed9898044",
+              "5e022ce73cc118fd02aa90ceafc13e804795278d5ee4bca6b3ad0a250855f69c"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "3c3f97d87e88c166cb7dbc8f212bbf46765840c54c23fec1bfdf1309c95d9048",
+              "7b3b30aca005d75fd86724b18e8bf9d0681c3764a7d0058a5ee1cb4bf09e6d41",
+              "c57e81526d12c1a59bfc61052bd91ccded3e6e4c5defe48f5e94bcc884fb5bea"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "63f09eabb872f371184ef21760302fab71ef99c6e128238419a1a3198348b694",
+              "f1364262aeb7fe00ec4fe6e8bd5b39a3bd1730c9d9288cd9db5984897ff52dd7",
+              "6229b887678757465fcce129fba737a4dbe82c012b36c9696ec139d698519c03"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "af0c4f35f7523ab3a912640dbf9f8cfd8a0f7e64feb3d317432739db3762c97d",
+              "3834128d33e80e3e592b7382aa01e725089bdfd6adddb8268cd0175f657ac73c",
+              "53b6f5bda41ff25f0d8754bb9c39126ca04add527982a3f5cb3b2148e72ba788"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "popty-cara",
+      "commit": "9fd8e3702c5758e6c735495476ff2ec0c552e120",
+      "completedAt": "2026-09-18T19:18:11.994Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "pilot-release-final/popty-cara-post-deploy.json",
+          "sha256": "54ee26cba519d564e53194e345dac34479890bb5c23d4064143bd323ee1fce72"
+        },
+        "lighthouse": {
+          "file": "pilot-release-final/popty-cara-lighthouse-summary.json",
+          "sha256": "d1105df1764426f32311955494f02070c7c45dcb9f04f1c40b6b069b94efd391"
+        },
+        "release": {
+          "file": "pilot-release-final/popty-cara.json",
+          "sha256": "5eedf63c5a06951240d65e5ff2857e41b03b85a69bf9b459a663ebe73890b3f5"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                96,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "5b81059d604e97c57efbdb4eb78ba7af9e965c285d69d6e0e5f8f285f60f77df",
+              "90a974eeec08c129e13092bd0d440e50a8eee53cd211b13a8da45120910a8863",
+              "850a49f8cf1167e9a4fbf477a6821b3ae1dc731be6a867d70f595bf546cacc11"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "94b72b8f41bfe27adba252fa63e68c8f0c54f7343cec1043b76cdce1482c7bd8",
+              "2dfeea83bcd413f4e78de02698eba674dcd7750aa98d489f76f38831e0f6bef9",
+              "b1b0cc20cde8e0e011b672a9a988d88b25140ebe523cc0089ebb3598f056259c"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                75,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "13b7e5645150cb98969dc4c75d3352364c637beb511b1655f14253f04e2e7539",
+              "52baf905f4bab9b0f69f46f222d196621975e976dffd44eb91de466dc959b85d",
+              "19675fa6e00eceba96468e8aae9ac2de7a99b762fbbe7e906ad1c1d53abade8f"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "eef7b4166ea1f06aa95abce8c88cd19c1e8c8311eeee132b4924225e4f2e5768",
+              "0f88528f7aa2116d9451a7901f5f17107f7011ba572756b180a78266fda5714a",
+              "b7e9070f6f2b502cd4b0ce42b7f6196dcc0c5c0a2ffa3eb50530e7a44ef9839c"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "thebrave",
+      "commit": "3762efcaeb4ff673faeebe20b2b9171a307306c2",
+      "completedAt": "2026-09-18T20:02:13.616Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "pilot-release-final/thebrave-post-deploy.json",
+          "sha256": "7a5dff127214b246863f059839351030957e1f14d4edbf0845378ae800dfde5c"
+        },
+        "lighthouse": {
+          "file": "pilot-release-final/thebrave-lighthouse-summary.json",
+          "sha256": "721006f6200191f0df465e430264c8acd7f7670d0fbc589df55ab35e12552f00"
+        },
+        "release": {
+          "file": "pilot-release-final/thebrave.json",
+          "sha256": "71d17e002b7df8384f7f53c94235bd6af7ed555923b1204ccb24139d3fad92e0"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dispatch",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c947c7835ac331f41d60c1955f3ce51e54d90bda818008077d1762958de4df08",
+              "c026a0332c49b2878faaa3d189dd0faec9a71051110d44f820eb5416ec39302a",
+              "023a6591b9aed5b73ede7bfccd76412927ee6f4a9f762a4d1b9d6ea0819198b2"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c73561ebb125b21f418f38041f5a1bc083aadcad91796b6a84b1b44057ce5c4e",
+              "b063eddf809e149a334b7ad3d33a14de52f73e7d06466aed9eeb7d01e8463402",
+              "c1453c6f818b664f29c2ae3dafba86f928117bc111bf493e4e7c6c2ab81c54b3"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "3f5c59744d29a56681973d8ddeaa55b0980df32c0419992f04c7a798d846d77f",
+              "da2cbd5d878af321c35a9eca476053087522b536e822c42112107e301ab67b20",
+              "8fdc0f64fb22bd899867ad29a118cb661f850301be82e8ed54d97edda33bd6cb"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "dea84df1348d3be9b76f1f588af856087622c0521ca6fdb018db14b5b48ff56c",
+              "06cbe70848329264c2cbac3b85ca0a92ba46bba788718b6a9329350432ccff7e",
+              "21aec2820ec5b177175a60daa7d086155e9fe19e0aee0c12e033bf2b76af3f28"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "velvetdinosaur",
+      "commit": "3ac883e520438f9f1684b247c3b57342f4eeb3c4",
+      "completedAt": "2026-09-18T19:00:17.314Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "hub-release/post-deploy.json",
+          "sha256": "66a1673a34157112b98135b9fa0024ca0e9d453bdeb8353aaa700839f9be7700"
+        },
+        "lighthouse": {
+          "file": "hub-release/lighthouse-summary.json",
+          "sha256": "e894211254cee6bc8a94cf621919e2ebfe614fae754c401ad0c26b6928786813"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dispatch",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "ec20069b6cf471c5804d7b389f028cf842d7f4d7d585616b89473579d56dfbb1",
+              "2b2ab2c1a223bc948012c8dd2dddcac6eb512ef817ef1c0aa18e962c62006832",
+              "b85036797d82e4dda32dcc43a2af908bf0d0f70d7df8d4c45c2b5a03b32fe79d"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "b3fc2d845fc8b2c08e29a5e3fa8b978f0a1b7ad47b9589f894cf408b997dbe06",
+              "54b4ba1358ee8a47f745c1f3903a75733add13179a6d51ed5a7b0cf245c8be0f",
+              "645ca23ddb6eba13d9a088146facb746217d970a65136e94f623bd1cff25e93e"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/audit",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c335b899da3094255f0907d3a1d60c01173a97805bc59d622d0cd8390cb6f45d",
+              "64a3ada2529c3c68ef53dc1d656bcf620e311acb2adf1416d140d976e17a8709",
+              "30f37fe817ae5d9d1f1a79b6c4fd9615d70489b2018eba3633a61e7a36506684"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "a8a061d42e4620a0064e69db1d4f63337659eb164afb75cf36daa81a80d8ee1f",
+              "f401c8a89124a467ebd0dae6e0a44e466ccfb42d483b5a7127b218fe03df2ad7",
+              "867ed4246ade4641d6d412e37e35c5e0e5e35328b0e11c06b7a66e20cda6bcb9"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "50fdb4c377d0b682ccc06aac6b6f91f1692896352ae3707ecfe396119f0dabe3",
+              "84f85db6b9cea361a31b12668ded2fb037932f27cec811a46b68df14fbbb57d8",
+              "f51bfc175126c74c2d55aa307e13c3b5dcb256fa9da9e91468c6b720a3005014"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/audit",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "e22070e74fbeb646b215a93ddb8c1e61e7e8f6b4ee72c4fa9054c0bc803c9684",
+              "da8dac55f8ff1ac5160022028c45eb991b6f44cd29eea72248cca13b644ca98b",
+              "e306cb155eb7ee6c91dfccc630605e55215a1006d9607996eb4a9ce6725f4189"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
