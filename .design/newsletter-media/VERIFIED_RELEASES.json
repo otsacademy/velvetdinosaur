@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T17:46:41.996Z",
+  "generatedAt": "2026-09-19T18:08:34.923Z",
   "managedSites": 51,
-  "verifiedSites": 30,
+  "verifiedSites": 31,
   "complete": false,
   "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
   "results": [
@@ -4428,6 +4428,170 @@
               "5eecbde4369fafae4d95e93d0847702dd0b37b458ae4501515e4bb67bdef04ed",
               "43780df857f6dfc4447ae7ea5a268a2d0e92caa6e460db32a9132c100268ddca",
               "f181c339f4012f89a48168bc4c021c3fb05e70c3c01f3029c094b1b9676be9c2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "marthas-coffee",
+      "commit": "3a1cd0f7ac4813c97861a1219059714a377fec58",
+      "completedAt": "2026-09-19T18:06:52.540Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/marthas-coffee-post-deploy.json",
+          "sha256": "87e1c21ed1bd44846c857a147f882f66660702ef60b5f30abc33cb0f0050f69d"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/marthas-coffee-lighthouse-summary.json",
+          "sha256": "42e9c58b8b017dad74b1553e9af94b8dee3a2da9f6fd12956e3d0b0a989a990b"
+        },
+        "release": {
+          "file": "fleet-release-final/marthas-coffee.json",
+          "sha256": "f0c67c054a7854ea501e69fdb00e84d099ac0fd926d46485512d922c0d3f4982"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "49cb64fadcc79c0d11018c0ceee2f8ab2dbe11c7d3dec6acf2414da100d5cce8",
+              "3c729e630a0596f5087a25c5926d4f9e35c2519c1f2ea6545d0af4980c1c4c9c",
+              "79c4b29e56436c82d8e575f1d8dd8fb012ed383a2ec05e93b13d67813b7de34f"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "75d7ae7fd3acf09efbcf0954dc03ccc15c34748807feeb86654cd2f214c5b47c",
+              "dc1b55b00c98e2b7c513a5e4a86849fe1620e6c68806b97dc2e3e7c25dea25e3",
+              "ce244fc29e1d164953969265e17a1bf2e91c4d62c2193bb6a4f964e7649e1a11"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                99,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "88c97286165ffa4dd547277e0f941e04943e96f180655a5839e9a4653de31954",
+              "33aa8270df440e98ffbd9fecb74c1448a2a92a5ea98e004e1c9a88421ce7ee46",
+              "c59726dacfafdda4fbf1eb3f66514980cd13cf9f9f7ad10486c2331afcdb6f37"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "779d094aef5dec5abd10bb5c3171cd7aa5f49df933c3b7cf16b17888a3134a94",
+              "dda9138718aa32e7258adbfad012f59ea78b16fbfa4abd54f923cbaa5fb7f0d2",
+              "4fba8c0b46e94b5af5b8d204f22df9aed4c33e9efd0a138af69729f66344a14f"
             ]
           }
         ]

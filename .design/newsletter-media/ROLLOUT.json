@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-19T17:46:41.924Z",
+  "generatedAt": "2026-09-19T18:08:34.890Z",
   "total": 51,
-  "completed": 30,
-  "remaining": 21,
+  "completed": 31,
+  "remaining": 20,
   "sites": [
     {
       "site": "academy-partnership",
@@ -249,18 +249,18 @@
     },
     {
       "site": "marthas-coffee",
-      "completed": false,
+      "completed": true,
       "commit": "3a1cd0f7ac4813c97861a1219059714a377fec58",
-      "release": "all-manifest-quality-gates",
-      "operations": "pending",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/marthas-coffee.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/marthas-coffee-post-deploy.json"
     },
     {
       "site": "michaels-malmesbury",
       "completed": false,
-      "commit": null,
-      "release": "staged",
+      "commit": "245fac514d1b73531c939c001124459d9325bcdd",
+      "release": "failed",
       "operations": "pending",
       "evidence": "fleet-release-final/michaels-malmesbury.json",
       "operationsEvidence": null

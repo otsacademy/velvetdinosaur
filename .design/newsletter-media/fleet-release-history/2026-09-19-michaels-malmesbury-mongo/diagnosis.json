@@ -1,0 +1,20 @@
+{
+  "site": "michaels-malmesbury",
+  "at": "2026-09-19T18:10:04.339Z",
+  "candidate": "245fac514d1b73531c939c001124459d9325bcdd",
+  "failure": "Isolated Mongo setup hook exceeded Bun default5000ms before any tests ran. Teardown closed the client and reported an interrupted operation.",
+  "diagnosis": "Original temporary daemon/logs were removed by the existing cleanup; exact cause remains unproven. Unchanged isolated diagnostic passed13tests/48assertions in2.61seconds using the existing timeout.",
+  "changes": {
+    "source": false,
+    "baseline": false,
+    "threshold": false,
+    "timeout": false
+  },
+  "diagnostic": {
+    "passed": 13,
+    "failed": 0,
+    "assertions": 48,
+    "durationMs": 2610
+  },
+  "outcome": "restart-unchanged-candidate-with-full-fresh-gates"
+}
