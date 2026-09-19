@@ -22,7 +22,12 @@
   "baselineTree": "b873150f0fdcaf2f0475a587cd965cafe886aa35",
   "controllerUnrelatedCacheSha256": "c08af901da66196235d525902e2e907f545c89db7694e29d9bd9918205cae931",
   "diagnosticServerStopped": true,
-  "outcome": "awaiting-full-fresh-gates",
+  "outcome": "resolved-and-deployed",
   "candidateCommit": "369bb126fde33e87a0d50e906a42b9c525fb113a",
-  "repeatedVisualReportSha256": "965651718d77d37b0912b452fb0dc6e647a66fa194cd7b467132747b979c25ea"
+  "repeatedVisualReportSha256": "965651718d77d37b0912b452fb0dc6e647a66fa194cd7b467132747b979c25ea",
+  "deployedCommit": "369bb126fde33e87a0d50e906a42b9c525fb113a",
+  "completedAt": "2026-09-19T14:45:25.228Z",
+  "releaseEvidence": "fleet-release-final/hair-lounge-chipping-norton.json",
+  "operationsEvidence": "fleet-release-final/hair-lounge-chipping-norton-post-deploy.json",
+  "finalValidation": "Every manifest gate and Lighthouse median passed; all12 individual Lighthouse reports scored100 in required categories."
 }
