@@ -1,15 +1,15 @@
 # Active rollout handoff
 
-Updated: 2026-09-19 10:43 UTC. **11/51 sites complete; 40 remain. Work is still running.**
+Updated: 2026-09-19 10:51 UTC. **12/51 sites complete; 39 remain. Work is still running.**
 
 The user authorized revising and implementing newsletter media across the hub, ASAP, The Brave and 48 managed demos. **No Figma MCP or Snapshot MCP.** Use local Playwright. Do not send real emails for verification. Preserve unrelated work. Current developer instructions prohibit new delegation unless explicitly requested.
 
 ## Active processes
 
-- Release queue: session `9557`, log `/tmp/newsletter-fleet-release-resume41.log`, reports `fleet-release-final/`. Its 41-site selection began with Bubbleton and has advanced to Burford Road Dental. Run every manifest gate, then the independent Lighthouse median guard, exact-main blue/green deployment, health, controller fast-forward and mirror when a canonical remote exists.
-- Post-deploy watcher: session `60107`, log `/tmp/newsletter-fleet-post-deploy-resume41.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, reuses seven completed exact proofs, and waits for each healthy release. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
+- Release queue: session `9557`, log `/tmp/newsletter-fleet-release-resume41.log`, reports `fleet-release-final/`. Its 41-site selection began with Bubbleton and has advanced to Buscot Manor. Run every manifest gate, then the independent Lighthouse median guard, exact-main blue/green deployment, health, controller fast-forward and mirror when a canonical remote exists.
+- Post-deploy watcher: session `60107`, log `/tmp/newsletter-fleet-post-deploy-resume41.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, reuses eight completed exact proofs, and waits for each healthy release. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
 - Stop and fix actual failures. Preserve the failed report/log/summary and raw Lighthouse evidence before restarting an explicitly bounded list of uncompleted sites. There is no automatic gate retry or baseline update.
-- Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Root runner HEAD: `89e01babef583581ca11ea7884c34a8f5a9cf37f`.
+- Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Active fleet runner: `89e01babef583581ca11ea7884c34a8f5a9cf37f`.
 - Root hub follow-up release/mirror remains outstanding: hub production is still `3ac883e`. Later commits contain reviewed rollout tooling and documentation. Finish fleet work, commit only task files, then use the clean hub clone and `release:local` for an exact-main release. Full hub gates share port3100 with fleet gates; do not run them concurrently.
 
 ## Completed deployments
@@ -29,10 +29,11 @@ Completion requires both a healthy exact-commit release and a passed matching po
 | Blue Anchor | `b966cf2aea31633f3eac879be2e9f0d77f170a79` | `fleet-release-final/` |
 | Bodalwyn Aberystwyth | `58547a68b707486a3219ba054f06dbad1633e683` | `fleet-release-final/` |
 | Bubbleton Tenby | `48dae05875a01362f41282fb51055b9a917649d0` | `fleet-release-final/` |
+| Burford Road Dental | `8af2b7433367c34f774b3d96871d3988c5f69627` | `fleet-release-final/` |
 
 Hub, ASAP and The Brave are mirrored. Demos have no canonical remote; mirror skips are recorded. All completed sites have nginx/media isolation and daily cleanup checks. Demo schedules remain read-only. Configuration alone does not enforce the no-send policy in older, uncompleted slots.
 
-Hub gates included 142 unit tests, 13 isolated Mongo tests, 17 then-current runner tests, 52 browser tests (four existing conditional skips), all18 raw Lighthouse reports100, build/portfolio/theme checks. Popty's category medians are100, but home performance raw runs were mobile96/100/100 and desktop100/75/100; preserve that distinction. Current root runner separately passes37tests/171assertions, lint and typecheck.
+Hub gates included 142 unit tests, 13 isolated Mongo tests, 17 then-current runner tests, 52 browser tests (four existing conditional skips), all18 raw Lighthouse reports100, build/portfolio/theme checks. Popty's category medians are100, but home performance raw runs were mobile96/100/100 and desktop100/75/100; preserve that distinction. Root runner89e01ba separately passed37tests/171assertions, lint and typecheck. The hub local release now also uses the fresh three-run median guard before deployment/pushing; two additional command-isolated integration tests verify rejected medians cannot deploy or push, and valid evidence deploys the exact commit. Current combined suite: 39 tests, 178 assertions, plus lint and full typecheck passed.
 
 ASAP's dead port3003 newsletter cron was replaced by stable-origin dispatch only after all six queue counts were zero. Its first natural tick at19:55:01.652UTC on18September succeeded with zero sends/failures/review. Historical sent count remains3. Two unrelated port3003 cron jobs were preserved. Actual site-bucket image and encrypted-attachment round trips passed on Popty and ASAP without email/campaign/recipient/source-asset writes; two temporary media records per site remain for normal cleanup. Evidence is in each pilot's post-deploy/live-storage reports. Popty's initial cache-header assertion and its fingerprint limitation are recorded rather than hidden.
 
@@ -60,7 +61,7 @@ Temporary diagnostic servers31920/31921 were stopped after Bubbleton verificatio
 
 ## Remaining work and safety
 
-1. Finish40demos serially, resolving actual gate failures before any deployment. Monitor both application release and postops evidence; neither alone is completion.
+1. Finish39demos serially, resolving actual gate failures before any deployment. Monitor both application release and postops evidence; neither alone is completion.
 2. Keep tasks8/9open until every site has full gates, exact release, health, media isolation and scheduler/cleanup proof. Record mirror skips rather than inventing demo remotes.
 3. Update task documentation and final rollout summary; owner instructions are `docs/newsletter-media.md`. Commit only reviewed task changes.
 4. Complete clean exact-main hub follow-up release/mirror for later operations/docs commits after the fleet no longer uses shared quality ports.

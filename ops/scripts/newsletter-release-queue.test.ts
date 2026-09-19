@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test } from 'bun:test';
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { chmodSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
@@ -194,6 +194,66 @@ function changeJson(root: string, file: string, change: (value: Record<string, u
 }
 
 describe('newsletter release Lighthouse evidence', () => {
+  for (const passing of [false, true]) {
+    test(`hub release ${passing ? 'deploys the exact commit only after' : 'stops before deployment on failed'} median validation`, () => {
+      const fixture = lighthouseFixture(passing ? [1, 1, 1] : [1, 0.99, 0.99], [1, 1, 1]);
+      const script = path.resolve(import.meta.dir, '../../scripts/release-local.ts');
+      const bin = path.join(fixture.clone, 'bin');
+      const commandFixture = `#!${process.execPath} --no-env-file
+        import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
+        import path from 'node:path';
+        const command = path.basename(process.argv[1]);
+        const args = process.argv.slice(2);
+        appendFileSync('calls.jsonl', JSON.stringify([command, ...args]) + '\\n');
+          let stdout = '';
+          if (command === 'git') {
+            const key = args.join(' ');
+            if (key === 'branch --show-current') stdout = 'main';
+            else if (key === 'status --porcelain') stdout = '';
+            else if (key === 'rev-parse HEAD') stdout = ${JSON.stringify(fixture.commit)};
+            else if (key === 'rev-parse --absolute-git-dir') stdout = ${JSON.stringify(path.join(fixture.clone, '.git'))};
+            else if (key === 'remote get-url origin') stdout = 'git@example.test:fixture.git';
+            else if (key !== 'push -u origin main') throw new Error('Unexpected mocked Git command');
+          } else if (command === 'bun') {
+            if (args[1] === 'quality') {
+              for (const viewport of ['mobile', 'desktop']) {
+                for (let i = 0; i < 3; i++) {
+                  const file = '.lighthouseci/' + viewport + '/' + i + '.report.json';
+                  const report = JSON.parse(readFileSync(file, 'utf8'));
+                  report.fetchTime = new Date().toISOString();
+                  writeFileSync(file, JSON.stringify(report));
+                  await Bun.sleep(3);
+                }
+              }
+            }
+            else if (!['quality:validate', 'deploy:blue-green'].includes(args[1])) throw new Error('Unexpected mocked Bun command');
+          } else throw new Error('No real external commands are allowed');
+          process.stdout.write(stdout);
+      `;
+      for (const name of ['git', 'bun']) {
+        write(fixture.clone, `bin/${name}`, commandFixture);
+        chmodSync(path.join(bin, name), 0o700);
+      }
+      const result = spawnSync(process.execPath, ['--no-env-file', script], {
+        cwd: fixture.clone, encoding: 'utf8', timeout: 20_000,
+        env: { PATH: bin, HOME: fixture.clone, NODE_ENV: 'test' }
+      });
+      const calls = readFileSync(path.join(fixture.clone, 'calls.jsonl'), 'utf8').trim().split('\n').map((line) => JSON.parse(line));
+      const deployments = calls.filter((call: string[]) => call[0] === 'bun' && call[2] === 'deploy:blue-green');
+      const pushes = calls.filter((call: string[]) => call[0] === 'git' && call[1] === 'push');
+      if (passing) {
+        expect(result.status).toBe(0);
+        expect(deployments).toEqual([['bun', 'run', 'deploy:blue-green', '--', '--env-file=.env.production', `--commit=${fixture.commit}`]]);
+        expect(pushes).toHaveLength(1);
+      } else {
+        expect(result.status).not.toBe(0);
+        expect(result.stderr).toContain('medians must be exactly 100');
+        expect(deployments).toHaveLength(0);
+        expect(pushes).toHaveLength(0);
+      }
+    });
+  }
+
   test('accepts three-run median 100 with variance and records only sanitized raw scores', () => {
     const options = lighthouseFixture();
     const result = verifyNewsletterLighthouse(options);

@@ -1,10 +1,10 @@
 # Build tasks: newsletter images and attachments
 
 Date: 2026-09-19
-Status: 11 of 51 sites have completed release and post-deploy verification. The serial queue is running from Burford Road Dental for the remaining 40 sites; rollout is not complete.
+Status: 12 of 51 sites have completed release and post-deploy verification. The serial queue is running from Buscot Manor for the remaining 39 sites; rollout is not complete.
 Source: [DESIGN_BRIEF.md](./DESIGN_BRIEF.md). Findings and qualifications: [AUDIT.md](./AUDIT.md).
 
-Current checkpoint (2026-09-19): **11/51 sites are released and operationally verified; 40 remain.** Blue Anchor, Bodalwyn and Bubbleton completed. Bubbleton’s static-cache fix passed all gates, including all 12 Lighthouse reports at 100 in the required categories; its public page and stylesheet cache policies were checked after deployment. No baseline or threshold changes. See [SESSION_STATUS.md](./SESSION_STATUS.md) and [ROLLOUT.json](./ROLLOUT.json) for current evidence.
+Current checkpoint (2026-09-19): **12/51 sites are released and operationally verified; 39 remain.** Blue Anchor, Bodalwyn and Bubbleton completed. Bubbleton’s static-cache fix passed all gates, including all 12 Lighthouse reports at 100 in the required categories; its public page and stylesheet cache policies were checked after deployment. No baseline or threshold changes. See [SESSION_STATUS.md](./SESSION_STATUS.md) and [ROLLOUT.json](./ROLLOUT.json) for current evidence.
 
 ## Decisions
 
@@ -28,12 +28,12 @@ Current checkpoint (2026-09-19): **11/51 sites are released and operationally ve
 - Manual Dispatch uses up to 25 passes of 500 deliveries per campaign, not one batch of 80. The repaired ASAP cron preserves its 200-per-campaign limit and now supports authenticated read-only dry runs.
 - Velvet Dinosaur now runs reviewed commit `3ac883e` from blue port 3061, after all gates and post-deploy checks passed. Its previous green slot is recorded as recovery evidence. Use an already-created commit with deploy:blue-green after the complete quality suite; that script alone only builds and checks health.
 - Inventory has 49 blue demo directories: 48 share Velvet Dinosaur's bucket/sender configuration; ots-sauro-poc is a separate-storage, empty-token exception. Inventory actual source and active slots before rollout. Scratch workspace copies are not targets.
-- The managed rollout has 51 sites: hub, ASAP, The Brave and 48 installed demos. Four pilots and seven further demos are complete; 40 demos remain. Fleet quality releases are serial: measured examples are about 15–20 minutes per site; report actual progress per site.
+- The managed rollout has 51 sites: hub, ASAP, The Brave and 48 installed demos. Four pilots and eight further demos are complete; 39 demos remain. Fleet quality releases are serial: measured examples are about 15–20 minutes per site; report actual progress per site.
 - Source comparison found the missing 13 September Asset bookkeeping/purge prerequisites on most demos as well as ASAP and The Brave. Distribute the complete reviewed prerequisites with the newsletter feature; do not treat those omissions as intentional site customizations.
 
 ## Ordered work
 
-Checked implementation tasks mean the shared code and stated local/pilot checks have passed. They do not mean all installed sites are running it. The four pilots and the first seven further demos are live and operationally verified: 11/51 complete. Popty and ASAP also passed actual storage round trips. All 51 sites' configuration and reviewed ownership migration are complete, and the complete shared source is staged. Tasks 8 and 9 retain the outstanding validation, release and post-deploy work for 40 demos.
+Checked implementation tasks mean the shared code and stated local/pilot checks have passed. They do not mean all installed sites are running it. The four pilots and the first eight further demos are live and operationally verified: 12/51 complete. Popty and ASAP also passed actual storage round trips. All 51 sites' configuration and reviewed ownership migration are complete, and the complete shared source is staged. Tasks 8 and 9 retain the outstanding validation, release and post-deploy work for 39 demos.
 
 - [x] **0. Restore the scheduler safely.** Add an authenticated, read-only dry-run that reports due campaign/delivery counts without writes or provider calls. Inspect the live queue before changing cron. Use the stable public origin/nginx routing, bounded HTTP timeouts, overlap protection, timestamped logs and failure exit status; never bind cron to a slot port. Install only after the endpoint/claim behavior is deployed and dry-run succeeds. If backlog exists, leave sends disabled until the campaigns are reviewed. Retain rollback evidence. Decide scheduler coverage per site; installed demos stay disabled by default. Media development can run in parallel with this operational repair.
 
@@ -51,7 +51,7 @@ Checked implementation tasks mean the shared code and stated local/pilot checks 
 
 - [x] **6. Delivery claims and lifecycle.** Add atomic claims, interrupted-delivery review states, cancellation/unschedule safeguards, frozen version checks and legacy campaign handling. Extend asset usage to newsletter references; source replacement/purge must not invalidate pinned/sent renditions. Add idempotent bounded cleanup and dry-run command with a scheduled vehicle. Test concurrent workers, provider ambiguity, crash windows, cleanup boundaries and missing snapshots.
 
-  Evidence for tasks 2–6: shared unit tests, 13 isolated Mongo integration tests, desktop/mobile walkthrough flows, Puck regression checks, all four pilots' full gates/operational checks and actual Popty/ASAP storage checks. Cleanup is scheduled on all eleven completed sites; installation on the remaining 40 demos remains part of task 9.
+  Evidence for tasks 2–6: shared unit tests, 13 isolated Mongo integration tests, desktop/mobile walkthrough flows, Puck regression checks, all four pilots' full gates/operational checks and actual Popty/ASAP storage checks. Cleanup is scheduled on all twelve completed sites; installation on the remaining 39 demos remains part of task 9.
 
 - [x] **7. Demo parity and explicit send policy.** Public demo uploads remain session-local and appear in its Media Library, using raster/PDF fixtures and object URLs only inside simulation. Installed demos use real site-owned storage and the new explicit no-send-by-default policy. Share code to prevent production/demo serializers drifting.
 
@@ -63,7 +63,7 @@ Checked implementation tasks mean the shared code and stated local/pilot checks 
 
 - [ ] **9. Complete source distribution and staged release.** Update the platform template and explicit sync allowlist for the full editor/API/model/service/serializer/tests/cleanup set; carry the complete Asset model bookkeeping fields to ASAP/The Brave. Apply reviewed scoped diffs preserving site-specific changes. Commit only this task's changes, preserve the user's unrelated dirty files, validate the exact committed release tree, then deploy through inactive slots. Pilot hub + one installed demo, then ASAP/The Brave, then serial batches of remaining verified targets. Record commits, gates, smoke checks and rollback revisions. Publish the already-tested histories to canonical remotes. Never silently fall back to old code for queued media manifests.
 
-  Status: Template `87c7e45`, all 98 shared files, explicit allowlist/installer changes, all 51 configurations and all 1,918 reviewed ownership records are complete. Eight excluded records remain untrusted. All four pilots and seven further demos have completed release and nginx/scheduler/cleanup verification: 11/51 complete, 40 remaining. Hub, ASAP and The Brave are mirrored; missing demo canonical remotes are recorded as skips. Queue session `9557`, log `/tmp/newsletter-fleet-release-resume41.log`, has advanced to Burford Road Dental. Earlier failures are preserved under `fleet-release-history/`. Separate post-deploy watcher `60107` verifies each healthy release and installs read-only demo schedules plus daily cleanup. Do not mark rollout complete yet.
+  Status: Template `87c7e45`, all 98 shared files, explicit allowlist/installer changes, all 51 configurations and all 1,918 reviewed ownership records are complete. Eight excluded records remain untrusted. All four pilots and eight further demos have completed release and nginx/scheduler/cleanup verification: 12/51 complete, 39 remaining. Hub, ASAP and The Brave are mirrored; missing demo canonical remotes are recorded as skips. Queue session `9557`, log `/tmp/newsletter-fleet-release-resume41.log`, has advanced to Buscot Manor. Earlier failures are preserved under `fleet-release-history/`. Separate post-deploy watcher `60107` verifies each healthy release and installs read-only demo schedules plus daily cleanup. Do not mark rollout complete yet.
 
 ## Release and rollback
 

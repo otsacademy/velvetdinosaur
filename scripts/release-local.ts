@@ -1,4 +1,6 @@
 import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import { verifyNewsletterLighthouse } from '../ops/scripts/newsletter-release-lighthouse';
 
 type Options = {
   envFile: string;
@@ -78,12 +80,21 @@ function main() {
   ensureCleanWorktree(cwd);
 
   const releaseCommit = readStdout('git', ['rev-parse', 'HEAD'], cwd);
+  const qualityStartedAt = Date.now();
   run('bun', ['run', 'quality:validate'], cwd);
   run('bun', ['run', 'quality', '--only', 'velvetdinosaur'], cwd);
   ensureCleanWorktree(cwd);
   if (readStdout('git', ['rev-parse', 'HEAD'], cwd) !== releaseCommit) {
     throw new Error('The release commit changed during validation. Restart the release.');
   }
+  verifyNewsletterLighthouse({
+    clone: cwd,
+    site: 'velvetdinosaur',
+    commit: releaseCommit,
+    qualityStartedAt,
+    reportFile: path.join(readStdout('git', ['rev-parse', '--absolute-git-dir'], cwd),
+      'release-evidence', releaseCommit, `${qualityStartedAt}-lighthouse.json`)
+  });
   const deployArgs = ['run', 'deploy:blue-green', '--', `--env-file=${options.envFile}`, `--commit=${releaseCommit}`];
   run('bun', deployArgs, cwd);
 
