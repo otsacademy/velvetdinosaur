@@ -1,13 +1,13 @@
 # Active rollout handoff
 
-Checkpoint: 2026-09-19 16:54 UTC. **29/51 sites complete; 22 remain.** Current site: maggies-fish; watcher: running; stage: all-manifest-quality-gates. Read ROLLOUT.json and fleet-release-final/post-deploy-status.json for newer results.
+Checkpoint: 2026-09-19 17:17 UTC. **30/51 sites complete; 21 remain.** Current site: marthas-coffee; watcher: running; stage: all-manifest-quality-gates. Read ROLLOUT.json and fleet-release-final/post-deploy-status.json for newer results.
 
 The user authorized revising and implementing newsletter media across the hub, ASAP, The Brave and 48 managed demos. **No Figma MCP or Snapshot MCP.** Use local Playwright. Do not send real emails for verification. Preserve unrelated work. Current developer instructions prohibit new delegation unless explicitly requested.
 
 ## Active processes
 
-- Release queue: session `59699`, log `/tmp/newsletter-fleet-release-resume22.log`, reports `fleet-release-final/`. Explicit22-site selection starts at Maggies Fish and includes only uncompleted sites. All manifest gates and independent median guard run before exact-main deployment and controller/mirror operations.
-- Post-deploy watcher: session `78492`, log `/tmp/newsletter-fleet-post-deploy-resume22.log`, status `fleet-release-final/post-deploy-status.json`. Covers original47additionaldemos;25completedproofs. Root solecronwriter through lockedhelper. **Never pass --enable-dispatch for demos.**
+- Release queue: session `26254`, log `/tmp/newsletter-fleet-release-resume21.log`, reports `fleet-release-final/`. Explicit21-site selection starts at Marthas Coffee and includes only uncompleted sites. Every manifest gate and independent median guard runs before exact-main deployment and controller/mirror operations.
+- Post-deploy watcher: session `36800`, log `/tmp/newsletter-fleet-post-deploy-resume21.log`, status `fleet-release-final/post-deploy-status.json`. Covers original47additionaldemos;26completedproofs. Root is sole cron writer through the locked helper. **Never pass --enable-dispatch for demos.**
 - Stop and fix actual failures. Preserve the failed report/log/summary and raw Lighthouse evidence before restarting an explicitly bounded list of uncompleted sites. There is no automatic gate retry or baseline update.
 - Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Active process started from root `1d08678`; fleet engine matches reviewed `89e01ba`. Root follow-up `df5668b` additionally protects the hub release entrypoint with the median guard.
 - Root hub follow-up release/mirror remains outstanding: hub production is still `3ac883e`. Later commits contain reviewed rollout tooling and documentation. Finish fleet work, commit only task files, then use the clean hub clone and `release:local` for an exact-main release. Full hub gates share port3100 with fleet gates; do not run them concurrently.
@@ -44,6 +44,7 @@ Completion requires both a healthy exact-commit release and a passed matching po
 | homedene-farm | `586797bd155254b06c940418ac9d9d9c48403a73` | `fleet-release-final/` |
 | il-botanico | `0f375ac0aa1308d253ce6b9de66b85be9bfb2114` | `fleet-release-final/` |
 | jamesons-witney | `5e894b8ec45b715b20d964fb7ff546a9b141f991` | `fleet-release-final/` |
+| maggies-fish | `642089815e8b77881ab006d8d3355b37ea5da42b` | `fleet-release-final/` |
 | popty-cara | `9fd8e3702c5758e6c735495476ff2ec0c552e120` | `pilot-release-final/` |
 | thebrave | `3762efcaeb4ff673faeebe20b2b9171a307306c2` | `pilot-release-final/` |
 | velvetdinosaur | `3ac883e520438f9f1684b247c3b57342f4eeb3c4` | `hub-release/` |
@@ -102,3 +103,5 @@ Il Botanico: candidate `02fe2e14be44c895f5e3dfcc07019a3a360ce82f` stopped before
 Il Botanico final result: exact `0f375ac0aa1308d253ce6b9de66b85be9bfb2114` passed every full gate, all12 raw Lighthouse reports score100 in every required category, healthy deployment and post-deploy operations passed. 28/51 complete, Jamesons Witney validating next.
 
 Maggies Fish port conflict: candidate642089815e8b77881ab006d8d3355b37ea5da42b failed visual server startup with EADDRINUSE43000 before any browser test or deployment. Ports43000/43001/3100 were already free at inspection; no foreign process stopped. Original reports/logs preserved under fleet-release-history/2026-09-19-maggies-fish-port/. The unchanged candidate is rerunning all gates. Prior queue94782/watcher11511 stopped.
+
+30/51 verified: Jamesons Witney and Maggies Fish completed full releases/operations. Maggies original port failure had no remaining listener at inspection; its precise cause was not captured. Marthas Coffee then failed EADDRINUSE43000; ss showed an outbound IPv6 HTTPS socket in TIME-WAIT on43000, inside the host ephemeral range32768–60999. Runtime/persistent reservation now excludes only43000–43001 from automatic allocation, preserving explicit binds. Dedicated /etc/sysctl.d/90-vd-quality-ports.conf, SHA256d96d2a02a8816a908011e05137767cc56ebb2ddb50edbd6fe279a926fa505704, previous reserved list empty. Explicit IPv4/IPv6 binds passed on both ports; no process killed or restart. Original reports and rollback details in fleet-release-history/2026-09-19-marthas-coffee-port/. Unchanged Martha candidate5579114d8edfd7131d42972fadb6cdbfd5e1e417 running full fresh gates. Previous queue59699/watcher78492 stopped; current26254/36800.

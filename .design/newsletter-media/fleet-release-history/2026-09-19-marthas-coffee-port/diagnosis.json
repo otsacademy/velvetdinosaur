@@ -1,0 +1,16 @@
+{
+  "site": "marthas-coffee",
+  "at": "2026-09-19T17:18:33.604Z",
+  "candidate": "5579114d8edfd7131d42972fadb6cdbfd5e1e417",
+  "failure": "Playwright server could not bind43000: EADDRINUSE. No browser assertions ran and deployment did not start.",
+  "diagnosis": "Marthas Coffee visual server EADDRINUSE43000; live ss inspection found an outbound IPv6 HTTPS connection in TIME-WAIT using43000. No listening server and no foreign process stopped.",
+  "fix": "Reserve existing test ports43000-43001 from automatic ephemeral allocation; explicit IPv4/IPv6 bind checks passed for both ports.",
+  "changes": {
+    "applicationSource": false,
+    "baseline": false,
+    "threshold": false,
+    "hostPortReservation": true
+  },
+  "reservationEvidence": "port-reservation.json",
+  "outcome": "restart-unchanged-candidate-with-full-fresh-gates"
+}

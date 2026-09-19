@@ -3,12 +3,14 @@
   "at": "2026-09-19T16:54:35.605Z",
   "candidate": "642089815e8b77881ab006d8d3355b37ea5da42b",
   "failure": "Playwright server could not bind43000: EADDRINUSE. No browser assertions ran and deployment did not start.",
-  "diagnosis": "The conflicting process had already exited when inspected; ports43000,43001,3100 are now free. No foreign process was stopped.",
+  "diagnosis": "No listener remained at inspection and ports43000/43001/3100 were free. No all-socket-state evidence was captured for this attempt, so its precise cause remains unproven. No foreign process was stopped.",
   "changes": {
     "source": false,
     "baseline": false,
     "threshold": false
   },
   "portCheck": "State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess",
-  "outcome": "restart-unchanged-candidate-with-full-fresh-gates"
+  "outcome": "full-fresh-gates-and-post-deploy-passed",
+  "finalCommit": "642089815e8b77881ab006d8d3355b37ea5da42b",
+  "completedAt": "2026-09-19T17:14:36.277Z"
 }

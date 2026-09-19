@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T16:54:06.719Z",
+  "generatedAt": "2026-09-19T17:17:06.570Z",
   "managedSites": 51,
-  "verifiedSites": 29,
+  "verifiedSites": 30,
   "complete": false,
   "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
   "results": [
@@ -4264,6 +4264,170 @@
               "a6bdffd2cfd105f5573c8aedd5ca0dccb7c3a91c325b0213c044e76df94e5034",
               "b845063757de755ce0db95ebbdbcde96ff4de1be4361e1f705e744a23abea719",
               "13a0d65ecd55d919d4a3849e652002ee885340518491f0b93525f5a56222efca"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "maggies-fish",
+      "commit": "642089815e8b77881ab006d8d3355b37ea5da42b",
+      "completedAt": "2026-09-19T17:14:36.277Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/maggies-fish-post-deploy.json",
+          "sha256": "c9cd87554f8944ae15950a6dbcab4776e25ded90b6bc78b61d9d229d55ab72c8"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/maggies-fish-lighthouse-summary.json",
+          "sha256": "635896472c043fb9b115cbb6eece6ac9fd87f24efa748841c75d3e96ef7d6186"
+        },
+        "release": {
+          "file": "fleet-release-final/maggies-fish.json",
+          "sha256": "3b678b22913359885e2a356113205fff1fe64985c0a470544c22f6f58fb344fc"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "e8325dd89ba50be81267dbf2afe1d6d1b84c239c00f1163bf55a6de07fdfd8a2",
+              "60345ca727309b652243f261ee5e62e5f304f881aa05527131513271b5dfa373",
+              "b2400585afca91269a4f3497cc7b2e7d2790ce0fdbdd18c009cc452f620b5f03"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "9325863d266243f121c4ee164bd3b504654bbd37781d4a5e998626a987776585",
+              "502dd47cbed443c236d104a24ae7e878dce89610f0b2d9e8dcd9f0b43d955b1d",
+              "25814dbe0442e2fb1ac0d83b9644fe9af11ac61510cd373ed02669ecafec933a"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "6e689da904afcfa92c6d0164475890803ce5517bae17e68da5f0f0685a28107e",
+              "b40ab016de8a8b318867f8a183e7e6508dec707a2164d0284c68991dcbeb1924",
+              "1c9abaf317ff19f9b085cc1e7e3d41dc86137d687792121e97c62af6cd9121d6"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "5eecbde4369fafae4d95e93d0847702dd0b37b458ae4501515e4bb67bdef04ed",
+              "43780df857f6dfc4447ae7ea5a268a2d0e92caa6e460db32a9132c100268ddca",
+              "f181c339f4012f89a48168bc4c021c3fb05e70c3c01f3029c094b1b9676be9c2"
             ]
           }
         ]
