@@ -1,0 +1,466 @@
+{
+  "generatedAt": "2026-09-19T10:40:32.192Z",
+  "total": 51,
+  "completed": 11,
+  "remaining": 40,
+  "sites": [
+    {
+      "site": "academy-partnership",
+      "completed": true,
+      "commit": "02ac1730cf876a289d97761f23213891f9c1092b",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/academy-partnership.json",
+      "operationsEvidence": "fleet-release-final/academy-partnership-post-deploy.json"
+    },
+    {
+      "site": "asap",
+      "completed": true,
+      "commit": "de6daf044b5335a4fa74c529a82637a2c5c47708",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "pilot-release-final/asap.json",
+      "operationsEvidence": "pilot-release-final/asap-post-deploy.json"
+    },
+    {
+      "site": "bakewell-pudding",
+      "completed": true,
+      "commit": "f9d90e4a5b255fe3e1dd875886acefe2be6130f5",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/bakewell-pudding.json",
+      "operationsEvidence": "fleet-release-final/bakewell-pudding-post-deploy.json"
+    },
+    {
+      "site": "bank-house",
+      "completed": true,
+      "commit": "6184659a1b476863b93b98cc8a6ece1cc06ccbd3",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/bank-house.json",
+      "operationsEvidence": "fleet-release-final/bank-house-post-deploy.json"
+    },
+    {
+      "site": "bath-street-dental",
+      "completed": true,
+      "commit": "84c702cc75d2fb3714a597dc1661b61881411f9f",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/bath-street-dental.json",
+      "operationsEvidence": "fleet-release-final/bath-street-dental-post-deploy.json"
+    },
+    {
+      "site": "blue-anchor",
+      "completed": true,
+      "commit": "b966cf2aea31633f3eac879be2e9f0d77f170a79",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/blue-anchor.json",
+      "operationsEvidence": "fleet-release-final/blue-anchor-post-deploy.json"
+    },
+    {
+      "site": "bodalwyn-aberystwyth",
+      "completed": true,
+      "commit": "58547a68b707486a3219ba054f06dbad1633e683",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/bodalwyn-aberystwyth.json",
+      "operationsEvidence": "fleet-release-final/bodalwyn-aberystwyth-post-deploy.json"
+    },
+    {
+      "site": "bubbleton-tenby",
+      "completed": true,
+      "commit": "48dae05875a01362f41282fb51055b9a917649d0",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "fleet-release-final/bubbleton-tenby.json",
+      "operationsEvidence": "fleet-release-final/bubbleton-tenby-post-deploy.json"
+    },
+    {
+      "site": "burford-road-dental",
+      "completed": false,
+      "commit": "8af2b7433367c34f774b3d96871d3988c5f69627",
+      "release": "all-manifest-quality-gates",
+      "operations": "pending",
+      "evidence": "fleet-release-final/burford-road-dental.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "buscot-manor",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/buscot-manor.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "bush-farm",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/bush-farm.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "claire-lewis",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/claire-lewis.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "contour-leek",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/contour-leek.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "corn-street-dental",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/corn-street-dental.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "cotswold-dental",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/cotswold-dental.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "eynsham-dental",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/eynsham-dental.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "fringe-hair-beauty",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/fringe-hair-beauty.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "glamour-and-glow",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/glamour-and-glow.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "go-engineers",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/go-engineers.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "hair-lounge-chipping-norton",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/hair-lounge-chipping-norton.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "halls-gardening",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/halls-gardening.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "higher-farm-malpas",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/higher-farm-malpas.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "home-farm-salon",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/home-farm-salon.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "homedene-farm",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/homedene-farm.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "il-botanico",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/il-botanico.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "jamesons-witney",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/jamesons-witney.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "maggies-fish",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/maggies-fish.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "marthas-coffee",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/marthas-coffee.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "michaels-malmesbury",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/michaels-malmesbury.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "new-inn-lechlade",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/new-inn-lechlade.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "number-47-grassington",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/number-47-grassington.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "old-craft-barn",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/old-craft-barn.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "pokhara-delight",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/pokhara-delight.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "popty-cara",
+      "completed": true,
+      "commit": "9fd8e3702c5758e6c735495476ff2ec0c552e120",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "pilot-release-final/popty-cara.json",
+      "operationsEvidence": "pilot-release-final/popty-cara-post-deploy.json"
+    },
+    {
+      "site": "portway-dental",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/portway-dental.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "powys-country-house",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/powys-country-house.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "rees-russell",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/rees-russell.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "riverside-lechlade",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/riverside-lechlade.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "salutation-inn",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/salutation-inn.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "simas-beauty-witney",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/simas-beauty-witney.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "small-talk-tearooms",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/small-talk-tearooms.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "star-inn-woodstock",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/star-inn-woodstock.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "teddington-cheese",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/teddington-cheese.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "thebrave",
+      "completed": true,
+      "commit": "3762efcaeb4ff673faeebe20b2b9171a307306c2",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "pilot-release-final/thebrave.json",
+      "operationsEvidence": "pilot-release-final/thebrave-post-deploy.json"
+    },
+    {
+      "site": "velvetdinosaur",
+      "completed": true,
+      "commit": "3ac883e520438f9f1684b247c3b57342f4eeb3c4",
+      "release": "healthy",
+      "operations": "passed",
+      "evidence": "hub-release/post-deploy.json"
+    },
+    {
+      "site": "wallys-deli",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/wallys-deli.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "white-hart-minster",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/white-hart-minster.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "white-rose-accountancy",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/white-rose-accountancy.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "witney-dental-practice",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/witney-dental-practice.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "witney-hotel",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/witney-hotel.json",
+      "operationsEvidence": null
+    },
+    {
+      "site": "woodstock-dental",
+      "completed": false,
+      "commit": null,
+      "release": "staged",
+      "operations": "pending",
+      "evidence": "fleet-release-final/woodstock-dental.json",
+      "operationsEvidence": null
+    }
+  ]
+}

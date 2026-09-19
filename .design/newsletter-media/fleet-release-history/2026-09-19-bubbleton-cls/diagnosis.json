@@ -1,0 +1,93 @@
+{
+  "at": "2026-09-19T10:17:31.952Z",
+  "site": "bubbleton-tenby",
+  "initialCommit": "4e2f2139c012afe4f647500a14f9f17624fb30bc",
+  "siteFixCommit": "17b69dd39dd52c2315d7c2b1bf31af8b1e05b2b1",
+  "cause": "Desktop home CLS0.066559 twice; demo proxy no-store forces preloaded font requests to download again. Metric fallback experiment did not reliably remove shift. Read-only diagnostic proxy preserving static build cache had zero CLS in five fresh browser contexts.",
+  "change": "Preserve Next immutable policy only under /_next/static/; pages/APIs/uploads still no-store and all demo/noindex/action guards retained. Existing demo safety browser test now checks immutable CSS and noindex.",
+  "snapshotChanges": false,
+  "thresholdChanges": false,
+  "complete": [
+    "academy-partnership",
+    "bakewell-pudding",
+    "bank-house",
+    "bath-street-dental",
+    "blue-anchor",
+    "bodalwyn-aberystwyth",
+    "bubbleton-tenby"
+  ],
+  "remaining": [
+    "burford-road-dental",
+    "buscot-manor",
+    "bush-farm",
+    "claire-lewis",
+    "contour-leek",
+    "corn-street-dental",
+    "cotswold-dental",
+    "eynsham-dental",
+    "fringe-hair-beauty",
+    "glamour-and-glow",
+    "go-engineers",
+    "hair-lounge-chipping-norton",
+    "halls-gardening",
+    "higher-farm-malpas",
+    "home-farm-salon",
+    "homedene-farm",
+    "il-botanico",
+    "jamesons-witney",
+    "maggies-fish",
+    "marthas-coffee",
+    "michaels-malmesbury",
+    "new-inn-lechlade",
+    "number-47-grassington",
+    "old-craft-barn",
+    "pokhara-delight",
+    "portway-dental",
+    "powys-country-house",
+    "rees-russell",
+    "riverside-lechlade",
+    "salutation-inn",
+    "simas-beauty-witney",
+    "small-talk-tearooms",
+    "star-inn-woodstock",
+    "teddington-cheese",
+    "wallys-deli",
+    "white-hart-minster",
+    "white-rose-accountancy",
+    "witney-dental-practice",
+    "witney-hotel",
+    "woodstock-dental"
+  ],
+  "candidateCommit": "48dae05875a01362f41282fb51055b9a917649d0",
+  "validationSoFar": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "passed",
+    "isolatedMongo": "13 passed",
+    "build": "passed",
+    "publicVisual": "14passed 2existingconditional skips; all4snapshots unchanged",
+    "editor": "22passed 2existingconditional skips",
+    "lighthouse": {
+      "mobile": "All6runs requiredcategories100 andCLS0",
+      "desktopHome": {
+        "performance": [
+          100,
+          100,
+          100
+        ],
+        "cls": [
+          0.0001267570449679951,
+          0.0001267570449679951,
+          0.0001267570449679951
+        ]
+      },
+      "desktopAbout": "All three runs score 100 in all required categories; CLS 0.0001267570449679951"
+    },
+    "themeSmoke": "passed",
+    "deployment": "healthy blue, exact candidate commit",
+    "operations": "passed; read-only demo schedule and daily cleanup",
+    "publicCacheSmoke": "fleet-release-final/bubbleton-tenby-static-cache-smoke.json"
+  },
+  "completedAt": "2026-09-19T10:35:11.129Z",
+  "outcome": "resolved-and-deployed"
+}
