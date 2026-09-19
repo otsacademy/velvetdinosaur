@@ -1,0 +1,203 @@
+{
+  "checkedAt": "2026-09-19T10:57:53.211Z",
+  "mode": "read-only",
+  "count": 39,
+  "mismatches": [],
+  "sites": [
+    {
+      "site": "buscot-manor",
+      "controllerDevelop": "069c309a23b598e8e19066964ca58752dac53997",
+      "receiptBase": "069c309a23b598e8e19066964ca58752dac53997"
+    },
+    {
+      "site": "bush-farm",
+      "controllerDevelop": "7614c091d11aa86a819bdbf53d95d95cf8089d32",
+      "receiptBase": "7614c091d11aa86a819bdbf53d95d95cf8089d32"
+    },
+    {
+      "site": "claire-lewis",
+      "controllerDevelop": "bea0f3e9fe790daf3ad48d1a6e6a79d4498cad90",
+      "receiptBase": "bea0f3e9fe790daf3ad48d1a6e6a79d4498cad90"
+    },
+    {
+      "site": "contour-leek",
+      "controllerDevelop": "21f74437750001f3794bba2fbb675533b295285d",
+      "receiptBase": "21f74437750001f3794bba2fbb675533b295285d"
+    },
+    {
+      "site": "corn-street-dental",
+      "controllerDevelop": "857db0ac2bfbc7ff5249ede5734209f27beb767a",
+      "receiptBase": "857db0ac2bfbc7ff5249ede5734209f27beb767a"
+    },
+    {
+      "site": "cotswold-dental",
+      "controllerDevelop": "ac2de1daa8f97480087fa4eb06f65a8f8f19ddc0",
+      "receiptBase": "ac2de1daa8f97480087fa4eb06f65a8f8f19ddc0"
+    },
+    {
+      "site": "eynsham-dental",
+      "controllerDevelop": "81750722bbc480ee72ef4b722d03b8c727673879",
+      "receiptBase": "81750722bbc480ee72ef4b722d03b8c727673879"
+    },
+    {
+      "site": "fringe-hair-beauty",
+      "controllerDevelop": "39dcb444d561e4ec5a62999773d87caaf4fbcc1a",
+      "receiptBase": "39dcb444d561e4ec5a62999773d87caaf4fbcc1a"
+    },
+    {
+      "site": "glamour-and-glow",
+      "controllerDevelop": "db6b823fe8405715da0b4de242205c9b65dea382",
+      "receiptBase": "db6b823fe8405715da0b4de242205c9b65dea382"
+    },
+    {
+      "site": "go-engineers",
+      "controllerDevelop": "a3c8b3cf8e709d2962f691dad961a56897f62ddc",
+      "receiptBase": "a3c8b3cf8e709d2962f691dad961a56897f62ddc"
+    },
+    {
+      "site": "hair-lounge-chipping-norton",
+      "controllerDevelop": "e333c63c632c13eefc25b97a34612d5f73f9eaee",
+      "receiptBase": "e333c63c632c13eefc25b97a34612d5f73f9eaee"
+    },
+    {
+      "site": "halls-gardening",
+      "controllerDevelop": "f30ee0704095feab281eba6492b11d3b47e59ec5",
+      "receiptBase": "f30ee0704095feab281eba6492b11d3b47e59ec5"
+    },
+    {
+      "site": "higher-farm-malpas",
+      "controllerDevelop": "d7e5545c5eacf84650b561e58f6f6630fcf24c54",
+      "receiptBase": "d7e5545c5eacf84650b561e58f6f6630fcf24c54"
+    },
+    {
+      "site": "home-farm-salon",
+      "controllerDevelop": "bdaa08fa9aad151f94fc772ecf0305b8bb9a5231",
+      "receiptBase": "bdaa08fa9aad151f94fc772ecf0305b8bb9a5231"
+    },
+    {
+      "site": "homedene-farm",
+      "controllerDevelop": "15de33163ef280f2c5f02811f6b590d015e6c253",
+      "receiptBase": "15de33163ef280f2c5f02811f6b590d015e6c253"
+    },
+    {
+      "site": "il-botanico",
+      "controllerDevelop": "02518e9bc8e82acb8b88c5e66c8406297bd90bdc",
+      "receiptBase": "02518e9bc8e82acb8b88c5e66c8406297bd90bdc"
+    },
+    {
+      "site": "jamesons-witney",
+      "controllerDevelop": "d20a649136c8c6019067bed262d898d03ef9a421",
+      "receiptBase": "d20a649136c8c6019067bed262d898d03ef9a421"
+    },
+    {
+      "site": "maggies-fish",
+      "controllerDevelop": "74edbcf5ed8d6886b4b4ffab627e5f6c6e8cc82e",
+      "receiptBase": "74edbcf5ed8d6886b4b4ffab627e5f6c6e8cc82e"
+    },
+    {
+      "site": "marthas-coffee",
+      "controllerDevelop": "15e9941ae42a2c35aaa70a4c7d85d604e9344411",
+      "receiptBase": "15e9941ae42a2c35aaa70a4c7d85d604e9344411"
+    },
+    {
+      "site": "michaels-malmesbury",
+      "controllerDevelop": "fb3f7b6e227723ae223ad144b5c5f06083599559",
+      "receiptBase": "fb3f7b6e227723ae223ad144b5c5f06083599559"
+    },
+    {
+      "site": "new-inn-lechlade",
+      "controllerDevelop": "9fbf809182245d0a0dfd94e6ca79a53191768e70",
+      "receiptBase": "9fbf809182245d0a0dfd94e6ca79a53191768e70"
+    },
+    {
+      "site": "number-47-grassington",
+      "controllerDevelop": "976c56ab0d953864f15eae78a316d7ab1615357c",
+      "receiptBase": "976c56ab0d953864f15eae78a316d7ab1615357c"
+    },
+    {
+      "site": "old-craft-barn",
+      "controllerDevelop": "29e693c421295c1c1618fb98fa487a11129f43f0",
+      "receiptBase": "29e693c421295c1c1618fb98fa487a11129f43f0"
+    },
+    {
+      "site": "pokhara-delight",
+      "controllerDevelop": "8203fc85ef119725d317d86081160512a21760be",
+      "receiptBase": "8203fc85ef119725d317d86081160512a21760be"
+    },
+    {
+      "site": "portway-dental",
+      "controllerDevelop": "5d83727ac677421b9cd98d24eabf015b76886b7f",
+      "receiptBase": "5d83727ac677421b9cd98d24eabf015b76886b7f"
+    },
+    {
+      "site": "powys-country-house",
+      "controllerDevelop": "a3f86beef3678514757122b9c3aaf8aefda8f241",
+      "receiptBase": "a3f86beef3678514757122b9c3aaf8aefda8f241"
+    },
+    {
+      "site": "rees-russell",
+      "controllerDevelop": "85184afab329b665b89d3542b7153122159758ea",
+      "receiptBase": "85184afab329b665b89d3542b7153122159758ea"
+    },
+    {
+      "site": "riverside-lechlade",
+      "controllerDevelop": "a9437734adaa389dee7b2d04035b4dee0073d1e5",
+      "receiptBase": "a9437734adaa389dee7b2d04035b4dee0073d1e5"
+    },
+    {
+      "site": "salutation-inn",
+      "controllerDevelop": "2a39387b10ddb8a86dd8002d76ac2788a0e52047",
+      "receiptBase": "2a39387b10ddb8a86dd8002d76ac2788a0e52047"
+    },
+    {
+      "site": "simas-beauty-witney",
+      "controllerDevelop": "d527f7ae8af0b20de7463a0227123a5b81147ffd",
+      "receiptBase": "d527f7ae8af0b20de7463a0227123a5b81147ffd"
+    },
+    {
+      "site": "small-talk-tearooms",
+      "controllerDevelop": "6dc8eeaeb17fd5b7d17adbd55d6304d974dfd567",
+      "receiptBase": "6dc8eeaeb17fd5b7d17adbd55d6304d974dfd567"
+    },
+    {
+      "site": "star-inn-woodstock",
+      "controllerDevelop": "25962b716b388f898f19e49daf736bbf331947f8",
+      "receiptBase": "25962b716b388f898f19e49daf736bbf331947f8"
+    },
+    {
+      "site": "teddington-cheese",
+      "controllerDevelop": "b507cd3473ebb1caf3122f8ce0abc47be09862d3",
+      "receiptBase": "b507cd3473ebb1caf3122f8ce0abc47be09862d3"
+    },
+    {
+      "site": "wallys-deli",
+      "controllerDevelop": "2284b57a4223418086ce99793edbaa20787733af",
+      "receiptBase": "2284b57a4223418086ce99793edbaa20787733af"
+    },
+    {
+      "site": "white-hart-minster",
+      "controllerDevelop": "e3a47570013a38e20108cca3377c64675e7b5e35",
+      "receiptBase": "e3a47570013a38e20108cca3377c64675e7b5e35"
+    },
+    {
+      "site": "white-rose-accountancy",
+      "controllerDevelop": "65c7ea9a17fe0d50f389df2405ef9eee84cae131",
+      "receiptBase": "65c7ea9a17fe0d50f389df2405ef9eee84cae131"
+    },
+    {
+      "site": "witney-dental-practice",
+      "controllerDevelop": "405131c3a29531537d51864abfee5069325c9ed9",
+      "receiptBase": "405131c3a29531537d51864abfee5069325c9ed9"
+    },
+    {
+      "site": "witney-hotel",
+      "controllerDevelop": "bda75da3bf235917eda587650279aaa2c94815a2",
+      "receiptBase": "bda75da3bf235917eda587650279aaa2c94815a2"
+    },
+    {
+      "site": "woodstock-dental",
+      "controllerDevelop": "58306d8209f8ee41c690bbd552b9da6c8fbd0ae1",
+      "receiptBase": "58306d8209f8ee41c690bbd552b9da6c8fbd0ae1"
+    }
+  ]
+}

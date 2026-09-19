@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-09-19T10:56:09.161Z",
+  "mode": "read-existing-logs-only",
+  "rows": [
+    {
+      "site": "academy-partnership",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.241Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "asap",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.314Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "bakewell-pudding",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.218Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "bank-house",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.217Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "bath-street-dental",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.200Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "blue-anchor",
+      "status": "no-natural-cleanup-log-yet"
+    },
+    {
+      "site": "bodalwyn-aberystwyth",
+      "status": "no-natural-cleanup-log-yet"
+    },
+    {
+      "site": "bubbleton-tenby",
+      "status": "no-natural-cleanup-log-yet"
+    },
+    {
+      "site": "burford-road-dental",
+      "status": "no-natural-cleanup-log-yet"
+    },
+    {
+      "site": "popty-cara",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.227Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "thebrave",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.290Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    },
+    {
+      "site": "velvetdinosaur",
+      "lastEntries": [
+        {
+          "at": "2026-09-19T01:17:02.270Z",
+          "removed": 0,
+          "failed": 0,
+          "eligible": 0,
+          "dryRun": false
+        }
+      ]
+    }
+  ]
+}
