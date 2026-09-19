@@ -1,15 +1,15 @@
 # Active rollout handoff
 
-Updated: 2026-09-19 10:51 UTC. **12/51 sites complete; 39 remain. Work is still running.**
+Checkpoint: 2026-09-19 11:07 UTC. **13/51 sites complete; 38 remain. Bush Farm’s screenshot timing fix is committed and the complete gate rerun is active.** Read ROLLOUT.json and fleet-release-final/post-deploy-status.json for newer results.
 
 The user authorized revising and implementing newsletter media across the hub, ASAP, The Brave and 48 managed demos. **No Figma MCP or Snapshot MCP.** Use local Playwright. Do not send real emails for verification. Preserve unrelated work. Current developer instructions prohibit new delegation unless explicitly requested.
 
 ## Active processes
 
-- Release queue: session `9557`, log `/tmp/newsletter-fleet-release-resume41.log`, reports `fleet-release-final/`. Its 41-site selection began with Bubbleton and has advanced to Buscot Manor. Run every manifest gate, then the independent Lighthouse median guard, exact-main blue/green deployment, health, controller fast-forward and mirror when a canonical remote exists.
-- Post-deploy watcher: session `60107`, log `/tmp/newsletter-fleet-post-deploy-resume41.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, reuses eight completed exact proofs, and waits for each healthy release. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
+- Release queue: session `90716`, log `/tmp/newsletter-fleet-release-resume38.log`, reports `fleet-release-final/`. Its 38-site selection begins with Bush Farm. The prior failure is preserved under `fleet-release-history/2026-09-19-bush-farm-mobile/`. Run every manifest gate, then the independent Lighthouse median guard, exact-main blue/green deployment, health, controller fast-forward and mirror when a canonical remote exists.
+- Post-deploy watcher: session `97296`, log `/tmp/newsletter-fleet-post-deploy-resume38.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, has nine completed additional-demo proofs, and waits for each healthy release. The restarted watcher reuses all nine completed proofs. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
 - Stop and fix actual failures. Preserve the failed report/log/summary and raw Lighthouse evidence before restarting an explicitly bounded list of uncompleted sites. There is no automatic gate retry or baseline update.
-- Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Active fleet runner: `89e01babef583581ca11ea7884c34a8f5a9cf37f`.
+- Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Active process started from root `308c0bf`; fleet engine matches reviewed `89e01ba`. Root follow-up `df5668b` additionally protects the hub release entrypoint with the median guard.
 - Root hub follow-up release/mirror remains outstanding: hub production is still `3ac883e`. Later commits contain reviewed rollout tooling and documentation. Finish fleet work, commit only task files, then use the clean hub clone and `release:local` for an exact-main release. Full hub gates share port3100 with fleet gates; do not run them concurrently.
 
 ## Completed deployments
@@ -30,6 +30,7 @@ Completion requires both a healthy exact-commit release and a passed matching po
 | Bodalwyn Aberystwyth | `58547a68b707486a3219ba054f06dbad1633e683` | `fleet-release-final/` |
 | Bubbleton Tenby | `48dae05875a01362f41282fb51055b9a917649d0` | `fleet-release-final/` |
 | Burford Road Dental | `8af2b7433367c34f774b3d96871d3988c5f69627` | `fleet-release-final/` |
+| Buscot Manor | `f05343d409d7fc8e1fdfe917794cd6a2add12a33` | `fleet-release-final/` |
 
 Hub, ASAP and The Brave are mirrored. Demos have no canonical remote; mirror skips are recorded. All completed sites have nginx/media isolation and daily cleanup checks. Demo schedules remain read-only. Configuration alone does not enforce the no-send policy in older, uncompleted slots.
 
@@ -49,6 +50,8 @@ The Brave's controller is `/srv/apps/thebrave-release` on develop/main; its old 
 
 Temporary diagnostic servers31920/31921 were stopped after Bubbleton verification. No live production service was stopped for that investigation. Prior queue sessions92169/38683 and their old watchers are historical, not active.
 
+- **Bush Farm screenshot timing:** candidate5177a983 and current live produced byte-identical mobile About failures (1216photo pixels). Idle-only1000ms passed11/12, so was insufficient. A full-page paint followed by1000ms settling passed all four unchanged baselines three times (12/12), with no runtime CSS/source, baseline or threshold changes. Site-only test commit`ac401cca20b007ed85828fc671bc6854bdae4e49` is merged into candidate`709e4212ee5e68c3c45f103dfdeb0e527429c703`; only receipt base refreshed and all102scopehashes remain exact. Full fresh gates are running. Evidence: `fleet-release-history/2026-09-19-bush-farm-mobile/`; diagnostics: `output/playwright/newsletter-bush-*`.
+
 ## Distribution and operational prerequisites
 
 - All98sharedfeaturefiles exactly match sourceffc and template87c. Complete Asset bookkeeping prerequisites, package/gates and scoped release helpers are staged in isolated clones. Site customizations and ASAP's200batch limit are preserved. Staging is not deployment.
@@ -61,7 +64,7 @@ Temporary diagnostic servers31920/31921 were stopped after Bubbleton verificatio
 
 ## Remaining work and safety
 
-1. Finish39demos serially, resolving actual gate failures before any deployment. Monitor both application release and postops evidence; neither alone is completion.
+1. Finish the remaining demos serially, resolving actual gate failures before any deployment. Monitor both application release and postops evidence; neither alone is completion.
 2. Keep tasks8/9open until every site has full gates, exact release, health, media isolation and scheduler/cleanup proof. Record mirror skips rather than inventing demo remotes.
 3. Update task documentation and final rollout summary; owner instructions are `docs/newsletter-media.md`. Commit only reviewed task changes.
 4. Complete clean exact-main hub follow-up release/mirror for later operations/docs commits after the fleet no longer uses shared quality ports.

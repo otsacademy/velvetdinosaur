@@ -1,0 +1,20 @@
+{
+  "at": "2026-09-19T11:18:11.351Z",
+  "site": "bush-farm",
+  "candidate": "5177a983ce9c7fbea1a61fcca48c11f57e1fdd7f",
+  "failure": "Mobile About: 1216 pixels differ in photos only. Current live and candidate actual PNG files have identical SHA256.",
+  "excluded": "No content/layout/font/source-asset change. Applying reduced motion before navigation or changing compositor hints was not a reproducible fix.",
+  "cause": "Inference from repeated captures and WebKit implementation: the 100ms pause after lazy-image scrolling captures transient low-quality image interpolation. Three fresh contexts with 1000/3000/1000ms idle pauses each produced three matches to the original baseline.",
+  "primarySource": "https://raw.githubusercontent.com/WebKit/WebKit/main/Source/WebCore/rendering/ImageQualityController.cpp",
+  "sourceDetail": "ImageQualityController uses a 500ms low-quality threshold before high-quality repaint after image scaling/live resize.",
+  "proposedFix": "Committed: perform a full-page paint, then wait1000ms before the original strict screenshot assertion. Runtime source, comparison thresholds and baseline images are unchanged.",
+  "verification": "All four original baselines passed three repeated runs (12/12); scoped lint and diff checks passed. Full candidate gates still required.",
+  "baselineUpdates": false,
+  "thresholdChanges": false,
+  "idleOnlyValidation": "Extended idle alone passed 11/12 repeated existing baseline checks; first mobile About still fails, so it is insufficient.",
+  "siteFixCommit": "ac401cca20b007ed85828fc671bc6854bdae4e49",
+  "mergedCandidate": "45f582480e3d1fdda016776ea922b8c7c65141bd",
+  "receipt": "Only baseCommit refreshed to the separate site test fix; all102 reviewed file hashes reverified unchanged.",
+  "candidateCommit": "709e4212ee5e68c3c45f103dfdeb0e527429c703",
+  "restartedAt": "2026-09-19T11:21:42.442Z"
+}

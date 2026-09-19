@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-09-19T11:11:08.527Z",
+  "mode": "read-only current live public screenshots",
+  "active": "/srv/apps/bush-farm-green",
+  "port": 3034,
+  "recordedCommit": "7614c091d11aa86a819bdbf53d95d95cf8089d32",
+  "candidate": "/srv/apps/.ops/newsletter-media/bush-farm",
+  "fontProfile": "/srv/apps/velvetdinosaur/ops/quality/fonts/pre-september-2026.conf",
+  "baselineUpdates": false,
+  "exitCode": 1,
+  "finishedAt": "2026-09-19T11:11:20.269Z",
+  "activeUnchanged": true,
+  "visualResult": "Three unchanged baselines pass; mobile about differs by the same 1216 pixels",
+  "screenshotSha256": {
+    "candidate": "577e49e728906340bb515795e1b83ac88761522fe17236e41ad58d08eec12067",
+    "live": "577e49e728906340bb515795e1b83ac88761522fe17236e41ad58d08eec12067"
+  },
+  "identicalLiveAndCandidate": true
+}

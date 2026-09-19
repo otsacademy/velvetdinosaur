@@ -1,0 +1,154 @@
+{
+  "at": "2026-09-19T11:23:11.160Z",
+  "stats": {
+    "startTime": "2026-09-19T11:19:40.198Z",
+    "duration": 46450.386,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "home page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3594
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4021
+        }
+      ]
+    },
+    {
+      "title": "home page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3603
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4183
+        }
+      ]
+    },
+    {
+      "title": "home page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3455
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4250
+        }
+      ]
+    },
+    {
+      "title": "home page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3948
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2433
+        }
+      ]
+    },
+    {
+      "title": "home page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3957
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2480
+        }
+      ]
+    },
+    {
+      "title": "home page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3693
+        }
+      ]
+    },
+    {
+      "title": "about page",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2542
+        }
+      ]
+    }
+  ],
+  "baselineSha256": {
+    "home-desktop.png": "e454b841e20d3357d90a06cca6d5a616e2c06cf9d83c13d1d6a17e094a0f9c81",
+    "home-mobile.png": "500fbdb5c6fbf1eed455174ec4069ade4b501713e1bc0c2c035d295022ab7398",
+    "about-desktop.png": "fa642bb5bccabb1dfb7609b4884b4d6ab37730663d90a8ca59af0916be2f487f",
+    "about-mobile.png": "d8aa0bd935b64592ab0eac9db555224f7ac883ed408b64496b6c2d5fd19d6a25"
+  },
+  "baselineChanges": false,
+  "thresholdChanges": false,
+  "productionChanges": false
+}
