@@ -1,13 +1,13 @@
 # Active rollout handoff
 
-Checkpoint: 2026-09-19 13:36 UTC. **19/51 sites complete; 32 remain.** Current site: fringe-hair-beauty; watcher: running; stage: all-manifest-quality-gates. Read ROLLOUT.json and fleet-release-final/post-deploy-status.json for newer results.
+Checkpoint: 2026-09-19 14:22 UTC. **22/51 sites complete; 29 remain.** Current site: hair-lounge-chipping-norton; watcher: running; stage: all-manifest-quality-gates. Read ROLLOUT.json and fleet-release-final/post-deploy-status.json for newer results.
 
 The user authorized revising and implementing newsletter media across the hub, ASAP, The Brave and 48 managed demos. **No Figma MCP or Snapshot MCP.** Use local Playwright. Do not send real emails for verification. Preserve unrelated work. Current developer instructions prohibit new delegation unless explicitly requested.
 
 ## Active processes
 
 - Release queue: session `54090`, log `/tmp/newsletter-fleet-release-resume37.log`, reports `fleet-release-final/`. Its explicit 37-site selection starts at Claire Lewis and includes only uncompleted sites. The prior failure is preserved under `fleet-release-history/2026-09-19-bush-farm-mobile/`. Run every manifest gate, then the independent Lighthouse median guard, exact-main blue/green deployment, health, controller fast-forward and mirror when a canonical remote exists.
-- Post-deploy watcher: session `35375`, log `/tmp/newsletter-fleet-post-deploy-resume37.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, has 15 completed additional-demo proofs, and waits for each healthy release. The watcher resumed after the failed summary was archived and the new release report was confirmed running; all 15 completed proofs remain valid. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
+- Post-deploy watcher: session `35375`, log `/tmp/newsletter-fleet-post-deploy-resume37.log`, status `fleet-release-final/post-deploy-status.json`. It covers the original 47 additional demos, has 18 completed additional-demo proofs, and waits for each healthy release. The watcher resumed after the failed summary was archived and the new release report was confirmed running; all 18 completed proofs remain valid. Root is the sole cron writer through its locked serial helper. **Never pass `--enable-dispatch` for demos.**
 - Stop and fix actual failures. Preserve the failed report/log/summary and raw Lighthouse evidence before restarting an explicitly bounded list of uncompleted sites. There is no automatic gate retry or baseline update.
 - Shared feature source: `ffc397d03d0cc3759ca7375515953a576bd096a4`. Template: `87c7e45f580325abdee3cb5abb5eb51899df1692`. Active process started from root `574166b`; fleet engine matches reviewed `89e01ba`. Root follow-up `df5668b` additionally protects the hub release entrypoint with the median guard.
 - Root hub follow-up release/mirror remains outstanding: hub production is still `3ac883e`. Later commits contain reviewed rollout tooling and documentation. Finish fleet work, commit only task files, then use the clean hub clone and `release:local` for an exact-main release. Full hub gates share port3100 with fleet gates; do not run them concurrently.
@@ -34,6 +34,9 @@ Completion requires both a healthy exact-commit release and a passed matching po
 | corn-street-dental | `572feb1eccad87a7dbc49b4fd3d5de9c4facd88d` | `fleet-release-final/` |
 | cotswold-dental | `8cbeb43fc431e6b53e53ec91c42172df08b6b0ca` | `fleet-release-final/` |
 | eynsham-dental | `df1d8bf9397100f35e1dc68791dd597a2e64959e` | `fleet-release-final/` |
+| fringe-hair-beauty | `c135d788b1dcb3babf75c51623badb81d2779b73` | `fleet-release-final/` |
+| glamour-and-glow | `a98770928144e7ff6917bc1a903c9e16e77a60b6` | `fleet-release-final/` |
+| go-engineers | `43da18a4195ea3cddde1ffa7800724e2e1159e43` | `fleet-release-final/` |
 | popty-cara | `9fd8e3702c5758e6c735495476ff2ec0c552e120` | `pilot-release-final/` |
 | thebrave | `3762efcaeb4ff673faeebe20b2b9171a307306c2` | `pilot-release-final/` |
 | velvetdinosaur | `3ac883e520438f9f1684b247c3b57342f4eeb3c4` | `hub-release/` |

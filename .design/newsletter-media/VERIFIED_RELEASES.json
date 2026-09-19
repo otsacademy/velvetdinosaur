@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T13:36:01.338Z",
+  "generatedAt": "2026-09-19T14:22:48.530Z",
   "managedSites": 51,
-  "verifiedSites": 19,
+  "verifiedSites": 22,
   "complete": false,
   "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
   "results": [
@@ -2624,6 +2624,498 @@
               "0848c655fe1216e4194374cd577e0c055ae04dc218c7e1521f8f19d8a57ea189",
               "ae1d1e43adb1cb10fc9aff5a78a161c2483a0c71a5e49e4a9970421da750b7a5",
               "0425ab474eba3a5478d6179b199c8406f2195508dcccefe33498394d61019b06"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "fringe-hair-beauty",
+      "commit": "c135d788b1dcb3babf75c51623badb81d2779b73",
+      "completedAt": "2026-09-19T13:50:48.134Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/fringe-hair-beauty-post-deploy.json",
+          "sha256": "82e4bc3f3039ac6f09884f1bc2385e4add985eb6e8fe888b8a8d71c6027c1d6f"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/fringe-hair-beauty-lighthouse-summary.json",
+          "sha256": "f4b59a3802a7b243c1c9850672304038657dbaacf151307c8507ddb77408a94f"
+        },
+        "release": {
+          "file": "fleet-release-final/fringe-hair-beauty.json",
+          "sha256": "895e0d392d16ee77b3b423dc06fbd3b31be4646e68261bd89300aecc620390f7"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "1412baeb009edbdde31b1971cdbeaa48e70b397183807138f1a51916046dd72e",
+              "2c3cc49ee480ef79e522de77509d60e9ee19329b42378452a01218b8c5e25f82",
+              "71a87c02338f6ad4accdb0e1dfdf7645d8e3a87ab65d2d31e7dfb11c200ea405"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "cbc5669c2f8f486e0cbc8f2f68e7f4b5c37bfeda91757ab945f67a5c30fe1599",
+              "78bcff4dc11bad463a7cc8233176850f8e19e3f283894c985c98d2422e35997d",
+              "4e20dd0fc62574669f97fbce1df075ab12e975be32c0082e2c2b1a6383fe2aee"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "c8d43c2ba137f7688f46e1155b19cdfe45b6befd1f43cb2d5337ffbae7ce353c",
+              "cef4de4b60321ee85e8a014b6d6890f5dd9681fd954f27016fabaeea9ea5152f",
+              "b1dc5610fd8cc8bc3886657bcee6dc9eda45fc1bbdbe69586c863dfc50353bb6"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "05c5f35299d6735dcdd63d0c34d5b1df440490fdf680fd2f10f677a0025bccbf",
+              "dc40bae20083230ff7385c458291f58c810e1e9799273a030110a7006b93f36a",
+              "15a485e3512faa93593d90ba312a777e15cf74fa2cb50904d293da2103558012"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "glamour-and-glow",
+      "commit": "a98770928144e7ff6917bc1a903c9e16e77a60b6",
+      "completedAt": "2026-09-19T14:06:49.426Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/glamour-and-glow-post-deploy.json",
+          "sha256": "c48a30616e3785f09425cafb775126e4a0b9e8a4e26b5b7ae2a1e0d81ae17997"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/glamour-and-glow-lighthouse-summary.json",
+          "sha256": "3d48de5af0909eff02ff123d7285348b93397fbd27715cff4e36d9ad6e64252c"
+        },
+        "release": {
+          "file": "fleet-release-final/glamour-and-glow.json",
+          "sha256": "d9c9c2f613f46761a7c552547aeb8c5f367759b3c46261123cd65842f8ee465b"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "34809cdb7a95b474de7ddf45940dedae8803ce86d1348c1477385a9e9452841d",
+              "039ebddab1f8593a82b24580ac9626d6b4f10f9e50e08abe14277f7764829015",
+              "aa93c05eed31c6bbb4ab1cc66f38bb7d18d2ddda13b9f51708e02af022b793b4"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "86e4460cc81f9230467a54a89cdc24956e0c4e506c1f4b42a2573bbec854053e",
+              "be065e663c82c549f2bcb580be0891bcd75553c4d659e5f8bcd8f6391fd9f6df",
+              "f3ec704f52bb5664b7a4f9dc813a85a26b60b59aab563a56ec4269b5163c6120"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "0e00d560ef13cfd8fed1dcb565001de5d46a9be6109380ef9227a8980bd877bf",
+              "825ed9bf13f0f1aad744ee885953026642b942bc0da0826d47c8d13933438cf7",
+              "855d49422d41fb41b3004d7930cf974ec60e5ce233e377714f6e267ed2e4f8b9"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "ba76637ef97728931f38ead2cb524d802ed333bc42cefdead48d47a16176a3f8",
+              "e9d79d9362c0c53fae869bf06ba63c5d0f0b7f39d18a47e45aee37a8d23919fe",
+              "0058144818737c31dcaf08efa5ee97caf7fb6216ae880e1a11f169f45deea3be"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "go-engineers",
+      "commit": "43da18a4195ea3cddde1ffa7800724e2e1159e43",
+      "completedAt": "2026-09-19T14:22:30.693Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/go-engineers-post-deploy.json",
+          "sha256": "4d5d4eeb7caf212fd98d2cbb45824bd42d45eba35ba5478ba18204a59d763fb5"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/go-engineers-lighthouse-summary.json",
+          "sha256": "c03be6c72c4ab795fec91b24b326060040b21a1dfc2b9e58bd8ee4c7c049a1cc"
+        },
+        "release": {
+          "file": "fleet-release-final/go-engineers.json",
+          "sha256": "3ab95e1ea6f33563ae2d97fa815151382160dd30252f5ee143057b825ac90a8e"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "4223ef181b9a96833a9cfef5d162288411dd327e746075b3c0c889313efbaa92",
+              "bebb6155af3cbdd3574459d16a1f82d23930105988f5a808b656c48d7003fa0f",
+              "a1f465a55e01e7fe5c653d7c4e9a52ff943fc7a344d01775aa8f52ba1f5947f7"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "53ba113b19dc5becf3d89735029b74b2263369c369f78c297f804fb601c7ce7c",
+              "c135f53dadfd44e58a54ca14f4b6fd5bf6b4c4fe02ad539964a172f04bc1908f",
+              "c71d0e53ec8adab0c5fff914aaab0ce632e806d25eb03639d425b79ae46ac582"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "88bccbac015af25cd3b8d738134d92d06427965870c50328b1cd4c6b6ccb6216",
+              "a58df21bb4f8a243e5978384c54a380d3f04a37154acd637046680c1cc4fe7ca",
+              "9d7bb338df37a0c12efb7bb8f315bbf87ca3d7eaa6f2dae26dbf81382e604a9d"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "b3d2aa3c512cffe7e97a1f59a6417430e2d4746232c93c60c9fba54ec3bc92c9",
+              "00377a78deb49dc387331d9e4a66ce0b1451687a3f087cc8e9a4ec0d9fd47355",
+              "ceb418a318bb3e44c42cf64ff5fd6e443377cc883f533a7ca76964c9b4a2a83f"
             ]
           }
         ]
