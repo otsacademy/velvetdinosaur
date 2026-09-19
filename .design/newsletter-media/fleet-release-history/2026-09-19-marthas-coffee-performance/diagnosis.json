@@ -1,0 +1,101 @@
+{
+  "site": "marthas-coffee",
+  "at": "2026-09-19T17:46:18.644Z",
+  "originalCandidate": "5579114d8edfd7131d42972fadb6cdbfd5e1e417",
+  "failure": "Mobile Home performance99/98/100, median99. All browser tests passed, no deployment.",
+  "diagnosis": "All four preloaded fonts downloaded twice because demo proxy overwrites immutable build caching with no-store. Original run had122.7/157.7/37.8ms blocking time. Diagnostic hero opacity stayed1; no hero change.",
+  "fix": "Reuse existing Bubbleton fix: preserve immutable cache policy for content-hashed /_next/static/ only. Retain demo/noindex/action guards; pages/APIs/uploads remain no-store.",
+  "baselineChanges": false,
+  "thresholdChanges": false,
+  "regressionBefore": {
+    "startTime": "2026-09-19T17:41:25.970Z",
+    "duration": 5542.664000000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "regressionAfter": {
+    "startTime": "2026-09-19T17:42:38.073Z",
+    "duration": 3995.4059999999995,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "visualStats": {
+    "startTime": "2026-09-19T17:42:42.762Z",
+    "duration": 15342.49,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "diagnosticLighthouse": [
+    {
+      "run": 1,
+      "version": "11.4.0",
+      "viewport": "mobile",
+      "scores": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 79.338,
+        "largest-contentful-paint": 142.803,
+        "speed-index": 145,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "fontRequests": 4,
+      "uniqueFonts": 4
+    },
+    {
+      "run": 2,
+      "version": "11.4.0",
+      "viewport": "mobile",
+      "scores": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 124.36,
+        "largest-contentful-paint": 520.781,
+        "speed-index": 475,
+        "total-blocking-time": 57.041000000000025,
+        "cumulative-layout-shift": 0
+      },
+      "fontRequests": 4,
+      "uniqueFonts": 4
+    },
+    {
+      "run": 3,
+      "version": "11.4.0",
+      "viewport": "mobile",
+      "scores": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 1213.105,
+        "largest-contentful-paint": 1213.105,
+        "speed-index": 1222,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "fontRequests": 4,
+      "uniqueFonts": 4
+    }
+  ],
+  "siteFixCommit": "6396048ba5dea34794d3a5976ec241cb234781f1",
+  "mergedCandidate": "19ef52f5dee94c7a98aead03b5a761bd93d2543a",
+  "receipt": "Only baseCommit refreshed; all102 scoped hashes unchanged.",
+  "baselineTree": "6d64e585db88af352d7484053385fadab5eb731f",
+  "outcome": "awaiting-full-fresh-gates"
+}

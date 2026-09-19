@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T17:17:06.531Z",
+  "generatedAt": "2026-09-19T17:46:41.924Z",
   "total": 51,
   "completed": 30,
   "remaining": 21,
@@ -250,8 +250,8 @@
     {
       "site": "marthas-coffee",
       "completed": false,
-      "commit": "5579114d8edfd7131d42972fadb6cdbfd5e1e417",
-      "release": "failed",
+      "commit": "3a1cd0f7ac4813c97861a1219059714a377fec58",
+      "release": "all-manifest-quality-gates",
       "operations": "pending",
       "evidence": "fleet-release-final/marthas-coffee.json",
       "operationsEvidence": null
