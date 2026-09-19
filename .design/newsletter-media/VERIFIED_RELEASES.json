@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T15:17:15.320Z",
+  "generatedAt": "2026-09-19T16:15:50.341Z",
   "managedSites": 51,
-  "verifiedSites": 25,
+  "verifiedSites": 27,
   "complete": false,
   "scope": "Completed release and installation evidence only; does not claim current queues remain empty or pending sites are protected.",
   "results": [
@@ -3608,6 +3608,334 @@
               "f676dfb326d2e76be4c92c8a13a95fe04123593f165e209ed381e6b82f9e3409",
               "b0c3d6869689d79ee5306b4c54f206da503931ecea2f59fefbe03e86f3437ebb",
               "ea93b4b82ecf619df2043bf070f1a1777e9587075b0b2fd4b6e6f9ae373d8c90"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "home-farm-salon",
+      "commit": "33a779b9c1810fc7aa026fa820bd8fc93ff4703a",
+      "completedAt": "2026-09-19T15:31:29.000Z",
+      "liveSlot": "blue",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/home-farm-salon-post-deploy.json",
+          "sha256": "1b5346fb5aae9a85718f8152dc5a209db1678c5c9a06e5f91d7aad48ef77d87e"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/home-farm-salon-lighthouse-summary.json",
+          "sha256": "d754a55e1445a9210165c35e4006eb5efd91db9e50cc607173116f7cb398b41b"
+        },
+        "release": {
+          "file": "fleet-release-final/home-farm-salon.json",
+          "sha256": "45aba6bf84ab072337103a62352411ad98dbb24793613cf2cb7944c40a3cb088"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "34691bfbe691530a3854f33b8be6775c5492a51b90e65789e2259fa316b4b424",
+              "ce0f94b057450ea6315048bf7ac46a5a582b3ac3a74f6a01d4aa2256be80cfe0",
+              "4e5759c058a7014f4a88577e8dd5594dbf531c27533911c1e3fbb1e88e585bed"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "1d2c03c17101dfcdf0523d94fd5511d5b20181509cc94844a5de619ed6f291ef",
+              "cd52082e494d8a19ea60713a6fd184ea7685fb1d72de9890077f2ada37eff8de",
+              "5c79719b73e578d68f6b7aaf17f25ca2311602682f62f3c9f572595c3ca5bb6c"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "2dbe5191d8724568d91cd9a281bc34d65525004ef2b8459b49532a1bcb1f119f",
+              "9488b01d991962ca65d0a04499d8ac88e136670a5aa158facc4b84d0620fb075",
+              "f58e9ace5f1099396755fd2cebe93c2abb0dcc3578b6005ffaf0e45681dc80c7"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "4d49e0d3123622079944f8910042290281706559abbe62d8bded9b15cd90c84e",
+              "9246f520eda5a49a8c477f0fa4674c4ff75bec81e5f243fee325bfad5ccb7a67",
+              "0a5d43210c2eca214f6f0b613adffdda3a37e94d97f9078680d7a0b16b3eceff"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "site": "homedene-farm",
+      "commit": "586797bd155254b06c940418ac9d9d9c48403a73",
+      "completedAt": "2026-09-19T15:48:00.529Z",
+      "liveSlot": "green",
+      "publicStatus": 200,
+      "evidence": {
+        "operations": {
+          "file": "fleet-release-final/homedene-farm-post-deploy.json",
+          "sha256": "e95aa06d8778a76c55c69dd5fdb57eb2f24efe83d1751aebe687c4f5951f0a61"
+        },
+        "lighthouse": {
+          "file": "fleet-release-final/homedene-farm-lighthouse-summary.json",
+          "sha256": "ce6bf93171c9de4de2d2b8ca6b559eb9f9a69e3040fec1fd10fb036b36693a8d"
+        },
+        "release": {
+          "file": "fleet-release-final/homedene-farm.json",
+          "sha256": "44f7b5b3b0ea886908343810088eae7186b1837c84efef7b3edc164e8f46352a"
+        }
+      },
+      "media": {
+        "ownAsset": 200,
+        "foreignAsset": 404,
+        "unknownRendition": 404,
+        "noForeignBackfill": true
+      },
+      "scheduler": {
+        "mode": "dry-run",
+        "initialQueueEmpty": true,
+        "dailyCleanupInstalled": true,
+        "unrelatedEntriesPreserved": true
+      },
+      "realDemoSendingDisabled": true,
+      "lighthouse": {
+        "scoreScale": 100,
+        "categoryMedians100": true,
+        "pages": [
+          {
+            "viewport": "mobile",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "5f61363dd527d782fa5e20730cfa6d89e22d8524bb4704f42d179a45fa377ae5",
+              "3fabe56b64e0f58fbc56ec37489cd168fc20aa75c0f4693697ec48097865562f",
+              "fb7f1a803fa2ce67ac2cd0a411506b4f758059c9cce31f9c20fbf45c5df54b9f"
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "80b4b7823e2a4dc7ccf92a6cf877d20de300f91802e5d4ede3d5a2b16ce73581",
+              "fa2fa810013dcdf4bc8623c7afe3591fda4f722ccae523a31af38f535f446944",
+              "f7a7d20906ffb66ad07662589473350a184776fa5e92a44f49798d838f3535c4"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "655ebd82f4936b9aa8b987cd9d3e0d5e17aa12b1630add9df05cce2bd35aa25a",
+              "8b8d100b363a4d739d82e7ab2bba8ee0d18de46c72490ca04fcff00bcec7623d",
+              "d0b2edeecf9a3beb5d8bcd107eb15e83913d20aee3bd52e5c079aafb441c9a02"
+            ]
+          },
+          {
+            "viewport": "desktop",
+            "path": "/about",
+            "categories": {
+              "performance": [
+                100,
+                100,
+                100
+              ],
+              "accessibility": [
+                100,
+                100,
+                100
+              ],
+              "best-practices": [
+                100,
+                100,
+                100
+              ],
+              "seo": [
+                100,
+                100,
+                100
+              ]
+            },
+            "rawReportSha256": [
+              "e05784f7d39e34e2bdeb8c76292441a4662d9d1e71ada0768148fef816d8fd12",
+              "c1ed8d1664617fddc540f0a7b644d53611f6706f38aa277d4248d3d5b66f1d0e",
+              "f111ad2e876cecfad31d734fe6c51833f45ff4ed8aaac20a2f10aaee31473193"
             ]
           }
         ]

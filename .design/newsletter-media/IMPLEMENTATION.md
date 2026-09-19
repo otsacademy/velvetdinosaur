@@ -1,6 +1,6 @@
 # Newsletter media implementation evidence
 
-Checkpoint: 2026-09-19 12:16 UTC. **14/51 sites have completed release and post-deploy verification:** the four pilots and ten further demos through Bush Farm. Popty and ASAP also passed actual storage round trips. Claire Lewis is running fresh full gates after a desktop Lighthouse stall; diagnostic evidence is preserved and its cause remains unproven. The unchanged candidate passed a fresh-server diagnostic probe; 37 sites remain. Rollout is incomplete. See [ROLLOUT.json](./ROLLOUT.json) for later per-site evidence and [SESSION_STATUS.md](./SESSION_STATUS.md) for the operational handoff.
+Checkpoint: 2026-09-19 16:16 UTC. **27/51 sites have completed release and post-deploy verification:** the four pilots and 23 further demos through Homedene Farm. Popty and ASAP also passed actual storage round trips. Il Botanico is running fresh full gates after a confirmed hero hydration fade was removed; the new regression passes on desktop/mobile and all four unchanged visual baselines match. 24 sites remain, plus the final hub operations/documentation follow-up release. Rollout is incomplete. See [ROLLOUT.json](./ROLLOUT.json) for later per-site evidence, [VERIFIED_RELEASES.json](./VERIFIED_RELEASES.json) for sanitized checks, and [SESSION_STATUS.md](./SESSION_STATUS.md) for the operational handoff.
 
 ## Implemented and verified
 

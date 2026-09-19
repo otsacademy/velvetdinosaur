@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-19T15:17:15.288Z",
+  "generatedAt": "2026-09-19T16:15:50.306Z",
   "total": 51,
-  "completed": 25,
-  "remaining": 26,
+  "completed": 27,
+  "remaining": 24,
   "sites": [
     {
       "site": "academy-partnership",
@@ -204,27 +204,27 @@
     },
     {
       "site": "home-farm-salon",
-      "completed": false,
+      "completed": true,
       "commit": "33a779b9c1810fc7aa026fa820bd8fc93ff4703a",
-      "release": "all-manifest-quality-gates",
-      "operations": "pending",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/home-farm-salon.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/home-farm-salon-post-deploy.json"
     },
     {
       "site": "homedene-farm",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "586797bd155254b06c940418ac9d9d9c48403a73",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/homedene-farm.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/homedene-farm-post-deploy.json"
     },
     {
       "site": "il-botanico",
       "completed": false,
-      "commit": null,
-      "release": "staged",
+      "commit": "0f375ac0aa1308d253ce6b9de66b85be9bfb2114",
+      "release": "all-manifest-quality-gates",
       "operations": "pending",
       "evidence": "fleet-release-final/il-botanico.json",
       "operationsEvidence": null
