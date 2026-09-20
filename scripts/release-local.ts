@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { verifyNewsletterLighthouse } from '../ops/scripts/newsletter-release-lighthouse';
+import { assertLighthousePortsFree, verifyNewsletterLighthouse } from '../ops/scripts/newsletter-release-lighthouse';
 
 type Options = {
   envFile: string;
@@ -80,6 +80,7 @@ function main() {
   ensureCleanWorktree(cwd);
 
   const releaseCommit = readStdout('git', ['rev-parse', 'HEAD'], cwd);
+  assertLighthousePortsFree(cwd);
   const qualityStartedAt = Date.now();
   run('bun', ['run', 'quality:validate'], cwd);
   run('bun', ['run', 'quality', '--only', 'velvetdinosaur'], cwd);

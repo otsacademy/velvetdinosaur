@@ -7,6 +7,7 @@ import { readNewsletterEnvironment } from '../../lib/newsletter/operations';
 import { git, gitFile, pathsOverlap, runtimeEnvironmentRoot, sha256, type InventorySite } from './newsletter-release-review';
 import { RECEIPT_PATH } from './newsletter-release-preflight';
 import { readDeploymentState } from './newsletter-release-operational-state';
+import { assertLighthousePortsFree } from './newsletter-release-lighthouse';
 
 export type DeployConfig = {
   controllerPath: string; activeLink: string; upstreamConf: string; publicHealthUrl: string;
@@ -29,9 +30,12 @@ export function siteEnvironment(site: Record<string, string>, inherited: Record<
 
 export async function runNewsletterQuality(
   run: (args: string[], env: NodeJS.ProcessEnv) => Promise<void>, env: NodeJS.ProcessEnv,
-  step: (name: string, action: () => Promise<void>) => Promise<unknown> = async (_name, action) => action()
+  step: (name: string, action: () => Promise<void>) => Promise<unknown> = async (_name, action) => action(),
+  root?: string
 ) {
   const scoped = { ...env, NEWSLETTER_RELEASE_RECEIPT: RECEIPT_PATH };
+  // A checkout is required to know the configured LHCI ports; the queue always passes its clone.
+  if (root) await step('assert-lighthouse-ports-free', async () => assertLighthousePortsFree(root));
   await step('quality-manifest-validation', () => run(['run', 'quality:validate'], scoped));
   // The quality wrapper's own preflight and every build child inherit this scope.
   await step('all-manifest-quality-gates', () => run(['run', 'quality', '--all'], scoped));

@@ -1,4 +1,5 @@
-import { lstatSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { existsSync, lstatSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { sha256 } from './newsletter-release-review';
 
@@ -33,6 +34,51 @@ function reportUrl(value: unknown): URL {
     throw new Error('Unsupported Lighthouse report URL fields.');
   }
   return url;
+}
+
+/** Ports LHCI needs free: configured localhost URLs plus the start command's -p/--port. */
+export function configuredLighthousePorts(root: string): number[] {
+  const ports = new Set<number>();
+  for (const viewport of ['mobile', 'desktop']) {
+    const file = path.join(root, `lighthouserc.${viewport}.json`);
+    if (!existsSync(file)) continue;
+    const collect = JSON.parse(readFileSync(file, 'utf8')).ci?.collect;
+    for (const value of Array.isArray(collect?.url) ? collect.url : []) {
+      const url = reportUrl(value);
+      if (!['localhost', '127.0.0.1', '[::1]'].includes(url.hostname)) continue;
+      ports.add(Number(url.port || (url.protocol === 'https:' ? 443 : 80)));
+    }
+    const command = typeof collect?.startServerCommand === 'string' ? collect.startServerCommand : '';
+    const match = /(?:^|\s)(?:-p|--port)[\s=](\d{1,5})(?=\s|$)/.exec(command);
+    if (match) ports.add(Number(match[1]));
+  }
+  return [...ports].sort((a, b) => a - b);
+}
+
+/** Local TCP listeners read from the kernel, so a foreign or stale server cannot hide. */
+export function listeningPorts(): Set<number> {
+  const result = spawnSync('ss', ['-Hltn'], { encoding: 'utf8' });
+  if (result.status !== 0 || typeof result.stdout !== 'string') throw new Error('Cannot enumerate listening TCP ports with ss.');
+  const ports = new Set<number>();
+  for (const line of result.stdout.split('\n')) {
+    const local = line.trim().split(/\s+/)[3] || '';
+    const port = Number(local.slice(local.lastIndexOf(':') + 1));
+    if (Number.isInteger(port) && port > 0) ports.add(port);
+  }
+  return ports;
+}
+
+/**
+ * LHCI starts its own server on the configured port and then audits whatever answers there.
+ * When another process already listens (for example a slot service configured on the same
+ * port), the start fails and LHCI silently audits that process instead of this checkout, so
+ * the quality suite must refuse to run at all. Observed 2026-09-20 with a green slot on 3100.
+ */
+export function assertLighthousePortsFree(root: string, listening = listeningPorts()) {
+  const busy = configuredLighthousePorts(root).filter((port) => listening.has(port));
+  if (busy.length) {
+    throw new Error(`Lighthouse port ${busy.join(', ')} already has a listener; LHCI would audit that process instead of this checkout. Free the port before running quality gates.`);
+  }
 }
 
 /** Read existing reports only. This supplements, and never alters, site LHCI gates. */

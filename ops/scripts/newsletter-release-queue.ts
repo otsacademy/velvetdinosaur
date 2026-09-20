@@ -146,7 +146,7 @@ async function executeSite(options: Options, site: InventorySite, review: Return
     let qualityStartedAt = 0;
     await withTrackedTypeScriptCache({ clone, commit }, async () => {
       qualityStartedAt = Date.now();
-      await runNewsletterQuality((args, environment) => run('bun', args, clone, environment), visualEnvironment.environment, step);
+      await runNewsletterQuality((args, environment) => run('bun', args, clone, environment), visualEnvironment.environment, step, clone);
     }, (evidence) => { report.typescriptBuildCache = evidence; save(); });
     if (JSON.stringify(reviewedVisualEnvironment(clone, site, options.catalogDirectory, childEnv).evidence) !== JSON.stringify(visualEnvironment.evidence)) {
       throw new Error('Visual environment changed during quality checks.');

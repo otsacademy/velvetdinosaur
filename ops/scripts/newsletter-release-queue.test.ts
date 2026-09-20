@@ -7,7 +7,7 @@ import { parseArgs } from './newsletter-release-queue';
 import { EXPECTED_FEATURE_FILES, EXPECTED_SUPPORT_FILES, RECEIPT_PATH, verifyNewsletterScopedRelease } from './newsletter-release-preflight';
 import { classifyFile, git, LEGACY_HASHES, mergePackage, mergeQuality, pathsOverlap, sha256 } from './newsletter-release-review';
 import { acquireClaim, assertCurrentControllerMain, assertEquivalentDotenv, runLogged, runNewsletterQuality, siteEnvironment, stageClone, updateController } from './newsletter-release-runtime';
-import { verifyNewsletterLighthouse } from './newsletter-release-lighthouse';
+import { assertLighthousePortsFree, configuredLighthousePorts, listeningPorts, verifyNewsletterLighthouse } from './newsletter-release-lighthouse';
 
 const temporary: string[] = [];
 function temp() { const dir = mkdtempSync(path.join(tmpdir(), 'newsletter-release-test-')); temporary.push(dir); return dir; }
@@ -164,12 +164,21 @@ test('scoped preflight is opt-in, requires committed complete scope, and rejects
   expect(() => verifyNewsletterScopedRelease(root, { NEWSLETTER_RELEASE_RECEIPT: RECEIPT_PATH })).toThrow('exactly the reviewed');
 });
 
-function lighthouseFixture(mobile = [0.96, 1, 1], desktop = [1, 0.75, 1]) {
+function freePort() {
+  const busy = listeningPorts();
+  for (let attempt = 0; attempt < 100; attempt++) {
+    const port = 40_000 + Math.floor(Math.random() * 20_000);
+    if (!busy.has(port)) return port;
+  }
+  throw new Error('No free fixture port found.');
+}
+
+function lighthouseFixture(mobile = [0.96, 1, 1], desktop = [1, 0.75, 1], port = freePort()) {
   const clone = temp(); const qualityStartedAt = Date.now() - 10_000;
   write(clone, 'quality/gates.json', JSON.stringify({ targets: [{ name: 'fixture', kind: 'site', gates: ['build', 'lighthouse'] }] }));
   for (const [viewport, performance] of [['mobile', mobile], ['desktop', desktop]] as const) {
     const names = ['performance', 'accessibility', 'best-practices', 'seo'];
-    const url = 'http://localhost:3100/'; const directory = `.lighthouseci/${viewport}`;
+    const url = `http://localhost:${port}/`; const directory = `.lighthouseci/${viewport}`;
     write(clone, `lighthouserc.${viewport}.json`, JSON.stringify({ ci: {
       collect: { numberOfRuns: 3, url: [url], settings: { formFactor: viewport } },
       assert: { assertions: Object.fromEntries(names.map((name) => [`categories:${name}`, ['error', { minScore: 1 }]])) },
@@ -186,7 +195,7 @@ function lighthouseFixture(mobile = [0.96, 1, 1], desktop = [1, 0.75, 1]) {
     });
     write(clone, `${directory}/manifest.json`, JSON.stringify(manifest));
   }
-  return { clone, site: 'fixture', commit: 'a'.repeat(40), qualityStartedAt, reportFile: path.join(clone, 'release-evidence.json') };
+  return { clone, site: 'fixture', commit: 'a'.repeat(40), qualityStartedAt, port, reportFile: path.join(clone, 'release-evidence.json') };
 }
 
 function changeJson(root: string, file: string, change: (value: Record<string, unknown>) => void) {
@@ -236,7 +245,7 @@ describe('newsletter release Lighthouse evidence', () => {
       }
       const result = spawnSync(process.execPath, ['--no-env-file', script], {
         cwd: fixture.clone, encoding: 'utf8', timeout: 20_000,
-        env: { PATH: bin, HOME: fixture.clone, NODE_ENV: 'test' }
+        env: { PATH: `${bin}:/usr/bin:/bin`, HOME: fixture.clone, NODE_ENV: 'test' }
       });
       const calls = readFileSync(path.join(fixture.clone, 'calls.jsonl'), 'utf8').trim().split('\n').map((line) => JSON.parse(line));
       const deployments = calls.filter((call: string[]) => call[0] === 'bun' && call[2] === 'deploy:blue-green');
@@ -253,6 +262,31 @@ describe('newsletter release Lighthouse evidence', () => {
       }
     });
   }
+
+  test('hub release refuses to run quality gates while its Lighthouse port has a listener', () => {
+    const server = Bun.listen({ hostname: '127.0.0.1', port: 0, socket: { data() {} } });
+    try {
+      const fixture = lighthouseFixture([1, 1, 1], [1, 1, 1], server.port);
+      const script = path.resolve(import.meta.dir, '../../scripts/release-local.ts');
+      const bin = path.join(fixture.clone, 'bin');
+      const commandFixture = `#!${process.execPath} --no-env-file
+        import { appendFileSync } from 'node:fs';
+        import path from 'node:path';
+        appendFileSync('calls.jsonl', JSON.stringify([path.basename(process.argv[1]), ...process.argv.slice(2)]) + '\\n');
+        const key = process.argv.slice(2).join(' ');
+        if (key === 'branch --show-current') process.stdout.write('main');
+        else if (key === 'rev-parse HEAD') process.stdout.write(${JSON.stringify(fixture.commit)});
+      `;
+      for (const name of ['git', 'bun']) { write(fixture.clone, `bin/${name}`, commandFixture); chmodSync(path.join(bin, name), 0o700); }
+      const result = spawnSync(process.execPath, ['--no-env-file', script], {
+        cwd: fixture.clone, encoding: 'utf8', timeout: 20_000, env: { PATH: `${bin}:/usr/bin:/bin`, HOME: fixture.clone, NODE_ENV: 'test' }
+      });
+      expect(result.status).not.toBe(0);
+      expect(result.stderr).toContain(`Lighthouse port ${server.port} already has a listener`);
+      const calls = readFileSync(path.join(fixture.clone, 'calls.jsonl'), 'utf8').trim().split('\n').map((line) => JSON.parse(line));
+      expect(calls.some((call: string[]) => call[0] === 'bun')).toBe(false);
+    } finally { server.stop(true); }
+  });
 
   test('accepts three-run median 100 with variance and records only sanitized raw scores', () => {
     const options = lighthouseFixture();
@@ -308,6 +342,31 @@ describe('newsletter release Lighthouse evidence', () => {
       });
       expect(() => verifyNewsletterLighthouse(options)).toThrow('invalid Lighthouse category score: accessibility');
     }
+  });
+
+  test('configured Lighthouse ports come from localhost URLs and the server start command', () => {
+    const fixture = lighthouseFixture();
+    expect(configuredLighthousePorts(fixture.clone)).toEqual([fixture.port]);
+    changeJson(fixture.clone, 'lighthouserc.desktop.json', (config) => {
+      (config.ci as { collect: Record<string, unknown> }).collect.startServerCommand = 'bun run start -- -p 3100';
+    });
+    expect(configuredLighthousePorts(fixture.clone)).toEqual([3100, fixture.port].sort((a, b) => a - b));
+    changeJson(fixture.clone, 'lighthouserc.mobile.json', (config) => {
+      (config.ci as { collect: Record<string, unknown> }).collect.url = ['https://example.test/'];
+    });
+    expect(configuredLighthousePorts(fixture.clone)).toEqual([3100, fixture.port].sort((a, b) => a - b));
+  });
+
+  test('quality gates refuse to start while a configured Lighthouse port already has a listener', () => {
+    const fixture = lighthouseFixture();
+    expect(() => assertLighthousePortsFree(fixture.clone, new Set([fixture.port]))).toThrow('already has a listener');
+    expect(() => assertLighthousePortsFree(fixture.clone, new Set([fixture.port + 1]))).not.toThrow();
+    const server = Bun.listen({ hostname: '127.0.0.1', port: 0, socket: { data() {} } });
+    try {
+      expect(listeningPorts().has(server.port)).toBe(true);
+      const occupied = lighthouseFixture([1, 1, 1], [1, 1, 1], server.port);
+      expect(() => assertLighthousePortsFree(occupied.clone)).toThrow(`Lighthouse port ${server.port} already has a listener`);
+    } finally { server.stop(true); }
   });
 
   test('missing files and unexpected URLs fail with a recorded safe reason', () => {
