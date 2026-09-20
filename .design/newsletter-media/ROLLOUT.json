@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-19T18:08:34.890Z",
+  "generatedAt": "2026-09-20T03:40:10.895Z",
   "total": 51,
-  "completed": 31,
-  "remaining": 20,
+  "completed": 51,
+  "remaining": 0,
   "sites": [
     {
       "site": "academy-partnership",
@@ -258,48 +258,48 @@
     },
     {
       "site": "michaels-malmesbury",
-      "completed": false,
+      "completed": true,
       "commit": "245fac514d1b73531c939c001124459d9325bcdd",
-      "release": "failed",
-      "operations": "pending",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/michaels-malmesbury.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/michaels-malmesbury-post-deploy.json"
     },
     {
       "site": "new-inn-lechlade",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "860d56c7914adc8a367557fd7b2c7defc887dfb6",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/new-inn-lechlade.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/new-inn-lechlade-post-deploy.json"
     },
     {
       "site": "number-47-grassington",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "288882d5fbe30361a3d759cb5e2d2c7072285e16",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/number-47-grassington.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/number-47-grassington-post-deploy.json"
     },
     {
       "site": "old-craft-barn",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "805a9279fe555ee779ffaeb5101b12663f7cf438",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/old-craft-barn.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/old-craft-barn-post-deploy.json"
     },
     {
       "site": "pokhara-delight",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "82974bd31c1a53ffec4d7a187d56a23c2f41b218",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/pokhara-delight.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/pokhara-delight-post-deploy.json"
     },
     {
       "site": "popty-cara",
@@ -312,84 +312,84 @@
     },
     {
       "site": "portway-dental",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "8a3317ff2d76f11e67ade29d5b4a1dbff05aef30",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/portway-dental.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/portway-dental-post-deploy.json"
     },
     {
       "site": "powys-country-house",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "5aeab674617e73a210a8f38dd1b57eb26cecac74",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/powys-country-house.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/powys-country-house-post-deploy.json"
     },
     {
       "site": "rees-russell",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "17dab74b6d45689c112850b3bd34987622982f3d",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/rees-russell.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/rees-russell-post-deploy.json"
     },
     {
       "site": "riverside-lechlade",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "03c68c48b0f127f39a98e933e0caa7b8d5a76063",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/riverside-lechlade.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/riverside-lechlade-post-deploy.json"
     },
     {
       "site": "salutation-inn",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "d18a473376df330515232494f8940e950f2920b3",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/salutation-inn.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/salutation-inn-post-deploy.json"
     },
     {
       "site": "simas-beauty-witney",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "731c99a45152deaff8f125ee4ce8f14f75f931b5",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/simas-beauty-witney.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/simas-beauty-witney-post-deploy.json"
     },
     {
       "site": "small-talk-tearooms",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "bb608b96e4993baaef4e2b33cf9044ff2056c899",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/small-talk-tearooms.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/small-talk-tearooms-post-deploy.json"
     },
     {
       "site": "star-inn-woodstock",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "0dd533d0d133e388d9247a75059ccdd6d1672c6c",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/star-inn-woodstock.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/star-inn-woodstock-post-deploy.json"
     },
     {
       "site": "teddington-cheese",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "37c4696c48806c5d6c2482aeb3969323cb6dfda8",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/teddington-cheese.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/teddington-cheese-post-deploy.json"
     },
     {
       "site": "thebrave",
@@ -410,57 +410,57 @@
     },
     {
       "site": "wallys-deli",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "146274cb9a14915a8951dcc128a5799277a934c2",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/wallys-deli.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/wallys-deli-post-deploy.json"
     },
     {
       "site": "white-hart-minster",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "6b60f1e33a3d71a58ce6deb92f060862ad78bbe5",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/white-hart-minster.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/white-hart-minster-post-deploy.json"
     },
     {
       "site": "white-rose-accountancy",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "412d5bb7e774567076374dc8520f931716fb7b82",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/white-rose-accountancy.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/white-rose-accountancy-post-deploy.json"
     },
     {
       "site": "witney-dental-practice",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "f3a29812fdfd8042a5e0bb506a53efcedd14cae2",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/witney-dental-practice.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/witney-dental-practice-post-deploy.json"
     },
     {
       "site": "witney-hotel",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "80a37e5df66816be36367bf9ecb552e2daf9ba1f",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/witney-hotel.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/witney-hotel-post-deploy.json"
     },
     {
       "site": "woodstock-dental",
-      "completed": false,
-      "commit": null,
-      "release": "staged",
-      "operations": "pending",
+      "completed": true,
+      "commit": "f08dd42dd2f5dbf45d74774919de7b13d875351b",
+      "release": "healthy",
+      "operations": "passed",
       "evidence": "fleet-release-final/woodstock-dental.json",
-      "operationsEvidence": null
+      "operationsEvidence": "fleet-release-final/woodstock-dental-post-deploy.json"
     }
   ]
 }

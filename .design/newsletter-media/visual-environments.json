@@ -208,10 +208,11 @@
     },
     {
       "site": "number-47-grassington",
-      "baselineTree": "58ab94828066be2a2fd94af3077f7b9295424e1b",
-      "profile": "pre-september-2026",
-      "latestBaselineCommit": "2e0162d04b94aff6caecac0d1930c10062c1b009",
-      "latestBaselineDate": "2026-08-31T14:13:34+02:00"
+      "baselineTree": "2da85abc389edb6b842e9ce8f8f30f2df74685a7",
+      "profile": "system",
+      "latestBaselineCommit": "3a28f7395e0910625b3017006c9610fbb5dff0bd",
+      "latestBaselineDate": "2026-09-19T23:27:16+02:00",
+      "note": "Baselines refreshed 2026-09-19 from the unchanged live build (976c56a) with current system fonts after the stale 31 Aug baselines failed against the type-scale commit 4a304f5; see fleet-release-history/2026-09-19-number-47-grassington-visual/."
     },
     {
       "site": "old-craft-barn",
@@ -285,10 +286,11 @@
     },
     {
       "site": "teddington-cheese",
-      "baselineTree": "e642c100228eb02fe560fa6585308b8e94c9eb06",
-      "profile": "pre-september-2026",
-      "latestBaselineCommit": "366a1a165108eb55657d3aa34277370a8869279b",
-      "latestBaselineDate": "2026-08-31T13:17:46+02:00"
+      "baselineTree": "e0e7038c94132ab89dc897fbb0660bf37602f7b4",
+      "profile": "system",
+      "latestBaselineCommit": "8c00e609b9479df872d8d10626e7ab0c0370a3e3",
+      "latestBaselineDate": "2026-09-20",
+      "note": "Baselines refreshed 2026-09-20 from the unchanged live build (b507cd3) with current system fonts after the stale 31 Aug baselines failed against the type-scale commit 8c0ab00; see fleet-release-history/2026-09-20-teddington-cheese-visual/."
     },
     {
       "site": "wallys-deli",

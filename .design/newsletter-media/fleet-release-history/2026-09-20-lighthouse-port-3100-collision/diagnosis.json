@@ -1,0 +1,23 @@
+{
+  "incident": "Lighthouse CI port 3100 collision",
+  "at": "2026-09-20T02:53:50Z to 03:39Z",
+  "detected": "2026-09-20T03:41Z (port 3100 still listening after the queue exited)",
+  "cause": "White Rose Accountancy's green slot is configured on port 3100 (.state.json slots.green.port, systemd vd-white-rose-accountancy-green ExecStart 'bun run start -- --port ${PORT:-3100}'). Every site's lighthouserc.{mobile,desktop}.json starts its LHCI server with 'bun run start -- -p 3100' and audits http://localhost:3100/. The green slot went live at 02:53:50Z when White Rose deployed; from then on each later site's LHCI server failed to bind (reproduced: 'listen EADDRINUSE :::3100'), and LHCI 0.13.0 printed no warning and audited the live White Rose site instead (reproduced with a one-run probe: exit 0, report contains only white-rose-accountancy request URLs).",
+  "affected": [
+    "witney-dental-practice",
+    "witney-hotel",
+    "woodstock-dental"
+  ],
+  "unaffected": "All 44 earlier sites and White Rose itself were gated while port 3100 was free; only the White Rose green slot uses 3100 and it was inactive until its own deployment (fleet-wide .state.json check). The hub release of 2026-09-18 predates the fleet.",
+  "evidenceOfWrongSite": "Original raw reports (original-raw-reports/ per site) list only white-rose-accountancy request URLs and a 16583-byte document, matching White Rose's own report (16714 bytes) and not the sites' pages.",
+  "otherGates": "lint, typecheck, unit, build, portfolio-images, visual (ports 31900/31901) and theme-smoke ran inside each clone and remain valid; deployments, health, controller fast-forward and post-deploy operations are unaffected.",
+  "remediation": "The identical committed LHCI configuration (only the port and outputDir changed) was re-run for each affected candidate build from its isolated clone on free port 31921 (rerun/ per site), with a kernel listener poll recording that the serving process cwd was the clone for every sample. All 36 reports are fresh, distinct, requested at the configured URL/viewport, contain no white-rose-accountancy URLs, and every category median is 100. The three fleet-release-final/<site>-lighthouse-summary.json files were replaced with corrected summaries (schema unchanged, plus a correction block); originals are archived here; each release report carries a lighthouseCorrection pointer. VERIFIED_RELEASES.json was rebuilt from the corrected summaries.",
+  "guard": "ops/scripts/newsletter-release-lighthouse.ts now exports assertLighthousePortsFree; the fleet runner (step assert-lighthouse-ports-free) and scripts/release-local.ts refuse to run the quality suite while a configured LHCI port has a kernel-level listener. Tests added in newsletter-release-queue.test.ts.",
+  "openDecision": "White Rose Accountancy's green slot on port 3100 will collide with every future Lighthouse gate and with the hub follow-up release while it is live; move that slot to a free port (systemd PORT, .state.json, nginx upstream) or change the fleet LHCI port. Not changed here.",
+  "noChanges": {
+    "thresholds": false,
+    "baselines": false,
+    "runtimeCode": false,
+    "deployments": false
+  }
+}

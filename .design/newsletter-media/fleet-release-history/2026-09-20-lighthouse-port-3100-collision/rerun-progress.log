@@ -1,0 +1,13 @@
+2026-09-20T03:50:21Z witney-dental-practice mobile: lhci start
+2026-09-20T03:55:47Z witney-dental-practice mobile: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/witney-dental-practice 
+2026-09-20T03:55:47Z witney-dental-practice desktop: lhci start
+2026-09-20T04:01:13Z witney-dental-practice desktop: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/witney-dental-practice 
+2026-09-20T04:01:14Z witney-hotel mobile: lhci start
+2026-09-20T04:06:41Z witney-hotel mobile: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/witney-hotel 
+2026-09-20T04:06:41Z witney-hotel desktop: lhci start
+2026-09-20T04:12:09Z witney-hotel desktop: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/witney-hotel 
+2026-09-20T04:12:09Z woodstock-dental mobile: lhci start
+2026-09-20T04:17:41Z woodstock-dental mobile: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/woodstock-dental 
+2026-09-20T04:17:41Z woodstock-dental desktop: lhci start
+2026-09-20T04:23:11Z woodstock-dental desktop: lhci exit=0 reports=6 listener-cwds=cwd=/srv/apps/.ops/newsletter-media/woodstock-dental 
+2026-09-20T04:23:11Z ALL DONE

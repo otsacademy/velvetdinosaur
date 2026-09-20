@@ -1,0 +1,45 @@
+{
+  "site": "teddington-cheese",
+  "at": "2026-09-20T01:46:00Z",
+  "originalCandidate": "a1574ffa0381c993624921e1f72e43648e8ab989",
+  "baseCommit": "b507cd3473ebb1caf3122f8ce0abc47be09862d3",
+  "failure": "Visual gate: all four visual.spec.ts baselines failed (desktop home 1440x6335 expected vs 6514 received, 1878284 px; desktop about 2470 vs 2593, 485419 px; mobile home 13716 vs 14336, 2529326 px; mobile about 4357 vs 4662, 347774 px). 10 other browser tests passed, 2 skipped. No deployment.",
+  "diagnosis": "Stale baselines. Baselines committed in 366a1a1 (2026-08-31 13:17 +0200); site commit 8c0ab00 \"style: raise type scale and warm the reading colours\" (2026-08-31 22:07 +0200) followed without refreshing them; b507cd3 (2026-09-01) deployed to blue with those changes (.state.json lastCommit b507cd3, 2026-09-01T10:08Z). All 1550 tracked files of b507cd3 match the live blue slot byte-for-byte. Rendering the unchanged live site (localhost:3097) through the same spec and pre-september-2026 profile reproduced the identical four failures with identical dimensions and pixel counts, and its four actual PNGs are byte-identical to the candidate run's. The newsletter feature contributes zero pixels.",
+  "fix": "Regenerated the four visual.spec.ts baselines from the unchanged live build (b507cd3) with current system fonts. Site-only commit 8c00e609b9479df872d8d10626e7ab0c0370a3e3 on the controller develop, merged into the isolated clone as 4a3bc8b9b1f5141fbfb33d2b3ea42f91717afbe4; catalog row pins baseline tree e0e7038c94132ab89dc897fbb0660bf37602f7b4 with profile \"system\"; clone receipt baseCommit refreshed to 8c00e609b9479df872d8d10626e7ab0c0370a3e3. Thresholds (maxDiffPixelRatio 0), tests, runtime code and the 102 scoped feature hashes unchanged.",
+  "baselineChanges": true,
+  "thresholdChanges": false,
+  "sourceChanges": false,
+  "testChanges": false,
+  "candidateVerification": {
+    "server": "candidate build PiMoboJ3ajqFn3byKfnqG from the isolated clone on port 31920, system fonts",
+    "runs": [
+      {
+        "startTime": "2026-09-20T01:44:03.032Z",
+        "duration": 10570.179,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      {
+        "startTime": "2026-09-20T01:44:14.273Z",
+        "duration": 9420.394,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      {
+        "startTime": "2026-09-20T01:44:24.370Z",
+        "duration": 9491.769,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    ],
+    "result": "12/12 expected across three repetitions, no flaky"
+  },
+  "stopped": "Diagnostic candidate server on 31920 stopped; live blue 3097 untouched; no process killed.",
+  "outcome": "awaiting-full-fresh-gates-on-merged-candidate"
+}

@@ -1,0 +1,12 @@
+{
+  "site": "michaels-malmesbury",
+  "candidate": "245fac514d1b73531c939c001124459d9325bcdd",
+  "queueSession": 30256,
+  "watcherSession": 54362,
+  "at": "2026-09-19T18:24Z",
+  "cause": "User-requested stop of the fleet rollout (usage cost). The queue received SIGTERM during desktop Lighthouse run #3 of /about; bun run exited 143. No quality gate failed and no deployment was attempted.",
+  "liveAfterInterruption": { "activeSlot": "green", "port": 3018, "buildId": "qF1X_SDh1XvUdYCa8kDHS", "unchanged": true },
+  "typescriptBuildCache": "restored to committed bytes by the runner (see michaels-malmesbury.json)",
+  "changes": { "source": false, "baseline": false, "threshold": false, "timeout": false },
+  "outcome": "resume-unchanged-candidate-with-full-fresh-gates on new user instruction 2026-09-19"
+}
