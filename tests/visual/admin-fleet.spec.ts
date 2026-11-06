@@ -147,8 +147,10 @@ test.describe('protected administration', () => {
     await page.goto('/admin/fleet', { waitUntil: 'domcontentloaded' });
     await stabilize(page);
     // The review-window chip renders a today-relative date range; mask it so
-    // baselines do not rot daily.
+    // baselines do not rot daily. Its width follows the text and moves its
+    // neighbours, so pin that too.
     const reviewWindowChip = page.locator('button:has(.lucide-calendar-range)');
+    await page.addStyleTag({ content: 'button:has(.lucide-calendar-range) { width: 170px !important; overflow: hidden; white-space: nowrap; }' });
     await expect(page).toHaveScreenshot('fleet-light.png', { fullPage: true, mask: [reviewWindowChip] });
 
     await page.evaluate(() => document.documentElement.classList.add('dark'));
