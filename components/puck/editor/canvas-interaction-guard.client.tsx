@@ -4,6 +4,7 @@ import * as React from 'react';
 
 const EDITOR_CONTROL_SELECTOR =
   '[data-puck-overlay], [data-puck-overlay-portal], [data-puck-rte-menu]';
+const PUCK_BLOCK_SELECTOR = '[data-puck-component], [data-puck-dnd]';
 const ACTIONABLE_SELECTOR =
   'a, button, input[type="button"], input[type="submit"], input[type="image"], [role="button"]';
 
@@ -41,6 +42,10 @@ export function CanvasInteractionGuard({ children }: { children: React.ReactNode
 
     const protectCurrentActions = () => {
       guard.querySelectorAll(ACTIONABLE_SELECTOR).forEach((actionable) => {
+        // Puck marks each draggable block wrapper as role="button". The
+        // wrapper itself must stay interactive so a canvas click can select
+        // the block; visitor controls nested inside it are still guarded.
+        if (actionable.matches(PUCK_BLOCK_SELECTOR)) return;
         if (actionable.closest(EDITOR_CONTROL_SELECTOR)) return;
         if (actionable instanceof guard.ownerDocument.defaultView!.HTMLAnchorElement) {
           const href = actionable.getAttribute('href');

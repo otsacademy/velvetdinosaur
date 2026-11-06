@@ -69,6 +69,46 @@ async function closeActiveEditorPanels(page: Page) {
   await page.keyboard.press('Escape');
 }
 
+// The canvas guard used to catch each block's own wrapper, which dnd-kit marks as a button, as soon as
+// anything added an element to the page. Every later click in the block then did nothing until a reload.
+test('blocks stay usable and visitor buttons stay blocked after new elements appear', async ({ page }, testInfo) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('vd:asap-editor:getting-started:dismissed:v1', '1');
+  });
+  const slug = `smoke-guard-${testInfo.project.name}`;
+  const touch = testInfo.project.name.toLowerCase().includes('mobile');
+  await seedDirectEdit(page, slug);
+  await page.goto(`/edit/pages/${encodeURIComponent(slug)}`, { waitUntil: 'domcontentloaded' });
+  await waitForEditorReady(page);
+
+  const preview = page.frameLocator('iframe').first();
+  const block = preview.locator('[data-puck-component="vd_smoke_direct_image"]');
+  const image = block.locator('img').first();
+  await expect(image).toHaveAttribute('role', 'button');
+  await expect(block).toHaveAttribute('role', 'button');
+
+  // A visitor button stands in for any block adding elements, such as a new list item or a changed tab.
+  await block.evaluate((wrapper) => {
+    const button = wrapper.ownerDocument.createElement('button');
+    button.id = 'visitor-button';
+    button.textContent = 'Visitor action';
+    button.addEventListener('click', () => {
+      wrapper.ownerDocument.body.dataset.visitorClicked = 'true';
+    });
+    wrapper.append(button);
+  });
+  const visitorButton = preview.locator('#visitor-button');
+  await expect(visitorButton).toBeVisible();
+  // Puck's overlay takes real clicks on a block, so fire the button directly to reach the guard.
+  await visitorButton.evaluate((button: HTMLElement) => button.click());
+  await expect(preview.locator('body')).not.toHaveAttribute('data-visitor-clicked', 'true');
+
+  await image.scrollIntoViewIfNeeded();
+  await closeActiveEditorPanels(page);
+  await clickWithPointer(image, touch);
+  await expect(page.locator('[data-vd-image-toolbar]').getByRole('button', { name: 'Replace', exact: true })).toBeVisible();
+});
+
 test('inline text and direct image controls persist on desktop and mobile', async ({ page }, testInfo) => {
   const pageErrors: string[] = [];
   page.on('pageerror', (error) => pageErrors.push(error.message));
