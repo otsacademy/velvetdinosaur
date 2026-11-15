@@ -1,12 +1,16 @@
 # Velvet Dinosaur
 
-Velvet Dinosaur is a founder-led web studio building bespoke websites, web apps, and mobile apps with a focus on performance, accessibility, maintainability, and conversion.
+Velvet Dinosaur is a one-person web design business run by Ian Wickens from Minster Lovell, near Witney in Oxfordshire, UK. It designs, builds and looks after websites for small businesses, charities and community groups. Each website is built before the client pays; if they go ahead it is a managed monthly service with hosting, updates and support included.
 
 ## Key Pages
 
 - [Homepage](https://velvetdinosaur.com/)
-- [Selected work](https://velvetdinosaur.com/work)
-- [Contact](https://velvetdinosaur.com/#contact)
+- [Work and case studies](https://velvetdinosaur.com/work)
+- [About Ian Wickens](https://velvetdinosaur.com/about)
+- [Web design in Witney](https://velvetdinosaur.com/web-design-witney)
+- [Web design in Oxfordshire](https://velvetdinosaur.com/web-design-oxfordshire)
+- [Request a free preview](https://velvetdinosaur.com/contact)
+- [Service agreement](https://velvetdinosaur.com/agreement)
 - [Sitemap](https://velvetdinosaur.com/sitemap.xml)
 - [Robots](https://velvetdinosaur.com/robots.txt)
 

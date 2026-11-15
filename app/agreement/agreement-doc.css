@@ -1,6 +1,7 @@
 /* Agreement document — design-handoff port ("PDF design and usability update").
-   Palette is the handoff's, expressed as OKLCH tokens; accent is the VD blue,
-   accent-soft is the handoff's neutral hover grey (kept identical on purpose). */
+   Palette is the handoff's, expressed as OKLCH tokens; accent is the site navy
+   (app/letter.css), accent-soft is the handoff's neutral hover grey (kept
+   identical on purpose). */
 
 .vd-doc {
   --ink: oklch(0% 0 0);
@@ -12,14 +13,14 @@
   --tint: oklch(96.8% 0 0);
   --rule: oklch(89.1% 0 0);
   --rule-2: oklch(79.6% 0 0);
-  --accent: var(--vd-primary);
+  --accent: var(--vd-letter-navy);
   --good: var(--ink);
   --accent-soft: color-mix(in oklch, var(--ink) 8%, var(--paper));
   --gutter: 1.95in;
   --gpad: 2.2in;
   /* height of the sticky site header — the fixed sidebar, the progress bar
      and every scroll target start below it */
-  --vd-header-h: 74px;
+  --vd-header-h: 75px;
 
   background: var(--desk);
   color: var(--ink);
@@ -135,7 +136,7 @@
 
 @media print {
   /* the site header/footer are navigation, not part of the contract */
-  .vd-agreement-shell > header,
+  .vd-agreement-shell [data-site-header],
   .vd-agreement-shell [data-site-footer] {
     display: none !important;
   }

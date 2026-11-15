@@ -1,170 +1,109 @@
-import Image from "next/image"
 import Link from "next/link"
-import type { CSSProperties } from "react"
+import { ArrowRight, Check, Star } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { Dino3D } from "./dino-3d.client"
+import { Polaroid } from "./founder-avatar"
 import {
-  HOME_BTN_OUTLINE,
+  BTN_LG,
   HOME_BTN_PRIMARY,
   HOME_CONTAINER,
   HOME_KICKER,
+  LETTER_EM,
+  LETTER_H1,
+  LETTER_HAND,
+  LETTER_LEAD,
+  LETTER_LINK,
 } from "./home-shared"
 
-const HERO_BADGES = [
-  "★ 5.0 on Google",
-  "Performance-first websites",
-  "One friendly human, start to finish",
+const PROMISES = [
+  "No setup fee",
+  "30-day money-back guarantee",
+  "Replies within one business day",
 ] as const
 
-const HERO_META = ["£99 a month, everything included", "Built free before you decide", "Oxfordshire, UK"] as const
-
-function riseProps(animate: boolean, delayMs: number) {
-  return {
-    className: animate ? "vd-rise" : undefined,
-    style: animate ? ({ "--vd-rise-delay": `${delayMs}ms` } as CSSProperties) : undefined,
-  }
-}
-
-const PANEL_BACKGROUND: CSSProperties = {
-  backgroundImage:
-    "linear-gradient(color-mix(in oklch, var(--vd-primary) 5%, transparent) 1px, transparent 1px)," +
-    "linear-gradient(90deg, color-mix(in oklch, var(--vd-primary) 5%, transparent) 1px, transparent 1px)," +
-    "linear-gradient(180deg, color-mix(in srgb, var(--vd-primary) 7%, var(--vd-bg)), color-mix(in srgb, var(--vd-primary) 13%, var(--vd-bg)))",
-  backgroundSize: "26px 26px, 26px 26px, 100% 100%",
-}
-
-function DinoPanel({ animate, interactive }: { animate: boolean; interactive: boolean }) {
-  const rise = riseProps(animate, 670)
-  const panelLabel = interactive
-    ? "Meet the dinosaur — drag to spin him"
-    : "Meet the dinosaur"
-
+// The opening of the letter. Nothing here animates: the headline and the
+// photograph are the first things painted, and they should arrive finished.
+export function HomeHero() {
   return (
-    <div
-      className={cn(
-        "relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-lg border border-primary/20 sm:min-h-[390px]",
-        rise.className,
-      )}
-      style={{ ...PANEL_BACKGROUND, ...rise.style }}
+    <section
+      id="home"
+      className={`${HOME_CONTAINER} flex flex-wrap items-center gap-x-16 gap-y-14 pb-16 pt-12 sm:pb-[72px] sm:pt-[76px]`}
     >
-      {interactive ? (
-        <Dino3D />
-      ) : (
-        <Image
-          src="/dinosaur-512.webp"
-          alt="The Velvet Dinosaur mascot"
-          width={230}
-          height={230}
-          className="relative h-auto w-[230px]"
-        />
-      )}
-      <div
-        className={`${HOME_KICKER} pointer-events-none absolute left-3.5 top-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[11px] text-primary`}
-      >
-        {panelLabel}
+      <div className="min-w-0 flex-[1.3_1_500px]">
+        {/* Says what this is and where, before the letter begins. */}
+        <p className={`${HOME_KICKER} m-0 mb-6 text-muted-foreground`}>
+          Web design in Witney, Oxfordshire
+        </p>
+        <p className={`${LETTER_HAND} m-0 mb-3 origin-bottom-left -rotate-3 text-[34px]`}>
+          Hello,
+        </p>
+        <h1 className={LETTER_H1}>
+          I’ll build your website first. <em className={LETTER_EM}>You decide after.</em>
+        </h1>
+        <p className={`${LETTER_LEAD} mt-7 max-w-[570px]`}>
+          I’m Ian. I design, build and look after websites for small businesses, charities and
+          community groups. You see your finished site before you pay a penny. Love it, and it’s{" "}
+          <strong className="font-semibold text-foreground">
+            £99 a month with everything included
+          </strong>
+          . If not, we shake hands and walk away.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center gap-x-[26px] gap-y-4">
+          <Link href="/contact" className={`${HOME_BTN_PRIMARY} ${BTN_LG}`}>
+            Request your free preview
+            <ArrowRight aria-hidden width={20} height={20} strokeWidth={2.2} />
+          </Link>
+          <Link href="/#how-it-works" className={`${LETTER_LINK} text-[19px]`}>
+            Read how it works
+          </Link>
+        </div>
+        <ul className="m-0 mt-10 flex list-none flex-wrap gap-x-[30px] gap-y-3 border-t border-border p-0 pt-[22px] text-base font-medium text-muted-foreground">
+          <li className="flex items-center gap-2">
+            <Star aria-hidden width={18} height={18} className="fill-current text-star" />
+            5.0 on Google
+          </li>
+          {PROMISES.map((promise) => (
+            <li key={promise} className="flex items-center gap-2">
+              <Check aria-hidden width={18} height={18} strokeWidth={2.4} className="text-primary" />
+              {promise}
+            </li>
+          ))}
+        </ul>
       </div>
-      <span
-        aria-hidden
-        className={`${HOME_KICKER} pointer-events-none absolute right-3.5 top-2.5 text-xs text-primary/40`}
-      >
-        +
-      </span>
-      <span
-        aria-hidden
-        className={`${HOME_KICKER} pointer-events-none absolute bottom-2.5 left-3.5 text-xs text-primary/40`}
-      >
-        +
-      </span>
-      <div
-        className={`${HOME_KICKER} pointer-events-none absolute bottom-3.5 right-3.5 rounded-[3px] border border-primary/20 bg-background px-2 py-1 text-[11px] text-muted-foreground`}
-      >
-        Named by my daughter, aged three
+      <div className="flex min-w-0 flex-[1_1_340px] justify-center">
+        <Polaroid caption="That’s me. One person, start to finish." postmark preload />
       </div>
-    </div>
+    </section>
   )
 }
 
-export function HomeHero({ animate, interactive3d }: { animate: boolean; interactive3d: boolean }) {
+const SHORT_VERSION = [
+  {
+    title: "Built first.",
+    body: "You see a working website before you pay anything, and you get fourteen days to try it.",
+  },
+  {
+    title: "£99 a month.",
+    body: "Design, build, hosting, updates and support in one flat price. No setup fee.",
+  },
+  {
+    title: "One person.",
+    body: "You work directly with me, from the first conversation to launch and long after.",
+  },
+] as const
+
+/** The whole offer in three lines, for anyone who reads no further. */
+export function ShortVersion() {
   return (
-    <section id="home" className="border-b border-border bg-background">
-      <div
-        className={`${HOME_CONTAINER} grid gap-12 pb-14 pt-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:pb-16 lg:pt-[72px]`}
-      >
-        <div className="flex flex-col gap-6">
-          <div {...riseProps(animate, 120)}>
-            <div className="flex flex-wrap gap-2">
-              {HERO_BADGES.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full bg-primary/10 px-3.5 py-1.5 text-[12.5px] font-semibold text-primary"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
+    <section aria-label="The short version" className="border-y border-border bg-card">
+      <div className="mx-auto grid max-w-[1240px] divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
+        {SHORT_VERSION.map((item) => (
+          <div key={item.title} className="px-6 py-8 sm:px-8 md:py-[38px]">
+            <p className="m-0 font-serif text-[30px] font-medium italic leading-[1.1] text-accent sm:text-[34px]">
+              {item.title}
+            </p>
+            <p className="m-0 mt-3 max-w-[330px] text-lg text-muted-foreground">{item.body}</p>
           </div>
-          <h1
-            className={cn(
-              "m-0 text-balance text-[40px] font-extrabold leading-[1.05] tracking-[-0.035em] text-foreground sm:text-5xl lg:text-[54px] lg:leading-[1.04]",
-              animate && "vd-rise-slide",
-            )}
-            style={animate ? ({ "--vd-rise-delay": "230ms" } as CSSProperties) : undefined}
-          >
-            A fast, beautiful website that feels{" "}
-            <span className="relative isolate inline-block">
-              properly yours
-              <span
-                aria-hidden
-                className={cn(
-                  "vd-sweep absolute bottom-[5px] left-0.5 z-[-1] h-2.5 bg-primary/20",
-                  !animate && "!animate-none",
-                )}
-              />
-            </span>
-            .
-          </h1>
-          <p
-            {...riseProps(animate, 340)}
-            className="m-0 max-w-[480px] text-pretty text-[16.5px] leading-relaxed text-muted-foreground"
-          >
-            No jargon and no agency runaround. You work directly with me. I&apos;m Ian. I will
-            build your new website and show it to you before you pay a single penny. You get a
-            fully managed site that loads fast and turns visitors into clients. It is also
-            incredibly easy to update yourself.
-          </p>
-          <div {...riseProps(animate, 450)}>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className={`${HOME_BTN_PRIMARY} px-7 py-3.5 text-sm`}>
-                Request your free preview
-              </Link>
-              <Link href="/work" className={`${HOME_BTN_OUTLINE} px-7 py-3.5 text-sm`}>
-                See the work
-              </Link>
-            </div>
-          </div>
-          <p
-            {...riseProps(animate, 505)}
-            className="m-0 max-w-[500px] text-[13.5px] leading-relaxed text-muted-foreground"
-          >
-            Trusted to build and maintain websites for{" "}
-            <span className="font-semibold text-foreground">Academics Stand Against Poverty</span>,{" "}
-            <span className="font-semibold text-foreground">Froxfield Parish Council</span> and{" "}
-            <span className="font-semibold text-foreground">The Brave</span>.
-          </p>
-          <div
-            {...riseProps(animate, 560)}
-            className="vd-hero-meta flex items-center gap-x-2 whitespace-nowrap pt-1 text-[11px] font-medium text-muted-foreground lg:text-xs"
-          >
-            {HERO_META.map((item, index) => (
-              <span key={item} className="flex items-center gap-x-2.5">
-                {index > 0 ? <span aria-hidden>·</span> : null}
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-        <DinoPanel animate={animate} interactive={interactive3d} />
+        ))}
       </div>
     </section>
   )

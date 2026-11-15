@@ -3,7 +3,7 @@ import { Fragment, type ReactNode } from "react"
 import Link from "next/link"
 
 import { DesignShell } from "@/components/home/design-shell"
-import { HOME_BTN_PRIMARY, HOME_CONTAINER, HOME_KICKER } from "@/components/home/home-shared"
+import { BTN_LG, HOME_BTN_PRIMARY, HOME_CONTAINER, PageIntro } from "@/components/home/home-shared"
 import { LEGAL_IDENTITY_PARAGRAPH } from "@/lib/legal-identity"
 import type { LegalPageContent } from "@/lib/legal-pages-content"
 
@@ -22,7 +22,7 @@ function renderBody(body: string): ReactNode {
       <ul key={key++} className="m-0 flex list-none flex-col gap-2 p-0">
         {items.map((item) => (
           <li key={item} className="flex items-baseline gap-2.5">
-            <span aria-hidden className="text-primary">
+            <span aria-hidden className="text-accent">
               •
             </span>
             <span>{item}</span>
@@ -54,41 +54,28 @@ function renderBody(body: string): ReactNode {
 export function LegalPage({ content }: { content: LegalPageContent }) {
   return (
     <DesignShell>
-      <section className="border-b border-border bg-background">
-        <div className={`${HOME_CONTAINER} py-12 md:pb-14 md:pt-16`}>
-          <div className={`${HOME_KICKER} mb-4 text-[11px] text-primary`}>{content.badgeLabel}</div>
-          <h1 className="m-0 max-w-[720px] text-balance text-4xl font-extrabold tracking-[-0.033em] md:text-[42px]">
-            {content.title}
-          </h1>
-          {content.description ? (
-            <p className="m-0 mt-4 max-w-[640px] text-[15.5px] leading-[1.7] text-muted-foreground">
-              {content.description}
-            </p>
-          ) : null}
-        </div>
-      </section>
-      <div className={`${HOME_CONTAINER} pb-16 pt-10 md:pb-[72px]`}>
-        <div className="flex max-w-[760px] flex-col gap-9">
+      <PageIntro kicker={content.badgeLabel} title={content.title}>
+        {content.description || null}
+      </PageIntro>
+      <div className={`${HOME_CONTAINER} pb-20 pt-12 sm:pb-[104px] sm:pt-14`}>
+        <div className="flex max-w-[720px] flex-col gap-10 border-t border-border pt-10">
           {content.sections.map((section, index) => (
             <Fragment key={section.id || index}>
               <section aria-labelledby={`legal-${section.id || index}`}>
                 <h2
                   id={`legal-${section.id || index}`}
-                  className="m-0 mb-3 text-[19px] font-bold tracking-[-0.01em]"
+                  className="m-0 mb-3 text-[26px] leading-[1.15] tracking-[-0.01em] sm:text-[29px]"
                 >
                   {section.title}
                 </h2>
-                <div className="flex flex-col gap-3 text-[14.5px] leading-[1.7] text-muted-foreground">
+                <div className="flex flex-col gap-3 text-muted-foreground">
                   {renderBody(section.body)}
                 </div>
               </section>
             </Fragment>
           ))}
           {content.cta ? (
-            <Link
-              href={content.cta.href}
-              className={`${HOME_BTN_PRIMARY} w-fit px-7 py-3.5 text-sm`}
-            >
+            <Link href={content.cta.href} className={`${HOME_BTN_PRIMARY} ${BTN_LG} w-fit`}>
               {content.cta.label}
             </Link>
           ) : null}

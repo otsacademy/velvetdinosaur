@@ -2,21 +2,22 @@ import type { Metadata } from "next"
 
 import { AboutHero, GoogleReviews, HowIWork } from "@/components/home/about-content"
 import { DesignShell } from "@/components/home/design-shell"
-import { CtaStrip } from "@/components/home/home-social"
+import { CtaPanel } from "@/components/home/home-social"
 import { siteName } from "@/lib/site-metadata"
 
+const aboutTitle = `About Ian Wickens, web designer near Witney | ${siteName}`
 const aboutDescription =
-  "Ian Wickens runs Velvet Dinosaur, a founder-led studio in Minster Lovell building managed websites — built free before you decide, £99 a month, everything included."
+  "Ian Wickens runs Velvet Dinosaur from Minster Lovell, near Witney in Oxfordshire. Managed websites built before you decide, £99 a month with everything included."
 
 export const metadata: Metadata = {
-  title: "About",
+  title: aboutTitle,
   description: aboutDescription,
   alternates: { canonical: "/about" },
   openGraph: {
     type: "website",
     url: "/about",
     siteName,
-    title: `About | ${siteName}`,
+    title: aboutTitle,
     description: aboutDescription,
   },
 }
@@ -27,7 +28,7 @@ export default function AboutPage() {
       <AboutHero />
       <HowIWork />
       <GoogleReviews />
-      <CtaStrip title="Want to work together?" />
+      <CtaPanel title="Want to work together?" />
     </DesignShell>
   )
 }

@@ -1,94 +1,158 @@
 import Link from "next/link"
+import { Package, RefreshCw, ShieldCheck, type LucideIcon } from "lucide-react"
 
-import { HOME_CARD, HOME_CONTAINER, HOME_KICKER, SectionHeading } from "./home-shared"
+import { cn } from "@/lib/utils"
+import {
+  BTN_LG,
+  CheckItem,
+  HOME_BTN_LIGHT,
+  HOME_CARD,
+  HOME_CONTAINER,
+  HOME_KICKER,
+  LETTER_COLUMN,
+  SectionIntro,
+} from "./home-shared"
+
+const TERMS = [
+  "No setup fee",
+  "12-month minimum, paid monthly",
+  "Then rolling, with 30 days’ notice",
+] as const
 
 const INCLUDED = [
-  "Custom design & build",
-  "Hosting, SSL & daily backups",
-  "Sauro CMS — edit it yourself",
-  "Software updates & maintenance",
+  "Custom design and build",
+  "Hosting, SSL and daily backups",
+  "Sauro CMS, so you can edit it yourself",
+  "Software updates and maintenance",
   "Email for your domain",
   "Small content changes done for you",
+  "A booking system and contact forms",
+  "Version history to undo mistakes",
 ] as const
+
+const CAN_ALSO_INCLUDE = [
+  "Online booking",
+  "News or blog posts",
+  "Email newsletter",
+  "Events and registrations",
+  "Online payments or a shop",
+  "Google reviews",
+  "Instagram and Facebook posts",
+  "Photo galleries",
+  "Logins for your team",
+] as const
+
+const PROMISES: Array<{ icon: LucideIcon; title: string; body: string }> = [
+  {
+    icon: ShieldCheck,
+    title: "30-day money-back guarantee",
+    body: "Your first thirty days after launch are covered. If the site is not right for your business, I refund everything you paid.",
+  },
+  {
+    icon: RefreshCw,
+    title: "A free redesign when you renew",
+    body: "Renew for another twelve months and I refresh your design completely free. Your content and settings stay exactly as they are.",
+  },
+  {
+    icon: Package,
+    title: "Yours to keep, free to leave",
+    body: "You own your domain and your content from day one. You are free to leave after your first year, and I will help you pack up and move.",
+  },
+]
+
+/** The offer in one card: the price on navy, everything it covers beside it. */
+export function PriceCard({ id, className }: { id?: string; className?: string }) {
+  return (
+    <div
+      id={id}
+      data-reveal
+      className={cn(
+        "flex flex-wrap overflow-hidden rounded-lg border border-border shadow-[var(--vd-shadow-card)]",
+        className,
+      )}
+    >
+      <div className="flex flex-[1_1_340px] flex-col bg-primary px-7 pb-9 pt-10 text-primary-foreground sm:px-[42px] sm:pb-[42px] sm:pt-[46px]">
+        <p className={`${HOME_KICKER} m-0 text-primary-foreground/95`}>
+          Your website, built before you pay
+        </p>
+        <p className="m-0 mt-[30px] font-serif text-[104px] font-medium leading-[0.9] tracking-[-0.03em] sm:text-[124px]">
+          £99
+        </p>
+        <p className="m-0 mt-1.5 font-serif text-[26px] italic leading-[1.2] sm:text-[28px]">
+          a month, everything included
+        </p>
+        <ul className="m-0 mt-7 flex list-none flex-col gap-[9px] border-t border-primary-foreground/30 p-0 pt-[22px] text-lg text-primary-foreground/90">
+          {TERMS.map((term) => (
+            <li key={term}>{term}</li>
+          ))}
+        </ul>
+        <Link href="/contact" className={`${HOME_BTN_LIGHT} ${BTN_LG} mt-8 text-lg`}>
+          Request your free preview
+        </Link>
+        <Link
+          href="/agreement"
+          className="mt-[18px] self-center text-base text-primary-foreground underline underline-offset-4 hover:text-primary-foreground hover:decoration-2"
+        >
+          Read the full service agreement
+        </Link>
+      </div>
+      <div className="flex-[1.6_1_440px] bg-card px-7 pb-9 pt-10 sm:px-11 sm:pb-[42px] sm:pt-[46px]">
+        <h3 className="m-0 text-[28px] leading-[1.15] tracking-[-0.01em] sm:text-[30px]">
+          Included with every site
+        </h3>
+        <ul className="m-0 mt-[22px] grid list-none grid-cols-[repeat(auto-fit,minmax(min(250px,100%),1fr))] gap-x-8 gap-y-3.5 p-0 text-lg">
+          {INCLUDED.map((item) => (
+            <CheckItem key={item}>{item}</CheckItem>
+          ))}
+        </ul>
+        <p className={`${HOME_KICKER} m-0 mb-3 mt-[34px] border-t border-border pt-[26px] text-muted-foreground`}>
+          Your site can also include
+        </p>
+        <ul className="m-0 flex list-none flex-wrap gap-2 p-0 text-base">
+          {CAN_ALSO_INCLUDE.map((item) => (
+            <li
+              key={item}
+              className="rounded-full border border-border bg-background px-3.5 py-1.5"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
 
 export function HomePricing() {
   return (
-    <section id="pricing" className="scroll-mt-24">
-      <div className={`${HOME_CONTAINER} pt-16 md:pt-[72px]`}>
-        <SectionHeading index="05" title="One honest price" />
-        <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
-          <div className={`${HOME_CARD} p-8 md:p-10`}>
-            <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-              <div className="text-lg font-bold">Your website, built before you pay</div>
-              <span
-                className={`${HOME_KICKER} rounded-[3px] bg-primary/10 px-2 py-1 text-[11px] text-primary`}
-              >
-                See it first — free
-              </span>
-            </div>
-            <div className="mb-[18px] mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="text-4xl font-extrabold tracking-[-0.03em] md:text-[52px]">
-                £99/month
-              </span>
-              <span className="text-[13px] text-muted-foreground">
-                Everything included. No setup fee. 12 month minimum contract paid monthly.
-              </span>
-            </div>
-            <p className="mb-6 mt-0 text-pretty text-sm leading-relaxed text-muted-foreground">
-              I build your new website first and send you a private link. You set your own
-              password and try editing everything yourself. You get fourteen days to test it
-              out. We shake hands and walk away if you decide it is not a good fit. The preview
-              simply gets deleted and costs you absolutely nothing. If you love it you pay one
-              flat monthly price that covers everything. Everything is laid out in a plain
-              English agreement for you to read before you sign.
-            </p>
-            <p className="mb-6 mt-[-8px] text-[13px]">
-              <Link
-                href="/agreement"
-                className="font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
-              >
-                Read the full service agreement →
-              </Link>
-            </p>
-            <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
-              {INCLUDED.map((item) => (
-                <li key={item} className="flex items-baseline gap-2.5 text-[13px] text-foreground">
-                  <span
-                    aria-hidden
-                    className="inline-flex h-[17px] w-[17px] flex-none translate-y-0.5 items-center justify-center rounded-full bg-primary/10 text-[11px] font-bold text-primary"
-                  >
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+    <section
+      id="what-you-get"
+      className={`${HOME_CONTAINER} scroll-mt-20 pt-20 sm:pt-28`}
+    >
+      <SectionIntro
+        kicker="Part two · What you get"
+        title="One honest price, and everything is in it."
+      >
+        You get much more than a pretty design. You get a fast, secure website that I actively
+        manage for you, the freedom to grow it yourself, and direct support from a real person
+        whenever you need help.
+      </SectionIntro>
+
+      <PriceCard id="pricing" className="mt-11 scroll-mt-24 sm:mt-[52px]" />
+
+      <div className="mt-[22px] grid gap-[22px] md:grid-cols-3">
+        {PROMISES.map((promise) => (
+          <div key={promise.title} data-reveal className={`${HOME_CARD} px-[30px] pb-8 pt-[30px]`}>
+            <promise.icon aria-hidden width={30} height={30} strokeWidth={1.7} className="text-primary" />
+            <h3 className="m-0 mt-3.5 text-[26px] leading-[1.15]">{promise.title}</h3>
+            <p className="m-0 mt-2.5 text-[17px] text-muted-foreground">{promise.body}</p>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="rounded-lg border border-primary/20 bg-primary/10 p-7">
-              <div className={`${HOME_KICKER} mb-2.5 text-[11px] text-primary`}>
-                Our portability promise
-              </div>
-              <div className="text-sm font-medium leading-relaxed text-foreground">
-                You retain full ownership of your domain and your content from day one. You
-                are completely free to leave at any point after your first year. I will even
-                help you pack up and move your site if you decide to go elsewhere. I want my
-                clients to stay simply because they are happy with the service.
-              </div>
-            </div>
-            <div className={`${HOME_CARD} p-7`}>
-              <div className={`${HOME_KICKER} mb-2.5 text-[11px] text-muted-foreground`}>
-                What this replaces
-              </div>
-              <div className="text-[26px] font-extrabold tracking-tight">£3,500+ up front</div>
-              <div className="mt-1.5 text-[12.5px] text-muted-foreground">
-                A typical agency build, before hosting and maintenance. Comparable bespoke
-                builds can cost thousands up front.
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+      <p className={`${LETTER_COLUMN} m-0 mt-[30px] text-balance text-center font-serif text-[21px] italic text-muted-foreground`}>
+        For comparison, a typical agency build costs £3,500 or more up front, before hosting and
+        maintenance.
+      </p>
     </section>
   )
 }

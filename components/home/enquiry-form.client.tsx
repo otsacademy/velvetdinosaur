@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useState, type FormEvent } from "react"
+import { useEffect, useState, type ComponentProps, type FormEvent, type ReactNode } from "react"
+import { Check, ChevronDown } from "lucide-react"
 
 import { trackAnalyticsEvent } from "@/lib/analytics/client"
 import {
@@ -12,12 +13,16 @@ import {
   statusHasExistingSite,
   type EnquiryType,
 } from "@/lib/enquiry-options"
-import { HOME_BTN_PRIMARY, HOME_FIELD, HOME_FIELD_LABEL } from "./home-shared"
+import { cn } from "@/lib/utils"
+import {
+  BTN_LG,
+  HOME_BTN_PRIMARY,
+  HOME_FIELD,
+  HOME_FIELD_LABEL,
+  LETTER_LINK,
+} from "./home-shared"
 
 const FORM_ID = "velvet_contact_page"
-
-const FIELD = HOME_FIELD
-const LABEL = HOME_FIELD_LABEL
 
 type Status = { type: "idle" | "loading" | "sent" | "error"; message?: string }
 
@@ -37,7 +42,7 @@ const MODES: Array<{ id: EnquiryType; title: string; blurb: string }> = [
   {
     id: "project",
     title: "Request my free preview",
-    blurb: "I'd like a website built — show me before I pay.",
+    blurb: "I’d like a website built. Show me before I pay.",
   },
   {
     id: "question",
@@ -45,6 +50,11 @@ const MODES: Array<{ id: EnquiryType; title: string; blurb: string }> = [
     blurb: "I want to ask something before going further.",
   },
 ]
+
+// Shared by the option cards and the feature chips: the real control is a
+// visually hidden input, so the label has to show the keyboard focus itself.
+const CHOICE =
+  "cursor-pointer border-[1.5px] transition-[transform,border-color] duration-200 hover:-translate-y-px hover:border-primary has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-[3px] has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-solid motion-reduce:transition-none motion-reduce:hover:translate-y-0"
 
 export function EnquiryForm() {
   const [mode, setMode] = useState<EnquiryType>("project")
@@ -145,11 +155,20 @@ export function EnquiryForm() {
   }
 
   if (status.type === "sent") {
+    const firstName = form.name.trim().split(/\s+/)[0]
     return (
-      <div className="rounded-lg border border-[color-mix(in_srgb,var(--vd-score-perfect)_45%,var(--vd-border))] bg-[color-mix(in_srgb,var(--vd-score-perfect)_12%,var(--vd-bg))] p-5 text-sm font-semibold text-foreground">
-        {isProject
-          ? "Thanks — I’ve got everything I need to start. Ian will reply within one business day to confirm your free preview."
-          : "Thanks — your message is on its way. Ian will reply within one business day."}
+      <div role="status" className="flex flex-col items-start gap-4 px-1 py-[18px]">
+        <span className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+          <Check aria-hidden width={30} height={30} strokeWidth={2.4} />
+        </span>
+        <h2 className="m-0 text-[32px] leading-[1.1] tracking-[-0.015em] sm:text-[38px]">
+          Thank you{firstName ? `, ${firstName}` : ""}. That’s with me now.
+        </h2>
+        <p className="m-0 text-[19px] text-muted-foreground">
+          {isProject
+            ? "You’ll hear back from me within one business day to confirm your free preview."
+            : "You’ll hear back from me within one business day."}
+        </p>
       </div>
     )
   }
@@ -157,47 +176,43 @@ export function EnquiryForm() {
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit} data-analytics-form={FORM_ID}>
       <fieldset className="m-0 border-0 p-0">
-        <legend className={`${LABEL} mb-2 p-0`}>What can I help with?</legend>
+        <legend className="sr-only">What would you like to do?</legend>
         <div className="grid gap-3 sm:grid-cols-2">
-          {MODES.map((option) => {
-            const selected = mode === option.id
-            return (
-              <label
-                key={option.id}
-                className={`flex cursor-pointer flex-col gap-1 rounded-md border-[1.5px] px-4 py-3.5 transition-colors duration-200 ${
-                  selected
-                    ? "border-primary bg-primary/10"
-                    : "border-input hover:border-primary/60"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="enquiry-mode"
-                    className="accent-[var(--vd-primary)]"
-                    checked={selected}
-                    onChange={() => setMode(option.id)}
-                    disabled={busy}
-                  />
-                  <span className="text-[13.5px] font-bold">{option.title}</span>
-                </span>
-                <span className="text-[12.5px] leading-relaxed text-muted-foreground">
-                  {option.blurb}
-                </span>
-              </label>
-            )
-          })}
+          {MODES.map((option) => (
+            <label
+              key={option.id}
+              className={cn(
+                CHOICE,
+                "block rounded-lg px-[18px] py-4",
+                mode === option.id
+                  ? "border-primary bg-[color-mix(in_srgb,var(--primary)_9%,var(--card))]"
+                  : "border-input bg-card",
+              )}
+            >
+              <input
+                type="radio"
+                name="enquiry-mode"
+                className="sr-only"
+                checked={mode === option.id}
+                onChange={() => setMode(option.id)}
+                disabled={busy}
+              />
+              <strong className="block text-lg font-semibold">{option.title}</strong>
+              <span className="mt-0.5 block text-[15px] text-muted-foreground">
+                {option.blurb}
+              </span>
+            </label>
+          ))}
         </div>
       </fieldset>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field id="enquiry-name" label="Your name">
           <input
             id="enquiry-name"
-            className={FIELD}
+            className={HOME_FIELD}
             value={form.name}
             onChange={(e) => set("name")(e.target.value)}
-            placeholder="e.g. Alex Morgan"
             autoComplete="name"
             disabled={busy}
           />
@@ -205,10 +220,9 @@ export function EnquiryForm() {
         <Field id="enquiry-email" label="Email address">
           <input
             id="enquiry-email"
-            className={FIELD}
+            className={HOME_FIELD}
             value={form.email}
             onChange={(e) => set("email")(e.target.value)}
-            placeholder="you@example.org"
             type="email"
             required
             autoComplete="email"
@@ -219,14 +233,13 @@ export function EnquiryForm() {
 
       {isProject ? (
         <>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
             <Field id="enquiry-business" label="Business or organisation">
               <input
                 id="enquiry-business"
-                className={FIELD}
+                className={HOME_FIELD}
                 value={form.business}
                 onChange={(e) => set("business")(e.target.value)}
-                placeholder="e.g. Minster Lovell Dental"
                 autoComplete="organization"
                 required
                 disabled={busy}
@@ -235,83 +248,86 @@ export function EnquiryForm() {
             <Field id="enquiry-business-type" label="Type of business">
               <input
                 id="enquiry-business-type"
-                className={FIELD}
+                className={HOME_FIELD}
                 value={form.businessType}
                 onChange={(e) => set("businessType")(e.target.value)}
-                placeholder="e.g. café, charity, parish council"
+                placeholder="e.g. café, charity, club"
                 disabled={busy}
               />
             </Field>
           </div>
 
-          <fieldset className="m-0 border-0 p-0">
-            <legend className={`${LABEL} mb-2 p-0`}>Your website today</legend>
-            <div className="flex flex-col gap-2">
-              {WEBSITE_STATUSES.map((option) => (
-                <label
-                  key={option.id}
-                  className="flex cursor-pointer items-center gap-2.5 text-[13.5px] text-foreground"
-                >
-                  <input
-                    type="radio"
-                    name="website-status"
-                    className="accent-[var(--vd-primary)]"
-                    checked={form.websiteStatus === option.id}
-                    onChange={() => set("websiteStatus")(option.id)}
-                    disabled={busy}
-                  />
-                  {option.label}
-                </label>
-              ))}
-            </div>
-          </fieldset>
-
-          {statusHasExistingSite(form.websiteStatus) ? (
-            <Field id="enquiry-website" label="Your website address">
-              <input
-                id="enquiry-website"
-                className={FIELD}
-                value={form.websiteUrl}
-                onChange={(e) => set("websiteUrl")(e.target.value)}
-                placeholder="www.yourbusiness.co.uk"
-                inputMode="url"
+          <div className="grid gap-5 sm:grid-cols-2">
+            <Field id="enquiry-website-status" label="Your website today">
+              <SelectBox
+                id="enquiry-website-status"
+                value={form.websiteStatus}
+                onChange={(e) => set("websiteStatus")(e.target.value)}
                 disabled={busy}
-              />
+              >
+                {WEBSITE_STATUSES.map((option) => (
+                  <option key={option.id} value={option.id}>
+                    {option.label}
+                  </option>
+                ))}
+              </SelectBox>
             </Field>
-          ) : null}
+            {statusHasExistingSite(form.websiteStatus) ? (
+              <Field id="enquiry-website" label="Your website address">
+                <input
+                  id="enquiry-website"
+                  className={HOME_FIELD}
+                  value={form.websiteUrl}
+                  onChange={(e) => set("websiteUrl")(e.target.value)}
+                  placeholder="www.yourbusiness.co.uk"
+                  inputMode="url"
+                  disabled={busy}
+                />
+              </Field>
+            ) : null}
+          </div>
 
           <fieldset className="m-0 border-0 p-0">
-            <legend className={`${LABEL} mb-1 p-0`}>What should your website do?</legend>
-            <p className="m-0 mb-2.5 text-[12.5px] text-muted-foreground">
-              Everything below is included in the £99 a month — tick anything that sounds useful.
-            </p>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {PROJECT_FEATURES.map((feature) => (
-                <label
-                  key={feature.id}
-                  className="flex cursor-pointer items-start gap-2.5 text-[13.5px] leading-relaxed text-foreground"
-                >
-                  <input
-                    type="checkbox"
-                    className="mt-1 accent-[var(--vd-primary)]"
-                    checked={features.includes(feature.id)}
-                    onChange={() => toggleFeature(feature.id)}
-                    disabled={busy}
-                  />
-                  {feature.label}
-                </label>
-              ))}
+            <legend className={`${HOME_FIELD_LABEL} p-0`}>
+              What would you like on your site?{" "}
+              <span className="font-normal text-muted-foreground">
+                Tick any that apply. All of it is included in the £99 a month.
+              </span>
+            </legend>
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {PROJECT_FEATURES.map((feature) => {
+                const selected = features.includes(feature.id)
+                return (
+                  <label
+                    key={feature.id}
+                    className={cn(
+                      CHOICE,
+                      "inline-flex min-h-[44px] items-center rounded-full px-4 py-1.5 text-base font-medium",
+                      selected
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-input bg-card text-foreground",
+                    )}
+                  >
+                    <input
+                      type="checkbox"
+                      className="sr-only"
+                      checked={selected}
+                      onChange={() => toggleFeature(feature.id)}
+                      disabled={busy}
+                    />
+                    {feature.label}
+                  </label>
+                )
+              })}
             </div>
           </fieldset>
-
         </>
       ) : null}
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field id="enquiry-method" label="How should I get in touch?">
-          <select
+          <SelectBox
             id="enquiry-method"
-            className={FIELD}
             value={form.contactMethod}
             onChange={(e) => set("contactMethod")(e.target.value)}
             disabled={busy}
@@ -321,16 +337,15 @@ export function EnquiryForm() {
                 {method.label}
               </option>
             ))}
-          </select>
+          </SelectBox>
         </Field>
         {methodNeedsPhone(form.contactMethod) ? (
           <Field id="enquiry-phone" label="Phone number">
             <input
               id="enquiry-phone"
-              className={FIELD}
+              className={HOME_FIELD}
               value={form.phone}
               onChange={(e) => set("phone")(e.target.value)}
-              placeholder="07000 000000"
               type="tel"
               autoComplete="tel"
               required
@@ -346,61 +361,68 @@ export function EnquiryForm() {
       >
         <textarea
           id="enquiry-message"
-          className={`${FIELD} resize-y`}
+          className={`${HOME_FIELD} resize-y py-3`}
           rows={isProject ? 4 : 5}
           value={form.message}
           onChange={(e) => set("message")(e.target.value)}
-          placeholder={
-            isProject
-              ? "Anything you love or hate about your current site, deadlines, questions…"
-              : "Ask me anything about how Velvet Dinosaur works."
-          }
           required={!isProject}
           disabled={busy}
         />
       </Field>
 
-      <button
-        type="submit"
-        className={`${HOME_BTN_PRIMARY} w-fit cursor-pointer border-none px-7 py-3.5 text-sm disabled:opacity-60`}
-        disabled={busy}
-      >
-        {busy ? "Sending…" : isProject ? "Request my free preview" : "Send your question"}
-      </button>
-      {isProject ? (
-        <p className="m-0 text-[12.5px] text-muted-foreground">
-          No payment details needed. You see the finished website before you decide.
+      {status.type === "error" ? (
+        <p role="alert" className="m-0 text-base font-semibold text-destructive">
+          {status.message}
         </p>
       ) : null}
-      <p className="m-0 text-[12.5px] leading-relaxed text-muted-foreground">
-        We&apos;ll use these details only to respond to your enquiry.{" "}
-        <Link
-          href="/privacy"
-          className="font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
+
+      <div className="flex flex-wrap items-center gap-x-[22px] gap-y-3.5">
+        <button
+          type="submit"
+          className={`${HOME_BTN_PRIMARY} ${BTN_LG} cursor-pointer border-0 disabled:opacity-60`}
+          disabled={busy}
         >
+          {busy ? "Sending…" : isProject ? "Request my free preview" : "Send my question"}
+        </button>
+        <p className="m-0 flex-[1_1_200px] text-base text-muted-foreground">
+          No payment details, no obligation. You hear back from me with clear next steps.
+        </p>
+      </div>
+      <p className="m-0 text-[15px] text-muted-foreground">
+        We’ll use these details only to respond to your enquiry.{" "}
+        <Link href="/privacy" className={LETTER_LINK}>
           Read our Privacy Notice
         </Link>
         .
       </p>
-      {status.type === "error" ? (
-        <p className="m-0 text-[13px] font-semibold text-destructive">{status.message}</p>
-      ) : null}
     </form>
   )
 }
 
-function Field({
-  id,
-  label,
-  children,
-}: {
-  id: string
-  label: string
-  children: React.ReactNode
-}) {
+// A native <select> drawn like the other fields: browsers give selects their
+// own grey chrome otherwise, and a native control is still the best picker on
+// a phone.
+function SelectBox({ children, ...props }: ComponentProps<"select">) {
+  return (
+    <div className="relative">
+      <select {...props} className={`${HOME_FIELD} cursor-pointer appearance-none pr-10`}>
+        {children}
+      </select>
+      <ChevronDown
+        aria-hidden
+        width={18}
+        height={18}
+        strokeWidth={2.2}
+        className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+      />
+    </div>
+  )
+}
+
+function Field({ id, label, children }: { id: string; label: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className={LABEL}>
+      <label htmlFor={id} className={HOME_FIELD_LABEL}>
         {label}
       </label>
       {children}

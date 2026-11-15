@@ -1,10 +1,9 @@
 import { headers } from 'next/headers'
 import { redirect, notFound } from 'next/navigation'
-import { Render } from '@puckeditor/core/rsc'
 
-import { config } from '@/puck/registry'
+import { DesignShell } from '@/components/home/design-shell'
+import { CtaPanel } from '@/components/home/home-social'
 import { getAuth } from '@/lib/auth'
-import { getDraftSiteChrome } from '@/lib/site-chrome'
 import { getWorkArticleBySlug, listPublishedWorkArticles } from '@/lib/work-articles.server'
 import { WorkArticlePageClient } from '@/components/work/work-article-page.client'
 
@@ -30,13 +29,13 @@ export default async function WorkPreviewPage({ params }: WorkPreviewPageProps) 
   const related = (await listPublishedWorkArticles())
     .filter((candidate) => candidate.slug !== article.slug && candidate.tag === article.tag)
     .slice(0, 3)
-  const chrome = await getDraftSiteChrome()
 
+  // Same shell as the published case study (app/work/[slug]), so the preview
+  // shows the page as visitors will see it.
   return (
-    <>
-      <Render config={config} data={chrome.header} />
+    <DesignShell active="work">
       <WorkArticlePageClient article={article} related={related} />
-      <Render config={config} data={chrome.footer} />
-    </>
+      <CtaPanel title="Have something similar in mind?" />
+    </DesignShell>
   )
 }

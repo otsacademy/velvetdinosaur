@@ -1,4 +1,4 @@
-import { HOME_CARD, HOME_KICKER } from "./home-shared"
+import { HOME_CONTAINER, HOME_KICKER, LETTER_COLUMN, LETTER_H2, PlusMark } from "./home-shared"
 
 export const CONTACT_FAQS = [
   {
@@ -33,24 +33,44 @@ export const CONTACT_FAQS = [
   },
 ] as const
 
-// Native <details> accordion — no client JS, matches the design's +/− marks.
-export function FaqAccordion() {
+export type Faq = { question: string; answer: string }
+
+// Native <details> accordion: no client JavaScript, and every answer is in the
+// page for search engines and for readers who search within the page.
+export function FaqAccordion({
+  faqs = CONTACT_FAQS,
+  openFirst = true,
+}: {
+  faqs?: readonly Faq[]
+  openFirst?: boolean
+}) {
   return (
-    <div className="flex max-w-[820px] flex-col gap-2.5">
-      {CONTACT_FAQS.map((faq) => (
-        <details key={faq.question} className={`${HOME_CARD} group overflow-hidden`}>
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-3.5 px-5.5 py-4.5 text-[14.5px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
-            {faq.question}
-            <span aria-hidden className={`${HOME_KICKER} text-sm text-primary`}>
-              <span className="group-open:hidden">+</span>
-              <span className="hidden group-open:inline">−</span>
-            </span>
+    <div>
+      {faqs.map((faq, index) => (
+        <details
+          key={faq.question}
+          open={openFirst && index === 0}
+          className="group border-t border-border last:border-b"
+        >
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-[22px] font-serif text-[22px] font-medium leading-[1.2] tracking-[-0.005em] sm:text-[25px] [&::-webkit-details-marker]:hidden">
+            <span>{faq.question}</span>
+            <PlusMark />
           </summary>
-          <div className="px-5.5 pb-5 text-[14px] leading-relaxed text-muted-foreground">
-            {faq.answer}
-          </div>
+          <p className="m-0 mb-[26px] max-w-[640px] text-muted-foreground">{faq.answer}</p>
         </details>
       ))}
     </div>
+  )
+}
+
+export function HomeQuestions() {
+  return (
+    <section id="questions" className={`${HOME_CONTAINER} scroll-mt-20 pt-20 sm:pt-[104px]`}>
+      <div className={LETTER_COLUMN}>
+        <p className={`${HOME_KICKER} m-0 mb-3 text-accent`}>Part five · Questions</p>
+        <h2 className={`${LETTER_H2} mb-[30px]`}>Questions people usually ask.</h2>
+        <FaqAccordion />
+      </div>
+    </section>
   )
 }

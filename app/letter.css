@@ -1,0 +1,166 @@
+/* The Letter — the November 2026 design for the public marketing pages.
+
+   Every page inside DesignShell carries the .vd-letter scope. The scope
+   re-declares the shadcn tokens, so these pages keep their palette whatever
+   theme payload is injected on <html>, while admin, editor and demo screens
+   (outside the scope) are left exactly as they were.
+
+   Palette: warm paper and ink, navy for actions, terracotta for the "pen"
+   (handwriting, italics and labels). Hex equivalents are noted per token. */
+
+:root {
+  --vd-letter-navy: oklch(0.2967 0.0479 260.78); /* #1F2D45 */
+  --vd-highlight: oklch(0.782 0.095 52.1); /* #E9A77F */
+  --vd-star: oklch(0.6264 0.1248 70.45); /* #B7791F */
+}
+
+.vd-letter {
+  --background: oklch(0.9855 0.0057 84.57); /* #FCFAF6 paper */
+  --foreground: oklch(0.2197 0.0089 75.15); /* #1D1A16 ink */
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: var(--vd-letter-navy);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9566 0.0091 78.28); /* #F4F0EA band */
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.9566 0.0091 78.28);
+  --muted-foreground: oklch(0.3631 0.0122 72.44); /* #423D37 soft ink */
+  --accent: oklch(0.5225 0.1341 37.72); /* #A8482A terracotta pen */
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.9114 0.0162 82.79); /* #E7E1D6 rule */
+  --input: oklch(0.6236 0.0201 78.17); /* #8E867A field edge */
+  --ring: var(--vd-star);
+  --destructive: oklch(0.505 0.213 27.518); /* #C10007, readable on paper and white */
+  --destructive-foreground: oklch(1 0 0);
+  /* Corner radius and the spacing unit also come from the theme payload;
+     pinned so a theme change in the CMS cannot reshape these pages. */
+  --radius: 0.5rem;
+  --spacing: 0.25rem;
+
+  --vd-bg: var(--background);
+  --vd-fg: var(--foreground);
+  --vd-card: var(--card);
+  --vd-card-fg: var(--card-foreground);
+  --vd-popover: var(--popover);
+  --vd-popover-fg: var(--popover-foreground);
+  --vd-primary: var(--primary);
+  --vd-primary-fg: var(--primary-foreground);
+  --vd-primary-solid: var(--primary);
+  /* srgb, not oklch: a colour-on-colour mix in oklch drifts towards pink. */
+  --vd-primary-hover: color-mix(in srgb, var(--primary) 86%, var(--card));
+  --vd-primary-solid-hover: var(--vd-primary-hover);
+  --vd-secondary: var(--secondary);
+  --vd-secondary-fg: var(--secondary-foreground);
+  --vd-muted: var(--muted);
+  --vd-muted-fg: var(--muted-foreground);
+  --vd-accent: var(--accent);
+  --vd-accent-fg: var(--accent-foreground);
+  --vd-border: var(--border);
+  --vd-input: var(--input);
+  --vd-ring: var(--ring);
+  --vd-inverse-bg: var(--foreground);
+  --vd-inverse-fg: var(--background);
+  --vd-interaction-blue: var(--primary);
+  --vd-surface-strong: oklch(0.2264 0.0317 262.51); /* #141C2B footer */
+  --vd-surface-strong-fg: oklch(1 0 0);
+  /* Paragraphs follow the colour of whatever they sit in (paper or navy). */
+  --vd-copy: currentColor;
+  --vd-copy-muted: var(--muted-foreground);
+  --vd-placeholder: color-mix(in oklch, var(--muted-foreground) 72%, transparent);
+  --vd-border-soft: var(--border);
+
+  --vd-shadow-xs: 0 1px 2px color-mix(in oklch, var(--foreground) 6%, transparent);
+  --vd-shadow-primary: 0 16px 30px -16px color-mix(in oklch, var(--foreground) 50%, transparent);
+  --vd-shadow-paper:
+    0 34px 60px -34px color-mix(in oklch, var(--foreground) 55%, transparent),
+    0 2px 6px color-mix(in oklch, var(--foreground) 12%, transparent);
+  --vd-shadow-card: 0 40px 70px -50px color-mix(in oklch, var(--foreground) 55%, transparent);
+  --vd-shadow-lift: 0 30px 54px -34px color-mix(in oklch, var(--foreground) 55%, transparent);
+
+  --font-sans:
+    var(--font-letter-sans), "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-letter-serif), "Newsreader", Georgia, "Times New Roman", serif;
+  --vd-font-sans: var(--font-sans);
+  --vd-font-display: var(--font-serif);
+  --vd-font-hero: var(--font-serif);
+
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  /* clip, never hidden: hidden would make this the scroll container and take
+     the sticky header's travel away. */
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+
+/* Unlayered on purpose: globals.css sets a display font on every h1 outside
+   any layer, so only an unlayered rule can win it back. Label-styled headings
+   opt back into the sans with .vd-label. */
+.vd-letter h1,
+.vd-letter h2,
+.vd-letter h3,
+.vd-letter h4 {
+  font-family: var(--font-serif);
+}
+
+.vd-letter .vd-label {
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  .vd-letter :where(h1, h2, h3, h4, h5, h6) {
+    color: inherit;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+
+  .vd-letter :where(p) {
+    line-height: inherit;
+  }
+
+  .vd-letter :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  .vd-letter ::selection {
+    background: color-mix(in oklch, var(--vd-highlight) 55%, transparent);
+    color: var(--foreground);
+  }
+}
+
+/* Sections rise into place as they scroll in. Transform only, so nothing is
+   ever left half-faded, and never applied to the hero. */
+@keyframes vd-letter-rise {
+  from {
+    transform: translateY(26px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .vd-letter [data-reveal] {
+      animation: vd-letter-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.vd-letter) {
+    scroll-behavior: auto;
+  }
+
+  .vd-letter [data-reveal] {
+    animation: none;
+  }
+}

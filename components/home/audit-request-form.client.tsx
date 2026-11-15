@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react"
 
 import { trackAnalyticsEvent } from "@/lib/analytics/client"
-import { HOME_BTN_PRIMARY, HOME_FIELD, HOME_FIELD_LABEL } from "./home-shared"
+import { BTN_LG, HOME_BTN_PRIMARY, HOME_FIELD, HOME_FIELD_LABEL } from "./home-shared"
 
 const FORM_ID = "velvet_audit_page"
 
@@ -70,15 +70,18 @@ export function AuditRequestForm() {
 
   if (status.type === "sent") {
     return (
-      <div className="rounded-lg border border-[color-mix(in_srgb,var(--vd-score-perfect)_45%,var(--vd-border))] bg-[color-mix(in_srgb,var(--vd-score-perfect)_12%,var(--vd-bg))] p-5 text-sm font-semibold text-foreground">
-        Thanks — your audit request is in. Ian will email your video within two business days.
-      </div>
+      <p
+        role="status"
+        className="m-0 rounded-lg border border-primary bg-[color-mix(in_srgb,var(--primary)_9%,var(--card))] p-5 text-lg font-semibold text-foreground"
+      >
+        Thank you. Your audit request is in, and I’ll email your video within two business days.
+      </p>
     )
   }
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit} data-analytics-form={FORM_ID}>
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form className="flex flex-col gap-5" onSubmit={handleSubmit} data-analytics-form={FORM_ID}>
+      <div className="grid gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="audit-name" className={HOME_FIELD_LABEL}>
             Your name
@@ -88,7 +91,6 @@ export function AuditRequestForm() {
             className={HOME_FIELD}
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Alex Morgan"
             autoComplete="name"
             disabled={status.type === "loading"}
           />
@@ -102,7 +104,6 @@ export function AuditRequestForm() {
             className={HOME_FIELD}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.org"
             type="email"
             required
             autoComplete="email"
@@ -132,7 +133,7 @@ export function AuditRequestForm() {
         </label>
         <textarea
           id="audit-note"
-          className={`${HOME_FIELD} resize-y`}
+          className={`${HOME_FIELD} resize-y py-3`}
           rows={3}
           value={note}
           onChange={(e) => setNote(e.target.value)}
@@ -142,13 +143,15 @@ export function AuditRequestForm() {
       </div>
       <button
         type="submit"
-        className={`${HOME_BTN_PRIMARY} w-fit cursor-pointer border-none px-7 py-3.5 text-sm disabled:opacity-60`}
+        className={`${HOME_BTN_PRIMARY} ${BTN_LG} w-fit cursor-pointer border-0 disabled:opacity-60`}
         disabled={status.type === "loading"}
       >
         {status.type === "loading" ? "Sending…" : "Request my free audit"}
       </button>
       {status.type === "error" ? (
-        <p className="m-0 text-[13px] font-semibold text-destructive">{status.message}</p>
+        <p role="alert" className="m-0 text-base font-semibold text-destructive">
+          {status.message}
+        </p>
       ) : null}
     </form>
   )

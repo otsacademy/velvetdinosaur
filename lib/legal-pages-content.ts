@@ -14,8 +14,8 @@ export type LegalPageContent = {
 }
 
 export const PRIVACY_PAGE: LegalPageContent = {
-  badgeLabel: "Privacy Notice Overview",
-  title: "Velvet Dinosaur - Privacy Notice",
+  badgeLabel: "Velvet Dinosaur",
+  title: "Privacy Notice",
   description: "",
   sections: [
     { id: "overview", title: "Privacy Notice Overview", body: "Last updated: 25 August 2026\nThis privacy notice tells you what to expect us to do with your personal information. It applies to visitors, prospective clients, and clients who interact with Velvet Dinosaur.\nKey points summary\n• We only collect information needed to deliver services, run the business, and meet legal duties.\n• We use trusted suppliers and share only what is necessary for them to provide their services.\n• We keep information for defined periods and delete it when it is no longer needed.\n• You have clear rights over your data, and we respond to requests within one month." },

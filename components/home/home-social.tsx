@@ -1,116 +1,104 @@
+import type { ReactNode } from "react"
 import Link from "next/link"
 
-import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/contact-details"
+import { cn } from "@/lib/utils"
 import { FounderAvatar } from "./founder-avatar"
 import {
-  HOME_BTN_PRIMARY,
+  BTN_LG,
+  HOME_BTN_LIGHT,
   HOME_CARD,
   HOME_CONTAINER,
   HOME_KICKER,
-  SectionHeading,
+  LETTER_LINK,
+  Stars,
 } from "./home-shared"
+import { FEATURED_REVIEW, SUPPORTING_REVIEWS, type GoogleReview } from "./site-data"
 
-export function Testimonial() {
+/** One Google review as a card, with a link back to the original. */
+export function ReviewCard({ review, className }: { review: GoogleReview; className?: string }) {
   return (
-    <section className={`${HOME_CONTAINER} pt-16 md:pt-[72px]`}>
-      <SectionHeading
-        index="06"
-        title="Kind words from clients"
-        aside={
-          <Link
-            href="/about"
-            className="text-[13px] font-semibold text-primary transition-colors hover:text-[var(--vd-primary-hover)]"
-          >
-            All reviews →
-          </Link>
-        }
-      />
-      <figure className={`${HOME_CARD} m-0 px-7 py-10 text-center md:px-14 md:py-12`}>
-        <div
-          aria-hidden
-          className="mb-4 select-none font-serif text-7xl leading-[0.5] text-primary/20"
+    <figure data-reveal className={cn(HOME_CARD, "m-0 flex flex-col p-[30px]", className)}>
+      <Stars />
+      <blockquote className="m-0 mt-4 flex-1 text-lg leading-[1.55] text-foreground">
+        “{review.quote}”
+      </blockquote>
+      <figcaption className="mt-5 text-base text-muted-foreground">
+        <strong className="block font-semibold text-foreground">{review.name}</strong>
+        {review.role ? `${review.role} · ` : null}
+        <a
+          href={review.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${review.name}’s review on Google Maps`}
+          className={LETTER_LINK}
         >
-          “
-        </div>
-        <div className={`${HOME_KICKER} mb-[18px] text-[11px] text-muted-foreground`}>
-          ★★★★★ · a Google review
-        </div>
-        <blockquote className="mx-auto m-0 max-w-[760px] text-balance text-xl font-semibold leading-[1.45] tracking-[-0.015em] md:text-2xl">
-          “Phenomenal service and end result from a phenomenal chap. Ian went far beyond
-          expectations and built a site that is user-friendly, strategic, and genuinely tailored
-          to our audience.”
-        </blockquote>
-        <figcaption className="mt-5 text-[13px] text-muted-foreground">
-          <strong className="text-foreground">Faye Taylor</strong> · Founder, The Brave
-        </figcaption>
-      </figure>
-    </section>
+          Google Maps
+        </a>
+      </figcaption>
+    </figure>
   )
 }
 
-const TALK_LINK =
-  "inline-flex items-center gap-1.5 text-white/75 underline-offset-4 transition-colors hover:text-white hover:underline"
-
-/** Call / WhatsApp shortcuts, so they live on every page rather than just one card. */
-function TalkDirect() {
+export function HomeReviews() {
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[13px] font-medium">
-      <a href={PHONE_HREF} className={TALK_LINK}>
-        <span aria-hidden>📞</span> {PHONE_DISPLAY}
-      </a>
-      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className={TALK_LINK}>
-        <span aria-hidden>💬</span> WhatsApp
-      </a>
-    </div>
-  )
-}
-
-export function CtaBanner() {
-  return (
-    <section className={`${HOME_CONTAINER} mt-12 pb-16 md:pb-[72px]`}>
-      <div className="flex flex-wrap items-center justify-between gap-8 rounded-[10px] bg-[linear-gradient(135deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-primary)_28%,var(--vd-surface-strong)))] p-8 text-[var(--vd-surface-strong-fg)] md:px-14 md:py-12">
-        <div className="flex flex-wrap items-center gap-6">
-          <FounderAvatar size={60} tone="dark" />
-          <div>
-            <div className="text-xl font-bold tracking-[-0.01em]">
-              Hi, I&apos;m Ian — you&apos;ll work directly with me.
-            </div>
-            <div className="mt-1.5 text-[14px] text-white/70">
-              First conversation to launch. You&apos;ll hear back within one business day.
-            </div>
-            <div className="mt-3">
-              <TalkDirect />
-            </div>
-          </div>
+    <section
+      id="reviews"
+      className="mt-20 scroll-mt-20 border-y border-border bg-muted sm:mt-28"
+    >
+      <div className={`${HOME_CONTAINER} pb-20 pt-[72px] sm:pb-[100px] sm:pt-24`}>
+        <figure data-reveal className="m-0 mx-auto max-w-[940px] text-center">
+          <h2 className={`${HOME_KICKER} m-0 mb-5 text-accent`}>
+            Part four · Kind words from clients
+          </h2>
+          <Stars size={24} className="justify-center" />
+          <blockquote className="m-0 mt-[22px] text-balance font-serif text-[clamp(1.6875rem,3.1vw,2.625rem)] italic leading-[1.22] tracking-[-0.012em]">
+            “{FEATURED_REVIEW.quote}”
+          </blockquote>
+          <figcaption className="mt-6 text-lg text-muted-foreground">
+            <strong className="font-semibold text-foreground">{FEATURED_REVIEW.name}</strong>,{" "}
+            {FEATURED_REVIEW.role} ·{" "}
+            <a
+              href={FEATURED_REVIEW.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={LETTER_LINK}
+            >
+              View on Google Maps
+            </a>
+          </figcaption>
+        </figure>
+        <div className="mt-12 grid gap-[22px] sm:mt-16 lg:grid-cols-3">
+          {SUPPORTING_REVIEWS.map((review) => (
+            <ReviewCard key={review.name} review={review} />
+          ))}
         </div>
-        <Link
-          href="/contact"
-          className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
-        >
-          Request your free preview
-        </Link>
       </div>
     </section>
   )
 }
 
-// Dark gradient CTA strip used on the Work and About pages.
-export function CtaStrip({ kicker, title }: { kicker?: string; title: string }) {
+// The navy call-to-action panel that closes the inner pages.
+export function CtaPanel({ title, children }: { title: string; children?: ReactNode }) {
   return (
-    <section className={`${HOME_CONTAINER} pb-16 md:pb-[72px]`}>
-      <div className="flex flex-wrap items-center justify-between gap-8 rounded-[10px] bg-[linear-gradient(135deg,var(--vd-surface-strong),color-mix(in_oklch,var(--vd-primary)_28%,var(--vd-surface-strong)))] px-8 py-9 text-[var(--vd-surface-strong-fg)] md:px-14 md:py-11">
-        <div>
-          {kicker ? (
-            <div className={`${HOME_KICKER} mb-2.5 text-[11px] text-white/60`}>{kicker}</div>
-          ) : null}
-          <div className="text-[22px] font-bold tracking-[-0.02em]">{title}</div>
-          <div className="mt-3">
-            <TalkDirect />
+    <section className={`${HOME_CONTAINER} pb-20 pt-[72px] sm:pb-[104px]`}>
+      <div
+        data-reveal
+        className="flex flex-wrap items-center justify-between gap-7 rounded-lg bg-primary px-7 py-9 text-primary-foreground sm:px-[46px] sm:py-11"
+      >
+        <div className="flex flex-[1_1_420px] flex-wrap items-center gap-[22px]">
+          <FounderAvatar size={84} />
+          <div className="flex-[1_1_280px]">
+            <h2 className="m-0 text-[29px] leading-[1.15] tracking-[-0.012em] sm:text-[33px]">
+              {title}
+            </h2>
+            <p className="m-0 mt-2 text-lg text-primary-foreground/95">
+              {children ?? "I’ll build yours first. You only pay if you love it."}
+            </p>
           </div>
         </div>
         <Link
           href="/contact"
-          className={`${HOME_BTN_PRIMARY} whitespace-nowrap px-7 py-3.5 text-sm`}
+          className={`${HOME_BTN_LIGHT} ${BTN_LG} w-full text-lg sm:w-auto sm:whitespace-nowrap`}
         >
           Request your free preview
         </Link>

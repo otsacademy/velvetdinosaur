@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { CtaPanel } from '@/components/home/home-social'
 import { WorkArticlePageClient } from '@/components/work/work-article-page.client'
 import { getPublishedWorkArticleBySlug, listPublishedWorkArticles } from '@/lib/work-articles.server'
 import { buildWorkArticleMetadata } from '@/lib/work-social-metadata'
@@ -32,5 +33,10 @@ export default async function WorkArticlePage({ params }: WorkArticlePageProps) 
     .filter((candidate) => candidate.slug !== article.slug && candidate.tag === article.tag)
     .slice(0, 3)
 
-  return <WorkArticlePageClient article={article} related={related} />
+  return (
+    <>
+      <WorkArticlePageClient article={article} related={related} />
+      <CtaPanel title="Have something similar in mind?" />
+    </>
+  )
 }

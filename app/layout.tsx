@@ -1,8 +1,9 @@
 import './globals.css';
 import './velvet-site.css';
+import './letter.css';
 import './demo-polish.css';
 import { Suspense, type CSSProperties } from 'react';
-import { Archivo, Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google';
+import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google';
 import { getThemePayload } from '@/lib/theme';
 import { getThemeCssVars } from '@/lib/theme-css';
 import { siteMetadata } from '@/lib/site-metadata';
@@ -10,10 +11,13 @@ import { ThirdPartyAnalytics } from '@/components/analytics/third-party-analytic
 import { VisitorTracker } from '@/components/analytics/visitor-tracker.client';
 import { OrganisationJsonLd } from '@/components/site/organisation-jsonld';
 
+// Not preloaded: the public marketing pages never use Inter, and a preload in
+// the root layout would make every one of them download it anyway.
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
+  preload: false,
   variable: '--font-inter',
 });
 
@@ -26,14 +30,9 @@ const instrumentSerif = Instrument_Serif({
   variable: '--font-display',
 });
 
-// Archivo is a variable font — omitting `weight` fetches a single variable
-// file. Both home fonts are preloaded so the hero never reflows on font swap
-// (Lighthouse CLS).
-const archivo = Archivo({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-archivo',
-});
+// The public marketing pages load their own faces (Newsreader, Source Sans 3
+// and Caveat) from components/home/letter-fonts.ts, so only those pages pay
+// for them.
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -53,7 +52,7 @@ export default async function RootLayout({
   const disableAnalytics = isLhci || process.env.VD_DISABLE_ANALYTICS === 'true';
   const fontClasses = isLhci
     ? ''
-    : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${archivo.variable}`;
+    : `${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`;
   const payload = await getThemePayload();
   const themeVars = getThemeCssVars(payload);
   const lhciOverrides: Record<string, string> = isLhci
