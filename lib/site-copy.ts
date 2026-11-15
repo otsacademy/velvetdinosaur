@@ -14,4 +14,4 @@ export const holdingHeroCopy = {
 };
 
 export const socialPreviewAlt =
-  'Velvet Dinosaur social preview showing the current founder-led web studio branding and mascot.';
+  'Velvet Dinosaur, web design in Witney, Oxfordshire: “I’ll build your website first. You decide after.”';

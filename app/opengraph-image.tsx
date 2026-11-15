@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { SocialPreview } from '@/lib/social-preview';
 import { socialPreviewAlt } from '@/lib/site-copy';
-import { getPublicAssetDataUri } from '@/lib/social-preview-image';
+import { getSocialPreviewAssets } from '@/lib/social-preview-image';
 
 export const runtime = 'nodejs';
 export const alt = socialPreviewAlt;
@@ -12,6 +12,9 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function OpenGraphImage() {
-  const dinosaurSrc = await getPublicAssetDataUri('dinosaur-preview.png');
-  return new ImageResponse(<SocialPreview dinosaurSrc={dinosaurSrc} />, size);
+  const { markSrc, dinosaurSrc, fonts } = await getSocialPreviewAssets();
+  return new ImageResponse(<SocialPreview markSrc={markSrc} dinosaurSrc={dinosaurSrc} />, {
+    ...size,
+    fonts
+  });
 }
