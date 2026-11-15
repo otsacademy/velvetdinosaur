@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import { mainHeroCopy, socialPreviewAlt } from '@/lib/site-copy';
+import { socialPreviewAlt } from '@/lib/site-copy';
 
 export const siteName = 'Velvet Dinosaur';
-export const siteTitle = `${mainHeroCopy.heading} | ${siteName}`;
-export const siteDescription = mainHeroCopy.description;
+// Search-facing title and description: they say what the business is and where,
+// because that is what people type ("web design Witney"). The price is left out
+// on purpose so this survives a change of pricing.
+export const siteTitle = `Web design in Witney, Oxfordshire | ${siteName}`;
+export const siteDescription =
+  'Web designer based in Minster Lovell, near Witney. I build your new website first, so you see it before you pay. Hosting, updates and support included.';
 export const socialTitle = `${siteName} | Your new website, built before you pay a penny — £99/month`;
 export const socialDescription =
   'Managed websites designed and built before you pay anything — £99 a month, everything included, from a founder-led studio in Oxfordshire.';

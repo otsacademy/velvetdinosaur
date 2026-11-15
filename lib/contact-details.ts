@@ -12,6 +12,20 @@ export const ADDRESS_LINE_2 = 'Oxfordshire, United Kingdom';
 
 export const MAPS_HREF = 'https://maps.app.goo.gl/qXGMvoF1E36RWeDS9';
 
+// Map pin for the address above, taken from where MAPS_HREF resolves.
+// Used by the structured data so search engines can place the business.
+export const GEO_LATITUDE = 51.7936206;
+export const GEO_LONGITUDE = -1.5530184;
+
+// Where the business works face to face, nearest first. The UK entry stays
+// because clients further afield are served remotely.
+export const SERVICE_AREAS = [
+  { type: 'City', name: 'Witney' },
+  { type: 'AdministrativeArea', name: 'West Oxfordshire' },
+  { type: 'AdministrativeArea', name: 'Oxfordshire' },
+  { type: 'Country', name: 'United Kingdom' },
+] as const;
+
 // Keyless Google Maps embed — drops a pin on the address.
 export const MAP_EMBED_SRC =
   'https://www.google.com/maps?q=16+Holloway+Lane,+Minster+Lovell,+Witney,+OX29+0AU&output=embed';

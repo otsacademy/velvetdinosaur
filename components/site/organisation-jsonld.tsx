@@ -4,7 +4,13 @@ import {
   REGISTERED_NAME,
   TRADING_NAME,
 } from "@/lib/legal-identity"
-import { PHONE_DISPLAY } from "@/lib/contact-details"
+import {
+  GEO_LATITUDE,
+  GEO_LONGITUDE,
+  MAPS_HREF,
+  PHONE_DISPLAY,
+  SERVICE_AREAS,
+} from "@/lib/contact-details"
 import { resolveSiteUrl, siteDescription } from "@/lib/site-metadata"
 
 /**
@@ -36,7 +42,13 @@ export function OrganisationJsonLd() {
       postalCode: "OX29 0AU",
       addressCountry: "GB",
     },
-    areaServed: { "@type": "Country", name: "United Kingdom" },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: GEO_LATITUDE,
+      longitude: GEO_LONGITUDE,
+    },
+    hasMap: MAPS_HREF,
+    areaServed: SERVICE_AREAS.map((area) => ({ "@type": area.type, name: area.name })),
     knowsAbout: [
       "Website design",
       "Managed website hosting",
