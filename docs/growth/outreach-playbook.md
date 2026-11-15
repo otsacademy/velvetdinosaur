@@ -1,5 +1,7 @@
 # Outreach Playbook — filling the audit pipeline
 
+Before any outreach, apply [the business do-not-contact list](DO-NOT-CONTACT.md). Ian's explicit suppressions override older tracker entries, cohort rules and engagement signals.
+
 The `/audit` page converts interest into requests; this playbook creates the
 interest. The audit offer only works at a steady outreach cadence — the machine
 is: **find → personalised first touch → audit video → fixed-price ask**.

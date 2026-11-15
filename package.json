@@ -29,6 +29,8 @@
     "sauro:parity": "tsx scripts/sauro-parity-check.ts",
     "demo:fleet": "tsx scripts/demo-fleet-inventory.ts",
     "demo:activity:digest": "tsx scripts/demo-fleet-activity-digest.ts",
+    "demo:health": "tsx scripts/demo-fleet-health.ts",
+    "demo:recipient-links": "tsx scripts/demo-recipient-links.ts",
     "quality:validate": "tsx scripts/quality.ts --validate",
     "visual:test": "playwright test",
     "visual:update": "playwright test --update-snapshots",

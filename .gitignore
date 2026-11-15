@@ -20,3 +20,10 @@ logs/
 # Agent working files
 .agents/
 skills-lock.json
+.agtx/
+.playwright-cli/
+
+# Local working and build-output folders (not part of the site)
+output/
+workspace/
+.next-*/
