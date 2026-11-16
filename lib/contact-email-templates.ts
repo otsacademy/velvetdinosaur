@@ -43,7 +43,7 @@ export async function defaultContactEmailTemplates() {
     })
   );
   const text = [
-    'You have received a new contact enquiry from the Academics Stand Against Poverty website.',
+    `You have received a new contact enquiry from the ${appName} website.`,
     '',
     'Name: {{name}}',
     'Email: {{email}}',
@@ -57,6 +57,18 @@ export async function defaultContactEmailTemplates() {
     'Reply directly to this email to respond to the sender.'
   ].join('\n');
   return { html, text };
+}
+
+/**
+ * The notification's subject. It carries the enquiry's topic (for a preview
+ * request, "Free preview" and the business name) so a lead stands out in the
+ * inbox list without opening it.
+ */
+export function contactEmailSubject(topic?: string | null) {
+  if (process.env.CONTACT_FORM_SUBJECT) return process.env.CONTACT_FORM_SUBJECT;
+  const siteName = resolveSiteName();
+  const oneLine = topic?.replace(/\s+/g, ' ').trim();
+  return oneLine ? `New enquiry via ${siteName}: ${oneLine}` : `New contact enquiry via ${siteName}`;
 }
 
 export function renderContactTemplate(

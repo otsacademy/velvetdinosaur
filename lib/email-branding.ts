@@ -1,5 +1,8 @@
-const DEFAULT_SITE_NAME = 'ASAP';
-const DEFAULT_LOGO_PATH = '/images/asap-logo.png';
+// This site's own name and mark. The defaults came over from ASAP in the
+// August 2026 core sync, so every email said "ASAP" and pointed at a logo this
+// site does not have. SITE_NAME / NEXT_PUBLIC_SITE_NAME still override the name.
+const DEFAULT_SITE_NAME = 'Velvet Dinosaur';
+const DEFAULT_LOGO_PATH = '/brand/mark-navy.png';
 
 export function normalizeNonEmpty(value: string | undefined | null) {
   const trimmed = value?.trim();

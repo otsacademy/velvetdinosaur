@@ -467,10 +467,10 @@ type ContactEmailPayload = {
 };
 
 export async function sendContactEmail(payload: ContactEmailPayload) {
-  const { defaultContactEmailTemplates, renderContactTemplate } = await import(
+  const { contactEmailSubject, defaultContactEmailTemplates, renderContactTemplate } = await import(
     '@/lib/contact-email-templates'
   );
-  const subject = process.env.CONTACT_FORM_SUBJECT || `New contact enquiry via ${resolveSiteName()}`;
+  const subject = contactEmailSubject(payload.topic);
   const sentAt = new Date().toISOString();
 
   const defaults = await defaultContactEmailTemplates();
