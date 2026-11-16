@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { ADDRESS_LINE_1, ADDRESS_LINE_2, MAPS_HREF } from "@/lib/contact-details"
-import type { LocationPageContent } from "@/lib/location-pages"
+import { placeHref, type LocationPageContent } from "@/lib/location-pages"
 import { siteName } from "@/lib/site-metadata"
 import { DesignShell } from "./design-shell"
 import { FaqAccordion } from "./faq-accordion"
@@ -44,8 +44,15 @@ export function locationMetadata(content: LocationPageContent): Metadata {
   }
 }
 
-// A local landing page: the same letter, addressed to one place. The copy
-// lives in lib/location-pages.ts.
+const PLACE_PILL = "block rounded-full border border-border bg-card px-3.5 py-1.5"
+
+// A place that has its own page reads as a link, so the local pages lead to
+// each other.
+const PLACE_PILL_LINK =
+  "font-semibold text-primary underline decoration-highlight decoration-2 underline-offset-4 transition-[border-color,text-decoration-color] duration-200 hover:border-primary hover:text-primary hover:decoration-primary"
+
+// A local landing page: the same letter, addressed to one place or one kind of
+// organisation. The copy lives in lib/location-pages/.
 export function LocationPage({ content }: { content: LocationPageContent }) {
   const reviews = content.reviewNames
     .map((name) => GOOGLE_REVIEWS.find((review) => review.name === name))
@@ -119,11 +126,20 @@ export function LocationPage({ content }: { content: LocationPageContent }) {
             {content.area.placesLabel}
           </p>
           <ul className="m-0 flex list-none flex-wrap gap-2 p-0 text-base">
-            {content.area.places.map((place) => (
-              <li key={place} className="rounded-full border border-border bg-card px-3.5 py-1.5">
-                {place}
-              </li>
-            ))}
+            {content.area.places.map((place) => {
+              const href = placeHref(place, content.slug)
+              return (
+                <li key={place}>
+                  {href ? (
+                    <Link href={href} className={`${PLACE_PILL} ${PLACE_PILL_LINK}`}>
+                      {place}
+                    </Link>
+                  ) : (
+                    <span className={PLACE_PILL}>{place}</span>
+                  )}
+                </li>
+              )
+            })}
           </ul>
           <p className="m-0 mt-9 border-t border-border pt-7 text-muted-foreground">
             <strong className="font-semibold text-foreground">Velvet Dinosaur</strong>

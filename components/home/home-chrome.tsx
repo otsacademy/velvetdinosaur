@@ -32,6 +32,8 @@ const FOOTER_PAGE_LINKS = [
   { label: "About Ian", href: "/about" },
   { label: "Web design in Witney", href: "/web-design-witney" },
   { label: "Web design in Oxfordshire", href: "/web-design-oxfordshire" },
+  { label: "Websites for charities", href: "/websites-for-charities" },
+  { label: "Parish council websites", href: "/websites-for-parish-councils" },
 ] as const
 
 const FOOTER_LINK =

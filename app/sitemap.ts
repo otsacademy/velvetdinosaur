@@ -37,13 +37,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/audit`,
       lastModified
     },
-    // Local landing pages (lib/location-pages.ts).
+    // Local landing pages (lib/location-pages/).
     {
       url: `${baseUrl}/web-design-witney`,
       lastModified
     },
     {
       url: `${baseUrl}/web-design-oxfordshire`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/web-design-carterton`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/web-design-burford`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/web-design-eynsham`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/web-design-woodstock`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/web-design-chipping-norton`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/websites-for-charities`,
+      lastModified
+    },
+    {
+      url: `${baseUrl}/websites-for-parish-councils`,
       lastModified
     },
     ...CASE_STUDY_SLUGS.map((slug) => ({

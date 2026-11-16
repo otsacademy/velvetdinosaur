@@ -7,7 +7,14 @@ const routes = [
   { name: 'contact', path: '/contact' },
   { name: 'audit', path: '/audit' },
   { name: 'web-design-witney', path: '/web-design-witney' },
-  { name: 'web-design-oxfordshire', path: '/web-design-oxfordshire' }
+  { name: 'web-design-oxfordshire', path: '/web-design-oxfordshire' },
+  { name: 'web-design-carterton', path: '/web-design-carterton' },
+  { name: 'web-design-burford', path: '/web-design-burford' },
+  { name: 'web-design-eynsham', path: '/web-design-eynsham' },
+  { name: 'web-design-woodstock', path: '/web-design-woodstock' },
+  { name: 'web-design-chipping-norton', path: '/web-design-chipping-norton' },
+  { name: 'websites-for-charities', path: '/websites-for-charities' },
+  { name: 'websites-for-parish-councils', path: '/websites-for-parish-councils' }
 ];
 
 async function stabilize(page: Page) {
