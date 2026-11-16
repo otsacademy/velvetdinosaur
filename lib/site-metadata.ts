@@ -51,9 +51,17 @@ export function resolveMetadataBase() {
   return new URL(resolveSiteUrl());
 }
 
+// Proves to Google Search Console that Ian owns the site: the URL-prefix
+// property https://velvetdinosaur.com/, added on 16 November 2026. The token
+// is public by design. Removing it un-verifies the property.
+export const GOOGLE_SITE_VERIFICATION = 'alE4DoI371RjTIl3adBuhxgWdQXeXo0Q07j2bH_Zq8M';
+
 export const siteMetadata: Metadata = {
   metadataBase: resolveMetadataBase(),
   title: siteTitle,
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION
+  },
   description: siteDescription,
   alternates: {
     canonical: '/'
