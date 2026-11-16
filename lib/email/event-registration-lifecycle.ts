@@ -4,11 +4,10 @@ assertServerOnly('lib/email/event-registration-lifecycle.ts');
 import { render } from '@react-email/render';
 import { EventRegistrationConfirmationEmail } from '@/components/email/event-registration-confirmation-email';
 import { EventRegistrationVerificationEmail } from '@/components/email/event-registration-verification-email';
-import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName, resolveTeamName } from '@/lib/email-branding';
 import { sendPostmarkEmail } from '@/lib/email/postmark';
 import { renderTemplateWithStoredOverrides } from '@/lib/system-email-templates';
 
-const DEFAULT_FROM_NAME = 'The ASAP Global Team';
 
 function normalizeNonEmpty(value: string | undefined | null) {
   const trimmed = value?.trim();
@@ -88,7 +87,7 @@ export async function sendEventRegistrationVerificationEmail(input: {
     `This confirmation link expires in approximately ${Math.max(1, Math.round(input.expiresInHours || 24))} hour${Math.max(1, Math.round(input.expiresInHours || 24)) === 1 ? '' : 's'}.`,
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${siteName} team`
   ].join('\n');
 
   const resolvedTemplate = await renderTemplateWithStoredOverrides({
@@ -113,7 +112,7 @@ export async function sendEventRegistrationVerificationEmail(input: {
     subject,
     htmlBody: resolvedTemplate.html,
     textBody: resolvedTemplate.text,
-    fromName: DEFAULT_FROM_NAME,
+    fromName: resolveTeamName(siteName),
     tag: 'event-registration-verification',
     metadata: {
       eventSlug: normalizeNonEmpty(input.eventSlug)
@@ -166,7 +165,7 @@ export async function sendEventRegistrationConfirmationEmail(input: {
     'We will send any event-specific updates to this email address.',
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${siteName} team`
   ]
     .filter(Boolean)
     .join('\n');
@@ -193,7 +192,7 @@ export async function sendEventRegistrationConfirmationEmail(input: {
     subject,
     htmlBody: resolvedTemplate.html,
     textBody: resolvedTemplate.text,
-    fromName: DEFAULT_FROM_NAME,
+    fromName: resolveTeamName(siteName),
     tag: 'event-registration-confirmation',
     metadata: {
       eventSlug: normalizeNonEmpty(input.eventSlug)

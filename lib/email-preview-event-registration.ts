@@ -2,6 +2,7 @@ import { render } from '@react-email/render';
 import { EventRegistrationCampaignEmail } from '@/components/email/event-registration-campaign-email';
 import { EventRegistrationConfirmationEmail } from '@/components/email/event-registration-confirmation-email';
 import { EventRegistrationVerificationEmail } from '@/components/email/event-registration-verification-email';
+import { resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
 
 export const EVENT_REGISTRATION_EMAIL_PREVIEW_KEYS = [
   'event-registration-verification',
@@ -38,12 +39,12 @@ function normalizeBaseUrl(value: string) {
 
 function getSample(appUrl: string): EventRegistrationSample {
   const baseUrl = normalizeBaseUrl(appUrl);
-  const eventSlug = 'global-justice-summit-2026';
+  const eventSlug = 'spring-open-day-2026';
   return {
-    appName: 'ASAP',
+    appName: resolveSiteName(),
     appUrl: baseUrl,
-    logoUrl: `${baseUrl}/images/asap-logo.png`,
-    eventTitle: 'Global Justice Summit 2026',
+    logoUrl: resolveLogoUrl(undefined, baseUrl),
+    eventTitle: 'Spring Open Day 2026',
     eventUrl: `${baseUrl}/events/${eventSlug}`,
     confirmUrl: `${baseUrl}/events/registration/confirm?token=sample-event-token`,
     dateLabel: 'Thu, April 23, 2026, 15:00 UTC',
@@ -143,7 +144,7 @@ export function buildEventRegistrationEmailPreviewText(
       'This confirmation link expires in approximately 24 hours.',
       '',
       'Best,',
-      'The ASAP Global Team'
+      `The ${sample.appName} team`
     ].join('\n');
   }
 
@@ -160,7 +161,7 @@ export function buildEventRegistrationEmailPreviewText(
       'We will send any event-specific updates to this email address.',
       '',
       'Best,',
-      'The ASAP Global Team'
+      `The ${sample.appName} team`
     ].join('\n');
   }
 
@@ -175,7 +176,7 @@ export function buildEventRegistrationEmailPreviewText(
       `Latest event details: ${sample.eventUrl}`,
       '',
       'Best,',
-      'The ASAP Global Team'
+      `The ${sample.appName} team`
     ].join('\n');
   }
 
@@ -189,7 +190,7 @@ export function buildEventRegistrationEmailPreviewText(
     `Latest event details: ${sample.eventUrl}`,
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${sample.appName} team`
   ].join('\n');
 }
 

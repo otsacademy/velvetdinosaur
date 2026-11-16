@@ -12,6 +12,7 @@ import { ReviewReminderEmail } from '@/components/email/review-reminder-email';
 import { VerificationEmail } from '@/components/email/verification-email';
 import { WaitlistSignupNotificationEmail } from '@/components/email/waitlist-signup-notification-email';
 import { WelcomeConfirmationEmail } from '@/components/email/welcome-confirmation-email';
+import { resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
 import {
   EVENT_REGISTRATION_EMAIL_PREVIEW_KEYS,
   getEventRegistrationEmailPreviewTemplates,
@@ -68,12 +69,12 @@ function getSample(appUrl: string) {
   const verifyUrl = `${appUrl}/verify-email?token=sample-verification-token`;
   const resetUrl = `${appUrl}/reset-password?token=sample-reset-token`;
   const reviewUrl = `${appUrl}/review/preview-token`;
-  const logoUrl = `${appUrl}/images/asap-logo.png`;
+  const logoUrl = resolveLogoUrl(undefined, appUrl);
   const reviewDeadlineLabel = 'Fri, March 6, 2026, 04:00 PM';
   const reminderDeadlineLabel = 'Fri, March 6, 2026, 04:00 PM (2026-03-06 16:00 UTC)';
 
   return {
-    appName: 'ASAP',
+    appName: resolveSiteName(),
     appUrl,
     logoUrl,
     inviteUrl,
@@ -115,9 +116,9 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
         appUrl: sample.appUrl,
         roleName: 'Editor',
         permissions: [
-          'Share Research: Create and edit pages to make cutting-edge evidence accessible to the public.',
-          'Showcase Global Impact: Upload media from our regional chapters across six continents.',
-          'Drive the Narrative: Publish changes and write news articles that help shift the conversation around the causes of, and solutions to, global poverty.'
+          'Edit Pages: Create and edit the pages of the website.',
+          'Add Media: Upload images and documents for your pages.',
+          'Publish Updates: Publish your changes and write news articles.'
         ],
         inviteUrl: sample.inviteUrl,
         invitedByName: 'Admin Team',
@@ -155,7 +156,7 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
   if (key === 'otp') {
     return render(
       OtpCodeEmail({
-        subject: 'Your ASAP security code',
+        subject: `Your ${sample.appName} security code`,
         action: 'sign in',
         otp: '482913',
         siteName: sample.appName,
@@ -168,7 +169,7 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
   if (key === 'welcome') {
     return render(
       WelcomeConfirmationEmail({
-        subject: 'Your ASAP website account is ready, Sam',
+        subject: `Your ${sample.appName} website account is ready, Sam`,
         firstName: 'Sam',
         roleName: 'Editor',
         siteName: sample.appName,
@@ -183,9 +184,9 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
       ContactEnquiryEmail({
         name: 'Sam Example',
         email: 'sam@example.org',
-        topic: 'Research collaboration',
+        topic: 'Website enquiry',
         message:
-          'Thank you for your work.\nI would like to discuss a potential project focused on global poverty metrics.',
+          'Hello,\nI would like to talk about a new website for my business.',
         sentAt: '2026-02-28 14:30 UTC',
         appName: sample.appName,
         appUrl: sample.appUrl,
@@ -197,10 +198,10 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
   if (key === 'newsletter-campaign') {
     return render(
       NewsletterCampaignEmail({
-        subject: 'ASAP Monthly Update',
-        preheader: 'Highlights from chapters, events, and publications.',
+        subject: `${sample.appName} Monthly Update`,
+        preheader: 'News and events from the last month.',
         htmlBody:
-          '<p>Hello Sam,</p><p>Thank you for supporting Academics Stand Against Poverty. Here are this month&apos;s updates:</p><ul><li>New research publications are now live.</li><li>Regional chapter events are open for registration.</li><li>Review invitations for upcoming content will be sent next week.</li></ul><p>Visit the website for full details.</p>',
+          '<p>Hello Sam,</p><p>Thank you for following our news. Here are this month&apos;s updates:</p><ul><li>New articles are now live.</li><li>Upcoming events are open for registration.</li><li>Review invitations for upcoming content will be sent next week.</li></ul><p>Visit the website for full details.</p>',
         siteName: sample.appName,
         appUrl: sample.appUrl,
         logoUrl: sample.logoUrl,
@@ -254,7 +255,7 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
   if (key === 'google-linked') {
     return render(
       GoogleAccountStatusEmail({
-        subject: 'Your Google account is linked to ASAP',
+        subject: `Your Google account is linked to ${sample.appName}`,
         firstName: 'Sam',
         siteName: sample.appName,
         appUrl: sample.appUrl,
@@ -267,7 +268,7 @@ export async function renderEmailPreviewHtml(key: EmailPreviewTemplateKey, appUr
   if (key === 'google-unlinked') {
     return render(
       GoogleAccountStatusEmail({
-        subject: 'Your Google account is unlinked from ASAP',
+        subject: `Your Google account is unlinked from ${sample.appName}`,
         firstName: 'Sam',
         siteName: sample.appName,
         appUrl: sample.appUrl,
@@ -317,13 +318,13 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
       '',
       `We are delighted to welcome you to ${sample.appName}.`,
       '',
-      'With your new role, you can create and edit content, publish updates, and contribute to chapter storytelling.',
+      'With your new role, you can create and edit content and publish updates.',
       '',
       'Set up your password:',
       sample.inviteUrl,
       '',
       'Best,',
-      'The ASAP Global Team'
+      `The ${sample.appName} team`
     ].join('\n');
   }
 
@@ -357,25 +358,25 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hi Sam,',
       '',
-      'Your account is now active and you can access the ASAP website backend.',
+      `Your account is now active and you can access the ${sample.appName} website backend.`,
       `Sign in: ${sample.appUrl}`,
       '',
       'Best,',
-      'The ASAP Global Team'
+      `The ${sample.appName} team`
     ].join('\n');
   }
 
   if (key === 'contact-enquiry') {
     return [
-      'You have received a new contact enquiry from the ASAP website.',
+      `You have received a new contact enquiry from the ${sample.appName} website.`,
       '',
       'Name: Sam Example',
       'Email: sam@example.org',
-      'Topic: Research collaboration',
+      'Topic: Website enquiry',
       '',
       'Message:',
-      'Thank you for your work.',
-      'I would like to discuss a potential project focused on global poverty metrics.',
+      'Hello,',
+      'I would like to talk about a new website for my business.',
       '',
       'Received: 2026-02-28 14:30 UTC'
     ].join('\n');
@@ -385,9 +386,9 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hello Sam,',
       '',
-      'Thank you for supporting ASAP. Here are this month\'s updates:',
-      '- New research publications are now live.',
-      '- Regional chapter events are open for registration.',
+      "Thank you for following our news. Here are this month's updates:",
+      '- New articles are now live.',
+      '- Upcoming events are open for registration.',
       '- Review invitations for upcoming content will be sent next week.',
       '',
       'Visit the website for full details.',
@@ -400,8 +401,8 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hi Sam,',
       '',
-      'Thank you for subscribing to updates from ASAP.',
-      'We are glad to keep you informed about research, events, and opportunities.',
+      `Thank you for subscribing to updates from ${sample.appName}.`,
+      'We are glad to keep you informed about our news and events.',
       '',
       `If you prefer to stop receiving updates, you can unsubscribe here: ${sample.appUrl}/newsletter/unsubscribe?token=sample-token`
     ].join('\n');
@@ -411,7 +412,7 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hi Sam,',
       '',
-      'We have processed your request and you are unsubscribed from newsletter updates from ASAP.',
+      `We have processed your request and you are unsubscribed from newsletter updates from ${sample.appName}.`,
       'We are sorry to see you go, and we appreciate your time with our community.',
       '',
       `If you change your mind, you can subscribe again from our newsletter page: ${sample.appUrl}/connect#newsletter`,
@@ -434,7 +435,7 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hi Sam,',
       '',
-      'Your Google account has been successfully linked to your ASAP profile.',
+      `Your Google account has been successfully linked to your ${sample.appName} profile.`,
       'You can now use Log in with Google on the sign-in page.'
     ].join('\n');
   }
@@ -443,7 +444,7 @@ export function buildEmailPreviewText(key: EmailPreviewTemplateKey, appUrl: stri
     return [
       'Hi Sam,',
       '',
-      'Your Google account has been successfully unlinked from your ASAP profile.',
+      `Your Google account has been successfully unlinked from your ${sample.appName} profile.`,
       'Use email/password to sign in moving forward.'
     ].join('\n');
   }

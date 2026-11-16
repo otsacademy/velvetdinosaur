@@ -42,7 +42,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
       '',
       'We are delighted to welcome you to {{siteName}}.',
       '',
-      'With your new role, you can create and edit content, publish updates, and contribute to chapter storytelling.',
+      'With your new role, you can create and edit content and publish updates.',
       '',
       '- {{permissionOne}}',
       '- {{permissionTwo}}',
@@ -133,11 +133,11 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
     const text = [
       'Hi {{firstName}},',
       '',
-      'Your account is now active and you can access the ASAP website backend.',
+      'Your account is now active and you can access the {{siteName}} website backend.',
       'Sign in: {{appUrl}}',
       '',
       'Best,',
-      'The ASAP Global Team'
+      'The {{siteName}} team'
     ].join('\n');
     return { html, text };
   }
@@ -157,7 +157,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
     );
 
     const text = [
-      'You have received a new contact enquiry from the Academics Stand Against Poverty website.',
+      'You have received a new contact enquiry from the {{appName}} website.',
       '',
       'Name: {{name}}',
       'Email: {{email}}',
@@ -196,12 +196,12 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
       'Hi {{firstName}},',
       '',
       'Thank you for subscribing to updates from {{siteName}}.',
-      'We are glad to keep you informed about research, events, and opportunities.',
+      'We are glad to keep you informed about our news and events.',
       '',
       'If you prefer to stop receiving updates, you can unsubscribe here: {{unsubscribeUrl}}',
       '',
       'Best,',
-      'The ASAP Global Team'
+      'The {{siteName}} team'
     ].join('\n');
 
     return { html, text };
@@ -229,7 +229,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
       'If this was not requested by you, please reply to this email so we can help right away.',
       '',
       'Best,',
-      'The ASAP Global Team'
+      'The {{siteName}} team'
     ].join('\n');
 
     return { html, text };
@@ -263,7 +263,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
       'This confirmation link expires in approximately 24 hours.',
       '',
       'Best,',
-      'The ASAP Global Team'
+      'The {{siteName}} team'
     ].join('\n');
 
     return { html, text };
@@ -296,7 +296,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
       'We will send any event-specific updates to this email address.',
       '',
       'Best,',
-      'The ASAP Global Team'
+      'The {{siteName}} team'
     ].join('\n');
 
     return { html, text };
@@ -379,7 +379,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
     const text = [
       'Hi {{firstName}},',
       '',
-      'Your Google account has been successfully linked to your ASAP profile.',
+      'Your Google account has been successfully linked to your {{siteName}} profile.',
       'You can now use Log in with Google on the sign-in page.'
     ].join('\n');
 
@@ -401,7 +401,7 @@ export async function buildDefaultSystemEmailTemplateContent(key: SystemEmailTem
     const text = [
       'Hi {{firstName}},',
       '',
-      'Your Google account has been successfully unlinked from your ASAP profile.',
+      'Your Google account has been successfully unlinked from your {{siteName}} profile.',
       'Use email/password to sign in moving forward.'
     ].join('\n');
 

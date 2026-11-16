@@ -63,9 +63,7 @@ export function InviteEmail({
                       We are delighted to welcome you to <strong>{appName}</strong>.
                     </p>
                     <p style={styles.text}>
-                      Our mission to bridge rigorous scholarship with practical reform and challenge structural barriers
-                      has never been more vital. To help us amplify this work across our global network,{' '}
-                      <strong>{inviterName}</strong> has invited you to join our digital platform in the{' '}
+                      <strong>{inviterName}</strong> has invited you to help edit the website, in the{' '}
                       <strong>{roleName}</strong> role.
                     </p>
 

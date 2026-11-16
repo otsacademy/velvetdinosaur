@@ -37,8 +37,7 @@ export function NewsletterSubscribeConfirmationEmail({
         Thank you for subscribing to updates from <strong>{siteName}</strong>. We are glad to keep you informed.
       </EmailParagraph>
       <EmailParagraph>
-        You will receive occasional messages about new research, upcoming events, and opportunities to take part in our
-        work.
+        You will receive occasional messages about our news and upcoming events.
       </EmailParagraph>
       <EmailSmall>
         If you ever prefer to stop receiving these updates, you can unsubscribe here:{' '}

@@ -32,8 +32,7 @@ export function GoogleAccountStatusEmail({
       {isLinked ? (
         <>
           <EmailParagraph>
-            Your Google account has been successfully linked to your <strong>Academics Stand Against Poverty</strong>{' '}
-            profile.
+            Your Google account has been successfully linked to your <strong>{siteName}</strong> profile.
           </EmailParagraph>
           <EmailParagraph>
             Going forward, you can simply use the <strong>Log in with Google</strong> button on the sign-in page for
@@ -53,8 +52,7 @@ export function GoogleAccountStatusEmail({
       ) : (
         <>
           <EmailParagraph>
-            Your Google account has been successfully unlinked from your <strong>Academics Stand Against Poverty</strong>{' '}
-            profile.
+            Your Google account has been successfully unlinked from your <strong>{siteName}</strong> profile.
           </EmailParagraph>
           <EmailParagraph>
             You will no longer be able to use the <strong>Log in with Google</strong> button. Going forward, please

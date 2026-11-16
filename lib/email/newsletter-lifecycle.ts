@@ -5,12 +5,11 @@ import { render } from '@react-email/render';
 import { NewsletterSubscribeConfirmationEmail } from '@/components/email/newsletter-subscribe-confirmation-email';
 import { NewsletterSubscriptionVerificationEmail } from '@/components/email/newsletter-subscription-verification-email';
 import { NewsletterUnsubscribeConfirmationEmail } from '@/components/email/newsletter-unsubscribe-confirmation-email';
-import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName, resolveTeamName } from '@/lib/email-branding';
 import { createNewsletterUnsubscribeToken } from '@/lib/newsletter/unsubscribe-token';
 import { renderTemplateWithStoredOverrides } from '@/lib/system-email-templates';
 
 const POSTMARK_API = 'https://api.postmarkapp.com/email';
-const DEFAULT_FROM_NAME = 'The ASAP Global Team';
 
 function normalizeNonEmpty(value: string | undefined | null) {
   const trimmed = value?.trim();
@@ -140,12 +139,12 @@ export async function sendNewsletterSubscribeConfirmationEmail(input: {
     greeting,
     '',
     `Thank you for subscribing to updates from ${siteName}.`,
-    'We are glad to keep you informed about research, events, and opportunities.',
+    'We are glad to keep you informed about our news and events.',
     '',
     `If you prefer to stop receiving updates, you can unsubscribe here: ${unsubscribeUrl}`,
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${siteName} team`
   ].join('\n');
 
   const resolvedTemplate = await renderTemplateWithStoredOverrides({
@@ -164,7 +163,7 @@ export async function sendNewsletterSubscribeConfirmationEmail(input: {
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_FROM_NAME
+    fromName: resolveTeamName(siteName)
   });
 }
 
@@ -210,11 +209,11 @@ export async function sendNewsletterSubscriptionVerificationEmail(input: {
     `This confirmation link expires in approximately ${expiresInHours} hour${expiresInHours === 1 ? '' : 's'}.`,
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${siteName} team`
   ].join('\n');
 
   await sendPostmark(recipientEmail, subject, htmlBody, textBody, {
-    fromName: DEFAULT_FROM_NAME
+    fromName: resolveTeamName(siteName)
   });
 }
 
@@ -255,7 +254,7 @@ export async function sendNewsletterUnsubscribeConfirmationEmail(input: {
     'If this was not requested by you, please reply to this email so we can help right away.',
     '',
     'Best,',
-    'The ASAP Global Team'
+    `The ${siteName} team`
   ].join('\n');
 
   const resolvedTemplate = await renderTemplateWithStoredOverrides({
@@ -273,6 +272,6 @@ export async function sendNewsletterUnsubscribeConfirmationEmail(input: {
   });
 
   await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
-    fromName: DEFAULT_FROM_NAME
+    fromName: resolveTeamName(siteName)
   });
 }

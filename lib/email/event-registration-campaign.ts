@@ -3,7 +3,7 @@ assertServerOnly('lib/email/event-registration-campaign.ts');
 
 import { render } from '@react-email/render';
 import { EventRegistrationCampaignEmail } from '@/components/email/event-registration-campaign-email';
-import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName, resolveTeamName } from '@/lib/email-branding';
 import { isFullHtmlDocument } from '@/lib/event-registration/campaign-preview';
 import { sendPostmarkEmail } from '@/lib/email/postmark';
 import { clean, normalizeEmail, toFirstName } from '@/lib/event-registration/shared';
@@ -139,7 +139,7 @@ export async function sendEventRegistrationCampaignEmail(
     subject: rendered.subject,
     htmlBody: rendered.htmlBody,
     textBody: rendered.textBody,
-    fromName: 'The ASAP Global Team',
+    fromName: resolveTeamName(),
     tag: 'event-registration-campaign',
     metadata: {
       campaignId: clean(input.campaignId),

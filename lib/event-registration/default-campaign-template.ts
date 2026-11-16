@@ -14,7 +14,7 @@ const UPDATE_TEMPLATE: EventCampaignTemplateContent = {
     '<p>We wanted to share an update about <strong>{{eventTitle}}</strong>.</p>',
     '<p>{{customMessage}}</p>',
     '<p>You can review the latest event details here: <a href="{{eventUrl}}">{{eventUrl}}</a></p>',
-    '<p>Best,<br/>The ASAP Global Team</p>'
+    '<p>Best,<br/>The {{siteName}} team</p>'
   ].join(''),
   textBody: [
     'Hi {{firstName}},',
@@ -26,7 +26,7 @@ const UPDATE_TEMPLATE: EventCampaignTemplateContent = {
     'Latest event details: {{eventUrl}}',
     '',
     'Best,',
-    'The ASAP Global Team'
+    'The {{siteName}} team'
   ].join('\n')
 };
 
@@ -36,7 +36,7 @@ const JOINING_TEMPLATE: EventCampaignTemplateContent = {
     '<p>Here are the joining instructions for <strong>{{eventTitle}}</strong>.</p>',
     '<p>{{joiningInstructions}}</p>',
     '<p>You can review the latest event details here: <a href="{{eventUrl}}">{{eventUrl}}</a></p>',
-    '<p>Best,<br/>The ASAP Global Team</p>'
+    '<p>Best,<br/>The {{siteName}} team</p>'
   ].join(''),
   textBody: [
     'Hi {{firstName}},',
@@ -48,7 +48,7 @@ const JOINING_TEMPLATE: EventCampaignTemplateContent = {
     'Latest event details: {{eventUrl}}',
     '',
     'Best,',
-    'The ASAP Global Team'
+    'The {{siteName}} team'
   ].join('\n')
 };
 

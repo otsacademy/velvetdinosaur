@@ -61,16 +61,15 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     sampleValues: {
       '{{firstName}}': 'Sam',
       '{{email}}': 'sam@example.com',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
       '{{roleName}}': 'Editor',
       '{{inviteUrl}}': 'https://example.org/sign-up?invite=sample-preview-token',
       '{{invitedByName}}': 'Admin Team',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
-      '{{permissionOne}}':
-        'Share Research: Create and edit pages to make cutting-edge evidence accessible to the public.',
-      '{{permissionTwo}}': 'Showcase Global Impact: Upload media from global chapters.',
-      '{{permissionThree}}': 'Drive the Narrative: Publish updates that advance anti-poverty work.'
+      '{{logoUrl}}': 'https://example.org/logo.png',
+      '{{permissionOne}}': 'Edit Pages: Create and edit the pages of the website.',
+      '{{permissionTwo}}': 'Add Media: Upload images and documents for your pages.',
+      '{{permissionThree}}': 'Publish Updates: Publish your changes and write news articles.'
     }
   },
   verification: {
@@ -86,12 +85,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{verificationLink}}', '{{subject}}'],
     sampleValues: {
-      '{{subject}}': 'Verify your email for ASAP',
+      '{{subject}}': 'Verify your email for {{siteName}}',
       '{{greeting}}': 'Hello Sam,',
       '{{verificationLink}}': 'https://example.org/verify-email?token=sample-verification-token',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'reset-password': {
@@ -100,12 +99,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     tokens: ['{{subject}}', '{{greeting}}', '{{resetLink}}', '{{siteName}}', '{{appUrl}}', '{{logoUrl}}'],
     requiredTokens: ['{{resetLink}}', '{{subject}}'],
     sampleValues: {
-      '{{subject}}': 'Reset your password for ASAP',
+      '{{subject}}': 'Reset your password for {{siteName}}',
       '{{greeting}}': 'Hello Sam,',
       '{{resetLink}}': 'https://example.org/reset-password?token=sample-reset-token',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   otp: {
@@ -114,12 +113,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     tokens: ['{{subject}}', '{{action}}', '{{otpCode}}', '{{siteName}}', '{{appUrl}}', '{{logoUrl}}'],
     requiredTokens: ['{{otpCode}}', '{{action}}'],
     sampleValues: {
-      '{{subject}}': 'Your ASAP security code',
+      '{{subject}}': 'Your {{siteName}} security code',
       '{{action}}': 'sign in',
       '{{otpCode}}': '482913',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   welcome: {
@@ -135,12 +134,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{roleName}}', '{{siteName}}'],
     sampleValues: {
-      '{{subject}}': 'Your ASAP website account is ready, Sam',
+      '{{subject}}': 'Your {{siteName}} website account is ready, Sam',
       '{{firstName}}': 'Sam',
       '{{roleName}}': 'Editor',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'contact-enquiry': {
@@ -160,12 +159,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     sampleValues: {
       '{{name}}': 'Sam Example',
       '{{email}}': 'sam@example.org',
-      '{{topic}}': 'Research collaboration',
+      '{{topic}}': 'Website enquiry',
       '{{message}}': 'Thank you for your work. I would like to discuss a potential project.',
       '{{sentAt}}': '2026-02-28 14:30 UTC',
-      '{{appName}}': 'ASAP',
+      '{{appName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'newsletter-campaign': {
@@ -184,10 +183,10 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{unsubscribeUrl}}'],
     sampleValues: {
-      '{{subject}}': 'ASAP Monthly Update',
-      '{{preheader}}': 'Highlights from chapters, events, and publications.',
+      '{{subject}}': '{{siteName}} Monthly Update',
+      '{{preheader}}': 'News and events from the last month.',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
       '{{newsHighlights}}': 'Automatically rendered from latest published news.',
       '{{eventHighlights}}': 'Automatically rendered from upcoming published events.',
@@ -207,11 +206,11 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{unsubscribeUrl}}'],
     sampleValues: {
-      '{{subject}}': 'You are subscribed to ASAP updates',
+      '{{subject}}': 'You are subscribed to {{siteName}} updates',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
+      '{{logoUrl}}': 'https://example.org/logo.png',
       '{{unsubscribeUrl}}': 'https://example.org/newsletter/unsubscribe?token=sample-token'
     }
   },
@@ -228,11 +227,11 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{resubscribeUrl}}'],
     sampleValues: {
-      '{{subject}}': 'You are unsubscribed from ASAP updates',
+      '{{subject}}': 'You are unsubscribed from {{siteName}} updates',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
+      '{{logoUrl}}': 'https://example.org/logo.png',
       '{{resubscribeUrl}}': 'https://example.org/connect#newsletter'
     }
   },
@@ -252,12 +251,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{eventTitle}}', '{{confirmUrl}}'],
     sampleValues: {
-      '{{subject}}': 'Please confirm your registration for Global Justice Summit 2026',
+      '{{subject}}': 'Please confirm your registration for Spring Open Day 2026',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
-      '{{eventTitle}}': 'Global Justice Summit 2026',
+      '{{logoUrl}}': 'https://example.org/logo.png',
+      '{{eventTitle}}': 'Spring Open Day 2026',
       '{{eventDate}}': 'Thu, April 23, 2026, 15:00 UTC',
       '{{eventLocation}}': 'Online / Zoom',
       '{{confirmUrl}}': 'https://example.org/events/registration/confirm?token=sample-event-token'
@@ -279,12 +278,12 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{eventTitle}}', '{{eventUrl}}'],
     sampleValues: {
-      '{{subject}}': 'Your place is confirmed for Global Justice Summit 2026',
+      '{{subject}}': 'Your place is confirmed for Spring Open Day 2026',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
-      '{{eventTitle}}': 'Global Justice Summit 2026',
+      '{{logoUrl}}': 'https://example.org/logo.png',
+      '{{eventTitle}}': 'Spring Open Day 2026',
       '{{eventDate}}': 'Thu, April 23, 2026, 15:00 UTC',
       '{{eventLocation}}': 'Online / Zoom',
       '{{eventUrl}}': 'https://example.org/events/global-justice-summit-2026'
@@ -311,15 +310,15 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{eventTitle}}', '{{eventUrl}}'],
     sampleValues: {
-      '{{subject}}': 'Important update for Global Justice Summit 2026',
+      '{{subject}}': 'Important update for Spring Open Day 2026',
       '{{preheader}}': 'A quick update for confirmed participants.',
       '{{firstName}}': 'Sam',
       '{{fullName}}': 'Sam Example',
       '{{email}}': 'sam@example.org',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
-      '{{eventTitle}}': 'Global Justice Summit 2026',
+      '{{logoUrl}}': 'https://example.org/logo.png',
+      '{{eventTitle}}': 'Spring Open Day 2026',
       '{{eventDate}}': 'Thu, April 23, 2026, 15:00 UTC',
       '{{eventLocation}}': 'Online / Zoom',
       '{{eventUrl}}': 'https://example.org/events/global-justice-summit-2026',
@@ -347,15 +346,15 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{firstName}}', '{{eventTitle}}', '{{joiningInstructions}}'],
     sampleValues: {
-      '{{subject}}': 'Joining instructions for Global Justice Summit 2026',
+      '{{subject}}': 'Joining instructions for Spring Open Day 2026',
       '{{preheader}}': 'Everything you need to join the event.',
       '{{firstName}}': 'Sam',
       '{{fullName}}': 'Sam Example',
       '{{email}}': 'sam@example.org',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
-      '{{eventTitle}}': 'Global Justice Summit 2026',
+      '{{logoUrl}}': 'https://example.org/logo.png',
+      '{{eventTitle}}': 'Spring Open Day 2026',
       '{{eventDate}}': 'Thu, April 23, 2026, 15:00 UTC',
       '{{eventLocation}}': 'Online / Zoom',
       '{{eventUrl}}': 'https://example.org/events/global-justice-summit-2026',
@@ -378,10 +377,10 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{email}}', '{{createdAt}}'],
     sampleValues: {
-      '{{subject}}': 'New waitlist signup for ASAP',
-      '{{siteName}}': 'ASAP',
+      '{{subject}}': 'New waitlist signup for {{siteName}}',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png',
+      '{{logoUrl}}': 'https://example.org/logo.png',
       '{{email}}': 'new-user@example.org',
       '{{source}}': 'homepage-hero',
       '{{userAgent}}': 'Mozilla/5.0 (Macintosh; Intel Mac OS X)',
@@ -394,11 +393,11 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     tokens: ['{{subject}}', '{{firstName}}', '{{siteName}}', '{{appUrl}}', '{{logoUrl}}'],
     requiredTokens: ['{{firstName}}', '{{subject}}'],
     sampleValues: {
-      '{{subject}}': 'Your Google account is linked to ASAP',
+      '{{subject}}': 'Your Google account is linked to {{siteName}}',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'google-unlinked': {
@@ -407,11 +406,11 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     tokens: ['{{subject}}', '{{firstName}}', '{{siteName}}', '{{appUrl}}', '{{logoUrl}}'],
     requiredTokens: ['{{firstName}}', '{{subject}}'],
     sampleValues: {
-      '{{subject}}': 'Your Google account is unlinked from ASAP',
+      '{{subject}}': 'Your Google account is unlinked from {{siteName}}',
       '{{firstName}}': 'Sam',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'review-request': {
@@ -429,14 +428,14 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{deadline}}', '{{reviewLink}}'],
     sampleValues: {
-      '{{subject}}': 'Review Request: Please provide feedback for ASAP',
+      '{{subject}}': 'Review Request: Please provide feedback for {{siteName}}',
       '{{greeting}}': 'Hello Sam,',
       '{{reviewStart}}': 'Thu, March 5, 2026, 09:00 AM',
       '{{deadline}}': 'Fri, March 6, 2026, 04:00 PM',
       '{{reviewLink}}': 'https://example.org/review/preview-token',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   },
   'review-reminder': {
@@ -453,13 +452,13 @@ const TEMPLATE_DEFINITIONS: Record<SystemEmailTemplateKey, Omit<SystemEmailTempl
     ],
     requiredTokens: ['{{remaining}}', '{{deadline}}', '{{reviewLink}}'],
     sampleValues: {
-      '{{subject}}': 'Reminder: Your ASAP review link closes soon',
+      '{{subject}}': 'Reminder: Your {{siteName}} review link closes soon',
       '{{remaining}}': '1 day 4 hours',
       '{{deadline}}': 'Fri, March 6, 2026, 04:00 PM (2026-03-06 16:00 UTC)',
       '{{reviewLink}}': 'https://example.org/review/preview-token',
-      '{{siteName}}': 'ASAP',
+      '{{siteName}}': '{{siteName}}',
       '{{appUrl}}': 'https://example.org',
-      '{{logoUrl}}': 'https://example.org/images/asap-logo.png'
+      '{{logoUrl}}': 'https://example.org/logo.png'
     }
   }
 };

@@ -30,7 +30,7 @@ export function WaitlistSignupNotificationEmail({
       logoUrl={logoUrl}
     >
       <EmailParagraph>
-        A new user has joined the waitlist for the <strong>Academics Stand Against Poverty</strong> platform.
+        A new user has joined the waitlist for the <strong>{siteName}</strong> platform.
       </EmailParagraph>
       <EmailParagraph>
         <strong>Email:</strong> {email}

@@ -9,7 +9,7 @@ export type NewsletterGdprSection = {
 export const NEWSLETTER_GDPR_MODAL_TITLE = 'GDPR Consent: Data Protection Agreement';
 
 export const NEWSLETTER_GDPR_MODAL_INTRO =
-  'Thank you for visiting the ASAP website. We are committed to protecting your privacy and ensuring that your personal data is handled in accordance with the General Data Protection Regulation (GDPR). Below, you will find information about how we collect, use, and protect your data.';
+  'Thank you for visiting our website. We are committed to protecting your privacy and ensuring that your personal data is handled in accordance with the General Data Protection Regulation (GDPR). Below, you will find information about how we collect, use, and protect your data.';
 
 export const NEWSLETTER_GDPR_SECTIONS: NewsletterGdprSection[] = [
   {
@@ -18,7 +18,7 @@ export const NEWSLETTER_GDPR_SECTIONS: NewsletterGdprSection[] = [
     bullets: [
       'Keep you updated about our activities, events, and campaigns',
       'Improve our services by understanding how you interact with our website',
-      'Facilitate communication with you regarding your involvement with ASAP'
+      'Facilitate communication with you regarding your involvement with us'
     ]
   },
   {
@@ -50,6 +50,6 @@ export const NEWSLETTER_GDPR_SECTIONS: NewsletterGdprSection[] = [
   },
   {
     heading: 'Contact Information for Data Protection',
-    body: 'For any questions or concerns regarding data protection, please contact us at global@academicsstand.org'
+    body: 'For any questions or concerns regarding data protection, please contact us through the contact page of this website.'
   }
 ];

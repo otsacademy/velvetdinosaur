@@ -38,7 +38,7 @@ export function ReviewLinkEmail({
     >
       <EmailParagraph>{greeting}</EmailParagraph>
       <EmailParagraph>
-        You have been invited to review website updates for <strong>Academics Stand Against Poverty</strong>. Please
+        You have been invited to review website updates for <strong>{siteName}</strong>. Please
         add your comments directly in review mode so we can improve both content and user experience.
       </EmailParagraph>
       <EmailParagraph>Please review the draft and submit your feedback before the deadline.</EmailParagraph>

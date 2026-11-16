@@ -5,7 +5,7 @@ import { ResetPasswordEmail } from '@/components/email/reset-password-email';
 import { VerificationEmail } from '@/components/email/verification-email';
 import { WaitlistSignupNotificationEmail } from '@/components/email/waitlist-signup-notification-email';
 import { WelcomeConfirmationEmail } from '@/components/email/welcome-confirmation-email';
-import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName, resolveTeamName } from '@/lib/email-branding';
 import { buildInviteTextBody, buildWelcomeTextBody } from '@/lib/email/email-text-builders';
 import { renderTemplateWithStoredOverrides } from '@/lib/system-email-templates';
 
@@ -59,17 +59,19 @@ type WelcomeConfirmationPayload = {
 
 const POSTMARK_API = 'https://api.postmarkapp.com/email';
 const DEFAULT_INVITE_FROM_NAME = 'Admin Team';
-const welcomeFromName = () => `The ${resolveSiteName()} team`;
+const welcomeFromName = () => resolveTeamName();
+// What an invite says the new person can do, when the inviter lists nothing.
+// The same three things for both roles, as before; only the wording changed.
 const DEFAULT_INVITE_PERMISSIONS: Record<'user' | 'admin', string[]> = {
   user: [
-    'Share Research: Create and edit pages to make cutting-edge evidence accessible to the public.',
-    'Showcase Global Impact: Upload media from our regional chapters across six continents.',
-    'Drive the Narrative: Publish changes and write news articles that help shift the conversation around the causes of, and solutions to, global poverty.'
+    'Edit Pages: Create and edit the pages of the website.',
+    'Add Media: Upload images and documents for your pages.',
+    'Publish Updates: Publish your changes and write news articles.'
   ],
   admin: [
-    'Share Research: Create and edit pages to make cutting-edge evidence accessible to the public.',
-    'Showcase Global Impact: Upload media from our regional chapters across six continents.',
-    'Drive the Narrative: Publish changes and write news articles that help shift the conversation around the causes of, and solutions to, global poverty.'
+    'Edit Pages: Create and edit the pages of the website.',
+    'Add Media: Upload images and documents for your pages.',
+    'Publish Updates: Publish your changes and write news articles.'
   ]
 };
 

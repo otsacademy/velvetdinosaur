@@ -16,7 +16,7 @@ export function buildInviteTextBody(params: {
     '',
     `We are delighted to welcome you to ${params.siteName}.`,
     '',
-    `Our mission to bridge rigorous scholarship with practical reform and challenge structural barriers has never been more vital. To help us amplify this work across our global network, ${params.invitedByName} has invited you to join our digital platform in the ${params.roleName} role.`,
+    `${params.invitedByName} has invited you to help edit the website, in the ${params.roleName} role.`,
     ''
   ];
 
@@ -32,12 +32,10 @@ export function buildInviteTextBody(params: {
   lines.push('Please verify your account and set your password by copying and pasting this link into your browser:');
   lines.push(params.inviteUrl);
   lines.push('');
-  lines.push(
-    'Thank you for joining our efforts to reform the systemic factors that sustain poverty. We look forward to collaborating with you!'
-  );
+  lines.push('Thank you for joining. We look forward to collaborating with you!');
   lines.push('');
-  lines.push('In solidarity,');
-  lines.push('The ASAP Global Team');
+  lines.push('Best,');
+  lines.push(`The ${params.siteName} team`);
   lines.push(params.siteName);
   lines.push('');
   lines.push(
@@ -57,12 +55,12 @@ export function buildWelcomeTextBody(params: {
   const lines = [
     `Hi ${params.firstName},`,
     '',
-    `Thanks for setting up your password. Your account is now active, and you have access to the Academics Stand Against Poverty website backend.`,
+    `Thanks for setting up your password. Your account is now active, and you have access to the ${params.siteName} website backend.`,
     '',
     `This portal is where we manage the site's content. Depending on your ${params.roleName} permissions, you can jump right in to:`,
     '',
-    '- Add News and Events: Draft and publish the latest ASAP articles, announcements, and global chapter updates.',
-    '- Update Web Pages: Edit text and keep our core research initiatives current.',
+    '- Add News and Events: Draft and publish news articles, announcements and events.',
+    '- Update Web Pages: Edit text and keep every page up to date.',
     '- Manage Media: Upload images and documents to support our pages.',
     '',
     `You can log in to the admin dashboard anytime using this link: ${params.appUrl}`,
@@ -72,7 +70,7 @@ export function buildWelcomeTextBody(params: {
     'Thanks for helping us maintain the site!',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${params.siteName} team`,
     params.siteName
   ];
   return lines.join('\n');

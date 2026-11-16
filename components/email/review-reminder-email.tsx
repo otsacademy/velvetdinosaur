@@ -37,7 +37,7 @@ export function ReviewReminderEmail({
       <EmailParagraph>Hello,</EmailParagraph>
       <EmailParagraph>
         This is a quick reminder that your invitation to review a draft page for{' '}
-        <strong>Academics Stand Against Poverty</strong> is closing soon.
+        <strong>{siteName}</strong> is closing soon.
       </EmailParagraph>
       <EmailParagraph>
         <strong>Time remaining:</strong> {remaining}

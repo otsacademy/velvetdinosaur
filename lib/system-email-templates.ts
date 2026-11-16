@@ -30,7 +30,9 @@ function buildPreviewUrl(baseUrl: string, path: string) {
   return `${baseUrl}${path}`;
 }
 
-function resolveEditorSampleValues(
+// Sample values write the site's name as {{siteName}} ("Verify your email for
+// {{siteName}}"); the editor shows this site's real name in its place.
+export function resolveEditorSampleValues(
   values: Record<string, string>,
   options: { siteName: string; appUrl: string; logoUrl: string }
 ) {
@@ -45,7 +47,7 @@ function resolveEditorSampleValues(
 
   const output: Record<string, string> = {};
   for (const [token, value] of Object.entries(values)) {
-    let nextValue = value.replaceAll('ASAP', options.siteName);
+    let nextValue = value.replaceAll('{{siteName}}', options.siteName);
     if (options.appUrl) {
       nextValue = nextValue.replaceAll('https://example.org', options.appUrl);
     } else {

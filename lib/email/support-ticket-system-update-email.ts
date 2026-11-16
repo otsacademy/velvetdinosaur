@@ -76,7 +76,7 @@ export async function sendSupportTicketSystemUpdateEmail(input: SupportTicketSys
   const messageText = clampText(clean(input.messageText) || '(No message body provided)');
   const senderName = 'Velvet Dinosaur Support';
   const subject = `[Support Update] ${clean(input.ticketRef)} has a new message`;
-  const greeting = 'Hello ASAP admin team,';
+  const greeting = `Hello ${siteName} admin team,`;
 
   const htmlBody = await render(
     SupportTicketSystemUpdateEmail({
@@ -108,7 +108,7 @@ export async function sendSupportTicketSystemUpdateEmail(input: SupportTicketSys
     'This notification was sent to admin users only.',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
 

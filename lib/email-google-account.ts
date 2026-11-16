@@ -1,6 +1,6 @@
 import { render } from '@react-email/render';
 import { GoogleAccountStatusEmail } from '@/components/email/google-account-status-email';
-import { resolveLogoUrl, resolveSiteName } from '@/lib/email-branding';
+import { resolveLogoUrl, resolveSiteName, resolveTeamName } from '@/lib/email-branding';
 import { renderTemplateWithStoredOverrides } from '@/lib/system-email-templates';
 
 type UserLike = {
@@ -17,7 +17,6 @@ type GoogleAccountStatusPayload = {
 };
 
 const POSTMARK_API = 'https://api.postmarkapp.com/email';
-const DEFAULT_FROM_NAME = 'The ASAP Global Team';
 
 function normalizeNonEmpty(value: string | undefined | null) {
   const trimmed = value?.trim();
@@ -80,7 +79,7 @@ async function sendPostmark(to: string, subject: string, htmlBody: string, textB
   const { token, from } = getPostmarkConfig();
   if (!token || !from) {
     console.warn('[postmark] missing POSTMARK_SERVER_TOKEN or POSTMARK_FROM_EMAIL; logging instead');
-    console.info({ to, subject, htmlBody, textBody, fromName: DEFAULT_FROM_NAME });
+    console.info({ to, subject, htmlBody, textBody, fromName: resolveTeamName() });
     return;
   }
 
@@ -91,7 +90,7 @@ async function sendPostmark(to: string, subject: string, htmlBody: string, textB
       'X-Postmark-Server-Token': token
     },
     body: JSON.stringify({
-      From: formatFromAddress(from, DEFAULT_FROM_NAME),
+      From: formatFromAddress(from, resolveTeamName()),
       To: to,
       Subject: subject,
       HtmlBody: htmlBody,
@@ -112,7 +111,7 @@ export async function sendGoogleAccountLinkedEmail(payload: GoogleAccountStatusP
   const appUrl = resolveAccountStatusAppUrl(payload);
   const logoUrl = resolveLogoUrl(payload.logoUrl, appUrl);
   const firstName = inferFirstNameFromNameOrEmail(payload.user.name, recipientEmail);
-  const subject = 'Your Google account is linked to ASAP';
+  const subject = `Your Google account is linked to ${siteName}`;
   const htmlBody = await render(
     GoogleAccountStatusEmail({
       subject,
@@ -127,13 +126,13 @@ export async function sendGoogleAccountLinkedEmail(payload: GoogleAccountStatusP
   const textBody = [
     `Hi ${firstName},`,
     '',
-    'Your Google account has been successfully linked to your Academics Stand Against Poverty profile.',
+    `Your Google account has been successfully linked to your ${siteName} profile.`,
     'Going forward, you can simply use the "Log in with Google" button on the sign-in page for faster access to the platform.',
     'If you ever need to manage or remove this connection, you can unlink your Google account at any time from the Accounts page in your dashboard.',
     'If you did not authorize this change, please let us know immediately by replying to this email so we can secure your account.',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
 
@@ -159,7 +158,7 @@ export async function sendGoogleAccountUnlinkedEmail(payload: GoogleAccountStatu
   const appUrl = resolveAccountStatusAppUrl(payload);
   const logoUrl = resolveLogoUrl(payload.logoUrl, appUrl);
   const firstName = inferFirstNameFromNameOrEmail(payload.user.name, recipientEmail);
-  const subject = 'Your Google account is unlinked from ASAP';
+  const subject = `Your Google account is unlinked from ${siteName}`;
   const htmlBody = await render(
     GoogleAccountStatusEmail({
       subject,
@@ -174,13 +173,13 @@ export async function sendGoogleAccountUnlinkedEmail(payload: GoogleAccountStatu
   const textBody = [
     `Hi ${firstName},`,
     '',
-    'Your Google account has been successfully unlinked from your Academics Stand Against Poverty profile.',
+    `Your Google account has been successfully unlinked from your ${siteName} profile.`,
     'You will no longer be able to use the "Log in with Google" button. Going forward, please use your registered email address and password to sign in to the platform.',
     'If you ever want to reconnect your account, you can do so at any time from the Accounts page in your dashboard.',
     'If you did not authorize this change, please reply to this email immediately so we can secure your account.',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
 

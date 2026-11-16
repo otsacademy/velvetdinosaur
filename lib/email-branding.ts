@@ -33,6 +33,13 @@ export function resolveSiteName(siteName?: string | null) {
   );
 }
 
+// Who this site's emails come from and are signed by: "The Velvet Dinosaur
+// team". The verification and password emails already said this; the rest
+// carried another site's team name until November 2026.
+export function resolveTeamName(siteName?: string | null) {
+  return `The ${resolveSiteName(siteName)} team`;
+}
+
 export function resolveDefaultAppUrl(fallbackUrl?: string | null) {
   return (
     normalizeBaseUrl(process.env.NEXT_PUBLIC_BASE_URL) ||

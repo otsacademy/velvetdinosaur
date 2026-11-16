@@ -43,11 +43,10 @@ export function WelcomeConfirmationEmail({
       </EmailParagraph>
       <EmailList>
         <EmailListItem>
-          <strong>Add News and Events:</strong> Draft and publish the latest articles, announcements, and
-          chapter updates.
+          <strong>Add News and Events:</strong> Draft and publish news articles, announcements and events.
         </EmailListItem>
         <EmailListItem>
-          <strong>Update Web Pages:</strong> Edit text and keep our core research initiatives current.
+          <strong>Update Web Pages:</strong> Edit text and keep every page up to date.
         </EmailListItem>
         <EmailListItem>
           <strong>Manage Media:</strong> Upload images and documents to support our pages.

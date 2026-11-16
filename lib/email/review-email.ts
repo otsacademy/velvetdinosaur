@@ -107,7 +107,7 @@ export async function sendReviewLinkEmail({ to, firstName, reviewUrl, startsAt, 
   const textBody = [
     greeting,
     '',
-    'You have been invited to review website updates for Academics Stand Against Poverty. Please share your comments in review mode so we can improve both content and user experience.',
+    `You have been invited to review website updates for ${siteName}. Please share your comments in review mode so we can improve both content and user experience.`,
     '',
     'Please review the draft and submit your feedback before the deadline.',
     '',
@@ -120,7 +120,7 @@ export async function sendReviewLinkEmail({ to, firstName, reviewUrl, startsAt, 
     'Thank you for your time and expertise.',
     '',
     'Best,',
-    'The ASAP Global Team',
+    `The ${siteName} team`,
     siteName
   ].join('\n');
   const resolvedTemplate = await renderTemplateWithStoredOverrides({
