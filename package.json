@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --hostname 127.0.0.1",
     "lint": "ESLINT_USE_FLAT_CONFIG=true bunx eslint . --cache --cache-location .eslintcache --max-warnings 0",
     "doctor": "tsx scripts/doctor.ts",
     "seed": "tsx scripts/seed.ts",
