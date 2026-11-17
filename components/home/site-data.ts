@@ -85,8 +85,9 @@ export const WORK_PROJECTS: WorkProject[] = [
     cat: "Community",
     tag: "Parish council",
     title: "Froxfield Parish Council",
-    blurb: "From a single homepage to a modern, structured site that residents can rely on.",
-    meta: "Rebuild · structured content",
+    blurb:
+      "Helped the council reorganise a single homepage into a modern, structured site that residents can rely on.",
+    meta: "Reorganisation · structured content",
     banner: {
       kind: "quote",
       quote:

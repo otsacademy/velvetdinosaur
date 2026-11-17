@@ -25,7 +25,7 @@ export const OXFORDSHIRE_PAGE: LocationPageContent = {
       },
       {
         title: "Parish and town councils",
-        body: "I turned Froxfield Parish Council’s single homepage into a modern, structured site that residents can rely on as a source of information.",
+        body: "I helped Froxfield Parish Council reorganise its single homepage into a modern, structured site that residents can rely on as a source of information.",
       },
     ],
   },

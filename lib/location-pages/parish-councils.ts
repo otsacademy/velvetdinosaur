@@ -3,6 +3,8 @@ import { COUNCIL_PRICE_ANSWER, CTA_TITLE } from "./shared"
 import type { LocationPageContent } from "./types"
 
 // The proof here is Froxfield Parish Council (its Google review and Work card).
+// Ian helped the council reorganise that site. He did not rebuild it (his
+// correction, 17 November 2026), so never say "built" or "rebuilt" for it.
 // The rules named in the first answer were checked on 16 November 2026: the
 // Transparency Code for Smaller Authorities covers councils with a turnover of
 // up to £25,000, and the 2018 public sector accessibility regulations cover
@@ -49,7 +51,7 @@ export const PARISH_COUNCILS_PAGE: LocationPageContent = {
     title: "Near Witney, working with councils across England.",
     paragraphs: [
       "I work from my home in Minster Lovell, West Oxfordshire. If your council is nearby I can come and go through the preview with you; if not, we work by phone, email or video call.",
-      "For Froxfield Parish Council, I turned a single homepage into a structured site that residents can rely on for information. You can read what the council said about it below.",
+      "I helped Froxfield Parish Council reorganise its website, from a single homepage into a structured site that residents can rely on for information. You can read what the council said about it below.",
     ],
     placesLabel: "Easy for me to visit",
     places: [
