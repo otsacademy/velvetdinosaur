@@ -20,6 +20,7 @@ export function PageEditorChapterSection({
   onPrimaryChapterChange,
   onChapterToggle
 }: PageEditorChapterSectionProps) {
+  if (ASAP_CHAPTER_OPTIONS.length === 0) return null;
   return (
     <div className="min-w-0 overflow-hidden rounded-xl border border-[var(--vd-border)] bg-[var(--vd-card)]/90 p-4 shadow-sm">
       <div className="space-y-1">

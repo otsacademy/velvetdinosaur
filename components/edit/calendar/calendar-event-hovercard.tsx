@@ -6,6 +6,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 import { parseDateKey, toMinutes, type CalendarEvent } from '@/components/edit/calendar-workspace.shared';
 import type { SiteEvent } from '@/lib/events';
 import { EventHoverCard } from '@/components/events/event-hover-card';
+import { resolvePublicSiteLogoPath } from '@/lib/site-config';
 
 function findFirstUrl(notes: string) {
   const match = (notes || '').match(/https?:\/\/[^\s]+/i);
@@ -45,7 +46,7 @@ function toPreviewEvent(event: CalendarEvent): SiteEvent {
     venue: event.location || 'Workspace',
     description,
     fullDescription: description,
-    img: '/images/asap-admin-logo.jpg',
+    img: resolvePublicSiteLogoPath(),
     category: 'Conference',
     tags: [],
     cost: event.allDay ? 'All day' : `${event.durationMin}m`,

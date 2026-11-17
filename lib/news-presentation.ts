@@ -1,14 +1,17 @@
 import { cleanString } from '@/lib/string-sanitizer'
+import { resolvePublicSiteEditorialName, resolvePublicSiteLogoPath, resolvePublicSiteStaffName } from '@/lib/site-config'
 
-const DEFAULT_AUTHOR_NAME = 'ASAP Staff'
-const DEFAULT_AUTHOR_IMAGE = '/images/asap-logo-trimmed.webp'
+const DEFAULT_AUTHOR_NAME = resolvePublicSiteStaffName()
+const DEFAULT_AUTHOR_IMAGE = resolvePublicSiteLogoPath()
 
 const GENERIC_AUTHOR_NAMES = new Set([
   'admin',
   'administrator',
-  'asap editorial',
+  'asap editorial', // legacy-asap-data: names stored by the site this code came from
+  'asap staff', // legacy-asap-data
   'editorial',
-  'editorial team'
+  'editorial team',
+  resolvePublicSiteEditorialName().toLowerCase()
 ])
 
 function normalizeWhitespace(value: string) {
@@ -39,16 +42,16 @@ function decodeImageReference(value: string) {
 function isDefaultAuthorLogoImage(value: string) {
   const normalized = decodeImageReference(value).trim().toLowerCase()
   if (!normalized) return false
-  if (normalized === DEFAULT_AUTHOR_IMAGE) return true
-  if (normalized === '/images/asap-logo.png' || normalized === '/images/asap-logo-wide.webp') return true
+  if (normalized === DEFAULT_AUTHOR_IMAGE.toLowerCase()) return true
+  if (normalized === '/images/asap-logo.png' || normalized === '/images/asap-logo-wide.webp') return true // legacy-asap-data
 
   try {
     const parsed = new URL(normalized, 'http://localhost')
     const assetKey = parsed.searchParams.get('key')
     const comparable = decodeImageReference(assetKey || parsed.pathname).toLowerCase()
-    return comparable.includes('asap') && comparable.includes('logo')
+    return comparable.includes('asap') && comparable.includes('logo') // legacy-asap-data
   } catch {
-    return normalized.includes('asap') && normalized.includes('logo')
+    return normalized.includes('asap') && normalized.includes('logo') // legacy-asap-data
   }
 }
 

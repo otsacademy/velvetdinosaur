@@ -112,7 +112,7 @@ export function ActiveUsersPanel({
           <Input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search users by name, email, ORCID, or chapter"
+            placeholder={ASAP_CHAPTER_OPTIONS.length > 0 ? 'Search users by name, email, ORCID, or chapter' : 'Search users by name, email or ORCID'}
             className="min-w-[240px] flex-1"
           />
           <Select value={roleFilter} onValueChange={(value) => setRoleFilter(value as RoleFilter)}>
@@ -125,6 +125,7 @@ export function ActiveUsersPanel({
               <SelectItem value="user">Users</SelectItem>
             </SelectContent>
           </Select>
+          {ASAP_CHAPTER_OPTIONS.length > 0 ? (
           <Select value={chapterFilter} onValueChange={setChapterFilter}>
             <SelectTrigger className="w-[190px]">
               <SelectValue placeholder="Chapter filter" />
@@ -138,6 +139,7 @@ export function ActiveUsersPanel({
               ))}
             </SelectContent>
           </Select>
+          ) : null}
         </div>
 
         {loading ? <p className="text-sm text-muted-foreground">Loading users...</p> : null}
@@ -152,7 +154,7 @@ export function ActiveUsersPanel({
                 <tr>
                   <th className="px-3 py-2 text-left font-medium">User</th>
                   <th className="px-3 py-2 text-left font-medium">Role</th>
-                  <th className="px-3 py-2 text-left font-medium">Chapter</th>
+                  {ASAP_CHAPTER_OPTIONS.length > 0 ? <th className="px-3 py-2 text-left font-medium">Chapter</th> : null}
                   <th className="px-3 py-2 text-left font-medium">ORCID</th>
                   <th className="px-3 py-2 text-left font-medium">Last login</th>
                   <th className="px-3 py-2 text-left font-medium">Created</th>
@@ -191,6 +193,7 @@ export function ActiveUsersPanel({
                           {roleBusy ? 'saving...' : user.role}
                         </Badge>
                       </td>
+                      {ASAP_CHAPTER_OPTIONS.length > 0 ? (
                       <td className="px-3 py-3 text-xs text-muted-foreground">
                         {user.primaryChapterName ? (
                           <>
@@ -203,6 +206,7 @@ export function ActiveUsersPanel({
                           '-'
                         )}
                       </td>
+                      ) : null}
                       <td className="px-3 py-3 text-xs text-muted-foreground">
                         {user.orcidId ? <code>{user.orcidId}</code> : '-'}
                       </td>

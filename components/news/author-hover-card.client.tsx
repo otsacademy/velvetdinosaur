@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import type { ArticleAuthorProfile } from '@/lib/articles';
 import { getChapterName } from '@/lib/chapters';
+import { resolvePublicSiteStaffName } from '@/lib/site-config';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -117,7 +118,7 @@ function countryToFlagEmoji(value: string) {
 }
 
 export function formatAuthorDisplayName(name: string, profile?: ArticleAuthorProfile | null) {
-  const fallbackName = clean(name) || 'ASAP Staff';
+  const fallbackName = clean(name) || resolvePublicSiteStaffName();
   if (!profile) return fallbackName;
 
   const canonicalName = `${clean(profile.firstName)} ${clean(profile.lastName)}`.replace(/\s+/g, ' ').trim();

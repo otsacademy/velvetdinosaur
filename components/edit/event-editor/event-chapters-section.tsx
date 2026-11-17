@@ -19,6 +19,7 @@ export function EventChaptersSection({
   chapterSlugs,
   onChapterToggle,
 }: EventChaptersSectionProps) {
+  if (ASAP_CHAPTER_OPTIONS.length === 0) return null
   return (
     <EventEditorSectionShell
       value="chapters"

@@ -102,7 +102,7 @@ export function InvitationsPanel() {
       setNotice({ type: 'error', title: 'Missing last name', message: 'Enter the invitee last name.' });
       return;
     }
-    if (!primaryChapterSlug) {
+    if (ASAP_CHAPTER_OPTIONS.length > 0 && !primaryChapterSlug) {
       setNotice({ type: 'error', title: 'Missing chapter', message: 'Select the invitee primary chapter.' });
       return;
     }
@@ -143,7 +143,7 @@ export function InvitationsPanel() {
       type: 'success',
       title: created.emailSent ? 'Invite sent' : 'Invite created',
       message: created.emailSent
-        ? `${created.invite.firstName} ${created.invite.lastName} invited as ${created.invite.role} for ${created.invite.primaryChapterName}.`
+        ? `${created.invite.firstName} ${created.invite.lastName} invited as ${created.invite.role}${created.invite.primaryChapterName ? ` for ${created.invite.primaryChapterName}` : ''}.`
         : `Invite created for ${created.invite.email}. Share the invite URL manually.`
     });
     setCreateOpen(true);
@@ -299,6 +299,7 @@ export function InvitationsPanel() {
                   Users can manage content. Admins can also manage users, settings, and system configuration.
                 </p>
               </div>
+              {ASAP_CHAPTER_OPTIONS.length > 0 ? (
               <div className="space-y-2">
                 <Label htmlFor="invite-primary-chapter">Primary chapter</Label>
                 <Select value={primaryChapterSlug || undefined} onValueChange={setPrimaryChapterSlug}>
@@ -317,6 +318,7 @@ export function InvitationsPanel() {
                   This seeds the user profile and becomes the default chapter for new content they create.
                 </p>
               </div>
+              ) : null}
             </div>
 
             <label className="flex items-start gap-2 text-sm text-foreground">
@@ -429,7 +431,7 @@ export function InvitationsPanel() {
             <Input
               value={inviteSearch}
               onChange={(event) => setInviteSearch(event.target.value)}
-              placeholder="Search by name, email, role, chapter, status"
+              placeholder={ASAP_CHAPTER_OPTIONS.length > 0 ? 'Search by name, email, role, chapter, status' : 'Search by name, email, role, status'}
               className="min-w-[220px] flex-1"
             />
             <Select value={inviteSort} onValueChange={(value) => setInviteSort(value as InviteSort)}>

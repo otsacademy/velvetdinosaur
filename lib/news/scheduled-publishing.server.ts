@@ -10,6 +10,7 @@ import { rewriteInlineMediaForStorage } from '@/lib/inline-media.server'
 import { saveNewsArticleSnapshot } from '@/lib/news-article-history.server'
 import { cleanString } from '@/lib/string-sanitizer'
 import { NewsArticle } from '@/models/NewsArticle'
+import { resolvePublicSiteEditorialName } from '@/lib/site-config'
 
 type NewsArticleStatus = 'draft' | 'scheduled' | 'published'
 
@@ -204,7 +205,7 @@ export async function publishScheduledNewsArticles(now = new Date(), options?: {
           readTime: normalizeText(article.readTime) || '1 min read',
           imageCaption: normalizeText(article.imageCaption),
           author: {
-            name: normalizeText((media.value.author as { name?: unknown })?.name) || 'ASAP Editorial',
+            name: normalizeText((media.value.author as { name?: unknown })?.name) || resolvePublicSiteEditorialName(),
             img: normalizeText((media.value.author as { img?: unknown })?.img) || '/images/placeholder.svg',
           },
           sections: media.value.sections || [],

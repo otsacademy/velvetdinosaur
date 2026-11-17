@@ -1,4 +1,5 @@
 import type { SiteEvent } from '@/lib/events'
+import { resolvePublicSiteName } from '@/lib/site-config'
 
 const PROVIDER_DESCRIPTION_LIMIT = 1200
 
@@ -102,7 +103,7 @@ function toCalendarEventData(input: CalendarEventInput): CalendarEventData | nul
   const end = parseDateTime(input.endDateTime)
   if (!start || !end || end.getTime() <= start.getTime()) return null
 
-  const title = trimText(input.title) || 'ASAP Event'
+  const title = trimText(input.title) || `${resolvePublicSiteName()} event`
   const slug = trimText(input.slug)
   if (!slug) return null
   const venue = trimText(input.venue)
@@ -171,14 +172,15 @@ export function createEventIcs(input: CalendarEventInput) {
   const eventData = toCalendarEventData(input)
   if (!eventData) return null
 
-  const uidDomain = readHostFromUrl(eventData.eventUrl) || 'events.academicsstand.org'
+  const uidDomain =
+    readHostFromUrl(eventData.eventUrl) || readHostFromUrl(process.env.NEXT_PUBLIC_SITE_URL) || 'localhost'
   const uid = `${safeSlugForFilename(eventData.slug || eventData.title)}-${compactUtcDateTime(eventData.start)}@${uidDomain}`
 
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'CALSCALE:GREGORIAN',
-    'PRODID:-//ASAP//Events//EN',
+    `PRODID:-//${escapeIcsText(resolvePublicSiteName())}//Events//EN`,
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
     `UID:${uid}`,

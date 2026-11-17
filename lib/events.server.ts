@@ -14,6 +14,7 @@ import {
 } from '@/lib/events'
 import { cleanString } from '@/lib/string-sanitizer'
 import { Event } from '@/models/Event'
+import { resolvePublicSiteName } from '@/lib/site-config'
 
 assertServerOnly('lib/events.server.ts')
 
@@ -144,7 +145,7 @@ function mapDbEventToEvent(row: DatabaseEvent, options?: { usePublishedSnapshot?
   const location = resolveLocation(row, locationType)
   const tags = normalizeEventTags(row.tags)
   const heroImage = clean(row.heroImage) || '/images/placeholder.svg'
-  const organizer = clean(row.organizer) || 'ASAP'
+  const organizer = clean(row.organizer) || resolvePublicSiteName()
   const createdByUserId = clean(row.createdByUserId) || null
   const registrationMode = normalizeEventRegistrationMode(clean(row.registrationMode), clean(row.ticketUrl))
   const ticketPrice = clean(row.ticketPrice)

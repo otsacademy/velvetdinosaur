@@ -11,6 +11,7 @@ import { saveNewsArticleSnapshot } from '@/lib/news-article-history.server';
 import { requireAdmin } from '@/lib/roles';
 import { cleanString } from '@/lib/string-sanitizer';
 import { NewsArticle } from '@/models/NewsArticle';
+import { resolvePublicSiteEditorialName, resolvePublicSiteLogoPath } from '@/lib/site-config';
 
 function normalizeSlug(value: unknown) {
   if (typeof value !== 'string') return '';
@@ -225,8 +226,8 @@ export async function POST(request: Request) {
     }
   }
 
-  const authorName = cleanString(existing.author?.name) || 'ASAP Editorial';
-  let authorImage = cleanString(existing.author?.img) || '/images/asap-logo-trimmed.webp';
+  const authorName = cleanString(existing.author?.name) || resolvePublicSiteEditorialName();
+  let authorImage = cleanString(existing.author?.img) || resolvePublicSiteLogoPath();
   const primaryChapterSlug = normalizeChapterSlug(existing.primaryChapterSlug);
   const chapterSlugs = normalizeChapterSlugs(existing.chapterSlugs, primaryChapterSlug);
   let mediaPatch: Record<string, unknown> = {};

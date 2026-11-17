@@ -4,9 +4,10 @@ assertServerOnly('lib/user-profile.ts');
 import { normalizeChapterSlug, normalizeChapterSlugs } from '@/lib/chapters';
 import { connectDB } from '@/lib/db';
 import { UserProfile } from '@/models/UserProfile';
+import { resolvePublicSiteLogoPath, resolvePublicSiteStaffName } from '@/lib/site-config';
 
-export const DEFAULT_PROFILE_NAME = 'ASAP Staff';
-export const DEFAULT_PROFILE_AVATAR = '/images/asap-logo-trimmed.webp';
+export const DEFAULT_PROFILE_NAME = resolvePublicSiteStaffName();
+export const DEFAULT_PROFILE_AVATAR = resolvePublicSiteLogoPath();
 
 type SessionUserInput = {
   id?: unknown;

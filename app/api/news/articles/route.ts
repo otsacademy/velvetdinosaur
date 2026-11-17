@@ -190,10 +190,10 @@ export async function POST(request: Request) {
   const requestedPrimaryChapterSlug = rawPrimaryChapterSlug ? normalizeChapterSlug(rawPrimaryChapterSlug) : ''
   const unknownChapterInputs = rawChapterSlugs.filter((value) => trimOrEmpty(value) && !normalizeChapterSlug(value))
   if (rawPrimaryChapterSlug && !requestedPrimaryChapterSlug) {
-    return NextResponse.json({ error: 'Primary chapter must be a valid ASAP chapter' }, { status: 400 })
+    return NextResponse.json({ error: 'Primary chapter must be valid' }, { status: 400 })
   }
   if (unknownChapterInputs.length > 0) {
-    return NextResponse.json({ error: 'Chapter affiliations must use valid ASAP chapters' }, { status: 400 })
+    return NextResponse.json({ error: 'Chapter affiliations must be valid' }, { status: 400 })
   }
   const authorIdentity = await resolveAuthorIdentity(session, {
     name: requestedAuthorName || undefined,

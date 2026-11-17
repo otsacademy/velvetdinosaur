@@ -20,6 +20,7 @@ export function NewsEditorChapterSection({
   onPrimaryChapterChange,
   onChapterToggle,
 }: NewsEditorChapterSectionProps) {
+  if (ASAP_CHAPTER_OPTIONS.length === 0) return null
   return (
     <div className="space-y-4 rounded-lg border border-border/60 bg-muted/15 p-3">
       <div className="space-y-1">

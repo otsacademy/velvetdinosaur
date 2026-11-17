@@ -5,10 +5,11 @@ import {
   normalizePlateValue,
   splitInlineHeadingFromParagraph,
 } from '@/lib/news-plate-transform'
+import { resolvePublicSiteLogoPath } from '@/lib/site-config'
 
-export const DEFAULT_TAGS = ['Awards', 'Research', 'Events', 'Chapters', 'Announcements']
+export const DEFAULT_TAGS = ['News', 'Events', 'Announcements', 'Updates']
 export const DEFAULT_IMAGE = ''
-export const DEFAULT_AUTHOR_IMAGE = '/images/asap-logo-trimmed.webp'
+export const DEFAULT_AUTHOR_IMAGE = resolvePublicSiteLogoPath()
 export const EMPTY_CONTENT = [{ type: 'p', children: [{ text: '' }] }]
 const LEGACY_HOLDING_IMAGE = '/images/hero-academics.jpg'
 

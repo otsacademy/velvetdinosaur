@@ -19,6 +19,7 @@ import { slugifyArticleTitle } from '@/lib/news-slug'
 import { cleanString } from '@/lib/string-sanitizer'
 import { getUserProfileByUserId } from '@/lib/user-profile'
 import { Event } from '@/models/Event'
+import { resolvePublicSiteName } from '@/lib/site-config'
 
 type EventPayload = {
   title?: string
@@ -120,7 +121,7 @@ export async function POST(request: Request) {
   const registrationOpensAt = parseDate(payload.registrationOpensAt)
   const registrationClosesAt = parseDate(payload.registrationClosesAt)
   const joiningInstructions = clean(payload.joiningInstructions)
-  const organizer = clean(payload.organizer) || 'ASAP'
+  const organizer = clean(payload.organizer) || resolvePublicSiteName()
   const rawPrimaryChapterSlug = clean(payload.primaryChapterSlug)
   const rawChapterSlugs = normalizeChapterListInput(payload.chapterSlugs)
   const requestedPrimaryChapterSlug = rawPrimaryChapterSlug ? normalizeChapterSlug(rawPrimaryChapterSlug) : ''
@@ -172,10 +173,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'External registration requires a ticket URL before publishing' }, { status: 400 })
   }
   if (rawPrimaryChapterSlug && !requestedPrimaryChapterSlug) {
-    return NextResponse.json({ error: 'Primary chapter must be a valid ASAP chapter' }, { status: 400 })
+    return NextResponse.json({ error: 'Primary chapter must be valid' }, { status: 400 })
   }
   if (unknownChapterInputs.length > 0) {
-    return NextResponse.json({ error: 'Chapter affiliations must use valid ASAP chapters' }, { status: 400 })
+    return NextResponse.json({ error: 'Chapter affiliations must be valid' }, { status: 400 })
   }
 
   const conn = await connectDB()
