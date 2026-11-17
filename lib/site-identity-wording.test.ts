@@ -15,8 +15,9 @@ import {
 // This shared code came from the Academics Stand Against Poverty site. Until
 // November 2026 it named ASAP as the author of unsigned news ("ASAP Staff",
 // "ASAP Editorial") and the organiser of events, used ASAP's missing logo as
-// every default avatar, wrote ASAP into calendar files, and demanded an ASAP
-// chapter, from an empty list, before an invite could be sent.
+// every default avatar and stored it on new articles and profiles, wrote ASAP
+// into calendar files, and demanded an ASAP chapter, from an empty list,
+// before an invite could be sent.
 const OTHER_SITE_NAMES = [/\bASAP\b/, /Academics Stand/i, /academicsstand/i, /acadsap/i, /asap-(admin-)?logo/i, /\bMichal\b|\bApollo\b/];
 
 // Lines marked "legacy-asap-data" recognise data that the other site stored,
@@ -42,6 +43,10 @@ const FILES = [
   'components/admin/users/invitations-panel.tsx',
   'components/admin/users/active-users-panel.tsx',
   'components/news/author-hover-card.client.tsx',
+  // The stored default picture of new articles and profiles.
+  'models/NewsArticle.ts',
+  'models/NewsArticleSnapshot.ts',
+  'models/UserProfile.ts',
   // Only some sites have their own account profile page.
   'components/account/account-profile-form.shared.ts',
   'components/account/account-profile-form.client.tsx',

@@ -91,6 +91,9 @@ function splitNameParts(value: string) {
 
 function normalizeAvatar(value: string) {
   if (!value) return DEFAULT_PROFILE_AVATAR;
+  // Profiles saved before 17 Nov 2026 can hold the old shared default, a
+  // logo no site has.
+  if (/\/images\/asap-(admin-)?logo/i.test(value)) return DEFAULT_PROFILE_AVATAR; // legacy-asap-data
   if (
     value === '/placeholder.svg' ||
     value === '/images/placeholder.svg' ||

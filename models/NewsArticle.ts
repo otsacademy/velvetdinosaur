@@ -2,6 +2,7 @@ import { assertServerOnly } from '@/lib/_server/guard'
 assertServerOnly('models/NewsArticle.ts')
 
 import { Schema, model, models } from 'mongoose'
+import { resolvePublicSiteLogoPath } from '@/lib/site-config'
 
 const ArticleCalloutSchema = new Schema(
   {
@@ -93,7 +94,7 @@ const NewsArticleSchema = new Schema(
     },
     author: {
       name: { type: String, required: true },
-      img: { type: String, default: '/images/asap-logo-trimmed.webp' },
+      img: { type: String, default: () => resolvePublicSiteLogoPath() },
     },
     authorUserId: { type: String, default: null, index: true },
     primaryChapterSlug: { type: String, default: '', trim: true, index: true },
@@ -107,7 +108,7 @@ const NewsArticleSchema = new Schema(
     },
     authorSnapshot: {
       name: { type: String },
-      img: { type: String, default: '/images/asap-logo-trimmed.webp' },
+      img: { type: String, default: () => resolvePublicSiteLogoPath() },
       capturedAt: { type: Date, default: null },
     },
     pendingPublishRequest: {

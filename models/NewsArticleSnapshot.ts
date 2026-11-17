@@ -2,6 +2,7 @@ import { assertServerOnly } from '@/lib/_server/guard'
 assertServerOnly('models/NewsArticleSnapshot.ts')
 
 import { Schema, model, models, type Types } from 'mongoose'
+import { resolvePublicSiteLogoPath } from '@/lib/site-config'
 
 export type NewsArticleSnapshotDocument = {
   newsArticle: Types.ObjectId
@@ -49,7 +50,7 @@ const NewsArticleSnapshotSchema = new Schema(
     publishAt: { type: Date, default: null },
     authorSnapshot: {
       name: { type: String },
-      img: { type: String, default: '/images/asap-logo-trimmed.webp' },
+      img: { type: String, default: () => resolvePublicSiteLogoPath() },
       capturedAt: { type: Date, default: null }
     },
     openGraphTitle: { type: String },
