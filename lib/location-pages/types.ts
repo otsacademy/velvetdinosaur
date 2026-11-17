@@ -1,3 +1,5 @@
+import type { PriceOffer } from "../price-offers"
+
 export type LocationFaq = { question: string; answer: string }
 
 export type LocationPageContent = {
@@ -32,6 +34,11 @@ export type LocationPageContent = {
     placesLabel: string
     places: string[]
   }
+  /**
+   * The price on the page's price card. Leave it out for the standard monthly
+   * offer; councils get the yearly one.
+   */
+  offer?: PriceOffer
   /** Keys of the reviews to show (names in components/home/site-data.ts). */
   reviewNames: string[]
   faqs: LocationFaq[]

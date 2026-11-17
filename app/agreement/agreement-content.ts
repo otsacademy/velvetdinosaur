@@ -17,14 +17,15 @@ export type AgreementSection = {
   blocks: AgreementBlock[]
 }
 
-export const AGREEMENT_VERSION_LABEL = "Version 3.3"
-export const AGREEMENT_DATE_LABEL = "August 2026"
+export const AGREEMENT_VERSION_LABEL = "Version 3.4"
+export const AGREEMENT_DATE_LABEL = "November 2026"
 export const AGREEMENT_VERSION = `${AGREEMENT_VERSION_LABEL} — ${AGREEMENT_DATE_LABEL}`
 
 export const SHORT_VERSION = [
   "We build a working demonstration of your new website **before you pay us**.",
   "You can try the website and administration system free for **14 days**.",
   "If you decide to proceed, the service costs **£99 per month**, payable monthly, with no setup or website-build fee.",
+  "Parish and town councils pay **£480 per year** instead, invoiced once a year in advance.",
   "The initial agreement lasts **12 months** — leaving early means the remaining months stay payable, just like a broadband contract. It then becomes a rolling monthly service with **30 days' notice**, unless you renew for another fixed term and receive a complimentary design refresh.",
   "Your first 30 days are covered by our **30-day money-back guarantee**.",
   "Your domain, business content and business data remain yours. The Velvet Dinosaur software and Sauro platform remain ours.",
@@ -87,6 +88,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     blocks: [
       { type: "p", text: "If you decide to proceed, you subscribe through the order or signup process. Your subscription begins on the date shown in your order." },
       { type: "p", text: "The standard subscription is **£99 per month**, payable monthly in advance. The initial term is **12 months**." },
+      { type: "p", text: "Parish and town councils pay yearly instead of monthly, as set out in section 20." },
       { type: "p", text: "By subscribing you agree to this agreement and the corresponding order." },
     ],
   },
@@ -356,6 +358,10 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
     blocks: [
       { type: "p", text: "The standard subscription is **£99 per month**, payable monthly in advance. Unless stated otherwise, the applicable VAT treatment will be shown on your invoice." },
       { type: "p", text: "If a payment fails, we will contact you and normally attempt payment again. If an undisputed payment remains outstanding for more than **14 days**, we may suspend the service after giving you reasonable warning. We will not deliberately delete your website immediately because a card expires or a payment fails." },
+      { type: "h3", text: "Parish and town councils" },
+      { type: "p", text: "If you are a parish or town council, the subscription is **£480 per year** instead of £99 per month, with no setup or website-build fee. We invoice it once a year, in advance, and each invoice is due within **30 days**, so that the council can approve the payment at a meeting. The first invoice covers the initial 12-month term described in section 6." },
+      { type: "p", text: "After the initial term, the service renews for one year at a time instead of becoming a rolling monthly subscription, and we invoice each year in advance. Either party may end it at the end of a year by giving **30 days' written notice** before the renewal date. A year that has been paid for is not refunded part-way through, except under the money-back guarantee in section 5." },
+      { type: "p", text: "Each renewal counts as another 12-month agreement for Refresh & Renew in section 7. The yearly price will not increase during the initial term, and section 21 applies to any later change." },
     ],
   },
   {
@@ -439,7 +445,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
 ]
 
-export const AGREEMENT_VERSION_SHORT = "v3.3"
+export const AGREEMENT_VERSION_SHORT = "v3.4"
 
 export type KeyTile = {
   value: string
@@ -465,7 +471,7 @@ export const ORDER_FIELDS: [string, string][] = [
   ["Address", "[Address]"],
   ["Email", "[Email]"],
   ["Website / domain", "[Domain]"],
-  ["Monthly subscription", "£99"],
+  ["Subscription", "£99 per month, or £480 per year for a parish or town council"],
   ["Initial term", "12 months"],
   ["Subscription start date", "[Date]"],
   ["Money-back guarantee expires", "[Date]"],

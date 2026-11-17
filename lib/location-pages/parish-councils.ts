@@ -1,4 +1,5 @@
-import { CTA_TITLE, PRICE_ANSWER } from "./shared"
+import { COUNCIL_OFFER } from "../price-offers"
+import { COUNCIL_PRICE_ANSWER, CTA_TITLE } from "./shared"
 import type { LocationPageContent } from "./types"
 
 // The proof here is Froxfield Parish Council (its Google review and Work card).
@@ -12,6 +13,9 @@ import type { LocationPageContent } from "./types"
 // Councils' own papers quote it as an accessible website (WCAG 2.2 AA), a
 // council-owned domain for website and email, an IT policy and data
 // protection.
+// Price: councils pay £480 a year, invoiced yearly (Ian agreed on 17 November
+// 2026). Specialist council website providers charged £300 to £600 a year at
+// the time, and councils set their budgets a year at a time.
 export const PARISH_COUNCILS_PAGE: LocationPageContent = {
   slug: "websites-for-parish-councils",
   focus: "parish",
@@ -59,6 +63,7 @@ export const PARISH_COUNCILS_PAGE: LocationPageContent = {
       "Charlbury",
     ],
   },
+  offer: COUNCIL_OFFER,
   reviewNames: ["Lynn Casey", "Michal Apollo", "Faye Taylor"],
   faqs: [
     {
@@ -78,7 +83,7 @@ export const PARISH_COUNCILS_PAGE: LocationPageContent = {
     },
     {
       question: "How much does a council website cost?",
-      answer: PRICE_ANSWER,
+      answer: COUNCIL_PRICE_ANSWER,
     },
     {
       question: "How does the council decide?",

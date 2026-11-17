@@ -12,6 +12,19 @@ export const socialTitle = `${siteName} | Your new website, built before you pay
 export const socialDescription =
   'Managed websites designed and built before you pay anything — £99 a month, everything included, from a founder-led studio in Oxfordshire.';
 
+// The share pictures (app/opengraph-image.tsx and app/twitter-image.tsx). A page
+// that sets its own openGraph or twitter metadata replaces the whole object, so
+// it has to pass these again or its link previews lose the picture.
+export const openGraphImages = [
+  {
+    url: '/opengraph-image',
+    width: 1200,
+    height: 630,
+    alt: socialPreviewAlt
+  }
+];
+export const twitterImages = ['/twitter-image'];
+
 const fallbackSiteUrl = 'http://localhost:3000';
 
 function normalizeSiteUrl(candidate: string | undefined | null) {
@@ -73,19 +86,12 @@ export const siteMetadata: Metadata = {
     siteName,
     title: socialTitle,
     description: socialDescription,
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: socialPreviewAlt
-      }
-    ]
+    images: openGraphImages
   },
   twitter: {
     card: 'summary_large_image',
     title: socialTitle,
     description: socialDescription,
-    images: ['/twitter-image']
+    images: twitterImages
   }
 };

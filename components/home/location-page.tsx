@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 import { ADDRESS_LINE_1, ADDRESS_LINE_2, MAPS_HREF } from "@/lib/contact-details"
 import { placeHref, type LocationPageContent } from "@/lib/location-pages"
-import { siteName } from "@/lib/site-metadata"
+import { openGraphImages, siteName, twitterImages } from "@/lib/site-metadata"
 import { DesignShell } from "./design-shell"
 import { FaqAccordion } from "./faq-accordion"
 import { Polaroid } from "./founder-avatar"
@@ -40,6 +40,15 @@ export function locationMetadata(content: LocationPageContent): Metadata {
       siteName,
       title: content.title,
       description: content.description,
+      images: openGraphImages,
+    },
+    // Without this the page inherits the home page's card, which names the
+    // monthly price even on the council page.
+    twitter: {
+      card: "summary_large_image",
+      title: content.title,
+      description: content.description,
+      images: twitterImages,
     },
   }
 }
@@ -103,7 +112,7 @@ export function LocationPage({ content }: { content: LocationPageContent }) {
           You get a fast, secure website that I actively manage for you, the freedom to grow it
           yourself, and direct support from a real person whenever you need help.
         </SectionIntro>
-        <PriceCard className="mt-11 sm:mt-[52px]" />
+        <PriceCard offer={content.offer} className="mt-11 sm:mt-[52px]" />
         <p className={`${LETTER_COLUMN} m-0 mt-[30px] text-center`}>
           <Link href="/#how-it-works" className={`${LETTER_LINK} text-[19px]`}>
             Read how it works, step by step

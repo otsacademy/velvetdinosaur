@@ -6,6 +6,10 @@ import type { LocationFaq } from "./types"
 export const PRICE_ANSWER =
   "£99 a month with everything included: design, build, hosting, updates, support and small content changes. There is no setup fee. The minimum term is twelve months, paid monthly, and after that it rolls on with thirty days’ notice."
 
+// Parish and town councils pay yearly (lib/price-offers.ts, COUNCIL_OFFER).
+export const COUNCIL_PRICE_ANSWER =
+  "£480 a year with everything included: design, build, hosting, updates, support and small content changes. There is no setup fee, and nothing is invoiced until the council has seen its site and agreed to go ahead. The council then receives one invoice a year, in advance. After the first year the service renews each year, and the council can stop it by giving thirty days’ notice before the renewal date."
+
 export const PRICE_FAQ: LocationFaq = {
   question: "How much does a website cost?",
   answer: PRICE_ANSWER,

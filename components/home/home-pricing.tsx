@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Package, RefreshCw, ShieldCheck, type LucideIcon } from "lucide-react"
 
+import { MONTHLY_OFFER, type PriceOffer } from "@/lib/price-offers"
 import { cn } from "@/lib/utils"
 import {
   BTN_LG,
@@ -12,12 +13,6 @@ import {
   LETTER_COLUMN,
   SectionIntro,
 } from "./home-shared"
-
-const TERMS = [
-  "No setup fee",
-  "12-month minimum, paid monthly",
-  "Then rolling, with 30 days’ notice",
-] as const
 
 const INCLUDED = [
   "Custom design and build",
@@ -60,8 +55,19 @@ const PROMISES: Array<{ icon: LucideIcon; title: string; body: string }> = [
   },
 ]
 
-/** The offer in one card: the price on navy, everything it covers beside it. */
-export function PriceCard({ id, className }: { id?: string; className?: string }) {
+/**
+ * The offer in one card: the price on navy, everything it covers beside it.
+ * Councils pass the yearly offer; everyone else sees the monthly one.
+ */
+export function PriceCard({
+  id,
+  className,
+  offer = MONTHLY_OFFER,
+}: {
+  id?: string
+  className?: string
+  offer?: PriceOffer
+}) {
   return (
     <div
       id={id}
@@ -76,13 +82,13 @@ export function PriceCard({ id, className }: { id?: string; className?: string }
           Your website, built before you pay
         </p>
         <p className="m-0 mt-[30px] font-serif text-[104px] font-medium leading-[0.9] tracking-[-0.03em] sm:text-[124px]">
-          £99
+          {offer.amount}
         </p>
         <p className="m-0 mt-1.5 font-serif text-[26px] italic leading-[1.2] sm:text-[28px]">
-          a month, everything included
+          {offer.period}
         </p>
         <ul className="m-0 mt-7 flex list-none flex-col gap-[9px] border-t border-primary-foreground/30 p-0 pt-[22px] text-lg text-primary-foreground/90">
-          {TERMS.map((term) => (
+          {offer.terms.map((term) => (
             <li key={term}>{term}</li>
           ))}
         </ul>
