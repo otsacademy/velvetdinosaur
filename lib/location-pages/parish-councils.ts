@@ -7,6 +7,11 @@ import type { LocationPageContent } from "./types"
 // up to £25,000, and the 2018 public sector accessibility regulations cover
 // parish and town councils. Do not promise that a site makes a council
 // compliant; the council stays responsible for that.
+// Assertion 10 (checked 17 November 2026): new in the 2025/26 annual
+// governance return, Practitioners' Guide 2025 paragraphs 5.117 to 5.128.
+// Councils' own papers quote it as an accessible website (WCAG 2.2 AA), a
+// council-owned domain for website and email, an IT policy and data
+// protection.
 export const PARISH_COUNCILS_PAGE: LocationPageContent = {
   slug: "websites-for-parish-councils",
   focus: "parish",
@@ -60,6 +65,11 @@ export const PARISH_COUNCILS_PAGE: LocationPageContent = {
       question: "Can the site help us meet the transparency and accessibility rules?",
       answer:
         "Yes. The documents the Transparency Code asks smaller councils to publish, such as agendas, minutes, accounts and spending over £100, each get a clear place, and the clerk can upload them as PDFs. Pages are built to be accessible, with a page for the accessibility statement the regulations require. The council stays responsible for its own compliance, but the site makes it straightforward.",
+    },
+    {
+      question: "Will the site help with Assertion 10 in the annual return?",
+      answer:
+        "It covers the website side. Assertion 10, new in the 2025/26 annual return, asks councils to show that their website meets the WCAG 2.2 AA accessibility standard and runs on a domain the council owns, ideally a .gov.uk one. Your site uses the council’s own address, is built to be accessible and has a page for the accessibility statement. The IT policy, data protection and the clerk’s email stay with the council, which answers the assertion itself.",
     },
     {
       question: "Can the clerk update the site without help?",
