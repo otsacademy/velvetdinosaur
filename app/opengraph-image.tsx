@@ -3,7 +3,6 @@ import { SocialPreview } from '@/lib/social-preview';
 import { socialPreviewAlt } from '@/lib/site-copy';
 import { getSocialPreviewAssets } from '@/lib/social-preview-image';
 
-export const runtime = 'nodejs';
 export const alt = socialPreviewAlt;
 export const size = {
   width: 1200,

@@ -37,7 +37,8 @@ export async function sendGwsEmail(options: GwsMailOptions) {
     stdin: 'pipe',
     stdout: 'pipe',
     stderr: 'pipe',
-    env: { ...Bun.env, HOME: Bun.env.HOME || '/home/ianw' }
+    // Next 16.4 types Bun.env with boolean import.meta.env flags; the real environment holds strings only.
+    env: { ...(Bun.env as NodeJS.ProcessEnv), HOME: Bun.env.HOME || '/home/ianw' }
   });
   const pending = new Map<number, (response: JsonRpcResponse) => void>();
   let sequence = 0;

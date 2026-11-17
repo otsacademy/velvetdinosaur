@@ -56,11 +56,12 @@ export async function POST(request: Request) {
 
   try {
     const hash = await ctx.password.hash(password);
+    // Better Auth 1.7 records how a user was provisioned; an invite sets an email and password.
     const createdUser = await ctx.internalAdapter.createUser({
       email,
       name,
       emailVerified: false
-    });
+    }, { method: 'email-password' });
     if (!createdUser) {
       throw new Error('Failed to create user');
     }
