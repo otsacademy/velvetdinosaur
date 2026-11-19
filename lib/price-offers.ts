@@ -1,6 +1,8 @@
 // The prices the site shows on its price card. The monthly offer is the
 // standard one. Parish and town councils budget and pay once a year, so they
 // get a yearly offer instead (agreed by Ian on 17 November 2026).
+// £480 is for a parish council or a small town council. A large town council
+// is priced by the size of its site (agreed by Ian on 19 November 2026).
 //
 // Keep these in step with the agreement (app/agreement/agreement-content.ts,
 // sections 3 and 20) and with the price answers in lib/location-pages/shared.ts.
@@ -27,5 +29,6 @@ export const COUNCIL_OFFER: PriceOffer = {
     "No setup fee",
     "Invoiced once a year, in advance",
     "Renews yearly unless you give 30 days’ notice",
+    "Larger town councils are priced by size",
   ],
 }

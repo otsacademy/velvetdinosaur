@@ -17,7 +17,7 @@ export type AgreementSection = {
   blocks: AgreementBlock[]
 }
 
-export const AGREEMENT_VERSION_LABEL = "Version 3.4"
+export const AGREEMENT_VERSION_LABEL = "Version 3.5"
 export const AGREEMENT_DATE_LABEL = "November 2026"
 export const AGREEMENT_VERSION = `${AGREEMENT_VERSION_LABEL} — ${AGREEMENT_DATE_LABEL}`
 
@@ -360,6 +360,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
       { type: "p", text: "If a payment fails, we will contact you and normally attempt payment again. If an undisputed payment remains outstanding for more than **14 days**, we may suspend the service after giving you reasonable warning. We will not deliberately delete your website immediately because a card expires or a payment fails." },
       { type: "h3", text: "Parish and town councils" },
       { type: "p", text: "If you are a parish or town council, the subscription is **£480 per year** instead of £99 per month, with no setup or website-build fee. We invoice it once a year, in advance, and each invoice is due within **30 days**, so that the council can approve the payment at a meeting. The first invoice covers the initial 12-month term described in section 6." },
+      { type: "p", text: "For a larger council we may agree a different yearly price with you in writing before the agreement starts." },
       { type: "p", text: "After the initial term, the service renews for one year at a time instead of becoming a rolling monthly subscription, and we invoice each year in advance. Either party may end it at the end of a year by giving **30 days' written notice** before the renewal date. A year that has been paid for is not refunded part-way through, except under the money-back guarantee in section 5." },
       { type: "p", text: "Each renewal counts as another 12-month agreement for Refresh & Renew in section 7. The yearly price will not increase during the initial term, and section 21 applies to any later change." },
     ],
@@ -445,7 +446,7 @@ export const AGREEMENT_SECTIONS: AgreementSection[] = [
   },
 ]
 
-export const AGREEMENT_VERSION_SHORT = "v3.4"
+export const AGREEMENT_VERSION_SHORT = "v3.5"
 
 export type KeyTile = {
   value: string
