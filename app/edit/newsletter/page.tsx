@@ -7,6 +7,7 @@ import { requireAdmin } from '@/lib/roles';
 import { AdminWorkspaceShell } from '@/components/admin/admin-workspace-shell.client';
 import { NewsletterWorkspace } from '@/components/edit/newsletter-workspace';
 import { Toaster } from '@/components/ui/sonner';
+import { EmailDeliveryPanel } from '@/components/admin/email-delivery-panel';
 
 export default async function EditNewsletterPage() {
   unstable_noStore();
@@ -27,6 +28,7 @@ export default async function EditNewsletterPage() {
   return (
     <AdminWorkspaceShell>
       <NewsletterWorkspace />
+      <EmailDeliveryPanel />
       <Toaster />
     </AdminWorkspaceShell>
   );

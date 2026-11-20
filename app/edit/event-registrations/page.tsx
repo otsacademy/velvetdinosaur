@@ -7,6 +7,7 @@ import { EventRegistrationsWorkspace } from '@/components/edit/event-registratio
 import { Toaster } from '@/components/ui/sonner';
 import { getAuth } from '@/lib/auth';
 import { requireAdmin } from '@/lib/roles';
+import { EmailDeliveryPanel } from '@/components/admin/email-delivery-panel';
 
 export default async function EditEventRegistrationsPage() {
   unstable_noStore();
@@ -27,6 +28,7 @@ export default async function EditEventRegistrationsPage() {
   return (
     <AdminWorkspaceShell>
       <EventRegistrationsWorkspace />
+      <EmailDeliveryPanel />
       <Toaster />
     </AdminWorkspaceShell>
   );
