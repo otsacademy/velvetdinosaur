@@ -67,7 +67,7 @@ export function EventRegistrationsWorkspace() {
     [campaignStatusFilter, campaigns]
   );
 
-  const canEditSelected = !selectedCampaign || selectedCampaign.status === 'draft' || selectedCampaign.status === 'queued';
+  const canEditSelected = !selectedCampaign || selectedCampaign.status === 'draft';
   const selectedCampaignStatus = selectedCampaign?.status || null;
   const dirty = useMemo(() => {
     if (!selectedCampaign) return true;

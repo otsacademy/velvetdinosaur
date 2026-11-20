@@ -3,7 +3,7 @@ assertServerOnly('models/EventRegistrationDelivery.ts');
 
 import { Schema, model, models } from 'mongoose';
 
-const EVENT_DELIVERY_STATUSES = ['pending', 'sent', 'failed', 'skipped_unconfirmed'] as const;
+const EVENT_DELIVERY_STATUSES = ['pending', 'processing', 'needs_review', 'sent', 'failed', 'skipped_unconfirmed'] as const;
 
 const EventRegistrationDeliverySchema = new Schema(
   {
@@ -16,7 +16,12 @@ const EventRegistrationDeliverySchema = new Schema(
     postmarkMessageId: { type: String, default: '', trim: true },
     sentAt: { type: Date, default: null },
     error: { type: String, default: '', trim: true },
-    attempts: { type: Number, default: 0 }
+    attempts: { type: Number, default: 0 },
+    reviewedBy: { type: String, default: '' },
+    reviewNote: { type: String, default: '' },
+    reviewedAt: { type: Date, default: null },
+    claimToken: { type: String, default: null },
+    claimedAt: { type: Date, default: null }
   },
   { timestamps: true }
 );

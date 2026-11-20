@@ -6,6 +6,8 @@ import { NewsletterConsentEvent } from '@/models/NewsletterConsentEvent';
 import { NewsletterSuppression } from '@/models/NewsletterSuppression';
 import { EventRegistration } from '@/models/EventRegistration';
 import { EventRegistrationEvent } from '@/models/EventRegistrationEvent';
+import { EventRegistrationCampaign } from '@/models/EventRegistrationCampaign';
+import { EventRegistrationDelivery } from '@/models/EventRegistrationDelivery';
 import { EmailNotification } from '@/models/EmailNotification';
 import { RequestLimit } from '@/models/RequestLimit';
 import { requestNewsletterSubscription } from '@/lib/newsletter/signup-request';
@@ -18,14 +20,20 @@ import { applyPostmarkEvent } from '@/lib/newsletter/postmark-suppression';
 import { classifyPostmarkEvent } from '@/lib/newsletter/postmark-events';
 import { enqueueNotification, dispatchNotifications } from '@/lib/email/notification-outbox';
 import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
+import { cancelEventRegistrationCampaign, dispatchQueuedEventRegistrationCampaigns, queueEventRegistrationCampaign, unscheduleEventRegistrationCampaign, updateEventRegistrationCampaignDraft } from '@/lib/event-registration/campaigns';
 import * as context from '@/lib/event-registration/event-context';
+import * as campaignSender from '@/lib/email/event-registration-campaign';
 import * as newsletterSender from '@/lib/email/newsletter-lifecycle';
 import * as eventSender from '@/lib/email/event-registration-lifecycle';
+import * as newsletterAuth from '@/lib/newsletter/auth';
+import { GET as listDeliveries, PATCH as reviewDelivery } from '@/app/api/admin/email-deliveries/route';
 
-// ASAP's tests/security/mail-integration.test.ts (September repairs 4, 5, 7 and 8).
-// Its event campaign dispatcher tests belong to the separate campaign repair
-// (repair 3) and are not here. Runs only against the disposable loopback replica
-// set started by `bun run test:security:integration`; no request leaves the process.
+// ASAP's tests/security/mail-integration.test.ts (September repairs 3, 4, 5, 7 and 8),
+// with the template's own additions marked "Not in ASAP". ASAP's release-handoff test
+// is not here: the handoff is not in scripts/deploy-blue-green.ts (see
+// docs/operations/security-catch-up-2026-11.md). Runs only against the disposable
+// loopback replica set started by `bun run test:security:integration`; no request
+// leaves the process.
 const run = process.env.SECURITY_MONGO_INTEGRATION === '1';
 const dbName = `codex_security_test_${randomUUID().replaceAll('-', '')}`;
 const previousEnv = { ...process.env };
@@ -50,7 +58,7 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
     await mongoose.connect(uri.href, { serverSelectionTimeoutMS: 2000, bufferCommands: false });
     if (mongoose.connection.name !== dbName) throw new Error('Isolation failed.');
     await Promise.all([NewsletterPreference.init(), NewsletterConsentEvent.init(), NewsletterSuppression.init(),
-      EventRegistration.init(), EventRegistrationEvent.init(), EmailNotification.init(), RequestLimit.init()]);
+      EventRegistration.init(), EventRegistrationEvent.init(), EventRegistrationCampaign.init(), EventRegistrationDelivery.init(), EmailNotification.init(), RequestLimit.init()]);
   });
   beforeEach(async () => {
     if (mongoose.connection.name !== dbName) throw new Error('Refusing changes outside the test DB.');
@@ -72,6 +80,11 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
 
   async function registration(status = 'confirmed') {
     return EventRegistration.create({ eventId, eventSlug: 'test-event', eventTitle: 'Test event', email: address, fullName: 'Alex Example', status });
+  }
+  async function queuedCampaign() {
+    await registration();
+    const campaign = await EventRegistrationCampaign.create({ eventId, eventSlug: 'test-event', eventTitle: 'Test event', name: 'Update', subject: 'Update', htmlBody: '<p>Test</p>', textBody: 'Test', createdByUserId: 'admin' });
+    return (await queueEventRegistrationCampaign({ campaignId: String(campaign._id) }))!;
   }
 
   test('five simultaneous newsletter confirmations create one audit event and one notification', async () => {
@@ -129,6 +142,17 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
     expect((await NewsletterPreference.findOne().lean<{ status: string; active: boolean; firstName: string }>())?.status).toBe('unsubscribed');
     expect(await NewsletterConsentEvent.countDocuments()).toBe(0);
   });
+  test('overlapping event dispatchers submit a recipient once and preserve the frozen event', async () => {
+    const campaign = await queuedCampaign();
+    const sender = spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockImplementation(async (input) => {
+      expect(input.event.title).toBe('Test event'); await Bun.sleep(10); return accepted;
+    });
+    await Promise.all([dispatchQueuedEventRegistrationCampaigns(), dispatchQueuedEventRegistrationCampaigns()]);
+    expect(sender).toHaveBeenCalledTimes(1);
+    expect(await EventRegistrationDelivery.countDocuments({ status: 'sent' })).toBe(1);
+    expect(await queueEventRegistrationCampaign({ campaignId: campaign.id })).toBeNull();
+  });
+
   test('recipient unsubscribe and spam complaint choices survive provider reactivation', async () => {
     await NewsletterPreference.create({ userId: 'alex', email: address, status: 'subscribed' });
     const event = { RecordType: 'SubscriptionChange', MessageStream: 'outbound', Recipient: address, Origin: 'Recipient', SuppressionReason: 'ManualSuppression', SuppressSending: true, ChangedAt: '2026-09-26T12:00:00Z' };
@@ -137,6 +161,39 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
     expect((await NewsletterPreference.findOne().lean<{ status: string }>())?.status).toBe('unsubscribed');
     expect(await NewsletterConsentEvent.countDocuments({ eventType: 'unsubscribe' })).toBe(1);
     expect(await EmailNotification.countDocuments()).toBe(0);
+  });
+  test('queued edits fail and unschedule only works before dispatch starts', async () => {
+    const campaign = await queuedCampaign();
+    expect(await updateEventRegistrationCampaignDraft({ campaignId: campaign.id, campaignKind: 'update', name: 'Changed', subject: 'Changed', htmlBody: 'Changed', textBody: 'Changed' })).toBeNull();
+    expect((await unscheduleEventRegistrationCampaign(campaign.id))?.status).toBe('draft');
+    expect(await EventRegistrationDelivery.countDocuments()).toBe(0);
+    await queueEventRegistrationCampaign({ campaignId: campaign.id });
+    await EventRegistrationCampaign.updateOne({ _id: campaign.id }, { $set: { status: 'sending', startedAt: new Date() } });
+    expect(await unscheduleEventRegistrationCampaign(campaign.id)).toBeNull();
+    expect(await EventRegistrationDelivery.countDocuments()).toBe(1);
+  });
+  test('cancellation during an in-flight send cannot be overwritten or send the next recipient', async () => {
+    const campaign = await queuedCampaign();
+    await EventRegistrationDelivery.create({ campaignId: campaign.id, eventId, email: 'second@example.test' });
+    const sender = spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockImplementation(async () => {
+      await cancelEventRegistrationCampaign(campaign.id); return accepted;
+    });
+    await dispatchQueuedEventRegistrationCampaigns();
+    expect(sender).toHaveBeenCalledTimes(1);
+    expect((await EventRegistrationCampaign.findById(campaign.id).lean<{ status: string; active: boolean; firstName: string }>())?.status).toBe('cancelled');
+    expect(await EventRegistrationDelivery.countDocuments({ status: 'pending' })).toBe(1);
+  });
+  test('ambiguous sends and abandoned claims need review and cannot automatically resend', async () => {
+    await queuedCampaign();
+    const sender = spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockResolvedValue({ ok: false, messageId: '', error: 'timeout', ambiguous: true });
+    await dispatchQueuedEventRegistrationCampaigns(); await dispatchQueuedEventRegistrationCampaigns();
+    expect(sender).toHaveBeenCalledTimes(1);
+    expect(await EventRegistrationDelivery.countDocuments({ status: 'needs_review' })).toBe(1);
+    await EventRegistrationDelivery.updateMany({}, { $set: { status: 'processing', claimToken: 'dead', claimedAt: new Date(0) } });
+    await EventRegistrationCampaign.updateMany({}, { $set: { needsReviewCount: 0, dispatchLeaseToken: 'dead', dispatchLeaseUntil: new Date(0) } });
+    await dispatchQueuedEventRegistrationCampaigns();
+    expect(sender).toHaveBeenCalledTimes(1);
+    expect(await EventRegistrationDelivery.countDocuments({ status: 'needs_review' })).toBe(1);
   });
   test('notification leases prevent duplicates; ambiguous failures are held for review', async () => {
     await NewsletterPreference.create({ userId: 'alex', email: address, status: 'subscribed' });
@@ -162,6 +219,15 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
     await dispatchNotifications();
     expect(newsletterSender.sendNewsletterSubscribeConfirmationEmail).toHaveBeenCalledTimes(1);
     expect(await EmailNotification.countDocuments({ status: 'needs_review' })).toBe(1);
+    await queuedCampaign();
+    spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockImplementation(async () => {
+      spyOn(EventRegistrationDelivery, 'updateOne').mockRejectedValueOnce(new Error('Database acknowledgement lost'));
+      return accepted;
+    });
+    await dispatchQueuedEventRegistrationCampaigns();
+    await dispatchQueuedEventRegistrationCampaigns();
+    expect(campaignSender.sendEventRegistrationCampaignEmail).toHaveBeenCalledTimes(1);
+    expect(await EventRegistrationDelivery.countDocuments({ status: 'needs_review' })).toBe(1);
   });
   test('late recipient choices survive newer delivery events without overriding newer explicit consent', async () => {
     await NewsletterPreference.create({ userId: 'alex', email: address, status: 'subscribed', consentAt: new Date('2026-09-26T09:00:00Z') });
@@ -183,6 +249,49 @@ describe.skipIf(!run)('security repair integration in an isolated Mongo replica'
     await applyPostmarkEvent(classifyPostmarkEvent(event)!);
     await applyPostmarkEvent(classifyPostmarkEvent({ ...event, SuppressSending: false, ChangedAt: '2026-09-26T13:00:00Z' })!);
     expect(await NewsletterSuppression.findOne().lean()).toMatchObject({ active: true, source: 'admin', reason: 'Manual block' });
+  });
+  // Not in ASAP: ASAP's tests mock the same event details before and after queueing.
+  test('queued event details reach recipients as they were when the campaign was queued', async () => {
+    const campaign = await queuedCampaign();
+    spyOn(context, 'getEventRegistrationContextById').mockResolvedValue({ ...eventContext, title: 'Renamed event', dateLabel: 'Next week' });
+    const sender = spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockResolvedValue(accepted);
+    await dispatchQueuedEventRegistrationCampaigns();
+    expect(sender).toHaveBeenCalledTimes(1);
+    expect(sender.mock.calls[0][0].event).toMatchObject({ title: 'Test event', dateLabel: 'Tomorrow', location: 'Online Virtual' });
+    expect(sender.mock.calls[0][0].subject).toBe(campaign.subject);
+  });
+  // Not in ASAP: the staff panel's campaign half (app/api/admin/email-deliveries).
+  test('staff review an unclear campaign delivery with a Postmark check before it is retried once', async () => {
+    const campaign = await queuedCampaign();
+    spyOn(newsletterAuth, 'requireAdminFromHeaders').mockResolvedValue({ id: 'staff-1', email: 'staff@example.test', name: 'Staff' });
+    const sender = spyOn(campaignSender, 'sendEventRegistrationCampaignEmail').mockResolvedValue({ ok: false, messageId: '', error: 'timeout', ambiguous: true });
+    await dispatchQueuedEventRegistrationCampaigns();
+    const listed = await (await listDeliveries(new Request('https://example.test/api/admin/email-deliveries'))).json() as { items: Array<{ id: string; resource: string; email: string; status: string }> };
+    const item = listed.items.find((row) => row.resource === 'event-campaign');
+    expect(item).toMatchObject({ email: address, status: 'needs_review' });
+    const review = (body: Record<string, unknown>) => reviewDelivery(new Request('https://example.test/api/admin/email-deliveries', {
+      method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: item!.id, resource: 'event-campaign', ...body }) }));
+    expect((await review({ resolution: 'accepted', evidence: 'Postmark activity checked' })).status).toBe(400);
+    expect((await review({ resolution: 'not-accepted', evidence: 'short' })).status).toBe(400);
+    expect((await review({ resolution: 'not-accepted', evidence: 'Postmark activity shows no message' })).status).toBe(200);
+    expect(await EventRegistrationDelivery.findById(item!.id).lean()).toMatchObject({ status: 'pending', reviewedBy: 'staff-1', reviewNote: 'Postmark activity shows no message' });
+    expect(await EventRegistrationCampaign.findById(campaign.id).lean()).toMatchObject({ needsReviewCount: 0, lastError: '' });
+    expect((await review({ resolution: 'not-accepted', evidence: 'Postmark activity shows no message' })).status).toBe(409);
+    sender.mockResolvedValue(accepted);
+    await dispatchQueuedEventRegistrationCampaigns();
+    await dispatchQueuedEventRegistrationCampaigns();
+    expect(sender).toHaveBeenCalledTimes(2);
+    expect(await EventRegistrationCampaign.findById(campaign.id).lean()).toMatchObject({ status: 'completed', sentCount: 1, needsReviewCount: 0 });
+  });
+  // Not in ASAP: as for the sign-ups below, the template's database helper does not wait
+  // for Model.init(), so the first campaign queued after a release may create the delivery
+  // collection inside its own transaction. Rebuilds the indexes it drops.
+  test('the first campaign queued after a release creates the delivery collection inside its transaction', async () => {
+    await mongoose.connection.db!.dropCollection(EventRegistrationDelivery.collection.collectionName);
+    const campaign = await queuedCampaign();
+    expect(campaign).toMatchObject({ status: 'queued', recipientSnapshotCount: 1 });
+    expect(await EventRegistrationDelivery.countDocuments({ campaignId: campaign.id, status: 'pending' })).toBe(1);
+    await EventRegistrationDelivery.createIndexes();
   });
   // Not in ASAP: the template's database helper does not wait for Model.init()
   // (a failed first init would stay cached and refuse every request), so the first

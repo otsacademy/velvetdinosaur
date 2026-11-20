@@ -545,7 +545,7 @@ export function EventRegistrationComposerCard({
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            {selectedCampaignStatus === 'queued' || selectedCampaignStatus === 'sending' ? (
+            {selectedCampaignStatus === 'queued' ? (
               <Button variant="outline" onClick={onCancelSchedule}>
                 Unschedule
               </Button>

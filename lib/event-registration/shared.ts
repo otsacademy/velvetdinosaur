@@ -7,7 +7,7 @@ export const EVENT_REGISTRATION_EVENT_TYPES = [
 ] as const;
 export const EVENT_CAMPAIGN_KINDS = ['update', 'joining-instructions'] as const;
 export const EVENT_CAMPAIGN_STATUSES = ['draft', 'queued', 'sending', 'completed', 'cancelled'] as const;
-export const EVENT_DELIVERY_STATUSES = ['pending', 'sent', 'failed', 'skipped_unconfirmed'] as const;
+export const EVENT_DELIVERY_STATUSES = ['pending', 'processing', 'needs_review', 'sent', 'failed', 'skipped_unconfirmed'] as const;
 
 export type EventRegistrationStatus = (typeof EVENT_REGISTRATION_STATUSES)[number];
 export type EventRegistrationEventType = (typeof EVENT_REGISTRATION_EVENT_TYPES)[number];
@@ -78,6 +78,7 @@ export function normalizeEventCampaignStatus(value: unknown): EventCampaignStatu
 }
 
 export function normalizeEventDeliveryStatus(value: unknown): EventDeliveryStatus {
+  if (value === 'processing' || value === 'needs_review') return value;
   if (value === 'sent') return 'sent';
   if (value === 'failed') return 'failed';
   if (value === 'skipped_unconfirmed') return 'skipped_unconfirmed';

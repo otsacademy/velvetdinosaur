@@ -28,6 +28,10 @@ const EventRegistrationCampaignSchema = new Schema(
     sentCount: { type: Number, default: 0 },
     failedCount: { type: Number, default: 0 },
     skippedCount: { type: Number, default: 0 },
+    needsReviewCount: { type: Number, default: 0 },
+    dispatchLeaseToken: { type: String, default: null },
+    dispatchLeaseUntil: { type: Date, default: null },
+    frozenEvent: { type: Schema.Types.Mixed, default: null },
     lastError: { type: String, default: '', trim: true }
   },
   { timestamps: true }

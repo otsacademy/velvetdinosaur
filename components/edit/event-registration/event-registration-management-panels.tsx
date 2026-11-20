@@ -133,6 +133,8 @@ export function EventRegistrationDeliveryPanel({
               <SelectItem value="sent">Sent</SelectItem>
               <SelectItem value="failed">Failed</SelectItem>
               <SelectItem value="skipped_unconfirmed">Skipped: Unconfirmed</SelectItem>
+              <SelectItem value="processing">Sending</SelectItem>
+              <SelectItem value="needs_review">Needs review</SelectItem>
             </SelectContent>
           </Select>
         </div>

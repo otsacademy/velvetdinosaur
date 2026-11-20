@@ -12,6 +12,8 @@ type EventRegistrationDeliveryLogProps = {
 };
 
 function statusBadge(status: DeliveryItem['status']) {
+  if (status === 'needs_review') return <Badge variant="destructive">Needs review</Badge>;
+  if (status === 'processing') return <Badge variant="outline">Sending</Badge>;
   if (status === 'sent') return <Badge className="bg-emerald-600 text-white hover:bg-emerald-600">Sent</Badge>;
   if (status === 'failed') return <Badge variant="destructive">Failed</Badge>;
   if (status === 'pending') return <Badge variant="outline">Pending</Badge>;

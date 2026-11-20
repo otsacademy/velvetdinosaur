@@ -1,7 +1,7 @@
 export type EventRegistrationStatus = 'pending' | 'confirmed' | 'cancelled';
 export type EventCampaignKind = 'update' | 'joining-instructions';
 export type EventCampaignStatus = 'draft' | 'queued' | 'sending' | 'completed' | 'cancelled';
-export type EventDeliveryStatus = 'pending' | 'sent' | 'failed' | 'skipped_unconfirmed';
+export type EventDeliveryStatus = 'pending' | 'processing' | 'needs_review' | 'sent' | 'failed' | 'skipped_unconfirmed';
 
 export type EventWorkspaceItem = {
   id: string;
@@ -56,6 +56,7 @@ export type CampaignItem = {
   sentCount: number;
   failedCount: number;
   skippedCount: number;
+  needsReviewCount?: number;
   lastError: string;
   createdAt: string | null;
   updatedAt: string | null;
