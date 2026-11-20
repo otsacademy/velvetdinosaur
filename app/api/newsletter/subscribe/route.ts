@@ -1,5 +1,6 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
+import { SIGNUP_ACKNOWLEDGEMENT } from '@/lib/email/public-acknowledgement';
 import crypto from 'node:crypto';
 import { z } from 'zod';
 import { getAuth } from '@/lib/auth';
@@ -196,7 +197,7 @@ export async function POST(request: Request) {
   const actorId = user?.id || userId;
 
   if (prior?.status === 'subscribed') {
-    return NextResponse.json({ ok: true, alreadySubscribed: true, preference: prior });
+    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
   }
 
   if (settings.requireDoubleOptIn) {
@@ -252,13 +253,7 @@ export async function POST(request: Request) {
       }
     });
 
-    return NextResponse.json({
-      ok: true,
-      alreadySubscribed: false,
-      requiresConfirmation: true,
-      confirmationEmailSent,
-      preference
-    });
+    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
   }
 
   const preference = await setNewsletterConsentForUser({
@@ -293,5 +288,5 @@ export async function POST(request: Request) {
     });
   }
 
-  return NextResponse.json({ ok: true, alreadySubscribed: false, preference });
+  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
 }

@@ -1,5 +1,6 @@
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
+import { SIGNUP_ACKNOWLEDGEMENT } from '@/lib/email/public-acknowledgement';
 import { z } from 'zod';
 import { getAuth } from '@/lib/auth';
 import { EVENT_REGISTRATION_GDPR_LEGAL_TEXT_VERSION } from '@/lib/content/event-registration-gdpr';
@@ -164,12 +165,7 @@ export async function POST(request: Request, { params }: RouteProps) {
 
   const prior = await getEventRegistrationByEmail(event.id, email);
   if (prior?.status === 'confirmed') {
-    return NextResponse.json({
-      ok: true,
-      alreadyRegistered: true,
-      alreadyConfirmed: true,
-      registration: prior
-    });
+    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
   }
 
   const source = parsed.data.source || 'public-event-registration';
@@ -213,9 +209,7 @@ export async function POST(request: Request, { params }: RouteProps) {
     windowMs: settings.resendConfirmationCooldownMinutes * 60 * 1000
   });
 
-  let confirmationEmailSent = false;
   if (resendLimit.ok || prior?.status !== 'pending') {
-    confirmationEmailSent = true;
     if (prior?.status === 'pending') {
       await writeEventRegistrationEvent({
         registrationId: registration.id,
@@ -246,11 +240,5 @@ export async function POST(request: Request, { params }: RouteProps) {
     });
   }
 
-  return NextResponse.json({
-    ok: true,
-    alreadyRegistered: false,
-    requiresConfirmation: true,
-    confirmationEmailSent,
-    registration
-  });
+  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
 }
