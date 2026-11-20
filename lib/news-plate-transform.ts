@@ -24,6 +24,13 @@ const LIST_TYPES = new Set(['ul', 'ol', 'list'])
 const QUOTE_TYPES = new Set(['blockquote', 'quote'])
 const TABLE_TYPES = new Set(['table'])
 const CALLOUT_TYPES = new Set(['callout'])
+// Plate 53 keeps each line of a quotation as a block inside it, where Plate 52 kept one text with line breaks: those
+// blocks read with a space between them, as the line breaks did. Inline children (text, links) join as before.
+const QUOTE_BLOCK_TYPES = new Set([
+  ...PARAGRAPH_TYPES, ...HEADING_TYPES, 'h4', 'h5', 'h6', ...LIST_TYPES, 'li', ...QUOTE_TYPES, ...CALLOUT_TYPES, 'code_block',
+])
+// A horizontal rule shows no text, though Plate 53 keeps in a rule typed as `---` the "—" that `--` became.
+const RULE_TYPES = new Set(['hr'])
 const MEDIA_NODE_TYPES = new Set(['img', 'image', 'media_embed', 'video'])
 const FILE_NODE_TYPES = new Set(['file', 'attachment'])
 const IMAGE_URL_KEYS = ['url', 'src', 'image', 'imageUrl', 'uri', 'href']
@@ -375,10 +382,27 @@ function extractNodeText(value: unknown): string {
       return node.text
     }
 
+    const type = normalizeNodeType(node)
+    if (RULE_TYPES.has(type)) return ''
+    if (QUOTE_TYPES.has(type)) return extractQuoteText(node.children)
     return extractNodeText(node.children)
   }
 
   return ''
+}
+
+function extractQuoteText(children: unknown): string {
+  if (!Array.isArray(children)) return extractNodeText(children)
+  return children
+    .map((child) => {
+      const childText = extractNodeText(child)
+      const isBlock =
+        Boolean(child) && typeof child === 'object' && QUOTE_BLOCK_TYPES.has(normalizeNodeType(child as PlateNode))
+      return isBlock ? ` ${childText} ` : childText
+    })
+    .join('')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 function extractListItems(node: PlateNode): string[] {
@@ -644,7 +668,7 @@ export function plateToArticleSections(raw: unknown): ArticleSection[] {
     }
 
     if (QUOTE_TYPES.has(type)) {
-      const quote = extractNodeText(node.children)
+      const quote = extractQuoteText(node.children)
       if (quote) {
         if (!target.quote) {
           target.quote = quote

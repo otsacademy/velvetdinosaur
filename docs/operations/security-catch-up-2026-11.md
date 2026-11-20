@@ -236,8 +236,8 @@ listed under [Files](#files-for-the-plate-53-repair).
     for two columns;
   - `---` now makes a horizontal rule (in the news editor it used to turn
     into "—-"), but the rule keeps, hidden inside it, the "—" that `--`
-    became, and a work page shows that "—" as a line of its own; `___ `
-    (with a space) makes a clean rule, and `___` alone no longer does;
+    became, which no public page shows; `___ ` (with a space) makes a clean
+    rule, and `___` alone no longer does;
   - a horizontal rule no longer breaks the news editor: Plate 52 drew it as
     an `<hr>` with content, which React refuses (error 137), and the whole
     editor went blank as soon as the article had one;
@@ -266,44 +266,55 @@ listed under [Files](#files-for-the-plate-53-repair).
     inside a quotation;
   - nothing in an imported or pasted document runs, and hidden scripts or
     styles no longer turn into article text.
-- **What visitors see.** Nothing changes for anything already published.
-  Work pages are made by the site's own transform
-  (`lib/news-plate-transform.ts`), which no Plate code reaches; it gives the
-  same text for every document compared below, before and after the new
-  editor normalizes them. For work written after the change, two things can
-  show on its page: a quotation of several lines reaches the page with its
-  lines run together ("QuoteNext line"), because the transform joins a
-  quotation's paragraphs without a space, and a rule typed as `---` shows as
-  a "—" line. The demo editor and the demo article on the demo site use the
-  news editor's plugins, but they do not load on the base commit either
-  ("This page couldn't load"): the demo article's cover picture keeps its
-  caption as plain text, and Plate's caption component, which expects editor
-  nodes, fails on it. Screenshots of those pages are pixel-identical before
-  and after this change. The fault predates this change and does not depend
-  on settings, so it probably shows on the live demo site too (not checked
-  there); it is left for its own fix.
+- **What visitors see.** Nothing changes. Work pages (`/work/<slug>`: the
+  summary at the top, the opening paragraph, the body and the page
+  description) and the article summaries in newsletter emails come from the
+  site's own transform (`lib/news-plate-transform.ts`), which no Plate code
+  reaches. It gives the same text for every document compared below, before
+  and after the new editor normalizes them, and for new quotations and rules
+  too (next point). The demo editor and the demo article on the demo site
+  use the news editor's plugins, but they do not load on the base commit
+  either ("This page couldn't load"): the demo article's cover picture keeps
+  its caption as plain text, and Plate's caption component, which expects
+  editor nodes, fails on it. Screenshots of those pages are pixel-identical
+  before and after this change. The fault predates this change and does not
+  depend on settings, so it probably shows on the live demo site too (not
+  checked there); it is left for its own fix.
+- **Article text.** The site's own transform (`lib/news-plate-transform.ts`,
+  changed in a second commit) reads what Plate 53 stores differently as it
+  read Plate 52's. A quotation now holds a paragraph per line: its lines
+  read with a space between them, as Plate 52's line breaks did, while text
+  and links within a line join as before. A horizontal rule gives no text,
+  though Plate 53 keeps in a rule typed as `---` the "—" that `--` became.
+  Without this, the sections and the plain text of new articles (the summary
+  when none is typed, the reading time, the text a search description is
+  written from) ran a quotation's lines together ("QuoteNext line") and
+  showed a rule as a "—" paragraph. `lib/news-plate-transform.test.ts`
+  (`test:unit`, which runs every test in `lib`) checks both, a link inside a
+  quoted paragraph, and a Plate 52 quotation, which reads as before.
 - **Stored documents.** No migration, and nothing in the database is
   rewritten. 254 stored-document-shaped values were rendered with the base
   commit and with this change: this site's seeds, fixtures and tests, ASAP's
   test documents, the registry's example documents, and the documents that
   typing every shortcut produced on Plate 52. The site's own transform
-  (`lib/news-plate-transform.ts`) gives the same output for all of them,
-  also after the new editor has normalized them. Plate's own rendering (the
-  editor, and its static renderer) differs only in markup that shows the
-  same: no `start` number on bulleted lists (bullets never show one), block
-  ids on nested blocks, React's menu ids, and the empty text Plate 52 added
-  around a lone link or after a closing picture before anyone typed (Plate
-  53 adds it at the first edit). What shows differently is listed above: the
-  horizontal rule, the numbered list that goes on counting, and the exports.
-  Plate 52 rewrote two shapes as the editor opened, which Plate 53 shows as
-  stored until the first edit: the demo article's table, whose cells hold
-  their text directly, and two slash-menu inputs left open in a document
-  typed with `//` into the work editor (shown as empty lines). A registry
-  example with paragraphs nested inside a paragraph, which Plate 52 ran
-  together, now shows as separate paragraphs. When an article is changed and
-  saved in the new editor, Plate 53 rewrites two things in it: a quotation's
-  text moves into a paragraph inside the quotation, and bulleted items lose
-  a stored `listStart` that bullets never show (numbered lists keep theirs).
+  (`lib/news-plate-transform.ts`) gives the same sections and plain text for
+  all of them, also after the new editor has normalized them, with and
+  without the second commit. Plate's own rendering (the editor, and its
+  static renderer) differs only in markup that shows the same: no `start`
+  number on bulleted lists (bullets never show one), block ids on nested
+  blocks, React's menu ids, and the empty text Plate 52 added around a lone
+  link or after a closing picture before anyone typed (Plate 53 adds it at
+  the first edit). What shows differently is listed above: the horizontal
+  rule, the numbered list that goes on counting, and the exports. Plate 52
+  rewrote two shapes as the editor opened, which Plate 53 shows as stored
+  until the first edit: the demo article's table, whose cells hold their
+  text directly, and two slash-menu inputs left open in a document typed
+  with `//` into the work editor (shown as empty lines). A registry example
+  with paragraphs nested inside a paragraph, which Plate 52 ran together,
+  now shows as separate paragraphs. When an article is changed and saved in
+  the new editor, Plate 53 rewrites two things in it: a quotation's text
+  moves into a paragraph inside the quotation, and bulleted items lose a
+  stored `listStart` that bullets never show (numbered lists keep theirs).
   Neither changes what the site's own transform makes of the article.
 - **Release.** Run `bun install --frozen-lockfile` in the release checkout
   first: the lockfile brings Plate 53 and DOMPurify. No setting, cron entry
@@ -386,6 +397,10 @@ Tests:
   `bun` process): sixteen checks type the shortcuts, one key at a time, into
   the news editor's plugins. They pass on the base commit and here, and all
   sixteen fail on Plate 53 without the new input rules.
+- `lib/news-plate-transform.test.ts` (`test:unit`, which runs every test in
+  `lib`; second commit): seven checks of the article transform. Six fail
+  without the second commit (a quotation's lines run together, a rule shows
+  as "—"); a Plate 52 quotation reads the same with and without it.
 
 ## Still to do
 
