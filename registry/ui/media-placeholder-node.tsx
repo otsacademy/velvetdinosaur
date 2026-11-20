@@ -99,7 +99,7 @@ export const PlaceholderElement = withHOC(
 
                 {progressing && !isImage && (
                   <div className="mt-1 flex items-center gap-1.5">
-                    <div>{formatBytes(file.size)}</div>
+                    <div>{formatBytes(file?.size || 0)}</div>
                     <div>–</div>
                     <div className="flex items-center">
                       <Spinner className="mr-1 size-3.5" />

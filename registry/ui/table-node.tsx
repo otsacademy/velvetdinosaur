@@ -18,6 +18,7 @@ import {
   useEditorPlugin,
   useElementSelector,
   useReadOnly,
+  usePluginOption,
   useSelected,
   withHOC,
 } from 'platejs/react';
@@ -35,10 +36,10 @@ export const TableElement = withHOC(
     const { tf } = useEditorPlugin(TablePlugin);
     const readOnly = useReadOnly();
     const {
-      isSelectingCell,
       marginLeft,
       props: tableProps,
     } = useTableElement();
+    const isSelectingCell = usePluginOption(TablePlugin, 'isSelectingCell');
 
     const isSelectingTable = useBlockSelected(props.element.id as string);
 

@@ -191,6 +191,202 @@ queued after a release creates its delivery collection inside its
 transaction; and, in `test:security`, `tests/security/event-campaigns.test.tsx`
 (the statuses and what the admin lists show).
 
+## Editor HTML parsing (Plate 53)
+
+Prepared on 20 November 2026: ASAP's September repair 10, "Editor HTML
+parsing" (ASAP commit c5fe5af), so that a file or a paste cannot run code in
+an editor. The editor files are ASAP's, file for file; the exceptions are
+listed under [Files](#files-for-the-plate-53-repair).
+
+- **What could go wrong before.** The news editor's Import document button
+  handed an HTML file, or the HTML the editor makes from a Word file, to
+  Plate 52, which parsed it into the editor's own page. An image in the file
+  with an error handler ran that code there, with the rights of whoever was
+  signed in (advisory GHSA-qrfj-mgw8-j9c6). Pasted HTML was parsed safely
+  but not cleaned: the text of a script or a style became article text, and
+  a frame's address, `javascript:` ones included, was stored as a media
+  embed.
+- **Now.** Plate is 53.3.14, whose parser reads markup into a detached copy
+  where nothing runs; every Plate package has ASAP's version, and the
+  lockfile resolves them, and Slate, as ASAP's does. Before Plate sees
+  imported or pasted HTML, DOMPurify 3.4.17 removes scripts, styles, frames,
+  objects, forms, buttons and inputs, event-handler attributes, `srcdoc` and
+  `formaction`, and `javascript:` addresses
+  (`components/edit/news-editor/safe-html.ts`). Headings, bold and italic,
+  lists, tables, links and pictures are kept. Word files are cleaned after
+  their conversion to HTML. `bun audit` no longer lists GHSA-qrfj-mgw8-j9c6,
+  nor a ReDoS advisory in `js-video-url-parser`, which Plate 53 no longer
+  uses; it lists nothing new.
+- **Where.** The news editor, the work article editor (a copy of the unused
+  second news editor; it gets the same two lines ASAP gave that one), and
+  the demo editor on the demo site, which uses the news editor's plugins.
+  The email template editor is left as on ASAP: Plate 53's parser and
+  Plate's own link check apply to it, but its pastes are not cleaned first.
+- **Typing shortcuts.** Plate 53's autoformat plugin does nothing (and Plate
+  refuses an editor that has it beside the new rules), so the shortcuts now
+  come from Plate 53's input rules: ASAP's
+  `components/edit/news-editor/news-input-rules.ts` and
+  `news-text-substitutions.ts`, which the registry's
+  `plugins/autoformat-kit.tsx` (used by the work editor) now uses too. The
+  same 206 key sequences typed into both versions give the same document in
+  192 cases in the news editor and 195 in the work editor.
+- **What staff see.** In the news editor and the work editor:
+  - new shortcuts: `####` to `######` headings, `_italic_`, `^raised^`,
+    `~lowered~`, `[] ` and `[x] ` checklists, and in the work editor `|||`
+    for two columns;
+  - `---` now makes a horizontal rule (in the news editor it used to turn
+    into "—-"), but the rule keeps, hidden inside it, the "—" that `--`
+    became, and a work page shows that "—" as a line of its own; `___ `
+    (with a space) makes a clean rule, and `___` alone no longer does;
+  - a horizontal rule no longer breaks the news editor: Plate 52 drew it as
+    an `<hr>` with content, which React refuses (error 137), and the whole
+    editor went blank as soon as the article had one;
+  - a quotation is a box that holds paragraphs: Enter inside it starts a new
+    paragraph in the same quotation (it used to break the line), and Enter
+    on an empty line leaves it;
+  - inside a code block, the heading, list and mark shortcuts now act (`# `
+    at the start of a line disappears, `**x**` turns bold); only the
+    replacements of quotes, dashes and symbols stay off there. Plate 52 kept
+    every shortcut off in code blocks; ASAP has the same change. A fix that
+    gives each rule the code-block check ASAP gave the replacements is
+    tested (typing then matches Plate 52 there and nothing else changes); it
+    belongs in ASAP's file first, so that the shared file stays one file;
+  - in the work editor, `***bold italic***`, `__*underlined italic*__` and
+    `___***all three***___` no longer format: Plate 53's combination rules
+    lose to the plain bold and italic ones, and trying them first turns
+    `**bold**` bold and italic, so there is no simple fix. The news editor
+    never had these;
+  - a numbered list that goes on after indented bullet points goes on
+    counting (it used to start again at 1);
+  - an article whose last block is a picture, file or table gets its
+    trailing empty line when editing starts, not as soon as it opens;
+  - exported news files (Markdown, and the HTML, PDF and Word exports made
+    from it) no longer repeat a picture's caption as its title, write a link
+    whose text is its address without angle brackets, and keep a line break
+    inside a quotation;
+  - nothing in an imported or pasted document runs, and hidden scripts or
+    styles no longer turn into article text.
+- **What visitors see.** Nothing changes for anything already published.
+  Work pages are made by the site's own transform
+  (`lib/news-plate-transform.ts`), which no Plate code reaches; it gives the
+  same text for every document compared below, before and after the new
+  editor normalizes them. For work written after the change, two things can
+  show on its page: a quotation of several lines reaches the page with its
+  lines run together ("QuoteNext line"), because the transform joins a
+  quotation's paragraphs without a space, and a rule typed as `---` shows as
+  a "—" line. The demo editor and the demo article on the demo site use the
+  news editor's plugins, but they do not load on the base commit either
+  ("This page couldn't load"): the demo article's cover picture keeps its
+  caption as plain text, and Plate's caption component, which expects editor
+  nodes, fails on it. Screenshots of those pages are pixel-identical before
+  and after this change. The fault predates this change and does not depend
+  on settings, so it probably shows on the live demo site too (not checked
+  there); it is left for its own fix.
+- **Stored documents.** No migration, and nothing in the database is
+  rewritten. 254 stored-document-shaped values were rendered with the base
+  commit and with this change: this site's seeds, fixtures and tests, ASAP's
+  test documents, the registry's example documents, and the documents that
+  typing every shortcut produced on Plate 52. The site's own transform
+  (`lib/news-plate-transform.ts`) gives the same output for all of them,
+  also after the new editor has normalized them. Plate's own rendering (the
+  editor, and its static renderer) differs only in markup that shows the
+  same: no `start` number on bulleted lists (bullets never show one), block
+  ids on nested blocks, React's menu ids, and the empty text Plate 52 added
+  around a lone link or after a closing picture before anyone typed (Plate
+  53 adds it at the first edit). What shows differently is listed above: the
+  horizontal rule, the numbered list that goes on counting, and the exports.
+  Plate 52 rewrote two shapes as the editor opened, which Plate 53 shows as
+  stored until the first edit: the demo article's table, whose cells hold
+  their text directly, and two slash-menu inputs left open in a document
+  typed with `//` into the work editor (shown as empty lines). A registry
+  example with paragraphs nested inside a paragraph, which Plate 52 ran
+  together, now shows as separate paragraphs. When an article is changed and
+  saved in the new editor, Plate 53 rewrites two things in it: a quotation's
+  text moves into a paragraph inside the quotation, and bulleted items lose
+  a stored `listStart` that bullets never show (numbered lists keep theirs).
+  Neither changes what the site's own transform makes of the article.
+- **Release.** Run `bun install --frozen-lockfile` in the release checkout
+  first: the lockfile brings Plate 53 and DOMPurify. No setting, cron entry
+  or data change is needed. The template's editor baseline copies
+  `components/edit/**` to sites but not `package.json` or `bun.lock`: if the
+  template's copy of these files reached this site before this change, the
+  build would break, so the two go together.
+
+### Files for the Plate 53 repair
+
+Byte for byte as on ASAP (its commit c5fe5af unless noted):
+
+- `components/edit/news-editor/safe-html.ts`, `news-input-rules.ts`,
+  `news-text-substitutions.ts` and `news-editor-potion-props.ts` (new), and
+  `news-editor-import-export.ts`;
+- `registry/components/editor/plugins/autoformat-kit.tsx`, and
+  `registry/ui/media-placeholder-node.tsx` and `registry/ui/table-node.tsx`
+  (Plate 53 API changes).
+
+Adapted:
+
+- `components/edit/news-editor/news-editor-plugins.ts`: ASAP's change, line
+  for line. The file keeps this site's two media lines; ASAP gave media
+  embeds and files their own components in an earlier repair (f230852) that
+  this site does not have.
+- `components/edit/news-article-editor-potion.client.tsx`: ASAP's file
+  without one comment line, which names a rule of ASAP's newer Next ESLint
+  plugin (16.3) that this site's plugin (16.2) does not have (the lint gate
+  fails on it).
+- `components/edit/work-article-editor.client.tsx` (this site's own): the
+  work editor is a copy of the unused second news editor and gets the same
+  two lines ASAP gave that one, so its pastes are cleaned too.
+- `package.json`: ASAP's Plate versions, DOMPurify 3.4.17, and the new unit
+  test in `test:security` (the visual gate runs every spec in
+  `tests/visual`).
+- `bun.lock`: resolved so that Plate core and Slate have ASAP's versions; a
+  plain install would have taken a newer Plate core (53.5.2) and a second
+  copy of Slate. 50 package names change, all of them Plate's own or its
+  dependencies.
+
+Not taken:
+
+- `registry/ui/paragraph-node-static.tsx` is not changed: this site's own
+  version already renders every static paragraph as a `<div>`, so ASAP's
+  later fix 6e1eaf6 for list paragraphs has nothing to do here.
+- ASAP's change to `components/edit/news-article-editor.client.tsx` in
+  c5fe5af: one ESLint comment line removed and one added (naming the same
+  16.3 rule), for ASAP's newer lint setup.
+- ASAP's later fixes to its article page renderer (3f11aaf, and the rest of
+  6e1eaf6): this site has no such renderer. Their failure, a Plate editor
+  rendered outside `<Plate>`, does not occur here: the only such renderings
+  are the registry's AI and mention previews, which sit inside an editor, as
+  on ASAP.
+- `tests/visual/news-editor-media.spec.ts`: it belongs to ASAP's media
+  repair (f230852); its three tests for this repair are adapted into
+  `tests/visual/news-editor-html-safety.spec.ts`.
+
+Tests:
+
+- `tests/visual/news-editor-html-safety.spec.ts` (the visual gate, which
+  runs every spec), in desktop Chromium and phone WebKit: an HTML file, an
+  HTML paste and a Word file, each with formatting and with hidden scripts,
+  event handlers, frames and `javascript:` links, go into the news editor.
+  The formatting must arrive, no hidden code may run, no hostile markup may
+  reach what Plate deserializes or be parsed into the editor's page, and
+  none of it may show as text. A fourth test types headings, bold, italic,
+  an arrow, lists and a quotation. The paste is built in the page, because
+  the browser's own clipboard would clean it first. On the base commit
+  (3e8b677) the import, paste and Word tests fail in both browsers, for the
+  reasons they exist: the imported HTML file was parsed into the editor's
+  own page, where its picture's error handler ran; the Word file's
+  `javascript:` link was parsed there too; the original markup reached Plate
+  in all three; and the script's text became article text after the HTML
+  import and the paste. The typing test passes there. On Plate 53 without
+  the cleaning step (tried on the template) nothing runs and nothing is
+  parsed into the page, which is the parser fix, but the original markup
+  still reaches Plate and the script's text still shows after the HTML
+  import and the paste, so the same three tests fail.
+- `tests/security/editor-shortcuts.test.ts` (`test:security`, in its own
+  `bun` process): sixteen checks type the shortcuts, one key at a time, into
+  the news editor's plugins. They pass on the base commit and here, and all
+  sixteen fail on Plate 53 without the new input rules.
+
 ## Still to do
 
 Part two brings over the rest of ASAP's work:
@@ -198,7 +394,8 @@ Part two brings over the rest of ASAP's work:
 - the other September repairs: uploaded active content, webhook
   suppression, confirmation links opened by mail scanners,
   sign-up disclosure, false email success, trusting only nginx's `X-Real-IP`
-  for the visitor address, and editor HTML parsing (Plate 53);
+  for the visitor address; editor HTML parsing (Plate 53) is prepared, see
+  [Editor HTML parsing](#editor-html-parsing-plate-53);
 - the stricter request filter in `proxy.ts` (cross-site request checks; the
   security headers are prepared, see
   [Security response headers](#security-response-headers));

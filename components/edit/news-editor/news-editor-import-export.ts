@@ -5,6 +5,7 @@ import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 import { deserializeHtml } from 'platejs'
 
 import { EMPTY_CONTENT } from '@/components/edit/news-editor/news-editor-plate-utils'
+import { sanitizeEditorHtml } from './safe-html'
 
 type EditorLike = {
   children?: unknown[]
@@ -182,14 +183,14 @@ export async function importEditorDocumentFromFile(editor: EditorLike, file: Fil
 
   if (format === 'html') {
     const html = await file.text()
-    return ensureNonEmptyNodes(deserializeHtml(editor as never, { element: html }))
+    return ensureNonEmptyNodes(deserializeHtml(editor as never, { element: sanitizeEditorHtml(html) }))
   }
 
   const mammothModule = await import('mammoth')
   const arrayBuffer = await file.arrayBuffer()
   const result = await mammothModule.convertToHtml({ arrayBuffer })
   const html = result.value || ''
-  return ensureNonEmptyNodes(deserializeHtml(editor as never, { element: html }))
+  return ensureNonEmptyNodes(deserializeHtml(editor as never, { element: sanitizeEditorHtml(html) }))
 }
 
 export async function exportEditorDocument(

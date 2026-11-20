@@ -38,7 +38,10 @@ import { Input } from '@/components/ui/input'
 import { londonDateTimeToUtc, toLondonDateTimeInput } from '@/lib/work/scheduling'
 import { WorkLinkWarning, WorkLinkWarningsDialog, parseWorkLinkWarningPayload } from '@/components/edit/work-link-warnings-dialog'
 
+import { SafeHtmlPlugin } from './news-editor/safe-html'
+
 const NEWS_POTION_EDITOR_PLUGINS = [
+  SafeHtmlPlugin,
   ...EditorKit.filter((plugin) => plugin.key !== ImagePlugin.key),
   ImagePlugin.withComponent(WorkEditorImageElement),
 ]

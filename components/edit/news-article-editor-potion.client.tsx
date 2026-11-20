@@ -41,22 +41,15 @@ import { Input } from '@/components/ui/input'
 import { londonDateTimeToUtc, toLondonDateTimeInput } from '@/lib/news/scheduling'
 import { NewsLinkWarning, NewsLinkWarningsDialog, parseNewsLinkWarningPayload } from '@/components/edit/news-link-warnings-dialog'
 
+import { SafeHtmlPlugin } from './news-editor/safe-html'
+
 const NEWS_POTION_EDITOR_PLUGINS = [
+  SafeHtmlPlugin,
   ...EditorKit.filter((plugin) => plugin.key !== ImagePlugin.key),
   ImagePlugin.withComponent(NewsEditorImageElement),
 ]
 
-type NewsArticleEditorProps = {
-  returnPath?: string
-  initialArticle?: Article | null
-  activeAuthor?: {
-    name: string
-    image: string
-    userId?: string | null
-    primaryChapterSlug?: string
-    chapterSlugs?: string[]
-  } | null
-}
+import type { NewsArticleEditorProps } from './news-editor/news-editor-potion-props';
 
 type NewsPublishPayload = {
   title: string
@@ -273,6 +266,7 @@ export function NewsArticleEditorPotion({
           ? ((responsePayload as { slug?: unknown }).slug as string)
           : requestPayload.slug
       toast.success('Article published')
+      // A fresh page instance is required to reset editor state after saving/restoring.
       window.location.assign(`/news/${encodeURIComponent(nextSlug)}`)
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'Could not publish article')
