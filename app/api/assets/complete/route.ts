@@ -1,4 +1,5 @@
-import { HeadObjectCommand } from '@aws-sdk/client-s3';
+import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
+import { MAX_ASSET_BYTES, validateAssetBytes } from '@/lib/assets/file-safety';
 import { getR2Client } from '@/lib/r2';
 import { assetOwnerSite, uploadedAssetOwnership } from '@/lib/assets/ownership.server';
 import { AssetUploadReceipt } from '@/models/AssetUploadReceipt';
@@ -64,6 +65,15 @@ export async function POST(request: Request) {
   if (!receipt) return NextResponse.json({ error: 'Upload authorization expired. Upload the file again.' }, { status: 403 });
   const stored = await getR2Client().send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
   if (stored.ContentType !== receipt.mime || !stored.ContentLength) return NextResponse.json({ error: 'Uploaded file does not match the authorized upload.' }, { status: 400 });
+  if (stored.ContentLength > MAX_ASSET_BYTES) return NextResponse.json({ error: 'File exceeds 100 MB' }, { status: 400 });
+  try {
+    const object = await getR2Client().send(new GetObjectCommand({ Bucket: bucket, Key: key, IfMatch: stored.ETag }));
+    const bytes = await object.Body?.transformToByteArray();
+    if (!bytes) throw new Error('Missing file');
+    await validateAssetBytes(Buffer.from(bytes), receipt.mime);
+  } catch {
+    return NextResponse.json({ error: 'File contents do not match an allowed file type.' }, { status: 400 });
+  }
   const update: Record<string, unknown> = {
     key,
     bucket,

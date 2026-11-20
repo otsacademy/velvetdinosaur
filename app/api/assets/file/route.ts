@@ -5,6 +5,8 @@ import { Readable } from 'node:stream';
 import { connectDB } from '@/lib/db';
 import { Asset } from '@/models/Asset';
 import { getR2Client } from '@/lib/r2';
+import { assetResponseHeaders, normalizeAssetMime } from '@/lib/assets/file-safety';
+import { rasterizeSafeSvg } from '@/lib/assets/svg-raster.server';
 import {
   normalizeAssetImageIntent,
   selectAssetVariantKey,
@@ -70,19 +72,29 @@ export async function GET(request: Request) {
   try {
     const client = getR2Client();
     const obj = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
+    if (normalizeAssetMime(obj.ContentType) === 'image/svg+xml' && obj.Body && obj.ContentLength && obj.ContentLength <= 2 * 1024 * 1024) {
+      const original = Buffer.from(await obj.Body.transformToByteArray());
+      try {
+        const png = await rasterizeSafeSvg(original);
+        return new NextResponse(new Uint8Array(png), { headers: { ...assetResponseHeaders('image/png', key),
+          'Content-Length': String(png.length), 'Cache-Control': 'public, max-age=3600' } });
+      } catch {
+        return new NextResponse(new Uint8Array(original), { headers: { ...assetResponseHeaders('image/svg+xml', key), 'Cache-Control': 'private, no-store' } });
+      }
+    }
     const stream = toWebStream(obj.Body);
     if (!stream) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 });
     }
 
-    const headers = new Headers();
-    headers.set('Content-Type', typeof obj.ContentType === 'string' ? obj.ContentType : 'application/octet-stream');
+    const headers = new Headers(assetResponseHeaders(obj.ContentType, key));
     if (typeof obj.ContentLength === 'number') headers.set('Content-Length', String(obj.ContentLength));
     if (typeof obj.ETag === 'string') headers.set('ETag', obj.ETag);
     if (obj.LastModified instanceof Date) headers.set('Last-Modified', obj.LastModified.toUTCString());
     headers.set(
       'Cache-Control',
-      isImmutableUploadKey(key) ? 'public, max-age=31536000, immutable' : 'public, max-age=3600'
+      headers.get('Content-Type') === 'application/octet-stream' ? 'private, no-store' :
+        isImmutableUploadKey(key) ? 'public, max-age=31536000, immutable' : 'public, max-age=3600'
     );
 
     return new NextResponse(stream, { status: 200, headers });

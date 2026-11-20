@@ -1,5 +1,7 @@
 import { PutObjectCommand, type S3Client } from '@aws-sdk/client-s3';
 import sharp from 'sharp';
+import { assetResponseHeaders, validateAssetBytes } from '@/lib/assets/file-safety';
+import { rasterizeSafeSvg } from '@/lib/assets/svg-raster.server';
 import { assertServerOnly } from '@/lib/_server/guard';
 import {
   ASSET_IMAGE_VARIANT_NAMES,
@@ -60,6 +62,7 @@ async function putObject(input: {
       Key: input.key,
       Body: input.body,
       ContentType: input.contentType,
+      ContentDisposition: assetResponseHeaders(input.contentType, input.key)['Content-Disposition'],
       CacheControl: input.cacheControl
     })
   );
@@ -68,7 +71,7 @@ async function putObject(input: {
 
 async function renderVariant(body: Buffer, variantName: AssetImageVariantName) {
   const config = ASSET_IMAGE_VARIANTS[variantName];
-  let transformer = sharp(body, { failOn: 'none' })
+  let transformer = sharp(body, { failOn: 'none', limitInputPixels: 40_000_000 })
     .rotate()
     .resize({
       width: config.width,
@@ -111,7 +114,11 @@ async function renderVariant(body: Buffer, variantName: AssetImageVariantName) {
 }
 
 export async function storeAssetWithVariants(input: StoreAssetInput): Promise<StoredAssetResult> {
-  const contentType = input.contentType || 'application/octet-stream';
+  await validateAssetBytes(input.body, input.contentType);
+  if (input.contentType === 'image/svg+xml') {
+    input = { ...input, body: await rasterizeSafeSvg(input.body), contentType: 'image/png' };
+  }
+  const contentType = input.contentType;
   const processedAt = new Date();
 
   await putObject({
@@ -150,7 +157,7 @@ export async function storeAssetWithVariants(input: StoreAssetInput): Promise<St
     };
   }
 
-  const source = await sharp(input.body, { failOn: 'none' }).rotate().metadata();
+  const source = await sharp(input.body, { failOn: 'none', limitInputPixels: 40_000_000 }).rotate().metadata();
   const variants: AssetImageVariantMap = {};
   let fallbackEtag: string | undefined;
 

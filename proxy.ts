@@ -17,6 +17,14 @@ const PUBLIC_FORM_PREFIXES = [
 // Pages and endpoints that carry a signed email-link token: never cached,
 // never indexed, and never sent on as a referrer.
 const PRIVATE_EMAIL_LINK_PATH = /^\/(?:api\/)?(?:newsletter\/(?:unsubscribe|confirm)|events\/registration\/confirm)(?:\/|$)/;
+// Uploaded files are served from the site's own address. As in ASAP, every
+// answer on the file route keeps the sandbox and nosniff here as well as in
+// the file response itself (proxy headers take precedence in Next).
+const ASSET_FILE_PATH = '/api/assets/file';
+const ASSET_SANDBOX_HEADERS: Record<string, string> = {
+  'Content-Security-Policy': "sandbox; default-src 'none'; base-uri 'none'; form-action 'none'",
+  'X-Content-Type-Options': 'nosniff'
+};
 const DEMO_HOST_LOCKED_PREFIXES = ['/admin', '/edit', '/preview', '/sign-in', '/sign-up'];
 const DEMO_HOST_REWRITES = new Map<string, string>([
   ['/', '/demo'],
@@ -134,6 +142,9 @@ export function proxy(request: NextRequest) {
   const response = NextResponse.next();
   if (shouldNoIndex(pathname)) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
+  }
+  if (pathname === ASSET_FILE_PATH) {
+    for (const [name, value] of Object.entries(ASSET_SANDBOX_HEADERS)) response.headers.set(name, value);
   }
   return withPrivateLinkHeaders(response, pathname);
 }

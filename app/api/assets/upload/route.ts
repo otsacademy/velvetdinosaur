@@ -1,4 +1,5 @@
 import { uploadedAssetOwnership } from '@/lib/assets/ownership.server';
+import { assertAllowedAssetType, MAX_ASSET_BYTES, UnsafeAssetError } from '@/lib/assets/file-safety';
 import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from '@/lib/auth';
@@ -67,6 +68,8 @@ export async function POST(request: Request) {
     if (!(file instanceof File)) {
       return NextResponse.json({ error: 'Missing file' }, { status: 400 });
     }
+    if (file.size > MAX_ASSET_BYTES) return NextResponse.json({ error: 'File exceeds 100 MB' }, { status: 400 });
+    assertAllowedAssetType(file.type, file.name);
 
     const rawName = formData.get('name');
     const rawCaption = formData.get('caption');
@@ -209,6 +212,7 @@ export async function POST(request: Request) {
       variants: stored.variants
     });
   } catch (error) {
+    if (error instanceof UnsafeAssetError) return NextResponse.json({ error: error.message }, { status: 400 });
     const rawCode =
       typeof error === 'object' && error !== null
         ? ((error as { Code?: unknown; code?: unknown; name?: unknown }).Code ??

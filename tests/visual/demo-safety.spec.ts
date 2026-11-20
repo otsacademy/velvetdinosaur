@@ -3,6 +3,13 @@ import { expect, test } from '@playwright/test';
 const DISCLAIMER =
   "Unofficial website concept prepared privately by Velvet Dinosaur. This is not the business's current website.";
 
+test('asset HTTP responses retain the sandbox through the security middleware', async ({ request }) => {
+  const response = await request.get('/api/assets/file');
+  expect(response.status()).toBe(400);
+  expect(response.headers()['content-security-policy']).toContain("sandbox; default-src 'none'");
+  expect(response.headers()['x-content-type-options']).toBe('nosniff');
+});
+
 test('demo safety headers, disclaimer and public action guard match the site mode', async ({ page, request }) => {
   const response = await request.get('/');
   const headers = response.headers();

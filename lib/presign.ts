@@ -15,7 +15,8 @@ export async function createPresignedUpload({
   const command = new PutObjectCommand({
     Bucket: bucket,
     Key: key,
-    ContentType: contentType
+    ContentType: contentType,
+    ContentDisposition: 'attachment'
   });
 
   const uploadUrl = await getSignedUrl(client, command, { expiresIn: 900 });
@@ -32,7 +33,9 @@ export async function createPresignedDownload({
   const client = getR2Client();
   const command = new GetObjectCommand({
     Bucket: bucket,
-    Key: key
+    Key: key,
+    ResponseContentDisposition: 'attachment',
+    ResponseContentType: 'application/octet-stream'
   });
   const url = await getSignedUrl(client, command, { expiresIn: 900 });
   return url;

@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { clamp01 } from '@/lib/media/focal-point';
 import { normalizeAssetTags } from '@/lib/assets/tags';
 import { isImageUploadMime } from '@/lib/assets/image-variants';
+import { assertAllowedAssetType } from '@/lib/assets/file-safety';
 
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store',
@@ -45,9 +46,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: NO_STORE_HEADERS });
   }
 
-  const body = await request.json();
-  const filename = body?.filename || 'upload';
-  const contentType = body?.contentType || 'application/octet-stream';
+  const body = await request.json().catch(() => null);
+  const filename = typeof body?.filename === 'string' ? body.filename : 'upload';
+  let contentType: string;
+  try { contentType = assertAllowedAssetType(body?.contentType, filename); }
+  catch { return NextResponse.json({ error: 'Unsupported file type' }, { status: 400, headers: NO_STORE_HEADERS }); }
   if (isImageUploadMime(contentType, filename)) {
     return NextResponse.json(
       { error: 'Image uploads must use server-side processing.' },

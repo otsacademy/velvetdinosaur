@@ -1,4 +1,5 @@
 import { isTrustedAsset } from '@/lib/assets/ownership.server';
+import { assertAllowedAssetType, MAX_ASSET_BYTES, validateAssetBytes } from '@/lib/assets/file-safety';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { connectDB } from '@/lib/db';
@@ -39,6 +40,13 @@ export async function POST(request: Request) {
   }
   if (!(file instanceof File)) {
     return NextResponse.json({ error: 'Missing replacement file' }, { status: 400 });
+  }
+  if (file.size > MAX_ASSET_BYTES) return NextResponse.json({ error: 'File exceeds 100 MB' }, { status: 400 });
+  try {
+    assertAllowedAssetType(file.type, file.name);
+    await validateAssetBytes(Buffer.from(await file.arrayBuffer()), file.type);
+  } catch {
+    return NextResponse.json({ error: 'File contents do not match an allowed file type.' }, { status: 400 });
   }
 
   const width = parsePositiveInt(formData.get('width'));
