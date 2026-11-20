@@ -9,7 +9,7 @@ import { resolveDefaultAppUrl, resolveLogoUrl, resolveSiteName, resolveTeamName 
 import { createNewsletterUnsubscribeToken } from '@/lib/newsletter/unsubscribe-token';
 import { renderTemplateWithStoredOverrides } from '@/lib/system-email-templates';
 
-const POSTMARK_API = 'https://api.postmarkapp.com/email';
+import { sendPostmarkEmail } from './postmark';
 
 function normalizeNonEmpty(value: string | undefined | null) {
   const trimmed = value?.trim();
@@ -19,29 +19,6 @@ function normalizeNonEmpty(value: string | undefined | null) {
 function normalizeBaseUrl(value: string | undefined | null) {
   const trimmed = normalizeNonEmpty(value);
   return trimmed.replace(/\/+$/, '');
-}
-
-function getPostmarkConfig() {
-  const token = process.env.POSTMARK_SERVER_TOKEN;
-  const from =
-    process.env.POSTMARK_FROM_EMAIL ||
-    process.env.EMAIL_FROM ||
-    process.env.NEXT_PUBLIC_EMAIL_FROM ||
-    'hello@example.com';
-  return { token: token?.trim() || '', from: from.trim() };
-}
-
-function extractEmailAddress(from: string) {
-  const trimmed = from.trim();
-  const match = trimmed.match(/<([^>]+)>/);
-  return (match?.[1] || trimmed).trim();
-}
-
-function formatFromAddress(from: string, fromName?: string) {
-  const name = normalizeNonEmpty(fromName);
-  if (!name) return from;
-  const email = extractEmailAddress(from);
-  return `${name} <${email}>`;
 }
 
 function resolveFirstName(inputFirstName: string | undefined | null) {
@@ -70,48 +47,12 @@ function buildUnsubscribeUrl(email: string, appUrl: string) {
   return `${base}/newsletter/unsubscribe?token=${encodeURIComponent(token)}`;
 }
 
-async function sendPostmark(
-  to: string,
-  subject: string,
-  htmlBody: string,
-  textBody: string,
-  options?: { fromName?: string }
-) {
-  const { token, from } = getPostmarkConfig();
-  if (!token || !from) {
-    console.warn('[postmark] missing POSTMARK_SERVER_TOKEN or POSTMARK_FROM_EMAIL; logging instead');
-    console.info({ to, subject, htmlBody, textBody, fromName: options?.fromName });
-    return;
-  }
-
-  const response = await fetch(POSTMARK_API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Postmark-Server-Token': token
-    },
-    body: JSON.stringify({
-      From: formatFromAddress(from, options?.fromName),
-      To: to,
-      Subject: subject,
-      HtmlBody: htmlBody,
-      TextBody: textBody,
-      MessageStream: 'outbound'
-    })
-  });
-
-  if (!response.ok) {
-    const body = await response.text().catch(() => '');
-    console.error('[postmark] send failed', response.status, body);
-  }
-}
-
 export async function sendNewsletterSubscribeConfirmationEmail(input: {
   email: string;
   firstName?: string | null;
 }) {
   const recipientEmail = normalizeNonEmpty(input.email).toLowerCase();
-  if (!recipientEmail.includes('@')) return;
+  if (!recipientEmail.includes('@')) throw new Error('Invalid recipient');
 
   const siteName = resolveSiteName();
   const appUrl = resolveDefaultAppUrl();
@@ -162,7 +103,7 @@ export async function sendNewsletterSubscribeConfirmationEmail(input: {
     fallbackText: textBody
   });
 
-  await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
+  return sendPostmarkEmail({ to: recipientEmail, subject, htmlBody: resolvedTemplate.html, textBody: resolvedTemplate.text,
     fromName: resolveTeamName(siteName)
   });
 }
@@ -174,9 +115,9 @@ export async function sendNewsletterSubscriptionVerificationEmail(input: {
   expiresInHours: number;
 }) {
   const recipientEmail = normalizeNonEmpty(input.email).toLowerCase();
-  if (!recipientEmail.includes('@')) return;
+  if (!recipientEmail.includes('@')) throw new Error('Invalid recipient');
   const token = normalizeNonEmpty(input.token);
-  if (!token) return;
+  if (!token) throw new Error('Missing confirmation token');
 
   const siteName = resolveSiteName();
   const appUrl = resolveDefaultAppUrl();
@@ -185,7 +126,7 @@ export async function sendNewsletterSubscriptionVerificationEmail(input: {
   const greeting = firstName ? `Hi ${firstName},` : 'Hello,';
   const expiresInHours = Math.max(1, Math.round(Number(input.expiresInHours || 24)));
   const confirmUrl = resolveNewsletterConfirmUrl(appUrl, token);
-  if (!confirmUrl) return;
+  if (!confirmUrl) throw new Error('Missing confirmation URL');
   const subject = `Please confirm your ${siteName} newsletter subscription`;
 
   const htmlBody = await render(
@@ -212,7 +153,7 @@ export async function sendNewsletterSubscriptionVerificationEmail(input: {
     `The ${siteName} team`
   ].join('\n');
 
-  await sendPostmark(recipientEmail, subject, htmlBody, textBody, {
+  return sendPostmarkEmail({ to: recipientEmail, subject, htmlBody, textBody,
     fromName: resolveTeamName(siteName)
   });
 }
@@ -222,7 +163,7 @@ export async function sendNewsletterUnsubscribeConfirmationEmail(input: {
   firstName?: string | null;
 }) {
   const recipientEmail = normalizeNonEmpty(input.email).toLowerCase();
-  if (!recipientEmail.includes('@')) return;
+  if (!recipientEmail.includes('@')) throw new Error('Invalid recipient');
 
   const siteName = resolveSiteName();
   const appUrl = resolveDefaultAppUrl();
@@ -271,7 +212,7 @@ export async function sendNewsletterUnsubscribeConfirmationEmail(input: {
     fallbackText: textBody
   });
 
-  await sendPostmark(recipientEmail, subject, resolvedTemplate.html, resolvedTemplate.text, {
+  return sendPostmarkEmail({ to: recipientEmail, subject, htmlBody: resolvedTemplate.html, textBody: resolvedTemplate.text,
     fromName: resolveTeamName(siteName)
   });
 }

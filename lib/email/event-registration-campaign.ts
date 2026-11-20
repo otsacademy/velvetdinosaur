@@ -32,6 +32,7 @@ type SendEventRegistrationCampaignEmailResult = {
   ok: boolean;
   messageId: string;
   error: string;
+  ambiguous?: boolean;
 };
 
 type RenderEventRegistrationCampaignEmailResult = {
@@ -151,6 +152,7 @@ export async function sendEventRegistrationCampaignEmail(
   return {
     ok: result.ok,
     messageId: result.messageId,
+    ambiguous: result.ambiguous,
     error: result.error || ''
   };
 }

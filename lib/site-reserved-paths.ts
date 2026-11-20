@@ -46,9 +46,12 @@ const RESERVED_SITE_FIRST_SEGMENTS = new Set([
 
 // Exact URLs served by hardcoded routes under app/. Editor pages *beneath*
 // these are fine (static segments win only on exact match).
-const RESERVED_EXACT_PATHS = new Set(
-  SITE_PAGE_DEFS.filter((page) => page.slug !== 'home').map((page) => page.pathname.replace(/^\/+/, ''))
-);
+const RESERVED_EXACT_PATHS = new Set([
+  ...SITE_PAGE_DEFS.filter((page) => page.slug !== 'home').map((page) => page.pathname.replace(/^\/+/, '')),
+  // The event registration confirmation page that emailed links open
+  // (the newsletter's pages sit in the reserved 'newsletter' namespace).
+  'events/registration/confirm'
+]);
 
 export function isSitePathBlocked(path: string) {
   if (isReservedPath(path)) return true;

@@ -1,25 +1,16 @@
+import { after } from 'next/server';
+import { flushNotification } from '@/lib/email/notification-outbox';
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { SIGNUP_ACKNOWLEDGEMENT } from '@/lib/email/public-acknowledgement';
-import crypto from 'node:crypto';
 import { z } from 'zod';
 import { getAuth } from '@/lib/auth';
 import { NEWSLETTER_GDPR_LEGAL_TEXT_VERSION } from '@/lib/content/newsletter-gdpr';
-import {
-  sendNewsletterSubscribeConfirmationEmail,
-  sendNewsletterSubscriptionVerificationEmail
-} from '@/lib/email/newsletter-lifecycle';
-import { verifyNewsletterCaptcha } from '@/lib/newsletter/captcha';
-import { createNewsletterConfirmToken } from '@/lib/newsletter/confirm-token';
-import {
-  getNewsletterPreferenceByEmail,
-  getNewsletterPreferenceForUser,
-  setNewsletterConsentForUser
-} from '@/lib/newsletter/consent';
 import { getNewsletterSettings } from '@/lib/newsletter/settings';
 import { clean, normalizeEmail } from '@/lib/newsletter/shared';
-import { isNewsletterSuppressedEmail } from '@/lib/newsletter/suppression';
+import { requestNewsletterSubscription } from '@/lib/newsletter/signup-request';
 import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
+import { verifyNewsletterCaptcha } from '@/lib/newsletter/captcha';
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 import { trackServerConversion } from '@/lib/analytics';
 
@@ -43,13 +34,6 @@ async function requireSessionUser(request: Request) {
   const email = normalizeEmail(rawUser?.email);
   if (!id || !email) return null;
   return { id, email, name: clean(rawUser?.name) };
-}
-
-function buildPublicUserId(email: string) {
-  const normalized = normalizeEmail(email);
-  if (!normalized) return '';
-  const digest = crypto.createHash('sha256').update(normalized).digest('hex').slice(0, 24);
-  return `email:${digest}`;
 }
 
 function toFirstToken(value: string | undefined | null) {
@@ -103,7 +87,7 @@ export async function POST(request: Request) {
 
   if (settings.enableHoneypot && clean(parsed.data.honeypot)) {
     // Pretend success for bots to reduce attack feedback loops.
-    return NextResponse.json({ ok: true, ignored: true });
+    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
   }
 
   if (settings.minSecondsToSubmit > 0) {
@@ -133,7 +117,7 @@ export async function POST(request: Request) {
 
   const user = await requireSessionUser(request);
   const providedFirstName = toFirstToken(parsed.data.firstName);
-  const sessionFirstName = toFirstToken(user?.name);
+  const sessionFirstName = !parsed.data.email || normalizeEmail(parsed.data.email) === user?.email ? toFirstToken(user?.name) : '';
   const contactFirstName = providedFirstName || sessionFirstName;
   const requestedEmail = normalizeEmail(parsed.data.email);
   const email = requestedEmail || user?.email || '';
@@ -157,128 +141,13 @@ export async function POST(request: Request) {
     );
   }
 
-  if (settings.blockSuppressedAddresses && (await isNewsletterSuppressedEmail(email))) {
-    return NextResponse.json(
-      {
-        error: 'This email address is currently suppressed from delivery. Please contact support if this is in error.'
-      },
-      { status: 409 }
-    );
-  }
-
-  let userId = user?.id || '';
-  let prior = null as Awaited<ReturnType<typeof getNewsletterPreferenceForUser>> | null;
-
-  if (userId) {
-    prior = await getNewsletterPreferenceForUser(userId);
-  } else {
-    const priorByEmail = await getNewsletterPreferenceByEmail(email);
-    prior = priorByEmail;
-    userId = clean(priorByEmail?.userId) || buildPublicUserId(email);
-  }
-
-  if (!userId) {
-    return NextResponse.json({ error: 'Unable to process this email.' }, { status: 500 });
-  }
-
-  const priorFirstName = clean(prior?.firstName);
-  const storedFirstName = contactFirstName || priorFirstName;
-  const source = parsed.data.source || 'public-subscribe';
-  const legalTextVersion = parsed.data.legalTextVersion || NEWSLETTER_GDPR_LEGAL_TEXT_VERSION;
-  const actorType = user ? 'user' : 'public';
-  const actorId = user?.id || userId;
-
-  if (prior?.status === 'subscribed') {
-    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
-  }
-
-  if (settings.requireDoubleOptIn) {
-    const token = createNewsletterConfirmToken({
-      email,
-      userId,
-      ttlSeconds: settings.pendingTokenTtlMinutes * 60
-    });
-    if (!token) {
-      return NextResponse.json({ error: 'Subscription confirmation is temporarily unavailable.' }, { status: 500 });
-    }
-
-    const preference = await setNewsletterConsentForUser({
-      userId,
-      email,
-      firstName: storedFirstName,
-      status: 'pending',
-      source,
-      legalTextVersion,
-      actorType,
-      actorId,
-      ip: getRequestIp(request.headers),
-      userAgent: request.headers.get('user-agent') || '',
-      reason: 'double-opt-in-requested'
-    });
-
-    const resendLimit = await checkDurableRateLimit({
-      id: 'api:newsletter:subscribe:confirm-email',
-      key: email,
-      limit: 1,
-      windowMs: settings.resendConfirmationCooldownMinutes * 60 * 1000
-    });
-
-    let confirmationEmailSent = false;
-    if (resendLimit.ok || prior?.status !== 'pending') {
-      confirmationEmailSent = true;
-      void sendNewsletterSubscriptionVerificationEmail({
-        email,
-        firstName: storedFirstName || undefined,
-        token,
-        expiresInHours: Math.max(1, Math.round(settings.pendingTokenTtlMinutes / 60))
-      }).catch((error) => {
-        console.error('[newsletter] verification send failed', error);
-      });
-    }
-
-    await trackServerConversion(request, {
-      conversionName: 'newsletter_subscribe_request',
-      metadata: {
-        source,
-        status: 'pending',
-        confirmationEmailSent
-      }
-    });
-
-    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
-  }
-
-  const preference = await setNewsletterConsentForUser({
-    userId,
-    email,
-    firstName: storedFirstName,
-    status: 'subscribed',
-    source,
-    legalTextVersion,
-    actorType,
-    actorId,
-    ip: getRequestIp(request.headers),
-    userAgent: request.headers.get('user-agent') || ''
+  const notificationKey = await requestNewsletterSubscription({
+    email, firstName: contactFirstName, userId: user?.email === email ? user.id : undefined,
+    source: parsed.data.source || "public-subscribe", legalTextVersion: parsed.data.legalTextVersion || NEWSLETTER_GDPR_LEGAL_TEXT_VERSION,
+    ip: getRequestIp(request.headers), userAgent: request.headers.get("user-agent") || "", doubleOptIn: settings.requireDoubleOptIn, blockSuppressed: settings.blockSuppressedAddresses,
+    ttlMinutes: settings.pendingTokenTtlMinutes, cooldownMinutes: settings.resendConfirmationCooldownMinutes
   });
-
-  const becameSubscribed = preference?.status === 'subscribed';
-  if (becameSubscribed) {
-    void sendNewsletterSubscribeConfirmationEmail({
-      email,
-      firstName: storedFirstName || undefined
-    }).catch((error) => {
-      console.error('[newsletter] subscribe confirmation send failed', error);
-    });
-
-    await trackServerConversion(request, {
-      conversionName: 'newsletter_subscribed',
-      metadata: {
-        source,
-        status: 'subscribed',
-        actorType
-      }
-    });
-  }
-
-  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
+  await trackServerConversion(request, { conversionName: "newsletter_subscribe_request", metadata: { source: parsed.data.source || "public-subscribe" } });
+  if (notificationKey) after(() => flushNotification(notificationKey));
+  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT, { headers: { "Cache-Control": "no-store" } });
 }

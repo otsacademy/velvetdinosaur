@@ -17,7 +17,7 @@ import {
   type EventRegistrationStatus
 } from '@/lib/event-registration/shared';
 
-type EventRegistrationDoc = {
+export type EventRegistrationDoc = {
   _id?: unknown;
   eventId?: string;
   eventSlug?: string;
@@ -123,7 +123,7 @@ export type EventRegistrationWorkspaceEvent = {
   totalCount: number;
 };
 
-function mapRegistration(doc: EventRegistrationDoc): EventRegistrationSummary {
+export function mapRegistration(doc: EventRegistrationDoc): EventRegistrationSummary {
   return {
     id: toIdString(doc._id),
     eventId: clean(doc.eventId),
@@ -207,126 +207,6 @@ export async function getEventRegistrationByEmail(eventId: string, email: string
     email: normalizeEmail(email)
   }).lean()) as EventRegistrationDoc | null;
   return row ? mapRegistration(row) : null;
-}
-
-export async function createOrUpdatePendingEventRegistration(input: {
-  eventId: string;
-  eventSlug: string;
-  eventTitle: string;
-  userId?: string | null;
-  email: string;
-  fullName: string;
-  source?: string;
-  legalTextVersion?: string;
-  actorType?: string;
-  actorId?: string;
-  ip?: string;
-  userAgent?: string;
-  reason?: string;
-}) {
-  await connectDB();
-  const eventId = clean(input.eventId);
-  const email = normalizeEmail(input.email);
-  const fullName = toFullName(input.fullName, email);
-  if (!eventId || !email || !fullName) return null;
-
-  const firstName = toFirstName(fullName, email);
-  const now = new Date();
-  const existing = (await EventRegistration.findOne({ eventId, email }, { status: 1, consentAt: 1 })
-    .lean()) as EventRegistrationDoc | null;
-  const priorStatus = normalizeEventRegistrationStatus(existing?.status);
-  const updated = (await EventRegistration.findOneAndUpdate(
-    { eventId, email },
-    {
-      $set: {
-        eventSlug: clean(input.eventSlug),
-        eventTitle: clean(input.eventTitle),
-        userId: clean(input.userId),
-        email,
-        fullName,
-        firstName,
-        status: 'pending',
-        source: clean(input.source),
-        legalTextVersion: clean(input.legalTextVersion) || 'v1',
-        lastUpdatedBy: {
-          actorType: clean(input.actorType) || 'system',
-          actorId: clean(input.actorId)
-        },
-        consentAt: existing?.consentAt ? toDateOrNull(existing.consentAt) : now,
-        confirmedAt: null
-      }
-    },
-    { upsert: true, new: true, setDefaultsOnInsert: true }
-  ).lean()) as EventRegistrationDoc | null;
-
-  if (!updated) return null;
-  const summary = mapRegistration(updated);
-  if (!existing || priorStatus !== 'pending') {
-    await writeEventRegistrationEvent({
-      registrationId: summary.id,
-      eventId: summary.eventId,
-      eventSlug: summary.eventSlug,
-      email: summary.email,
-      eventType: 'request',
-      source: input.source,
-      legalTextVersion: summary.legalTextVersion,
-      actorType: clean(input.actorType) || 'system',
-      actorId: clean(input.actorId),
-      ip: input.ip,
-      userAgent: input.userAgent,
-      reason: clean(input.reason) || 'registration-requested'
-    });
-  }
-  return summary;
-}
-
-export async function confirmEventRegistrationById(input: {
-  registrationId: string;
-  eventId?: string;
-  source?: string;
-  actorType?: string;
-  actorId?: string;
-  reason?: string;
-}) {
-  await connectDB();
-  const registrationId = clean(input.registrationId);
-  if (!registrationId) return null;
-
-  const existing = (await EventRegistration.findById(registrationId).lean()) as EventRegistrationDoc | null;
-  if (!existing) return null;
-  const priorStatus = normalizeEventRegistrationStatus(existing.status);
-  const updated = (await EventRegistration.findOneAndUpdate(
-    { _id: registrationId },
-    {
-      $set: {
-        status: 'confirmed',
-        confirmedAt: priorStatus === 'confirmed' ? toDateOrNull(existing.confirmedAt) : new Date(),
-        lastUpdatedBy: {
-          actorType: clean(input.actorType) || 'system',
-          actorId: clean(input.actorId)
-        }
-      }
-    },
-    { new: true }
-  ).lean()) as EventRegistrationDoc | null;
-
-  if (!updated) return null;
-  const summary = mapRegistration(updated);
-  if (priorStatus !== 'confirmed') {
-    await writeEventRegistrationEvent({
-      registrationId: summary.id,
-      eventId: summary.eventId,
-      eventSlug: summary.eventSlug,
-      email: summary.email,
-      eventType: 'confirm',
-      source: input.source,
-      legalTextVersion: summary.legalTextVersion,
-      actorType: clean(input.actorType) || 'system',
-      actorId: clean(input.actorId),
-      reason: clean(input.reason) || 'registration-confirmed'
-    });
-  }
-  return summary;
 }
 
 export async function listEventRegistrations(options?: {

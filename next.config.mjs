@@ -67,7 +67,13 @@ const nextConfig = {
       { key: 'Expires', value: '0' },
       { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }
     ];
+    // Pages and endpoints that carry a signed email-link token.
+    const privateLink = [...noStore, { key: 'Referrer-Policy', value: 'no-referrer' }];
     return [
+      { source: '/newsletter/unsubscribe', headers: privateLink },
+      { source: '/api/newsletter/unsubscribe/:path*', headers: privateLink },
+      { source: '/newsletter/confirm', headers: privateLink },
+      { source: '/events/registration/confirm', headers: privateLink },
       { source: '/edit', headers: noStore },
       { source: '/edit/:path*', headers: noStore },
       { source: '/admin', headers: noStore },

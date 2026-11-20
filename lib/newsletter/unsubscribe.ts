@@ -1,9 +1,8 @@
 import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/newsletter/unsubscribe.ts');
 
-import { sendNewsletterUnsubscribeConfirmationEmail } from '@/lib/email/newsletter-lifecycle';
+import { flushNotification } from '@/lib/email/notification-outbox';
 import {
-  getNewsletterPreferenceByEmail,
   unsubscribeNewsletterByEmail
 } from '@/lib/newsletter/consent';
 import { clean } from '@/lib/newsletter/shared';
@@ -23,7 +22,7 @@ export type NewsletterUnsubscribeResult =
 
 export async function unsubscribeNewsletterWithToken(
   rawToken: string,
-  options?: { source?: string; actorType?: string; actorId?: string; reason?: string }
+  options?: { source?: string; actorType?: string; actorId?: string; reason?: string; ip?: string; userAgent?: string }
 ): Promise<NewsletterUnsubscribeResult> {
   const validated = validateNewsletterUnsubscribeToken(rawToken);
   if (!validated.ok) {
@@ -46,17 +45,13 @@ export async function unsubscribeNewsletterWithToken(
     source,
     actorType,
     actorId,
-    reason
+    reason,
+    ip: options?.ip,
+    userAgent: options?.userAgent
   });
 
   if (result.updated > 0) {
-    const latestPreference = await getNewsletterPreferenceByEmail(validated.email);
-    void sendNewsletterUnsubscribeConfirmationEmail({
-      email: validated.email,
-      firstName: latestPreference?.firstName || ''
-    }).catch((error) => {
-      console.error('[newsletter] unsubscribe confirmation send failed', error);
-    });
+    if ('notificationKey' in result && result.notificationKey) await flushNotification(result.notificationKey);
   }
 
   return {

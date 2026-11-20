@@ -3,12 +3,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getAuth } from '@/lib/auth';
 import {
-  sendNewsletterSubscribeConfirmationEmail,
-  sendNewsletterUnsubscribeConfirmationEmail
-} from '@/lib/email/newsletter-lifecycle';
-import {
   ensureNewsletterPreferenceForUser,
-  getNewsletterPreferenceForUser,
   setNewsletterConsentForUser
 } from '@/lib/newsletter/consent';
 import { clean } from '@/lib/newsletter/shared';
@@ -62,7 +57,6 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
   }
 
-  const prior = await getNewsletterPreferenceForUser(user.id);
   const preference = await setNewsletterConsentForUser({
     userId: user.id,
     email: user.email,
@@ -73,29 +67,9 @@ export async function PATCH(request: Request) {
     actorType: 'user',
     actorId: user.id,
     ip: getRequestIp(request.headers),
+    notify: true,
     userAgent: request.headers.get('user-agent') || ''
   });
-
-  const becameSubscribed = prior?.status !== 'subscribed' && preference?.status === 'subscribed';
-  const becameUnsubscribed = prior?.status !== 'unsubscribed' && preference?.status === 'unsubscribed';
-
-  if (becameSubscribed) {
-    void sendNewsletterSubscribeConfirmationEmail({
-      email: user.email,
-      firstName: user.name
-    }).catch((error) => {
-      console.error('[newsletter] subscribe confirmation send failed', error);
-    });
-  }
-
-  if (becameUnsubscribed) {
-    void sendNewsletterUnsubscribeConfirmationEmail({
-      email: user.email,
-      firstName: user.name
-    }).catch((error) => {
-      console.error('[newsletter] unsubscribe confirmation send failed', error);
-    });
-  }
 
   return NextResponse.json({ preference });
 }

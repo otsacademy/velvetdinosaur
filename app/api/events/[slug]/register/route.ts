@@ -1,16 +1,12 @@
+import { after } from 'next/server';
+import { flushNotification } from '@/lib/email/notification-outbox';
 import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { SIGNUP_ACKNOWLEDGEMENT } from '@/lib/email/public-acknowledgement';
 import { z } from 'zod';
 import { getAuth } from '@/lib/auth';
 import { EVENT_REGISTRATION_GDPR_LEGAL_TEXT_VERSION } from '@/lib/content/event-registration-gdpr';
-import { sendEventRegistrationVerificationEmail } from '@/lib/email/event-registration-lifecycle';
-import { createEventRegistrationConfirmToken } from '@/lib/event-registration/confirm-token';
-import {
-  getEventRegistrationByEmail,
-  createOrUpdatePendingEventRegistration,
-  writeEventRegistrationEvent
-} from '@/lib/event-registration/registrations';
+import { requestEventRegistration } from '@/lib/event-registration/signup-request';
 import { clean, normalizeEmail, toFullName } from '@/lib/event-registration/shared';
 import { getNewsletterSettings } from '@/lib/newsletter/settings';
 import { verifyNewsletterCaptcha } from '@/lib/newsletter/captcha';
@@ -104,7 +100,7 @@ export async function POST(request: Request, { params }: RouteProps) {
   }
 
   if (settings.enableHoneypot && clean(parsed.data.honeypot)) {
-    return NextResponse.json({ ok: true, ignored: true });
+    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
   }
 
   if (settings.minSecondsToSubmit > 0) {
@@ -134,7 +130,7 @@ export async function POST(request: Request, { params }: RouteProps) {
 
   const user = await requireSessionUser(request);
   const email = normalizeEmail(parsed.data.email) || user?.email || '';
-  const fullName = toFullName(parsed.data.fullName || user?.name, email);
+  const fullName = toFullName(parsed.data.fullName || (user?.email === email ? user.name : undefined), email);
   if (!email || !fullName) {
     return NextResponse.json({ error: 'Full name and email are required.' }, { status: 400 });
   }
@@ -155,82 +151,13 @@ export async function POST(request: Request, { params }: RouteProps) {
     );
   }
 
-  const prior = await getEventRegistrationByEmail(event.id, email);
-  if (prior?.status === 'confirmed') {
-    return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
-  }
-
-  const source = parsed.data.source || 'public-event-registration';
-  const legalTextVersion = parsed.data.legalTextVersion || EVENT_REGISTRATION_GDPR_LEGAL_TEXT_VERSION;
-  const actorType = user ? 'user' : 'public';
-  const actorId = user?.id || email;
-  const registration = await createOrUpdatePendingEventRegistration({
-    eventId: event.id,
-    eventSlug: event.slug,
-    eventTitle: event.title,
-    userId: user?.id || '',
-    email,
-    fullName,
-    source,
-    legalTextVersion,
-    actorType,
-    actorId,
-    ip: getRequestIp(request.headers),
-    userAgent: request.headers.get('user-agent') || '',
-    reason: 'registration-requested'
+  const notificationKey = await requestEventRegistration({
+    eventId: event.id, eventSlug: event.slug, eventTitle: event.title,
+    eventDateLabel: [event.date, event.startTime, event.endTime].filter(Boolean).join(" "), eventLocation: [event.venue, event.location].filter(Boolean).join(" "),
+    email, fullName, userId: user?.email === email ? user.id : undefined, source: parsed.data.source || "public-event-registration",
+    legalTextVersion: parsed.data.legalTextVersion || EVENT_REGISTRATION_GDPR_LEGAL_TEXT_VERSION, ip: getRequestIp(request.headers), userAgent: request.headers.get("user-agent") || "",
+    ttlMinutes: settings.pendingTokenTtlMinutes, cooldownMinutes: settings.resendConfirmationCooldownMinutes
   });
-
-  if (!registration) {
-    return NextResponse.json({ error: 'Unable to save registration' }, { status: 500 });
-  }
-
-  const token = createEventRegistrationConfirmToken({
-    email,
-    eventId: event.id,
-    registrationId: registration.id,
-    ttlSeconds: settings.pendingTokenTtlMinutes * 60
-  });
-  if (!token) {
-    return NextResponse.json({ error: 'Registration confirmation is temporarily unavailable.' }, { status: 500 });
-  }
-
-  const resendLimit = await checkDurableRateLimit({
-    id: 'api:event-registration:confirm-email',
-    key: `${event.id}:${email}`,
-    limit: 1,
-    windowMs: settings.resendConfirmationCooldownMinutes * 60 * 1000
-  });
-
-  if (resendLimit.ok || prior?.status !== 'pending') {
-    if (prior?.status === 'pending') {
-      await writeEventRegistrationEvent({
-        registrationId: registration.id,
-        eventId: registration.eventId,
-        eventSlug: registration.eventSlug,
-        email: registration.email,
-        eventType: 'resend-confirmation',
-        source,
-        legalTextVersion,
-        actorType,
-        actorId,
-        ip: getRequestIp(request.headers),
-        userAgent: request.headers.get('user-agent') || '',
-        reason: 'resent-confirmation-link'
-      });
-    }
-    void sendEventRegistrationVerificationEmail({
-      email,
-      firstName: registration.firstName || registration.fullName,
-      eventTitle: event.title,
-      eventSlug: event.slug,
-      eventDateLabel: `${event.date} ${event.startTime} - ${event.endTime}`.trim(),
-      eventLocation: `${event.venue} ${event.location}`.trim(),
-      token,
-      expiresInHours: Math.max(1, Math.round(settings.pendingTokenTtlMinutes / 60))
-    }).catch((error) => {
-      console.error('[event-registration] verification send failed', error);
-    });
-  }
-
-  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT);
+  if (notificationKey) after(() => flushNotification(notificationKey));
+  return NextResponse.json(SIGNUP_ACKNOWLEDGEMENT, { headers: { "Cache-Control": "no-store" } });
 }

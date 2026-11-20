@@ -1,54 +1,45 @@
-import { unstable_noStore } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { unsubscribeNewsletterWithToken } from '@/lib/newsletter/unsubscribe';
+import { getRequestIp } from '@/lib/security/rate-limit';
 
-function tokenFromUrl(url: URL) {
-  return (url.searchParams.get('token') || '').trim();
-}
+const headers = { 'Cache-Control': 'private, no-store', 'Referrer-Policy': 'no-referrer', 'X-Robots-Tag': 'noindex, nofollow' };
 
-async function tokenFromBody(request: Request) {
-  const contentType = (request.headers.get('content-type') || '').toLowerCase();
-
-  if (contentType.includes('application/json')) {
-    const body = (await request.json().catch(() => ({}))) as { token?: string };
-    return (body?.token || '').trim();
-  }
-
-  if (contentType.includes('application/x-www-form-urlencoded')) {
-    const text = await request.text().catch(() => '');
-    const params = new URLSearchParams(text);
-    return (params.get('token') || '').trim();
-  }
-
-  return '';
-}
-
-async function handleRequest(request: Request) {
-  unstable_noStore();
+// Link scanners and people opening the header URL must never change preferences.
+export function GET(request: Request) {
   const url = new URL(request.url);
-  const queryToken = tokenFromUrl(url);
-  const bodyToken = queryToken ? '' : await tokenFromBody(request);
-  const token = queryToken || bodyToken;
-  if (!token) {
-    return NextResponse.json({ error: 'Invalid token' }, { status: 400 });
-  }
-
-  const result = await unsubscribeNewsletterWithToken(token, {
-    source: 'newsletter-one-click-unsubscribe',
-    actorType: 'one-click'
-  });
-  if (!result.ok) {
-    const status = result.error === 'misconfigured' ? 500 : 400;
-    return NextResponse.json({ error: result.error }, { status });
-  }
-
-  return NextResponse.json({ ok: true, email: result.email, updated: result.updated });
+  const destination = new URL('/newsletter/unsubscribe', url.origin);
+  const token = url.searchParams.get('token');
+  if (token) destination.searchParams.set('token', token);
+  // A relative Location preserves the public host behind nginx/Next's proxy.
+  return new NextResponse(null, { status: 303, headers: { ...headers, Location: destination.pathname + destination.search } });
 }
 
-export async function GET(request: Request) {
-  return handleRequest(request);
+export function HEAD(request: Request) {
+  return GET(request);
 }
 
 export async function POST(request: Request) {
-  return handleRequest(request);
+  const contentType = (request.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+  if (!['application/x-www-form-urlencoded', 'multipart/form-data'].includes(contentType)) {
+    return NextResponse.json({ error: 'Expected a one-click form submission' }, { status: 400, headers });
+  }
+  const form = await request.formData().catch(() => null);
+  // RFC 8058 requires this explicit marker; an empty POST is not consent.
+  if (form?.get('List-Unsubscribe') !== 'One-Click') {
+    return NextResponse.json({ error: 'Invalid one-click request' }, { status: 400, headers });
+  }
+  const token = new URL(request.url).searchParams.get('token') || '';
+  try {
+    const result = await unsubscribeNewsletterWithToken(token, {
+      source: 'newsletter-one-click-unsubscribe', actorType: 'one-click',
+      ip: getRequestIp(request.headers), userAgent: request.headers.get('user-agent') || ''
+    });
+    if (!result.ok) {
+      return NextResponse.json({ error: result.error }, { status: result.error === 'misconfigured' ? 503 : 400, headers });
+    }
+    return NextResponse.json({ ok: true, updated: result.updated }, { headers });
+  } catch {
+    console.error('[newsletter] one-click unsubscribe failed');
+    return NextResponse.json({ error: 'Unsubscribe temporarily unavailable' }, { status: 503, headers });
+  }
 }

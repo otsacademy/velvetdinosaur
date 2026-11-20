@@ -49,7 +49,7 @@ export async function sendEventRegistrationVerificationEmail(input: {
   expiresInHours: number;
 }) {
   const recipientEmail = normalizeNonEmpty(input.email).toLowerCase();
-  if (!recipientEmail.includes('@')) return;
+  if (!recipientEmail.includes('@')) throw new Error('Invalid recipient');
 
   const siteName = resolveSiteName();
   const appUrl = resolveDefaultAppUrl();
@@ -57,7 +57,7 @@ export async function sendEventRegistrationVerificationEmail(input: {
   const firstName = resolveFirstName(input.firstName);
   const fallbackFirstName = firstName || 'there';
   const confirmUrl = buildConfirmUrl(appUrl, input.token);
-  if (!confirmUrl) return;
+  if (!confirmUrl) throw new Error('Missing confirmation URL');
   const subject = `Please confirm your registration for ${normalizeNonEmpty(input.eventTitle) || siteName}`;
 
   const htmlBody = await render(
@@ -107,7 +107,7 @@ export async function sendEventRegistrationVerificationEmail(input: {
     fallbackText: textBody
   });
 
-  await sendPostmarkEmail({
+  return sendPostmarkEmail({
     to: recipientEmail,
     subject,
     htmlBody: resolvedTemplate.html,
@@ -129,7 +129,7 @@ export async function sendEventRegistrationConfirmationEmail(input: {
   eventLocation: string;
 }) {
   const recipientEmail = normalizeNonEmpty(input.email).toLowerCase();
-  if (!recipientEmail.includes('@')) return;
+  if (!recipientEmail.includes('@')) throw new Error('Invalid recipient');
 
   const siteName = resolveSiteName();
   const appUrl = resolveDefaultAppUrl();
@@ -187,7 +187,7 @@ export async function sendEventRegistrationConfirmationEmail(input: {
     fallbackText: textBody
   });
 
-  await sendPostmarkEmail({
+  return sendPostmarkEmail({
     to: recipientEmail,
     subject,
     htmlBody: resolvedTemplate.html,

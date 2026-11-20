@@ -2,9 +2,12 @@ import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/newsletter/consent.ts');
 
 import crypto from 'node:crypto';
+import type { ClientSession } from 'mongoose';
+import { requireNewsletterDatabase } from './database';
 import { connectDB } from '@/lib/db';
 import { NewsletterConsentEvent } from '@/models/NewsletterConsentEvent';
 import { NewsletterPreference } from '@/models/NewsletterPreference';
+import { enqueueNotification, flushNotification } from '@/lib/email/notification-outbox';
 import { clean, normalizeEmail, toFirstName, toIdString, type NewsletterStatus } from '@/lib/newsletter/shared';
 
 type RegisteredUserRow = {
@@ -13,7 +16,7 @@ type RegisteredUserRow = {
   name?: string | null;
 };
 
-type PreferenceDoc = {
+export type PreferenceDoc = {
   _id?: unknown;
   userId?: string;
   email?: string;
@@ -92,7 +95,7 @@ export type NewsletterConsentEventSummary = {
   updatedAt: string | null;
 };
 
-function mapPreference(doc: PreferenceDoc): NewsletterPreferenceSummary {
+export function mapPreference(doc: PreferenceDoc): NewsletterPreferenceSummary {
   return {
     id: toIdString(doc._id),
     userId: clean(doc.userId),
@@ -210,7 +213,7 @@ export async function ensureNewsletterPreferencesForRegisteredUsers(limit = 3000
   return { synced: inserts.length };
 }
 
-async function writeConsentEvent(input: {
+export async function writeConsentEvent(input: {
   userId: string;
   email: string;
   eventType: 'subscribe' | 'unsubscribe' | 'resubscribe' | 'set-not-consented' | 'set-pending';
@@ -221,8 +224,8 @@ async function writeConsentEvent(input: {
   ip?: string;
   userAgent?: string;
   reason?: string;
-}) {
-  await NewsletterConsentEvent.create({
+}, session?: ClientSession) {
+  await NewsletterConsentEvent.create([{
     userId: clean(input.userId),
     email: normalizeEmail(input.email),
     eventType: input.eventType,
@@ -233,7 +236,7 @@ async function writeConsentEvent(input: {
     ipHash: hashIp(input.ip || ''),
     userAgent: clean(input.userAgent),
     reason: clean(input.reason)
-  });
+  }], { session });
 }
 
 export async function setNewsletterConsentForUser(input: {
@@ -248,73 +251,46 @@ export async function setNewsletterConsentForUser(input: {
   ip?: string;
   userAgent?: string;
   reason?: string;
+  notify?: boolean;
 }) {
-  await connectDB();
-  const userId = clean(input.userId);
-  const email = normalizeEmail(input.email);
+  const connection = await requireNewsletterDatabase();
+  const userId = clean(input.userId); const email = normalizeEmail(input.email);
   if (!userId || !email) return null;
-  const firstName = clean(input.firstName) || toFirstName('', email);
-  const status = normalizeStatus(input.status);
-  const now = new Date();
-  const existing = (await NewsletterPreference.findOne({ userId }, { status: 1 }).lean()) as
-    | { status?: NewsletterStatus }
-    | null;
-  const prior = normalizeStatus(existing?.status);
-  const source = clean(input.source);
-  const legalTextVersion = clean(input.legalTextVersion) || 'v1';
-  const actorType = clean(input.actorType) || 'system';
-  const actorId = clean(input.actorId);
-  const updated = (await NewsletterPreference.findOneAndUpdate(
-    { userId },
-    {
-      $set: {
-        email,
-        firstName,
-        status,
-        source,
-        legalTextVersion,
-        lastUpdatedBy: {
-          actorType,
-          actorId
-        },
-        consentAt: status === 'subscribed' ? now : null,
-        unsubscribedAt: status === 'unsubscribed' ? now : null
+  const session = await connection.startSession();
+  const key = 'newsletter-consent:' + crypto.randomUUID();
+  let queued = false;
+  try {
+    const result = await session.withTransaction(async () => {
+      queued = false;
+      const prior = await NewsletterPreference.findOne({ userId }).session(session).lean() as PreferenceDoc | null;
+      const status = normalizeStatus(input.status);
+      const now = new Date();
+      const actorType = clean(input.actorType) || 'system';
+      const actorId = clean(input.actorId);
+      const changed = prior?.status !== status;
+      const updated = await NewsletterPreference.findOneAndUpdate({ userId }, { $set: {
+        email, firstName: clean(input.firstName) || toFirstName('', email), status,
+        source: clean(input.source), legalTextVersion: clean(input.legalTextVersion) || 'v1',
+        lastUpdatedBy: { actorType, actorId },
+        consentAt: status === 'subscribed' ? (changed ? now : prior?.consentAt) : null,
+        unsubscribedAt: status === 'unsubscribed' ? (changed ? now : prior?.unsubscribedAt) : null
+      } }, { new: true, upsert: true, session }).lean() as PreferenceDoc | null;
+      if (!updated) return null;
+      if (changed) {
+        await writeConsentEvent({ ...input, userId, email, actorType, actorId,
+          eventType: status === 'subscribed' ? (prior?.status === 'unsubscribed' ? 'resubscribe' : 'subscribe')
+            : status === 'pending' ? 'set-pending' : status === 'unsubscribed' ? 'unsubscribe' : 'set-not-consented'
+        }, session);
+        if (input.notify && (status === 'subscribed' || status === 'unsubscribed')) {
+          await enqueueNotification({ key, kind: status === 'subscribed' ? 'newsletter-confirmed' : 'newsletter-unsubscribed', payload: { email, firstName: updated.firstName } }, session);
+          queued = true;
+        }
       }
-    },
-    { upsert: true, new: true }
-  ).lean()) as PreferenceDoc | null;
-
-  const changed = prior !== status;
-  if (!changed) {
-    return updated ? mapPreference(updated) : null;
-  }
-  const eventType =
-    status === 'subscribed'
-      ? prior === 'subscribed'
-        ? 'subscribe'
-        : prior === 'unsubscribed'
-          ? 'resubscribe'
-          : 'subscribe'
-      : status === 'unsubscribed'
-        ? 'unsubscribe'
-        : status === 'pending'
-          ? 'set-pending'
-          : 'set-not-consented';
-
-  await writeConsentEvent({
-    userId,
-    email,
-    eventType,
-    source,
-    legalTextVersion,
-    actorType,
-    actorId,
-    ip: input.ip,
-    userAgent: input.userAgent,
-    reason: input.reason
-  });
-
-  return updated ? mapPreference(updated) : null;
+      return mapPreference(updated);
+    });
+    if (queued) await flushNotification(key);
+    return result;
+  } finally { await session.endSession(); }
 }
 
 export async function unsubscribeNewsletterByEmail(input: {
@@ -323,51 +299,42 @@ export async function unsubscribeNewsletterByEmail(input: {
   actorType?: string;
   actorId?: string;
   reason?: string;
+  ip?: string;
+  userAgent?: string;
 }) {
-  await connectDB();
+  const connection = await requireNewsletterDatabase();
   const email = normalizeEmail(input.email);
   if (!email) return { updated: 0 };
-  const rows = (await NewsletterPreference.find({ email }).lean()) as PreferenceDoc[];
-  if (!rows.length) return { updated: 0 };
-  const rowsToUpdate = rows.filter((row) => normalizeStatus(row.status) !== 'unsubscribed');
-  if (!rowsToUpdate.length) return { updated: 0 };
-
-  const now = new Date();
-  const bulkOps = rowsToUpdate.map((row) => ({
-    updateOne: {
-      filter: { userId: clean(row.userId) },
-      update: {
-        $set: {
-          status: 'unsubscribed',
-          unsubscribedAt: now,
-          source: clean(input.source) || 'email-unsubscribe',
-          lastUpdatedBy: {
-            actorType: clean(input.actorType) || 'token',
-            actorId: clean(input.actorId)
-          }
-        }
+  const session = await connection.startSession();
+  const notificationKey = `newsletter-unsubscribed:${crypto.randomUUID()}`;
+  try {
+    // One transaction covers all accounts sharing an address and their audit events.
+    // Concurrent requests retry against the committed state and cannot send twice.
+    return await session.withTransaction(async () => {
+      const rows = await NewsletterPreference.find({ email, status: { $ne: 'unsubscribed' } })
+        .session(session).lean() as PreferenceDoc[];
+      if (!rows.length) return { updated: 0 };
+      const source = clean(input.source) || 'email-unsubscribe';
+      const actorType = clean(input.actorType) || 'token';
+      const actorId = clean(input.actorId);
+      await NewsletterPreference.updateMany(
+        { _id: { $in: rows.map((row) => row._id) } },
+        { $set: { status: 'unsubscribed', unsubscribedAt: new Date(), source, lastUpdatedBy: { actorType, actorId } } },
+        { session }
+      );
+      for (const row of rows) {
+        await writeConsentEvent({
+          userId: clean(row.userId), email, eventType: 'unsubscribe', source,
+          legalTextVersion: row.legalTextVersion, actorType, actorId,
+          reason: input.reason, ip: input.ip, userAgent: input.userAgent
+        }, session);
       }
-    }
-  }));
-  if (bulkOps.length) {
-    await NewsletterPreference.bulkWrite(bulkOps, { ordered: false });
+      await enqueueNotification({ key: notificationKey, kind: 'newsletter-unsubscribed', payload: { email, firstName: clean(rows[0].firstName) } }, session);
+      return { updated: rows.length, notificationKey };
+    });
+  } finally {
+    await session.endSession();
   }
-
-  await Promise.all(
-    rowsToUpdate.map((row) =>
-      writeConsentEvent({
-        userId: clean(row.userId),
-        email,
-        eventType: 'unsubscribe',
-        source: clean(input.source) || 'email-unsubscribe',
-        actorType: clean(input.actorType) || 'token',
-        actorId: clean(input.actorId),
-        reason: input.reason
-      })
-    )
-  );
-
-  return { updated: bulkOps.length };
 }
 
 export async function getNewsletterPreferenceForUser(userId: string) {

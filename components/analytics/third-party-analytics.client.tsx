@@ -22,6 +22,8 @@ const LINKEDIN_PARTNER_ID = (process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || '').
 
 export function ThirdPartyAnalytics() {
   const pathname = usePathname();
+  // Pages opened from emailed links carry a signed token in the address: no third-party scripts there.
+  const disabled = ['/newsletter/unsubscribe', '/newsletter/confirm', '/events/registration/confirm'].includes(pathname);
   const searchParams = useSearchParams();
   const [shouldLoadThirdParties, setShouldLoadThirdParties] = useState(false);
 
@@ -49,6 +51,7 @@ export function ThirdPartyAnalytics() {
   }, []);
 
   useEffect(() => {
+    if (disabled) return;
     if (process.env.NEXT_PUBLIC_LHCI === 'true') return;
     if (typeof window === 'undefined') return;
     if (!shouldLoadThirdParties) return;
@@ -67,9 +70,9 @@ export function ThirdPartyAnalytics() {
     if (META_PIXEL_ID && typeof window.fbq === 'function') {
       window.fbq('track', 'PageView');
     }
-  }, [pathname, searchParams, shouldLoadThirdParties]);
+  }, [disabled, pathname, searchParams, shouldLoadThirdParties]);
 
-  if (!shouldLoadThirdParties) return null;
+  if (disabled || !shouldLoadThirdParties) return null;
 
   return (
     <>

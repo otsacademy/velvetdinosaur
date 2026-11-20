@@ -85,6 +85,7 @@ function ensureCookieId(name: string, ttlSeconds: number) {
 }
 
 function shouldTrack(pathname: string) {
+  if (['/newsletter/unsubscribe', '/newsletter/confirm', '/events/registration/confirm'].includes(pathname)) return false;
   return !EXCLUDED_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }
 

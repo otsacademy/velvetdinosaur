@@ -5,7 +5,8 @@ import { unsubscribeNewsletterWithToken } from '@/lib/newsletter/unsubscribe';
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 
 const PayloadSchema = z.object({
-  token: z.string().trim().min(1)
+  token: z.string().trim().min(1).max(4096),
+  confirmed: z.literal(true)
 });
 
 export async function POST(request: Request) {
@@ -30,16 +31,22 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
   const parsed = PayloadSchema.safeParse(body);
   if (!parsed.success) {
-    return NextResponse.json({ error: 'Invalid token' }, { status: 400 });
+    return NextResponse.json({ error: 'Invalid confirmation request' }, { status: 400 });
   }
 
-  const result = await unsubscribeNewsletterWithToken(parsed.data.token, {
-    source: 'newsletter-unsubscribe-api'
-  });
-  if (!result.ok) {
-    const status = result.error === 'misconfigured' ? 500 : 400;
-    return NextResponse.json({ error: result.error }, { status });
+  try {
+    const result = await unsubscribeNewsletterWithToken(parsed.data.token, {
+      source: 'newsletter-unsubscribe-confirmation',
+      ip: getRequestIp(request.headers),
+      userAgent: request.headers.get('user-agent') || ''
+    });
+    if (!result.ok) {
+      const status = result.error === 'misconfigured' ? 503 : 400;
+      return NextResponse.json({ error: result.error }, { status });
+    }
+    return NextResponse.json({ ok: true, updated: result.updated });
+  } catch {
+    console.error('[newsletter] unsubscribe confirmation failed');
+    return NextResponse.json({ error: 'Unsubscribe temporarily unavailable' }, { status: 503 });
   }
-
-  return NextResponse.json({ ok: true, email: result.email, updated: result.updated });
 }

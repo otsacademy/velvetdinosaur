@@ -5,7 +5,8 @@ import { confirmEventRegistrationWithToken } from '@/lib/event-registration/conf
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 
 const PayloadSchema = z.object({
-  token: z.string().trim().min(1)
+  token: z.string().trim().min(1).max(4096),
+  confirmed: z.literal(true)
 });
 
 export async function POST(request: Request) {

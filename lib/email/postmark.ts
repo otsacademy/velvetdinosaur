@@ -31,7 +31,7 @@ export function formatFromAddress(from: string, fromName?: string) {
   return `${name} <${email}>`;
 }
 
-export async function sendPostmarkEmail(input: {
+export type PostmarkEmailInput = {
   to: string;
   subject: string;
   htmlBody: string;
@@ -41,52 +41,37 @@ export async function sendPostmarkEmail(input: {
   tag?: string;
   metadata?: Record<string, string>;
   headers?: PostmarkHeader[];
-}) {
+};
+
+export type PostmarkSendResult = { ok: boolean; messageId: string; error: string; ambiguous?: boolean; retryable?: boolean };
+
+export async function sendPostmarkEmail(input: PostmarkEmailInput): Promise<PostmarkSendResult> {
   const { token, from } = getPostmarkConfig();
-  if (!token || !from) {
-    console.warn('[postmark] missing POSTMARK_SERVER_TOKEN or POSTMARK_FROM_EMAIL; logging instead');
-    console.info({
-      to: input.to,
-      subject: input.subject,
-      htmlBody: input.htmlBody,
-      textBody: input.textBody,
-      tag: input.tag,
-      metadata: input.metadata,
-      headers: input.headers
+  if (!token || !from || from.endsWith('@example.com')) {
+    return { ok: false, messageId: '', error: 'Email transport is not configured.', retryable: true };
+  }
+  try {
+    const response = await fetch(POSTMARK_API, {
+      method: 'POST', signal: AbortSignal.timeout(15_000),
+      headers: { 'Content-Type': 'application/json', 'X-Postmark-Server-Token': token },
+      body: JSON.stringify({
+        From: formatFromAddress(from, input.fromName), To: input.to, Subject: input.subject,
+        HtmlBody: input.htmlBody, TextBody: input.textBody, MessageStream: 'outbound',
+        ...(input.replyTo ? { ReplyTo: input.replyTo } : {}), ...(input.tag ? { Tag: input.tag } : {}),
+        ...(input.metadata ? { Metadata: input.metadata } : {}), ...(input.headers?.length ? { Headers: input.headers } : {})
+      })
     });
-    return { ok: true, messageId: '' };
+    if (!response.ok) return {
+      ok: false, messageId: '', error: `Postmark returned HTTP ${response.status}.`,
+      ambiguous: response.status >= 500, retryable: response.status === 429
+    };
+    const payload = await response.json() as { MessageID?: string; ErrorCode?: number };
+    if (payload.ErrorCode !== 0 || !payload.MessageID?.trim()) {
+      return { ok: false, messageId: '', error: 'Postmark did not acknowledge the message.', ambiguous: true };
+    }
+    return { ok: true, messageId: payload.MessageID.trim(), error: '' };
+  } catch {
+    // A timeout cannot tell us whether Postmark accepted the message.
+    return { ok: false, messageId: '', error: 'Delivery outcome is uncertain; check Postmark activity.', ambiguous: true };
   }
-
-  const response = await fetch(POSTMARK_API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Postmark-Server-Token': token
-    },
-    body: JSON.stringify({
-      From: formatFromAddress(from, input.fromName),
-      To: input.to,
-      Subject: input.subject,
-      HtmlBody: input.htmlBody,
-      TextBody: input.textBody,
-      MessageStream: 'outbound',
-      ...(input.replyTo ? { ReplyTo: input.replyTo } : {}),
-      ...(input.tag ? { Tag: input.tag } : {}),
-      ...(input.metadata ? { Metadata: input.metadata } : {}),
-      ...(input.headers?.length ? { Headers: input.headers } : {})
-    })
-  });
-
-  if (!response.ok) {
-    const body = await response.text().catch(() => '');
-    console.error('[postmark] send failed', response.status, body);
-    return { ok: false, messageId: '', error: body || `postmark-${response.status}` };
-  }
-
-  const payload = (await response.json().catch(() => ({}))) as { MessageID?: string };
-  return {
-    ok: true,
-    messageId: typeof payload.MessageID === 'string' ? payload.MessageID.trim() : '',
-    error: ''
-  };
 }

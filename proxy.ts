@@ -1,8 +1,22 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { enforceSameOriginForPublicForm } from '@/lib/csrf-protection';
 import { isBlockedPath } from '@/lib/security-paths';
 
-const NOINDEX_PREFIXES = ['/admin', '/edit', '/preview'];
+const NOINDEX_PREFIXES = [
+  '/admin', '/edit', '/preview',
+  '/newsletter/unsubscribe', '/api/newsletter/unsubscribe',
+  '/newsletter/confirm', '/events/registration/confirm', '/api/newsletter/confirm', '/api/events/registration/confirm'
+];
+// Same-origin only, with or without cookies (see enforceSameOriginForPublicForm).
+// The one-click unsubscribe endpoint stays open to mailbox providers (RFC 8058).
+const PUBLIC_FORM_PREFIXES = [
+  '/api/newsletter/subscribe', '/api/newsletter/consent',
+  '/api/newsletter/confirm', '/api/events/registration/confirm'
+];
+// Pages and endpoints that carry a signed email-link token: never cached,
+// never indexed, and never sent on as a referrer.
+const PRIVATE_EMAIL_LINK_PATH = /^\/(?:api\/)?(?:newsletter\/(?:unsubscribe|confirm)|events\/registration\/confirm)(?:\/|$)/;
 const DEMO_HOST_LOCKED_PREFIXES = ['/admin', '/edit', '/preview', '/sign-in', '/sign-up'];
 const DEMO_HOST_REWRITES = new Map<string, string>([
   ['/', '/demo'],
@@ -20,6 +34,20 @@ function shouldNoIndex(pathname: string) {
   return NOINDEX_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
   );
+}
+
+function shouldEnforcePublicFormOrigin(pathname: string) {
+  if (pathname === '/api/newsletter/unsubscribe') return true;
+  return PUBLIC_FORM_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+}
+
+function withPrivateLinkHeaders(response: NextResponse, pathname: string) {
+  if (PRIVATE_EMAIL_LINK_PATH.test(pathname)) {
+    response.headers.set('Cache-Control', 'private, no-store');
+    response.headers.set('Referrer-Policy', 'no-referrer');
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
+  }
+  return response;
 }
 
 function getNfcRedirectPath(pathname: string) {
@@ -98,11 +126,16 @@ export function proxy(request: NextRequest) {
     return new NextResponse(null, { status: 404 });
   }
 
+  if (shouldEnforcePublicFormOrigin(pathname)) {
+    const originBlock = enforceSameOriginForPublicForm(request);
+    if (originBlock) return withPrivateLinkHeaders(originBlock, pathname);
+  }
+
   const response = NextResponse.next();
   if (shouldNoIndex(pathname)) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
   }
-  return response;
+  return withPrivateLinkHeaders(response, pathname);
 }
 
 export const config = {

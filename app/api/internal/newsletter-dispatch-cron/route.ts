@@ -6,6 +6,7 @@ import { NewsletterCampaign } from '@/models/NewsletterCampaign';
 import { NewsletterDelivery } from '@/models/NewsletterDelivery';
 import { dispatchQueuedNewsletterCampaigns } from '@/lib/newsletter/campaigns';
 import { assertNewsletterSendingAllowed } from '@/lib/newsletter/send-policy';
+import { dispatchNotifications } from '@/lib/email/notification-outbox';
 
 export async function POST(request: Request) {
   unstable_noStore();
@@ -29,7 +30,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: (error as Error).message }, { status: 403 });
   }
   try {
-    return NextResponse.json({ dryRun: false, ...await dispatchQueuedNewsletterCampaigns({ maxCampaigns: 25, batchSizePerCampaign: 80 }) });
+    const notifications = await dispatchNotifications({ limit: 50 });
+    return NextResponse.json({ dryRun: false, notifications, ...await dispatchQueuedNewsletterCampaigns({ maxCampaigns: 25, batchSizePerCampaign: 80 }) });
   } catch (error) {
     return NextResponse.json({ error: error instanceof Error ? error.message : 'Dispatch failed' }, { status: 400 });
   }

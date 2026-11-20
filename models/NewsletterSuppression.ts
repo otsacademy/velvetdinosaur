@@ -11,6 +11,8 @@ const NewsletterSuppressionSchema = new Schema(
     reason: { type: String, default: '', trim: true },
     eventType: { type: String, default: '', trim: true },
     messageId: { type: String, default: '', trim: true },
+    messageStream: { type: String, default: 'outbound' },
+    providerEventAt: { type: Date, default: null },
     suppressedAt: { type: Date, default: Date.now, index: true },
     lastEventAt: { type: Date, default: Date.now, index: true }
   },

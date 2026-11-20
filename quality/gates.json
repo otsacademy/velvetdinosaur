@@ -38,6 +38,10 @@
           "command": "bun run build"
         },
         {
+          "name": "newsletter-unsubscribe",
+          "command": "bun run test:newsletter:unsubscribe"
+        },
+        {
           "name": "portfolio-images",
           "command": "bun run portfolio:images:check"
         },

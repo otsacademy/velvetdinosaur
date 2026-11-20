@@ -16,7 +16,9 @@ const DISALLOW_PATHS = [
   '/installer',
   '/components',
   '/cms',
-  '/demo'
+  '/demo',
+  // The unsubscribe page carries a signed token in its address.
+  '/newsletter/unsubscribe'
 ];
 
 export default function robots(): MetadataRoute.Robots {
