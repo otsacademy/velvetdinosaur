@@ -24,7 +24,7 @@
     "pm2:sync-env": "tsx scripts/pm2-sync-env.ts",
     "typecheck": "tsc --noEmit",
     "test:unit": "bun test lib",
-    "test:security": "MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/boundaries.test.ts tests/security/postmark.test.ts tests/security/routes.test.ts && MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/request-identity.test.ts tests/security/signup-limits.test.ts && MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/form-limits.test.ts",
+    "test:security": "MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/boundaries.test.ts tests/security/postmark.test.ts tests/security/routes.test.ts tests/security/security-headers.test.ts && MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/request-identity.test.ts tests/security/signup-limits.test.ts && MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun test tests/security/form-limits.test.ts",
     "test:security:integration": "MONGODB_URI=mongodb://127.0.0.1:1/security_tests POSTMARK_SERVER_TOKEN= bun scripts/newsletter-mongo-test.ts --security",
     "test:newsletter:unsubscribe": "MONGODB_URI=mongodb://127.0.0.1:1/unsubscribe_tests POSTMARK_SERVER_TOKEN= bun scripts/newsletter-mongo-test.ts --unsubscribe",
     "test": "bun run visual:test",

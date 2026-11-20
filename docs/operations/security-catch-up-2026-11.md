@@ -77,6 +77,42 @@ site, so the one-line fix belongs with the shared files in part two.
 - All quality gates passed. Sharp 0.35.5 changed no pixel in the visual
   baselines, and every Lighthouse run scored 100 in every category.
 
+## Security response headers
+
+Prepared on 20 November 2026, with the template's `lib/security-headers.ts`
+and `/api/csp-report`. Only header logic was added to this site's
+`proxy.ts`: its routing (NFC redirects, the demo host, blocked paths, the
+sign-up origin check) moved unchanged into `routeRequest()`, and `proxy()`
+adds the headers to whatever that returns without replacing a value already
+set for the path (the file sandbox, `no-referrer` on emailed links). nginx
+sends none of these headers for velvetdinosaur.com.
+
+- **Enforced:** `X-Content-Type-Options: nosniff`, `Referrer-Policy:
+  strict-origin-when-cross-origin`, `Permissions-Policy` (camera,
+  microphone, geolocation, payment and usb off),
+  `X-Permitted-Cross-Domain-Policies: none`, `Cross-Origin-Opener-Policy:
+  same-origin`, and `Content-Security-Policy: frame-ancestors 'self'
+  https://theme.velvetdinosaur.com`: the theme editor's live preview still
+  shows the site; other sites, which can frame it today, no longer can. No
+  `X-Frame-Options`, which cannot name the editor. In production
+  `Strict-Transport-Security: max-age=31536000`, for velvetdinosaur.com only.
+- **Report-only:** the template's policy with the GA4 and Clarity script
+  hosts (both ids are set in production); the Google map on /contact is
+  allowed by `frame-src https:`. Reports go to `/api/csp-report`, which
+  counts them per day, directive and blocked host in `csp_report_counts`
+  (nothing about the page or visitor; read with
+  `db.csp_report_counts.find().sort({ day: -1, count: -1 })`).
+- Measured on 20 November 2026 in Chromium, with the policy added to the
+  live pages by the browser: 29 pages (the sitemap's 18, the pages they link
+  to, the NFC card, sign-in and sign-up, the three emailed-link pages and an
+  unknown address), with analytics loaded: no report.
+
+Owner decisions: `includeSubDomains` or `preload` on HSTS (they would cover
+every `*.velvetdinosaur.com` host and are slow to undo), and when to enforce
+the policy (the same policy plus `frame-ancestors` as
+`Content-Security-Policy` in `lib/security-headers.ts`), once the counts stay
+empty for public pages, the editor and the admin screens.
+
 ## Still to do
 
 Part two brings over the rest of ASAP's work:
@@ -85,7 +121,8 @@ Part two brings over the rest of ASAP's work:
   duplicates, webhook suppression, confirmation links opened by mail scanners,
   sign-up disclosure, false email success, trusting only nginx's `X-Real-IP`
   for the visitor address, and editor HTML parsing (Plate 53);
-- the stricter request filter in `proxy.ts` (cross-site request checks, a
-  content security policy and security headers);
+- the stricter request filter in `proxy.ts` (cross-site request checks; the
+  security headers are prepared, see
+  [Security response headers](#security-response-headers));
 - ASAP's `overrides` for packages whose parents pin affected versions, the
   ESLint and Lighthouse tooling upgrades, and `bun audit` as a release gate.

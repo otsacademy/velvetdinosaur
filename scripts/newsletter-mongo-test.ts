@@ -44,7 +44,7 @@ try {
   const unsubscribe = process.argv.includes('--unsubscribe');
   const security = process.argv.includes('--security');
   // Each file runs in its own process: they connect the shared Mongoose instance to their own databases.
-  const files = security ? ['tests/security/durable-rate-limit.test.ts', 'tests/security/mail-integration.test.ts']
+  const files = security ? ['tests/security/durable-rate-limit.test.ts', 'tests/security/mail-integration.test.ts', 'tests/security/csp-report.test.ts']
     : [unsubscribe ? 'lib/newsletter/unsubscribe-integration.test.ts' : 'lib/newsletter/campaign-integration.test.ts'];
   exitCode = 0;
   for (const file of files) {

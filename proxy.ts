@@ -2,6 +2,12 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { enforceSameOriginForPublicForm } from '@/lib/csrf-protection';
 import { isBlockedPath } from '@/lib/security-paths';
+import { applySecurityHeaders, type SiteSecurityHeaders } from '@/lib/security-headers';
+
+// Security headers on every answer (lib/security-headers.ts). The theme editor's live preview frames this site.
+// nginx sends none of them. HSTS covers velvetdinosaur.com only: includeSubDomains or preload would cover every
+// *.velvetdinosaur.com host and be slow to undo, so that is the owner's decision.
+const SECURITY_HEADERS: SiteSecurityHeaders = { themeEditorPreview: true };
 
 const NOINDEX_PREFIXES = [
   '/admin', '/edit', '/preview',
@@ -102,7 +108,7 @@ function getRequestPort(host: string) {
   return host.slice(separator + 1) || null;
 }
 
-export function proxy(request: NextRequest) {
+function routeRequest(request: NextRequest) {
   const pathname = request.nextUrl.pathname || '/';
   const hostname = getRequestHostname(request);
   const nfcRedirectPath = getNfcRedirectPath(pathname);
@@ -147,6 +153,10 @@ export function proxy(request: NextRequest) {
     for (const [name, value] of Object.entries(ASSET_SANDBOX_HEADERS)) response.headers.set(name, value);
   }
   return withPrivateLinkHeaders(response, pathname);
+}
+
+export function proxy(request: NextRequest) {
+  return applySecurityHeaders(routeRequest(request), request.nextUrl.pathname || '/', SECURITY_HEADERS);
 }
 
 export const config = {
