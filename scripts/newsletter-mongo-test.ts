@@ -7,7 +7,12 @@ import { MongoClient } from 'mongodb';
 // A separate loopback-only mongod process. Never connects to a site's database.
 const directory = await mkdtemp(path.join(tmpdir(), 'newsletter-mongo-test-'));
 const probe = createServer();
-await new Promise<void>((resolve) => probe.listen(0, '127.0.0.1', resolve));
+// NEWSLETTER_TEST_MONGO_PORT pins a known free port; otherwise the system picks one.
+const requestedPort = Number(process.env.NEWSLETTER_TEST_MONGO_PORT || 0);
+await new Promise<void>((resolve, reject) => {
+  probe.once('error', reject);
+  probe.listen(Number.isInteger(requestedPort) && requestedPort > 0 ? requestedPort : 0, '127.0.0.1', resolve);
+});
 const address = probe.address();
 if (!address || typeof address === 'string') throw new Error('Cannot allocate local test port.');
 const port = address.port;
@@ -24,8 +29,9 @@ try {
     finally { await client.close(); }
   }
   if (!ready) throw new Error('Isolated Mongo test server did not start.');
-  const child = Bun.spawn(['bun', 'test', 'lib/newsletter/campaign-integration.test.ts'], {
-    env: { ...process.env, NEWSLETTER_MONGO_INTEGRATION: '1', NEWSLETTER_TEST_MONGO_URI: uri }, stdout: 'inherit', stderr: 'inherit'
+  const security = process.argv.includes('--security');
+  const child = Bun.spawn(['bun', 'test', security ? 'tests/security/durable-rate-limit.test.ts' : 'lib/newsletter/campaign-integration.test.ts'], {
+    env: { ...process.env, SECURITY_MONGO_INTEGRATION: security ? '1' : '0', NEWSLETTER_MONGO_INTEGRATION: '1', NEWSLETTER_TEST_MONGO_URI: uri }, stdout: 'inherit', stderr: 'inherit'
   });
   exitCode = await child.exited;
 } finally {

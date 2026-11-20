@@ -3,6 +3,7 @@ import type {
   SiteAnalyticsEvent,
   SiteAnalyticsLead
 } from '@/lib/analytics/schema';
+import { getRequestIp } from '@/lib/security/rate-limit';
 
 type AnalyticsMetadataValue = string | number | boolean | null;
 
@@ -89,18 +90,6 @@ function resolveAnalyticsEndpoint(kind: 'event' | 'lead') {
   return `${base}/api/analytics/leads/upsert`;
 }
 
-function readClientIp(request: Request) {
-  const forwarded = clean(request.headers.get('x-forwarded-for'));
-  if (forwarded) {
-    return forwarded
-      .split(',')
-      .map((part) => part.trim())
-      .find(Boolean) || '';
-  }
-
-  return clean(request.headers.get('x-real-ip'));
-}
-
 function inferCurrentPagePath(request: Request, siteDomain: string) {
   const referer = clean(request.headers.get('referer'));
   if (!referer) return '';
@@ -171,7 +160,7 @@ async function postToAnalytics(
       headers: {
         'content-type': 'application/json',
         'x-vd-analytics-key': apiKey,
-        'x-vd-forwarded-for': readClientIp(request),
+        'x-vd-forwarded-for': getRequestIp(request.headers),
         'x-vd-original-user-agent': clean(request.headers.get('user-agent'))
       },
       body: JSON.stringify({

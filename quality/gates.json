@@ -18,6 +18,14 @@
           "command": "bun run test:unit"
         },
         {
+          "name": "security",
+          "command": "bun run test:security"
+        },
+        {
+          "name": "security-integration",
+          "command": "bun run test:security:integration"
+        },
+        {
           "name": "newsletter-integration",
           "command": "bun run scripts/newsletter-mongo-test.ts"
         },

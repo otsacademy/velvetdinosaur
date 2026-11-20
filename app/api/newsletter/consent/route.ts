@@ -12,18 +12,13 @@ import {
   setNewsletterConsentForUser
 } from '@/lib/newsletter/consent';
 import { clean } from '@/lib/newsletter/shared';
+import { getRequestIp } from '@/lib/security/rate-limit';
 
 const UpdateSchema = z.object({
   subscribed: z.boolean(),
   source: z.string().trim().max(120).optional(),
   legalTextVersion: z.string().trim().max(32).optional()
 });
-
-function parseClientIp(request: Request) {
-  const forwarded = request.headers.get('x-forwarded-for') || '';
-  const first = forwarded.split(',').map((part) => part.trim()).find(Boolean);
-  return first || request.headers.get('x-real-ip') || '';
-}
 
 async function requireSessionUser(request: Request) {
   const auth = getAuth();
@@ -77,7 +72,7 @@ export async function PATCH(request: Request) {
     legalTextVersion: parsed.data.legalTextVersion || 'v1',
     actorType: 'user',
     actorId: user.id,
-    ip: parseClientIp(request),
+    ip: getRequestIp(request.headers),
     userAgent: request.headers.get('user-agent') || ''
   });
 

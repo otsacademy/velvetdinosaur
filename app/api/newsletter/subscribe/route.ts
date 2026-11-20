@@ -19,6 +19,7 @@ import {
 import { getNewsletterSettings } from '@/lib/newsletter/settings';
 import { clean, normalizeEmail } from '@/lib/newsletter/shared';
 import { isNewsletterSuppressedEmail } from '@/lib/newsletter/suppression';
+import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 import { trackServerConversion } from '@/lib/analytics';
 
@@ -33,15 +34,6 @@ const SubscribeSchema = z.object({
   formStartedAt: z.number().optional(),
   captchaToken: z.string().trim().max(4000).optional()
 });
-
-function parseClientIp(request: Request) {
-  const forwarded = request.headers.get('x-forwarded-for') || '';
-  const first = forwarded
-    .split(',')
-    .map((part) => part.trim())
-    .find(Boolean);
-  return first || request.headers.get('x-real-ip') || '';
-}
 
 async function requireSessionUser(request: Request) {
   const auth = getAuth();
@@ -149,7 +141,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Email is required.' }, { status: 400 });
   }
 
-  const perEmailDailyLimit = checkRateLimit({
+  const perEmailDailyLimit = await checkDurableRateLimit({
     id: 'api:newsletter:subscribe:email-day',
     key: email,
     limit: settings.rateLimitPerEmailPerDay,
@@ -219,12 +211,12 @@ export async function POST(request: Request) {
       legalTextVersion,
       actorType,
       actorId,
-      ip: parseClientIp(request),
+      ip: getRequestIp(request.headers),
       userAgent: request.headers.get('user-agent') || '',
       reason: 'double-opt-in-requested'
     });
 
-    const resendLimit = checkRateLimit({
+    const resendLimit = await checkDurableRateLimit({
       id: 'api:newsletter:subscribe:confirm-email',
       key: email,
       limit: 1,
@@ -265,7 +257,7 @@ export async function POST(request: Request) {
     legalTextVersion,
     actorType,
     actorId,
-    ip: parseClientIp(request),
+    ip: getRequestIp(request.headers),
     userAgent: request.headers.get('user-agent') || ''
   });
 

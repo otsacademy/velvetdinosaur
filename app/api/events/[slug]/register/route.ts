@@ -16,6 +16,7 @@ import { getNewsletterSettings } from '@/lib/newsletter/settings';
 import { verifyNewsletterCaptcha } from '@/lib/newsletter/captcha';
 import { getPublishedEventBySlug } from '@/lib/events.server';
 import { getEventRegistrationWindow } from '@/lib/events';
+import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 
 const RegisterSchema = z.object({
@@ -28,15 +29,6 @@ const RegisterSchema = z.object({
   formStartedAt: z.number().optional(),
   captchaToken: z.string().trim().max(4000).optional()
 });
-
-function parseClientIp(request: Request) {
-  const forwarded = request.headers.get('x-forwarded-for') || '';
-  const first = forwarded
-    .split(',')
-    .map((part) => part.trim())
-    .find(Boolean);
-  return first || request.headers.get('x-real-ip') || '';
-}
 
 async function requireSessionUser(request: Request) {
   const auth = getAuth();
@@ -147,7 +139,7 @@ export async function POST(request: Request, { params }: RouteProps) {
     return NextResponse.json({ error: 'Full name and email are required.' }, { status: 400 });
   }
 
-  const perEmailDailyLimit = checkRateLimit({
+  const perEmailDailyLimit = await checkDurableRateLimit({
     id: 'api:event-registration:submit:email-day',
     key: `${event.id}:${email}`,
     limit: settings.rateLimitPerEmailPerDay,
@@ -183,7 +175,7 @@ export async function POST(request: Request, { params }: RouteProps) {
     legalTextVersion,
     actorType,
     actorId,
-    ip: parseClientIp(request),
+    ip: getRequestIp(request.headers),
     userAgent: request.headers.get('user-agent') || '',
     reason: 'registration-requested'
   });
@@ -202,7 +194,7 @@ export async function POST(request: Request, { params }: RouteProps) {
     return NextResponse.json({ error: 'Registration confirmation is temporarily unavailable.' }, { status: 500 });
   }
 
-  const resendLimit = checkRateLimit({
+  const resendLimit = await checkDurableRateLimit({
     id: 'api:event-registration:confirm-email',
     key: `${event.id}:${email}`,
     limit: 1,
@@ -221,7 +213,7 @@ export async function POST(request: Request, { params }: RouteProps) {
         legalTextVersion,
         actorType,
         actorId,
-        ip: parseClientIp(request),
+        ip: getRequestIp(request.headers),
         userAgent: request.headers.get('user-agent') || '',
         reason: 'resent-confirmation-link'
       });

@@ -8,6 +8,7 @@ import {
 } from '@/lib/newsletter/consent';
 import { requireAdminFromHeaders } from '@/lib/newsletter/auth';
 import { clean, normalizeEmail } from '@/lib/newsletter/shared';
+import { getRequestIp } from '@/lib/security/rate-limit';
 
 const UpdateSchema = z.object({
   userId: z.string().trim().min(1),
@@ -15,12 +16,6 @@ const UpdateSchema = z.object({
   firstName: z.string().trim().max(120).optional(),
   subscribed: z.boolean()
 });
-
-function parseClientIp(request: Request) {
-  const forwarded = request.headers.get('x-forwarded-for') || '';
-  const first = forwarded.split(',').map((part) => part.trim()).find(Boolean);
-  return first || request.headers.get('x-real-ip') || '';
-}
 
 export async function GET(request: Request) {
   unstable_noStore();
@@ -67,7 +62,7 @@ export async function PATCH(request: Request) {
     legalTextVersion: 'v1',
     actorType: 'admin',
     actorId: admin.id,
-    ip: parseClientIp(request),
+    ip: getRequestIp(request.headers),
     userAgent: request.headers.get('user-agent') || '',
     reason: 'manual-admin-update'
   });

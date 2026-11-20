@@ -1,5 +1,6 @@
 import { assertServerOnly } from '@/lib/_server/guard';
 assertServerOnly('lib/security/rate-limit.ts');
+import { isIP } from 'node:net';
 
 type RateLimitEntry = {
   count: number;
@@ -44,20 +45,10 @@ function clearExpiredEntries(now: number) {
 }
 
 export function getRequestIp(headers: Headers) {
-  const direct =
-    headers.get('cf-connecting-ip') ||
-    headers.get('x-real-ip') ||
-    headers.get('true-client-ip') ||
-    headers.get('x-client-ip') ||
-    '';
-  if (direct.trim()) return direct.trim();
-
-  const forwarded = headers.get('x-forwarded-for') || '';
-  const first = forwarded
-    .split(',')
-    .map((part) => part.trim())
-    .find(Boolean);
-  return first || '';
+  // nginx overwrites this header from the TCP peer. Slot listeners must remain
+  // loopback-only; client-supplied Cloudflare and forwarding headers are untrusted.
+  const address = (headers.get('x-real-ip') || '').trim();
+  return isIP(address) ? address : '';
 }
 
 export function checkRateLimit(input: RateLimitInput): RateLimitResult {

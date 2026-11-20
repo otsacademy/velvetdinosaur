@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { createAnalyticsLead, forwardAnalyticsEvent } from '@/lib/analytics';
 import { sendContactEmail } from '@/lib/email';
+import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
+import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 import {
   composeProjectMessage,
   composeQuestionMessage,
@@ -27,6 +29,10 @@ const contactSchema = z.object({
   project: projectSchema.optional().nullable()
 });
 
+function tooManyRequests(error: string, retryAfterSeconds: number) {
+  return Response.json({ error }, { status: 429, headers: { 'Retry-After': String(retryAfterSeconds) } });
+}
+
 function parseBody(request: Request) {
   const contentType = request.headers.get('content-type') || '';
   if (contentType.includes('application/json')) {
@@ -36,6 +42,12 @@ function parseBody(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const ip = getRequestIp(request.headers) || 'unknown';
+  const perMinute = checkRateLimit({ id: 'api:contact:ip-minute', key: ip, limit: 5, windowMs: 60_000 });
+  if (!perMinute.ok) return tooManyRequests('Too many messages. Please try again in a minute.', perMinute.retryAfterSeconds);
+  const perHour = checkRateLimit({ id: 'api:contact:ip-hour', key: ip, limit: 20, windowMs: 60 * 60_000 });
+  if (!perHour.ok) return tooManyRequests('Too many messages. Please try again later.', perHour.retryAfterSeconds);
+
   const body = await parseBody(request);
   const result = contactSchema.safeParse(body);
   if (!result.success) {
@@ -46,6 +58,16 @@ export async function POST(request: Request) {
   }
 
   const payload = result.data;
+  const perEmail = await checkDurableRateLimit({
+    id: 'api:contact:email-day',
+    key: payload.email.toLowerCase(),
+    limit: 10,
+    windowMs: 24 * 60 * 60_000
+  });
+  if (!perEmail.ok) {
+    return tooManyRequests('Too many messages from this email address today. Please try again tomorrow.', perEmail.retryAfterSeconds);
+  }
+
   const project = payload.enquiryType === 'project' ? payload.project ?? null : null;
   const message = project
     ? composeProjectMessage(

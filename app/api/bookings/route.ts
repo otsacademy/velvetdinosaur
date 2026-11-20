@@ -10,6 +10,7 @@ import {
   sendBookingConfirmedEmail,
   sendBookingRequestReceivedEmail
 } from '@/lib/email/booking-notifications';
+import { checkDurableRateLimit } from '@/lib/security/durable-rate-limit';
 import { checkRateLimit, getRequestIp } from '@/lib/security/rate-limit';
 
 const CreateBookingSchema = z.object({
@@ -46,13 +47,16 @@ export async function POST(request: Request) {
   const ip = getRequestIp(request.headers) || 'unknown';
   const perMinute = checkRateLimit({ id: 'bookings-create-ip-m', key: ip, limit: 10, windowMs: 60_000 });
   const perHour = checkRateLimit({ id: 'bookings-create-ip-h', key: ip, limit: 40, windowMs: 3_600_000 });
-  const perEmail = checkRateLimit({
+  if (!perMinute.ok || !perHour.ok) {
+    return NextResponse.json({ error: 'Too many requests — please try again later' }, { status: 429 });
+  }
+  const perEmail = await checkDurableRateLimit({
     id: 'bookings-create-email-d',
     key: payload.email.toLowerCase(),
     limit: 10,
     windowMs: 86_400_000
   });
-  if (!perMinute.ok || !perHour.ok || !perEmail.ok) {
+  if (!perEmail.ok) {
     return NextResponse.json({ error: 'Too many requests — please try again later' }, { status: 429 });
   }
 
