@@ -108,5 +108,6 @@ export const stayMetaBadgesConfig: ComponentConfig<StayMetaBadgesProps> = {
     badges: [],
     usePolicies: false
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => StayMetaBadges(props) as any
 };

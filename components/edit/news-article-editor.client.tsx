@@ -818,7 +818,6 @@ export function NewsArticleEditor({
             path,
             text: blockText,
           }
-          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         }
       }
     }
@@ -1482,6 +1481,7 @@ export function NewsArticleEditor({
 
       toast.success('Article restored. Reloading editor...')
       const nextSlug = typeof payload?.slug === 'string' ? payload.slug : slug
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- Reload to reset the editor after restoring.
       window.location.assign(`/edit/news/new?slug=${encodeURIComponent(nextSlug)}`)
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'Failed to restore article')

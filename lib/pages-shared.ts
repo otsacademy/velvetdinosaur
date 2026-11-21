@@ -54,7 +54,6 @@ export type PageListRecord = Pick<
 const PAGE_SMOKE_DATE = new Date('1970-01-01T00:00:00Z');
 
 declare global {
-  // eslint-disable-next-line no-var
   var vdEditorSmokePages: Map<string, PageDoc> | undefined;
 }
 

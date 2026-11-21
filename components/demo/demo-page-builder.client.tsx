@@ -72,6 +72,7 @@ export function DemoPageBuilder() {
 
   useEffect(() => {
     if (!sections.some((section) => section.id === selectedId)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setSelectedId(sections[0]?.id ?? "")
     }
   }, [sections, selectedId])

@@ -4,7 +4,7 @@ import { AssetUploadReceipt } from '@/models/AssetUploadReceipt';
 import { NextResponse } from 'next/server';
 import { getAuth } from '@/lib/auth';
 import { createPresignedUpload } from '@/lib/presign';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { clamp01 } from '@/lib/media/focal-point';
 import { normalizeAssetTags } from '@/lib/assets/tags';
 import { isImageUploadMime } from '@/lib/assets/image-variants';
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
   const ext = filename.includes('.') ? filename.split('.').pop() : 'bin';
   const keyBase = slugifyName(name);
   const folderPrefix = folder ? `${folder}/` : '';
-  const key = `uploads/${folderPrefix}${keyBase}-${uuidv4()}.${ext}`;
+  const key = `uploads/${folderPrefix}${keyBase}-${randomUUID()}.${ext}`;
 
   if (!await connectDB()) return NextResponse.json({ error: 'Database unavailable' }, { status: 503 });
   await AssetUploadReceipt.create({ key, bucket, ownerSite: assetOwnerSite(), userId: session.user.id, mime: contentType, expiresAt: new Date(Date.now() + 60 * 60 * 1000) });

@@ -41,6 +41,7 @@ export async function POST(req: Request) {
       }
     });
     return NextResponse.json({ ok: true });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   } catch (error: any) {
     // Duplicate key race or other db error.
     const msg = typeof error?.message === 'string' ? error.message : '';

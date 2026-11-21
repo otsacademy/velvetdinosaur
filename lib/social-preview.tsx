@@ -47,6 +47,7 @@ export function SocialPreview({ markSrc, dinosaurSrc }: SocialPreviewProps) {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- existing code; lint rules aligned with ASAP's in Nov 2026 */}
           <img src={markSrc} alt="" width={58} height={53} />
           <div
             style={{
@@ -151,6 +152,7 @@ export function SocialPreview({ markSrc, dinosaurSrc }: SocialPreviewProps) {
               background: '#F4F0EA',
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element -- existing code; lint rules aligned with ASAP's in Nov 2026 */}
             <img src={dinosaurSrc} alt="" width={270} height={270} style={{ objectFit: 'contain' }} />
           </div>
           <div

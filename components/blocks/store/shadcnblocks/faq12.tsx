@@ -47,6 +47,7 @@ export function ShadcnblocksFaq12(props: ShadcnblocksFaq12Props) {
 
   useEffect(() => {
     if (!activeCategory && categories.length) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setActiveCategory(categories[0].title)
     }
   }, [categories, activeCategory])

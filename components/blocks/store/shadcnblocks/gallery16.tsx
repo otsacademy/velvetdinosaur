@@ -48,6 +48,7 @@ export function ShadcnblocksGallery16(props: ShadcnblocksGallery16Props) {
 
   useEffect(() => {
     if (items.length && !current) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setCurrent(items[0].category)
     }
   }, [items, current])

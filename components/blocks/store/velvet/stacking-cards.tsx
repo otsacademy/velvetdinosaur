@@ -465,6 +465,7 @@ export function StackingCardsSection(props: StackingCardsProps) {
                         <span className="text-foreground/85" style={clampStyle}>
                           <EditableText
                             contentKey={key(`caseStudies.cards.${index}.${item.path}`)}
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
                             value={(card as any)[item.path]}
                             as="span"
                             multiline

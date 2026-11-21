@@ -60,6 +60,7 @@ export function DemoStayEditorDialog({
 
   useEffect(() => {
     if (!open) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
     setDraft(stay ?? emptyStay());
   }, [open, stay]);
 

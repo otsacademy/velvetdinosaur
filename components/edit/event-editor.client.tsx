@@ -180,6 +180,8 @@ export function EventEditor({
       toast.success(nextStatus === 'published' ? (wasPublished ? 'Saved' : 'Event published') : 'Saved')
 
       if (!isEditing && result.slug) {
+        // A fresh page instance is required to reset editor state after saving/restoring.
+        // eslint-disable-next-line @next/next/no-location-assign-relative-destination
         window.location.assign(`/edit/events/new?slug=${encodeURIComponent(result.slug)}`)
       }
     } catch (error) {

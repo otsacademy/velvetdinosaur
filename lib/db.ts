@@ -6,7 +6,6 @@ import path from 'node:path';
 import mongoose from 'mongoose';
 
 declare global {
-  // eslint-disable-next-line no-var
   var mongooseConn: {
     conn: typeof mongoose | null;
     promise: Promise<typeof mongoose | null> | null;

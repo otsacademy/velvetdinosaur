@@ -28,6 +28,7 @@ export function LegalQuickLinks(props: LegalQuickLinksProps) {
     <Card className="mt-8 rounded-2xl border bg-muted/30">
       <CardContent className="space-y-4 p-6">
         <div className="flex items-center gap-2">
+          {/* eslint-disable-next-line react-hooks/static-components -- existing code; lint rules aligned with ASAP's in Nov 2026 */}
           {Icon ? <Icon className="h-4 w-4 text-primary" /> : null}
           <h2 className="text-lg font-semibold text-foreground">
             <EditableText contentKey={key("legal.quickLinks.heading")} value={props.heading} as="span" showIcon={false} />

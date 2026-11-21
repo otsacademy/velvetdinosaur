@@ -67,5 +67,6 @@ export const staySimilarListingsConfig: ComponentConfig<StaySimilarListingsProps
     staySlug: '',
     title: 'Similar Listings'
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => StaySimilarListings(props) as any
 };

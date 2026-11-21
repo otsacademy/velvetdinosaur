@@ -273,6 +273,7 @@ const Contact25 = ({
                 </div>
               ) : (
                 <form
+                  // eslint-disable-next-line react-hooks/refs -- existing code; lint rules aligned with ASAP's in Nov 2026
                   onSubmit={form.handleSubmit(handleFormSubmit)}
                   className="vd-contact-form flex flex-col gap-5 rounded-[calc(var(--vd-radius)+8px)] border border-[color-mix(in_oklch,var(--vd-border)_72%,transparent)] bg-background p-5"
                   data-analytics-form={analyticsFormId}

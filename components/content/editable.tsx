@@ -19,6 +19,7 @@ export function EditableText({
   multiline = false,
   className
 }: EditableTextProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   const Comp = as as any;
   const text = value ?? '';
 

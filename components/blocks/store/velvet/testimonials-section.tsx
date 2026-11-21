@@ -91,6 +91,7 @@ function RatingStars({ rating }: { rating: number }) {
 
 export function TestimonialsSection(props: TestimonialsSectionProps) {
   const key = (path: string) => contentKey(props.id, path)
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- existing code; lint rules aligned with ASAP's in Nov 2026
   const testimonials = props.items || []
   const filteredTestimonials = useMemo(
     () =>

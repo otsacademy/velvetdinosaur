@@ -93,6 +93,7 @@ export function DemoOnboardingControls({ pageKey, className }: DemoOnboardingCon
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
     setActiveStep(0);
     if (readDismissed(pageKey)) {
       setOpen(false);

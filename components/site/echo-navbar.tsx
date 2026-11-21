@@ -82,6 +82,7 @@ function ThemeToggle() {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
     const shouldUseDark = storedTheme ? storedTheme === "dark" : prefersDark
     document.documentElement.classList.toggle("dark", shouldUseDark)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
     setIsDark(shouldUseDark)
     setMounted(true)
   }, [])
@@ -111,6 +112,7 @@ export function EchoNavbar() {
 
   useEffect(() => {
     if (pathname !== "/") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setActiveSection(null)
       return
     }

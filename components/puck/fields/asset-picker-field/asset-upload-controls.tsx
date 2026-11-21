@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- asset upload controls support arbitrary external URLs */
 'use client';
 
 import { ChevronDown, Loader2, UploadIcon, X } from 'lucide-react';

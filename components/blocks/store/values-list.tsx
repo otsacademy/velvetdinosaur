@@ -100,5 +100,6 @@ export const valuesListConfig: ComponentConfig<ValuesListProps> = {
     columns: 4,
     values: []
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => ValuesList(props) as any
 };

@@ -52,6 +52,7 @@ export function BookingApiSettingsDialog({
   const [form, setForm] = useState<SettingsForm | null>(settings ? toForm(settings) : null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
     if (open && settings) setForm(toForm(settings));
   }, [open, settings]);
 

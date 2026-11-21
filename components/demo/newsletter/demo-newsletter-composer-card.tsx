@@ -124,6 +124,7 @@ export function DemoNewsletterComposerCard({
         newsOptions,
         eventOptions
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- existing code; lint rules aligned with ASAP's in Nov 2026
     [eventOptions, form, newsOptions, previewNonce, testEmail, testFirstName]
   );
   const visualValue = useMemo(() => getVisualSource(form), [form]);

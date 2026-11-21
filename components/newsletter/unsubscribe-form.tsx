@@ -1,7 +1,5 @@
 "use client"
 
-/* eslint-disable @next/next/no-html-link-for-pages -- Leave the private token page with a full navigation and fresh analytics state. */
-
 import { ArrowRight, Check, CircleAlert, LoaderCircle } from "lucide-react"
 
 import type { UnsubscribePageState } from "@/lib/newsletter/unsubscribe-state"

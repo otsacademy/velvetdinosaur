@@ -102,6 +102,7 @@ export function LegalSection(props: LegalSectionProps) {
       <Card className="rounded-2xl border bg-card">
         <CardContent className={cn("space-y-4", props.paddingClassName, props.contentClassName)}>
           <div className="flex items-center gap-2">
+            {/* eslint-disable-next-line react-hooks/static-components -- existing code; lint rules aligned with ASAP's in Nov 2026 */}
             {Icon ? <Icon className="h-4 w-4 text-primary" /> : null}
             <h2 className="text-xl font-semibold text-foreground">
               <EditableText contentKey={key(`legal.sections.${props.sectionId}.title`)} value={props.title} as="span" showIcon={false} />

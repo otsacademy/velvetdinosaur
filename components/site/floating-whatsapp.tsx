@@ -18,6 +18,7 @@ export function FloatingWhatsApp({ href, delayMs = 1400 }: FloatingWhatsAppProps
     const isAutomatedBrowser = navigator.webdriver
 
     if (prefersReducedMotion || isAutomatedBrowser) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setVisible(true)
       return
     }

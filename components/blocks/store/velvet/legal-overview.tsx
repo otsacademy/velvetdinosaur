@@ -54,6 +54,7 @@ export function LegalOverview(props: LegalOverviewProps) {
             <div className="space-y-2">
               {props.eyebrow?.label ? (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  {/* eslint-disable-next-line react-hooks/static-components -- existing code; lint rules aligned with ASAP's in Nov 2026 */}
                   {EyebrowIcon ? <EyebrowIcon className="h-4 w-4 text-primary" /> : null}
                   <EditableText
                     contentKey={key("legal.overview.eyebrowLabel")}

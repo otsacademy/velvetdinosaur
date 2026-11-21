@@ -103,5 +103,6 @@ export const staysIndexConfig: ComponentConfig<StaysIndexProps> = {
     limit: 0,
     showPrice: 'false'
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => StaysIndex(props) as any
 };

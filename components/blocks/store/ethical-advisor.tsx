@@ -85,5 +85,6 @@ export const ethicalAdvisorConfig: ComponentConfig<EthicalAdvisorProps> = {
     placeholder: 'What should we disclose to guests about local customs?',
     ctaLabel: 'Ask advisor'
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => EthicalAdvisorBlock(props) as any
 };

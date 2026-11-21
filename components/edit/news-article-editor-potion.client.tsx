@@ -267,6 +267,7 @@ export function NewsArticleEditorPotion({
           : requestPayload.slug
       toast.success('Article published')
       // A fresh page instance is required to reset editor state after saving/restoring.
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
       window.location.assign(`/news/${encodeURIComponent(nextSlug)}`)
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'Could not publish article')

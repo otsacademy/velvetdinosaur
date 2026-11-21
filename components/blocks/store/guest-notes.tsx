@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ComponentConfig } from '@puckeditor/core';
 import { Play, Star } from 'lucide-react';
 import { listReviews } from '@/lib/content/reviews';
@@ -116,5 +115,6 @@ export const guestNotesConfig: ComponentConfig<GuestNotesProps> = {
     lead: '',
     mode: 'all'
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => GuestNotes(props) as any
 };

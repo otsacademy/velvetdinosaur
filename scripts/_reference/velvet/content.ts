@@ -2,6 +2,7 @@
 // These values are intentionally generic placeholders so installs/builds don't fail when
 // store blocks reference `siteContent` at module scope.
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
 export const siteContent: any = {
   brand: {
     name: 'Velvet Dinosaur',

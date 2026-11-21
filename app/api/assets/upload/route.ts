@@ -1,7 +1,7 @@
 import { uploadedAssetOwnership } from '@/lib/assets/ownership.server';
 import { assertAllowedAssetType, MAX_ASSET_BYTES, UnsafeAssetError } from '@/lib/assets/file-safety';
 import { NextResponse } from 'next/server';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { getAuth } from '@/lib/auth';
 import { getR2Client } from '@/lib/r2';
 import { connectDB } from '@/lib/db';
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
     const focalY = clamp01(rawFocalY);
     const tags = normalizeAssetTags(rawTags);
 
-    const uploadId = uuidv4();
+    const uploadId = randomUUID();
     const keyBase = slugifyName(name);
     const folderPrefix = folder ? `${folder}/` : '';
     const contentType = file.type || 'application/octet-stream';

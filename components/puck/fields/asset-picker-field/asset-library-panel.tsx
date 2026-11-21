@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- asset picker supports arbitrary external URLs */
 'use client';
 
 import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';

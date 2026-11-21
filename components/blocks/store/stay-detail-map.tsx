@@ -45,5 +45,6 @@ export const stayDetailMapConfig: ComponentConfig<StayDetailMapProps> = {
   defaultProps: {
     staySlug: ''
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => StayDetailMap(props) as any
 };

@@ -46,18 +46,21 @@ async function main() {
 
     const draft = deepReplace(page.draftData, from, to);
     if (draft.changed) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
       page.draftData = draft.value as any;
       changed = true;
     }
 
     const published = deepReplace(page.publishedData, from, to);
     if (published.changed) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
       page.publishedData = published.value as any;
       changed = true;
     }
 
     const legacy = deepReplace(page.data, from, to);
     if (legacy.changed) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
       page.data = legacy.value as any;
       changed = true;
     }

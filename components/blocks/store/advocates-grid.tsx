@@ -268,5 +268,6 @@ export const advocatesGridConfig: ComponentConfig<AdvocatesGridProps> = {
     columns: 2,
     showCategory: false
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- existing code; lint rules aligned with ASAP's in Nov 2026
   render: (props) => AdvocatesGrid(props) as any
 };

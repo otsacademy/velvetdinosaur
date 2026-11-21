@@ -48,6 +48,7 @@ export type FaqSectionProps = {
 
 export function FaqSection(props: FaqSectionProps) {
   const key = (path: string) => contentKey(props.id, path)
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- existing code; lint rules aligned with ASAP's in Nov 2026
   const items = props.items || []
   const normalizedCategories = (props.categories || [])
     .map((item) => (typeof item === "string" ? item : item?.value))

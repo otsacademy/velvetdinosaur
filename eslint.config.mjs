@@ -1,22 +1,18 @@
 import next from 'eslint-config-next';
 
 const HOOK_RULES = {
-  'react-hooks/exhaustive-deps': 'off',
-  'react-hooks/set-state-in-effect': 'off',
-  'react-hooks/purity': 'off',
-  'react-hooks/refs': 'off',
-  'react-hooks/static-components': 'off',
-  'react-hooks/preserve-manual-memoization': 'off',
-  'react-hooks/use-memo': 'off',
-  'react-hooks/incompatible-library': 'off'
+  'react-hooks/exhaustive-deps': 'warn',
+  'react-hooks/set-state-in-effect': 'warn',
+  'react-hooks/purity': 'warn',
+  'react-hooks/refs': 'warn',
+  'react-hooks/static-components': 'warn',
+  'react-hooks/preserve-manual-memoization': 'warn',
+  'react-hooks/use-memo': 'warn',
+  'react-hooks/incompatible-library': 'warn'
 };
 
 const TS_RULES = {
-  '@typescript-eslint/no-explicit-any': 'off'
-};
-
-const NEXT_RULES = {
-  '@next/next/no-img-element': 'off'
+  '@typescript-eslint/no-explicit-any': 'warn'
 };
 
 const config = [
@@ -24,25 +20,23 @@ const config = [
     ignores: [
       '**/node_modules/**',
       '**/.next/**',
+      '**/.next-visual/**',
+      '**/.next.bak*/**',
+      '**/.next-visual.bak*/**',
       '**/.bun-cache/**',
       '**/dist/**',
       '**/out/**',
       '**/coverage/**',
       '**/.turbo/**',
       '**/.eslintcache',
+      // Local working folders of this site's checkout (design handoffs, exports, agent workspaces).
       'docs/mocks/**',
       'output/**',
       'workspace/**',
       '.agtx/**',
       '.playwright-cli/**',
-      'registry/examples/**',
-      'registry/ui/block-discussion.tsx',
-      'registry/ui/block-draggable.tsx',
-      'registry/ui/block-list-static.tsx',
-      'registry/ui/block-list.tsx',
-      'registry/ui/block-suggestion.tsx',
-      'registry/ui/emoji-toolbar-button.tsx',
-      'registry/ui/floating-discussion.tsx'
+      // Vendored upstream registry code (Potion + shadcn) is kept close to upstream.
+      'registry/**'
     ]
   },
   ...next.map((c) => {
@@ -52,7 +46,6 @@ const config = [
       ...c,
       rules: {
         ...(c.rules ?? {}),
-        ...NEXT_RULES,
         ...(hasHooks ? HOOK_RULES : {}),
         ...(hasTs ? TS_RULES : {})
       }

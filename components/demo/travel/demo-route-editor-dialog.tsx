@@ -57,6 +57,7 @@ export function DemoRouteEditorDialog({
   useEffect(() => {
     if (!open) return;
     const next = route ?? emptyRoute();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
     setDraft(next);
     setItineraryText(next.itinerary.join('\n'));
   }, [open, route]);

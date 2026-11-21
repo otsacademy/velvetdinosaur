@@ -155,6 +155,7 @@ export function TestimonialsCards01({
 
   useEffect(() => {
     if (!showGoogle) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- existing code; lint rules aligned with ASAP's in Nov 2026
       setGoogleItems([]);
       return;
     }

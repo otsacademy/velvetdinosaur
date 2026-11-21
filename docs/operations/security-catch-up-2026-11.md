@@ -402,6 +402,229 @@ Tests:
   without the second commit (a quotation's lines run together, a rule shows
   as "—"); a Plate 52 quotation reads the same with and without it.
 
+## Tool upgrades and the advisory gate
+
+Prepared on 21 November 2026, as in the template: the developer tools that
+ASAP upgraded in its September 2026 dependency work (its commits c5fe5af and
+e67a61e), and the release gate it added there, which fails on any published
+advisory in the lockfile (with the skip list of its commit 2efe400), with
+the dependency updates that the gate needs here. They are the updates ASAP
+made in September and November (e67a61e, b2a49bc, 2bf16bf), at ASAP's
+versions.
+
+### The gate
+
+- `audit:dependencies` is `bun audit --ignore=GHSA-mrhx-c7xc-m3w5
+  --ignore=GHSA-g3hv-75wg-m249` and `test:dependencies` is `bun test
+  tests/security/dependencies.test.ts`. They are the first two gates of the
+  quality target, as on ASAP, so `release:local` stops before anything else
+  runs. An advisory service that cannot be reached fails the gate too.
+- The two skips, approved by the owner (for ASAP on 4 November 2026, and for
+  every site since): zod 3 (GHSA-mrhx-c7xc-m3w5; `tweakcn-ui` 0.5.8, the
+  shadcn command-line tool and Chromium's tooling under Lighthouse need zod
+  3, which has no fixed release) and minimatch before 11
+  (GHSA-g3hv-75wg-m249; TypeScript ESLint needs minimatch 9 and ts-morph,
+  under the shadcn command-line tool, needs 10, and only 11 is fixed;
+  ESLint's own minimatch 3 is not affected). ASAP's third skip (deepmerge,
+  GHSA-gcqx-w48m-w2h4) is left out: GitHub withdrew that advisory on 16
+  November 2026.
+- A skip covers every copy of a package. Copies that a fixed release fits
+  are updated anyway, so the skips cover exactly the copies they cover on
+  ASAP: three copies of zod 3.25.76 and minimatch 9.0.7 and 10.2.3.
+  `test:dependencies` also checks that the site's own zod is 4.6.6 or later.
+- **Before** (595e52b): `bun audit` reports 240 advisories in 48 packages (2
+  critical, 115 high, 103 moderate, 20 low). The two critical ones are
+  `basic-ftp` (under Lighthouse CI) and `proxy-addr` (under Lighthouse CI
+  and the shadcn command-line tool). The gate command fails there with 238.
+- **Now:** `bun audit` reports only the two skipped advisories, and the gate
+  passes. With either skip removed it fails on that advisory, and a scratch
+  copy of `package.json` and `bun.lock` with an affected package added
+  (lodash 4.17.20) fails it as well; neither was committed.
+
+### Tool versions
+
+| Tool | Before | After |
+| --- | --- | --- |
+| `eslint` | 8.57.1 | 9.39.5 |
+| `eslint-config-next` | 16.2.12 | 16.3.6 (with typescript-eslint 8.54.0) |
+| `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser` (direct) | 6.21.0 | removed; `eslint-config-next` brings version 8 |
+| `@lhci/cli` | 0.13.0 | 0.15.1 |
+| `lighthouse` (under Lighthouse CI) | 11.4.0 | 13.5.0 |
+| `shadcn` (command-line tool) | ^3.8.4 (3.8.4), a runtime dependency | 3.8.5, a development dependency |
+| `postcss` range (development) | ^8.5.3 | ^8.5.28 |
+
+`eslint-config-next` stays at 16.3, as on ASAP: 16.4 adds React hooks rules
+and fixes no advisory. The shadcn package is only imported for types
+(`registry/**/_registry.ts`), so it is not needed at run time; a release
+checkout installs development dependencies anyway.
+
+### Libraries with advisories
+
+Every version below is the one ASAP runs. These are the packages a running
+site can load; the counts are the advisories each old version had.
+
+| Package | Before | After | Advisories |
+| --- | --- | --- | --- |
+| `ai`, `@ai-sdk/react` (with `@ai-sdk/provider-utils`) | 5.0.106, 2.0.106 (3.0.18) | 5.0.267, 2.0.270 (3.0.39) | 1 low |
+| `@tiptap/*` (Puck's rich text), `prosemirror-view` | 3.29.2, 1.42.2 | 3.31.3, 1.42.9 | 2 high, 1 moderate |
+| `@xmldom/xmldom` (Word import) | 0.8.11 | 0.8.15 | 13 high, 2 moderate |
+| `axios`, `follow-redirects`, `form-data` (Postmark) | 1.13.6, 1.15.11, 4.0.5 | 1.21.0, 1.16.2, 4.0.6 | 13 high, 22 moderate, 1 low |
+| `lodash` (Plate) | 4.17.21 | 4.18.1 | 1 high, 1 moderate |
+| `defu` (Better Auth) | 6.1.4 | 6.1.5 | 1 high |
+| `effect`, `@effect/platform` (UploadThing) | 3.17.7, 0.90.3 | 3.22.2, 0.97.2 | 2 high, 1 moderate |
+| `happy-dom` (Puck, on the server) | 20.11.2 | 21.0.4 | 2 high, 1 moderate |
+| `undici` (Plate's HTML inliner; the AI SDK) | 6.24.1 | 6.29.1 | 5 high, 6 moderate, 3 low |
+| `katex` (Plate's equations) | 0.16.22 | 0.18.11 | 1 low |
+| `nanoid`, `source-map-js`, `baseline-browser-mapping` (build tools under Next) | 3.3.11 and 3.3.20, 1.2.1, 2.9.12 | 3.3.19, 1.2.2, 2.11.13 | 4 high, 1 moderate |
+
+The rest of the lockfile change is development tooling (ESLint, Lighthouse
+CI, the shadcn command-line tool and what they bring). 243 package names
+change; every new development version is ASAP's too. Plate, Slate and their
+copies resolve exactly as before (48 entries, same versions and
+dependencies). The overrides are ASAP's, with ASAP's reasons, and
+`test:dependencies` is ASAP's file: `@effect/platform` 0.97.2, `effect`
+3.22.2, `basic-ftp` 6.2.5, `happy-dom` 21.0.4, `katex` 0.18.11, `lighthouse`
+13.5.0, `tmp` 0.2.7, `undici` 6.29.1 and `uuid` 11.1.1.
+
+### Code
+
+- The two upload routes use `node:crypto`'s `randomUUID()` instead of the
+  `uuid` package, which is no longer a dependency (ASAP's files, byte for
+  byte).
+- ESLint 9 reports disable comments that suppress nothing, and Next 16.3's
+  plugin adds one rule
+  (`@next/next/no-location-assign-relative-destination`). The eight shared
+  files that the template changes for this (the event and news editors, the
+  asset picker's three files, `lib/db.ts`, `lib/pages-shared.ts`,
+  `lib/security/rate-limit.ts`) are the template's new files, which are
+  ASAP's; the news editor file (`news-article-editor-potion.client.tsx`) is
+  ASAP's again, with the comment Plate 53 had to leave out.
+
+### Lint: the site now runs ASAP's rules
+
+Since March 2026 this site's `eslint.config.mjs` switched off ten of the
+rules ASAP and the template run: eight React hooks rules,
+`@typescript-eslint/no-explicit-any` and `@next/next/no-img-element`. Under
+ESLint 9 that turned every one-line exception for those rules in the shared
+files into an "unused" comment, which fails the lint gate: 55 of them, in 43
+files, 36 of which are the template's files unchanged (25 are copied from
+the template by the editor baseline). Deleting them would make those files
+differ from the template's, and the next copy from the template would bring
+them back.
+
+So `eslint.config.mjs` is now ASAP's file, with this site's local working
+folders (`docs/mocks`, `output`, `workspace`, `.agtx`, `.playwright-cli`) in
+its ignore list, and the 61 places in the site's own code that the ten rules
+report carry a one-line comment each, ending "existing code; lint rules
+aligned with ASAP's in Nov 2026". No code changes:
+
+- 39 `@typescript-eslint/no-explicit-any`, 31 of them the `render: (props)
+  => Block(props) as any` line of a Puck block's settings;
+- 13 `react-hooks/set-state-in-effect`, 3 `react-hooks/exhaustive-deps`, 3
+  `react-hooks/static-components` (the legal pages' icons), 1
+  `react-hooks/refs` (the contact form) and 2 `@next/next/no-img-element`
+  (the social preview image).
+
+Two unused comments in the site's own files go (`guest-notes.tsx`,
+`components/newsletter/unsubscribe-form.tsx`). `eslint --print-config` gives
+the same 69 rules (64 on) as ASAP and the template for an editor component,
+a library file, a route, a script and a test, and every lint package has
+ASAP's version.
+
+New code in this site is now checked by those ten rules too: an `as any` or
+a state update in an effect fails the lint gate unless it carries such a
+comment. Keeping the old exceptions instead is the owner's decision; it would mean removing those 55 comments from shared files, which the next copy from the template would bring back.
+
+### Files
+
+Byte for byte as on ASAP and in the template:
+`app/api/assets/presign/route.ts`, `app/api/assets/upload/route.ts`,
+`components/edit/event-editor.client.tsx`, `news-article-editor.client.tsx`,
+`news-article-editor-potion.client.tsx`,
+`components/puck/fields/asset-picker-field.tsx` and its
+`asset-library-panel.tsx` and `asset-upload-controls.tsx`, `lib/db.ts`,
+`lib/pages-shared.ts`, `lib/security/rate-limit.ts` and
+`tests/security/dependencies.test.ts`. Adapted: `package.json`, `bun.lock`,
+`quality/gates.json` and `eslint.config.mjs` (this site's own), and the
+site's own files listed under [Lint](#lint-the-site-now-runs-asaps-rules).
+
+### Checks
+
+On 21 November 2026, in separate copies with throwaway settings (a private
+local database and theme folder; no production setting or service), on this
+commit and on the base commit 595e52b:
+
+- **Gates**: audit-dependencies, test-dependencies (9 checks), lint,
+  typecheck, unit, security, security-integration, newsletter-integration,
+  newsletter-release, build, newsletter-unsubscribe, portfolio-images and
+  theme-smoke pass. `quality:validate` accepts the manifest.
+- **visual fails as on the base, identically**: the same 27 tests fail on
+  both (60 pass, 5 are skipped), and the 26 screenshots those failures take
+  are pixel-identical between the two runs (this time including the desktop
+  fleet page, whose search box has differed by 14 pixels from one run to the
+  next before).
+- **lighthouse fails as on the base, identically** (same pages, three runs
+  each, same thresholds): with Lighthouse 13.5.0, as with 11.4.0, the mobile
+  run scores 100 everywhere except best practices 96 on `/`, `/about` and
+  `/web-design-witney` in every run, for the same reason (an error in the
+  browser console). The desktop run, which the release skips after the
+  mobile failure, was run on its own on both: the same scores, best
+  practices 96 on the same three pages and 100 everywhere else. The
+  release's own Lighthouse evidence check
+  (`ops/scripts/newsletter-release-lighthouse.ts`) reads Lighthouse CI
+  0.15's reports as it read 0.13's.
+- **Install**: `bun install --frozen-lockfile` accepts the lockfile in a
+  fresh copy and over the base's `node_modules`, as a release checkout gets
+  it; the lockfile stays unchanged, the type check is clean, and Plate and
+  Slate are installed exactly as on the base (48 folders, one copy each of
+  Plate core 53.3.14, Slate 0.126.2 and Slate React 0.126.4). Over the old
+  tree, bun leaves 112 folders that the new lockfile no longer has. Two of
+  them are used instead of the lockfile's version: `tmp` 0.0.33 under
+  `external-editor` (Lighthouse CI's setup wizard; the lockfile has 0.2.7)
+  and `nanoid` 3.3.20 under Next's PostCSS (the lockfile has 3.3.19; both
+  are fixed releases). Both are tools that never run in the site. Removing
+  `node_modules` before the install avoids all of them.
+- **Build output** (`next build` of the base commit and of this one, same
+  settings), page by page (98 prerendered pages, with every chunk each can
+  load later): on 45 of them everything is the same code, among them the
+  home page, about, contact, work and the case studies, the nine service
+  pages, privacy and terms, and the newsletter and event confirmation pages;
+  bundlers number modules, name chunks and shorten variable names
+  differently, which is all that differs there. The CMS page route loads the
+  same code first and differs only in chunks loaded later for editing
+  (Tiptap 3.31, ProseMirror view 1.42.9). The news pages load KaTeX 0.18's
+  style sheet (it styles equations only). The sign-in, account, admin, demo
+  and editor pages load Better Auth's client with defu 6.1.5 (whose fix
+  skips the keys `__proto__` and `constructor`), and the demo and editor
+  pages also Plate's updated helpers (lodash) and Tiptap. On the server, the
+  original source files that differ belong to the updated packages (the AI
+  SDK, Tiptap, happy-dom, axios, follow-redirects, form-data, xmldom, KaTeX,
+  lodash, ProseMirror, defu, Effect, undici, nanoid) and to the files this
+  commit edits; apart from the two upload routes (`randomUUID()`), those
+  edits are comment lines only. Unchanged packages' files sometimes sit in
+  other chunks' source maps, which is how they are bundled, not what they
+  contain. Two builds of the template's base commit (same Next.js, same
+  bundler) differ only in server action ids (random for every build), one
+  review page chunk and trace lists.
+
+### Release
+
+- Run `bun install --frozen-lockfile` in the release checkout before
+  `release:local`, as for every release. With `node_modules` removed first,
+  the release gets exactly the lockfile's tree (see Install under Checks).
+- Release this site's commit before, or with, any copy of the template's
+  shared files that comes after the template takes the same change: three of
+  those files (the event and news editors) now carry a comment naming the
+  Next 16.3 lint rule, and ESLint 8 with Next's 16.2 plugin fails on it.
+  This commit contains the same files, byte for byte.
+- Releases now depend on the advisory service: `bun audit` asks the npm
+  registry, and an answer that does not come stops the release, as on ASAP.
+  A new advisory published after this date stops a release too, until it is
+  fixed (or, by the owner's decision, skipped).
+- No setting, cron entry, data change or nginx change is needed.
+- Developers working on this site: lint now checks the ten rules described
+  under [Lint](#lint-the-site-now-runs-asaps-rules).
+
 ## Still to do
 
 Part two brings over the rest of ASAP's work:
@@ -415,4 +638,6 @@ Part two brings over the rest of ASAP's work:
   security headers are prepared, see
   [Security response headers](#security-response-headers));
 - ASAP's `overrides` for packages whose parents pin affected versions, the
-  ESLint and Lighthouse tooling upgrades, and `bun audit` as a release gate.
+  ESLint and Lighthouse tooling upgrades, and `bun audit` as a release gate
+  are prepared, see
+  [Tool upgrades and the advisory gate](#tool-upgrades-and-the-advisory-gate).

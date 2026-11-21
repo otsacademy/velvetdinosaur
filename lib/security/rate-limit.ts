@@ -23,7 +23,6 @@ export type RateLimitResult = {
 };
 
 declare global {
-  // eslint-disable-next-line no-var
   var vdRateLimitStore: Map<string, RateLimitEntry> | undefined;
 }
 
